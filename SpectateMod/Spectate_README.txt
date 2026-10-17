@@ -1,12 +1,40 @@
-IranCoJ Spectate  v1.0.4 beta
+IranCoJ Spectate  v1.0.7 beta
 =============================
 
 Spectate other players while you are dead, from the multiplayer class-selection
 screen. Third person by default, first person optional.
 
 
-WHAT'S NEW IN 1.0.4
+WHAT'S NEW IN 1.0.7
 -------------------
+* Coming back from spectate, the buttons answer straight away. They used to be
+  dead for about four seconds.
+* SPECTATE is pressed the way every other button on the screen is pressed, so
+  it behaves the same at any resolution. Pressing UPGRADE or changing class can
+  no longer start spectating by mistake.
+
+WHAT WAS NEW IN 1.0.6
+---------------------
+* Fixed spectate starting by itself when you pressed UPGRADE or changed class.
+  The buttons share a row with SPECTATE, and a second cursor reading used the
+  wrong coordinate space - so a click 500 pixels away still counted as a press
+  on SPECTATE whenever the two happened to agree on height. That reading is
+  gone; only the position the game itself reports is used now.
+
+AND IN 1.0.5
+------------
+* SPECTATE is now an ordinary button. A click only counts when it lands on the
+  button itself. Clicking anywhere else no longer activates whichever button
+  happens to be highlighted - which is what made stray clicks start spectating,
+  or flick through players, when you meant to pick a class.
+* The button finds itself. Its position and size are measured from the menu at
+  the moment you click, instead of being hard-coded. It therefore keeps working
+  if the class screen is re-laid-out by another mod.
+* The mouse is only ever held back while you are actually spectating. Nothing
+  else can trigger it.
+
+AND IN 1.0.4
+------------
 * Fixed the big one. Clicking SPECTATE while you were alive used to put the
   spectate bar up carrying a "you have to be dead first" message. That bar
   hides the class screen, blocks the mouse and takes over clicks - so one
@@ -16,8 +44,8 @@ WHAT'S NEW IN 1.0.4
   nothing is blocked.
 * The mouse is never blocked except while you are actually spectating.
 
-WHAT WAS NEW IN 1.0.3
----------------------
+AND IN 1.0.3
+------------
 * Fixed the mouse going dead mid-match. Spectate could arm itself during the
   moment you are respawning - the game briefly looks the same as being dead -
   and if it did, mouse BUTTONS stayed blocked for the rest of the match. You
@@ -50,10 +78,26 @@ folder, keeping the folder structure. The files land like this:
         dinput8.dll                     <- mod loader (replaces the old one)
         spectate.dll                    <- the spectate mod
         mods.txt                        <- list of mods to load
-        CoJ2\Data\Menu\
-            MenuIngameNetGamemode_Scr_PC.binui   <- menu pack with the button
 
 That's all. No launcher, no config, nothing to enable.
+
+THE MENU PACK IS NOT IN THIS ARCHIVE, ON PURPOSE.
+
+The SPECTATE button lives in a menu pack file
+(CoJ2\Data\Menu\MenuIngameNetGamemode_Scr_PC.binui). It only ever needs
+installing once, and other IranCoJ mods - the New Classes mod in particular -
+put their own entries in that same file. If every Spectate update shipped it,
+updating Spectate would quietly wipe the New Classes rows from your class
+screen and you would have to install that mod again.
+
+So:
+
+  * Updating from an earlier Spectate, or you already run New Classes?
+    This archive is all you need. Your menu pack already has the button.
+
+  * Never installed Spectate or New Classes before?
+    Also get IranCoJ_Spectate_MenuPack.zip and copy that in as well, once.
+    Without it there is no SPECTATE button to press.
 
   * mods.txt is safe to copy over. It lists spectate.dll, voicechat.dll and
     directjoinfix.dll; any of those you do not have installed is skipped
@@ -131,15 +175,16 @@ KNOWN LIMITATIONS
   adapts its smoothing, but it cannot invent data that never arrived. On a
   healthy server this is not visible.
 * Spectating starts only after you die, by design.
-* A stray click on the spectate bar can activate whichever button is
-  highlighted.
+* The menu pack carries the SPECTATE button itself, and it ships separately so
+  that updating Spectate never overwrites the class-screen entries belonging
+  to other IranCoJ mods. See INSTALL.
 * Chat is not shown while spectating. It lives on the scoreboard panel, which
   the game only draws while TAB is held, so it is not ours to move.
 * Holding certain keys while spectating draws the engine's leftover debug
   overlays - boxes around bones, lines, screen blur. Harmless, affects only
   your own screen, and goes away when you stop holding the key.
-* Coming back from spectate, the class screen takes a moment before it answers
-  clicks again. No instant respawn straight out of spectate.
+* Coming back from spectate there is a brief moment - about a third of a
+  second - before the class screen answers clicks again.
 
 This is a beta. If something misbehaves, tell us what you did just before it
 happened - that is usually enough to find it.

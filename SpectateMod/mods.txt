@@ -8,3 +8,4 @@ spectate.dll
 voicechat.dll
 directjoinfix.dll
 newclasses.dll
+
