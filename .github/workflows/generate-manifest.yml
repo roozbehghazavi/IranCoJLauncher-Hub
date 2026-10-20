@@ -42,6 +42,15 @@ jobs:
               path = os.path.join(maps_dir, name)
               if not os.path.isfile(path):
                   continue
+              # Git LFS files are checked out as small pointer files. The pointer's
+              # "oid sha256:" line is the SHA-256 of the real file, so use it directly
+              # instead of hashing the pointer (and without spending LFS bandwidth).
+              with open(path, "rb") as f:
+                  head = f.read(1024)
+              if head.startswith(b"version https://git-lfs.github.com/spec/v1"):
+                  oid = next(l for l in head.decode().splitlines() if l.startswith("oid sha256:"))
+                  manifest[name] = oid.split(":", 1)[1].strip()
+                  continue
               h = hashlib.sha256()
               with open(path, "rb") as f:
                   for chunk in iter(lambda: f.read(8192), b""):
