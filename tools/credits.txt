@@ -6,36 +6,19 @@
 = IRANCOJ EDITION
 Call of Juarez: Bound in Blood - multiplayer, modernized
 
-= THE IRANCOJ TEAM
-- Project Lead
-IranCoJ
-
-- Launcher, Edition & Menus
-IranCoJ
-
-- Mods: New Classes, Spectate, Voice Chat
-IranCoJ
-
-- Maps
-The IranCoJ map makers
-
-- Servers & Community
-The IranCoJ community
+= CREATED BY
+Thomas (Roozbeh)
+Launcher, Edition, menus, maps, servers and the IranCoJ mods:
+New Classes, Spectate, Voice Chat
 
 = COMMUNITY MODS
 - Server List Mod
-AlfredoAnonym
+mx98919
 
 - Gore Mod, No DOF & Motion Blur
-From the R2P launcher's mod set
+cr1m3
 
-= ART, MUSIC & TYPE
-- Menu artwork
-IranCoJ
-
-- Menu music
-IranCoJ
-
+= TYPE
 - Typeface
 Oswald - The Oswald Project Authors (SIL Open Font License)
 
