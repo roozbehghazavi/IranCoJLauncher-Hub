@@ -365,3 +365,106 @@ for button, (x, y) in grid.items():
     t = set_prop(t, button, "Width", "320.000000")
     t = set_prop(t, button, "Height", "42.000000")
 write("DashboardSignIn.xui", t)
+
+# ---------- in game: class selection and scoreboard (design: tools/mockups/ingame_mockups.py) ----------
+INK = "0xff0e0d0b"
+
+
+def group_span(text, group_id, start=0):
+    """(start, end) of the whole <AdvGroup>/<XuiGroup> whose Id is group_id, nesting included."""
+    m = re.compile(r"<(AdvGroup|XuiGroup)>\r?\n<Properties>\r?\n<Id>" + re.escape(group_id) + r"</Id>").search(text, start)
+    if not m:
+        raise SystemExit(f"group {group_id} not found")
+    depth, i = 0, m.start()
+    for tag in re.finditer(r"<(/?)(AdvGroup|XuiGroup)>", text[m.start():]):
+        depth += -1 if tag.group(1) else 1
+        if depth == 0:
+            return m.start(), m.start() + tag.end()
+    raise SystemExit(f"group {group_id} not closed")
+
+
+def in_group(text, group_id, edit, start=0):
+    a, b = group_span(text, group_id, start)
+    return text[:a] + edit(text[a:b]) + text[b:]
+
+
+def after_element(text, element_id, new):
+    """Inserts new right after the first element with this Id."""
+    m = block(text, element_id)
+    return text[:m.end()] + new + text[m.end():]
+
+
+def bars(t):
+    """A dark strip across the top (map, mode, cash, team) and the bottom (the buttons)."""
+    strips = (element("MyImage", "I_IrnTopBar", [("Width", "1280.000000"), ("Height", "84.000000"),
+                                                  ("ImagePath", "irn_bar_top")])
+              + element("MyImage", "I_IrnBottomBar", [("Width", "1280.000000"), ("Height", "104.000000"),
+                                                       ("Position", "0.000000,616.000000,0.000000"),
+                                                       ("ImagePath", "irn_bar_bottom")]))
+    scene = re.search(r"<XuiScene>\r?\n<Properties>.*?</Properties>\r?\n", t, re.S)
+    return t[:scene.end()] + strips + t[scene.end():]
+
+
+def flat_texts(t, colors):
+    """No heavy outline (it sat on paper); the named texts get their palette colour."""
+    t = re.sub(r"(<MyText>\r?\n<Properties>(?:(?!</Properties>).)*?)<Outline>true</Outline>", r"\1<Outline>false</Outline>", t, flags=re.S)
+    for element_id, color in colors.items():
+        if re.search(r"<Id>" + re.escape(element_id) + r"</Id>", t):
+            t = set_prop(t, element_id, "TextColor", color)
+    return t
+
+
+t = written["MenuNetSelectClass.xui"]
+t = flat_texts(t, {"T_MapName": PARCHMENT, "T_ModeName": GOLD, "T_Timer": GOLD, "T_Wallet": GOLD,
+                   "T_CashText": DUST, "T_TeamName": PARCHMENT, "T_Tip": DUST, "T_UpgradeInfoCost": GOLD})
+
+# Middle panel: a smaller portrait, then the loadout as rows under it (icon, name), then the upgrade.
+t = in_group(t, "G_ClassInfo", lambda g: set_prop(set_prop(set_prop(g, "I_ClassPicture", "Position", "68.000000,30.000000,0.000000"),
+                                                            "I_ClassPicture", "Width", "200.000000"), "I_ClassPicture", "Height", "276.000000"))
+for n in range(3):
+    def weapon_row(g, n=n):
+        g = set_prop(g, f"Weapon{n}", "Position", f"0.000000,{312 + 42 * n}.000000,0.000000")
+        g = set_prop(g, f"Weapon{n}", "Height", "40.000000")
+        g = set_prop(g, "T_Name", "Position", "56.000000,4.000000,0.000000")
+        g = set_prop(g, "T_Name", "Width", "264.000000")
+        g = set_prop(g, "T_Name", "TextStyle", "4368")  # left
+        g = set_prop(g, "T_Name", "TextColor", PARCHMENT)
+        g = set_prop(g, "Icons", "Position", "10.000000,2.000000,0.000000")
+        g = set_prop(g, "Icons", "Width", "40.000000")
+        g = set_prop(g, "Icons", "Height", "36.000000")
+        for icon in ["Back"] + [f"I_Icon_{k}" for k in range(5)]:
+            g = set_prop(g, icon, "Width", "36.000000")
+            g = set_prop(g, icon, "Height", "36.000000")
+            g = set_prop(g, icon, "Position", "0.000000,0.000000,0.000000")
+        row = element("MyImage", "I_IrnRow", [("Width", "320.000000"), ("Height", "40.000000"),
+                                               ("Position", "8.000000,0.000000,0.000000"), ("ImagePath", "irn_flat_0"),
+                                               ("Color", "0x16ffffff")])
+        head = re.search(r"<(AdvGroup|XuiGroup)>\r?\n<Properties>.*?</Properties>\r?\n", g, re.S)
+        return g[:head.end()] + row + g[head.end():]
+    t = in_group(t, "G_ClassInfo", lambda g, f=weapon_row, n=n: in_group(g, f"Weapon{n}", f))
+for element_id, (x, y, w) in {"H_UpgradeInfoLabel": (8, 440, 200), "B_Upgrade": (8, 440, 200),
+                              "T_UpgradeInfoCost": (176, 444, 150)}.items():
+    t = set_prop(t, element_id, "Position", f"{x}.000000,{y}.000000,0.000000")
+    t = set_prop(t, element_id, "Width", f"{w}.000000")
+t = set_prop(t, "T_UpgradeInfoCost", "TextStyle", "4624")  # right
+t = set_prop(t, "B_Spawn", "Visual", "ButtonIrnPrimary")
+write("MenuNetSelectClass.xui", bars(t))
+
+t = written["MenuNetResults_PC.xui"]
+t = flat_texts(t, {"T_MapName": PARCHMENT, "T_ModeName": GOLD, "T_Timer": GOLD, "T_GameSettings": PARCHMENT})
+for group, color in (("G_RedBackground", "0x40c44834"), ("G_BlueBackground", "0x404c8cbe")):
+    tint = element("MyImage", "I_IrnTeamTint", [("Width", "564.000000"), ("Height", "60.000000"),
+                                                 ("Position", "2.000000,4.000000,0.000000"), ("ImagePath", "irn_flat_0"),
+                                                 ("Color", color)])
+    t = in_group(t, group, lambda g, tint=tint: after_element(g, "Background", tint))
+write("MenuNetResults_PC.xui", bars(t))
+
+# Spawn: the one solid gold button (dark text), like the mockup.
+t = written["CoJ2MenuSkin.xui"]
+primary = visual(t, "ButtonV").group(0).replace("<Id>ButtonV</Id>", "<Id>ButtonIrnPrimary</Id>", 1)
+primary = set_prop(set_prop(primary, "RandomBackground", "BaseImage", "irn_flat"), "RandomBackground", "ImagePath", "irn_flat_0")
+primary = keyframes(primary, "RandomBackground", lambda time, props: ["0xfff2c46e" if 6 <= time <= 26 else GOLD, "1.000000"])
+primary = keyframes(primary, "TextPrezenter", lambda time, props: ["0x800e0d0b" if time >= 80 else INK, "false", "1.000000"])
+primary = set_prop(set_prop(primary, "RandomBackground", "Color", GOLD), "TextPrezenter", "TextColor", INK)
+end = visual(t, "ButtonV").end()
+write("CoJ2MenuSkin.xui", t[:end] + primary + t[end:])

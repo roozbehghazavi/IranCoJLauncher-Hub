@@ -77,6 +77,15 @@ def panel():
     return im
 
 
+def bar(line_at_bottom):
+    """256x64 dark strip with a wood line on one edge; stretched across the in-game screens."""
+    im = Image.new("RGBA", (256, 64), INK + (215,))
+    d = ImageDraw.Draw(im)
+    y = 61 if line_at_bottom else 0
+    d.rectangle([0, y, 255, y + 2], fill=WOOD + (255,))
+    return im
+
+
 def flat():
     """64x16 white, tinted by the game: flat title strips."""
     return Image.new("RGBA", (64, 16), (255, 255, 255, 235))
@@ -147,6 +156,8 @@ if __name__ == "__main__":
     write_dds(band(), os.path.join(out, "textures", "irancoj_band.dds"))
     write_dds(logo(), os.path.join(out, "textures", "irancoj_logo.dds"))
     write_dds(panel(), os.path.join(out, "textures", "irancoj_panel.dds"))
+    write_dds(bar(True), os.path.join(out, "textures", "irancoj_bar_top.dds"))
+    write_dds(bar(False), os.path.join(out, "textures", "irancoj_bar_bottom.dds"))
     write_dds(flat(), os.path.join(out, "textures", "irancoj_flat.dds"))
     write_dds(still(source), os.path.join(out, "textures", "irancoj_bg.dds"))
     if "--no-video" not in sys.argv:
