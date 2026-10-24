@@ -164,8 +164,15 @@ extras = (
 )
 first_button = t.index("<UINaviButton>")
 t = t[:first_button] + extras + t[first_button:]
-t = set_prop(t, "T_GameVersion", "TextColor", DUST)
-t = set_prop(t, "T_GameVersion", "Outline", "false")
+# The game writes its own version ("v1.1.0.0 WW") into T_GameVersion: hide it and show ours in its place.
+t = set_prop(t, "T_GameVersion", "Show", "false")
+t = set_prop(t, "T_GameVersion", "Opacity", "0.000000")
+version = element("MyText", "T_IrnVersion", [("Width", "600.000000"), ("Height", "40.000000"),
+                                             ("Position", "600.000000,664.000000,0.000000"),
+                                             ("Text", "IranCoJ Edition 0.6"), ("TextColor", DUST),
+                                             ("Font", "TextSmall"), ("TextStyle", "528")])
+first_button = t.index("<UINaviButton>")
+t = t[:first_button] + version + t[first_button:]
 # Keyboard order skips the disabled Leaderboard button.
 active = ["B_Multiplayer", "B_Options", "B_Credits", "B_SelectProfile", "B_Quit"]
 for i, element_id in enumerate(active):
@@ -210,7 +217,7 @@ write("MenuBackground.xui", t)
 # Only screens in the packs the Edition ships (MenuCommon, MenuMain, Dashboard, Background). In-game screens
 # have their own packs, which can't be shipped (recompiled ones crash), so skin visuals made for them
 # (*Ingame*) keep the original look - in game they still sit on the original paper.
-MENU_SCREENS = """Curtain MenuCredits MenuLoading MenuOptionsControlsButtons MenuOptionsControlsKeyboard
+MENU_SCREENS = """BackgroundLoading Curtain MenuCredits MenuLoading MenuOptionsControlsButtons MenuOptionsControlsKeyboard
     MenuOptionsControlsSticks MenuSavingProfileWarningDialog MenuYesNoDialog MenuPasswordDialog MenuProgressDialog
     DashboardAgreement DashboardBackground DashboardCreateProfile DashboardCreateProfile2 DashboardEditProfile
     DashboardFriends DashboardGamerProfile DashboardMain DashboardMessage DashboardMessageCompose DashboardMessages

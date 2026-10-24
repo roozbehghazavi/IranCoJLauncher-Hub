@@ -34,17 +34,20 @@ def font(name, size):
 
 
 def write_dds(image, path):
-    """Uncompressed 32-bit DDS with bytes in R, G, B, A order (A8B8G8R8) - the order the game reads, no mipmaps."""
+    """Uncompressed 32-bit A8R8G8B8 DDS (bytes B, G, R, A), no mipmaps."""
     image = image.convert("RGBA")
     w, h = image.size
     flags = 0x1 | 0x2 | 0x4 | 0x8 | 0x1000  # caps, height, width, pitch, pixelformat
-    pixel_format = struct.pack("<II4sIIIII", 32, 0x41, b"\0\0\0\0", 32,
-                               0x000000FF, 0x0000FF00, 0x00FF0000, 0xFF000000)
-    header = struct.pack("<4sIIIIII", b"DDS ", 124, flags, h, w, w * 4, 0) + b"\0" * 44 + pixel_format
-    header += struct.pack("<IIIII", 0x1000, 0, 0, 0, 0)
+    pixel_format = struct.pack("<II4sIIIII", 32, 0x41, b"\0\0\0\0", 32,  # RGB | alpha
+                               0x00FF0000, 0x0000FF00, 0x000000FF, 0xFF000000)
+    # size, flags, height, width, pitch, depth, mipmaps, 11 reserved
+    header = struct.pack("<4sIIIIIII", b"DDS ", 124, flags, h, w, w * 4, 0, 0) + b"\0" * 44 + pixel_format
+    header += struct.pack("<IIIII", 0x1000, 0, 0, 0, 0)  # caps: texture
+    assert len(header) == 128
+    r, g, b, a = image.split()
     os.makedirs(os.path.dirname(path), exist_ok=True)
     with open(path, "wb") as f:
-        f.write(header + image.tobytes())
+        f.write(header + Image.merge("RGBA", (b, g, r, a)).tobytes())
     print("wrote", path)
 
 
