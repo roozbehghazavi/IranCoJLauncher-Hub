@@ -233,19 +233,54 @@ def text_color(value):
     return value[:4] + PARCHMENT[4:] if value.lower() in DARK_TEXT or luma < 100 else value
 
 
+HEADERS = {"0xff4485ed": HEADER, "0xff4485eb": HEADER, "0xffbf190f": "0xff7a2e22"}  # blue / red title brushes
+IDLE = {"0xffc38428", "0xffce8419", "0xffceb217", "0xffceb219"}  # ochre brush = not focused (or disabled)
+CLEAR = "0x00ffffff"
+
+
+def put(b, prop, value):
+    """Sets (or adds after Id) a property in one Properties block."""
+    if re.search(f"<{prop}>.*?</{prop}>", b):
+        return re.sub(f"<{prop}>.*?</{prop}>", f"<{prop}>{value}</{prop}>", b, count=1)
+    return re.sub(r"(<Id>.*?</Id>)", lambda m: f"{m.group(1)}\r\n<{prop}>{value}</{prop}>", b, count=1)
+
+
 def recolor(text):
-    """Panels -> irn_panel_tile; dark text -> parchment; brush and accent colours -> the palette."""
+    """Panels -> irn_panel_tile; dark text -> parchment. Brush strokes become flat: list rows, option rows and
+    other buttons get the main menu's band (shown only when focused), title brushes a flat wood strip, and the
+    scribbled selection outlines go."""
     text = text.replace("dialog_frame_a_tile", "irn_panel_tile")
-    brushes = {m.group(1) for m in re.finditer(r"<Id>(.*?)</Id>(?:(?!</Properties>).)*?<(?:BaseImage|ImagePath)>button", text, re.S)}
+    kind = {}
+    for m in re.finditer(r"<Properties>\r?\n<Id>(.*?)</Id>(.*?)</Properties>", text, re.S):
+        body = m.group(2)
+        if re.search(r"<(?:BaseImage|ImagePath)>button_sel", body):
+            kind[m.group(1)] = "outline"
+        elif re.search(r"<(?:BaseImage|ImagePath)>button", body):
+            c = re.search(r"<Color>(.*?)</Color>", body)
+            kind[m.group(1)] = "header" if c and c.group(1).lower() in HEADERS else "band"
 
     def color(element_id, value):
-        table = BRUSH if element_id in brushes else OTHER
-        return table.get(value.lower(), value)
+        k = kind.get(element_id)
+        if k == "band":
+            return CLEAR if value.lower() in IDLE else WHITE
+        if k == "header":
+            return HEADERS.get(value.lower(), HEADER)
+        return OTHER.get(value.lower(), value)
 
     def element(m):
         b = m.group(0)
         element_id = re.search(r"<Id>(.*?)</Id>", b).group(1)
         b = re.sub(r"<TextColor>(.*?)</TextColor>", lambda c: f"<TextColor>{text_color(c.group(1))}</TextColor>", b)
+        k = kind.get(element_id)
+        if k == "outline":
+            return put(b, "Show", "false")
+        if k in ("band", "header"):
+            image = "irn_band" if k == "band" else "irn_flat"
+            for prop, value in (("BaseImage", image), ("ImagePath", image + "_0"), ("NumFrames", "1"),
+                                ("Material", "sprite_button.mat")):
+                b = put(b, prop, value)
+            if k == "band" and not re.search(r"<Color>", b):
+                b = put(b, "Color", CLEAR)
         return re.sub(r"<Color>(.*?)</Color>", lambda c: f"<Color>{color(element_id, c.group(1))}</Color>", b)
 
     def timeline(m):
@@ -255,7 +290,8 @@ def recolor(text):
 
         def frame(k):
             props = iter(re.findall(r"<Prop>(.*?)</Prop>", k.group(0)))
-            new = [text_color(v) if n == "TextColor" else color(element_id, v) if n == "Color" else v
+            new = [text_color(v) if n == "TextColor" else color(element_id, v) if n == "Color"
+                   else "false" if n == "Show" and kind.get(element_id) == "outline" else v
                    for n, v in zip(names, props)]
             it = iter(new)
             return re.sub(r"<Prop>.*?</Prop>", lambda _: f"<Prop>{next(it)}</Prop>", k.group(0))

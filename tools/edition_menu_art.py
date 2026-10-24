@@ -71,6 +71,11 @@ def panel():
     return im
 
 
+def flat():
+    """64x16 white, tinted by the game: flat title strips."""
+    return Image.new("RGBA", (64, 16), (255, 255, 255, 235))
+
+
 def still(source):
     """1024x512 (stretched back to 16:9 on screen): the background, softened and darkened, for the profile pages."""
     from PIL import ImageFilter
@@ -136,6 +141,7 @@ if __name__ == "__main__":
     write_dds(band(), os.path.join(out, "textures", "irancoj_band.dds"))
     write_dds(logo(), os.path.join(out, "textures", "irancoj_logo.dds"))
     write_dds(panel(), os.path.join(out, "textures", "irancoj_panel.dds"))
+    write_dds(flat(), os.path.join(out, "textures", "irancoj_flat.dds"))
     write_dds(still(source), os.path.join(out, "textures", "irancoj_bg.dds"))
     if "--no-video" not in sys.argv:
         video(source, os.path.join(out, "Movies", "MenuMovie_0.wmv"))
