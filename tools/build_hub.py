@@ -271,7 +271,7 @@ if __name__ == "__main__":
                "mods": build_mods()}
     edition = load_optional_json("edition.json")
     if edition:
-        catalog["edition"] = {"version": edition["version"], "exclude": edition["exclude"]}
+        catalog["edition"] = {key: edition[key] for key in ("version", "exclude", "keep", "rewrite") if key in edition}
     news = load_optional_json("news.json")
     if news:
         catalog["news"] = news
