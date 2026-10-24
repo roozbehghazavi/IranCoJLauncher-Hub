@@ -1,5 +1,5 @@
 {
-  "version": "0.2.0",
+  "version": "0.2.1",
   "notes": "E1b, modelled on Golden Mod MP 1.0: every map is also inside Data0/1/2.pak, so the .rpack load caches are left out except the four common ones. Single-player music and menu videos are left out; MenuBackgroundFilms.scr is rewritten so every menu slot plays MenuMovie_0. Test every multiplayer map after changing this list.",
   "exclude": [
     "DirectX/**",
@@ -11,7 +11,11 @@
     "webcache.zip",
     "**/*.lnk",
     "CoJ2/Out/**",
-
+    "tutorials/**",
+    "ChromEdShortTutorial.pdf",
+    "Editor_x86.exe",
+    "Plugins_x86/**",
+    "shadercache/**",
     "CoJ2/Data/*.rpack",
     "CoJ2/Data/Music/**",
     "CoJ2/Data/Menu/Movies/*.wmv"
@@ -21,12 +25,10 @@
     "CoJ2/Data/common_mp_meshes.rpack",
     "CoJ2/Data/common_mp_textures.rpack",
     "CoJ2/Data/common_sp_anims.rpack",
-
     "CoJ2/Data/Music/COJ2_New_Menu.ogg",
     "CoJ2/Data/Music/COJ2_MultiP_*",
     "CoJ2/Data/Music/COJ2_Multi_*",
     "CoJ2/Data/Music/COJ2_Conc_Mode_4.ogg",
-
     "CoJ2/Data/Menu/Movies/MenuMovie_0.wmv",
     "CoJ2/Data/Menu/Movies/Initial_BG.wmv",
     "CoJ2/Data/Menu/Movies/Ubisoft_720p*.wmv"
@@ -36,7 +38,12 @@
       "path": "CoJ2/Data/Menu/MenuBackgroundFilms.scr",
       "pak": "CoJ2/Data0.pak",
       "entry": "Data/Menu/MenuBackgroundFilms.scr",
-      "replace": [["MenuMovie_[1-9]", "MenuMovie_0"]]
+      "replace": [
+        [
+          "MenuMovie_[1-9]",
+          "MenuMovie_0"
+        ]
+      ]
     }
   ]
 }
