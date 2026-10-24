@@ -1,0 +1,49 @@
+[
+  {
+    "id": "edition",
+    "tag": "IRANCOJ EDITION",
+    "title": "Bound in Blood\nMultiplayer",
+    "text": "A separate multiplayer copy of your game with every IranCoJ map and mod. Your original game stays untouched.",
+    "slide": true,
+    "action": "settings",
+    "actionLabel": "Set up the Edition"
+  },
+  {
+    "id": "lincoln-town",
+    "tag": "NEW MAP",
+    "title": "Lincoln Town",
+    "text": "The biggest map in the pack so far. It downloads with your next map update.",
+    "date": "2026-10-24",
+    "slide": true,
+    "action": "maps",
+    "actionLabel": "View in Maps"
+  },
+  {
+    "id": "new-classes",
+    "tag": "MOD",
+    "title": "New Classes",
+    "text": "Play as the Rancher with the Border Gun or the Redneck with the musket, with upgrades and the IranCoJ Skin Pack.",
+    "date": "2026-10-24",
+    "slide": true,
+    "action": "mods",
+    "actionLabel": "Install mod"
+  },
+  {
+    "id": "spectate-108",
+    "tag": "MOD UPDATE",
+    "title": "Spectate Mod 1.0.8",
+    "text": "The spectate menu button now has its own place in the menu.",
+    "date": "2026-10-24",
+    "action": "mods",
+    "actionLabel": "Update"
+  },
+  {
+    "id": "irancoj-server",
+    "tag": "SERVER",
+    "title": "Showdown on IranCoJ",
+    "text": "Join the IranCoJ server straight from the launcher, no menus needed.",
+    "slide": true,
+    "action": "join:IranCoJ",
+    "actionLabel": "Join IranCoJ"
+  }
+]

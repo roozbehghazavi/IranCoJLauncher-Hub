@@ -250,6 +250,14 @@ def build_legacy_manifest():
     return manifest
 
 
+def load_optional_json(path):
+    """edition.json / news.json: copied into the catalog as they are (validated as JSON)."""
+    if not os.path.isfile(path):
+        return None
+    with open(path, encoding="utf-8-sig") as f:
+        return json.load(f)
+
+
 def write_json(path, data):
     with open(path, "w", encoding="utf-8", newline="\n") as f:
         json.dump(data, f, indent=2, ensure_ascii=False)
@@ -261,5 +269,11 @@ if __name__ == "__main__":
     catalog = {"schema": CATALOG_SCHEMA,
                "maps": catalog_maps(sync_maps_to_release()),
                "mods": build_mods()}
+    edition = load_optional_json("edition.json")
+    if edition:
+        catalog["edition"] = {"version": edition["version"], "exclude": edition["exclude"]}
+    news = load_optional_json("news.json")
+    if news:
+        catalog["news"] = news
     write_json("catalog.json", catalog)
     write_json("manifest.json", build_legacy_manifest())
