@@ -1,6 +1,6 @@
 {
-  "version": "0.2.1",
-  "notes": "E1b, modelled on Golden Mod MP 1.0: every map is also inside Data0/1/2.pak, so the .rpack load caches are left out except the four common ones. Single-player music and menu videos are left out; MenuBackgroundFilms.scr is rewritten so every menu slot plays MenuMovie_0. Test every multiplayer map after changing this list.",
+  "version": "0.3.0",
+  "notes": "E1b, modelled on Golden Mod MP 1.0: every map is also inside Data0/1/2.pak, so the .rpack load caches are left out except the four common ones. Single-player music and menu videos are left out; MenuBackgroundFilms.scr is rewritten so every menu slot plays MenuMovie_0. Test every multiplayer map after changing this list. E3: MenuMain.xui is rewritten from the player's Data0.pak to hide Single player and Extra content; with menu_main.rpack left out the game reads the loose .xui.",
   "exclude": [
     "DirectX/**",
     "Redist/**",
@@ -42,6 +42,69 @@
         [
           "MenuMovie_[1-9]",
           "MenuMovie_0"
+        ]
+      ]
+    },
+    {
+      "path": "CoJ2/Data/Menu/scr/MenuMain.xui",
+      "pak": "CoJ2/Data0.pak",
+      "entry": "Data/Menu/scr/MenuMain.xui",
+      "replace": [
+        [
+          "(<Id>B_Singleplayer</Id>(?:(?!</Properties>)[\\s\\S])*?</Position>)",
+          "$1\r\n<Show>false</Show>"
+        ],
+        [
+          "(<Id>B_Singleplayer</Id>(?:(?!</Properties>)[\\s\\S])*?</Visual>)",
+          "$1\r\n<Enabled>false</Enabled>"
+        ],
+        [
+          "(<Id>B_ExtraContent</Id>(?:(?!</Properties>)[\\s\\S])*?</Position>)",
+          "$1\r\n<Show>false</Show>"
+        ],
+        [
+          "(<Id>B_ExtraContent</Id>(?:(?!</Properties>)[\\s\\S])*?</Visual>)",
+          "$1\r\n<Enabled>false</Enabled>"
+        ],
+        [
+          "<NavUp>B_Singleplayer</NavUp>",
+          "<NavUp>B_Quit</NavUp>"
+        ],
+        [
+          "<NavTabBackward>B_Singleplayer</NavTabBackward>",
+          "<NavTabBackward>B_Quit</NavTabBackward>"
+        ],
+        [
+          "<NavDown>B_Test</NavDown>",
+          "<NavDown>B_Multiplayer</NavDown>"
+        ],
+        [
+          "<NavTabForward>B_Test</NavTabForward>",
+          "<NavTabForward>B_Multiplayer</NavTabForward>"
+        ],
+        [
+          "<NavDown>B_ExtraContent</NavDown>",
+          "<NavDown>B_SelectProfile</NavDown>"
+        ],
+        [
+          "<NavTabForward>B_ExtraContent</NavTabForward>",
+          "<NavTabForward>B_SelectProfile</NavTabForward>"
+        ],
+        [
+          "<NavUp>B_ExtraContent</NavUp>",
+          "<NavUp>B_Credits</NavUp>"
+        ],
+        [
+          "<NavTabBackward>B_ExtraContent</NavTabBackward>",
+          "<NavTabBackward>B_Credits</NavTabBackward>"
+        ],
+        [
+          "80\\.000008,556\\.000000",
+          "80.000008,514.000000"
+        ],
+        [
+          "80\\.000000,622\\.000000",
+          "80.000000,580.000000"
         ]
       ]
     }
