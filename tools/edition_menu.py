@@ -442,6 +442,9 @@ for element_id, (x, y, w, h) in {"H_UpgradeInfoLabel": (8, 424, 220, 60), "B_Upg
 t = in_group(t, "G_ClassSelect", lambda g: set_prop(set_prop(g, "Background", "Width", "320.000000"), "L_ClassList", "Width", "306.000000"))
 t = set_prop(t, "T_UpgradeInfoCost", "TextStyle", "4624")  # right
 t = set_prop(t, "B_Spawn", "Visual", "ButtonIrnPrimary")
+# The buttons are two rows (Cancel over Quit Game, Change Team over Spawn): lower the group so both sit in the
+# bottom bar (616..720) - the top row stuck out above it.
+t = set_prop(t, "G_Buttons", "Position", "0.000000,520.000000,0.000000")
 
 
 def baseline(t, pairs):

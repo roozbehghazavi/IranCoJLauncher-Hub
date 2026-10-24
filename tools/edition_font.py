@@ -25,10 +25,14 @@ from PIL import Image, ImageDraw, ImageFont
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from edition_menu_art import write_dds  # noqa: E402
 
-FONTS = {  # game font -> Oswald weight
-    "Clarendon Condensed_32": 500,
-    "Typodermic_24": 500,
-    "Typodermic_36": 500,
+# Space between glyphs: the game samples a little past each glyph box when it scales text, so neighbours
+# packed tight bleed in - the row below showed as a faint "reflection" under the text.
+GAP_X, GAP_Y = 3, 6
+
+FONTS = {  # game font -> Oswald weight, horizontal gap
+    "Clarendon Condensed_32": (500, GAP_X),
+    "Typodermic_24": (500, GAP_X),
+    "Typodermic_36": (500, 1),  # big digits in a 256x128 atlas: tight sideways, the rows still apart
 }
 
 
@@ -98,7 +102,7 @@ ARROWS = {"[ArrowLeftRight]": ["left", "right"], "[ArrowUpDown]": ["up", "down"]
           "[ArrowUp]": ["up"], "[ArrowLeft]": ["left"], "[ArrowRight]": ["right"]}
 
 
-def build(coj2, ttf, out, name, weight):
+def build(coj2, ttf, out, name, weight, gap_x):
     fm = game_file(coj2, f"Panel/{name}.fm").decode("latin1")
     original = Image.open(io.BytesIO(game_file(coj2, f"Panel/{name}.dds"))).convert("RGBA")
     map_w, map_h, cell, chars, specials = metrics(fm)
@@ -120,12 +124,12 @@ def build(coj2, ttf, out, name, weight):
             continue
         width = max(1, round(font.getlength(ch))) + 2
         if x + width > map_w:
-            x, y = 0, y + cell + 1
+            x, y = 0, y + cell + GAP_Y
             if y + cell > reserved:
                 raise SystemExit(f"{name}: atlas full")
         draw.text((x + 1, y + baseline), ch, font=font, anchor="ls", fill=(255, 255, 255, 255))
         lines.append(f"Char({code}, {width}, {x}, {y}, {x + width}, {y + cell})")
-        x += width + 1
+        x += width + gap_x
 
     if specials:
         lines.append("")
@@ -143,5 +147,5 @@ def build(coj2, ttf, out, name, weight):
 
 if __name__ == "__main__":
     coj2, ttf, out = sys.argv[1:4]
-    for name, weight in FONTS.items():
-        build(coj2, ttf, out, name, weight)
+    for name, (weight, gap_x) in FONTS.items():
+        build(coj2, ttf, out, name, weight, gap_x)
