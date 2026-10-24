@@ -188,12 +188,41 @@
       "entry": "Data/Menu/Hud/HUD_Net.xui",
       "replace": [
         [
-          "<Properties>\\r?\\n<Id>I_Screenshot</Id>",
-          "<Properties>\r\n<Id>I_Screenshot</Id>\r\n<Show>false</Show>"
-        ],
-        [
           "<Material>menu_bckg_screenshot_alpha\\.mat</Material>\\r?\\n</Properties>\\r?\\n</MyImage>\\r?\\n",
-          "<Material>menu_bckg_screenshot_alpha.mat</Material>\r\n</Properties>\r\n</MyImage>\r\n<MyImage>\r\n<Properties>\r\n<Id>I_IrnTopBar</Id>\r\n<Width>1280.000000</Width>\r\n<Height>100.000000</Height>\r\n<ImagePath>irn_bar_top</ImagePath>\r\n</Properties>\r\n</MyImage>\r\n<MyImage>\r\n<Properties>\r\n<Id>I_IrnBottomBar</Id>\r\n<Width>1280.000000</Width>\r\n<Height>104.000000</Height>\r\n<Position>0.000000,616.000000,0.000000</Position>\r\n<ImagePath>irn_bar_bottom</ImagePath>\r\n</Properties>\r\n</MyImage>\r\n"
+          "<Material>irancoj_blur.mat</Material>\r\n</Properties>\r\n</MyImage>\r\n<MyImage>\r\n<Properties>\r\n<Id>I_IrnTopBar</Id>\r\n<Width>1280.000000</Width>\r\n<Height>100.000000</Height>\r\n<ImagePath>irn_bar_top</ImagePath>\r\n</Properties>\r\n</MyImage>\r\n<MyImage>\r\n<Properties>\r\n<Id>I_IrnBottomBar</Id>\r\n<Width>1280.000000</Width>\r\n<Height>104.000000</Height>\r\n<Position>0.000000,616.000000,0.000000</Position>\r\n<ImagePath>irn_bar_bottom</ImagePath>\r\n</Properties>\r\n</MyImage>\r\n"
+        ]
+      ]
+    },
+    {
+      "path": "CoJ2/Data/Menu/Mat/irancoj_blur.mat",
+      "pak": "CoJ2/Data0.pak",
+      "entry": "Data/Menu/Mat/menu_bckg_screenshot_alpha.mat",
+      "replace": [
+        [
+          "menu_bckg_screenshot\\.mtt",
+          "irancoj_blur.mtt"
+        ]
+      ]
+    },
+    {
+      "path": "CoJ2/Data/Menu/Mat/irancoj_blur.mtt",
+      "pak": "CoJ2/Data0.pak",
+      "entry": "Data/Menu/Mat/menu_bckg_screenshot.mtt",
+      "replace": [
+        [
+          "#include <menu_bckg_screenshot_ps\\.hlsl>",
+          "#include <irancoj_blur_ps.hlsl>"
+        ]
+      ]
+    },
+    {
+      "path": "CoJ2/Data/Menu/Mat/irancoj_blur_ps.hlsl",
+      "pak": "CoJ2/Data0.pak",
+      "entry": "Data/Menu/Mat/menu_bckg_screenshot_ps.hlsl",
+      "replace": [
+        [
+          "void main\\(PIX_PARAMS\\)[\\s\\S]*\\z",
+          "void main(PIX_PARAMS)\r\n{\r\n    // IranCoJ Edition: the snapshot behind in-game menus, blurred and darkened (it was sepia paper).\r\n    FLOAT2 uv = V_UV_0_TC.xy;\r\n    FLOAT4 sum = 0;\r\n    for (int x = -3; x <= 3; x++)\r\n        for (int y = -3; y <= 3; y++)\r\n            sum += Sample(s_screen, uv + FLOAT2(x * 0.0035, y * 0.0062));\r\n    FLOAT3 c = sum.rgb / 49.0;\r\n    c = lerp(Luminance_Equal(c).xxx, c, 0.8) * 0.6;\r\n    OUT.v_clr = FLOAT4(c, 1.0);\r\n\r\n    #if defined(ALPHA_BLEND_ON)\r\n        OUT.v_clr.a = CONST_0.w;\r\n    #endif\r\n}\r\n"
         ]
       ]
     }

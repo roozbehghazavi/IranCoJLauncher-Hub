@@ -452,6 +452,10 @@ def baseline(t, pairs):
 
 
 t = baseline(t, [(("T_MapName", "T_ModeName", "T_Timer"), (34, 50)), (("T_Wallet", "T_CashText", "T_TeamName"), (-67, 50))])
+
+# Spectate (Spectate mod's bar in the same screen) keeps its places - spectate.dll hit-tests those buttons at
+# fixed rects (y=676), which is inside the bottom bar anyway; it gets the class screen's buttons and text.
+t = set_prop(t, "T_SpecName", "TextColor", PARCHMENT)
 write("MenuNetSelectClass.xui", t)
 
 t = written["MenuNetResults_PC.xui"]
