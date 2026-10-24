@@ -214,8 +214,21 @@ def build_mods():
                  "description": mod.get("description", ""), "package": package_entry(asset)}
         for field in MOD_FIELDS:
             entry[field] = mod.get(field, [])
-        # Per-platform overrides of any field above, e.g. a Windows-only installer.
-        platforms = {p: mod[p] for p in ("windows", "linux") if p in mod}
+        if "installer" in mod:
+            entry["installer"] = mod["installer"]
+
+        # Per-platform overrides of any field above, e.g. a Windows-only installer package.
+        platforms = {}
+        for p in ("windows", "linux"):
+            if p not in mod:
+                continue
+            override = dict(mod[p])
+            if isinstance(override.get("package"), str):
+                asset = assets.get(override["package"])
+                if not asset or not asset_sha256(asset):
+                    sys.exit(f"mod {mod['id']}: {p} package {override['package']} is not in the '{MODS_RELEASE}' release")
+                override["package"] = package_entry(asset)
+            platforms[p] = override
         if platforms:
             entry["platforms"] = platforms
         mods.append(entry)

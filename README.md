@@ -68,5 +68,5 @@ Launcher v2.0.1 reads `MapsNet/`, `manifest.json` and the top-level mod folders 
 as they are for now. Once most players are on v3:
 
 1. Delete `MapsNet/` and `manifest.json`. All maps are already in the `maps` release.
-2. Move the mod folders into `mods/` and give each a `mod.json` (install type, e.g. copy or installer).
+2. Move each mod folder to `mods/<Id>/` and point its manifest's `folder` there.
 3. Launcher and IranCoJ Edition builds are published as releases here (`launcher-v*`, `edition-v*`).
