@@ -501,5 +501,100 @@
       ],
       "disable": []
     }
+  ],
+  "edition": {
+    "version": "0.1.0",
+    "exclude": [
+      "DirectX/**",
+      "Redist/**",
+      "unins*",
+      "goggame-*",
+      "gog.ico",
+      "support.ico",
+      "webcache.zip",
+      "**/*.lnk",
+      "CoJ2/Out/**",
+      "CoJ2/Data/ArizonaExploration.rpack",
+      "CoJ2/Data/Battle.rpack",
+      "CoJ2/Data/Dungeons.rpack",
+      "CoJ2/Data/GhostTown.rpack",
+      "CoJ2/Data/IntroDungeons.rpack",
+      "CoJ2/Data/IntroVillageDefend.rpack",
+      "CoJ2/Data/Juarez.rpack",
+      "CoJ2/Data/Medallion.rpack",
+      "CoJ2/Data/MexicoExploration.rpack",
+      "CoJ2/Data/MinersMassacre.rpack",
+      "CoJ2/Data/MinersShooting.rpack",
+      "CoJ2/Data/MurderInUtah.rpack",
+      "CoJ2/Data/PrisonBreak.rpack",
+      "CoJ2/Data/RebelHideout.rpack",
+      "CoJ2/Data/VillaAttack.rpack",
+      "CoJ2/Data/VillageDefend.rpack",
+      "CoJ2/Data/WeaponsTransport.rpack",
+      "CoJ2/Data/arizonaexploration_loading.rpack",
+      "CoJ2/Data/battle_loading.rpack",
+      "CoJ2/Data/dungeons_loading.rpack",
+      "CoJ2/Data/ghosttown_loading.rpack",
+      "CoJ2/Data/juarez_loading.rpack",
+      "CoJ2/Data/medallion_loading.rpack",
+      "CoJ2/Data/mexicoexploration_loading.rpack",
+      "CoJ2/Data/minersmassacre_loading.rpack",
+      "CoJ2/Data/minersshooting_loading.rpack",
+      "CoJ2/Data/murderinutah_loading.rpack",
+      "CoJ2/Data/prisonbreak_loading.rpack",
+      "CoJ2/Data/rebelhideout_loading.rpack",
+      "CoJ2/Data/villaattack_loading.rpack",
+      "CoJ2/Data/villagedefend_loading.rpack",
+      "CoJ2/Data/weaponstransport_loading.rpack"
+    ]
+  },
+  "news": [
+    {
+      "id": "edition",
+      "tag": "IRANCOJ EDITION",
+      "title": "Bound in Blood\nMultiplayer",
+      "text": "A separate multiplayer copy of your game with every IranCoJ map and mod. Your original game stays untouched.",
+      "slide": true,
+      "action": "settings",
+      "actionLabel": "Set up the Edition"
+    },
+    {
+      "id": "lincoln-town",
+      "tag": "NEW MAP",
+      "title": "Lincoln Town",
+      "text": "The biggest map in the pack so far. It downloads with your next map update.",
+      "date": "2026-10-24",
+      "slide": true,
+      "action": "maps",
+      "actionLabel": "View in Maps"
+    },
+    {
+      "id": "new-classes",
+      "tag": "MOD",
+      "title": "New Classes",
+      "text": "Play as the Rancher with the Border Gun or the Redneck with the musket, with upgrades and the IranCoJ Skin Pack.",
+      "date": "2026-10-24",
+      "slide": true,
+      "action": "mods",
+      "actionLabel": "Install mod"
+    },
+    {
+      "id": "spectate-108",
+      "tag": "MOD UPDATE",
+      "title": "Spectate Mod 1.0.8",
+      "text": "The spectate menu button now has its own place in the menu.",
+      "date": "2026-10-24",
+      "action": "mods",
+      "actionLabel": "Update"
+    },
+    {
+      "id": "irancoj-server",
+      "tag": "SERVER",
+      "title": "Showdown on IranCoJ",
+      "text": "Join the IranCoJ server straight from the launcher, no menus needed.",
+      "slide": true,
+      "action": "join:IranCoJ",
+      "actionLabel": "Join IranCoJ"
+    }
   ]
 }
