@@ -407,7 +407,8 @@
       "exclude": [],
       "loadDll": [],
       "shared": [],
-      "disable": []
+      "disable": [],
+      "optional": true
     },
     {
       "id": "NewClasses",
