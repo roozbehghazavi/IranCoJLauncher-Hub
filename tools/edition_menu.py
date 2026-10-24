@@ -22,12 +22,25 @@ mod_sources = sys.argv[3] if len(sys.argv) > 3 else None
 z = zipfile.ZipFile(pak)
 
 
+# Later paks override earlier ones (Data3.pak carries the PC patch's screens, e.g. the scoreboard).
+paks = []
+for n in (3, 2, 1, 0):
+    path = os.path.join(os.path.dirname(pak), f"Data{n}.pak")
+    if os.path.isfile(path):
+        archive = zipfile.ZipFile(path)
+        paks.append((archive, {e.lower(): e for e in archive.namelist()}))
+
+
 def read(name):
-    """A mod's version of the screen when there is one (New Classes' class screen), else the game's."""
+    """A mod's version of the screen when there is one (New Classes' class screen), else the game's newest."""
     if mod_sources and os.path.isfile(os.path.join(mod_sources, name)):
         with open(os.path.join(mod_sources, name), "rb") as f:
             return f.read().decode("latin1")
-    return z.read("Data/Menu/scr/" + name).decode("latin1")
+    for archive, entries in paks:
+        entry = entries.get(("data/menu/scr/" + name).lower())
+        if entry:
+            return archive.read(entry).decode("latin1")
+    raise SystemExit(f"{name} not found")
 
 
 def block(text, element_id):
@@ -238,7 +251,7 @@ MENU_SCREENS = """BackgroundLoading Curtain MenuCredits MenuLoading MenuOptionsC
     MenuOptionsControls MenuOptionsGame MenuOptionsVideo MenuMain MenuMplStatsLeaderboard MenuMultiplayer
     MenuOptions DashboardSignIn DashboardSelectProfile""".split()
 # In game: class selection, scoreboard, round end, pause menu and its dialogs.
-INGAME_SCREENS = """MenuNetSelectClass MenuNetResults MenuNetSummary MenuNetLevelFinished MenuNetObjectivesMap
+INGAME_SCREENS = """MenuNetSelectClass MenuNetResults MenuNetResults_PC MenuNetSummary MenuNetLevelFinished MenuNetObjectivesMap
     MenuInGame MenuIngameDialog MenuOptionsInGame MenuMpl MenuMplChat""".split()
 DARK_TEXT = {"0xff0f0f0f", "0xff070000", "0xff000000", "0xfe000000", "0xfd000000", "0xfb000000", "0xf2000000"}
 HEADER = "0xff4a3f31"  # the blue header brushes, in dark wood

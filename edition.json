@@ -171,6 +171,21 @@
           ""
         ]
       ]
+    },
+    {
+      "path": "CoJ2/Data/Menu/Mat/menu_bckg_screenshot_ps.hlsl",
+      "pak": "CoJ2/Data0.pak",
+      "entry": "Data/Menu/Mat/menu_bckg_screenshot_ps.hlsl",
+      "replace": [
+        [
+          "OUT\\.v_clr\\ =\\ lerp\\(step9,\\ step7,\\ 0\\.55\\);",
+          "OUT.v_clr = FLOAT4(lerp(Luminance_Equal(v_screen.rgb).xxx, v_screen.rgb, 0.6) * 0.35, 1.0); // IranCoJ: darkened game view, not sepia paper"
+        ],
+        [
+          "OUT\\.v_clr\\.rgb\\ =\\ saturate\\(lerp\\(f_luminance,\\ OUT\\.v_clr\\.rgb,\\ F_OUT_SATURATION\\)\\);",
+          ""
+        ]
+      ]
     }
   ]
 }
