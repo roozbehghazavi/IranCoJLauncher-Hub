@@ -1,0 +1,42 @@
+name: Build hub (maps release, catalog.json, manifest.json)
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch: # run by hand after uploading a map to the "maps" release
+
+permissions:
+  contents: write
+
+concurrency:
+  group: hub
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          lfs: true # TEMP: lets the first run copy lincoln_town.pak into the release; remove with LFS
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Sync maps and generate catalog.json + manifest.json
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: python tools/build_hub.py
+
+      - name: Commit generated files
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add catalog.json manifest.json
+          if git diff --cached --quiet; then
+            echo "Nothing changed"
+          else
+            git commit -m "ci: update catalog.json and manifest.json"
+            git push origin HEAD:main
+          fi
