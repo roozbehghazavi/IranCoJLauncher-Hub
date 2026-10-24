@@ -1,0 +1,28 @@
+!include( "varlist_pp_curves.scr" )
+!include( "varlist_pp_levels.scr" )
+!include( "varlist_pp_desaturate.scr" )
+!include( "varlist_pp_blur_radial.scr" )
+
+VarFloat( "f_deform_range", 0.1 )
+VarFloat( "f_clr_buffer_scale_encode", 8.0 )
+
+//VarFloat("fDOFdistance", 500)
+//VarFloat("fDOFNearDistance", 0.5)
+//VarFloat("fDOFFarDistance", 2.0)
+//VarFloat("fDOFNearOffset", 1.0)
+//VarFloat("fDOFFarOffset", 1.0)
+//VarFloat("fDOFpower", 0.0)
+//VarFloat("fBulletTime", 0.0)
+
+VarFloat("fMotionBlur_Power", 0.0)
+VarFloat("fPlayerBlur", 0.0)
+VarFloat("fPlayerDamage", 0.0)
+VarFloat("fPlayerBurning", 0.0)
+VarFloat("fPlayerUnderwater", 0.0)
+VarFloat("fPlayerScope_Power", 0.0)
+VarFloat("f_sun_rays_factor", 40.0)
+
+// Nightvision
+VarFloat( "i_nightvision_on", 0 )
+VarFloat( "f_nightvision_level_max", 1.0 )
+VarFloat( "f_pp_blur", 0.0 )

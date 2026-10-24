@@ -1,0 +1,7 @@
+{
+  "id": "NoDofMotionBlur",
+  "name": "No DOF & Motion Blur",
+  "description": "Turns off depth of field and motion blur for a sharper picture. From the R2P launcher's mod set.",
+  "folder": "NoDofMotionBlur",
+  "optional": true
+}

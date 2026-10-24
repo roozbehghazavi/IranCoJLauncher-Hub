@@ -51,14 +51,17 @@ def write_dds(image, path):
     print("wrote", path)
 
 
+HIGHLIGHT = (64, 55, 42)  # warm, lighter than the panels so a selected row reads on them too
+
+
 def band():
-    """256x64, sliced with 32 px corners: gold bar inside the left corner, smoke that fades out at the right."""
+    """256x64, sliced with 32 px corners: gold bar inside the left corner, a warm band that fades out at the right."""
     im = Image.new("RGBA", (256, 64))
     px = im.load()
     for x in range(256):
-        alpha = 205 if x < 224 else int(205 * (255 - x) / 32)
+        alpha = 225 if x < 224 else int(225 * (255 - x) / 32)
         for y in range(64):
-            px[x, y] = (GOLD + (255,)) if x < 4 else (SMOKE + (alpha,))
+            px[x, y] = (GOLD + (255,)) if x < 4 else (HIGHLIGHT + (alpha,))
     return im
 
 

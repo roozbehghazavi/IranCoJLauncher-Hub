@@ -2,11 +2,14 @@
 
 Reads the original .xui files from a player's Data0.pak and writes edited copies into a scratch Edition's
 CoJ2/Data/Menu/scr. Compile them there: debugconf.scr with ForceUiFromXML() + SaveUiPacks("PC"), start the
-game, quit with the menu's Quit button. Then ship only MenuCommon_Scr_PC.binui (rewritten in place) and
-MenuMain_Scr/Skn_PC.binui (written to Documents) - never the other packs the compile rewrites.
-Test in a real Edition, in normal mode (hosting crashes in compile mode).
+game, quit with the menu's Quit button, then ship the compiled packs and test in a real Edition, in normal
+mode (hosting crashes in compile mode).
 
-    python tools/edition_menu.py "<game>/CoJ2/Data0.pak" "<scratch edition>/CoJ2/Data/Menu/scr"
+The class screen (MenuNetSelectClass.xui) is New Classes' version, which also carries Spectate's button:
+pass the folder holding it (IranCoJMods_Sc NewClasses_mod/data/client/CoJ2/Data/Menu/scr, or an Edition's
+CoJ2/Data/Menu/scr). In-game packs compiled from the game's own class screen lose those, and crash.
+
+    python tools/edition_menu.py "<game>/CoJ2/Data0.pak" "<scratch edition>/CoJ2/Data/Menu/scr" "<mods' scr folder>"
 """
 
 import os
@@ -15,8 +18,16 @@ import sys
 import zipfile
 
 pak, out = sys.argv[1], sys.argv[2]
+mod_sources = sys.argv[3] if len(sys.argv) > 3 else None
 z = zipfile.ZipFile(pak)
-read = lambda name: z.read("Data/Menu/scr/" + name).decode("latin1")
+
+
+def read(name):
+    """A mod's version of the screen when there is one (New Classes' class screen), else the game's."""
+    if mod_sources and os.path.isfile(os.path.join(mod_sources, name)):
+        with open(os.path.join(mod_sources, name), "rb") as f:
+            return f.read().decode("latin1")
+    return z.read("Data/Menu/scr/" + name).decode("latin1")
 
 
 def block(text, element_id):
@@ -225,7 +236,10 @@ MENU_SCREENS = """BackgroundLoading Curtain MenuCredits MenuLoading MenuOptionsC
     DashboardYesNoDialog DashboardPasswordDialog DashboardProgressDialog MenuLan MenuMplCustomMatch
     MenuMultiplayerChooseMaps MenuMultiplayerCreateGame MenuMultiplayerJoin MenuGamma MenuOptionsAudio
     MenuOptionsControls MenuOptionsGame MenuOptionsVideo MenuMain MenuMplStatsLeaderboard MenuMultiplayer
-    MenuOptions""".split()
+    MenuOptions DashboardSignIn DashboardSelectProfile""".split()
+# In game: class selection, scoreboard, round end, pause menu and its dialogs.
+INGAME_SCREENS = """MenuNetSelectClass MenuNetResults MenuNetSummary MenuNetLevelFinished MenuNetObjectivesMap
+    MenuInGame MenuIngameDialog MenuOptionsInGame MenuMpl MenuMplChat""".split()
 DARK_TEXT = {"0xff0f0f0f", "0xff070000", "0xff000000", "0xfe000000", "0xfd000000", "0xfb000000", "0xf2000000"}
 HEADER = "0xff4a3f31"  # the blue header brushes, in dark wood
 BRUSH = {"0xffc38428": "0xff2e2a24", "0xff579446": "0xff7a6038", "0xff3ded0b": GOLD, "0xffd5f75a": GOLD,
@@ -311,12 +325,12 @@ def recolor(text):
 
 t = written["CoJ2MenuSkin.xui"]
 for m in reversed(list(re.finditer(r"<XuiVisual>\r?\n<Properties>\r?\n<Id>(.*?)</Id>.*?</XuiVisual>\r?\n", t, re.S))):
-    if m.group(1) in ("ButtonV", "ButtonIrn") or "ingame" in m.group(1).lower():
+    if m.group(1) in ("ButtonV", "ButtonIrn"):
         continue
     t = t[:m.start()] + recolor(m.group(0)) + t[m.end():]
 write("CoJ2MenuSkin.xui", t)
 
-for screen in MENU_SCREENS:
+for screen in MENU_SCREENS + INGAME_SCREENS:
     name = screen + ".xui"
     write(name, recolor(written.get(name) or read(name)))
 
@@ -328,3 +342,13 @@ for gun in ("I_Gun_1", "I_Gun_2"):
     t = set_prop(t, gun, "Show", "false")
     t = set_prop(t, gun, "Opacity", "0.000000")
 write("DashboardBackground.xui", t)
+
+# ---------- profile list (shown first): the four buttons in a grid lined up with the list panel ----------
+t = written["DashboardSignIn.xui"]
+grid = {"B_DeleteProfile": (24, 478), "B_Back": (24, 526), "B_CreateProfile": (354, 478), "B_SignIn": (354, 526)}
+for button, (x, y) in grid.items():
+    t = set_prop(t, button, "Position", f"{x}.000000,{y}.000000,0.000000")
+    t = set_prop(t, button, "AutoAdjustWidth", "false")
+    t = set_prop(t, button, "Width", "320.000000")
+    t = set_prop(t, button, "Height", "42.000000")
+write("DashboardSignIn.xui", t)

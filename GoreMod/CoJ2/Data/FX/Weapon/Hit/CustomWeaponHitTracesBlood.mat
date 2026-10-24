@@ -1,0 +1,6 @@
+import "trace.mtt"
+
+sub material()
+{
+	use mtt(s_clr = "CustomBloodTraces8.dds"/*, s_nrm = "CustomBloodTraces8_nrm.dds"*/);
+}

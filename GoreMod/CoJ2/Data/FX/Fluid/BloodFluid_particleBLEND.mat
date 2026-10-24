@@ -1,0 +1,10 @@
+import "fx.mtt"
+
+sub material()
+{
+    use mtt_fx(
+        e_blend_mode = e_bm_lerp_pm,
+        s_clr = "BloodFluid.dds",
+        f_depth_blend_distance = 25.0
+    );
+}

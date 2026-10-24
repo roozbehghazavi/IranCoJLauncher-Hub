@@ -1,0 +1,9 @@
+import "fx.mtt"
+
+sub material()
+{
+    use mtt_fx(
+        e_blend_mode = e_bm_mul,
+        s_clr = "BloodTrail.dds"
+    );
+}

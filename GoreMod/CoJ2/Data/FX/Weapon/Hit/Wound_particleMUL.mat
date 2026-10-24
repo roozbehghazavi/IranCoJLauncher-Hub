@@ -1,0 +1,26 @@
+import "fx.mtt"
+
+sub material()
+{
+    use mtt_fx(
+        e_blend_mode = e_bm_mul,
+        s_clr = "Wound.dds",
+        e_type = e_type_fx_ws
+    );
+}
+/*
+import "FX_Default.mtt"
+
+sub material()
+{
+	use MaterialTemplate_Default(
+	    AlphaTest_Channel = FX_Blue,
+	    fAlphaTest_Value = 0.0,
+        BlendMode = FX_Mul,
+        _COLOR = TEX0_Color,
+        RenderOrder = oFXMul,
+		TEX0 = "Wound.dds",
+		bWorldSpace = TRUE
+	);
+}
+*/

@@ -1,0 +1,19 @@
+!include("FXSurface.def")
+
+SRF_UNKNOWN( "BulletBloodTraceGround" )
+SRF_WATER( "BulletBloodTraceWater" )
+SRF_GRASS( "BulletBloodTraceGround" )
+SRF_GROUND( "BulletBloodTraceGround" )
+SRF_MUD( "BulletBloodTraceGround" )
+SRF_GRAVEL( "BulletBloodTraceGround" )
+SRF_FLESH( "BulletBloodTraceFlesh" )
+SRF_WOOD( "BulletBloodTraceWood" )
+// SRF_GLASS( "BulletBloodTraceGround" )
+SRF_METAL( "BulletBloodTraceMetal" )
+SRF_STONE( "BulletBloodTraceStone" )
+
+
+
+
+
+
