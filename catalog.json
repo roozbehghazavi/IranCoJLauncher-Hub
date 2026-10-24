@@ -1,5 +1,5 @@
 {
-  "schema": 1,
+  "schema": 2,
   "maps": [
     {
       "file": "apache_village.pak",
@@ -395,415 +395,85 @@
   "mods": [
     {
       "id": "GunSoundMod",
+      "name": "Gun Sound Mod",
       "version": "1.0.0",
-      "type": "copy",
-      "baseUrl": "https://raw.githubusercontent.com/roozbehghazavi/IranCoJLauncher-Hub/main/GunSoundMod/",
-      "files": [
-        {
-          "path": "CoJ2/Data/Sounds/weapon/Cogswell/Cogswell_Left_01.wav",
-          "size": 364520,
-          "sha256": "7e5e23b92ddc0e3e25373b37dde8752138602688833e7b7ac291e84e21db08c7"
-        },
-        {
-          "path": "CoJ2/Data/Sounds/weapon/Cogswell/Cogswell_Left_02.wav",
-          "size": 316692,
-          "sha256": "33f9017938c3d8ea0aca58b77f2ba740c4b69c632ebc5e1ec60180015cc6b138"
-        },
-        {
-          "path": "CoJ2/Data/Sounds/weapon/Cogswell/Cogswell_Left_03.wav",
-          "size": 316692,
-          "sha256": "33f9017938c3d8ea0aca58b77f2ba740c4b69c632ebc5e1ec60180015cc6b138"
-        },
-        {
-          "path": "CoJ2/Data/Sounds/weapon/Cogswell/Cogswell_Right_01.wav",
-          "size": 316692,
-          "sha256": "33f9017938c3d8ea0aca58b77f2ba740c4b69c632ebc5e1ec60180015cc6b138"
-        },
-        {
-          "path": "CoJ2/Data/Sounds/weapon/Cogswell/Cogswell_Right_02.wav",
-          "size": 316692,
-          "sha256": "33f9017938c3d8ea0aca58b77f2ba740c4b69c632ebc5e1ec60180015cc6b138"
-        },
-        {
-          "path": "CoJ2/Data/Sounds/weapon/Cogswell/Cogswell_Right_03.wav",
-          "size": 364520,
-          "sha256": "7e5e23b92ddc0e3e25373b37dde8752138602688833e7b7ac291e84e21db08c7"
-        },
-        {
-          "path": "CoJ2/Data/Sounds/weapon/cyk_cyk.wav",
-          "size": 3488,
-          "sha256": "b61c8f09a07fa1cb9d9c7d487095d93a247ceb6f7bcc842fa2234d0f33bff491"
-        },
-        {
-          "path": "CoJ2/Data/Sounds/weapon/dynamite_explosion.wav",
-          "size": 360508,
-          "sha256": "0997eb2c449a653e21d843995ccaf2f10d6da36ecd74ed61cd5e17ca47cb030d"
-        },
-        {
-          "path": "CoJ2/Data/Sounds/weapon/energy_down.wav",
-          "size": 3488,
-          "sha256": "b61c8f09a07fa1cb9d9c7d487095d93a247ceb6f7bcc842fa2234d0f33bff491"
-        },
-        {
-          "path": "CoJ2/Data/Sounds/weapon/Lemant/Lemant_Left_01.wav",
-          "size": 572260,
-          "sha256": "ac834263dd10feb74153a006e4adf19ef8dfe2f091f1f1a2428eeaa2abefd391"
-        },
-        {
-          "path": "CoJ2/Data/Sounds/weapon/Lemant/Lemant_Left_02.wav",
-          "size": 511756,
-          "sha256": "b0313ada84190b9f582ee4ba8525dee947313ced17d3906d0fefe4dfbebaf25d"
-        },
-        {
-          "path": "CoJ2/Data/Sounds/weapon/Lemant/Lemant_Left_03.wav",
-          "size": 572260,
-          "sha256": "a2c7cc489f158619442acb73e580631c24239ae71493ce0f03978158fa0c917c"
-        },
-        {
-          "path": "CoJ2/Data/Sounds/weapon/Lemant/Lemant_Right_01.wav",
-          "size": 511756,
-          "sha256": "1c426c7e0cdbe8a0ae7fd7eefefb25d9fde2c6d004a6475e212ff66607def3ab"
-        },
-        {
-          "path": "CoJ2/Data/Sounds/weapon/Lemant/Lemant_Right_02.wav",
-          "size": 572260,
-          "sha256": "8b16259e29f1392a92be59c09cf1ab35d876884820038fc1349fd2f17ff8c9b2"
-        },
-        {
-          "path": "CoJ2/Data/Sounds/weapon/Lemant/Lemant_Right_03.wav",
-          "size": 511756,
-          "sha256": "9e11f6aa33b1b871232868f2dd2b835998dad36304b1e5e477fb9da73f77da22"
-        },
-        {
-          "path": "CoJ2/Data/Sounds/weapon/Peacemaker/Peacemaker_Left_01.wav",
-          "size": 466424,
-          "sha256": "8a0e8ad9a569c7b72634abfc038c3ba40ef83013d4a7e003973c0fb4b48ee380"
-        },
-        {
-          "path": "CoJ2/Data/Sounds/weapon/Peacemaker/Peacemaker_Left_02.wav",
-          "size": 466424,
-          "sha256": "a8a1b71e33f5f5a8ebab203b5a62345da36a21e56ca6464ce7db1739d7694256"
-        },
-        {
-          "path": "CoJ2/Data/Sounds/weapon/Peacemaker/Peacemaker_Left_03.wav",
-          "size": 466424,
-          "sha256": "a8a1b71e33f5f5a8ebab203b5a62345da36a21e56ca6464ce7db1739d7694256"
-        },
-        {
-          "path": "CoJ2/Data/Sounds/weapon/Peacemaker/Peacemaker_Right_01.wav",
-          "size": 466424,
-          "sha256": "8a0e8ad9a569c7b72634abfc038c3ba40ef83013d4a7e003973c0fb4b48ee380"
-        },
-        {
-          "path": "CoJ2/Data/Sounds/weapon/Peacemaker/Peacemaker_Right_02.wav",
-          "size": 466424,
-          "sha256": "a8a1b71e33f5f5a8ebab203b5a62345da36a21e56ca6464ce7db1739d7694256"
-        },
-        {
-          "path": "CoJ2/Data/Sounds/weapon/Peacemaker/Peacemaker_Right_03.wav",
-          "size": 466424,
-          "sha256": "8a0e8ad9a569c7b72634abfc038c3ba40ef83013d4a7e003973c0fb4b48ee380"
-        },
-        {
-          "path": "CoJ2/Data/Sounds/weapon/Remington/Remington_Right_01.wav",
-          "size": 415900,
-          "sha256": "5d81d74adb0698c3af097e9c673b1dd32bc0074e517e4754eb8c1195417e8765"
-        },
-        {
-          "path": "CoJ2/Data/Sounds/weapon/Remington/Remington_Right_02.wav",
-          "size": 415900,
-          "sha256": "5d81d74adb0698c3af097e9c673b1dd32bc0074e517e4754eb8c1195417e8765"
-        },
-        {
-          "path": "CoJ2/Data/Sounds/weapon/Remington/Remington_Right_03.wav",
-          "size": 415900,
-          "sha256": "5d81d74adb0698c3af097e9c673b1dd32bc0074e517e4754eb8c1195417e8765"
-        },
-        {
-          "path": "CoJ2/Data/Sounds/weapon/Remington/Remington_Right_04.wav",
-          "size": 415900,
-          "sha256": "5d81d74adb0698c3af097e9c673b1dd32bc0074e517e4754eb8c1195417e8765"
-        },
-        {
-          "path": "CoJ2/Data/Sounds/weapon/RemingtonSawOff/RemingtonSawOff_Left_01.wav",
-          "size": 426188,
-          "sha256": "e3e8dc36de7dead9a40f48fc13eca63a5094d016cb046635118f7c156b48f18a"
-        },
-        {
-          "path": "CoJ2/Data/Sounds/weapon/RemingtonSawOff/RemingtonSawOff_Left_02.wav",
-          "size": 426188,
-          "sha256": "e3e8dc36de7dead9a40f48fc13eca63a5094d016cb046635118f7c156b48f18a"
-        },
-        {
-          "path": "CoJ2/Data/Sounds/weapon/RemingtonSawOff/RemingtonSawOff_Right_01.wav",
-          "size": 426188,
-          "sha256": "e3e8dc36de7dead9a40f48fc13eca63a5094d016cb046635118f7c156b48f18a"
-        },
-        {
-          "path": "CoJ2/Data/Sounds/weapon/RemingtonSawOff/RemingtonSawOff_Right_02.wav",
-          "size": 426188,
-          "sha256": "e3e8dc36de7dead9a40f48fc13eca63a5094d016cb046635118f7c156b48f18a"
-        },
-        {
-          "path": "CoJ2/Data/Sounds/weapon/Schofield/Schofield_Left_01.wav",
-          "size": 371824,
-          "sha256": "564ae4f37da174fe6182a71c362536bd5027b694b4a37037840ccbd36ad645a2"
-        },
-        {
-          "path": "CoJ2/Data/Sounds/weapon/Schofield/Schofield_Left_02.wav",
-          "size": 401924,
-          "sha256": "216b7f6d7f61f08e44e20166bdb7923ede1f17640a5fefe6bae69261ea2eb2c3"
-        },
-        {
-          "path": "CoJ2/Data/Sounds/weapon/Schofield/Schofield_Left_03.wav",
-          "size": 371824,
-          "sha256": "564ae4f37da174fe6182a71c362536bd5027b694b4a37037840ccbd36ad645a2"
-        },
-        {
-          "path": "CoJ2/Data/Sounds/weapon/Schofield/Schofield_Right_01.wav",
-          "size": 371824,
-          "sha256": "564ae4f37da174fe6182a71c362536bd5027b694b4a37037840ccbd36ad645a2"
-        },
-        {
-          "path": "CoJ2/Data/Sounds/weapon/Schofield/Schofield_Right_02.wav",
-          "size": 401924,
-          "sha256": "216b7f6d7f61f08e44e20166bdb7923ede1f17640a5fefe6bae69261ea2eb2c3"
-        },
-        {
-          "path": "CoJ2/Data/Sounds/weapon/Schofield/Schofield_Right_03.wav",
-          "size": 371824,
-          "sha256": "564ae4f37da174fe6182a71c362536bd5027b694b4a37037840ccbd36ad645a2"
-        },
-        {
-          "path": "CoJ2/Data/Sounds/weapon/Volcanic/Volcanic_Left_01.wav",
-          "size": 511756,
-          "sha256": "1c426c7e0cdbe8a0ae7fd7eefefb25d9fde2c6d004a6475e212ff66607def3ab"
-        },
-        {
-          "path": "CoJ2/Data/Sounds/weapon/Volcanic/Volcanic_Left_02.wav",
-          "size": 511756,
-          "sha256": "1c426c7e0cdbe8a0ae7fd7eefefb25d9fde2c6d004a6475e212ff66607def3ab"
-        },
-        {
-          "path": "CoJ2/Data/Sounds/weapon/Volcanic/Volcanic_Left_03.wav",
-          "size": 511756,
-          "sha256": "1c426c7e0cdbe8a0ae7fd7eefefb25d9fde2c6d004a6475e212ff66607def3ab"
-        },
-        {
-          "path": "CoJ2/Data/Sounds/weapon/Volcanic/Volcanic_Right_01.wav",
-          "size": 511756,
-          "sha256": "1c426c7e0cdbe8a0ae7fd7eefefb25d9fde2c6d004a6475e212ff66607def3ab"
-        },
-        {
-          "path": "CoJ2/Data/Sounds/weapon/Volcanic/Volcanic_Right_02.wav",
-          "size": 511756,
-          "sha256": "1c426c7e0cdbe8a0ae7fd7eefefb25d9fde2c6d004a6475e212ff66607def3ab"
-        },
-        {
-          "path": "CoJ2/Data/Sounds/weapon/Volcanic/Volcanic_Right_03.wav",
-          "size": 511756,
-          "sha256": "1c426c7e0cdbe8a0ae7fd7eefefb25d9fde2c6d004a6475e212ff66607def3ab"
-        },
-        {
-          "path": "CoJ2/Data/Sounds/weapon/Walker/Walker_Left_01.wav",
-          "size": 449188,
-          "sha256": "560adc7f82132da6874f5c175ee5b5c93d7b974e7bc7b3f6abb4b5d43390f561"
-        },
-        {
-          "path": "CoJ2/Data/Sounds/weapon/Walker/Walker_Left_02.wav",
-          "size": 419048,
-          "sha256": "08e65f3a97891982938af9b79714be86c65992edb415426ede0b4ff2a41860ae"
-        },
-        {
-          "path": "CoJ2/Data/Sounds/weapon/Walker/Walker_Left_03.wav",
-          "size": 419048,
-          "sha256": "08e65f3a97891982938af9b79714be86c65992edb415426ede0b4ff2a41860ae"
-        },
-        {
-          "path": "CoJ2/Data/Sounds/weapon/Walker/Walker_Right_01.wav",
-          "size": 449188,
-          "sha256": "560adc7f82132da6874f5c175ee5b5c93d7b974e7bc7b3f6abb4b5d43390f561"
-        },
-        {
-          "path": "CoJ2/Data/Sounds/weapon/Walker/Walker_Right_02.wav",
-          "size": 419048,
-          "sha256": "08e65f3a97891982938af9b79714be86c65992edb415426ede0b4ff2a41860ae"
-        },
-        {
-          "path": "CoJ2/Data/Sounds/weapon/Walker/Walker_Right_03.wav",
-          "size": 449188,
-          "sha256": "560adc7f82132da6874f5c175ee5b5c93d7b974e7bc7b3f6abb4b5d43390f561"
-        },
-        {
-          "path": "CoJ2/Data/Sounds/weapon/Winchester/Winchester_Right_01.wav",
-          "size": 420564,
-          "sha256": "d9b3799b3fbb10e0c7bf9f4a8adfa79f004e76ff050f2eff92bf6100a62feabe"
-        },
-        {
-          "path": "CoJ2/Data/Sounds/weapon/Winchester/Winchester_Right_02.wav",
-          "size": 420564,
-          "sha256": "d9b3799b3fbb10e0c7bf9f4a8adfa79f004e76ff050f2eff92bf6100a62feabe"
-        },
-        {
-          "path": "CoJ2/Data/Sounds/weapon/Winchester/Winchester_Right_03.wav",
-          "size": 420564,
-          "sha256": "d9b3799b3fbb10e0c7bf9f4a8adfa79f004e76ff050f2eff92bf6100a62feabe"
-        },
-        {
-          "path": "CoJ2/Data/Sounds/weapon/Winchester/Winchester_Right_04.wav",
-          "size": 420564,
-          "sha256": "d9b3799b3fbb10e0c7bf9f4a8adfa79f004e76ff050f2eff92bf6100a62feabe"
-        },
-        {
-          "path": "CoJ2/Data/Sounds/weapon/Winchesterscope/Winchesterscope_Right_01.wav",
-          "size": 420564,
-          "sha256": "d9b3799b3fbb10e0c7bf9f4a8adfa79f004e76ff050f2eff92bf6100a62feabe"
-        },
-        {
-          "path": "CoJ2/Data/Sounds/weapon/Winchesterscope/Winchesterscope_Right_02.wav",
-          "size": 420564,
-          "sha256": "d9b3799b3fbb10e0c7bf9f4a8adfa79f004e76ff050f2eff92bf6100a62feabe"
-        },
-        {
-          "path": "CoJ2/Data/Sounds/weapon/Winchesterscope/Winchesterscope_Right_03.wav",
-          "size": 420564,
-          "sha256": "d9b3799b3fbb10e0c7bf9f4a8adfa79f004e76ff050f2eff92bf6100a62feabe"
-        },
-        {
-          "path": "CoJ2/Data/Sounds/weapon/Winchesterscope/Winchesterscope_Right_04.wav",
-          "size": 420564,
-          "sha256": "d9b3799b3fbb10e0c7bf9f4a8adfa79f004e76ff050f2eff92bf6100a62feabe"
-        }
-      ]
+      "description": "Replacement weapon and explosion sounds.",
+      "package": {
+        "file": "GunSoundMod-1.0.0.zip",
+        "size": 16741066,
+        "sha256": "e29ff66f18c1a54dd7ad54c07b119385a1f7e4e63fac58bead8a7d65939a7c36",
+        "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/mods/GunSoundMod-1.0.0.zip"
+      },
+      "exclude": [],
+      "loadDll": [],
+      "shared": [],
+      "disable": []
     },
     {
       "id": "ServerListMod",
+      "name": "Server List Mod",
       "version": "1.5.1",
-      "type": "copy",
-      "baseUrl": "https://raw.githubusercontent.com/roozbehghazavi/IranCoJLauncher-Hub/main/ServerListMod/",
-      "files": [
-        {
-          "path": "CoJ2_x86.dll",
-          "size": 11898880,
-          "sha256": "c87afe9f168dc5ecd19d212247dcc1d1fe62a2f429c4b0f05e85da37c5659f00"
-        },
-        {
-          "path": "dinput8.dll",
-          "size": 135168,
-          "sha256": "0dbfff842d95aee3f048822c0bea40a5370f5f51cf3c05ec6025a36021cd9b6a"
-        },
-        {
-          "path": "directjoinfix.dll",
-          "size": 125952,
-          "sha256": "8cac67cb9d2d59d2b055f0e590906aa41028e5cf9bc124aad88af8e5f15844f0"
-        },
-        {
-          "path": "engine_x86.dll",
-          "size": 5242880,
-          "sha256": "7544f510e8755603a83b872dc582a669c9f551db371008a20106fcd00306faec"
-        },
-        {
-          "path": "mods.txt",
-          "size": 344,
-          "sha256": "10ecbb8c53c68f388fe8e11bf45b502fe4381f34c4e600b441739a40a4243d80"
-        },
-        {
-          "path": "serverlist.changelog.txt",
-          "size": 1352,
-          "sha256": "67e80953a8d295b5648d45b0e9dc779d0d5208f3a4192a69312aad82ae5fd960"
-        },
-        {
-          "path": "serverlist.dll",
-          "size": 1820024,
-          "sha256": "972d8935264e699d76e37b1bea964766b2bee73a1b37036d2689e9b9421e46f4"
-        },
-        {
-          "path": "serverlist.readme.txt",
-          "size": 331,
-          "sha256": "7168485963b2d525452b9352e872edd0f01ec5a82c7bd40e83635b3d43d41059"
-        },
-        {
-          "path": "serverlist.toml",
-          "size": 4066,
-          "sha256": "23bbdae20128c50e142e449196ee5b86c9cf2e98f1955ecab1c45a2d794253aa"
-        }
-      ]
+      "description": "In-game server list through OpenSpy, plus direct join. Replaces CoJ2_x86.dll and engine_x86.dll; uninstalling puts the originals back.",
+      "package": {
+        "file": "ServerListMod-1.5.1.zip",
+        "size": 7047891,
+        "sha256": "ac651173ac4554a791fa16ada9c480baaff3766957888df348dee7047c1677ab",
+        "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/mods/ServerListMod-1.5.1.zip"
+      },
+      "exclude": [
+        "mods.txt"
+      ],
+      "loadDll": [
+        "directjoinfix.dll"
+      ],
+      "shared": [
+        "dinput8.dll"
+      ],
+      "disable": []
     },
     {
       "id": "SpectateMod",
+      "name": "Spectate Mod",
       "version": "1.0.8",
-      "type": "copy",
-      "baseUrl": "https://raw.githubusercontent.com/roozbehghazavi/IranCoJLauncher-Hub/main/SpectateMod/",
-      "files": [
-        {
-          "path": "CoJ2/Data/Menu/MenuIngameNetGamemode_Scr_PC.binui",
-          "size": 574757,
-          "sha256": "f5d1541534f5d4be78076a2b39a04a605be00fdf484c0b421a9a6d8e661eb5d8"
-        },
-        {
-          "path": "dinput8.dll",
-          "size": 135168,
-          "sha256": "0dbfff842d95aee3f048822c0bea40a5370f5f51cf3c05ec6025a36021cd9b6a"
-        },
-        {
-          "path": "mods.txt",
-          "size": 345,
-          "sha256": "bc10203d1bd127e71a99a38429d7b58d75ca8e11acd06dadc0f7eead41384f8d"
-        },
-        {
-          "path": "spectate.dll",
-          "size": 194560,
-          "sha256": "d9e0ebb671c1c115848f324c3453cab3fa34400082721f28de007e10b27451e7"
-        },
-        {
-          "path": "Spectate_README.txt",
-          "size": 8650,
-          "sha256": "bd4be02a18b51b27bacc828223b44372e312cc3639cb4b207e1c63472a90511e"
-        }
-      ]
+      "description": "Spectate players in multiplayer, from the in-game menu.",
+      "package": {
+        "file": "SpectateMod-1.0.8.zip",
+        "size": 218454,
+        "sha256": "38fbc545d2004506b21a3b927e0998bcd1c5413df1452cfba5c7c573f5f005c1",
+        "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/mods/SpectateMod-1.0.8.zip"
+      },
+      "exclude": [
+        "mods.txt"
+      ],
+      "loadDll": [
+        "spectate.dll"
+      ],
+      "shared": [
+        "dinput8.dll"
+      ],
+      "disable": []
     },
     {
       "id": "VoiceChatMod",
+      "name": "Voice Chat Mod",
       "version": "0.5.0",
-      "type": "copy",
-      "baseUrl": "https://raw.githubusercontent.com/roozbehghazavi/IranCoJLauncher-Hub/main/VoiceChatMod/",
-      "files": [
-        {
-          "path": "CoJ2/Data/Sounds/connected.wav",
-          "size": 149838,
-          "sha256": "3dc78ace5a3cbc7eee4c2006e7e9f8f44ebeb9cab8e1719c9d3b1864a6af3551"
-        },
-        {
-          "path": "CoJ2/Data/Sounds/disconnected.wav",
-          "size": 165894,
-          "sha256": "7a885b3cf445ae710ed92d906531bb6baeb6930e0b82b81fcc50ef11f293b18b"
-        },
-        {
-          "path": "CoJ2/Data/Sounds/muted.wav",
-          "size": 135906,
-          "sha256": "7373fe60ac1fea8f9a39e73b4090aafed1bcb05ed2a6de5e99daf417bd62c891"
-        },
-        {
-          "path": "CoJ2/Data/Sounds/unmuted.wav",
-          "size": 165894,
-          "sha256": "de998f6b6a7fff2470b43a1a86d6e9a882b8bd93acdf0c4b9616170ba15a931b"
-        },
-        {
-          "path": "dinput8.dll",
-          "size": 135168,
-          "sha256": "0dbfff842d95aee3f048822c0bea40a5370f5f51cf3c05ec6025a36021cd9b6a"
-        },
-        {
-          "path": "voicechat.dll",
-          "size": 657408,
-          "sha256": "84443566bf251e963f04b67b590936e7e71abed6c0a39070b2a856200b6aeec3"
-        },
-        {
-          "path": "voiceconfig.ini",
-          "size": 585,
-          "sha256": "f8d002545098c2d2e932f37ef6ca5a8d0a06c7757f3e8ea169e8d907bfb92576"
-        }
-      ]
+      "description": "In-game voice chat. Settings in voiceconfig.ini.",
+      "package": {
+        "file": "VoiceChatMod-0.5.0.zip",
+        "size": 971683,
+        "sha256": "f03f03595341d76c8be3396158e2833d296077c1316d3db9b915a8faa280e420",
+        "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/mods/VoiceChatMod-0.5.0.zip"
+      },
+      "exclude": [
+        "mods.txt"
+      ],
+      "loadDll": [
+        "voicechat.dll"
+      ],
+      "shared": [
+        "dinput8.dll"
+      ],
+      "disable": []
     }
   ]
 }
