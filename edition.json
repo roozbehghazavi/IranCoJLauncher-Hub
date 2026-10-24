@@ -190,6 +190,30 @@
         [
           "<Material>menu_bckg_screenshot_alpha\\.mat</Material>\\r?\\n</Properties>\\r?\\n</MyImage>\\r?\\n",
           "<Material>irancoj_blur.mat</Material>\r\n</Properties>\r\n</MyImage>\r\n<MyImage>\r\n<Properties>\r\n<Id>I_IrnTopBar</Id>\r\n<Width>1280.000000</Width>\r\n<Height>100.000000</Height>\r\n<ImagePath>irn_bar_top</ImagePath>\r\n</Properties>\r\n</MyImage>\r\n<MyImage>\r\n<Properties>\r\n<Id>I_IrnBottomBar</Id>\r\n<Width>1280.000000</Width>\r\n<Height>104.000000</Height>\r\n<Position>0.000000,616.000000,0.000000</Position>\r\n<ImagePath>irn_bar_bottom</ImagePath>\r\n</Properties>\r\n</MyImage>\r\n"
+        ],
+        [
+          "<ImagePath>icon_timer\\.dds</ImagePath>",
+          "<ImagePath>irn_clock</ImagePath>"
+        ],
+        [
+          "<ImagePath>icon_team_timer</ImagePath>",
+          "<ImagePath>irn_clock</ImagePath>"
+        ],
+        [
+          "<ImagePath>Textures\\\\temp\\\\hud_team_red\\.dds</ImagePath>",
+          "<ImagePath>irn_team_red</ImagePath>"
+        ],
+        [
+          "<ImagePath>Textures\\\\temp\\\\hud_team_blue\\.dds</ImagePath>",
+          "<ImagePath>irn_team_blue</ImagePath>"
+        ],
+        [
+          "<ImagePath>hud_wanted</ImagePath>",
+          "<ImagePath>irn_wanted</ImagePath>"
+        ],
+        [
+          "<Id>ID_POINTS_HTML</Id>\\r?\\n<Width>1280\\.000000</Width>\\r?\\n<Height>54\\.000000</Height>\\r?\\n<Position>0\\.000000,36\\.000000,0\\.000000</Position>",
+          "<Id>ID_POINTS_HTML</Id>\r\n<Width>240.000000</Width>\r\n<Height>54.000000</Height>\r\n<Position>520.000000,36.000000,0.000000</Position>\r\n<BackgroundVisible>true</BackgroundVisible>\r\n<BackgroundTexture>irn_hud_score</BackgroundTexture>\r\n<BackgroundColor>0xffffffff</BackgroundColor>\r\n<BackgroundMaterial>sprite_button.mat</BackgroundMaterial>"
         ]
       ]
     },
@@ -233,7 +257,34 @@
       "replace": [
         [
           "\\z",
-          "\r\n\r\n//IranCoJ Edition: the in-game screens' top and bottom bars (HUD_Net.xui)\r\nTexture(\"irancoj_bar_top.dds\", 256, 64)\r\n{\r\n\tWhole(\"irn_bar_top\")\r\n}\r\n\r\nTexture(\"irancoj_bar_bottom.dds\", 256, 64)\r\n{\r\n\tWhole(\"irn_bar_bottom\")\r\n}\r\n"
+          "\r\n\r\n//IranCoJ Edition: the in-game screens' top and bottom bars (HUD_Net.xui)\r\nTexture(\"irancoj_bar_top.dds\", 256, 64)\r\n{\r\n\tWhole(\"irn_bar_top\")\r\n}\r\n\r\nTexture(\"irancoj_bar_bottom.dds\", 256, 64)\r\n{\r\n\tWhole(\"irn_bar_bottom\")\r\n}\r\n\r\nTexture(\"irancoj_hud_strip.dds\", 64, 64)\r\n{\r\n\tWhole(\"irn_hud_strip\")\r\n}\r\n\r\nTexture(\"irancoj_clock.dds\", 32, 32)\r\n{\r\n\tWhole(\"irn_clock\")\r\n}\r\n\r\nTexture(\"irancoj_hud_score.dds\", 256, 64)\r\n{\r\n\tWhole(\"irn_hud_score\")\r\n}\r\n\r\nTexture(\"irancoj_team_red.dds\", 128, 128)\r\n{\r\n\tWhole(\"irn_team_red\")\r\n}\r\n\r\nTexture(\"irancoj_team_blue.dds\", 128, 128)\r\n{\r\n\tWhole(\"irn_team_blue\")\r\n}\r\n\r\nTexture(\"irancoj_wanted.dds\", 256, 70)\r\n{\r\n\tWhole(\"irn_wanted\")\r\n}\r\n"
+        ]
+      ]
+    },
+    {
+      "path": "CoJ2/Data/Menu/Hud/HUD_Common.xui",
+      "pak": "CoJ2/Data0.pak",
+      "entry": "Data/Menu/Hud/HUD_Common.xui",
+      "replace": [
+        [
+          "<ImagePath>button_1</ImagePath>",
+          "<ImagePath>irn_hud_strip</ImagePath>"
+        ],
+        [
+          "<BackgroundTexture>button_tile</BackgroundTexture>",
+          "<BackgroundTexture>irn_hud_strip</BackgroundTexture>"
+        ],
+        [
+          "0xff1f1810",
+          "0xffffffff"
+        ],
+        [
+          "menu_button_back_maskquad\\.mat",
+          "sprite_button.mat"
+        ],
+        [
+          "menu_button_back100_static\\.mat",
+          "sprite_button.mat"
         ]
       ]
     }
