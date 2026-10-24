@@ -503,7 +503,7 @@
     }
   ],
   "edition": {
-    "version": "0.2.1",
+    "version": "0.3.0",
     "exclude": [
       "DirectX/**",
       "Redist/**",
@@ -545,6 +545,69 @@
           [
             "MenuMovie_[1-9]",
             "MenuMovie_0"
+          ]
+        ]
+      },
+      {
+        "path": "CoJ2/Data/Menu/scr/MenuMain.xui",
+        "pak": "CoJ2/Data0.pak",
+        "entry": "Data/Menu/scr/MenuMain.xui",
+        "replace": [
+          [
+            "(<Id>B_Singleplayer</Id>(?:(?!</Properties>)[\\s\\S])*?</Position>)",
+            "$1\r\n<Show>false</Show>"
+          ],
+          [
+            "(<Id>B_Singleplayer</Id>(?:(?!</Properties>)[\\s\\S])*?</Visual>)",
+            "$1\r\n<Enabled>false</Enabled>"
+          ],
+          [
+            "(<Id>B_ExtraContent</Id>(?:(?!</Properties>)[\\s\\S])*?</Position>)",
+            "$1\r\n<Show>false</Show>"
+          ],
+          [
+            "(<Id>B_ExtraContent</Id>(?:(?!</Properties>)[\\s\\S])*?</Visual>)",
+            "$1\r\n<Enabled>false</Enabled>"
+          ],
+          [
+            "<NavUp>B_Singleplayer</NavUp>",
+            "<NavUp>B_Quit</NavUp>"
+          ],
+          [
+            "<NavTabBackward>B_Singleplayer</NavTabBackward>",
+            "<NavTabBackward>B_Quit</NavTabBackward>"
+          ],
+          [
+            "<NavDown>B_Test</NavDown>",
+            "<NavDown>B_Multiplayer</NavDown>"
+          ],
+          [
+            "<NavTabForward>B_Test</NavTabForward>",
+            "<NavTabForward>B_Multiplayer</NavTabForward>"
+          ],
+          [
+            "<NavDown>B_ExtraContent</NavDown>",
+            "<NavDown>B_SelectProfile</NavDown>"
+          ],
+          [
+            "<NavTabForward>B_ExtraContent</NavTabForward>",
+            "<NavTabForward>B_SelectProfile</NavTabForward>"
+          ],
+          [
+            "<NavUp>B_ExtraContent</NavUp>",
+            "<NavUp>B_Credits</NavUp>"
+          ],
+          [
+            "<NavTabBackward>B_ExtraContent</NavTabBackward>",
+            "<NavTabBackward>B_Credits</NavTabBackward>"
+          ],
+          [
+            "80\\.000008,556\\.000000",
+            "80.000008,514.000000"
+          ],
+          [
+            "80\\.000000,622\\.000000",
+            "80.000000,580.000000"
           ]
         ]
       }
