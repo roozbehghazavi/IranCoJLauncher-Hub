@@ -504,8 +504,9 @@
     }
   ],
   "edition": {
-    "version": "0.5.0",
+    "version": "0.5.1",
     "ownUserFolder": true,
+    "menuNavigation": true,
     "include": [
       "atimgpud.dll",
       "CoJ2/Data/common_mp_anims.rpack",
@@ -568,7 +569,15 @@
       "CoJ2/Data??.pak",
       "CoJ2/Speech??.pak",
       "?CoJ2/DataEngine.pak",
-      "?CoJ2/DataModding.pak"
+      "?CoJ2/DataModding.pak",
+      "?CoJ2/Data/adobes_loading.rpack",
+      "?CoJ2/Data/civil_loading.rpack",
+      "?CoJ2/Data/coffeyville_loading.rpack",
+      "?CoJ2/Data/frisco_loading.rpack",
+      "?CoJ2/Data/magnificent_loading.rpack",
+      "?CoJ2/Data/prisonbreak2_loading.rpack",
+      "?CoJ2/Data/stinkingsprings2_loading.rpack",
+      "?CoJ2/Data/tombstone_loading.rpack"
     ],
     "exclude": [
       "DirectX/**",
@@ -613,77 +622,26 @@
             "MenuMovie_0"
           ]
         ]
-      },
-      {
-        "path": "CoJ2/Data/Menu/scr/MenuMain.xui",
-        "pak": "CoJ2/Data0.pak",
-        "entry": "Data/Menu/scr/MenuMain.xui",
-        "replace": [
-          [
-            "(<Id>B_Singleplayer</Id>(?:(?!</Properties>)[\\s\\S])*?</Position>)",
-            "$1\r\n<Show>false</Show>"
-          ],
-          [
-            "(<Id>B_Singleplayer</Id>(?:(?!</Properties>)[\\s\\S])*?</Visual>)",
-            "$1\r\n<Enabled>false</Enabled>"
-          ],
-          [
-            "(<Id>B_ExtraContent</Id>(?:(?!</Properties>)[\\s\\S])*?</Position>)",
-            "$1\r\n<Show>false</Show>"
-          ],
-          [
-            "(<Id>B_ExtraContent</Id>(?:(?!</Properties>)[\\s\\S])*?</Visual>)",
-            "$1\r\n<Enabled>false</Enabled>"
-          ],
-          [
-            "<NavUp>B_Singleplayer</NavUp>",
-            "<NavUp>B_Quit</NavUp>"
-          ],
-          [
-            "<NavTabBackward>B_Singleplayer</NavTabBackward>",
-            "<NavTabBackward>B_Quit</NavTabBackward>"
-          ],
-          [
-            "<NavDown>B_Test</NavDown>",
-            "<NavDown>B_Multiplayer</NavDown>"
-          ],
-          [
-            "<NavTabForward>B_Test</NavTabForward>",
-            "<NavTabForward>B_Multiplayer</NavTabForward>"
-          ],
-          [
-            "<NavDown>B_ExtraContent</NavDown>",
-            "<NavDown>B_SelectProfile</NavDown>"
-          ],
-          [
-            "<NavTabForward>B_ExtraContent</NavTabForward>",
-            "<NavTabForward>B_SelectProfile</NavTabForward>"
-          ],
-          [
-            "<NavUp>B_ExtraContent</NavUp>",
-            "<NavUp>B_Credits</NavUp>"
-          ],
-          [
-            "<NavTabBackward>B_ExtraContent</NavTabBackward>",
-            "<NavTabBackward>B_Credits</NavTabBackward>"
-          ],
-          [
-            "80\\.000008,556\\.000000",
-            "80.000008,514.000000"
-          ],
-          [
-            "80\\.000000,622\\.000000",
-            "80.000000,580.000000"
-          ]
-        ]
       }
     ],
     "files": [
       {
         "path": "CoJ2/Data/Menu/MenuCommon_Scr_PC.binui",
-        "size": 223739,
-        "sha256": "9c54b0462f5e900c232f90a68df85052be96c557967064226bd506b05b70a4dc",
+        "size": 223700,
+        "sha256": "318fd5931946fee93af282c9c12da10195548ceb4e005fdd4e76ad3dff1cf5b3",
         "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/edition/MenuCommon_Scr_PC.binui"
+      },
+      {
+        "path": "CoJ2/Data/Menu/MenuMain_Scr_PC.binui",
+        "size": 615430,
+        "sha256": "9c86a3f852984736986f6e88955fc4c28673099fe84bacd05d07086b3a8e66d0",
+        "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/edition/MenuMain_Scr_PC.binui"
+      },
+      {
+        "path": "CoJ2/Data/Menu/MenuMain_Skn_PC.binui",
+        "size": 15194,
+        "sha256": "5819c9f3ee60ce3192294dec97d6e7afa891181bd893ae513c09ec793f275c30",
+        "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/edition/MenuMain_Skn_PC.binui"
       },
       {
         "path": "CoJ2/Data/debugconf.scr",
