@@ -412,13 +412,15 @@ t = written["MenuNetSelectClass.xui"]
 t = flat_texts(t, {"T_MapName": PARCHMENT, "T_ModeName": GOLD, "T_Timer": GOLD, "T_Wallet": GOLD,
                    "T_CashText": DUST, "T_TeamName": PARCHMENT, "T_Tip": DUST, "T_UpgradeInfoCost": GOLD})
 
-# Middle panel: a smaller portrait, then the loadout as rows under it (icon, name), then the upgrade.
-t = in_group(t, "G_ClassInfo", lambda g: set_prop(set_prop(set_prop(g, "I_ClassPicture", "Position", "68.000000,30.000000,0.000000"),
-                                                            "I_ClassPicture", "Width", "200.000000"), "I_ClassPicture", "Height", "276.000000"))
+# Middle panel (336x485): portrait, the loadout as rows under it (icon, name; up to three weapons), then the
+# upgrade block - "NEXT UPGRADE" + stars with the cost on the right, what it adds under them, the button under
+# that. Classes have two upgrades (Rancher and Redneck one); fully upgraded, the game leaves the block empty.
+t = in_group(t, "G_ClassInfo", lambda g: set_prop(set_prop(set_prop(g, "I_ClassPicture", "Position", "88.000000,28.000000,0.000000"),
+                                                            "I_ClassPicture", "Width", "160.000000"), "I_ClassPicture", "Height", "221.000000"))
 for n in range(3):
     def weapon_row(g, n=n):
-        g = set_prop(g, f"Weapon{n}", "Position", f"0.000000,{312 + 42 * n}.000000,0.000000")
-        g = set_prop(g, f"Weapon{n}", "Height", "40.000000")
+        g = set_prop(g, f"Weapon{n}", "Position", f"0.000000,{254 + 40 * n}.000000,0.000000")
+        g = set_prop(g, f"Weapon{n}", "Height", "38.000000")
         g = set_prop(g, "T_Name", "Position", "56.000000,4.000000,0.000000")
         g = set_prop(g, "T_Name", "Width", "264.000000")
         g = set_prop(g, "T_Name", "TextStyle", "4368")  # left
@@ -432,9 +434,8 @@ for n in range(3):
             g = set_prop(g, icon, "Position", "0.000000,0.000000,0.000000")
         return g
     t = in_group(t, "G_ClassInfo", lambda g, f=weapon_row, n=n: in_group(g, f"Weapon{n}", f))
-# The upgrade line wraps to two lines ("NEXT UPGRADE" + stars, then what it adds): room for both.
-for element_id, (x, y, w, h) in {"H_UpgradeInfoLabel": (8, 424, 220, 60), "B_Upgrade": (8, 430, 200, 40),
-                                 "T_UpgradeInfoCost": (196, 436, 132, 32)}.items():
+for element_id, (x, y, w, h) in {"H_UpgradeInfoLabel": (8, 378, 240, 58), "T_UpgradeInfoCost": (196, 380, 132, 32),
+                                 "B_Upgrade": (8, 438, 320, 40), "T_WarningNotAvailable": (8, 438, 320, 40)}.items():
     t = set_prop(t, element_id, "Position", f"{x}.000000,{y}.000000,0.000000")
     t = set_prop(t, element_id, "Width", f"{w}.000000")
     t = set_prop(t, element_id, "Height", f"{h}.000000")
@@ -472,6 +473,28 @@ for group, panel in (("G_RedBackground", "irn_panel_red_tile"), ("G_BlueBackgrou
     t = in_group(t, group, lambda g, panel=panel: set_prop(g, "Background", "ImagePath", panel))  # team-tinted header
 write("MenuNetResults_PC.xui", t)
 
+def themed_scrollbars(t):
+    """Scrollbars: slim wood track, gold handle, flat sand arrows (gold when focused) instead of brush strokes."""
+    images = {"slider_bar.dds": ("irn_scroll_track", None), "slider_knob.dds": ("irn_scroll_knob", None),
+              "arrow_right_0": ("irn_arrow_0", "irn_arrow"), "arrow_right_back": ("irn_arrow_0", "irn_arrow")}
+
+    def element(m):
+        b = m.group(0)
+        path = re.search(r"<ImagePath>(.*?)</ImagePath>", b)
+        if not path or path.group(1) not in images:
+            return b
+        image, base = images[path.group(1)]
+        b = put(b, "ImagePath", image)
+        if base:
+            b = put(b, "BaseImage", base)
+            b = put(b, "NumFrames", "1")
+        b = put(b, "Material", "sprite_button.mat")
+        element_id = re.search(r"<Id>(.*?)</Id>", b).group(1)
+        return put(b, "Color", GOLD if element_id == "Focus" else SAND if base else WHITE)
+
+    return re.sub(r"<Properties>\r?\n<Id>.*?</Properties>", element, t, flags=re.S)
+
+
 # Spawn: the one solid gold button (dark text), like the mockup.
 t = written["CoJ2MenuSkin.xui"]
 primary = visual(t, "ButtonV").group(0).replace("<Id>ButtonV</Id>", "<Id>ButtonIrnPrimary</Id>", 1)
@@ -480,4 +503,9 @@ primary = keyframes(primary, "RandomBackground", lambda time, props: ["0xfff2c46
 primary = keyframes(primary, "TextPrezenter", lambda time, props: ["0x800e0d0b" if time >= 80 else INK, "false", "1.000000"])
 primary = set_prop(set_prop(primary, "RandomBackground", "Color", GOLD), "TextPrezenter", "TextColor", INK)
 end = visual(t, "ButtonV").end()
-write("CoJ2MenuSkin.xui", t[:end] + primary + t[end:])
+t = themed_scrollbars(t[:end] + primary + t[end:])
+# The class list's scrollbar sat under the rows (both at x=0): bar to the left edge, rows beside it.
+m = visual(t, "ListBoxNetEmptyV")
+v = set_prop(set_prop(m.group(0), "LBScrollBar", "Position", "-6.000000,0.000000,0.000000"), "LBScrollBar", "Width", "24.000000")
+v = set_prop(v, "ItemGroup", "Position", "22.000000,0.000000,0.000000")
+write("CoJ2MenuSkin.xui", t[:m.start()] + v + t[m.end():])

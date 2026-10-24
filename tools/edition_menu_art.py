@@ -86,6 +86,27 @@ def bar(line_at_bottom):
     return im
 
 
+def scroll_track():
+    """32x64, stretched down the list: a slim wood line in the middle."""
+    im = Image.new("RGBA", (32, 64))
+    ImageDraw.Draw(im).rectangle([14, 0, 17, 63], fill=WOOD + (255,))
+    return im
+
+
+def scroll_knob():
+    """32x64: the gold handle, a little wider than the track."""
+    im = Image.new("RGBA", (32, 64))
+    ImageDraw.Draw(im).rounded_rectangle([11, 2, 20, 61], radius=4, fill=GOLD + (255,))
+    return im
+
+
+def arrow():
+    """32x32 white arrow pointing right (the game turns and tints it like its own arrow_right)."""
+    im = Image.new("RGBA", (32, 32))
+    ImageDraw.Draw(im).polygon([(11, 8), (23, 16), (11, 24)], fill=(255, 255, 255, 255))
+    return im
+
+
 def flat():
     """64x16 white, tinted by the game: flat title strips."""
     return Image.new("RGBA", (64, 16), (255, 255, 255, 235))
@@ -168,6 +189,9 @@ if __name__ == "__main__":
     write_dds(team_panel((76, 140, 190)), os.path.join(out, "textures", "irancoj_panel_blue.dds"))
     write_dds(bar(True), os.path.join(out, "textures", "irancoj_bar_top.dds"))
     write_dds(bar(False), os.path.join(out, "textures", "irancoj_bar_bottom.dds"))
+    write_dds(scroll_track(), os.path.join(out, "textures", "irancoj_scroll_track.dds"))
+    write_dds(scroll_knob(), os.path.join(out, "textures", "irancoj_scroll_knob.dds"))
+    write_dds(arrow(), os.path.join(out, "textures", "irancoj_arrow.dds"))
     write_dds(flat(), os.path.join(out, "textures", "irancoj_flat.dds"))
     write_dds(still(source), os.path.join(out, "textures", "irancoj_bg.dds"))
     if "--no-video" not in sys.argv:
