@@ -432,10 +432,14 @@ for n in range(3):
             g = set_prop(g, icon, "Position", "0.000000,0.000000,0.000000")
         return g
     t = in_group(t, "G_ClassInfo", lambda g, f=weapon_row, n=n: in_group(g, f"Weapon{n}", f))
-for element_id, (x, y, w) in {"H_UpgradeInfoLabel": (8, 440, 200), "B_Upgrade": (8, 440, 200),
-                              "T_UpgradeInfoCost": (176, 444, 150)}.items():
+# The upgrade line wraps to two lines ("NEXT UPGRADE" + stars, then what it adds): room for both.
+for element_id, (x, y, w, h) in {"H_UpgradeInfoLabel": (8, 424, 220, 60), "B_Upgrade": (8, 430, 200, 40),
+                                 "T_UpgradeInfoCost": (196, 436, 132, 32)}.items():
     t = set_prop(t, element_id, "Position", f"{x}.000000,{y}.000000,0.000000")
     t = set_prop(t, element_id, "Width", f"{w}.000000")
+    t = set_prop(t, element_id, "Height", f"{h}.000000")
+# The class list panel ran into the middle one: narrower, with a gap like the design.
+t = in_group(t, "G_ClassSelect", lambda g: set_prop(set_prop(g, "Background", "Width", "320.000000"), "L_ClassList", "Width", "306.000000"))
 t = set_prop(t, "T_UpgradeInfoCost", "TextStyle", "4624")  # right
 t = set_prop(t, "B_Spawn", "Visual", "ButtonIrnPrimary")
 

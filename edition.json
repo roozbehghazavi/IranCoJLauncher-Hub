@@ -189,7 +189,7 @@
       "replace": [
         [
           "<Material>menu_bckg_screenshot_alpha\\.mat</Material>\\r?\\n</Properties>\\r?\\n</MyImage>\\r?\\n",
-          "<Material>irancoj_blur.mat</Material>\r\n</Properties>\r\n</MyImage>\r\n<MyImage>\r\n<Properties>\r\n<Id>I_IrnTopBar</Id>\r\n<Width>1280.000000</Width>\r\n<Height>100.000000</Height>\r\n<ImagePath>irn_bar_top</ImagePath>\r\n</Properties>\r\n</MyImage>\r\n<MyImage>\r\n<Properties>\r\n<Id>I_IrnBottomBar</Id>\r\n<Width>1280.000000</Width>\r\n<Height>104.000000</Height>\r\n<Position>0.000000,616.000000,0.000000</Position>\r\n<ImagePath>irn_bar_bottom</ImagePath>\r\n</Properties>\r\n</MyImage>\r\n"
+          "<Material>irancoj_blur.mat</Material>\r\n</Properties>\r\n</MyImage>\r\n<MyImage>\r\n<Properties>\r\n<Id>I_IrnTopBar</Id>\r\n<Width>1280.000000</Width>\r\n<Height>100.000000</Height>\r\n<ImagePath>..\\textures\\irancoj_bar_top.dds</ImagePath>\r\n</Properties>\r\n</MyImage>\r\n<MyImage>\r\n<Properties>\r\n<Id>I_IrnBottomBar</Id>\r\n<Width>1280.000000</Width>\r\n<Height>104.000000</Height>\r\n<Position>0.000000,616.000000,0.000000</Position>\r\n<ImagePath>..\\textures\\irancoj_bar_bottom.dds</ImagePath>\r\n</Properties>\r\n</MyImage>\r\n"
         ]
       ]
     },
