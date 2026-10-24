@@ -218,6 +218,8 @@ def build_mods():
             entry[field] = mod.get(field, [])
         if "installer" in mod:
             entry["installer"] = mod["installer"]
+        if mod.get("optional"):
+            entry["optional"] = True
 
         # Per-platform overrides of any field above, e.g. a Windows-only installer package.
         platforms = {}

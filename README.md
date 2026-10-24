@@ -55,6 +55,7 @@ button, the same way on Windows and Linux, and keeps a backup of every game file
 | `loadDll` | Lines the launcher adds to `mods.txt` (and removes on uninstall). |
 | `shared` | Files several mods ship (e.g. `dinput8.dll`): kept until the last mod using them is uninstalled. |
 | `disable` | Game files renamed to `.disabled` while the mod is installed. |
+| `optional` | `true`: installed only when the player chooses it. Without it the mod is core: launcher alpha.7+ installs it into every Edition automatically. Installed mods of either kind are kept up to date. |
 | `windows` / `linux` | Optional per-platform overrides of any field above. |
 
 All paths are relative to the game folder, with forward slashes.
