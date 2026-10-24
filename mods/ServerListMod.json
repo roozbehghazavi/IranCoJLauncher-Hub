@@ -1,0 +1,9 @@
+{
+  "id": "ServerListMod",
+  "name": "Server List Mod",
+  "description": "In-game server list through OpenSpy, plus direct join. Replaces CoJ2_x86.dll and engine_x86.dll; uninstalling puts the originals back.",
+  "folder": "ServerListMod",
+  "exclude": ["mods.txt"],
+  "loadDll": ["directjoinfix.dll"],
+  "shared": ["dinput8.dll"]
+}

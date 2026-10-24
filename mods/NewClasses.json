@@ -1,0 +1,11 @@
+{
+  "id": "NewClasses",
+  "name": "New Classes",
+  "description": "Rancher and Redneck as playable classes, with upgrades and class-screen entries. Includes the IranCoJ Skin Pack.",
+  "version": "1.0.3",
+  "package": "IranCoJ_NewClasses_1.0.3.zip",
+  "exclude": ["README_INSTALL.txt", "mods.txt"],
+  "loadDll": ["newclasses.dll"],
+  "shared": ["dinput8.dll"],
+  "disable": ["CoJ2/Data/common_mp_meshes.rpack", "CoJ2/Data/menu_ingame_net.rpack"]
+}

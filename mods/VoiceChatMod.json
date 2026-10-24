@@ -1,0 +1,9 @@
+{
+  "id": "VoiceChatMod",
+  "name": "Voice Chat Mod",
+  "description": "In-game voice chat. Settings in voiceconfig.ini.",
+  "folder": "VoiceChatMod",
+  "exclude": ["mods.txt"],
+  "loadDll": ["voicechat.dll"],
+  "shared": ["dinput8.dll"]
+}
