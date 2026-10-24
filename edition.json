@@ -1,7 +1,8 @@
 {
-  "version": "0.5.0",
-  "notes": "0.4: allow-list. Only the game files named in include are copied (by name, from any store; a mod's .disabled copy counts), so mods and maps in the player's install never reach the Edition. ?path = optional, * and ? = whatever is there. exclude/keep stay for launchers older than alpha.5. 0.5: ownUserFolder - the Edition's exe reads its own HKCU key, so profiles, saves and settings live in Documents\\IranCoJ Edition (launcher alpha.8+).",
+  "version": "0.5.1",
+  "notes": "0.4: allow-list. Only the game files named in include are copied (by name, from any store; a mod's .disabled copy counts), so mods and maps in the player's install never reach the Edition. ?path = optional, * and ? = whatever is there. exclude/keep stay for launchers older than alpha.5. 0.5: ownUserFolder - the Edition's exe reads its own HKCU key, so profiles, saves and settings live in Documents\\IranCoJ Edition (launcher alpha.8+). 0.5.1: menuNavigation (Play -> Join/Host, Back -> main menu, patched in the Edition's CoJ2_x86.dll by pattern; launcher alpha.10+), compiled menu packs in edition/files, the multiplayer maps' loading screens (*_loading.rpack). Loading music is copied by the launcher from the tracks the maps' .trk files name.",
   "ownUserFolder": true,
+  "menuNavigation": true,
   "include": [
     "atimgpud.dll",
     "CoJ2/Data/common_mp_anims.rpack",
@@ -64,7 +65,15 @@
     "CoJ2/Data??.pak",
     "CoJ2/Speech??.pak",
     "?CoJ2/DataEngine.pak",
-    "?CoJ2/DataModding.pak"
+    "?CoJ2/DataModding.pak",
+    "?CoJ2/Data/adobes_loading.rpack",
+    "?CoJ2/Data/civil_loading.rpack",
+    "?CoJ2/Data/coffeyville_loading.rpack",
+    "?CoJ2/Data/frisco_loading.rpack",
+    "?CoJ2/Data/magnificent_loading.rpack",
+    "?CoJ2/Data/prisonbreak2_loading.rpack",
+    "?CoJ2/Data/stinkingsprings2_loading.rpack",
+    "?CoJ2/Data/tombstone_loading.rpack"
   ],
   "exclude": [
     "DirectX/**",
@@ -107,69 +116,6 @@
         [
           "MenuMovie_[1-9]",
           "MenuMovie_0"
-        ]
-      ]
-    },
-    {
-      "path": "CoJ2/Data/Menu/scr/MenuMain.xui",
-      "pak": "CoJ2/Data0.pak",
-      "entry": "Data/Menu/scr/MenuMain.xui",
-      "replace": [
-        [
-          "(<Id>B_Singleplayer</Id>(?:(?!</Properties>)[\\s\\S])*?</Position>)",
-          "$1\r\n<Show>false</Show>"
-        ],
-        [
-          "(<Id>B_Singleplayer</Id>(?:(?!</Properties>)[\\s\\S])*?</Visual>)",
-          "$1\r\n<Enabled>false</Enabled>"
-        ],
-        [
-          "(<Id>B_ExtraContent</Id>(?:(?!</Properties>)[\\s\\S])*?</Position>)",
-          "$1\r\n<Show>false</Show>"
-        ],
-        [
-          "(<Id>B_ExtraContent</Id>(?:(?!</Properties>)[\\s\\S])*?</Visual>)",
-          "$1\r\n<Enabled>false</Enabled>"
-        ],
-        [
-          "<NavUp>B_Singleplayer</NavUp>",
-          "<NavUp>B_Quit</NavUp>"
-        ],
-        [
-          "<NavTabBackward>B_Singleplayer</NavTabBackward>",
-          "<NavTabBackward>B_Quit</NavTabBackward>"
-        ],
-        [
-          "<NavDown>B_Test</NavDown>",
-          "<NavDown>B_Multiplayer</NavDown>"
-        ],
-        [
-          "<NavTabForward>B_Test</NavTabForward>",
-          "<NavTabForward>B_Multiplayer</NavTabForward>"
-        ],
-        [
-          "<NavDown>B_ExtraContent</NavDown>",
-          "<NavDown>B_SelectProfile</NavDown>"
-        ],
-        [
-          "<NavTabForward>B_ExtraContent</NavTabForward>",
-          "<NavTabForward>B_SelectProfile</NavTabForward>"
-        ],
-        [
-          "<NavUp>B_ExtraContent</NavUp>",
-          "<NavUp>B_Credits</NavUp>"
-        ],
-        [
-          "<NavTabBackward>B_ExtraContent</NavTabBackward>",
-          "<NavTabBackward>B_Credits</NavTabBackward>"
-        ],
-        [
-          "80\\.000008,556\\.000000",
-          "80.000008,514.000000"
-        ],
-        [
-          "80\\.000000,622\\.000000",
-          "80.000000,580.000000"
         ]
       ]
     }
