@@ -503,7 +503,7 @@
     }
   ],
   "edition": {
-    "version": "0.2.0",
+    "version": "0.2.1",
     "exclude": [
       "DirectX/**",
       "Redist/**",
@@ -514,6 +514,11 @@
       "webcache.zip",
       "**/*.lnk",
       "CoJ2/Out/**",
+      "tutorials/**",
+      "ChromEdShortTutorial.pdf",
+      "Editor_x86.exe",
+      "Plugins_x86/**",
+      "shadercache/**",
       "CoJ2/Data/*.rpack",
       "CoJ2/Data/Music/**",
       "CoJ2/Data/Menu/Movies/*.wmv"
