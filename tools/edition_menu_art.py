@@ -1,6 +1,6 @@
 """Art for the Edition's main menu (Persepolis Dust palette), written into edition/files/CoJ2/Data/Menu.
 
-    python tools/edition_menu_art.py <background image> <out: edition/files/CoJ2/Data/Menu> [--no-video]
+    python tools/edition_menu_art.py tools/art/menu_background.jpg <out: edition/files/CoJ2/Data/Menu> [--no-video]
 
 - textures/irancoj_band.dds   the focused button's band (dark smoke, gold bar on the left), 9-sliced by the game
 - textures/irancoj_logo.dds   the "IRANCOJ / EDITION" header
