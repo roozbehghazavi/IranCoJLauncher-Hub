@@ -394,15 +394,9 @@ def after_element(text, element_id, new):
     return text[:m.end()] + new + text[m.end():]
 
 
-def bars(t):
-    """A dark strip across the top (map, mode, cash, team) and the bottom (the buttons)."""
-    strips = (element("MyImage", "I_IrnTopBar", [("Width", "1280.000000"), ("Height", "84.000000"),
-                                                  ("ImagePath", "irn_bar_top")])
-              + element("MyImage", "I_IrnBottomBar", [("Width", "1280.000000"), ("Height", "104.000000"),
-                                                       ("Position", "0.000000,616.000000,0.000000"),
-                                                       ("ImagePath", "irn_bar_bottom")]))
-    scene = re.search(r"<XuiScene>\r?\n<Properties>.*?</Properties>\r?\n", t, re.S)
-    return t[:scene.end()] + strips + t[scene.end():]
+# These screens' code finds elements by their place among their parent's children, so nothing is inserted
+# into them: new pieces go into existing images (textures) or elsewhere (the top and bottom bars are in
+# HUD_Net.xui's backdrop, see edition.json).
 
 
 def flat_texts(t, colors):
@@ -436,11 +430,7 @@ for n in range(3):
             g = set_prop(g, icon, "Width", "36.000000")
             g = set_prop(g, icon, "Height", "36.000000")
             g = set_prop(g, icon, "Position", "0.000000,0.000000,0.000000")
-        row = element("MyImage", "I_IrnRow", [("Width", "320.000000"), ("Height", "40.000000"),
-                                               ("Position", "8.000000,0.000000,0.000000"), ("ImagePath", "irn_flat_0"),
-                                               ("Color", "0x16ffffff")])
-        head = re.search(r"<(AdvGroup|XuiGroup)>\r?\n<Properties>.*?</Properties>\r?\n", g, re.S)
-        return g[:head.end()] + row + g[head.end():]
+        return g
     t = in_group(t, "G_ClassInfo", lambda g, f=weapon_row, n=n: in_group(g, f"Weapon{n}", f))
 for element_id, (x, y, w) in {"H_UpgradeInfoLabel": (8, 440, 200), "B_Upgrade": (8, 440, 200),
                               "T_UpgradeInfoCost": (176, 444, 150)}.items():
@@ -448,16 +438,28 @@ for element_id, (x, y, w) in {"H_UpgradeInfoLabel": (8, 440, 200), "B_Upgrade": 
     t = set_prop(t, element_id, "Width", f"{w}.000000")
 t = set_prop(t, "T_UpgradeInfoCost", "TextStyle", "4624")  # right
 t = set_prop(t, "B_Spawn", "Visual", "ButtonIrnPrimary")
-write("MenuNetSelectClass.xui", bars(t))
+
+
+def baseline(t, pairs):
+    """Texts side by side in the top bar: one box and bottom alignment, so big and small text share a baseline."""
+    for ids, (y, h) in pairs:
+        for element_id in ids:
+            t = set_prop(t, element_id, "Position", re.sub(r",[^,]*,", f",{y}.000000,",
+                                                           re.search(r"<Id>" + element_id + r"</Id>.*?<Position>(.*?)</Position>", t, re.S).group(1), count=1))
+            t = set_prop(t, element_id, "Height", f"{h}.000000")
+            t = set_prop(t, element_id, "VerticalAlignDown", "true")
+    return t
+
+
+t = baseline(t, [(("T_MapName", "T_ModeName", "T_Timer"), (34, 50)), (("T_Wallet", "T_CashText", "T_TeamName"), (-67, 50))])
+write("MenuNetSelectClass.xui", t)
 
 t = written["MenuNetResults_PC.xui"]
 t = flat_texts(t, {"T_MapName": PARCHMENT, "T_ModeName": GOLD, "T_Timer": GOLD, "T_GameSettings": PARCHMENT})
-for group, color in (("G_RedBackground", "0x40c44834"), ("G_BlueBackground", "0x404c8cbe")):
-    tint = element("MyImage", "I_IrnTeamTint", [("Width", "564.000000"), ("Height", "60.000000"),
-                                                 ("Position", "2.000000,4.000000,0.000000"), ("ImagePath", "irn_flat_0"),
-                                                 ("Color", color)])
-    t = in_group(t, group, lambda g, tint=tint: after_element(g, "Background", tint))
-write("MenuNetResults_PC.xui", bars(t))
+t = baseline(t, [(("T_MapName", "T_ModeName", "T_Timer", "T_GameSettings"), (34, 50))])
+for group, panel in (("G_RedBackground", "irn_panel_red_tile"), ("G_BlueBackground", "irn_panel_blue_tile")):
+    t = in_group(t, group, lambda g, panel=panel: set_prop(g, "Background", "ImagePath", panel))  # team-tinted header
+write("MenuNetResults_PC.xui", t)
 
 # Spawn: the one solid gold button (dark text), like the mockup.
 t = written["CoJ2MenuSkin.xui"]

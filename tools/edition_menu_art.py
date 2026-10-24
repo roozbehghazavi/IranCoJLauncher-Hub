@@ -91,6 +91,14 @@ def flat():
     return Image.new("RGBA", (64, 16), (255, 255, 255, 235))
 
 
+def team_panel(color):
+    """The panel with its header band (top tile row) tinted in a team colour: the scoreboard's team headers."""
+    im = panel()
+    band = Image.new("RGBA", (232, 58), color + (70,))
+    im.alpha_composite(band, (12, 13))
+    return im
+
+
 def still(source):
     """1024x512 (stretched back to 16:9 on screen): the background, softened and darkened, for the profile pages."""
     from PIL import ImageFilter
@@ -156,6 +164,8 @@ if __name__ == "__main__":
     write_dds(band(), os.path.join(out, "textures", "irancoj_band.dds"))
     write_dds(logo(), os.path.join(out, "textures", "irancoj_logo.dds"))
     write_dds(panel(), os.path.join(out, "textures", "irancoj_panel.dds"))
+    write_dds(team_panel((196, 72, 52)), os.path.join(out, "textures", "irancoj_panel_red.dds"))
+    write_dds(team_panel((76, 140, 190)), os.path.join(out, "textures", "irancoj_panel_blue.dds"))
     write_dds(bar(True), os.path.join(out, "textures", "irancoj_bar_top.dds"))
     write_dds(bar(False), os.path.join(out, "textures", "irancoj_bar_bottom.dds"))
     write_dds(flat(), os.path.join(out, "textures", "irancoj_flat.dds"))
