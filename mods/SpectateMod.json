@@ -3,7 +3,14 @@
   "name": "Spectate Mod",
   "description": "Spectate players in multiplayer, from the in-game menu.",
   "folder": "SpectateMod",
-  "exclude": ["mods.txt"],
-  "loadDll": ["spectate.dll"],
-  "shared": ["dinput8.dll"]
+  "exclude": [
+    "mods.txt",
+    "CoJ2/Data/Menu/MenuIngameNetGamemode_Scr_PC.binui"
+  ],
+  "loadDll": [
+    "spectate.dll"
+  ],
+  "shared": [
+    "dinput8.dll"
+  ]
 }

@@ -1,0 +1,49 @@
+# The Edition's in-game credits. Build with: python tools/edition_credits.py
+#   "= Title"     a big heading           "- Role"   a small heading above names
+#   any other line is a name/text line     a blank line adds space
+# Lines starting with "#" are comments.
+
+= IRANCOJ EDITION
+Call of Juarez: Bound in Blood - multiplayer, modernized
+
+= THE IRANCOJ TEAM
+- Project Lead
+IranCoJ
+
+- Launcher, Edition & Menus
+IranCoJ
+
+- Mods: New Classes, Spectate, Voice Chat
+IranCoJ
+
+- Maps
+The IranCoJ map makers
+
+- Servers & Community
+The IranCoJ community
+
+= COMMUNITY MODS
+- Server List Mod
+AlfredoAnonym
+
+- Gore Mod, No DOF & Motion Blur
+From the R2P launcher's mod set
+
+= ART, MUSIC & TYPE
+- Menu artwork
+IranCoJ
+
+- Menu music
+IranCoJ
+
+- Typeface
+Oswald - The Oswald Project Authors (SIL Open Font License)
+
+= THANK YOU
+Every player who keeps the frontier alive.
+
+= CALL OF JUAREZ: BOUND IN BLOOD
+Designed and developed by Techland
+(c) 2008-2009 Techland. Call of Juarez is a trademark of Techland.
+All trademarks, logos and copyrights are the property of their respective owners.
+IranCoJ Edition is a free, non-commercial fan project and is not affiliated with Techland or Ubisoft.
