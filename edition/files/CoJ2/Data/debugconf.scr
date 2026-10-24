@@ -1,0 +1,4 @@
+!include("DebugConf.def")
+
+// IranCoJ Edition: skip the publisher logos and intro movies.
+NoLogos()

@@ -1,5 +1,5 @@
 {
-  "version": "0.4.0",
+  "version": "0.4.1",
   "notes": "0.4: allow-list. Only the game files named in include are copied (by name, from any store; a mod's .disabled copy counts), so mods and maps in the player's install never reach the Edition. ?path = optional, * and ? = whatever is there. exclude/keep stay for launchers older than alpha.5.",
   "include": [
     "atimgpud.dll",
