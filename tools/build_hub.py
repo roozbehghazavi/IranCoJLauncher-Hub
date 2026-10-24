@@ -303,7 +303,8 @@ if __name__ == "__main__":
                "mods": build_mods()}
     edition = load_optional_json("edition.json")
     if edition:
-        catalog["edition"] = {key: edition[key] for key in ("version", "exclude", "keep", "rewrite") if key in edition}
+        # Everything but the human notes goes to the launcher (new keys must not need a script change).
+        catalog["edition"] = {key: value for key, value in edition.items() if key != "notes"}
         catalog["edition"]["files"] = edition_files()
     news = load_optional_json("news.json")
     if news:

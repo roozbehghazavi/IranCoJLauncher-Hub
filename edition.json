@@ -1,6 +1,7 @@
 {
-  "version": "0.4.1",
-  "notes": "0.4: allow-list. Only the game files named in include are copied (by name, from any store; a mod's .disabled copy counts), so mods and maps in the player's install never reach the Edition. ?path = optional, * and ? = whatever is there. exclude/keep stay for launchers older than alpha.5.",
+  "version": "0.5.0",
+  "notes": "0.4: allow-list. Only the game files named in include are copied (by name, from any store; a mod's .disabled copy counts), so mods and maps in the player's install never reach the Edition. ?path = optional, * and ? = whatever is there. exclude/keep stay for launchers older than alpha.5. 0.5: ownUserFolder - the Edition's exe reads its own HKCU key, so profiles, saves and settings live in Documents\\IranCoJ Edition (launcher alpha.8+).",
+  "ownUserFolder": true,
   "include": [
     "atimgpud.dll",
     "CoJ2/Data/common_mp_anims.rpack",
