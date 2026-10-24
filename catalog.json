@@ -439,13 +439,13 @@
     {
       "id": "ServerListMod",
       "name": "Server List Mod",
-      "version": "1.5.1",
+      "version": "1.5.2",
       "description": "In-game server list through OpenSpy, plus direct join. Replaces CoJ2_x86.dll and engine_x86.dll; uninstalling puts the originals back.",
       "package": {
-        "file": "ServerListMod-1.5.1.zip",
-        "size": 7047891,
-        "sha256": "ac651173ac4554a791fa16ada9c480baaff3766957888df348dee7047c1677ab",
-        "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/mods/ServerListMod-1.5.1.zip"
+        "file": "ServerListMod-1.5.2.zip",
+        "size": 7047888,
+        "sha256": "afe51fe5a4d016b9b30f960fe94fb6d706114a56de8d2521fdab5e113fb23953",
+        "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/mods/ServerListMod-1.5.2.zip"
       },
       "exclude": [
         "mods.txt"
