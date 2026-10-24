@@ -611,6 +611,14 @@
           ]
         ]
       }
+    ],
+    "files": [
+      {
+        "path": "CoJ2/Data/Menu/MenuCommon_Scr_PC.binui",
+        "size": 223739,
+        "sha256": "9c54b0462f5e900c232f90a68df85052be96c557967064226bd506b05b70a4dc",
+        "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/edition/MenuCommon_Scr_PC.binui"
+      }
     ]
   },
   "news": [
