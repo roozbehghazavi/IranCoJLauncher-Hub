@@ -6,7 +6,8 @@
     "text": "A separate multiplayer copy of your game with every IranCoJ map and mod. Your original game stays untouched.",
     "slide": true,
     "action": "settings",
-    "actionLabel": "Set up the Edition"
+    "actionLabel": "Set up the Edition",
+    "image": "https://raw.githubusercontent.com/roozbehghazavi/IranCoJLauncher-Hub/main/news/images/edition.jpg"
   },
   {
     "id": "lincoln-town",
@@ -16,7 +17,8 @@
     "date": "2026-10-24",
     "slide": true,
     "action": "maps",
-    "actionLabel": "View in Maps"
+    "actionLabel": "View in Maps",
+    "image": "https://raw.githubusercontent.com/roozbehghazavi/IranCoJLauncher-Hub/main/news/images/lincoln-town.jpg"
   },
   {
     "id": "new-classes",
@@ -26,7 +28,8 @@
     "date": "2026-10-24",
     "slide": true,
     "action": "mods",
-    "actionLabel": "Install mod"
+    "actionLabel": "Install mod",
+    "image": "https://raw.githubusercontent.com/roozbehghazavi/IranCoJLauncher-Hub/main/news/images/new-classes.jpg"
   },
   {
     "id": "spectate-108",
@@ -44,6 +47,7 @@
     "text": "Join the IranCoJ server straight from the launcher, no menus needed.",
     "slide": true,
     "action": "join:IranCoJ",
-    "actionLabel": "Join IranCoJ"
+    "actionLabel": "Join IranCoJ",
+    "image": "https://raw.githubusercontent.com/roozbehghazavi/IranCoJLauncher-Hub/main/news/images/irancoj-server.jpg"
   }
 ]
