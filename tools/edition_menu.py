@@ -54,7 +54,64 @@ def pos(y, x="80.000000"):
     return f"{x},{y:.6f},0.000000"
 
 
+def keyframes(text, element_id, edit):
+    """Rewrites each KeyFrame of the element's Timeline: edit(time, [props]) -> [props]."""
+    m = re.search(r"<Timeline>\r?\n<Id>" + re.escape(element_id) + r"</Id>.*?</Timeline>", text, re.S)
+    if not m:
+        raise SystemExit(f"timeline {element_id} not found")
+
+    def frame(k):
+        time = int(re.search(r"<Time>(\d+)</Time>", k.group(0)).group(1))
+        props = iter(edit(time, re.findall(r"<Prop>(.*?)</Prop>", k.group(0))))
+        return re.sub(r"<Prop>.*?</Prop>", lambda _: f"<Prop>{next(props)}</Prop>", k.group(0))
+
+    timeline = re.sub(r"<KeyFrame>.*?</KeyFrame>", frame, m.group(0), flags=re.S)
+    return text[:m.start()] + timeline + text[m.end():]
+
+
+def visual(text, visual_id):
+    m = re.search(r"<XuiVisual>\r?\n<Properties>\r?\n<Id>" + re.escape(visual_id) + r"</Id>.*?</XuiVisual>\r?\n", text, re.S)
+    if not m:
+        raise SystemExit(f"visual {visual_id} not found")
+    return m
+
+
+def element(kind, element_id, props):
+    lines = "".join(f"<{k}>{v}</{k}>\r\n" for k, v in props)
+    return f"<{kind}>\r\n<Properties>\r\n<Id>{element_id}</Id>\r\n{lines}</Properties>\r\n</{kind}>\r\n"
+
+
+# Persepolis Dust (ARGB)
+PARCHMENT, GOLD, WOOD, SAND, DUST, WHITE = "0xfff3ebdd", "0xffe2b15e", "0xff5c4f40", "0xffa58967", "0xffb9ac98", "0xffffffff"
+
+
+def restyle_button(v):
+    """Style A: plain parchment text; focus = gold text on a dark band with a gold bar (irancoj_band.dds)."""
+    for prop, value in (("ImagePath", "irn_band_0"), ("BaseImage", "irn_band"), ("NumFrames", "1"),
+                        ("Color", WHITE), ("Material", "sprite_button.mat")):
+        v = set_prop(v, "RandomBackground", prop, value)
+
+    def band(time, props):  # Color, Opacity
+        focused = 6 <= time <= 26
+        selected = 38 <= time <= 70
+        return [WHITE, "1.000000" if focused else "0.600000" if selected else "0.000000"]
+
+    def text(time, props):  # TextColor, Outline, Opacity
+        color = GOLD if 6 <= time <= 26 else WOOD if time >= 80 else PARCHMENT
+        return [color, "false", "1.000000"]
+
+    v = keyframes(v, "RandomBackground", band)
+    v = keyframes(v, "TextPrezenter", text)
+    for frame in ("Frame", "Frame1"):  # the old brush-stroke selection frames
+        v = keyframes(v, frame, lambda time, props: ["false"])
+    return set_prop(v, "TextPrezenter", "TextColor", PARCHMENT)
+
+
+written = {}
+
+
 def write(name, text):
+    written[name] = text
     os.makedirs(out, exist_ok=True)
     with open(os.path.join(out, name), "wb") as f:
         f.write(text.encode("latin1"))
@@ -84,9 +141,31 @@ t = t[:start] + leaderboard + t[start:]
 t = set_prop(t, "B_Multiplayer", "Text", "Play")
 
 order = ["B_Multiplayer", "B_Leaderboard", "B_Options", "B_Credits", "B_SelectProfile", "B_Quit"]
-ys = [346, 388, 430, 472, 514, 580]
+ys = [292, 344, 396, 448, 500, 572]
 for element_id, y in zip(order, ys):
-    t = set_prop(t, element_id, "Position", pos(y))
+    t = set_prop(t, element_id, "Position", pos(y, "64.000000"))
+    t = set_prop(t, element_id, "Visual", "ButtonIrn")
+    t = set_prop(t, element_id, "AutoAdjustWidth", "false")
+    t = set_prop(t, element_id, "Width", "340.000000")
+    t = set_prop(t, element_id, "Height", "48.000000")
+
+# Header, "SOON" on Leaderboard, key hints; the version line in quiet dust.
+extras = (
+    element("MyImage", "I_IrnLogo", [("Width", "512.000000"), ("Height", "256.000000"),
+                                      ("Position", "76.000000,90.000000,0.000000"), ("ImagePath", "irn_logo")])
+    + element("MyText", "T_IrnSoon", [("Width", "60.000000"), ("Height", "48.000000"),
+                                       ("Position", f"{64 + 340 - 72}.000000,352.000000,0.000000"),
+                                       ("Text", "SOON"), ("TextColor", SAND), ("Font", "TextVerySmall"),
+                                       ("TextStyle", "272")])
+    + element("MyText", "T_IrnKeys", [("Width", "600.000000"), ("Height", "40.000000"),
+                                       ("Position", "80.000000,664.000000,0.000000"),
+                                       ("Text", "ENTER  Select        ESC  Back"), ("TextColor", DUST),
+                                       ("Font", "TextSmall"), ("TextStyle", "272")])
+)
+first_button = t.index("<UINaviButton>")
+t = t[:first_button] + extras + t[first_button:]
+t = set_prop(t, "T_GameVersion", "TextColor", DUST)
+t = set_prop(t, "T_GameVersion", "Outline", "false")
 # Keyboard order skips the disabled Leaderboard button.
 active = ["B_Multiplayer", "B_Options", "B_Credits", "B_SelectProfile", "B_Quit"]
 for i, element_id in enumerate(active):
@@ -107,3 +186,102 @@ for name in ("MenuMultiplayerJoin.xui", "MenuMultiplayerCreateGame.xui"):
     t = read(name)
     t = set_prop(t, "T_EsrbNotice_$", "Show", "false")
     write(name, t)
+
+# ---------- button style (every screen), plus a left-aligned copy for the main menu ----------
+t = read("CoJ2MenuSkin.xui")
+m = visual(t, "ButtonV")
+button = restyle_button(m.group(0))
+main_button = button.replace("<Id>ButtonV</Id>", "<Id>ButtonIrn</Id>", 1)
+main_button = set_prop(main_button, "TextPrezenter", "TextStyle", "4368")  # left instead of centred
+main_button = set_prop(main_button, "TextPrezenter", "Position", "24.000000,0.000000,0.000000")
+t = t[:m.start()] + button + main_button + t[m.end():]
+write("CoJ2MenuSkin.xui", t)
+
+# ---------- background: the film in full colour (Mat/menu_bckg*.mat), no paper, no revolver ----------
+t = read("MenuBackground.xui")
+t = set_prop(t, "background_base", "Opacity", "1.000000")
+t = keyframes(t, "background_base", lambda time, props: ["0.000000" if props[0] == "0.000000" else "1.000000"])
+t = set_prop(t, "I_Gun", "Show", "false")
+t = set_prop(t, "background_film_back", "ImagePath", "black")  # under the film while it fades: black, not paper
+write("MenuBackground.xui", t)
+
+
+# ---------- dark panels and Persepolis colours on every main-menu screen ----------
+# Only screens in the packs the Edition ships (MenuCommon, MenuMain, Dashboard, Background). In-game screens
+# have their own packs, which can't be shipped (recompiled ones crash), so skin visuals made for them
+# (*Ingame*) keep the original look - in game they still sit on the original paper.
+MENU_SCREENS = """Curtain MenuCredits MenuLoading MenuOptionsControlsButtons MenuOptionsControlsKeyboard
+    MenuOptionsControlsSticks MenuSavingProfileWarningDialog MenuYesNoDialog MenuPasswordDialog MenuProgressDialog
+    DashboardAgreement DashboardBackground DashboardCreateProfile DashboardCreateProfile2 DashboardEditProfile
+    DashboardFriends DashboardGamerProfile DashboardMain DashboardMessage DashboardMessageCompose DashboardMessages
+    DashboardMsgBox DashboardNotification DashboardPlayers DashboardSaveNotification DashboardSignIn
+    DashboardYesNoDialog DashboardPasswordDialog DashboardProgressDialog MenuLan MenuMplCustomMatch
+    MenuMultiplayerChooseMaps MenuMultiplayerCreateGame MenuMultiplayerJoin MenuGamma MenuOptionsAudio
+    MenuOptionsControls MenuOptionsGame MenuOptionsVideo MenuMain MenuMplStatsLeaderboard MenuMultiplayer
+    MenuOptions""".split()
+DARK_TEXT = {"0xff0f0f0f", "0xff070000", "0xff000000", "0xfe000000", "0xfd000000", "0xfb000000", "0xf2000000"}
+HEADER = "0xff4a3f31"  # the blue header brushes, in dark wood
+BRUSH = {"0xffc38428": "0xff2e2a24", "0xff579446": "0xff7a6038", "0xff3ded0b": GOLD, "0xffd5f75a": GOLD,
+         "0xff4485ed": HEADER, "0xff4485eb": HEADER, "0xffbf190f": "0xff7a2e22"}
+OTHER = {"0xffc38428": SAND, "0xff579446": GOLD, "0xff4485ed": HEADER, "0xff4485eb": HEADER}  # arrows, bars
+
+
+def text_color(value):
+    """Dark text (it sat on paper) -> parchment, keeping its alpha."""
+    v = int(value, 16)
+    luma = 0.3 * (v >> 16 & 255) + 0.59 * (v >> 8 & 255) + 0.11 * (v & 255)
+    return value[:4] + PARCHMENT[4:] if value.lower() in DARK_TEXT or luma < 100 else value
+
+
+def recolor(text):
+    """Panels -> irn_panel_tile; dark text -> parchment; brush and accent colours -> the palette."""
+    text = text.replace("dialog_frame_a_tile", "irn_panel_tile")
+    brushes = {m.group(1) for m in re.finditer(r"<Id>(.*?)</Id>(?:(?!</Properties>).)*?<(?:BaseImage|ImagePath)>button", text, re.S)}
+
+    def color(element_id, value):
+        table = BRUSH if element_id in brushes else OTHER
+        return table.get(value.lower(), value)
+
+    def element(m):
+        b = m.group(0)
+        element_id = re.search(r"<Id>(.*?)</Id>", b).group(1)
+        b = re.sub(r"<TextColor>(.*?)</TextColor>", lambda c: f"<TextColor>{text_color(c.group(1))}</TextColor>", b)
+        return re.sub(r"<Color>(.*?)</Color>", lambda c: f"<Color>{color(element_id, c.group(1))}</Color>", b)
+
+    def timeline(m):
+        b = m.group(0)
+        element_id = re.search(r"<Id>(.*?)</Id>", b).group(1)
+        names = re.findall(r"<TimelineProp>(.*?)</TimelineProp>", b)
+
+        def frame(k):
+            props = iter(re.findall(r"<Prop>(.*?)</Prop>", k.group(0)))
+            new = [text_color(v) if n == "TextColor" else color(element_id, v) if n == "Color" else v
+                   for n, v in zip(names, props)]
+            it = iter(new)
+            return re.sub(r"<Prop>.*?</Prop>", lambda _: f"<Prop>{next(it)}</Prop>", k.group(0))
+
+        return re.sub(r"<KeyFrame>.*?</KeyFrame>", frame, b, flags=re.S)
+
+    text = re.sub(r"<Properties>\r?\n<Id>.*?</Properties>", element, text, flags=re.S)
+    return re.sub(r"<Timeline>\r?\n<Id>.*?</Timeline>", timeline, text, flags=re.S)
+
+
+t = written["CoJ2MenuSkin.xui"]
+for m in reversed(list(re.finditer(r"<XuiVisual>\r?\n<Properties>\r?\n<Id>(.*?)</Id>.*?</XuiVisual>\r?\n", t, re.S))):
+    if m.group(1) in ("ButtonV", "ButtonIrn") or "ingame" in m.group(1).lower():
+        continue
+    t = t[:m.start()] + recolor(m.group(0)) + t[m.end():]
+write("CoJ2MenuSkin.xui", t)
+
+for screen in MENU_SCREENS:
+    name = screen + ".xui"
+    write(name, recolor(written.get(name) or read(name)))
+
+# ---------- profile pages: the softened background instead of paper, no revolvers ----------
+t = written["DashboardBackground.xui"]
+t = set_prop(t, "Background", "ImagePath", "irn_bg")
+t = drop_prop(t, "Background", "Material")
+for gun in ("I_Gun_1", "I_Gun_2"):
+    t = set_prop(t, gun, "Show", "false")
+    t = set_prop(t, gun, "Opacity", "0.000000")
+write("DashboardBackground.xui", t)

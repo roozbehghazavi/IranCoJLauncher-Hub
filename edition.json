@@ -1,5 +1,5 @@
 {
-  "version": "0.5.1",
+  "version": "0.6.0",
   "notes": "0.4: allow-list. Only the game files named in include are copied (by name, from any store; a mod's .disabled copy counts), so mods and maps in the player's install never reach the Edition. ?path = optional, * and ? = whatever is there. exclude/keep stay for launchers older than alpha.5. 0.5: ownUserFolder - the Edition's exe reads its own HKCU key, so profiles, saves and settings live in Documents\\IranCoJ Edition (launcher alpha.8+). 0.5.1: menuNavigation (Play -> Join/Host, Back -> main menu, patched in the Edition's CoJ2_x86.dll by pattern; launcher alpha.10+), compiled menu packs in edition/files, the multiplayer maps' loading screens (*_loading.rpack). Loading music is copied by the launcher from the tracks the maps' .trk files name.",
   "ownUserFolder": true,
   "menuNavigation": true,
@@ -30,7 +30,6 @@
     "CoJ2/Data/Menu/MenuIngameSingle_Scr_PC.binui",
     "CoJ2/Data/Menu/MenuIngameSingle_Skn_PC.binui",
     "CoJ2/Data/Menu/Movies/Initial_BG.wmv",
-    "CoJ2/Data/Menu/Movies/MenuMovie_0.wmv",
     "CoJ2/Data/Menu/Movies/Ubisoft_720p.wmv",
     "CoJ2/Data/Menu/Movies/Ubisoft_720p_4_3.wmv",
     "CoJ2/Data/MplService.scr",
@@ -103,7 +102,6 @@
     "CoJ2/Data/Music/COJ2_MultiP_*",
     "CoJ2/Data/Music/COJ2_Multi_*",
     "CoJ2/Data/Music/COJ2_Conc_Mode_4.ogg",
-    "CoJ2/Data/Menu/Movies/MenuMovie_0.wmv",
     "CoJ2/Data/Menu/Movies/Initial_BG.wmv",
     "CoJ2/Data/Menu/Movies/Ubisoft_720p*.wmv"
   ],
@@ -116,6 +114,63 @@
         [
           "MenuMovie_[1-9]",
           "MenuMovie_0"
+        ]
+      ]
+    },
+    {
+      "path": "CoJ2/Data/Menu/TextureDefs/CoJ2MenuTextures.def",
+      "pak": "CoJ2/Data0.pak",
+      "entry": "Data/Menu/TextureDefs/CoJ2MenuTextures.def",
+      "replace": [
+        [
+          "\\z",
+          "\r\n\r\n//IranCoJ Edition main menu\r\nTexture(\"irancoj_band.dds\", 256, 64)\r\n{\r\n\tRectWithCorner(\"irn_band_0\", 0, 0, 256, 64, 32, 8)\r\n}\r\n\r\nTexture(\"irancoj_logo.dds\", 512, 256)\r\n{\r\n\tWhole(\"irn_logo\")\r\n}\r\n\r\nTexture(\"irancoj_panel.dds\", 256, 256)\r\n{\r\n\tTileset(\"irn_panel_tile\")\r\n\t{\r\n\t\tRect(\"irn_panel_tile\", 86, 86, 170, 170)\r\n\t\tRect(\"irn_panel_bottom\", 86, 170, 170, 256)\r\n\t\tRect(\"irn_panel_top\", 86, 0, 170, 86)\r\n\t\tRect(\"irn_panel_left\", 0, 86, 86, 170)\r\n\t\tRect(\"irn_panel_right\", 170, 86, 256, 170)\r\n\t\tRect(\"irn_panel_bottom_left\", 0, 170, 86, 256)\r\n\t\tRect(\"irn_panel_bottom_right\", 170, 170, 256, 256)\r\n\t\tRect(\"irn_panel_top_left\", 0, 0, 86, 86)\r\n\t\tRect(\"irn_panel_top_right\", 170, 0, 256, 86)\r\n\t\tCornerTopLeft(\"irn_panel_top_left\", 100, 0)\r\n\t\tCornerTopRight(\"irn_panel_top_right\", 100, 0)\r\n\t\tCornerBottomLeft(\"irn_panel_bottom_left\", 100, 0)\r\n\t\tCornerBottomRight(\"irn_panel_bottom_right\", 100, 0)\r\n\t\tTop(\"irn_panel_top\", 100, 0)\r\n\t\tBottom(\"irn_panel_bottom\", 100, 0)\r\n\t\tLeft(\"irn_panel_left\", 100, 0)\r\n\t\tRight(\"irn_panel_right\", 100, 0)\r\n\t\tMiddle(\"irn_panel_tile\", 100, 0)\r\n\t}\r\n\tWhole(\"irn_panel_whole\")\r\n}\r\n\r\nTexture(\"irancoj_bg.dds\", 1024, 512)\r\n{\r\n\tWhole(\"irn_bg\")\r\n}\r\n"
+        ]
+      ]
+    },
+    {
+      "path": "CoJ2/Data/Menu/Mat/menu_bckg.mat",
+      "pak": "CoJ2/Data0.pak",
+      "entry": "Data/Menu/Mat/menu_bckg.mat",
+      "replace": [
+        [
+          "t1 = mix\\(t0, t1, 1-CONST\\.w\\);",
+          "t1 = t1 * (1-CONST.w); // IranCoJ: fade through black, not paper"
+        ],
+        [
+          "t1 = max\\(t1\\.g, 1\\.0/255\\.0\\);",
+          "// IranCoJ: the film keeps its colour"
+        ],
+        [
+          "output = mix\\(step9, step7, 0\\.55\\);",
+          "output = t1; output.a = 1;"
+        ],
+        [
+          "output\\.rgb = saturate\\(lerp\\(f_luminance, output\\.rgb, F_OUT_SATURATION\\)\\);",
+          ""
+        ]
+      ]
+    },
+    {
+      "path": "CoJ2/Data/Menu/Mat/menu_bckg_film.mat",
+      "pak": "CoJ2/Data0.pak",
+      "entry": "Data/Menu/Mat/menu_bckg_film.mat",
+      "replace": [
+        [
+          "t1 = mix\\(1, t1, CONST\\.w\\);",
+          "t1 = t1 * CONST.w; // IranCoJ: fade through black, not white"
+        ],
+        [
+          "t1 = max\\(t1\\.g, 1\\.0/255\\.0\\);",
+          "// IranCoJ: the film keeps its colour"
+        ],
+        [
+          "output = mix\\(step9, step7, 0\\.55\\);",
+          "output = t1; output.a = 1;"
+        ],
+        [
+          "output\\.rgb = saturate\\(lerp\\(f_luminance, output\\.rgb, F_OUT_SATURATION\\)\\);",
+          ""
         ]
       ]
     }
