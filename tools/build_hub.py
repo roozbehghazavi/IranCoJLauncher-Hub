@@ -21,6 +21,8 @@ MAPS_DIR = "MapsNet"
 MAPS_RELEASE = "maps"
 MODS_DIR = "mods"
 MODS_RELEASE = "mods"
+EDITION_FILES_DIR = os.path.join("edition", "files")
+EDITION_RELEASE = "edition"
 MOD_VERSION_FILE = "version.txt"
 LFS_PREFIX = b"version https://git-lfs.github.com/spec/v1"
 CATALOG_SCHEMA = 2
@@ -250,6 +252,34 @@ def build_legacy_manifest():
     return manifest
 
 
+# ---------- edition ----------
+
+def edition_files():
+    """edition/files/<path in the Edition> -> uploaded to the edition release, listed in the catalog."""
+    if not os.path.isdir(EDITION_FILES_DIR):
+        return []
+    local = []
+    for root, _, names in os.walk(EDITION_FILES_DIR):
+        for name in names:
+            path = os.path.join(root, name)
+            local.append((os.path.relpath(path, EDITION_FILES_DIR).replace(os.sep, "/"), path))
+    names = [os.path.basename(p) for _, p in local]
+    dupes = {n for n in names if names.count(n) > 1}
+    if dupes:
+        sys.exit(f"edition/files: release asset names must be unique, duplicated: {sorted(dupes)}")
+
+    assets = release_assets(EDITION_RELEASE, "Edition files",
+                            "IranCoJ's own files for the Edition. Managed by the hub workflow - see README.md.")
+    if any([upload_if_changed(EDITION_RELEASE, p, assets) for _, p in local]):
+        assets = release_assets(EDITION_RELEASE, "", "")
+    files = []
+    for rel, path in sorted(local):
+        a = assets[os.path.basename(path)]
+        files.append({"path": rel, "size": a["size"], "sha256": asset_sha256(a) or sha256_of(path),
+                      "url": a["browser_download_url"]})
+    return files
+
+
 def load_optional_json(path):
     """edition.json / news.json: copied into the catalog as they are (validated as JSON)."""
     if not os.path.isfile(path):
@@ -272,6 +302,7 @@ if __name__ == "__main__":
     edition = load_optional_json("edition.json")
     if edition:
         catalog["edition"] = {key: edition[key] for key in ("version", "exclude", "keep", "rewrite") if key in edition}
+        catalog["edition"]["files"] = edition_files()
     news = load_optional_json("news.json")
     if news:
         catalog["news"] = news
