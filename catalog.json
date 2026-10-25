@@ -21,20 +21,20 @@
     },
     {
       "file": "battlefield.pak",
-      "size": 8105504,
-      "sha256": "b60eb1dfad9a218d66b5deb48ae3dbb33199650e673ab1e24ff0c0b824ef5f4d",
+      "size": 8081752,
+      "sha256": "7d6a37a761852189adbd9cc783490e2f8e5a24614d8de2e1f3a7a3bde8c42e9f",
       "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/maps/battlefield.pak"
     },
     {
       "file": "bazaar.pak",
-      "size": 9453772,
-      "sha256": "2d5eed70def52f4f14527b88feb6792970447ff3dae752e68bf5264d01afa022",
+      "size": 9453525,
+      "sha256": "bb3fe97130dc7a7e3d64db0ba2051e5c19b4b60ab1e11e9010325c04e72a3930",
       "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/maps/bazaar.pak"
     },
     {
       "file": "boston_city.pak",
-      "size": 11058834,
-      "sha256": "995e0c8c7a49aac0d7bfedb18713c06964290b9c611e5a677ffc77b4c8e733d3",
+      "size": 11035082,
+      "sha256": "33e4bb622eb0b16b06826e95193aeff95bc09b66974ae28f8b9dbcf91b15265f",
       "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/maps/boston_city.pak"
     },
     {
@@ -57,8 +57,8 @@
     },
     {
       "file": "desperados.pak",
-      "size": 17296392,
-      "sha256": "2719c9eec9d4f7b4cb5cacbccb47f5c22a6a480931edcd1cfde8b70fa546161d",
+      "size": 17272640,
+      "sha256": "f5ee5ca06ed6aa85cab27e9fbbdd21a9b35aff41b26737c81ca86ae3dae9bb00",
       "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/maps/desperados.pak"
     },
     {
@@ -75,20 +75,20 @@
     },
     {
       "file": "el_santos.pak",
-      "size": 10005217,
-      "sha256": "774c6af41ec65bee59cdfc4658793c8bf620aea60e3b9064cee7a1a6d7832424",
+      "size": 9981465,
+      "sha256": "e07704b072f1e4e0186d9382099a5c884a3cb700d5fe77c9edfb0949e6883075",
       "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/maps/el_santos.pak"
     },
     {
       "file": "favel.pak",
-      "size": 8656940,
-      "sha256": "bd11813276252faa41297cc4d1de184a27887d9bd3794273fbf830a3df0d11cc",
+      "size": 8633188,
+      "sha256": "96965fe107e998d041d766c377e6fb9bd6ad3887203d198fc6bbe80d2942dd1f",
       "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/maps/favel.pak"
     },
     {
       "file": "fiesta_mexicana.pak",
-      "size": 11196643,
-      "sha256": "fbcc556f5794b9b8c3c0992c784afbd1c61c5be615cd94547769cef4834a91d8",
+      "size": 11172891,
+      "sha256": "3834a2af9c508de5f17fd1d127bc5132b5637f64a03ead3ff2a326f1fb8a71bb",
       "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/maps/fiesta_mexicana.pak"
     },
     {
@@ -105,14 +105,14 @@
     },
     {
       "file": "ghosts.pak",
-      "size": 9109957,
-      "sha256": "779678ac633dea0a64e76ec3e9674bf36d1da0182533e2a35a3ea732b45ed8bf",
+      "size": 9109710,
+      "sha256": "5404357e2ab819e46c36679d241f2074415d947ca856338e95ddd0d0d5b7bc3b",
       "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/maps/ghosts.pak"
     },
     {
       "file": "gold_rush.pak",
-      "size": 8925346,
-      "sha256": "dd6175b3f11e5a60fd4f895fabcf7fa922f92efcaca56feac93e770b984eadf7",
+      "size": 8901594,
+      "sha256": "d6aa2365f8145336c648bcd9a8c2d92902ffef57baf1deea8b9deaa60ef0b396",
       "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/maps/gold_rush.pak"
     },
     {
@@ -123,20 +123,20 @@
     },
     {
       "file": "green_hell.pak",
-      "size": 17457450,
-      "sha256": "7ec5fa20068304b2965c4fb73829b72151e7764ce18325fe4d5d59f8e200187e",
+      "size": 17457203,
+      "sha256": "cc479ff357296a0821f2ff75f8a9049b25ba89896d2f113dabaafba96bfc3b86",
       "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/maps/green_hell.pak"
     },
     {
       "file": "harbor.pak",
-      "size": 7100935,
-      "sha256": "f67a3e1c99b22af8fc54d15cba9700f87d3ab656b715bb9cbd91626a1d417726",
+      "size": 7077183,
+      "sha256": "77eb76f4e54c073d8dc025492ac59ecf629b963f818c7e9f5438de58013c0259",
       "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/maps/harbor.pak"
     },
     {
       "file": "helldorado.pak",
-      "size": 9544959,
-      "sha256": "bd25d65a2d296566638c8355a5ff698f7e29a488a57310645fd35f057d70ea0e",
+      "size": 9521207,
+      "sha256": "ce155fb341fcba1b4f455dbf73d80572dd432abcf4229ada82530d38ebe75ca6",
       "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/maps/helldorado.pak"
     },
     {
@@ -153,14 +153,14 @@
     },
     {
       "file": "madville.pak",
-      "size": 10123667,
-      "sha256": "e9546147c7c532c17c83b581e4152b6c9da0020c9e55dc851102b860e6ad7a0e",
+      "size": 10099915,
+      "sha256": "989d54b26d65f2342fc023390e142776fc99eb07972596d70e7d91944064caf3",
       "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/maps/madville.pak"
     },
     {
       "file": "main_street.pak",
-      "size": 26832007,
-      "sha256": "e2c42dff7a1ee06447ea97c6072481d6faf6d366d92629d72e5e29b3abbe4d12",
+      "size": 26808255,
+      "sha256": "e97dd36cbfdafa5ea634964501da320b910c9a159f95500ea954a7206d57da41",
       "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/maps/main_street.pak"
     },
     {
@@ -171,8 +171,8 @@
     },
     {
       "file": "mexicioso.pak",
-      "size": 8522681,
-      "sha256": "2659eda481ba8b27dc2d30fd62c65ca33a1db74f72c993850d8b5f3727bb0ee0",
+      "size": 8498929,
+      "sha256": "0763c2732d6fdad3cb95db8a51a09272de52af80316a259aef46e18efa322f29",
       "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/maps/mexicioso.pak"
     },
     {
@@ -267,14 +267,14 @@
     },
     {
       "file": "raid.pak",
-      "size": 9316706,
-      "sha256": "4a1f2db77306dd871c4309028f8be1e10954ea76c620d6e6547523688baac799",
+      "size": 9292954,
+      "sha256": "902e7116eb3f560846e15367ae36ae2365772530120649579c8fab2fa0146d19",
       "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/maps/raid.pak"
     },
     {
       "file": "red_hideout.pak",
-      "size": 11048262,
-      "sha256": "b7c86bed81a682441588b3909d6fe83a958764c4342ef747d3163beae60f2782",
+      "size": 11024483,
+      "sha256": "5e7e846f2ae4c1b3178edcd459b02e8986c0dd465b1f5a2a1f326c1f6dfaf51c",
       "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/maps/red_hideout.pak"
     },
     {
@@ -291,8 +291,8 @@
     },
     {
       "file": "river_city.pak",
-      "size": 11201945,
-      "sha256": "fcfdf27d297870c001e314e9bb07828fb08c7828f32d3d55bfacf56c6a3842fa",
+      "size": 9942979,
+      "sha256": "a2f700a932a538802a20895c208ed8f0846ee318bdd50184259cde62c673d303",
       "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/maps/river_city.pak"
     },
     {
@@ -303,8 +303,8 @@
     },
     {
       "file": "rockriver.pak",
-      "size": 11684437,
-      "sha256": "f30ba1a1275565c126579c607c735c9d2df04bf39db747f0957afb98188cb0a4",
+      "size": 11660648,
+      "sha256": "38a4b789c58c5556a56b2ec42cd64afdaf573c94ece457890e17afd45fbc97e0",
       "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/maps/rockriver.pak"
     },
     {
@@ -315,8 +315,8 @@
     },
     {
       "file": "samhain.pak",
-      "size": 7919787,
-      "sha256": "b264b94b7b4cd6f21a3a8b92dd78ac50ace8ad1c9311141d834171d3561bb496",
+      "size": 7896035,
+      "sha256": "627aa4b76cf48c6a84840fac58f0341bc657161b603e3cbd28841e12a39d1a62",
       "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/maps/samhain.pak"
     },
     {
@@ -339,20 +339,20 @@
     },
     {
       "file": "stronghold.pak",
-      "size": 5167450,
-      "sha256": "bddd4a387cefe59c25228ca0af126dc0324a5d600781e8e65a70d812056ea3b6",
+      "size": 5167203,
+      "sha256": "15370e09275bcaad860394573d4152f5cfe93f67b79238fb9e6aef7fba71c27b",
       "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/maps/stronghold.pak"
     },
     {
       "file": "the_bayou.pak",
-      "size": 7744120,
-      "sha256": "9e5eca44e04bac23a20b2e604e2f24f1d88cab279ed31e042afa0e169394b50c",
+      "size": 7719892,
+      "sha256": "ce441d0af4c690a2e12b6f717d43470083cf33956e86a3bc9d3c0b0af080b0c2",
       "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/maps/the_bayou.pak"
     },
     {
       "file": "the_cellar.pak",
-      "size": 6400636,
-      "sha256": "85d8929a348cfbb9bea6bc67f12594f77b009bbd7b6abc5b5c36222866e253e4",
+      "size": 6376408,
+      "sha256": "f95057514ce08a09907867a042845e1598f51aeab20be8b1b86bd19ab57ecd23",
       "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/maps/the_cellar.pak"
     },
     {
@@ -363,8 +363,8 @@
     },
     {
       "file": "the_great_robbery.pak",
-      "size": 6700994,
-      "sha256": "e0f5d2309af9bbe9c8f1ff3e4195c09d35a9af85d0621e905b97c2869a1cbc6b",
+      "size": 6677242,
+      "sha256": "389e5c0a7ced022eba0b60761effc0a7f8c95ed070bf5d23b44839c82b8bc024",
       "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/maps/the_great_robbery.pak"
     },
     {
@@ -387,8 +387,8 @@
     },
     {
       "file": "wyzima.pak",
-      "size": 10314824,
-      "sha256": "824f126303df4b1f7665470962608e0e404b8f0861e6d0a62501af4578f11239",
+      "size": 10291072,
+      "sha256": "3876fc1dd1feb32b1bec28cef01b7d40f72bb2729df57d080403b4c857cab81e",
       "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/maps/wyzima.pak"
     }
   ],
