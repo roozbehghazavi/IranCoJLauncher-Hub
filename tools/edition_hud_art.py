@@ -12,6 +12,7 @@ import sys
 from PIL import Image, ImageDraw, ImageFont
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from edition_emblems import disc, sheriff_star, skull_hat  # noqa: E402
 from edition_menu_art import GOLD, INK, PARCH, WOOD, write_dds  # noqa: E402
 
 OSWALD = os.path.join(os.path.dirname(os.path.abspath(__file__)), "fonts", "Oswald.ttf")
@@ -69,13 +70,12 @@ def pill():
     return im
 
 
+EMBLEM = {RED: skull_hat, BLUE: sheriff_star}  # Outlaws: a skull under a cowboy hat; Lawmen: a sheriff's star
+
+
 def team(color):
-    """128x128 team emblem (was the crossed revolvers): a dark disc in a team-colour ring with a star."""
-    im = Image.new("RGBA", (128, 128))
-    d = ImageDraw.Draw(im)
-    d.ellipse([6, 6, 121, 121], fill=INK + (225,), outline=color + (255,), width=7)
-    star(d, 64, 66, 36, color)
-    return im
+    """128x128 team emblem (was the crossed revolvers): the team's emblem on a dark disc in a team-colour ring."""
+    return disc(EMBLEM[color], 128, color)
 
 
 def wanted():
@@ -108,7 +108,8 @@ def chips():
     for y, color, name in ((96, RED, "OUTLAWS"), (154, BLUE, "LAWMEN")):  # irn_badge_red / _blue: 206x54
         chip((0, y, 205, y + 53), color)
         d.rectangle([1, y + 1, 204, y + 52], outline=color + (255,), width=2)
-        star(d, 30, y + 27, 14, color)
+        emblem = EMBLEM[color](38, color)
+        atlas.alpha_composite(emblem, (11, y + 8))
         d.text((56, y + 27), name, font=font(28), fill=PARCH + (255,), anchor="lm")
     return atlas
 
