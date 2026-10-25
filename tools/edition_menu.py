@@ -473,12 +473,21 @@ t = baseline(t, [(("T_MapName", "T_ModeName", "T_Timer"), (34, 50)), (("T_Wallet
 t = set_prop(t, "T_SpecName", "TextColor", PARCHMENT)
 write("MenuNetSelectClass.xui", t)
 
-t = written["MenuNetResults_PC.xui"]
-t = flat_texts(t, {"T_MapName": PARCHMENT, "T_ModeName": GOLD, "T_Timer": GOLD, "T_GameSettings": PARCHMENT})
-t = baseline(t, [(("T_MapName", "T_ModeName", "T_Timer", "T_GameSettings"), (34, 50))])
-for group, panel in (("G_RedBackground", "irn_panel_red_tile"), ("G_BlueBackground", "irn_panel_blue_tile")):
-    t = in_group(t, group, lambda g, panel=panel: set_prop(g, "Background", "ImagePath", panel))  # team-tinted header
-write("MenuNetResults_PC.xui", t)
+# Scoreboard (both: the game's compiled one is MenuNetResults, the PC patch adds MenuNetResults_PC): team-tinted
+# headers, and a top bar under map / mode / settings / time - it is shown over the live game (Tab), where the
+# HUD backdrop's bars are not up. The bar is the first child of the plain G_GameInfo group (its texts are
+# found by name).
+top_bar = element("MyImage", "I_IrnTopBar", [("Width", "1280.000000"), ("Height", "100.000000"), ("ImagePath", "irn_bar_top")])
+for name in ("MenuNetResults.xui", "MenuNetResults_PC.xui"):
+    t = written[name]
+    t = flat_texts(t, {"T_MapName": PARCHMENT, "T_ModeName": GOLD, "T_Timer": GOLD, "T_GameSettings": PARCHMENT})
+    t = baseline(t, [(("T_MapName", "T_ModeName", "T_Timer", "T_GameSettings"), (34, 50))])
+    for group, panel in (("G_RedBackground", "irn_panel_red_tile"), ("G_BlueBackground", "irn_panel_blue_tile")):
+        t = in_group(t, group, lambda g, panel=panel: set_prop(g, "Background", "ImagePath", panel))
+    a, b = group_span(t, "G_GameInfo")
+    head = re.search(r"<(AdvGroup|XuiGroup)>\r?\n<Properties>.*?</Properties>\r?\n", t[a:b], re.S)
+    t = t[:a + head.end()] + top_bar + t[a + head.end():]
+    write(name, t)
 
 def themed_scrollbars(t):
     """Scrollbars: slim wood track, gold handle, flat sand arrows (gold when focused) instead of brush strokes."""

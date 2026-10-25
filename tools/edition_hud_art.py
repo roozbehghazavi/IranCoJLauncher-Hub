@@ -58,14 +58,15 @@ def mix(a, b, t):
 
 
 def score():
-    """256x64 plate behind the team score: dark blue half, dark red half, wood divider - opaque, so the sky
-    behind it can't tint both halves the same."""
-    im = Image.new("RGBA", (256, 64), INK + (255,))
+    """The team score's plate, 184x52 in a 256x64 texture (its rect is exactly the plate, so however the score's
+    html draws its background, blue stays left and red right): dark blue | dark red, wood frame and divider."""
+    im = Image.new("RGBA", (256, 64))
     d = ImageDraw.Draw(im)
-    d.rectangle([2, 2, 126, 61], fill=mix(INK, BLUE, 0.45) + (255,))
-    d.rectangle([130, 2, 253, 61], fill=mix(INK, RED, 0.45) + (255,))
-    d.rectangle([127, 6, 128, 57], fill=WOOD + (255,))
-    d.rectangle([0, 0, 255, 63], outline=WOOD + (255,), width=2)
+    d.rectangle([0, 0, 183, 51], fill=INK + (255,))
+    d.rectangle([2, 2, 90, 49], fill=mix(INK, BLUE, 0.5) + (255,))
+    d.rectangle([93, 2, 181, 49], fill=mix(INK, RED, 0.5) + (255,))
+    d.rectangle([91, 4, 92, 47], fill=WOOD + (255,))
+    d.rectangle([0, 0, 183, 51], outline=WOOD + (255,), width=2)
     return im
 
 
@@ -104,6 +105,7 @@ def chips():
     d.ellipse([9, 64, 28, 83], outline=GOLD + (255,), width=2)
     d.line([(18, 74), (18, 68)], fill=GOLD + (255,), width=2)
     d.line([(18, 74), (23, 76)], fill=GOLD + (255,), width=2)
+    chip((100, 56, 195, 91))                                # irn_hud_num: 96x36, numbers only (team timers)
     for y, color, name in ((96, RED, "OUTLAWS"), (154, BLUE, "LAWMEN")):  # irn_badge_red / _blue: 206x54
         chip((0, y, 205, y + 53), color)
         d.rectangle([1, y + 1, 204, y + 52], outline=color + (255,), width=2)
