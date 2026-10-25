@@ -591,7 +591,7 @@
     }
   ],
   "edition": {
-    "version": "0.7.2",
+    "version": "0.7.3",
     "ownUserFolder": true,
     "menuNavigation": true,
     "include": [
@@ -960,7 +960,7 @@
           ],
           [
             "\\z",
-            " \u0000Name_WeaponPistolFrontierUpgrade\u0012\u0000S\u0000p\u0000r\u0000i\u0000n\u0000g\u0000f\u0000i\u0000e\u0000l\u0000d\u0000 \u0000M\u0000u\u0000s\u0000k\u0000e\u0000t\u0000#\u0000Name_WeaponPistolFrontierUpgradeNet\u0012\u0000S\u0000p\u0000r\u0000i\u0000n\u0000g\u0000f\u0000i\u0000e\u0000l\u0000d\u0000 \u0000M\u0000u\u0000s\u0000k\u0000e\u0000t\u0000\u001d\u0000N_WeaponPistolFrontierUpgrade\u0012\u0000S\u0000p\u0000r\u0000i\u0000n\u0000g\u0000f\u0000i\u0000e\u0000l\u0000d\u0000 \u0000M\u0000u\u0000s\u0000k\u0000e\u0000t\u0000\u0017\u0000MenuDerringerUpgradeNet\u000f\u0000T\u0000h\u0000r\u0000o\u0000w\u0000i\u0000n\u0000g\u0000 \u0000K\u0000n\u0000i\u0000v\u0000e\u0000s\u0000$\u0000Name_WeaponPistolDerringerUpgradeNet\u000e\u0000T\u0000h\u0000r\u0000o\u0000w\u0000i\u0000n\u0000g\u0000 \u0000K\u0000n\u0000i\u0000f\u0000e\u0000!\u0000Name_WeaponPistolDerringerUpgrade\u000e\u0000T\u0000h\u0000r\u0000o\u0000w\u0000i\u0000n\u0000g\u0000 \u0000K\u0000n\u0000i\u0000f\u0000e\u0000\u001e\u0000N_WeaponPistolDerringerUpgrade\u000e\u0000T\u0000h\u0000r\u0000o\u0000w\u0000i\u0000n\u0000g\u0000 \u0000K\u0000n\u0000i\u0000f\u0000e\u0000\u0014\u0000MenuLemantUpgradeNet\b\u0000T\u0000o\u0000m\u0000a\u0000h\u0000a\u0000w\u0000k\u0000!\u0000Name_WeaponPistolLemantUpgradeNet\b\u0000T\u0000o\u0000m\u0000a\u0000h\u0000a\u0000w\u0000k\u0000\u001e\u0000Name_WeaponPistolLemantUpgrade\b\u0000T\u0000o\u0000m\u0000a\u0000h\u0000a\u0000w\u0000k\u0000\u001b\u0000N_WeaponPistolLemantUpgrade\b\u0000T\u0000o\u0000m\u0000a\u0000h\u0000a\u0000w\u0000k\u0000\u0011\u0000IrnEditionVersion\u0015\u0000I\u0000r\u0000a\u0000n\u0000C\u0000o\u0000J\u0000 \u0000E\u0000d\u0000i\u0000t\u0000i\u0000o\u0000n\u0000 \u00000\u0000.\u00007\u0000.\u00002\u0000"
+            " \u0000Name_WeaponPistolFrontierUpgrade\u0012\u0000S\u0000p\u0000r\u0000i\u0000n\u0000g\u0000f\u0000i\u0000e\u0000l\u0000d\u0000 \u0000M\u0000u\u0000s\u0000k\u0000e\u0000t\u0000#\u0000Name_WeaponPistolFrontierUpgradeNet\u0012\u0000S\u0000p\u0000r\u0000i\u0000n\u0000g\u0000f\u0000i\u0000e\u0000l\u0000d\u0000 \u0000M\u0000u\u0000s\u0000k\u0000e\u0000t\u0000\u001d\u0000N_WeaponPistolFrontierUpgrade\u0012\u0000S\u0000p\u0000r\u0000i\u0000n\u0000g\u0000f\u0000i\u0000e\u0000l\u0000d\u0000 \u0000M\u0000u\u0000s\u0000k\u0000e\u0000t\u0000\u0017\u0000MenuDerringerUpgradeNet\u000f\u0000T\u0000h\u0000r\u0000o\u0000w\u0000i\u0000n\u0000g\u0000 \u0000K\u0000n\u0000i\u0000v\u0000e\u0000s\u0000$\u0000Name_WeaponPistolDerringerUpgradeNet\u000e\u0000T\u0000h\u0000r\u0000o\u0000w\u0000i\u0000n\u0000g\u0000 \u0000K\u0000n\u0000i\u0000f\u0000e\u0000!\u0000Name_WeaponPistolDerringerUpgrade\u000e\u0000T\u0000h\u0000r\u0000o\u0000w\u0000i\u0000n\u0000g\u0000 \u0000K\u0000n\u0000i\u0000f\u0000e\u0000\u001e\u0000N_WeaponPistolDerringerUpgrade\u000e\u0000T\u0000h\u0000r\u0000o\u0000w\u0000i\u0000n\u0000g\u0000 \u0000K\u0000n\u0000i\u0000f\u0000e\u0000\u0014\u0000MenuLemantUpgradeNet\b\u0000T\u0000o\u0000m\u0000a\u0000h\u0000a\u0000w\u0000k\u0000!\u0000Name_WeaponPistolLemantUpgradeNet\b\u0000T\u0000o\u0000m\u0000a\u0000h\u0000a\u0000w\u0000k\u0000\u001e\u0000Name_WeaponPistolLemantUpgrade\b\u0000T\u0000o\u0000m\u0000a\u0000h\u0000a\u0000w\u0000k\u0000\u001b\u0000N_WeaponPistolLemantUpgrade\b\u0000T\u0000o\u0000m\u0000a\u0000h\u0000a\u0000w\u0000k\u0000\u0011\u0000IrnEditionVersion\u0015\u0000I\u0000r\u0000a\u0000n\u0000C\u0000o\u0000J\u0000 \u0000E\u0000d\u0000i\u0000t\u0000i\u0000o\u0000n\u0000 \u00000\u0000.\u00007\u0000.\u00003\u0000"
           ]
         ]
       },
@@ -1004,7 +1004,7 @@
         "replace": [
           [
             "(?s)float4 t0 = tex2D\\(tmu0, i\\.uv0\\); //background.*?//output = step7;",
-            "float4 t0 = tex2D(tmu0, i.uv0); //background (kept bound)\n\t\t\t\t\t\t\tfloat4 i1 = tex2D(tmu1, i.uv1); //image 1\n\t\t\t\t\t\t\tfloat4 i2 = tex2D(tmu3, i.uv4); //image 2\n\t\t\t\t\t\t\tfloat4 m0 = tex2D(tmu2, i.uv2); //mask (kept bound)\n\t\t\t\t\t\t\tfloat3 pic = i1.rgb * CONST_6.x + i2.rgb * CONST_6.y;\n\n\t\t\t\t\t\t\t// IranCoJ Edition (loading screen): the map's pictures in colour, darker on the left behind the\n\t\t\t\t\t\t\t// text and at the bottom, and a dark card with a gold top edge under the objectives map.\n\t\t\t\t\t\t\tfloat left = saturate(1 - i.uv0.x / 0.62);\n\t\t\t\t\t\t\tfloat shade = 0.82 - 0.62 * pow(left, 0.9);\n\t\t\t\t\t\t\tshade *= 1 - 0.55 * pow(saturate((i.uv0.y - 0.72) / 0.28), 1.6);\n\t\t\t\t\t\t\tfloat3 col = pic * shade + (t0.rgb + m0.rgb) * 0.0001;\n\t\t\t\t\t\t\tfloat card = step(0.4500, i.uv0.x) * step(i.uv0.x, 0.8625) * step(0.1306, i.uv0.y) * step(i.uv0.y, 0.8639);\n\t\t\t\t\t\t\tfloat gold = card * step(i.uv0.y, 0.1347);\n\t\t\t\t\t\t\tcol = lerp(col, float3(0.114, 0.114, 0.102), card * 0.94);\n\t\t\t\t\t\t\tcol = lerp(col, float3(0.886, 0.694, 0.369), gold);\n\t\t\t\t\t\t\toutput = float4(col, 1);"
+            "float4 t0 = tex2D(tmu0, i.uv0); //background (kept bound)\n\t\t\t\t\t\t\tfloat4 i1 = tex2D(tmu1, i.uv1); //image 1\n\t\t\t\t\t\t\tfloat4 i2 = tex2D(tmu3, i.uv4); //image 2\n\t\t\t\t\t\t\tfloat4 m0 = tex2D(tmu2, i.uv2); //mask (kept bound)\n\t\t\t\t\t\t\tfloat3 pic = i1.rgb * CONST_6.x + i2.rgb * CONST_6.y;\n\n\t\t\t\t\t\t\t// IranCoJ Edition (loading screen): the map's pictures in colour, darker on the left behind the\n\t\t\t\t\t\t\t// text and at the bottom (the objectives map draws its own card: irancoj_mapcard.mat).\n\t\t\t\t\t\t\tfloat left = saturate(1 - i.uv0.x / 0.62);\n\t\t\t\t\t\t\tfloat shade = 0.82 - 0.62 * pow(left, 0.9);\n\t\t\t\t\t\t\tshade *= 1 - 0.55 * pow(saturate((i.uv0.y - 0.72) / 0.28), 1.6);\n\t\t\t\t\t\t\tfloat3 col = pic * shade + (t0.rgb + m0.rgb) * 0.0001;\n\t\t\t\t\t\t\toutput = float4(col, 1);"
           ]
         ]
       }
@@ -1205,8 +1205,8 @@
     "files": [
       {
         "path": "CoJ2/Data/Menu/Background_Scr_PC.binui",
-        "size": 12480,
-        "sha256": "58f46b91368e47612fa234f6b0a3a616b048333b8e9cbf92fa70619e154d949b",
+        "size": 12534,
+        "sha256": "2718d181e2737917b0982ccd6becf9c87e488b530d2a7a5784cd45f477c1399c",
         "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/edition/Background_Scr_PC.binui"
       },
       {
@@ -1224,7 +1224,7 @@
       {
         "path": "CoJ2/Data/Menu/Dashboard_Skn_PC.binui",
         "size": 936033,
-        "sha256": "034d5332812a858e31eae9597b2a9108a51ef9ee6e2056189fff6b93ad7fdf96",
+        "sha256": "e12dd2ed1a166ace0150dab110f3c80524975e0595e86c397cbb9f0373b111ce",
         "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/edition/Dashboard_Skn_PC.binui"
       },
       {
@@ -1252,6 +1252,12 @@
         "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/edition/Intro_Skn_PC.binui"
       },
       {
+        "path": "CoJ2/Data/Menu/Mat/irancoj_mapcard.mat",
+        "size": 3741,
+        "sha256": "198c65237616e9255ab6fb68d67f2f365f794881adc61ed781218a276ac0bf51",
+        "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/edition/irancoj_mapcard.mat"
+      },
+      {
         "path": "CoJ2/Data/Menu/MenuCommon_Scr_PC.binui",
         "size": 224330,
         "sha256": "0838f7d3f9a04640499652cafd212be58b4f04ab705e109c1ef86f63d9c3ea83",
@@ -1260,13 +1266,13 @@
       {
         "path": "CoJ2/Data/Menu/MenuCommon_Skn_PC.binui",
         "size": 936708,
-        "sha256": "32dc906c571cc895478079d0978c33999651f39b5440a8f23ee773842f0ed860",
+        "sha256": "0f5e102ebaf21635e4f3bcb3d8d5ec7a10c2b4c34adde76328b071b6173482c0",
         "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/edition/MenuCommon_Skn_PC.binui"
       },
       {
         "path": "CoJ2/Data/Menu/MenuIngameNetGamemode_Scr_PC.binui",
         "size": 578159,
-        "sha256": "6b6a770d4369ff696c87d9c583c9e577f4354d2e431210322cb664b1ab7ce874",
+        "sha256": "90d4a60c48697f8b4cf2b3d42c8b5904a2e19c3b54347f8d4892fef52eea4ca9",
         "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/edition/MenuIngameNetGamemode_Scr_PC.binui"
       },
       {
@@ -1332,7 +1338,7 @@
       {
         "path": "CoJ2/Data/Menu/scr/Credits_PC.scr",
         "size": 4874,
-        "sha256": "06ae6b7f027e2eae16c400e72ab2d59aa8c8e07ff932d5a2572e391c774cda5e",
+        "sha256": "cd01eac92f9341029c1a5c872b62e128ef385f460fc1e749727cb83b1a5747db",
         "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/edition/Credits_PC.scr"
       },
       {
