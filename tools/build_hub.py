@@ -123,6 +123,17 @@ def git_map_files():
     return sorted(n for n in os.listdir(MAPS_DIR) if os.path.isfile(os.path.join(MAPS_DIR, n)))
 
 
+def check_map_pak(name, path):
+    """A map pak must not carry a player's profile: the game reads every pak, so an out/ folder in one (e.g. a
+    lastuser.scr naming its maker) overrides every player's own out/ files."""
+    if not name.lower().endswith(".pak"):
+        return
+    with zipfile.ZipFile(path) as z:
+        bad = [n for n in z.namelist() if n.replace("\\", "/").lower().startswith("out/")]
+    if bad:
+        sys.exit(f"{MAPS_DIR}/{name}: ships profile files ({', '.join(bad[:5])}) - remove the out/ folder from the pak")
+
+
 def sync_maps_to_release():
     assets = maps_assets()
     changed = False
@@ -131,6 +142,7 @@ def sync_maps_to_release():
         if is_lfs_pointer(path):
             print(f"skip {name}: LFS pointer (checkout without LFS content)")
             continue
+        check_map_pak(name, path)
         changed |= upload_if_changed(MAPS_RELEASE, path, assets)
     return maps_assets() if changed else assets
 
