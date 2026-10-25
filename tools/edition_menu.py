@@ -193,7 +193,7 @@ t = set_prop(t, "T_GameVersion", "Show", "false")
 t = set_prop(t, "T_GameVersion", "Opacity", "0.000000")
 version = element("MyText", "T_IrnVersion", [("Width", "600.000000"), ("Height", "40.000000"),
                                              ("Position", "600.000000,664.000000,0.000000"),
-                                             ("Text", "IranCoJ Edition 0.6"), ("TextColor", DUST),
+                                             ("Text", "&amp;IrnEditionVersion&amp;"), ("TextColor", DUST),
                                              ("Font", "TextSmall"), ("TextStyle", "528")])
 first_button = t.index("<UINaviButton>")
 t = t[:first_button] + version + t[first_button:]

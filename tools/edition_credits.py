@@ -2,11 +2,12 @@
 
 The game reads Credits_PC.scr (UTF-16) when the Credits screen opens, so a loose copy replaces the original.
 In credits.txt: "= Title" is a big heading, "- Role" a small heading, other lines are names, blank lines add
-space, "#" lines are comments.
+space, "#" lines are comments, "{version}" is the Edition's version (edition.json).
 
     python tools/edition_credits.py
 """
 
+import json
 import os
 
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -40,7 +41,8 @@ def quote(text):
 def build():
     out = [HEADER]
     first = True
-    for raw in open(SOURCE, encoding="utf-8").read().splitlines():
+    version = json.load(open(os.path.join(HERE, "..", "edition.json"), encoding="utf-8"))["version"]
+    for raw in open(SOURCE, encoding="utf-8").read().replace("{version}", version).splitlines():
         line = raw.strip()
         if line.startswith("#"):
             continue

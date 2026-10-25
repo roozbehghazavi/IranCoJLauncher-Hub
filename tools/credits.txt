@@ -5,6 +5,7 @@
 
 = IRANCOJ EDITION
 Call of Juarez: Bound in Blood - multiplayer, modernized
+Version {version}
 
 = CREATED BY
 Thomas (Roozbeh)
