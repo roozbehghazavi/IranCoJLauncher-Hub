@@ -136,13 +136,13 @@ def score_panel(color, band, rule):
 
 
 def team_panel(color):
-    """Team page: name row 9..33, column titles 33..55, rows from 57."""
-    return score_panel(color, 34, 56)
+    """Team page: name row 9..33, column titles 33..55, line at 58, rows from 64 (edition_menu.py moves them)."""
+    return score_panel(color, 34, 58)
 
 
 def solo_panel():
-    """One-page scoreboard (shootout, wanted): column titles 9..31, rows from 33; gold edge, no band."""
-    return score_panel(GOLD, 0, 32)
+    """One-page scoreboard (shootout, wanted): column titles 9..31, line at 34, rows from 41; gold edge, no band."""
+    return score_panel(GOLD, 0, 34)
 
 
 def spinner():

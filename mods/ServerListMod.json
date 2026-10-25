@@ -33,9 +33,27 @@
     },
     {
       "path": "serverlist.dll",
-      "find": "B00FB11C0FB61D3DC51A10",
-      "replace": "B00CB1220FB61D3DC51A10",
-      "why": "scoreboard columns with Accuracy and K/D: name 28% -> 34%, Accuracy and K/D 15% -> 12% (the death/wanted icon no longer wraps)"
+      "find": "0083C40CB00FB11C0FB61D3D",
+      "replace": "0083C40CB00CB1220FB61D3D",
+      "why": "rows with Accuracy and K/D: name 28% -> 34%, Accuracy and K/D 15% -> 12% (one shared value: mov al / mov cl). Overriding K/D on its own (mov ecx at 0x1000a349) broke the row in game, so it stays shared."
+    },
+    {
+      "path": "serverlist.dll",
+      "find": "00002200C7463021000000C7866C01",
+      "replace": "00002200C7463025000000C7866C01",
+      "why": "header: Players 33% -> 37%"
+    },
+    {
+      "path": "serverlist.dll",
+      "find": "29D7D1FFC746400F000000C7463400",
+      "replace": "29D7D1FFC746400B000000C7463400",
+      "why": "header: K/D 15% -> 11%; with Players 37 and Accuracy 15 (unchanged) each title sits over its column"
+    },
+    {
+      "path": "serverlist.dll",
+      "find": "007B3A2E32667D2500",
+      "replace": "007B3A2E31667D2500",
+      "why": "Accuracy with one decimal ('100.0%', '45.3%'), so it fits the 12% column"
     }
   ]
 }

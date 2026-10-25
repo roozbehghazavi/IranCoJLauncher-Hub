@@ -496,6 +496,9 @@ for name in ("MenuNetResults.xui", "MenuNetResults_PC.xui", "MenuNetSummary.xui"
     for element_id, color in (("H_HeaderList", DUST), ("H_Score", PARCHMENT)):
         t = re.sub(r"(<Id>" + element_id + r"</Id>(?:(?!</Properties>).)*?)(</Properties>)",
                    lambda m, color=color: m.group(1) + f"<DefaultFontColor>{color}</DefaultFontColor>\r\n" + m.group(2), t, flags=re.S)
+    # The rows start 8 px lower (the list 8 px shorter): a gap under the line below the column titles.
+    t = re.sub(r"(<Id>L_Players</Id>\r?\n<Width>[^<]*</Width>\r?\n<Height>)([^<]*)(</Height>\r?\n<Position>[^,]*,)([^,]*)",
+               lambda m: f"{m.group(1)}{float(m.group(2)) - 8:f}{m.group(3)}{float(m.group(4)) + 8:f}", t)
     if name != "MenuNetSummary.xui":
         head = re.search(r"<XuiScene>\r?\n<Properties>.*?</Properties>\r?\n", t, re.S)
         t = t[:head.end()] + top_bar + t[head.end():]
