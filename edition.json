@@ -217,7 +217,7 @@
         ],
         [
           "<Id>G_LeftTimer</Id>\\\r\\\n<Width>100\\.000015</Width>\\\r\\\n<Height>34\\.999992</Height>\\\r\\\n<Position>8\\.000000,\\-1\\.000011,0\\.000000</Position>\\\r\\\n",
-          "<Id>G_LeftTimer</Id>\r\n<Width>304.000031</Width>\r\n<Height>34.999992</Height>\r\n<Position>0.000000,48.000000,0.000000</Position>\r\n"
+          "<Id>G_LeftTimer</Id>\r\n<Width>304.000031</Width>\r\n<Height>34.999992</Height>\r\n<Position>0.000000,39.000000,0.000000</Position>\r\n"
         ],
         [
           "<MyText>\\\r\\\n<Properties>\\\r\\\n<Id>T_Value</Id>\\\r\\\n<Width>72\\.000000</Width>\\\r\\\n<Height>35\\.000000</Height>\\\r\\\n<Position>\\-4\\.999969,3\\.000000,0\\.000000</Position>\\\r\\\n<Opacity>0\\.000000</Opacity>\\\r\\\n<TextColor>0xffddcda9</TextColor>\\\r\\\n<Font>HUDDigitsBig</Font>\\\r\\\n<TextStyle>4624</TextStyle>\\\r\\\n<Outline>true</Outline>\\\r\\\n</Properties>\\\r\\\n</MyText>\\\r\\\n<MyImage>\\\r\\\n<Properties>\\\r\\\n<Id>I_Image</Id>\\\r\\\n<Width>28\\.000000</Width>\\\r\\\n<Height>35\\.000000</Height>\\\r\\\n<Position>72\\.000053,0\\.000000,0\\.000000</Position>\\\r\\\n<Opacity>0\\.000000</Opacity>\\\r\\\n<Pivot>13\\.999931,17\\.499992,0\\.000000</Pivot>\\\r\\\n<ImagePath>icon_team_timer</ImagePath>\\\r\\\n<HoldAspectRatio>true</HoldAspectRatio>\\\r\\\n<HoldAspectRatioX>true</HoldAspectRatioX>\\\r\\\n<HoldAspectPivotPosition>true</HoldAspectPivotPosition>\\\r\\\n</Properties>\\\r\\\n</MyImage>\\\r\\\n",
@@ -225,7 +225,7 @@
         ],
         [
           "<Id>G_RightTimer</Id>\\\r\\\n<Width>100\\.000015</Width>\\\r\\\n<Height>34\\.999992</Height>\\\r\\\n<Position>196\\.000015,\\-1\\.000011,0\\.000000</Position>\\\r\\\n",
-          "<Id>G_RightTimer</Id>\r\n<Width>304.000031</Width>\r\n<Height>34.999992</Height>\r\n<Position>0.000000,48.000000,0.000000</Position>\r\n"
+          "<Id>G_RightTimer</Id>\r\n<Width>304.000031</Width>\r\n<Height>34.999992</Height>\r\n<Position>0.000000,39.000000,0.000000</Position>\r\n"
         ],
         [
           "<MyText>\\\r\\\n<Properties>\\\r\\\n<Id>T_Value</Id>\\\r\\\n<Width>72\\.000000</Width>\\\r\\\n<Height>35\\.000000</Height>\\\r\\\n<Position>33\\.000031,3\\.000000,0\\.000000</Position>\\\r\\\n<Opacity>0\\.000000</Opacity>\\\r\\\n<Anchor>5</Anchor>\\\r\\\n<TextColor>0xffddcda9</TextColor>\\\r\\\n<Font>HUDDigitsBig</Font>\\\r\\\n<TextStyle>4368</TextStyle>\\\r\\\n<Outline>true</Outline>\\\r\\\n</Properties>\\\r\\\n</MyText>\\\r\\\n<MyImage>\\\r\\\n<Properties>\\\r\\\n<Id>I_Image</Id>\\\r\\\n<Width>28\\.000000</Width>\\\r\\\n<Height>35\\.000000</Height>\\\r\\\n<Position>0\\.000061,0\\.000000,0\\.000000</Position>\\\r\\\n<Opacity>0\\.000000</Opacity>\\\r\\\n<Pivot>13\\.999941,17\\.499992,0\\.000000</Pivot>\\\r\\\n<ImagePath>icon_team_timer</ImagePath>\\\r\\\n<HoldAspectRatio>true</HoldAspectRatio>\\\r\\\n<HoldAspectRatioX>true</HoldAspectRatioX>\\\r\\\n<HoldAspectPivotPosition>true</HoldAspectPivotPosition>\\\r\\\n</Properties>\\\r\\\n</MyImage>\\\r\\\n",
