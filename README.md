@@ -14,6 +14,30 @@ The launcher updates itself, so you only download it once.
 
 You need your own copy of *Call of Juarez: Bound in Blood* installed (Steam or any other version).
 
+### Linux: first run
+
+The AppImage is the whole launcher in one file, so there is nothing to install. Make it runnable once, then open it:
+
+```bash
+chmod +x IranCoJLauncher-linux-x64.AppImage
+./IranCoJLauncher-linux-x64.AppImage
+```
+
+(Or right-click it → Properties → Permissions → *Allow executing file as program*, then double-click.)
+
+If it doesn't open, or you see an error about `libfuse.so.2`, your system is missing FUSE 2. Install it once:
+
+| Distro | Command |
+|---|---|
+| Ubuntu 24.04+, Mint 22+ | `sudo apt install libfuse2t64` |
+| Ubuntu 22.04, Debian, Mint 21 | `sudo apt install libfuse2` |
+| Fedora | `sudo dnf install fuse-libs` |
+| Arch, Manjaro, SteamOS (desktop mode) | `sudo pacman -S fuse2` |
+| openSUSE | `sudo zypper install libfuse2` |
+
+Can't install it? Run `./IranCoJLauncher-linux-x64.AppImage --appimage-extract-and-run` instead.
+On the Steam Deck, open it in Desktop Mode; you can then add it to Steam as a non-Steam game.
+
 ## Getting started
 
 1. Install and open the launcher. It finds your game, or you can point it to the game folder.
