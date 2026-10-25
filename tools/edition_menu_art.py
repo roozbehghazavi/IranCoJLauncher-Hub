@@ -120,10 +120,14 @@ def flat():
 
 
 def team_panel(color):
-    """The panel with its header band (top tile row) tinted in a team colour: the scoreboard's team headers."""
-    im = panel()
-    band = Image.new("RGBA", (232, 58), color + (70,))
-    im.alpha_composite(band, (12, 13))
+    """A scoreboard team panel, drawn whole (the game draws only a tileset's middle there): 512x512 stretched to
+    the panel's 568x457, so the header band covers the team name and column titles (the top 58 px)."""
+    sy = 512 / 457
+    im = Image.new("RGBA", (512, 512), SMOKE + (238,))
+    d = ImageDraw.Draw(im)
+    d.rectangle([0, 0, 511, round(58 * sy)], fill=tuple(round(c * 0.45 + s * 0.55) for c, s in zip(color, SMOKE)) + (245,))
+    d.rectangle([0, 0, 511, 511], outline=WOOD + (255,), width=2)
+    d.rectangle([0, 0, 511, 3], fill=color + (255,))  # team-coloured top edge
     return im
 
 

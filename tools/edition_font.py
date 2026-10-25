@@ -127,7 +127,11 @@ def build(coj2, ttf, out, name, weight, gap_x):
             x, y = 0, y + cell + GAP_Y
             if y + cell > reserved:
                 raise SystemExit(f"{name}: atlas full")
-        draw.text((x + 1, y + baseline), ch, font=font, anchor="ls", fill=(255, 255, 255, 255))
+        # Drawn clipped to its own box: ink past it (accents, descenders) would sit in the gap, where the
+        # neighbouring row's edge samples it.
+        glyph = Image.new("RGBA", (width, cell), (255, 255, 255, 0))
+        ImageDraw.Draw(glyph).text((1, baseline), ch, font=font, anchor="ls", fill=(255, 255, 255, 255))
+        atlas.paste(glyph, (x, y))
         lines.append(f"Char({code}, {width}, {x}, {y}, {x + width}, {y + cell})")
         x += width + gap_x
 

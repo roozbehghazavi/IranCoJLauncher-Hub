@@ -475,8 +475,8 @@ write("MenuNetSelectClass.xui", t)
 
 # Scoreboard (both: the game's compiled one is MenuNetResults, the PC patch adds MenuNetResults_PC): team-tinted
 # headers, and a top bar under map / mode / settings / time - it is shown over the live game (Tab), where the
-# HUD backdrop's bars are not up. The bar is the first child of the plain G_GameInfo group (its texts are
-# found by name).
+# HUD backdrop's bars are not up. The bar is the scene's first child (the code finds G_Results, G_GameInfo and
+# the rest by name); inside the 90 px G_GameInfo group it was not drawn.
 top_bar = element("MyImage", "I_IrnTopBar", [("Width", "1280.000000"), ("Height", "100.000000"), ("ImagePath", "irn_bar_top")])
 for name in ("MenuNetResults.xui", "MenuNetResults_PC.xui"):
     t = written[name]
@@ -484,9 +484,8 @@ for name in ("MenuNetResults.xui", "MenuNetResults_PC.xui"):
     t = baseline(t, [(("T_MapName", "T_ModeName", "T_Timer", "T_GameSettings"), (34, 50))])
     for group, panel in (("G_RedBackground", "irn_panel_red_tile"), ("G_BlueBackground", "irn_panel_blue_tile")):
         t = in_group(t, group, lambda g, panel=panel: set_prop(g, "Background", "ImagePath", panel))
-    a, b = group_span(t, "G_GameInfo")
-    head = re.search(r"<(AdvGroup|XuiGroup)>\r?\n<Properties>.*?</Properties>\r?\n", t[a:b], re.S)
-    t = t[:a + head.end()] + top_bar + t[a + head.end():]
+    head = re.search(r"<XuiScene>\r?\n<Properties>.*?</Properties>\r?\n", t, re.S)
+    t = t[:head.end()] + top_bar + t[head.end():]
     write(name, t)
 
 def themed_scrollbars(t):
@@ -530,6 +529,7 @@ t = themed_scrollbars(t[:end] + primary + second + t[end:])
 m = visual(t, "ListBoxNetEmptyV")
 v = set_prop(set_prop(m.group(0), "LBScrollBar", "Position", "-6.000000,0.000000,0.000000"), "LBScrollBar", "Width", "24.000000")
 v = set_prop(v, "ItemGroup", "Position", "22.000000,0.000000,0.000000")
+v = set_prop(v, "ItemGroup", "Width", "378.000000")  # moved right by 22, so 22 narrower: the team highlight stays in the panel
 write("CoJ2MenuSkin.xui", t[:m.start()] + v + t[m.end():])
 
 # In game, the loading backdrop is the same snapshot: blurred, not sepia.
