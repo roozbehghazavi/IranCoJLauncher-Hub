@@ -541,7 +541,7 @@
     }
   ],
   "edition": {
-    "version": "0.7.0",
+    "version": "0.7.1",
     "ownUserFolder": true,
     "menuNavigation": true,
     "include": [
@@ -906,22 +906,11 @@
           ],
           [
             "\\A\\x01\\x00\\x00\\x00\\x87\\x20\\x00\\x00",
-            "\u0001\u0000\u0000\u0000 \u0000\u0000"
+            "\u0001\u0000\u0000\u0000 \u0000\u0000"
           ],
           [
             "\\z",
-            " \u0000Name_WeaponPistolFrontierUpgrade\u0012\u0000S\u0000p\u0000r\u0000i\u0000n\u0000g\u0000f\u0000i\u0000e\u0000l\u0000d\u0000 \u0000M\u0000u\u0000s\u0000k\u0000e\u0000t\u0000#\u0000Name_WeaponPistolFrontierUpgradeNet\u0012\u0000S\u0000p\u0000r\u0000i\u0000n\u0000g\u0000f\u0000i\u0000e\u0000l\u0000d\u0000 \u0000M\u0000u\u0000s\u0000k\u0000e\u0000t\u0000\u001d\u0000N_WeaponPistolFrontierUpgrade\u0012\u0000S\u0000p\u0000r\u0000i\u0000n\u0000g\u0000f\u0000i\u0000e\u0000l\u0000d\u0000 \u0000M\u0000u\u0000s\u0000k\u0000e\u0000t\u0000\u0017\u0000MenuDerringerUpgradeNet\u000f\u0000T\u0000h\u0000r\u0000o\u0000w\u0000i\u0000n\u0000g\u0000 \u0000K\u0000n\u0000i\u0000v\u0000e\u0000s\u0000$\u0000Name_WeaponPistolDerringerUpgradeNet\u000e\u0000T\u0000h\u0000r\u0000o\u0000w\u0000i\u0000n\u0000g\u0000 \u0000K\u0000n\u0000i\u0000f\u0000e\u0000!\u0000Name_WeaponPistolDerringerUpgrade\u000e\u0000T\u0000h\u0000r\u0000o\u0000w\u0000i\u0000n\u0000g\u0000 \u0000K\u0000n\u0000i\u0000f\u0000e\u0000\u001e\u0000N_WeaponPistolDerringerUpgrade\u000e\u0000T\u0000h\u0000r\u0000o\u0000w\u0000i\u0000n\u0000g\u0000 \u0000K\u0000n\u0000i\u0000f\u0000e\u0000\u0014\u0000MenuLemantUpgradeNet\b\u0000T\u0000o\u0000m\u0000a\u0000h\u0000a\u0000w\u0000k\u0000!\u0000Name_WeaponPistolLemantUpgradeNet\b\u0000T\u0000o\u0000m\u0000a\u0000h\u0000a\u0000w\u0000k\u0000\u001e\u0000Name_WeaponPistolLemantUpgrade\b\u0000T\u0000o\u0000m\u0000a\u0000h\u0000a\u0000w\u0000k\u0000\u001b\u0000N_WeaponPistolLemantUpgrade\b\u0000T\u0000o\u0000m\u0000a\u0000h\u0000a\u0000w\u0000k\u0000"
-          ]
-        ]
-      },
-      {
-        "path": "CoJ2/Data/Menu/Mat/loading_bckg.mat",
-        "pak": "CoJ2/Data0.pak",
-        "entry": "Data/Menu/Mat/loading_bckg.mat",
-        "replace": [
-          [
-            "(?s)float4 t0 = tex2D\\(tmu0, i\\.uv0\\); //background.*?//output = step7;",
-            "float4 t0 = tex2D(tmu0, i.uv0); //background (kept bound)\n\t\t\t\t\t\t\tfloat4 i1 = tex2D(tmu1, i.uv1); //image 1\n\t\t\t\t\t\t\tfloat4 i2 = tex2D(tmu3, i.uv4); //image 2\n\t\t\t\t\t\t\tfloat4 m0 = tex2D(tmu2, i.uv2); //mask (kept bound)\n\n\t\t\t\t\t\t\t// IranCoJ Edition: the map's pictures in colour (cross-faded by the game's weights), darker\n\t\t\t\t\t\t\t// on the left behind the text and at the bottom, and a dark card with a gold top edge under\n\t\t\t\t\t\t\t// the objectives map.\n\t\t\t\t\t\t\tfloat3 pic = i1.rgb * CONST_6.x + i2.rgb * CONST_6.y;\n\t\t\t\t\t\t\tfloat left = saturate(1 - i.uv0.x / 0.62);\n\t\t\t\t\t\t\tfloat shade = 0.82 - 0.62 * pow(left, 0.9);\n\t\t\t\t\t\t\tshade *= 1 - 0.55 * pow(saturate((i.uv0.y - 0.72) / 0.28), 1.6);\n\t\t\t\t\t\t\tfloat3 col = pic * shade + (t0.rgb + m0.rgb) * 0.0001;\n\t\t\t\t\t\t\tfloat card = step(0.4500, i.uv0.x) * step(i.uv0.x, 0.8625) * step(0.1306, i.uv0.y) * step(i.uv0.y, 0.8639);\n\t\t\t\t\t\t\tfloat gold = card * step(i.uv0.y, 0.1347);\n\t\t\t\t\t\t\tcol = lerp(col, float3(0.114, 0.114, 0.102), card * 0.94);\n\t\t\t\t\t\t\tcol = lerp(col, float3(0.886, 0.694, 0.369), gold);\n\t\t\t\t\t\t\toutput = float4(col, 1);"
+            " \u0000Name_WeaponPistolFrontierUpgrade\u0012\u0000S\u0000p\u0000r\u0000i\u0000n\u0000g\u0000f\u0000i\u0000e\u0000l\u0000d\u0000 \u0000M\u0000u\u0000s\u0000k\u0000e\u0000t\u0000#\u0000Name_WeaponPistolFrontierUpgradeNet\u0012\u0000S\u0000p\u0000r\u0000i\u0000n\u0000g\u0000f\u0000i\u0000e\u0000l\u0000d\u0000 \u0000M\u0000u\u0000s\u0000k\u0000e\u0000t\u0000\u001d\u0000N_WeaponPistolFrontierUpgrade\u0012\u0000S\u0000p\u0000r\u0000i\u0000n\u0000g\u0000f\u0000i\u0000e\u0000l\u0000d\u0000 \u0000M\u0000u\u0000s\u0000k\u0000e\u0000t\u0000\u0017\u0000MenuDerringerUpgradeNet\u000f\u0000T\u0000h\u0000r\u0000o\u0000w\u0000i\u0000n\u0000g\u0000 \u0000K\u0000n\u0000i\u0000v\u0000e\u0000s\u0000$\u0000Name_WeaponPistolDerringerUpgradeNet\u000e\u0000T\u0000h\u0000r\u0000o\u0000w\u0000i\u0000n\u0000g\u0000 \u0000K\u0000n\u0000i\u0000f\u0000e\u0000!\u0000Name_WeaponPistolDerringerUpgrade\u000e\u0000T\u0000h\u0000r\u0000o\u0000w\u0000i\u0000n\u0000g\u0000 \u0000K\u0000n\u0000i\u0000f\u0000e\u0000\u001e\u0000N_WeaponPistolDerringerUpgrade\u000e\u0000T\u0000h\u0000r\u0000o\u0000w\u0000i\u0000n\u0000g\u0000 \u0000K\u0000n\u0000i\u0000f\u0000e\u0000\u0014\u0000MenuLemantUpgradeNet\b\u0000T\u0000o\u0000m\u0000a\u0000h\u0000a\u0000w\u0000k\u0000!\u0000Name_WeaponPistolLemantUpgradeNet\b\u0000T\u0000o\u0000m\u0000a\u0000h\u0000a\u0000w\u0000k\u0000\u001e\u0000Name_WeaponPistolLemantUpgrade\b\u0000T\u0000o\u0000m\u0000a\u0000h\u0000a\u0000w\u0000k\u0000\u001b\u0000N_WeaponPistolLemantUpgrade\b\u0000T\u0000o\u0000m\u0000a\u0000h\u0000a\u0000w\u0000k\u0000\u0011\u0000IrnEditionVersion\u0015\u0000I\u0000r\u0000a\u0000n\u0000C\u0000o\u0000J\u0000 \u0000E\u0000d\u0000i\u0000t\u0000i\u0000o\u0000n\u0000 \u00000\u0000.\u00007\u0000.\u00001\u0000"
           ]
         ]
       },
@@ -944,6 +933,28 @@
           [
             "<Id>EditBoxChatV</Id>\\\r\\\n<Width>128\\.000000</Width>\\\r\\\n<Height>32\\.000000</Height>\\\r\\\n</Properties>\\\r\\\n<MyTextPresenter>\\\r\\\n<Properties>\\\r\\\n<Id>Text</Id>\\\r\\\n<Width>128\\.000015</Width>\\\r\\\n<Height>32\\.000004</Height>\\\r\\\n<Anchor>15</Anchor>\\\r\\\n<TextColor>0xfe000000</TextColor>\\\r\\\n<DropShadowColor>0x800f0f0f</DropShadowColor>\\\r\\\n<PointSize>12\\.000000</PointSize>\\\r\\\n<Font>HUDSmall</Font>\\\r\\\n<TextStyle>4368</TextStyle>\\\r\\\n</Properties>\\\r\\\n</MyTextPresenter>\\\r\\\n<AdvGroup>\\\r\\\n<Properties>\\\r\\\n<Id>Cursor</Id>\\\r\\\n<Width>1\\.000000</Width>\\\r\\\n<Height>32\\.000004</Height>\\\r\\\n<Position>88\\.000000,0\\.000000,0\\.000000</Position>\\\r\\\n<Anchor>10</Anchor>\\\r\\\n<AllowJumpsFromParents>false</AllowJumpsFromParents>\\\r\\\n<KeepWidth>true</KeepWidth>\\\r\\\n</Properties>\\\r\\\n<MyImage>\\\r\\\n<Properties>\\\r\\\n<Id>Carrige</Id>\\\r\\\n<Width>1\\.000000</Width>\\\r\\\n<Height>32\\.000000</Height>\\\r\\\n<Anchor>10</Anchor>\\\r\\\n<Pivot>\\-0\\.000008,\\-0\\.000001,0\\.000000</Pivot>\\\r\\\n<ImagePath>White\\.dds</ImagePath>\\\r\\\n<KeepWidth>true</KeepWidth>\\\r\\\n<KeepWidthOnResolutionChange>true</KeepWidthOnResolutionChange>\\\r\\\n<KeepHeight>true</KeepHeight>\\\r\\\n<KeepHeightOnResolutionChange>true</KeepHeightOnResolutionChange>\\\r\\\n<KeepPosX>true</KeepPosX>\\\r\\\n<Color>0xfe000000</Color>",
             "<Id>EditBoxChatV</Id>\r\n<Width>128.000000</Width>\r\n<Height>32.000000</Height>\r\n</Properties>\r\n<MyTextPresenter>\r\n<Properties>\r\n<Id>Text</Id>\r\n<Width>128.000015</Width>\r\n<Height>32.000004</Height>\r\n<Anchor>15</Anchor>\r\n<TextColor>0xfff3ebdd</TextColor>\r\n<DropShadowColor>0x800f0f0f</DropShadowColor>\r\n<PointSize>12.000000</PointSize>\r\n<Font>HUDSmall</Font>\r\n<TextStyle>4368</TextStyle>\r\n</Properties>\r\n</MyTextPresenter>\r\n<AdvGroup>\r\n<Properties>\r\n<Id>Cursor</Id>\r\n<Width>1.000000</Width>\r\n<Height>32.000004</Height>\r\n<Position>88.000000,0.000000,0.000000</Position>\r\n<Anchor>10</Anchor>\r\n<AllowJumpsFromParents>false</AllowJumpsFromParents>\r\n<KeepWidth>true</KeepWidth>\r\n</Properties>\r\n<MyImage>\r\n<Properties>\r\n<Id>Carrige</Id>\r\n<Width>1.000000</Width>\r\n<Height>32.000000</Height>\r\n<Anchor>10</Anchor>\r\n<Pivot>-0.000008,-0.000001,0.000000</Pivot>\r\n<ImagePath>White.dds</ImagePath>\r\n<KeepWidth>true</KeepWidth>\r\n<KeepWidthOnResolutionChange>true</KeepWidthOnResolutionChange>\r\n<KeepHeight>true</KeepHeight>\r\n<KeepHeightOnResolutionChange>true</KeepHeightOnResolutionChange>\r\n<KeepPosX>true</KeepPosX>\r\n<Color>0xffe2b15e</Color>"
+          ]
+        ]
+      },
+      {
+        "path": "CoJ2/Data/Menu/Mat/loading_bckg.mat",
+        "pak": "CoJ2/Data0.pak",
+        "entry": "Data/Menu/Mat/loading_bckg.mat",
+        "replace": [
+          [
+            "(?s)float4 t0 = tex2D\\(tmu0, i\\.uv0\\); //background.*?//output = step7;",
+            "float4 t0 = tex2D(tmu0, i.uv0); //background (kept bound)\n\t\t\t\t\t\t\tfloat4 i1 = tex2D(tmu1, i.uv1); //image 1\n\t\t\t\t\t\t\tfloat4 i2 = tex2D(tmu3, i.uv4); //image 2\n\t\t\t\t\t\t\tfloat4 m0 = tex2D(tmu2, i.uv2); //mask (kept bound)\n\t\t\t\t\t\t\tfloat3 pic = i1.rgb * CONST_6.x + i2.rgb * CONST_6.y;\n\n\t\t\t\t\t\t\t// IranCoJ Edition: the pictures in colour, evenly darkened (credits artwork, loading overlay).\n\t\t\t\t\t\t\tfloat3 col = pic * 0.55 + (t0.rgb + m0.rgb) * 0.0001;\n\t\t\t\t\t\t\toutput = float4(col, 1);"
+          ]
+        ]
+      },
+      {
+        "path": "CoJ2/Data/Menu/Mat/irancoj_loading.mat",
+        "pak": "CoJ2/Data0.pak",
+        "entry": "Data/Menu/Mat/loading_bckg.mat",
+        "replace": [
+          [
+            "(?s)float4 t0 = tex2D\\(tmu0, i\\.uv0\\); //background.*?//output = step7;",
+            "float4 t0 = tex2D(tmu0, i.uv0); //background (kept bound)\n\t\t\t\t\t\t\tfloat4 i1 = tex2D(tmu1, i.uv1); //image 1\n\t\t\t\t\t\t\tfloat4 i2 = tex2D(tmu3, i.uv4); //image 2\n\t\t\t\t\t\t\tfloat4 m0 = tex2D(tmu2, i.uv2); //mask (kept bound)\n\t\t\t\t\t\t\tfloat3 pic = i1.rgb * CONST_6.x + i2.rgb * CONST_6.y;\n\n\t\t\t\t\t\t\t// IranCoJ Edition (loading screen): the map's pictures in colour, darker on the left behind the\n\t\t\t\t\t\t\t// text and at the bottom, and a dark card with a gold top edge under the objectives map.\n\t\t\t\t\t\t\tfloat left = saturate(1 - i.uv0.x / 0.62);\n\t\t\t\t\t\t\tfloat shade = 0.82 - 0.62 * pow(left, 0.9);\n\t\t\t\t\t\t\tshade *= 1 - 0.55 * pow(saturate((i.uv0.y - 0.72) / 0.28), 1.6);\n\t\t\t\t\t\t\tfloat3 col = pic * shade + (t0.rgb + m0.rgb) * 0.0001;\n\t\t\t\t\t\t\tfloat card = step(0.4500, i.uv0.x) * step(i.uv0.x, 0.8625) * step(0.1306, i.uv0.y) * step(i.uv0.y, 0.8639);\n\t\t\t\t\t\t\tfloat gold = card * step(i.uv0.y, 0.1347);\n\t\t\t\t\t\t\tcol = lerp(col, float3(0.114, 0.114, 0.102), card * 0.94);\n\t\t\t\t\t\t\tcol = lerp(col, float3(0.886, 0.694, 0.369), gold);\n\t\t\t\t\t\t\toutput = float4(col, 1);"
           ]
         ]
       }
@@ -1144,8 +1155,8 @@
     "files": [
       {
         "path": "CoJ2/Data/Menu/Background_Scr_PC.binui",
-        "size": 12477,
-        "sha256": "c4fa0a9d5c7093fe013a3a8673f580dd70a513b0be0e286f3a2a3deb0dff2560",
+        "size": 12480,
+        "sha256": "58f46b91368e47612fa234f6b0a3a616b048333b8e9cbf92fa70619e154d949b",
         "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/edition/Background_Scr_PC.binui"
       },
       {
@@ -1193,7 +1204,7 @@
       {
         "path": "CoJ2/Data/Menu/MenuCommon_Scr_PC.binui",
         "size": 224330,
-        "sha256": "4488d09cfc1fdb486cf90476a4dda83c315c993e7b4e9fb88039ada13ac51a89",
+        "sha256": "0838f7d3f9a04640499652cafd212be58b4f04ab705e109c1ef86f63d9c3ea83",
         "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/edition/MenuCommon_Scr_PC.binui"
       },
       {
@@ -1253,7 +1264,7 @@
       {
         "path": "CoJ2/Data/Menu/MenuMain_Scr_PC.binui",
         "size": 614725,
-        "sha256": "24af48f9ee413b2c81032a9fe8ae2497b68dea4bd908b9656df045d59fa6c94e",
+        "sha256": "da184b4745f1a82e8d497f9df5bee42dd48c9d1fe41a450395521595819a6766",
         "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/edition/MenuMain_Scr_PC.binui"
       },
       {
@@ -1270,8 +1281,8 @@
       },
       {
         "path": "CoJ2/Data/Menu/scr/Credits_PC.scr",
-        "size": 3954,
-        "sha256": "765d964033e8ca2ccf10f1c3c21c0545c9a29f58ee91e5b5e52481f9fede22b2",
+        "size": 4024,
+        "sha256": "ec46cfb7427a2058e1ea3508212201cbd1d4bb739fa84f171f8111e858d64c78",
         "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/edition/Credits_PC.scr"
       },
       {
