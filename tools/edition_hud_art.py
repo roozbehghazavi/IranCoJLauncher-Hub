@@ -103,5 +103,5 @@ def icons():
 
 if __name__ == "__main__":
     out = os.path.join(sys.argv[1], "textures")
-    for name, image in (("irancoj_hud_strip", strip()), ("irancoj_hud_icons", icons())):
+    for name, image in (("irancoj_hud_strip", strip()), ("irancoj_hud_score", score()), ("irancoj_hud_icons", icons())):
         write_dds(image, os.path.join(out, name + ".dds"))

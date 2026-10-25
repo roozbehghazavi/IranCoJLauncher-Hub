@@ -190,6 +190,14 @@
         [
           "<Material>menu_bckg_screenshot_alpha\\.mat</Material>\\r?\\n</Properties>\\r?\\n</MyImage>\\r?\\n",
           "<Material>irancoj_blur.mat</Material>\r\n</Properties>\r\n</MyImage>\r\n<MyImage>\r\n<Properties>\r\n<Id>I_IrnTopBar</Id>\r\n<Width>1280.000000</Width>\r\n<Height>100.000000</Height>\r\n<ImagePath>irn_bar_top</ImagePath>\r\n</Properties>\r\n</MyImage>\r\n<MyImage>\r\n<Properties>\r\n<Id>I_IrnBottomBar</Id>\r\n<Width>1280.000000</Width>\r\n<Height>104.000000</Height>\r\n<Position>0.000000,616.000000,0.000000</Position>\r\n<ImagePath>irn_bar_bottom</ImagePath>\r\n</Properties>\r\n</MyImage>\r\n<MyImage>\r\n<Properties>\r\n<Id>I_IrnSpecTopBar</Id>\r\n<Width>1280.000000</Width>\r\n<Height>60.000000</Height>\r\n<Show>false</Show>\r\n<ImagePath>irn_bar_top</ImagePath>\r\n</Properties>\r\n</MyImage>\r\n<MyImage>\r\n<Properties>\r\n<Id>I_IrnSpecBottomBar</Id>\r\n<Width>1280.000000</Width>\r\n<Height>60.000000</Height>\r\n<Position>0.000000,660.000000,0.000000</Position>\r\n<Show>false</Show>\r\n<ImagePath>irn_bar_bottom</ImagePath>\r\n</Properties>\r\n</MyImage>\r\n"
+        ],
+        [
+          "<Id>ID_POINTS_HTML</Id>\\r?\\n<Width>1280\\.000000</Width>\\r?\\n<Height>54\\.000000</Height>\\r?\\n<Position>0\\.000000,36\\.000000,0\\.000000</Position>\\r?\\n<DefaultHorizontalAlign>center</DefaultHorizontalAlign>\\r?\\n<DefaultFont>HUDDigitsBig</DefaultFont>",
+          "<Id>ID_POINTS_HTML</Id>\r\n<Width>184.000000</Width>\r\n<Height>52.000000</Height>\r\n<Position>548.000000,34.000000,0.000000</Position>\r\n<DefaultHorizontalAlign>center</DefaultHorizontalAlign>\r\n<DefaultFont>HUDDigitsVeryBig</DefaultFont>\r\n<BackgroundVisible>true</BackgroundVisible>\r\n<BackgroundTexture>irn_hud_score</BackgroundTexture>\r\n<BackgroundColor>0xffffffff</BackgroundColor>\r\n<BackgroundMaterial>sprite_button.mat</BackgroundMaterial>"
+        ],
+        [
+          "<Id>NetTimer</Id>\\\r\\\n<Width>304\\.000000</Width>\\\r\\\n<Height>35\\.000000</Height>\\\r\\\n<Position>488\\.000122,43\\.000015,0\\.000000</Position>",
+          "<Id>NetTimer</Id>\r\n<Width>304.000000</Width>\r\n<Height>35.000000</Height>\r\n<Position>488.000122,92.000000,0.000000</Position>"
         ]
       ]
     },
@@ -233,7 +241,7 @@
       "replace": [
         [
           "\\z",
-          "\r\n\r\n//IranCoJ Edition: the in-game screens' top and bottom bars (HUD_Net.xui)\r\nTexture(\"irancoj_bar_top.dds\", 256, 64)\r\n{\r\n\tWhole(\"irn_bar_top\")\r\n}\r\n\r\nTexture(\"irancoj_bar_bottom.dds\", 256, 64)\r\n{\r\n\tWhole(\"irn_bar_bottom\")\r\n}\r\n\r\nTexture(\"irancoj_hud_strip.dds\", 64, 64)\r\n{\r\n\tWhole(\"irn_hud_strip\")\r\n}\r\n\r\n//IranCoJ Edition: HUD icons, defined again after hud_new.scr so ours are drawn\r\nTexture(\"irancoj_hud_icons.dds\", 512, 256)\r\n{\r\n\tRect(\"hud_team_red\", 0, 0, 140, 140)\r\n\tRect(\"hud_team_blue\", 142, 0, 282, 140)\r\n\tRect(\"icon_team_timer\", 284, 0, 340, 70)\r\n\tRect(\"icon_timer\", 342, 0, 384, 76)\r\n\tRect(\"hud_wanted\", 0, 142, 308, 226)\r\n}\r\n"
+          "\r\n\r\n//IranCoJ Edition: the in-game screens' top and bottom bars (HUD_Net.xui)\r\nTexture(\"irancoj_bar_top.dds\", 256, 64)\r\n{\r\n\tWhole(\"irn_bar_top\")\r\n}\r\n\r\nTexture(\"irancoj_bar_bottom.dds\", 256, 64)\r\n{\r\n\tWhole(\"irn_bar_bottom\")\r\n}\r\n\r\nTexture(\"irancoj_hud_strip.dds\", 64, 64)\r\n{\r\n\tWhole(\"irn_hud_strip\")\r\n}\r\n\r\n//IranCoJ Edition: HUD icons, defined again after hud_new.scr so ours are drawn\r\nTexture(\"irancoj_hud_icons.dds\", 512, 256)\r\n{\r\n\tRect(\"hud_team_red\", 0, 0, 140, 140)\r\n\tRect(\"hud_team_blue\", 142, 0, 282, 140)\r\n\tRect(\"icon_team_timer\", 284, 0, 340, 70)\r\n\tRect(\"icon_timer\", 342, 0, 384, 76)\r\n\tRect(\"hud_wanted\", 0, 142, 308, 226)\r\n}\r\n\r\nTexture(\"irancoj_hud_score.dds\", 256, 64)\r\n{\r\n\tWhole(\"irn_hud_score\")\r\n}\r\n"
         ]
       ]
     },
