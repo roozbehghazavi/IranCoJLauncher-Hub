@@ -558,6 +558,7 @@ t = set_prop(t, "MenuBackgroundIngame", "Material", "irancoj_blur_pc.mat")
 # The place labels on the map keep their outline (they sit on the light map art). The game places the spinner
 # (Drum) and "Loading..." under it itself, from the screen size, at the bottom right: the card stays left of them.
 LEFT, MAP_X, MAP_Y = 96, 590, 108
+STORY = "0xffdccfb6"  # the map's story / hint: light sand, so the body text doesn't read as plain white
 for element_id, (x, y, w, h, color, font_, style) in {
         "T_Mode": (LEFT, 122, 460, 40, GOLD, "TextMedium", "4368"),
         "T_MapName": (LEFT, 150, 460, 60, PARCHMENT, "TextHuge", "4368"),
@@ -569,9 +570,13 @@ for element_id, (x, y, w, h, color, font_, style) in {
 t = set_prop(t, "map", "Position", f"{MAP_X}.000000,{MAP_Y}.000000,0.000000")
 for desc in ("T_Desc0", "T_Desc1"):  # inside the map group: placed back on the left, under the name
     for prop, value in (("Position", f"{LEFT - MAP_X}.000000,{272 - MAP_Y}.000000,0.000000"), ("Width", "460.000000"),
-                        ("Height", "320.000000"), ("TextColor", PARCHMENT), ("TextStyle", "4368"), ("Outline", "false")):
+                        ("Height", "320.000000"), ("TextColor", STORY), ("TextStyle", "4368"), ("Outline", "false")):
         t = set_prop(t, desc, prop, value)
 for element_id in ("Text", "T_Hint", "SubtitleText", "SubtitleText2", "T_Loading"):
     t = set_prop(set_prop(t, element_id, "TextColor", PARCHMENT), element_id, "Outline", "false")
-t = set_prop(t, "Text", "Position", "440.000031,668.000000,0.000000")  # "Please Wait...": under the map card, not on it
 write("BackgroundLoading.xui", t)
+
+# "Please wait..." during loading is the key hint of the MenuLoading overlay: lower, under the map card.
+t = written["MenuLoading.xui"]
+t = set_prop(t, "ID_KEYHINT_1", "Position", "8.000000,650.000000,0.000000")
+write("MenuLoading.xui", t)
