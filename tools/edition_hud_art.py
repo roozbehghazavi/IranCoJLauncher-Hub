@@ -53,12 +53,17 @@ def clock():
     return im
 
 
+def mix(a, b, t):
+    return tuple(round(x * (1 - t) + y * t) for x, y in zip(a, b))
+
+
 def score():
-    """256x64 plate behind the team score: blue half, red half, wood divider."""
-    im = Image.new("RGBA", (256, 64), INK + (215,))
+    """256x64 plate behind the team score: dark blue half, dark red half, wood divider - opaque, so the sky
+    behind it can't tint both halves the same."""
+    im = Image.new("RGBA", (256, 64), INK + (255,))
     d = ImageDraw.Draw(im)
-    d.rectangle([2, 2, 126, 61], fill=BLUE + (90,))
-    d.rectangle([130, 2, 253, 61], fill=RED + (90,))
+    d.rectangle([2, 2, 126, 61], fill=mix(INK, BLUE, 0.45) + (255,))
+    d.rectangle([130, 2, 253, 61], fill=mix(INK, RED, 0.45) + (255,))
     d.rectangle([127, 6, 128, 57], fill=WOOD + (255,))
     d.rectangle([0, 0, 255, 63], outline=WOOD + (255,), width=2)
     return im
@@ -83,6 +88,30 @@ def wanted():
     return im
 
 
+def chips():
+    """256x256: round timer chip (clock + room for the time), round countdown chip, team badges (concept)."""
+    atlas = Image.new("RGBA", (256, 256))
+    d = ImageDraw.Draw(atlas)
+
+    def chip(box, outline=WOOD):
+        d.rounded_rectangle(box, radius=6, fill=INK + (215,), outline=outline + (255,), width=1)
+
+    chip((0, 0, 159, 51))                                   # irn_hud_timer: 160x52
+    d.ellipse([12, 13, 38, 39], outline=GOLD + (255,), width=3)
+    d.line([(25, 26), (25, 17)], fill=GOLD + (255,), width=3)
+    d.line([(25, 26), (32, 29)], fill=GOLD + (255,), width=3)
+    chip((0, 56, 95, 91))                                   # irn_hud_countdown: 96x36
+    d.ellipse([9, 64, 28, 83], outline=GOLD + (255,), width=2)
+    d.line([(18, 74), (18, 68)], fill=GOLD + (255,), width=2)
+    d.line([(18, 74), (23, 76)], fill=GOLD + (255,), width=2)
+    for y, color, name in ((96, RED, "OUTLAWS"), (154, BLUE, "LAWMEN")):  # irn_badge_red / _blue: 206x54
+        chip((0, y, 205, y + 53), color)
+        d.rectangle([1, y + 1, 204, y + 52], outline=color + (255,), width=2)
+        star(d, 30, y + 27, 14, color)
+        d.text((56, y + 27), name, font=font(28), fill=PARCH + (255,), anchor="lm")
+    return atlas
+
+
 # The game draws these icons by name on every screen (HUD, class screen, scoreboard); they are rects in the
 # HUD atlas hud_new.dds. Defined again after it (edition.json, both texture lists) they come from this atlas
 # instead: x, y, w, h at twice the original size.
@@ -103,5 +132,6 @@ def icons():
 
 if __name__ == "__main__":
     out = os.path.join(sys.argv[1], "textures")
-    for name, image in (("irancoj_hud_strip", strip()), ("irancoj_hud_score", score()), ("irancoj_hud_icons", icons())):
+    for name, image in (("irancoj_hud_strip", strip()), ("irancoj_hud_score", score()), ("irancoj_hud_icons", icons()),
+                        ("irancoj_hud_chips", chips())):
         write_dds(image, os.path.join(out, name + ".dds"))

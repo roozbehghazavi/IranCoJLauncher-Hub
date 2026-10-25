@@ -196,8 +196,40 @@
           "<Id>ID_POINTS_HTML</Id>\r\n<Width>184.000000</Width>\r\n<Height>52.000000</Height>\r\n<Position>548.000000,34.000000,0.000000</Position>\r\n<DefaultHorizontalAlign>center</DefaultHorizontalAlign>\r\n<DefaultFont>HUDDigitsVeryBig</DefaultFont>\r\n<BackgroundVisible>true</BackgroundVisible>\r\n<BackgroundTexture>irn_hud_score</BackgroundTexture>\r\n<BackgroundColor>0xffffffff</BackgroundColor>\r\n<BackgroundMaterial>sprite_button.mat</BackgroundMaterial>"
         ],
         [
-          "<Id>NetTimer</Id>\\\r\\\n<Width>304\\.000000</Width>\\\r\\\n<Height>35\\.000000</Height>\\\r\\\n<Position>488\\.000122,43\\.000015,0\\.000000</Position>",
-          "<Id>NetTimer</Id>\r\n<Width>304.000000</Width>\r\n<Height>35.000000</Height>\r\n<Position>488.000122,92.000000,0.000000</Position>"
+          "<Id>G_LeftTimer</Id>\\\r\\\n<Width>100\\.000015</Width>\\\r\\\n<Height>34\\.999992</Height>\\\r\\\n<Position>8\\.000000,\\-1\\.000011,0\\.000000</Position>\\\r\\\n",
+          "<Id>G_LeftTimer</Id>\r\n<Width>100.000015</Width>\r\n<Height>34.999992</Height>\r\n<Position>-110.000000,-1.000000,0.000000</Position>\r\n"
+        ],
+        [
+          "<Id>G_RightTimer</Id>\\\r\\\n<Width>100\\.000015</Width>\\\r\\\n<Height>34\\.999992</Height>\\\r\\\n<Position>196\\.000015,\\-1\\.000011,0\\.000000</Position>\\\r\\\n",
+          "<Id>G_RightTimer</Id>\r\n<Width>100.000015</Width>\r\n<Height>34.999992</Height>\r\n<Position>314.000000,-1.000000,0.000000</Position>\r\n"
+        ],
+        [
+          "<MyText>\\\r\\\n<Properties>\\\r\\\n<Id>ID_TIME</Id>\\\r\\\n<Width>435\\.000000</Width>\\\r\\\n<Height>54\\.000000</Height>\\\r\\\n<Position>28\\.000000,2\\.000002,0\\.000000</Position>\\\r\\\n<Anchor>32</Anchor>\\\r\\\n<TextColor>0xffddcda9</TextColor>\\\r\\\n<DropShadowColor>0x800f0f0f</DropShadowColor>\\\r\\\n<PointSize>20\\.000000</PointSize>\\\r\\\n<Font>HUDDigitsBig</Font>\\\r\\\n<TextStyle>4112</TextStyle>\\\r\\\n<Outline>true</Outline>\\\r\\\n</Properties>\\\r\\\n</MyText>\\\r\\\n<MyImage>\\\r\\\n<Properties>\\\r\\\n<Id>ID_TIME_ICON</Id>\\\r\\\n<Width>21\\.000000</Width>\\\r\\\n<Height>38\\.000000</Height>\\\r\\\n<Position>0\\.000000,8\\.000003,0\\.000000</Position>\\\r\\\n<Pivot>10\\.499993,18\\.999992,0\\.000000</Pivot>\\\r\\\n<Show>false</Show>\\\r\\\n<ImagePath>icon_timer\\.dds</ImagePath>\\\r\\\n<HoldAspectRatio>true</HoldAspectRatio>\\\r\\\n<HoldAspectRatioX>true</HoldAspectRatioX>\\\r\\\n<HoldAspectPivotPosition>true</HoldAspectPivotPosition>\\\r\\\n</Properties>\\\r\\\n</MyImage>\\\r\\\n",
+          "<MyImage>\r\n<Properties>\r\n<Id>ID_TIME_ICON</Id>\r\n<Width>160.000000</Width>\r\n<Height>52.000000</Height>\r\n<Position>-12.000000,1.000000,0.000000</Position>\r\n<Pivot>80.000000,26.000000,0.000000</Pivot>\r\n<Show>false</Show>\r\n<ImagePath>irn_hud_timer</ImagePath>\r\n<HoldAspectRatio>false</HoldAspectRatio>\r\n<HoldAspectRatioX>false</HoldAspectRatioX>\r\n<HoldAspectPivotPosition>true</HoldAspectPivotPosition>\r\n</Properties>\r\n</MyImage>\r\n<MyText>\r\n<Properties>\r\n<Id>ID_TIME</Id>\r\n<Width>435.000000</Width>\r\n<Height>54.000000</Height>\r\n<Position>44.000000,2.000002,0.000000</Position>\r\n<Anchor>32</Anchor>\r\n<TextColor>0xfff3ebdd</TextColor>\r\n<DropShadowColor>0x800f0f0f</DropShadowColor>\r\n<PointSize>20.000000</PointSize>\r\n<Font>HUDDigitsBig</Font>\r\n<TextStyle>4112</TextStyle>\r\n<Outline>true</Outline>\r\n</Properties>\r\n</MyText>\r\n"
+        ],
+        [
+          "<MyText>\\\r\\\n<Properties>\\\r\\\n<Id>T_Value</Id>\\\r\\\n<Width>35\\.999985</Width>\\\r\\\n<Height>35\\.000000</Height>\\\r\\\n<Position>150\\.000031,3\\.000000,0\\.000000</Position>\\\r\\\n<Opacity>0\\.000000</Opacity>\\\r\\\n<Anchor>5</Anchor>\\\r\\\n<TextColor>0xffddcda9</TextColor>\\\r\\\n<Font>HUDDigitsBig</Font>\\\r\\\n<TextStyle>4368</TextStyle>\\\r\\\n<Outline>true</Outline>\\\r\\\n</Properties>\\\r\\\n</MyText>\\\r\\\n<MyImage>\\\r\\\n<Properties>\\\r\\\n<Id>I_Image</Id>\\\r\\\n<Width>28\\.000000</Width>\\\r\\\n<Height>35\\.000000</Height>\\\r\\\n<Position>118\\.000053,0\\.000000,0\\.000000</Position>\\\r\\\n<Opacity>0\\.000000</Opacity>\\\r\\\n<Pivot>13\\.999931,17\\.499983,0\\.000000</Pivot>\\\r\\\n<ImagePath>icon_team_timer</ImagePath>\\\r\\\n<HoldAspectRatio>true</HoldAspectRatio>\\\r\\\n<HoldAspectRatioX>true</HoldAspectRatioX>\\\r\\\n<HoldAspectPivotPosition>true</HoldAspectPivotPosition>\\\r\\\n</Properties>\\\r\\\n</MyImage>\\\r\\\n",
+          "<MyImage>\r\n<Properties>\r\n<Id>I_Image</Id>\r\n<Width>96.000000</Width>\r\n<Height>36.000000</Height>\r\n<Position>104.000000,0.000000,0.000000</Position>\r\n<Opacity>0.000000</Opacity>\r\n<Pivot>48.000000,18.000000,0.000000</Pivot>\r\n<ImagePath>irn_hud_countdown</ImagePath>\r\n<HoldAspectRatio>false</HoldAspectRatio>\r\n<HoldAspectRatioX>false</HoldAspectRatioX>\r\n<HoldAspectPivotPosition>true</HoldAspectPivotPosition>\r\n</Properties>\r\n</MyImage>\r\n<MyText>\r\n<Properties>\r\n<Id>T_Value</Id>\r\n<Width>35.999985</Width>\r\n<Height>35.000000</Height>\r\n<Position>144.000000,3.000000,0.000000</Position>\r\n<Opacity>0.000000</Opacity>\r\n<Anchor>5</Anchor>\r\n<TextColor>0xffe2b15e</TextColor>\r\n<Font>HUDDigitsBig</Font>\r\n<TextStyle>4368</TextStyle>\r\n<Outline>true</Outline>\r\n</Properties>\r\n</MyText>\r\n"
+        ],
+        [
+          "<Id>ID_TEAM_RED</Id>\\\r\\\n<Width>70\\.000000</Width>\\\r\\\n<Height>70\\.000000</Height>\\\r\\\n<Position>1133\\.000000,37\\.000000,0\\.000000</Position>\\\r\\\n<Scale>1\\.500000,1\\.500000,1\\.000000</Scale>\\\r\\\n<Opacity>0\\.000000</Opacity>\\\r\\\n<Pivot>35\\.000000,35\\.000000,0\\.000000</Pivot>\\\r\\\n",
+          "<Id>ID_TEAM_RED</Id>\r\n<Width>206.000000</Width>\r\n<Height>54.000000</Height>\r\n<Position>1010.000000,40.000000,0.000000</Position>\r\n<Scale>1.000000,1.000000,1.000000</Scale>\r\n<Opacity>0.000000</Opacity>\r\n<Pivot>103.000000,27.000000,0.000000</Pivot>\r\n"
+        ],
+        [
+          "<MyImage>\\\r\\\n<Properties>\\\r\\\n<Id>IMG</Id>\\\r\\\n<Width>70\\.000000</Width>\\\r\\\n<Height>70\\.000000</Height>\\\r\\\n<Pivot>34\\.999954,35\\.000000,0\\.000000</Pivot>\\\r\\\n<SizeMode>4</SizeMode>\\\r\\\n<ImagePath>Textures\\\\temp\\\\hud_team_red\\.dds</ImagePath>\\\r\\\n<HoldAspectRatio>true</HoldAspectRatio>\\\r\\\n<HoldAspectRatioX>true</HoldAspectRatioX>\\\r\\\n<HoldAspectPivotPosition>true</HoldAspectPivotPosition>\\\r\\\n</Properties>\\\r\\\n</MyImage>\\\r\\\n(?=</AdvGroup>\\r\\n<AdvGroup>\\r\\n<Properties>\\r\\n<Id>ID_TEAM_BLUE)",
+          "<MyImage>\r\n<Properties>\r\n<Id>IMG</Id>\r\n<Width>206.000000</Width>\r\n<Height>54.000000</Height>\r\n<Pivot>103.000000,27.000000,0.000000</Pivot>\r\n<SizeMode>4</SizeMode>\r\n<ImagePath>irn_badge_red</ImagePath>\r\n<HoldAspectRatio>false</HoldAspectRatio>\r\n<HoldAspectRatioX>false</HoldAspectRatioX>\r\n<HoldAspectPivotPosition>true</HoldAspectPivotPosition>\r\n</Properties>\r\n</MyImage>\r\n"
+        ],
+        [
+          "<Id>ID_TEAM_BLUE</Id>\\\r\\\n<Width>70\\.000000</Width>\\\r\\\n<Height>70\\.000000</Height>\\\r\\\n<Position>1133\\.000000,37\\.000000,0\\.000000</Position>\\\r\\\n<Scale>1\\.500000,1\\.500000,1\\.000000</Scale>\\\r\\\n<Opacity>0\\.000000</Opacity>\\\r\\\n<Pivot>35\\.000000,35\\.000000,0\\.000000</Pivot>\\\r\\\n",
+          "<Id>ID_TEAM_BLUE</Id>\r\n<Width>206.000000</Width>\r\n<Height>54.000000</Height>\r\n<Position>1010.000000,40.000000,0.000000</Position>\r\n<Scale>1.000000,1.000000,1.000000</Scale>\r\n<Opacity>0.000000</Opacity>\r\n<Pivot>103.000000,27.000000,0.000000</Pivot>\r\n"
+        ],
+        [
+          "<MyImage>\\\r\\\n<Properties>\\\r\\\n<Id>IMG</Id>\\\r\\\n<Width>70\\.000000</Width>\\\r\\\n<Height>70\\.000000</Height>\\\r\\\n<Pivot>34\\.999943,34\\.999996,0\\.000000</Pivot>\\\r\\\n<SizeMode>4</SizeMode>\\\r\\\n<ImagePath>Textures\\\\temp\\\\hud_team_blue\\.dds</ImagePath>\\\r\\\n<HoldAspectRatio>true</HoldAspectRatio>\\\r\\\n<HoldAspectRatioX>true</HoldAspectRatioX>\\\r\\\n<HoldAspectPivotPosition>true</HoldAspectPivotPosition>\\\r\\\n</Properties>\\\r\\\n</MyImage>\\\r\\\n(?=</AdvGroup>\\r\\n<XuiGroup>)",
+          "<MyImage>\r\n<Properties>\r\n<Id>IMG</Id>\r\n<Width>206.000000</Width>\r\n<Height>54.000000</Height>\r\n<Pivot>103.000000,27.000000,0.000000</Pivot>\r\n<SizeMode>4</SizeMode>\r\n<ImagePath>irn_badge_blue</ImagePath>\r\n<HoldAspectRatio>false</HoldAspectRatio>\r\n<HoldAspectRatioX>false</HoldAspectRatioX>\r\n<HoldAspectPivotPosition>true</HoldAspectPivotPosition>\r\n</Properties>\r\n</MyImage>\r\n"
+        ],
+        [
+          "<Id>ID_WANTED_GROUP</Id>\\\r\\\n<Width>154\\.000000</Width>\\\r\\\n<Height>154\\.000000</Height>\\\r\\\n<Position>1048\\.000122,32\\.000000,0\\.000000</Position>\\\r\\\n",
+          "<Id>ID_WANTED_GROUP</Id>\r\n<Width>154.000000</Width>\r\n<Height>154.000000</Height>\r\n<Position>1062.000000,48.000000,0.000000</Position>\r\n"
         ]
       ]
     },
@@ -241,7 +273,7 @@
       "replace": [
         [
           "\\z",
-          "\r\n\r\n//IranCoJ Edition: the in-game screens' top and bottom bars (HUD_Net.xui)\r\nTexture(\"irancoj_bar_top.dds\", 256, 64)\r\n{\r\n\tWhole(\"irn_bar_top\")\r\n}\r\n\r\nTexture(\"irancoj_bar_bottom.dds\", 256, 64)\r\n{\r\n\tWhole(\"irn_bar_bottom\")\r\n}\r\n\r\nTexture(\"irancoj_hud_strip.dds\", 64, 64)\r\n{\r\n\tWhole(\"irn_hud_strip\")\r\n}\r\n\r\n//IranCoJ Edition: HUD icons, defined again after hud_new.scr so ours are drawn\r\nTexture(\"irancoj_hud_icons.dds\", 512, 256)\r\n{\r\n\tRect(\"hud_team_red\", 0, 0, 140, 140)\r\n\tRect(\"hud_team_blue\", 142, 0, 282, 140)\r\n\tRect(\"icon_team_timer\", 284, 0, 340, 70)\r\n\tRect(\"icon_timer\", 342, 0, 384, 76)\r\n\tRect(\"hud_wanted\", 0, 142, 308, 226)\r\n}\r\n\r\nTexture(\"irancoj_hud_score.dds\", 256, 64)\r\n{\r\n\tWhole(\"irn_hud_score\")\r\n}\r\n"
+          "\r\n\r\n//IranCoJ Edition: the in-game screens' top and bottom bars (HUD_Net.xui)\r\nTexture(\"irancoj_bar_top.dds\", 256, 64)\r\n{\r\n\tWhole(\"irn_bar_top\")\r\n}\r\n\r\nTexture(\"irancoj_bar_bottom.dds\", 256, 64)\r\n{\r\n\tWhole(\"irn_bar_bottom\")\r\n}\r\n\r\nTexture(\"irancoj_hud_strip.dds\", 64, 64)\r\n{\r\n\tWhole(\"irn_hud_strip\")\r\n}\r\n\r\n//IranCoJ Edition: HUD icons, defined again after hud_new.scr so ours are drawn\r\nTexture(\"irancoj_hud_icons.dds\", 512, 256)\r\n{\r\n\tRect(\"hud_team_red\", 0, 0, 140, 140)\r\n\tRect(\"hud_team_blue\", 142, 0, 282, 140)\r\n\tRect(\"icon_team_timer\", 284, 0, 340, 70)\r\n\tRect(\"icon_timer\", 342, 0, 384, 76)\r\n\tRect(\"hud_wanted\", 0, 142, 308, 226)\r\n}\r\n\r\nTexture(\"irancoj_hud_score.dds\", 256, 64)\r\n{\r\n\tWhole(\"irn_hud_score\")\r\n}\r\n\r\nTexture(\"irancoj_panel.dds\", 256, 256)\r\n{\r\n\tTileset(\"irn_hudwin_tile\")\r\n\t{\r\n\t\tRect(\"irn_hudwin_tile\", 86, 86, 170, 170)\r\n\t\tRect(\"irn_hudwin_bottom\", 86, 170, 170, 256)\r\n\t\tRect(\"irn_hudwin_top\", 86, 0, 170, 86)\r\n\t\tRect(\"irn_hudwin_left\", 0, 86, 86, 170)\r\n\t\tRect(\"irn_hudwin_right\", 170, 86, 256, 170)\r\n\t\tRect(\"irn_hudwin_bottom_left\", 0, 170, 86, 256)\r\n\t\tRect(\"irn_hudwin_bottom_right\", 170, 170, 256, 256)\r\n\t\tRect(\"irn_hudwin_top_left\", 0, 0, 86, 86)\r\n\t\tRect(\"irn_hudwin_top_right\", 170, 0, 256, 86)\r\n\t\tCornerTopLeft(\"irn_hudwin_top_left\", 100, 0)\r\n\t\tCornerTopRight(\"irn_hudwin_top_right\", 100, 0)\r\n\t\tCornerBottomLeft(\"irn_hudwin_bottom_left\", 100, 0)\r\n\t\tCornerBottomRight(\"irn_hudwin_bottom_right\", 100, 0)\r\n\t\tTop(\"irn_hudwin_top\", 100, 0)\r\n\t\tBottom(\"irn_hudwin_bottom\", 100, 0)\r\n\t\tLeft(\"irn_hudwin_left\", 100, 0)\r\n\t\tRight(\"irn_hudwin_right\", 100, 0)\r\n\t\tMiddle(\"irn_hudwin_tile\", 100, 0)\r\n\t}\r\n}\r\n\r\nTexture(\"irancoj_hud_chips.dds\", 256, 256)\r\n{\r\n\tRect(\"irn_hud_timer\", 0, 0, 160, 52)\r\n\tRect(\"irn_hud_countdown\", 0, 56, 96, 92)\r\n\tRect(\"irn_badge_red\", 0, 96, 206, 150)\r\n\tRect(\"irn_badge_blue\", 0, 154, 206, 208)\r\n}\r\n"
         ]
       ]
     },
@@ -269,6 +301,25 @@
         [
           "menu_button_back100_static\\.mat",
           "sprite_button.mat"
+        ],
+        [
+          "<ImagePath>hud_window_tile</ImagePath>",
+          "<ImagePath>irn_hudwin_tile</ImagePath>"
+        ],
+        [
+          "<Id>IMAGE_3</Id>\\\r\\\n<Width>700\\.000000</Width>\\\r\\\n<Height>38\\.909092</Height>\\\r\\\n<Position>0\\.000000,\\-0\\.454540,0\\.000000</Position>\\\r\\\n<Opacity>0\\.000000</Opacity>\\\r\\\n<Anchor>15</Anchor>\\\r\\\n<Pivot>349\\.999939,19\\.454535,0\\.000000</Pivot>\\\r\\\n<ImagePath>hud_window_tile</ImagePath>\\\r\\\n<Color>0xfe000000</Color>\\\r\\\n<Material>menu_button_back100_static\\.mat</Material>\\\r\\\n<NextTextureStrideY>0\\.125000</NextTextureStrideY>\\\r\\\n</Properties>",
+          "<Id>IMAGE_3</Id>\r\n<Width>700.000000</Width>\r\n<Height>38.909092</Height>\r\n<Position>0.000000,-0.454540,0.000000</Position>\r\n<Opacity>0.000000</Opacity>\r\n<Anchor>15</Anchor>\r\n<Pivot>349.999939,19.454535,0.000000</Pivot>\r\n<ImagePath>hud_window_tile</ImagePath>\r\n<Color>0xffffffff</Color>\r\n<Material>menu_button_back100_static.mat</Material>\r\n<NextTextureStrideY>0.125000</NextTextureStrideY>\r\n</Properties>"
+        ]
+      ]
+    },
+    {
+      "path": "CoJ2/Data/Menu/Mat/irancoj_blur_pc.mat",
+      "pak": "CoJ2/Data0.pak",
+      "entry": "Data/Menu/Mat/menu_bckg_screenshot_PC.mat",
+      "replace": [
+        [
+          "menu_bckg_screenshot\\.mtt",
+          "irancoj_blur.mtt"
         ]
       ]
     }

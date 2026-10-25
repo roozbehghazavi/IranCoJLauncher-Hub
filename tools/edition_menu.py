@@ -234,6 +234,8 @@ t = set_prop(t, "background_base", "Opacity", "1.000000")
 t = keyframes(t, "background_base", lambda time, props: ["0.000000" if props[0] == "0.000000" else "1.000000"])
 t = set_prop(t, "I_Gun", "Show", "false")
 t = set_prop(t, "background_film_back", "ImagePath", "black")  # under the film while it fades: black, not paper
+# In game, the menus' backdrop is a snapshot of the game (background_screenshot): blurred like the HUD's, not sepia.
+t = set_prop(t, "background_screenshot", "Material", "irancoj_blur_pc.mat")
 write("MenuBackground.xui", t)
 
 
@@ -434,8 +436,9 @@ for n in range(3):
             g = set_prop(g, icon, "Position", "0.000000,0.000000,0.000000")
         return g
     t = in_group(t, "G_ClassInfo", lambda g, f=weapon_row, n=n: in_group(g, f"Weapon{n}", f))
-for element_id, (x, y, w, h) in {"H_UpgradeInfoLabel": (8, 378, 240, 58), "T_UpgradeInfoCost": (196, 380, 132, 32),
-                                 "B_Upgrade": (8, 438, 320, 40), "T_WarningNotAvailable": (8, 438, 320, 40)}.items():
+# The info's second line (what the upgrade adds) is the one beside the cost.
+for element_id, (x, y, w, h) in {"H_UpgradeInfoLabel": (8, 378, 240, 58), "T_UpgradeInfoCost": (196, 404, 132, 32),
+                                 "B_Upgrade": (8, 444, 320, 36), "T_WarningNotAvailable": (8, 444, 320, 36)}.items():
     t = set_prop(t, element_id, "Position", f"{x}.000000,{y}.000000,0.000000")
     t = set_prop(t, element_id, "Width", f"{w}.000000")
     t = set_prop(t, element_id, "Height", f"{h}.000000")
@@ -449,6 +452,7 @@ t = set_prop(t, "H_UpgradeInfoLabel", "DefaultHorizontalAlign", "left")
 # The buttons are two rows (Cancel over Quit Game, Change Team over Spawn): lower the group so both sit in the
 # bottom bar (616..720) - the top row stuck out above it.
 t = set_prop(t, "G_Buttons", "Position", "0.000000,520.000000,0.000000")
+t = set_prop(t, "B_ChangeTeam", "Height", "34.000000")  # a gap above Spawn, like the design
 
 
 def baseline(t, pairs):
@@ -518,3 +522,8 @@ m = visual(t, "ListBoxNetEmptyV")
 v = set_prop(set_prop(m.group(0), "LBScrollBar", "Position", "-6.000000,0.000000,0.000000"), "LBScrollBar", "Width", "24.000000")
 v = set_prop(v, "ItemGroup", "Position", "22.000000,0.000000,0.000000")
 write("CoJ2MenuSkin.xui", t[:m.start()] + v + t[m.end():])
+
+# In game, the loading backdrop is the same snapshot: blurred, not sepia.
+t = written["BackgroundLoading.xui"]
+t = set_prop(t, "MenuBackgroundIngame", "Material", "irancoj_blur_pc.mat")
+write("BackgroundLoading.xui", t)
