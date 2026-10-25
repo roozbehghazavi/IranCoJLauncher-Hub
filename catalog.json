@@ -441,7 +441,8 @@
       "exclude": [
         "README_INSTALL.txt",
         "mods.txt",
-        "CoJ2/Data/Menu/MenuIngameNetGamemode_Scr_PC.binui"
+        "CoJ2/Data/Menu/MenuIngameNetGamemode_Scr_PC.binui",
+        "CoJ2/Data/COJ2 Voices&Texts.bin"
       ],
       "loadDll": [
         "newclasses.dll"
@@ -540,7 +541,7 @@
     }
   ],
   "edition": {
-    "version": "0.6.0",
+    "version": "0.7.0",
     "ownUserFolder": true,
     "menuNavigation": true,
     "include": [
@@ -603,7 +604,6 @@
       "CoJ2/Data??.pak",
       "CoJ2/Speech??.pak",
       "?CoJ2/DataEngine.pak",
-      "?CoJ2/DataModding.pak",
       "?CoJ2/Data/adobes_loading.rpack",
       "?CoJ2/Data/civil_loading.rpack",
       "?CoJ2/Data/coffeyville_loading.rpack",
@@ -778,6 +778,14 @@
           [
             "<MyText>\\\r\\\n<Properties>\\\r\\\n<Id>T_Value</Id>\\\r\\\n<Width>35\\.999985</Width>\\\r\\\n<Height>35\\.000000</Height>\\\r\\\n<Position>150\\.000031,3\\.000000,0\\.000000</Position>\\\r\\\n<Opacity>0\\.000000</Opacity>\\\r\\\n<Anchor>5</Anchor>\\\r\\\n<TextColor>0xffddcda9</TextColor>\\\r\\\n<Font>HUDDigitsBig</Font>\\\r\\\n<TextStyle>4368</TextStyle>\\\r\\\n<Outline>true</Outline>\\\r\\\n</Properties>\\\r\\\n</MyText>\\\r\\\n<MyImage>\\\r\\\n<Properties>\\\r\\\n<Id>I_Image</Id>\\\r\\\n<Width>28\\.000000</Width>\\\r\\\n<Height>35\\.000000</Height>\\\r\\\n<Position>118\\.000053,0\\.000000,0\\.000000</Position>\\\r\\\n<Opacity>0\\.000000</Opacity>\\\r\\\n<Pivot>13\\.999931,17\\.499983,0\\.000000</Pivot>\\\r\\\n<ImagePath>icon_team_timer</ImagePath>\\\r\\\n<HoldAspectRatio>true</HoldAspectRatio>\\\r\\\n<HoldAspectRatioX>true</HoldAspectRatioX>\\\r\\\n<HoldAspectPivotPosition>true</HoldAspectPivotPosition>\\\r\\\n</Properties>\\\r\\\n</MyImage>\\\r\\\n",
             "<MyImage>\r\n<Properties>\r\n<Id>I_Image</Id>\r\n<Width>96.000000</Width>\r\n<Height>36.000000</Height>\r\n<Position>104.000000,0.000000,0.000000</Position>\r\n<Opacity>0.000000</Opacity>\r\n<Pivot>48.000000,18.000000,0.000000</Pivot>\r\n<ImagePath>irn_hud_num</ImagePath>\r\n<HoldAspectRatio>false</HoldAspectRatio>\r\n<HoldAspectRatioX>false</HoldAspectRatioX>\r\n<HoldAspectPivotPosition>true</HoldAspectPivotPosition>\r\n</Properties>\r\n</MyImage>\r\n<MyText>\r\n<Properties>\r\n<Id>T_Value</Id>\r\n<Width>96.000000</Width>\r\n<Height>32.000000</Height>\r\n<Position>104.000000,2.000000,0.000000</Position>\r\n<Opacity>0.000000</Opacity>\r\n<Anchor>5</Anchor>\r\n<TextColor>0xffe2b15e</TextColor>\r\n<Font>HUDDigitsBig</Font>\r\n<TextStyle>5136</TextStyle>\r\n<Outline>true</Outline>\r\n</Properties>\r\n</MyText>\r\n"
+          ],
+          [
+            "<Id>I_Background</Id>\\\r\\\n<Width>870\\.000000</Width>\\\r\\\n<Height>32\\.000000</Height>\\\r\\\n<Position>\\-9\\.999985,\\-3\\.999999,0\\.000000</Position>\\\r\\\n<ImagePath>dialog_frame_a_tile</ImagePath>",
+            "<Id>I_Background</Id>\r\n<Width>870.000000</Width>\r\n<Height>32.000000</Height>\r\n<Position>-9.999985,-3.999999,0.000000</Position>\r\n<ImagePath>irn_hud_strip</ImagePath>"
+          ],
+          [
+            "<Id>T_Title</Id>\\\r\\\n<Width>150\\.000000</Width>\\\r\\\n<Height>24\\.000000</Height>\\\r\\\n<Position>8\\.000000,4\\.000000,0\\.000000</Position>\\\r\\\n<TextColor>0xfe000000</TextColor>",
+            "<Id>T_Title</Id>\r\n<Width>150.000000</Width>\r\n<Height>24.000000</Height>\r\n<Position>8.000000,4.000000,0.000000</Position>\r\n<TextColor>0xffe2b15e</TextColor>"
           ]
         ]
       },
@@ -887,15 +895,257 @@
           [
             "NetMsg_TeamRed\\x0d\\x00O\\x00U\\x00T\\x00L\\x00A\\x00W\\x00S\\x00\\ \\x00\\(\\x00r\\x00e\\x00d\\x00\\)\\x00",
             "NetMsg_TeamRed\u0007\u0000O\u0000U\u0000T\u0000L\u0000A\u0000W\u0000S\u0000"
+          ],
+          [
+            "N_WeaponPistolDerringerUpgradeNet\\x0c\\x00L\\x00a\\x00d\\x00i\\x00e\\x00s\\x00\\ \\x00G\\x00u\\x00n\\x00\\ \\x00\\+\\x00",
+            "N_WeaponPistolDerringerUpgradeNet\u000e\u0000T\u0000h\u0000r\u0000o\u0000w\u0000i\u0000n\u0000g\u0000 \u0000K\u0000n\u0000i\u0000f\u0000e\u0000"
+          ],
+          [
+            "N_WeaponPistolLemantUpgradeNet\\x0c\\x00H\\x00y\\x00b\\x00r\\x00i\\x00d\\x00\\ \\x00G\\x00u\\x00n\\x00\\ \\x00\\+\\x00",
+            "N_WeaponPistolLemantUpgradeNet\b\u0000T\u0000o\u0000m\u0000a\u0000h\u0000a\u0000w\u0000k\u0000"
+          ],
+          [
+            "\\A\\x01\\x00\\x00\\x00\\x87\\x20\\x00\\x00",
+            "\u0001\u0000\u0000\u0000 \u0000\u0000"
+          ],
+          [
+            "\\z",
+            " \u0000Name_WeaponPistolFrontierUpgrade\u0012\u0000S\u0000p\u0000r\u0000i\u0000n\u0000g\u0000f\u0000i\u0000e\u0000l\u0000d\u0000 \u0000M\u0000u\u0000s\u0000k\u0000e\u0000t\u0000#\u0000Name_WeaponPistolFrontierUpgradeNet\u0012\u0000S\u0000p\u0000r\u0000i\u0000n\u0000g\u0000f\u0000i\u0000e\u0000l\u0000d\u0000 \u0000M\u0000u\u0000s\u0000k\u0000e\u0000t\u0000\u001d\u0000N_WeaponPistolFrontierUpgrade\u0012\u0000S\u0000p\u0000r\u0000i\u0000n\u0000g\u0000f\u0000i\u0000e\u0000l\u0000d\u0000 \u0000M\u0000u\u0000s\u0000k\u0000e\u0000t\u0000\u0017\u0000MenuDerringerUpgradeNet\u000f\u0000T\u0000h\u0000r\u0000o\u0000w\u0000i\u0000n\u0000g\u0000 \u0000K\u0000n\u0000i\u0000v\u0000e\u0000s\u0000$\u0000Name_WeaponPistolDerringerUpgradeNet\u000e\u0000T\u0000h\u0000r\u0000o\u0000w\u0000i\u0000n\u0000g\u0000 \u0000K\u0000n\u0000i\u0000f\u0000e\u0000!\u0000Name_WeaponPistolDerringerUpgrade\u000e\u0000T\u0000h\u0000r\u0000o\u0000w\u0000i\u0000n\u0000g\u0000 \u0000K\u0000n\u0000i\u0000f\u0000e\u0000\u001e\u0000N_WeaponPistolDerringerUpgrade\u000e\u0000T\u0000h\u0000r\u0000o\u0000w\u0000i\u0000n\u0000g\u0000 \u0000K\u0000n\u0000i\u0000f\u0000e\u0000\u0014\u0000MenuLemantUpgradeNet\b\u0000T\u0000o\u0000m\u0000a\u0000h\u0000a\u0000w\u0000k\u0000!\u0000Name_WeaponPistolLemantUpgradeNet\b\u0000T\u0000o\u0000m\u0000a\u0000h\u0000a\u0000w\u0000k\u0000\u001e\u0000Name_WeaponPistolLemantUpgrade\b\u0000T\u0000o\u0000m\u0000a\u0000h\u0000a\u0000w\u0000k\u0000\u001b\u0000N_WeaponPistolLemantUpgrade\b\u0000T\u0000o\u0000m\u0000a\u0000h\u0000a\u0000w\u0000k\u0000"
+          ]
+        ]
+      },
+      {
+        "path": "CoJ2/Data/Menu/Mat/loading_bckg.mat",
+        "pak": "CoJ2/Data0.pak",
+        "entry": "Data/Menu/Mat/loading_bckg.mat",
+        "replace": [
+          [
+            "(?s)float4 t0 = tex2D\\(tmu0, i\\.uv0\\); //background.*?//output = step7;",
+            "float4 t0 = tex2D(tmu0, i.uv0); //background (kept bound)\n\t\t\t\t\t\t\tfloat4 i1 = tex2D(tmu1, i.uv1); //image 1\n\t\t\t\t\t\t\tfloat4 i2 = tex2D(tmu3, i.uv4); //image 2\n\t\t\t\t\t\t\tfloat4 m0 = tex2D(tmu2, i.uv2); //mask (kept bound)\n\n\t\t\t\t\t\t\t// IranCoJ Edition: the map's pictures in colour (cross-faded by the game's weights), darker\n\t\t\t\t\t\t\t// on the left behind the text and at the bottom, and a dark card with a gold top edge under\n\t\t\t\t\t\t\t// the objectives map.\n\t\t\t\t\t\t\tfloat3 pic = i1.rgb * CONST_6.x + i2.rgb * CONST_6.y;\n\t\t\t\t\t\t\tfloat left = saturate(1 - i.uv0.x / 0.62);\n\t\t\t\t\t\t\tfloat shade = 0.82 - 0.62 * pow(left, 0.9);\n\t\t\t\t\t\t\tshade *= 1 - 0.55 * pow(saturate((i.uv0.y - 0.72) / 0.28), 1.6);\n\t\t\t\t\t\t\tfloat3 col = pic * shade + (t0.rgb + m0.rgb) * 0.0001;\n\t\t\t\t\t\t\tfloat card = step(0.4500, i.uv0.x) * step(i.uv0.x, 0.8625) * step(0.1306, i.uv0.y) * step(i.uv0.y, 0.8639);\n\t\t\t\t\t\t\tfloat gold = card * step(i.uv0.y, 0.1347);\n\t\t\t\t\t\t\tcol = lerp(col, float3(0.114, 0.114, 0.102), card * 0.94);\n\t\t\t\t\t\t\tcol = lerp(col, float3(0.886, 0.694, 0.369), gold);\n\t\t\t\t\t\t\toutput = float4(col, 1);"
+          ]
+        ]
+      },
+      {
+        "path": "CoJ2/Data/Menu/TextureDefs/BackgroundLoadingTextures.def",
+        "pak": "CoJ2/Data0.pak",
+        "entry": "Data/Menu/TextureDefs/BackgroundLoadingTextures.def",
+        "replace": [
+          [
+            "Texture\\(\"Drum\\.dds\", 64, 64\\)",
+            "Texture(\"irancoj_spinner.dds\", 64, 64)"
+          ]
+        ]
+      },
+      {
+        "path": "CoJ2/Data/Menu/Hud/HUD_Skin.xui",
+        "pak": "CoJ2/Data0.pak",
+        "entry": "Data/Menu/Hud/HUD_Skin.xui",
+        "replace": [
+          [
+            "<Id>EditBoxChatV</Id>\\\r\\\n<Width>128\\.000000</Width>\\\r\\\n<Height>32\\.000000</Height>\\\r\\\n</Properties>\\\r\\\n<MyTextPresenter>\\\r\\\n<Properties>\\\r\\\n<Id>Text</Id>\\\r\\\n<Width>128\\.000015</Width>\\\r\\\n<Height>32\\.000004</Height>\\\r\\\n<Anchor>15</Anchor>\\\r\\\n<TextColor>0xfe000000</TextColor>\\\r\\\n<DropShadowColor>0x800f0f0f</DropShadowColor>\\\r\\\n<PointSize>12\\.000000</PointSize>\\\r\\\n<Font>HUDSmall</Font>\\\r\\\n<TextStyle>4368</TextStyle>\\\r\\\n</Properties>\\\r\\\n</MyTextPresenter>\\\r\\\n<AdvGroup>\\\r\\\n<Properties>\\\r\\\n<Id>Cursor</Id>\\\r\\\n<Width>1\\.000000</Width>\\\r\\\n<Height>32\\.000004</Height>\\\r\\\n<Position>88\\.000000,0\\.000000,0\\.000000</Position>\\\r\\\n<Anchor>10</Anchor>\\\r\\\n<AllowJumpsFromParents>false</AllowJumpsFromParents>\\\r\\\n<KeepWidth>true</KeepWidth>\\\r\\\n</Properties>\\\r\\\n<MyImage>\\\r\\\n<Properties>\\\r\\\n<Id>Carrige</Id>\\\r\\\n<Width>1\\.000000</Width>\\\r\\\n<Height>32\\.000000</Height>\\\r\\\n<Anchor>10</Anchor>\\\r\\\n<Pivot>\\-0\\.000008,\\-0\\.000001,0\\.000000</Pivot>\\\r\\\n<ImagePath>White\\.dds</ImagePath>\\\r\\\n<KeepWidth>true</KeepWidth>\\\r\\\n<KeepWidthOnResolutionChange>true</KeepWidthOnResolutionChange>\\\r\\\n<KeepHeight>true</KeepHeight>\\\r\\\n<KeepHeightOnResolutionChange>true</KeepHeightOnResolutionChange>\\\r\\\n<KeepPosX>true</KeepPosX>\\\r\\\n<Color>0xfe000000</Color>",
+            "<Id>EditBoxChatV</Id>\r\n<Width>128.000000</Width>\r\n<Height>32.000000</Height>\r\n</Properties>\r\n<MyTextPresenter>\r\n<Properties>\r\n<Id>Text</Id>\r\n<Width>128.000015</Width>\r\n<Height>32.000004</Height>\r\n<Anchor>15</Anchor>\r\n<TextColor>0xfff3ebdd</TextColor>\r\n<DropShadowColor>0x800f0f0f</DropShadowColor>\r\n<PointSize>12.000000</PointSize>\r\n<Font>HUDSmall</Font>\r\n<TextStyle>4368</TextStyle>\r\n</Properties>\r\n</MyTextPresenter>\r\n<AdvGroup>\r\n<Properties>\r\n<Id>Cursor</Id>\r\n<Width>1.000000</Width>\r\n<Height>32.000004</Height>\r\n<Position>88.000000,0.000000,0.000000</Position>\r\n<Anchor>10</Anchor>\r\n<AllowJumpsFromParents>false</AllowJumpsFromParents>\r\n<KeepWidth>true</KeepWidth>\r\n</Properties>\r\n<MyImage>\r\n<Properties>\r\n<Id>Carrige</Id>\r\n<Width>1.000000</Width>\r\n<Height>32.000000</Height>\r\n<Anchor>10</Anchor>\r\n<Pivot>-0.000008,-0.000001,0.000000</Pivot>\r\n<ImagePath>White.dds</ImagePath>\r\n<KeepWidth>true</KeepWidth>\r\n<KeepWidthOnResolutionChange>true</KeepWidthOnResolutionChange>\r\n<KeepHeight>true</KeepHeight>\r\n<KeepHeightOnResolutionChange>true</KeepHeightOnResolutionChange>\r\n<KeepPosX>true</KeepPosX>\r\n<Color>0xffe2b15e</Color>"
           ]
         ]
       }
     ],
+    "trim": {
+      "CoJ2/Data0.pak": {
+        "drop": [
+          "Data/Maps/*/*.exp",
+          "Data/Maps/*/*.sobj",
+          "Data/Maps/*/*.height",
+          "Data/Maps/*/*_weather.scr"
+        ],
+        "keep": [
+          "Data/Maps/Battle/Battle.height",
+          "Data/Maps/Battle/battle.exp",
+          "Data/Maps/Battle/battle.sobj",
+          "Data/Maps/Dungeons/dungeons.exp",
+          "Data/Maps/Dungeons/dungeons.height",
+          "Data/Maps/Dungeons/dungeons.sobj",
+          "Data/Maps/GhostTown/GhostTown.height",
+          "Data/Maps/GhostTown/ghosttown.exp",
+          "Data/Maps/GhostTown/ghosttown.sobj",
+          "Data/Maps/Juarez/Juarez.exp",
+          "Data/Maps/Juarez/Juarez.height",
+          "Data/Maps/Juarez/juarez.sobj",
+          "Data/Maps/Medallion/medallion.exp",
+          "Data/Maps/Medallion/medallion.height",
+          "Data/Maps/Medallion/medallion.sobj",
+          "Data/Maps/MinersMassacre/MinersMassacre.height",
+          "Data/Maps/MinersMassacre/minersmassacre.exp",
+          "Data/Maps/MinersMassacre/minersmassacre.sobj",
+          "Data/Maps/MinersShooting/MinersShooting.height",
+          "Data/Maps/MinersShooting/minersshooting.exp",
+          "Data/Maps/MinersShooting/minersshooting.sobj",
+          "Data/Maps/MurderInUtah/MurderInUtah.height",
+          "Data/Maps/MurderInUtah/murderinutah.exp",
+          "Data/Maps/MurderInUtah/murderinutah.sobj",
+          "Data/Maps/WeaponsTransport/WeaponsTransport.height",
+          "Data/Maps/WeaponsTransport/weaponstransport.exp",
+          "Data/Maps/WeaponsTransport/weaponstransport.sobj"
+        ]
+      },
+      "CoJ2/SpeechEn.pak": {
+        "drop": [
+          "Data/Sounds/Speech/**/*.ogg",
+          "Data/Sounds/AI/Chatter/**/*.ogg",
+          "Data/Sounds/AI/Single/**/*.ogg"
+        ],
+        "keep": [
+          "Data/Sounds/AI/Single/Native_American_Warcry_01.ogg",
+          "Data/Sounds/AI/Single/Native_American_Warcry_02.ogg",
+          "Data/Sounds/AI/Single/Native_American_Warcry_03.ogg",
+          "Data/Sounds/AI/Single/Native_American_Warcry_04.ogg",
+          "Data/Sounds/AI/Single/Native_American_Warcry_05.ogg"
+        ]
+      },
+      "CoJ2/Data1.pak": {
+        "drop": [
+          "Data/Sounds/Ambient_Levels/**/*.ogg",
+          "Data/Sounds/Ambient_Levels/**/*.wav",
+          "Data/Sounds/Ambient/**/*.ogg",
+          "Data/Sounds/Ambient/**/*.wav",
+          "Data/Sounds/Animals/**/*.ogg",
+          "Data/Sounds/Animals/**/*.wav",
+          "Data/Sounds/Action/**/*.ogg",
+          "Data/Sounds/Action/**/*.wav",
+          "Data/Sounds/Battle/**/*.ogg",
+          "Data/Sounds/Battle/**/*.wav",
+          "Data/Sounds/thunder/**/*.ogg",
+          "Data/Sounds/thunder/**/*.wav",
+          "Data/Sounds/vehicle/**/*.ogg",
+          "Data/Sounds/vehicle/**/*.wav"
+        ],
+        "keep": [
+          "Data/Sounds/Action/COJ2_CIN_31C_Stones_Out.ogg",
+          "Data/Sounds/Action/bandits_on_mine.ogg",
+          "Data/Sounds/Action/shouts_bandits_to_prison.wav",
+          "Data/Sounds/Action/soldiers_attack_03.ogg",
+          "Data/Sounds/Ambient/atmosphere/kenya.wav",
+          "Data/Sounds/Ambient/birds/bird_take_off_00.wav",
+          "Data/Sounds/Ambient/birds/bird_take_off_01.wav",
+          "Data/Sounds/Ambient/birds/bird_tree_arrival_00.wav",
+          "Data/Sounds/Ambient/birds/bird_tree_arrival_01.wav",
+          "Data/Sounds/Ambient/birds/bird_tree_departure_00.wav",
+          "Data/Sounds/Ambient/birds/bird_tree_departure_01.wav",
+          "Data/Sounds/Ambient/birds/bird_voice_00.wav",
+          "Data/Sounds/Ambient/birds/bird_voice_01.wav",
+          "Data/Sounds/Ambient/birds/desert_birds/Canyonbird1.wav",
+          "Data/Sounds/Ambient/birds/desert_birds/Canyonbird2.wav",
+          "Data/Sounds/Ambient/birds/lonely_trees/grive_draine_01.ogg",
+          "Data/Sounds/Ambient/birds/mountains/marmotte_01.ogg",
+          "Data/Sounds/Ambient/birds/ravens_02.ogg",
+          "Data/Sounds/Ambient/birds/whole_forest/chouette_chevechette_01.ogg",
+          "Data/Sounds/Ambient/birds/whole_forest/chouette_tengalm_01.ogg",
+          "Data/Sounds/Ambient/birds/whole_forest/circaete_01.ogg",
+          "Data/Sounds/Ambient/birds/whole_forest/coucou_01_right.ogg",
+          "Data/Sounds/Ambient/birds/whole_forest/coucou_02_right.ogg",
+          "Data/Sounds/Ambient/birds/whole_forest/grive_musicienne_01.ogg",
+          "Data/Sounds/Ambient/birds/whole_forest/grive_musicienne_02.ogg",
+          "Data/Sounds/Ambient/birds/whole_forest/sittelle_01.ogg",
+          "Data/Sounds/Ambient/birds/whole_forest/sittelle_02.ogg",
+          "Data/Sounds/Ambient/cave/cave_water_drop_00.wav",
+          "Data/Sounds/Ambient/cave/cave_water_drop_01.wav",
+          "Data/Sounds/Ambient/cave/cave_water_drop_02.wav",
+          "Data/Sounds/Ambient/church/church_talking_00.ogg",
+          "Data/Sounds/Ambient/city/city_01_build_works.ogg",
+          "Data/Sounds/Ambient/city/city_02_build_works.ogg",
+          "Data/Sounds/Ambient/city/city_03_build_works.ogg",
+          "Data/Sounds/Ambient/city/city_04_build_works.ogg",
+          "Data/Sounds/Ambient/city/city_05_build_works.ogg",
+          "Data/Sounds/Ambient/city/city_ambient_00_roaster.ogg",
+          "Data/Sounds/Ambient/city/city_ambient_01_chicken.ogg",
+          "Data/Sounds/Ambient/city/city_ambient_02_dogs_med.ogg",
+          "Data/Sounds/Ambient/city/city_ambient_03_dogs_far.ogg",
+          "Data/Sounds/Ambient/city/city_ambient_04_dogs_far.ogg",
+          "Data/Sounds/Ambient/city/city_ambient_05_dogs_far_med.ogg",
+          "Data/Sounds/Ambient/city/city_ambient_06_dogs_med.ogg",
+          "Data/Sounds/Ambient/city/city_ambient_07_dogs_med.ogg",
+          "Data/Sounds/Ambient/clock.wav",
+          "Data/Sounds/Ambient/crickets/crickets_00.ogg",
+          "Data/Sounds/Ambient/crickets/crickets_00.wav",
+          "Data/Sounds/Ambient/crickets/crickets_01.ogg",
+          "Data/Sounds/Ambient/crickets/crickets_02.ogg",
+          "Data/Sounds/Ambient/crickets/crickets_03.ogg",
+          "Data/Sounds/Ambient/cykady_01.wav",
+          "Data/Sounds/Ambient/desert/worms_01.ogg",
+          "Data/Sounds/Ambient/dogs/dog_04_loop.wav",
+          "Data/Sounds/Ambient/dungeons/dung_amb_01.ogg",
+          "Data/Sounds/Ambient/dungeons/dung_amb_02.ogg",
+          "Data/Sounds/Ambient/dungeons/dung_amb_03.ogg",
+          "Data/Sounds/Ambient/dungeons/dung_amb_04.ogg",
+          "Data/Sounds/Ambient/dungeons/dung_amb_05.ogg",
+          "Data/Sounds/Ambient/dungeons/dung_amb_06.ogg",
+          "Data/Sounds/Ambient/flies/flies.wav",
+          "Data/Sounds/Ambient/flies/fly_solo_00.wav",
+          "Data/Sounds/Ambient/flies/fly_solo_01.wav",
+          "Data/Sounds/Ambient/flies/fly_solo_02.wav",
+          "Data/Sounds/Ambient/flies/fly_solo_03.wav",
+          "Data/Sounds/Ambient/rain/heavy_rain_inside_02.ogg",
+          "Data/Sounds/Ambient/rain/heavy_rain_outside_02.ogg",
+          "Data/Sounds/Ambient/rain/rain_metal_drops.ogg",
+          "Data/Sounds/Ambient/rain/rain_roof_drops.ogg",
+          "Data/Sounds/Ambient/signs_creak/hotel_sign_creak.wav",
+          "Data/Sounds/Ambient/train/CanyonWindloop.wav",
+          "Data/Sounds/Ambient/train/RiverLoop.wav",
+          "Data/Sounds/Ambient/train/StreamLoop.wav",
+          "Data/Sounds/Ambient/water/Lake_Loop_Hunt.wav",
+          "Data/Sounds/Ambient/water/RiverLoop.wav",
+          "Data/Sounds/Ambient/water/StreamLoop.wav",
+          "Data/Sounds/Ambient/water/calm_river.ogg",
+          "Data/Sounds/Ambient/water/lake.wav",
+          "Data/Sounds/Ambient/water/river.wav",
+          "Data/Sounds/Ambient/water/waterfall_loop.wav",
+          "Data/Sounds/Ambient/water/waterfall_loop_new.wav",
+          "Data/Sounds/Ambient/water/waterfallbig.wav",
+          "Data/Sounds/Ambient/wind wilderness.wav",
+          "Data/Sounds/Ambient/wind/CanyonWindloop.wav",
+          "Data/Sounds/Ambient/wind/wind_01_loop.wav",
+          "Data/Sounds/Ambient/wind/wind_02_loop_in_city.wav",
+          "Data/Sounds/Ambient/wind/wind_03_loop_in_city.wav",
+          "Data/Sounds/Ambient/wind/wind_beetween_01.ogg",
+          "Data/Sounds/Ambient/wind/wind_canyon.wav",
+          "Data/Sounds/Ambient/wind/wind_cave_01.ogg",
+          "Data/Sounds/Ambient/wind/wind_cave_02.ogg",
+          "Data/Sounds/Ambient/wind/wind_cave_03.ogg",
+          "Data/Sounds/Ambient/wind/wind_mine.wav",
+          "Data/Sounds/Ambient/wind/wind_on_the_top.ogg",
+          "Data/Sounds/Ambient/wind/wind_open_01.ogg",
+          "Data/Sounds/Ambient/wind/wind_open_02.ogg",
+          "Data/Sounds/Ambient/windmill/windmill_loop_00.wav",
+          "Data/Sounds/Ambient/wolfs/ambient_wolfs/ambient_wolfs_01_ghost.ogg",
+          "Data/Sounds/Ambient_Levels/battle_ambient_02_med.ogg",
+          "Data/Sounds/Ambient_Levels/birds_02_forest.ogg",
+          "Data/Sounds/Ambient_Levels/birds_04_high_mount.ogg",
+          "Data/Sounds/Ambient_Levels/cricket_ambient_01.ogg",
+          "Data/Sounds/Ambient_Levels/cricket_ambient_02.ogg",
+          "Data/Sounds/Ambient_Levels/desert_02_crickets_birds_high.ogg",
+          "Data/Sounds/Ambient_Levels/fire_ambient_02_only_fire.ogg",
+          "Data/Sounds/Ambient_Levels/fire_ambient_small_01.ogg",
+          "Data/Sounds/Ambient_Levels/ravens_ambient_01_villa.ogg",
+          "Data/Sounds/Ambient_Levels/town_01_dogs_med_no_birds.ogg",
+          "Data/Sounds/Ambient_Levels/town_02_dogs_med_birds.ogg",
+          "Data/Sounds/Ambient_Levels/town_03_dogs_far.ogg",
+          "Data/Sounds/Ambient_Levels/town_04_dogs_vfar_birds.ogg",
+          "Data/Sounds/Ambient_Levels/town_05_chicken.ogg",
+          "Data/Sounds/Ambient_Levels/town_06_roaster.ogg",
+          "Data/Sounds/Ambient_Levels/wolfs_ambient_03_single.ogg",
+          "Data/Sounds/Animals/chicken/chicken_00.wav",
+          "Data/Sounds/Animals/chicken/chicken_01.wav",
+          "Data/Sounds/Animals/chicken/chicken_escape_00.wav",
+          "Data/Sounds/Animals/chicken/chicken_escape_01.wav",
+          "Data/Sounds/Battle/battle_ambients/battle_ambient_01.ogg",
+          "Data/Sounds/Battle/battle_ambients/battle_ambient_02.ogg",
+          "Data/Sounds/Battle/battle_ambients/battle_ambient_04.ogg"
+        ]
+      }
+    },
     "files": [
       {
         "path": "CoJ2/Data/Menu/Background_Scr_PC.binui",
-        "size": 12476,
-        "sha256": "c328a943938d90a9f8a5d234ce72b147e0f289f528ec69d2676538a480a392e4",
+        "size": 12477,
+        "sha256": "c4fa0a9d5c7093fe013a3a8673f580dd70a513b0be0e286f3a2a3deb0dff2560",
         "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/edition/Background_Scr_PC.binui"
       },
       {
@@ -907,13 +1157,13 @@
       {
         "path": "CoJ2/Data/Menu/Dashboard_Scr_PC.binui",
         "size": 197232,
-        "sha256": "aa55eb64bffd7b09960e700bc4da6c837ad2bfc57c7a72f5eb325580169d679c",
+        "sha256": "385530687e5f8048a019727ef8e8bcdb3a675b78ce0c7c4945b68d908cc06977",
         "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/edition/Dashboard_Scr_PC.binui"
       },
       {
         "path": "CoJ2/Data/Menu/Dashboard_Skn_PC.binui",
         "size": 936025,
-        "sha256": "955891e7a705ca3470264e1b8268cc13921d3b5e7b869f631fc2745a1c476a25",
+        "sha256": "d0fe55d0ea20711785e6ef6c87da9affe46cbf1c061c77b9be1850ba3b556b42",
         "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/edition/Dashboard_Skn_PC.binui"
       },
       {
@@ -949,13 +1199,13 @@
       {
         "path": "CoJ2/Data/Menu/MenuCommon_Skn_PC.binui",
         "size": 936700,
-        "sha256": "5f3e228d559f75310a517f24137ec4858fdb687f90b229bd690a9db05d475fbc",
+        "sha256": "232158cdc9fc7a05165648439efa80e8959e9a6fa47fee128892bdcb24aaf12b",
         "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/edition/MenuCommon_Skn_PC.binui"
       },
       {
         "path": "CoJ2/Data/Menu/MenuIngameNetGamemode_Scr_PC.binui",
-        "size": 578074,
-        "sha256": "394a74826092849daa8b23a9177c3be9db599521dac84d396ead47883d0ef010",
+        "size": 578159,
+        "sha256": "d0c3d6cffa350b844c5fe123bfb4bdc750e27355677491fb9b2098e290764e99",
         "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/edition/MenuIngameNetGamemode_Scr_PC.binui"
       },
       {
@@ -1003,7 +1253,7 @@
       {
         "path": "CoJ2/Data/Menu/MenuMain_Scr_PC.binui",
         "size": 614725,
-        "sha256": "dbce86fc5861a19313778759f5fc7a72552418e067066c4e8b1f2199c46af641",
+        "sha256": "24af48f9ee413b2c81032a9fe8ae2497b68dea4bd908b9656df045d59fa6c94e",
         "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/edition/MenuMain_Scr_PC.binui"
       },
       {
@@ -1063,19 +1313,19 @@
       {
         "path": "CoJ2/Data/Menu/textures/irancoj_hud_chips.dds",
         "size": 262272,
-        "sha256": "2251c11824331e8d8630227aa9a3b57f856d8f98c4d4d24ddec81bd475ff25f9",
+        "sha256": "38a30a631a6edc7c0d5409404945273f5477dc0a7b3b8bc4fcc2a0c07fca094a",
         "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/edition/irancoj_hud_chips.dds"
       },
       {
         "path": "CoJ2/Data/Menu/textures/irancoj_hud_icons.dds",
         "size": 524416,
-        "sha256": "6bcc0cb93be12655a652cf7aa7cc147093157af74612c7f1d2c32eac852c2efe",
+        "sha256": "bbc82c520df53e9b80e306655d9df5b00a0e125baa0c33c8b8caeed7e4249024",
         "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/edition/irancoj_hud_icons.dds"
       },
       {
         "path": "CoJ2/Data/Menu/textures/irancoj_hud_pill.dds",
         "size": 65664,
-        "sha256": "15221cd352bb52e7c2b10d1750b6179b1a8515f8cc501e485365891c4a98c3f3",
+        "sha256": "d0785f839389064994785c6a7b346bdc5cc51e03639386a817596e4bfc2592a8",
         "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/edition/irancoj_hud_pill.dds"
       },
       {
@@ -1131,6 +1381,12 @@
         "size": 8320,
         "sha256": "8b6013f4e45e8b6127bb6f49bbe57cc4d841e3a960b331d818714602bb402336",
         "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/edition/irancoj_scroll_track.dds"
+      },
+      {
+        "path": "CoJ2/Data/Menu/textures/irancoj_spinner.dds",
+        "size": 16512,
+        "sha256": "0f2d2b2eedb85ab0988f714585304a3dd1bc7a42a43d1eea23a5567284c3aa82",
+        "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/edition/irancoj_spinner.dds"
       },
       {
         "path": "CoJ2/Data/Music/COJ2_New_Menu.ogg",
