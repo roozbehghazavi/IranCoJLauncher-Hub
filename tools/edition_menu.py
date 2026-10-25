@@ -552,6 +552,7 @@ write("CoJ2MenuSkin.xui", t[:m.start()] + row + t[m.end():])
 # In game, the loading backdrop is the same snapshot: blurred, not sepia.
 t = written["BackgroundLoading.xui"]
 t = set_prop(t, "MenuBackgroundIngame", "Material", "irancoj_blur_pc.mat")
+t = set_prop(t, "Loading", "Material", "irancoj_loading.mat")  # its own copy of loading_bckg.mat with the map card (edition.json)
 # Multiplayer loading (design: tools/mockups/loading_mockup.py). The map's own picture in colour behind, darker on
 # the left, and the dark card under the objectives map are drawn by loading_bckg.mat (edition.json), so nothing is
 # added here. Left: mode, map name, place and date, the story; right: the objectives map; bottom right: spinner.

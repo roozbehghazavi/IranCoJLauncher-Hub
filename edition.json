@@ -374,17 +374,6 @@
       ]
     },
     {
-      "path": "CoJ2/Data/Menu/Mat/loading_bckg.mat",
-      "pak": "CoJ2/Data0.pak",
-      "entry": "Data/Menu/Mat/loading_bckg.mat",
-      "replace": [
-        [
-          "(?s)float4 t0 = tex2D\\(tmu0, i\\.uv0\\); //background.*?//output = step7;",
-          "float4 t0 = tex2D(tmu0, i.uv0); //background (kept bound)\n\t\t\t\t\t\t\tfloat4 i1 = tex2D(tmu1, i.uv1); //image 1\n\t\t\t\t\t\t\tfloat4 i2 = tex2D(tmu3, i.uv4); //image 2\n\t\t\t\t\t\t\tfloat4 m0 = tex2D(tmu2, i.uv2); //mask (kept bound)\n\n\t\t\t\t\t\t\t// IranCoJ Edition: the map's pictures in colour (cross-faded by the game's weights), darker\n\t\t\t\t\t\t\t// on the left behind the text and at the bottom, and a dark card with a gold top edge under\n\t\t\t\t\t\t\t// the objectives map.\n\t\t\t\t\t\t\tfloat3 pic = i1.rgb * CONST_6.x + i2.rgb * CONST_6.y;\n\t\t\t\t\t\t\tfloat left = saturate(1 - i.uv0.x / 0.62);\n\t\t\t\t\t\t\tfloat shade = 0.82 - 0.62 * pow(left, 0.9);\n\t\t\t\t\t\t\tshade *= 1 - 0.55 * pow(saturate((i.uv0.y - 0.72) / 0.28), 1.6);\n\t\t\t\t\t\t\tfloat3 col = pic * shade + (t0.rgb + m0.rgb) * 0.0001;\n\t\t\t\t\t\t\tfloat card = step(0.4500, i.uv0.x) * step(i.uv0.x, 0.8625) * step(0.1306, i.uv0.y) * step(i.uv0.y, 0.8639);\n\t\t\t\t\t\t\tfloat gold = card * step(i.uv0.y, 0.1347);\n\t\t\t\t\t\t\tcol = lerp(col, float3(0.114, 0.114, 0.102), card * 0.94);\n\t\t\t\t\t\t\tcol = lerp(col, float3(0.886, 0.694, 0.369), gold);\n\t\t\t\t\t\t\toutput = float4(col, 1);"
-        ]
-      ]
-    },
-    {
       "path": "CoJ2/Data/Menu/TextureDefs/BackgroundLoadingTextures.def",
       "pak": "CoJ2/Data0.pak",
       "entry": "Data/Menu/TextureDefs/BackgroundLoadingTextures.def",
@@ -403,6 +392,28 @@
         [
           "<Id>EditBoxChatV</Id>\\\r\\\n<Width>128\\.000000</Width>\\\r\\\n<Height>32\\.000000</Height>\\\r\\\n</Properties>\\\r\\\n<MyTextPresenter>\\\r\\\n<Properties>\\\r\\\n<Id>Text</Id>\\\r\\\n<Width>128\\.000015</Width>\\\r\\\n<Height>32\\.000004</Height>\\\r\\\n<Anchor>15</Anchor>\\\r\\\n<TextColor>0xfe000000</TextColor>\\\r\\\n<DropShadowColor>0x800f0f0f</DropShadowColor>\\\r\\\n<PointSize>12\\.000000</PointSize>\\\r\\\n<Font>HUDSmall</Font>\\\r\\\n<TextStyle>4368</TextStyle>\\\r\\\n</Properties>\\\r\\\n</MyTextPresenter>\\\r\\\n<AdvGroup>\\\r\\\n<Properties>\\\r\\\n<Id>Cursor</Id>\\\r\\\n<Width>1\\.000000</Width>\\\r\\\n<Height>32\\.000004</Height>\\\r\\\n<Position>88\\.000000,0\\.000000,0\\.000000</Position>\\\r\\\n<Anchor>10</Anchor>\\\r\\\n<AllowJumpsFromParents>false</AllowJumpsFromParents>\\\r\\\n<KeepWidth>true</KeepWidth>\\\r\\\n</Properties>\\\r\\\n<MyImage>\\\r\\\n<Properties>\\\r\\\n<Id>Carrige</Id>\\\r\\\n<Width>1\\.000000</Width>\\\r\\\n<Height>32\\.000000</Height>\\\r\\\n<Anchor>10</Anchor>\\\r\\\n<Pivot>\\-0\\.000008,\\-0\\.000001,0\\.000000</Pivot>\\\r\\\n<ImagePath>White\\.dds</ImagePath>\\\r\\\n<KeepWidth>true</KeepWidth>\\\r\\\n<KeepWidthOnResolutionChange>true</KeepWidthOnResolutionChange>\\\r\\\n<KeepHeight>true</KeepHeight>\\\r\\\n<KeepHeightOnResolutionChange>true</KeepHeightOnResolutionChange>\\\r\\\n<KeepPosX>true</KeepPosX>\\\r\\\n<Color>0xfe000000</Color>",
           "<Id>EditBoxChatV</Id>\r\n<Width>128.000000</Width>\r\n<Height>32.000000</Height>\r\n</Properties>\r\n<MyTextPresenter>\r\n<Properties>\r\n<Id>Text</Id>\r\n<Width>128.000015</Width>\r\n<Height>32.000004</Height>\r\n<Anchor>15</Anchor>\r\n<TextColor>0xfff3ebdd</TextColor>\r\n<DropShadowColor>0x800f0f0f</DropShadowColor>\r\n<PointSize>12.000000</PointSize>\r\n<Font>HUDSmall</Font>\r\n<TextStyle>4368</TextStyle>\r\n</Properties>\r\n</MyTextPresenter>\r\n<AdvGroup>\r\n<Properties>\r\n<Id>Cursor</Id>\r\n<Width>1.000000</Width>\r\n<Height>32.000004</Height>\r\n<Position>88.000000,0.000000,0.000000</Position>\r\n<Anchor>10</Anchor>\r\n<AllowJumpsFromParents>false</AllowJumpsFromParents>\r\n<KeepWidth>true</KeepWidth>\r\n</Properties>\r\n<MyImage>\r\n<Properties>\r\n<Id>Carrige</Id>\r\n<Width>1.000000</Width>\r\n<Height>32.000000</Height>\r\n<Anchor>10</Anchor>\r\n<Pivot>-0.000008,-0.000001,0.000000</Pivot>\r\n<ImagePath>White.dds</ImagePath>\r\n<KeepWidth>true</KeepWidth>\r\n<KeepWidthOnResolutionChange>true</KeepWidthOnResolutionChange>\r\n<KeepHeight>true</KeepHeight>\r\n<KeepHeightOnResolutionChange>true</KeepHeightOnResolutionChange>\r\n<KeepPosX>true</KeepPosX>\r\n<Color>0xffe2b15e</Color>"
+        ]
+      ]
+    },
+    {
+      "path": "CoJ2/Data/Menu/Mat/loading_bckg.mat",
+      "pak": "CoJ2/Data0.pak",
+      "entry": "Data/Menu/Mat/loading_bckg.mat",
+      "replace": [
+        [
+          "(?s)float4 t0 = tex2D\\(tmu0, i\\.uv0\\); //background.*?//output = step7;",
+          "float4 t0 = tex2D(tmu0, i.uv0); //background (kept bound)\n\t\t\t\t\t\t\tfloat4 i1 = tex2D(tmu1, i.uv1); //image 1\n\t\t\t\t\t\t\tfloat4 i2 = tex2D(tmu3, i.uv4); //image 2\n\t\t\t\t\t\t\tfloat4 m0 = tex2D(tmu2, i.uv2); //mask (kept bound)\n\t\t\t\t\t\t\tfloat3 pic = i1.rgb * CONST_6.x + i2.rgb * CONST_6.y;\n\n\t\t\t\t\t\t\t// IranCoJ Edition: the pictures in colour, evenly darkened (credits artwork, loading overlay).\n\t\t\t\t\t\t\tfloat3 col = pic * 0.55 + (t0.rgb + m0.rgb) * 0.0001;\n\t\t\t\t\t\t\toutput = float4(col, 1);"
+        ]
+      ]
+    },
+    {
+      "path": "CoJ2/Data/Menu/Mat/irancoj_loading.mat",
+      "pak": "CoJ2/Data0.pak",
+      "entry": "Data/Menu/Mat/loading_bckg.mat",
+      "replace": [
+        [
+          "(?s)float4 t0 = tex2D\\(tmu0, i\\.uv0\\); //background.*?//output = step7;",
+          "float4 t0 = tex2D(tmu0, i.uv0); //background (kept bound)\n\t\t\t\t\t\t\tfloat4 i1 = tex2D(tmu1, i.uv1); //image 1\n\t\t\t\t\t\t\tfloat4 i2 = tex2D(tmu3, i.uv4); //image 2\n\t\t\t\t\t\t\tfloat4 m0 = tex2D(tmu2, i.uv2); //mask (kept bound)\n\t\t\t\t\t\t\tfloat3 pic = i1.rgb * CONST_6.x + i2.rgb * CONST_6.y;\n\n\t\t\t\t\t\t\t// IranCoJ Edition (loading screen): the map's pictures in colour, darker on the left behind the\n\t\t\t\t\t\t\t// text and at the bottom, and a dark card with a gold top edge under the objectives map.\n\t\t\t\t\t\t\tfloat left = saturate(1 - i.uv0.x / 0.62);\n\t\t\t\t\t\t\tfloat shade = 0.82 - 0.62 * pow(left, 0.9);\n\t\t\t\t\t\t\tshade *= 1 - 0.55 * pow(saturate((i.uv0.y - 0.72) / 0.28), 1.6);\n\t\t\t\t\t\t\tfloat3 col = pic * shade + (t0.rgb + m0.rgb) * 0.0001;\n\t\t\t\t\t\t\tfloat card = step(0.4500, i.uv0.x) * step(i.uv0.x, 0.8625) * step(0.1306, i.uv0.y) * step(i.uv0.y, 0.8639);\n\t\t\t\t\t\t\tfloat gold = card * step(i.uv0.y, 0.1347);\n\t\t\t\t\t\t\tcol = lerp(col, float3(0.114, 0.114, 0.102), card * 0.94);\n\t\t\t\t\t\t\tcol = lerp(col, float3(0.886, 0.694, 0.369), gold);\n\t\t\t\t\t\t\toutput = float4(col, 1);"
         ]
       ]
     }
