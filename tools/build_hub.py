@@ -96,8 +96,13 @@ def asset_sha256(asset):
     return digest.split(":", 1)[1] if digest.startswith("sha256:") else None
 
 
+def asset_name(path):
+    """The name GitHub gives an uploaded file: spaces become dots (e.g. "Clarendon Condensed_32.dds")."""
+    return os.path.basename(path).replace(" ", ".")
+
+
 def upload_if_changed(tag, path, assets):
-    name = os.path.basename(path)
+    name = asset_name(path)
     if name in assets and asset_sha256(assets[name]) == sha256_of(path):
         return False
     print(f"upload {tag}/{name}")
@@ -265,7 +270,7 @@ def edition_files():
         for name in names:
             path = os.path.join(root, name)
             local.append((os.path.relpath(path, EDITION_FILES_DIR).replace(os.sep, "/"), path))
-    names = [os.path.basename(p) for _, p in local]
+    names = [asset_name(p) for _, p in local]
     dupes = {n for n in names if names.count(n) > 1}
     if dupes:
         sys.exit(f"edition/files: release asset names must be unique, duplicated: {sorted(dupes)}")
@@ -276,7 +281,7 @@ def edition_files():
         assets = release_assets(EDITION_RELEASE, "", "")
     files = []
     for rel, path in sorted(local):
-        a = assets[os.path.basename(path)]
+        a = assets[asset_name(path)]
         files.append({"path": rel, "size": a["size"], "sha256": asset_sha256(a) or sha256_of(path),
                       "url": a["browser_download_url"]})
     return files
