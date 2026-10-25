@@ -479,13 +479,13 @@
     {
       "id": "ServerListMod",
       "name": "Server List Mod",
-      "version": "1.5.2+p3431f150",
+      "version": "1.5.2+pb3d3804c",
       "description": "In-game server list through OpenSpy, plus direct join. Replaces CoJ2_x86.dll and engine_x86.dll; uninstalling puts the originals back.",
       "package": {
-        "file": "ServerListMod-1.5.2+p3431f150.zip",
+        "file": "ServerListMod-1.5.2+pb3d3804c.zip",
         "size": 7047888,
         "sha256": "afe51fe5a4d016b9b30f960fe94fb6d706114a56de8d2521fdab5e113fb23953",
-        "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/mods/ServerListMod-1.5.2%2Bp3431f150.zip"
+        "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/mods/ServerListMod-1.5.2%2Bpb3d3804c.zip"
       },
       "exclude": [
         "mods.txt"
@@ -518,9 +518,27 @@
         },
         {
           "path": "serverlist.dll",
-          "find": "B00FB11C0FB61D3DC51A10",
-          "replace": "B00CB1220FB61D3DC51A10",
-          "why": "scoreboard columns with Accuracy and K/D: name 28% -> 34%, Accuracy and K/D 15% -> 12% (the death/wanted icon no longer wraps)"
+          "find": "0083C40CB00FB11C0FB61D3D",
+          "replace": "0083C40CB00CB1220FB61D3D",
+          "why": "rows with Accuracy and K/D: name 28% -> 34%, Accuracy and K/D 15% -> 12% (one shared value: mov al / mov cl). Overriding K/D on its own (mov ecx at 0x1000a349) broke the row in game, so it stays shared."
+        },
+        {
+          "path": "serverlist.dll",
+          "find": "00002200C7463021000000C7866C01",
+          "replace": "00002200C7463025000000C7866C01",
+          "why": "header: Players 33% -> 37%"
+        },
+        {
+          "path": "serverlist.dll",
+          "find": "29D7D1FFC746400F000000C7463400",
+          "replace": "29D7D1FFC746400B000000C7463400",
+          "why": "header: K/D 15% -> 11%; with Players 37 and Accuracy 15 (unchanged) each title sits over its column"
+        },
+        {
+          "path": "serverlist.dll",
+          "find": "007B3A2E32667D2500",
+          "replace": "007B3A2E31667D2500",
+          "why": "Accuracy with one decimal ('100.0%', '45.3%'), so it fits the 12% column"
         }
       ]
     },
@@ -1248,7 +1266,7 @@
       {
         "path": "CoJ2/Data/Menu/MenuIngameNetGamemode_Scr_PC.binui",
         "size": 578159,
-        "sha256": "d0c3d6cffa350b844c5fe123bfb4bdc750e27355677491fb9b2098e290764e99",
+        "sha256": "6b6a770d4369ff696c87d9c583c9e577f4354d2e431210322cb664b1ab7ce874",
         "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/edition/MenuIngameNetGamemode_Scr_PC.binui"
       },
       {
@@ -1296,7 +1314,7 @@
       {
         "path": "CoJ2/Data/Menu/MenuMain_Scr_PC.binui",
         "size": 614725,
-        "sha256": "f281efa7923a4d642522072eab84d63b164d8d02fcc91cd7f8a9a8c3126f2ef1",
+        "sha256": "a28d0e7cf614dbb7e263a0157b81012fbf4a03b07c8708fea5306d8cb8d37af5",
         "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/edition/MenuMain_Scr_PC.binui"
       },
       {
@@ -1398,19 +1416,19 @@
       {
         "path": "CoJ2/Data/Menu/textures/irancoj_panel_blue.dds",
         "size": 1048704,
-        "sha256": "e21b815d7e2bc890a46232942f231d43572656cda20e3bee303385657601fb84",
+        "sha256": "957119e8d30bcd62c8bff973b7d8b3674482288f6e8f97d901436c44282385d3",
         "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/edition/irancoj_panel_blue.dds"
       },
       {
         "path": "CoJ2/Data/Menu/textures/irancoj_panel_red.dds",
         "size": 1048704,
-        "sha256": "69fc2f9e2cd354e778ed971786051b1d1c43ab39536216de8e3d6690f9ba74e5",
+        "sha256": "4e085fc5b74995e2bb5d55341d1e5750c8d4fd3dad6e4f619c533f723b17c585",
         "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/edition/irancoj_panel_red.dds"
       },
       {
         "path": "CoJ2/Data/Menu/textures/irancoj_panel_solo.dds",
         "size": 1048704,
-        "sha256": "916dca821c60a14ea244444f8803f18e3396a53e28ec83b9464b6bcd3304f74d",
+        "sha256": "aa8bba000745ce15900e4432de7230d50149385e3fe42723f05703cfa79ebc10",
         "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/edition/irancoj_panel_solo.dds"
       },
       {
