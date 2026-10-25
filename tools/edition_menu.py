@@ -306,7 +306,7 @@ def recolor(text):
     def element(m):
         b = m.group(0)
         element_id = re.search(r"<Id>(.*?)</Id>", b).group(1)
-        b = re.sub(r"<TextColor>(.*?)</TextColor>", lambda c: f"<TextColor>{text_color(c.group(1))}</TextColor>", b)
+        b = re.sub(r"<(TextColor|DefaultFontColor)>(.*?)</\1>", lambda c: f"<{c.group(1)}>{text_color(c.group(2))}</{c.group(1)}>", b)
         k = kind.get(element_id)
         if k == "outline":
             return put(b, "Show", "false")
