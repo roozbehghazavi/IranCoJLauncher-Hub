@@ -408,6 +408,7 @@
       "loadDll": [],
       "shared": [],
       "disable": [],
+      "patch": [],
       "optional": true
     },
     {
@@ -425,6 +426,7 @@
       "loadDll": [],
       "shared": [],
       "disable": [],
+      "patch": [],
       "optional": true
     },
     {
@@ -453,7 +455,8 @@
       "disable": [
         "CoJ2/Data/common_mp_meshes.rpack",
         "CoJ2/Data/menu_ingame_net.rpack"
-      ]
+      ],
+      "patch": []
     },
     {
       "id": "NoDofMotionBlur",
@@ -470,18 +473,19 @@
       "loadDll": [],
       "shared": [],
       "disable": [],
+      "patch": [],
       "optional": true
     },
     {
       "id": "ServerListMod",
       "name": "Server List Mod",
-      "version": "1.5.2",
+      "version": "1.5.2+p3431f150",
       "description": "In-game server list through OpenSpy, plus direct join. Replaces CoJ2_x86.dll and engine_x86.dll; uninstalling puts the originals back.",
       "package": {
-        "file": "ServerListMod-1.5.2.zip",
+        "file": "ServerListMod-1.5.2+p3431f150.zip",
         "size": 7047888,
         "sha256": "afe51fe5a4d016b9b30f960fe94fb6d706114a56de8d2521fdab5e113fb23953",
-        "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/mods/ServerListMod-1.5.2.zip"
+        "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/mods/ServerListMod-1.5.2%2Bp3431f150.zip"
       },
       "exclude": [
         "mods.txt"
@@ -492,7 +496,33 @@
       "shared": [
         "dinput8.dll"
       ],
-      "disable": []
+      "disable": [],
+      "patch": [
+        {
+          "path": "CoJ2_x86.dll",
+          "find": "8B44240C85C074218B0D485C9C1085C974178B11508B8270060000FFD084C07408B8FC4F9910C20C00807C240800740F807C2404007414B82C509910C20C00807C240400B8385099107505B834669C10",
+          "replace": "8B44240C85C074218B0D485C9C1085C974178B11508B8270060000FFD084C07408B8FC4F9910C20C00807C240800740F807C2404007414B82C509910C20C00807C240400B8385099107505B844509910",
+          "why": "scoreboard names: black (the engine's zero vector) -> the game's parchment 'white'"
+        },
+        {
+          "path": "CoJ2_x86.dll",
+          "find": "8B901C050000FFE2CCCCCCCCCCCC807C240800740F807C2404007414B82C509910C20C00807C240400B8385099107505B834669C10",
+          "replace": "8B901C050000FFE2CCCCCCCCCCCC807C240800740F807C2404007414B82C509910C20C00807C240400B8385099107505B844509910",
+          "why": "scoreboard names, second copy of the same choice"
+        },
+        {
+          "path": "CoJ2_x86.dll",
+          "find": "000080BF000080BF000080BF9A99993E9A99993E9A99993EC0BF3F3FC9C8C83DD1D0503D",
+          "replace": "000080BF000080BF000080BFBAB9393FADAC2C3F9998183FC0BF3F3FC9C8C83DD1D0503D",
+          "why": "dimmed scoreboard rows: dark grey 0.3 -> sand"
+        },
+        {
+          "path": "serverlist.dll",
+          "find": "B00FB11C0FB61D3DC51A10",
+          "replace": "B00CB1220FB61D3DC51A10",
+          "why": "scoreboard columns with Accuracy and K/D: name 28% -> 34%, Accuracy and K/D 15% -> 12% (the death/wanted icon no longer wraps)"
+        }
+      ]
     },
     {
       "id": "SpectateMod",
@@ -515,7 +545,8 @@
       "shared": [
         "dinput8.dll"
       ],
-      "disable": []
+      "disable": [],
+      "patch": []
     },
     {
       "id": "VoiceChatMod",
@@ -537,11 +568,12 @@
       "shared": [
         "dinput8.dll"
       ],
-      "disable": []
+      "disable": [],
+      "patch": []
     }
   ],
   "edition": {
-    "version": "0.7.1",
+    "version": "0.7.2",
     "ownUserFolder": true,
     "menuNavigation": true,
     "include": [
@@ -910,7 +942,7 @@
           ],
           [
             "\\z",
-            " \u0000Name_WeaponPistolFrontierUpgrade\u0012\u0000S\u0000p\u0000r\u0000i\u0000n\u0000g\u0000f\u0000i\u0000e\u0000l\u0000d\u0000 \u0000M\u0000u\u0000s\u0000k\u0000e\u0000t\u0000#\u0000Name_WeaponPistolFrontierUpgradeNet\u0012\u0000S\u0000p\u0000r\u0000i\u0000n\u0000g\u0000f\u0000i\u0000e\u0000l\u0000d\u0000 \u0000M\u0000u\u0000s\u0000k\u0000e\u0000t\u0000\u001d\u0000N_WeaponPistolFrontierUpgrade\u0012\u0000S\u0000p\u0000r\u0000i\u0000n\u0000g\u0000f\u0000i\u0000e\u0000l\u0000d\u0000 \u0000M\u0000u\u0000s\u0000k\u0000e\u0000t\u0000\u0017\u0000MenuDerringerUpgradeNet\u000f\u0000T\u0000h\u0000r\u0000o\u0000w\u0000i\u0000n\u0000g\u0000 \u0000K\u0000n\u0000i\u0000v\u0000e\u0000s\u0000$\u0000Name_WeaponPistolDerringerUpgradeNet\u000e\u0000T\u0000h\u0000r\u0000o\u0000w\u0000i\u0000n\u0000g\u0000 \u0000K\u0000n\u0000i\u0000f\u0000e\u0000!\u0000Name_WeaponPistolDerringerUpgrade\u000e\u0000T\u0000h\u0000r\u0000o\u0000w\u0000i\u0000n\u0000g\u0000 \u0000K\u0000n\u0000i\u0000f\u0000e\u0000\u001e\u0000N_WeaponPistolDerringerUpgrade\u000e\u0000T\u0000h\u0000r\u0000o\u0000w\u0000i\u0000n\u0000g\u0000 \u0000K\u0000n\u0000i\u0000f\u0000e\u0000\u0014\u0000MenuLemantUpgradeNet\b\u0000T\u0000o\u0000m\u0000a\u0000h\u0000a\u0000w\u0000k\u0000!\u0000Name_WeaponPistolLemantUpgradeNet\b\u0000T\u0000o\u0000m\u0000a\u0000h\u0000a\u0000w\u0000k\u0000\u001e\u0000Name_WeaponPistolLemantUpgrade\b\u0000T\u0000o\u0000m\u0000a\u0000h\u0000a\u0000w\u0000k\u0000\u001b\u0000N_WeaponPistolLemantUpgrade\b\u0000T\u0000o\u0000m\u0000a\u0000h\u0000a\u0000w\u0000k\u0000\u0011\u0000IrnEditionVersion\u0015\u0000I\u0000r\u0000a\u0000n\u0000C\u0000o\u0000J\u0000 \u0000E\u0000d\u0000i\u0000t\u0000i\u0000o\u0000n\u0000 \u00000\u0000.\u00007\u0000.\u00001\u0000"
+            " \u0000Name_WeaponPistolFrontierUpgrade\u0012\u0000S\u0000p\u0000r\u0000i\u0000n\u0000g\u0000f\u0000i\u0000e\u0000l\u0000d\u0000 \u0000M\u0000u\u0000s\u0000k\u0000e\u0000t\u0000#\u0000Name_WeaponPistolFrontierUpgradeNet\u0012\u0000S\u0000p\u0000r\u0000i\u0000n\u0000g\u0000f\u0000i\u0000e\u0000l\u0000d\u0000 \u0000M\u0000u\u0000s\u0000k\u0000e\u0000t\u0000\u001d\u0000N_WeaponPistolFrontierUpgrade\u0012\u0000S\u0000p\u0000r\u0000i\u0000n\u0000g\u0000f\u0000i\u0000e\u0000l\u0000d\u0000 \u0000M\u0000u\u0000s\u0000k\u0000e\u0000t\u0000\u0017\u0000MenuDerringerUpgradeNet\u000f\u0000T\u0000h\u0000r\u0000o\u0000w\u0000i\u0000n\u0000g\u0000 \u0000K\u0000n\u0000i\u0000v\u0000e\u0000s\u0000$\u0000Name_WeaponPistolDerringerUpgradeNet\u000e\u0000T\u0000h\u0000r\u0000o\u0000w\u0000i\u0000n\u0000g\u0000 \u0000K\u0000n\u0000i\u0000f\u0000e\u0000!\u0000Name_WeaponPistolDerringerUpgrade\u000e\u0000T\u0000h\u0000r\u0000o\u0000w\u0000i\u0000n\u0000g\u0000 \u0000K\u0000n\u0000i\u0000f\u0000e\u0000\u001e\u0000N_WeaponPistolDerringerUpgrade\u000e\u0000T\u0000h\u0000r\u0000o\u0000w\u0000i\u0000n\u0000g\u0000 \u0000K\u0000n\u0000i\u0000f\u0000e\u0000\u0014\u0000MenuLemantUpgradeNet\b\u0000T\u0000o\u0000m\u0000a\u0000h\u0000a\u0000w\u0000k\u0000!\u0000Name_WeaponPistolLemantUpgradeNet\b\u0000T\u0000o\u0000m\u0000a\u0000h\u0000a\u0000w\u0000k\u0000\u001e\u0000Name_WeaponPistolLemantUpgrade\b\u0000T\u0000o\u0000m\u0000a\u0000h\u0000a\u0000w\u0000k\u0000\u001b\u0000N_WeaponPistolLemantUpgrade\b\u0000T\u0000o\u0000m\u0000a\u0000h\u0000a\u0000w\u0000k\u0000\u0011\u0000IrnEditionVersion\u0015\u0000I\u0000r\u0000a\u0000n\u0000C\u0000o\u0000J\u0000 \u0000E\u0000d\u0000i\u0000t\u0000i\u0000o\u0000n\u0000 \u00000\u0000.\u00007\u0000.\u00002\u0000"
           ]
         ]
       },
@@ -1173,8 +1205,8 @@
       },
       {
         "path": "CoJ2/Data/Menu/Dashboard_Skn_PC.binui",
-        "size": 936025,
-        "sha256": "d0fe55d0ea20711785e6ef6c87da9affe46cbf1c061c77b9be1850ba3b556b42",
+        "size": 936033,
+        "sha256": "034d5332812a858e31eae9597b2a9108a51ef9ee6e2056189fff6b93ad7fdf96",
         "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/edition/Dashboard_Skn_PC.binui"
       },
       {
@@ -1209,8 +1241,8 @@
       },
       {
         "path": "CoJ2/Data/Menu/MenuCommon_Skn_PC.binui",
-        "size": 936700,
-        "sha256": "232158cdc9fc7a05165648439efa80e8959e9a6fa47fee128892bdcb24aaf12b",
+        "size": 936708,
+        "sha256": "32dc906c571cc895478079d0978c33999651f39b5440a8f23ee773842f0ed860",
         "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/edition/MenuCommon_Skn_PC.binui"
       },
       {
@@ -1264,7 +1296,7 @@
       {
         "path": "CoJ2/Data/Menu/MenuMain_Scr_PC.binui",
         "size": 614725,
-        "sha256": "da184b4745f1a82e8d497f9df5bee42dd48c9d1fe41a450395521595819a6766",
+        "sha256": "f281efa7923a4d642522072eab84d63b164d8d02fcc91cd7f8a9a8c3126f2ef1",
         "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/edition/MenuMain_Scr_PC.binui"
       },
       {
@@ -1281,8 +1313,8 @@
       },
       {
         "path": "CoJ2/Data/Menu/scr/Credits_PC.scr",
-        "size": 4024,
-        "sha256": "ec46cfb7427a2058e1ea3508212201cbd1d4bb739fa84f171f8111e858d64c78",
+        "size": 4874,
+        "sha256": "06ae6b7f027e2eae16c400e72ab2d59aa8c8e07ff932d5a2572e391c774cda5e",
         "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/edition/Credits_PC.scr"
       },
       {
@@ -1446,6 +1478,12 @@
         "size": 100,
         "sha256": "bf612e127f2b8820370fef5ff465c17b1d6afd0a930e4f907e999d1c88d6cc18",
         "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/edition/debugconf.scr"
+      },
+      {
+        "path": "steam_appid.txt",
+        "size": 5,
+        "sha256": "efe785c107f57244283bc83c5531b66e493ec99ac50664eb74f45535a6e196fd",
+        "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/edition/steam_appid.txt"
       }
     ]
   },
