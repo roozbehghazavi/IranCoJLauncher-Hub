@@ -28,7 +28,7 @@ LFS_PREFIX = b"version https://git-lfs.github.com/spec/v1"
 CATALOG_SCHEMA = 2
 
 # Fields copied from mods/<Id>.json into the catalog as they are.
-MOD_FIELDS = ("exclude", "loadDll", "shared", "disable")
+MOD_FIELDS = ("exclude", "loadDll", "shared", "disable", "patch")
 
 
 def gh(*args, capture=True):
@@ -193,6 +193,23 @@ def zip_folder(folder, out_path):
                 z.writestr(info, f.read())
 
 
+def check_patches(mod):
+    """Each byte patch must match its file in the mod folder exactly once. After the mod is updated a patch can
+    stop matching (the launcher then installs the file unpatched): redo it for the new build."""
+    for patch in mod["patch"]:
+        path = os.path.join(mod["folder"], patch["path"])
+        find, replace = bytes.fromhex(patch["find"]), bytes.fromhex(patch["replace"])
+        if len(find) != len(replace):
+            sys.exit(f"mod {mod['id']}: patch for {patch['path']}: find and replace differ in length")
+        if not os.path.isfile(path):
+            sys.exit(f"mod {mod['id']}: patch for {patch['path']}: no such file in {mod['folder']}")
+        with open(path, "rb") as f:
+            count = f.read().count(find)
+        if count != 1:
+            sys.exit(f"mod {mod['id']}: patch for {patch['path']} ({patch.get('why', '')}) matches {count} times, "
+                     "not once - the mod was probably updated; redo the patch for the new build")
+
+
 def build_mods():
     manifests = load_mod_manifests()
     assets = mods_assets()
@@ -202,6 +219,10 @@ def build_mods():
         for mod in manifests:
             if mod.get("folder"):
                 mod["version"] = mod.get("version") or folder_version(mod["folder"])
+                if mod.get("patch"):
+                    check_patches(mod)
+                    # Installs carry the patches: a new set must reach players as an update.
+                    mod["version"] += "+p" + hashlib.sha256(json.dumps(mod["patch"], sort_keys=True).encode()).hexdigest()[:8]
                 mod["package"] = f"{mod['id']}-{mod['version']}.zip"
                 path = os.path.join(tmp, mod["package"])
                 zip_folder(mod["folder"], path)

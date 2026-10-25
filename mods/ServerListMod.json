@@ -3,7 +3,39 @@
   "name": "Server List Mod",
   "description": "In-game server list through OpenSpy, plus direct join. Replaces CoJ2_x86.dll and engine_x86.dll; uninstalling puts the originals back.",
   "folder": "ServerListMod",
-  "exclude": ["mods.txt"],
-  "loadDll": ["directjoinfix.dll"],
-  "shared": ["dinput8.dll"]
+  "exclude": [
+    "mods.txt"
+  ],
+  "loadDll": [
+    "directjoinfix.dll"
+  ],
+  "shared": [
+    "dinput8.dll"
+  ],
+  "patch": [
+    {
+      "path": "CoJ2_x86.dll",
+      "find": "8B44240C85C074218B0D485C9C1085C974178B11508B8270060000FFD084C07408B8FC4F9910C20C00807C240800740F807C2404007414B82C509910C20C00807C240400B8385099107505B834669C10",
+      "replace": "8B44240C85C074218B0D485C9C1085C974178B11508B8270060000FFD084C07408B8FC4F9910C20C00807C240800740F807C2404007414B82C509910C20C00807C240400B8385099107505B844509910",
+      "why": "scoreboard names: black (the engine's zero vector) -> the game's parchment 'white'"
+    },
+    {
+      "path": "CoJ2_x86.dll",
+      "find": "8B901C050000FFE2CCCCCCCCCCCC807C240800740F807C2404007414B82C509910C20C00807C240400B8385099107505B834669C10",
+      "replace": "8B901C050000FFE2CCCCCCCCCCCC807C240800740F807C2404007414B82C509910C20C00807C240400B8385099107505B844509910",
+      "why": "scoreboard names, second copy of the same choice"
+    },
+    {
+      "path": "CoJ2_x86.dll",
+      "find": "000080BF000080BF000080BF9A99993E9A99993E9A99993EC0BF3F3FC9C8C83DD1D0503D",
+      "replace": "000080BF000080BF000080BFBAB9393FADAC2C3F9998183FC0BF3F3FC9C8C83DD1D0503D",
+      "why": "dimmed scoreboard rows: dark grey 0.3 -> sand"
+    },
+    {
+      "path": "serverlist.dll",
+      "find": "B00FB11C0FB61D3DC51A10",
+      "replace": "B00CB1220FB61D3DC51A10",
+      "why": "scoreboard columns with Accuracy and K/D: name 28% -> 34%, Accuracy and K/D 15% -> 12% (the death/wanted icon no longer wraps)"
+    }
+  ]
 }

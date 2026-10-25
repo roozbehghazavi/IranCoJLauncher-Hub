@@ -547,7 +547,11 @@ v = set_prop(v, "ButtonDummy", "Width", "284.000000")  # the rows are copies of 
 t = t[:m.start()] + v + t[m.end():]
 m = visual(t, "ButtonNetV")  # the class rows' look (only they use it): the team highlight band as wide as the row
 row = set_prop(set_prop(m.group(0), "ButtonNetV", "Width", "284.000000"), "RandomBackground", "Width", "284.000000")
-write("CoJ2MenuSkin.xui", t[:m.start()] + row + t[m.end():])
+t = t[:m.start()] + row + t[m.end():]
+# Scoreboard rows: the game writes them as html with no colour (only yours in yellow), so the names fell back to
+# black on the dark panels.
+m = visual(t, "MyListStatisticsButtonVisual")
+write("CoJ2MenuSkin.xui", t[:m.start()] + set_prop(m.group(0), "H_Info", "DefaultFontColor", PARCHMENT) + t[m.end():])
 
 # In game, the loading backdrop is the same snapshot: blurred, not sepia.
 t = written["BackgroundLoading.xui"]

@@ -12,6 +12,16 @@ Thomas (Roozbeh)
 Launcher, Edition, menus, maps, servers and the IranCoJ mods:
 New Classes, Spectate, Voice Chat
 
+= COMMUNITY
+- Discord Community Creator & Coordinator, Map Creator
+AlfredoAnonym
+
+- Modder & Map Creator
+Hector (Adel)
+
+- Map Creator
+Kris[RR]
+
 = COMMUNITY MODS
 - Server List Mod
 mx98919
