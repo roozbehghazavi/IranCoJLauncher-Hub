@@ -468,6 +468,9 @@ def baseline(t, pairs):
 
 
 t = baseline(t, [(("T_MapName", "T_ModeName", "T_Timer"), (34, 50)), (("T_Wallet", "T_CashText", "T_TeamName"), (-67, 50))])
+# Small labels sit ~3 px low beside the big text in the same box; the team star was below the team name.
+t = set_prop(t, "T_CashText", "Position", "136.000031,-70.000000,0.000000")
+t = set_prop(t, "I_TeamImage", "Position", "730.999939,-78.000000,0.000000")
 
 # Spectate (Spectate mod's bar in the same screen) keeps its places - spectate.dll hit-tests those buttons at
 # fixed rects (y=676), which is inside the bottom bar anyway; it gets the class screen's buttons and text.
@@ -536,7 +539,11 @@ m = visual(t, "ListBoxNetEmptyV")
 v = set_prop(set_prop(m.group(0), "LBScrollBar", "Position", "-6.000000,0.000000,0.000000"), "LBScrollBar", "Width", "24.000000")
 v = set_prop(v, "ItemGroup", "Position", "22.000000,0.000000,0.000000")
 v = set_prop(v, "ItemGroup", "Width", "378.000000")  # moved right by 22, so 22 narrower: the team highlight stays in the panel
-write("CoJ2MenuSkin.xui", t[:m.start()] + v + t[m.end():])
+v = set_prop(v, "ButtonDummy", "Width", "284.000000")  # the rows are copies of this: 22 + 284 = the list's 306
+t = t[:m.start()] + v + t[m.end():]
+m = visual(t, "ButtonNetV")  # the class rows' look (only they use it): the team highlight band as wide as the row
+row = set_prop(set_prop(m.group(0), "ButtonNetV", "Width", "284.000000"), "RandomBackground", "Width", "284.000000")
+write("CoJ2MenuSkin.xui", t[:m.start()] + row + t[m.end():])
 
 # In game, the loading backdrop is the same snapshot: blurred, not sepia.
 t = written["BackgroundLoading.xui"]
