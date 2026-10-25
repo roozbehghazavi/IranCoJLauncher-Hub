@@ -44,12 +44,12 @@ def strip():
 
 
 def clock():
-    """32x32 gold clock: the round timer and the round countdown (were an hourglass and a pocket watch)."""
-    im = Image.new("RGBA", (32, 32))
+    """64x64 gold clock: the round timer and the round countdown (were an hourglass and a pocket watch)."""
+    im = Image.new("RGBA", (64, 64))
     d = ImageDraw.Draw(im)
-    d.ellipse([3, 3, 28, 28], outline=GOLD + (255,), width=3)
-    d.line([(16, 16), (16, 8)], fill=GOLD + (255,), width=3)
-    d.line([(16, 16), (22, 19)], fill=GOLD + (255,), width=3)
+    d.ellipse([6, 6, 57, 57], outline=GOLD + (255,), width=6)
+    d.line([(32, 32), (32, 16)], fill=GOLD + (255,), width=6)
+    d.line([(32, 32), (44, 38)], fill=GOLD + (255,), width=6)
     return im
 
 
@@ -83,8 +83,25 @@ def wanted():
     return im
 
 
+# The game draws these icons by name on every screen (HUD, class screen, scoreboard); they are rects in the
+# HUD atlas hud_new.dds. Defined again after it (edition.json, both texture lists) they come from this atlas
+# instead: x, y, w, h at twice the original size.
+ICONS = {"hud_team_red": (0, 0, 140, 140), "hud_team_blue": (142, 0, 140, 140), "icon_team_timer": (284, 0, 56, 70),
+         "icon_timer": (342, 0, 42, 76), "hud_wanted": (0, 142, 308, 84)}
+
+
+def icons():
+    atlas = Image.new("RGBA", (512, 256))
+    art = {"hud_team_red": team(RED), "hud_team_blue": team(BLUE), "icon_team_timer": clock(), "icon_timer": clock(),
+           "hud_wanted": wanted()}
+    for name, (x, y, w, h) in ICONS.items():
+        im = art[name]
+        im.thumbnail((w, h), Image.LANCZOS)  # keep the art's shape, centred in the game's box
+        atlas.alpha_composite(im, (x + (w - im.width) // 2, y + (h - im.height) // 2))
+    return atlas
+
+
 if __name__ == "__main__":
     out = os.path.join(sys.argv[1], "textures")
-    for name, image in (("irancoj_hud_strip", strip()), ("irancoj_clock", clock()), ("irancoj_hud_score", score()),
-                        ("irancoj_team_red", team(RED)), ("irancoj_team_blue", team(BLUE)), ("irancoj_wanted", wanted())):
+    for name, image in (("irancoj_hud_strip", strip()), ("irancoj_hud_icons", icons())):
         write_dds(image, os.path.join(out, name + ".dds"))

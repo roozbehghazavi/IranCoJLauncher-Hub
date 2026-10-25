@@ -107,6 +107,13 @@ def arrow():
     return im
 
 
+def outline():
+    """256x64, sliced with 12 px corners: a 2 px gold frame (secondary buttons: Upgrade, Change Team)."""
+    im = Image.new("RGBA", (256, 64))
+    ImageDraw.Draw(im).rectangle([1, 1, 254, 62], outline=GOLD + (255,), width=2)
+    return im
+
+
 def flat():
     """64x16 white, tinted by the game: flat title strips."""
     return Image.new("RGBA", (64, 16), (255, 255, 255, 235))
@@ -192,6 +199,7 @@ if __name__ == "__main__":
     write_dds(scroll_track(), os.path.join(out, "textures", "irancoj_scroll_track.dds"))
     write_dds(scroll_knob(), os.path.join(out, "textures", "irancoj_scroll_knob.dds"))
     write_dds(arrow(), os.path.join(out, "textures", "irancoj_arrow.dds"))
+    write_dds(outline(), os.path.join(out, "textures", "irancoj_outline.dds"))
     write_dds(flat(), os.path.join(out, "textures", "irancoj_flat.dds"))
     write_dds(still(source), os.path.join(out, "textures", "irancoj_bg.dds"))
     if "--no-video" not in sys.argv:

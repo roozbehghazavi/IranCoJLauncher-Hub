@@ -443,6 +443,9 @@ for element_id, (x, y, w, h) in {"H_UpgradeInfoLabel": (8, 378, 240, 58), "T_Upg
 t = in_group(t, "G_ClassSelect", lambda g: set_prop(set_prop(g, "Background", "Width", "320.000000"), "L_ClassList", "Width", "306.000000"))
 t = set_prop(t, "T_UpgradeInfoCost", "TextStyle", "4624")  # right
 t = set_prop(t, "B_Spawn", "Visual", "ButtonIrnPrimary")
+for button in ("B_Upgrade", "B_ChangeTeam"):
+    t = set_prop(t, button, "Visual", "ButtonIrnOutline")
+t = set_prop(t, "H_UpgradeInfoLabel", "DefaultHorizontalAlign", "left")
 # The buttons are two rows (Cancel over Quit Game, Change Team over Spawn): lower the group so both sit in the
 # bottom bar (616..720) - the top row stuck out above it.
 t = set_prop(t, "G_Buttons", "Position", "0.000000,520.000000,0.000000")
@@ -502,8 +505,14 @@ primary = set_prop(set_prop(primary, "RandomBackground", "BaseImage", "irn_flat"
 primary = keyframes(primary, "RandomBackground", lambda time, props: ["0xfff2c46e" if 6 <= time <= 26 else GOLD, "1.000000"])
 primary = keyframes(primary, "TextPrezenter", lambda time, props: ["0x800e0d0b" if time >= 80 else INK, "false", "1.000000"])
 primary = set_prop(set_prop(primary, "RandomBackground", "Color", GOLD), "TextPrezenter", "TextColor", INK)
+# Upgrade, Change Team: a gold frame, gold text; the warm band inside when focused.
+second = visual(t, "ButtonV").group(0).replace("<Id>ButtonV</Id>", "<Id>ButtonIrnOutline</Id>", 1)
+second = set_prop(set_prop(second, "RandomBackground", "BaseImage", "irn_outline"), "RandomBackground", "ImagePath", "irn_outline_0")
+second = keyframes(second, "RandomBackground", lambda time, props: ["0xfff2c46e" if 6 <= time <= 26 else GOLD, "1.000000"])
+second = keyframes(second, "TextPrezenter", lambda time, props: ["0xfff2c46e" if 6 <= time <= 26 else WOOD if time >= 80 else GOLD, "false", "1.000000"])
+second = set_prop(set_prop(second, "RandomBackground", "Color", GOLD), "TextPrezenter", "TextColor", GOLD)
 end = visual(t, "ButtonV").end()
-t = themed_scrollbars(t[:end] + primary + t[end:])
+t = themed_scrollbars(t[:end] + primary + second + t[end:])
 # The class list's scrollbar sat under the rows (both at x=0): bar to the left edge, rows beside it.
 m = visual(t, "ListBoxNetEmptyV")
 v = set_prop(set_prop(m.group(0), "LBScrollBar", "Position", "-6.000000,0.000000,0.000000"), "LBScrollBar", "Width", "24.000000")
