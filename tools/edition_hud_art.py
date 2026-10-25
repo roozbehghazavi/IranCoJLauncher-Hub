@@ -59,11 +59,13 @@ def mix(a, b, t):
 
 def pill():
     """256x64 for html backgrounds (they take a tileset laid out like the game's button_tile: left cap 0-40,
-    stretched middle 40-216, right cap 216-256, all full height): dark smoke, rounded, gold bar on the left."""
-    im = Image.new("RGBA", (256, 64))
+    stretched middle 40-216, right cap 216-256, all full height): a square dark chip with a wood edge and a gold
+    bar on the left. It fills the whole image: html backgrounds ignore transparency (rounded corners came out as
+    a black box around the pill)."""
+    im = Image.new("RGBA", (256, 64), INK + (255,))
     d = ImageDraw.Draw(im)
-    d.rounded_rectangle([0, 4, 255, 59], radius=10, fill=INK + (225,), outline=WOOD + (255,), width=2)
-    d.rectangle([10, 16, 13, 47], fill=GOLD + (255,))
+    d.rectangle([0, 0, 255, 63], outline=WOOD + (255,), width=2)
+    d.rectangle([10, 14, 13, 49], fill=GOLD + (255,))
     return im
 
 

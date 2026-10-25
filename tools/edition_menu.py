@@ -481,10 +481,13 @@ write("MenuNetSelectClass.xui", t)
 # headers, and a top bar under map / mode / settings / time - it is shown over the live game (Tab), where the
 # HUD backdrop's bars are not up. The bar is the scene's first child (the code finds G_Results, G_GameInfo and
 # the rest by name); inside the 90 px G_GameInfo group it was not drawn.
+# The end-of-round screen (MenuNetSummary) has the same scoreboard and top texts; it sits on the HUD backdrop,
+# whose top bar is already up, so it gets no bar of its own.
 top_bar = element("MyImage", "I_IrnTopBar", [("Width", "1280.000000"), ("Height", "100.000000"), ("ImagePath", "irn_bar_top")])
-for name in ("MenuNetResults.xui", "MenuNetResults_PC.xui"):
+for name in ("MenuNetResults.xui", "MenuNetResults_PC.xui", "MenuNetSummary.xui"):
     t = written[name]
-    t = flat_texts(t, {"T_MapName": PARCHMENT, "T_ModeName": GOLD, "T_Timer": GOLD, "T_GameSettings": PARCHMENT})
+    t = flat_texts(t, {"T_MapName": PARCHMENT, "T_ModeName": GOLD, "T_Timer": GOLD, "T_GameSettings": PARCHMENT,
+                       "T_ServerName": PARCHMENT})
     t = baseline(t, [(("T_MapName", "T_ModeName", "T_Timer", "T_GameSettings"), (34, 50))])
     for group, panel in (("G_RedBackground", "irn_panel_red_tile"), ("G_BlueBackground", "irn_panel_blue_tile"),
                          ("G_Individual", "irn_panel_solo")):
@@ -493,8 +496,9 @@ for name in ("MenuNetResults.xui", "MenuNetResults_PC.xui"):
     for element_id, color in (("H_HeaderList", DUST), ("H_Score", PARCHMENT)):
         t = re.sub(r"(<Id>" + element_id + r"</Id>(?:(?!</Properties>).)*?)(</Properties>)",
                    lambda m, color=color: m.group(1) + f"<DefaultFontColor>{color}</DefaultFontColor>\r\n" + m.group(2), t, flags=re.S)
-    head = re.search(r"<XuiScene>\r?\n<Properties>.*?</Properties>\r?\n", t, re.S)
-    t = t[:head.end()] + top_bar + t[head.end():]
+    if name != "MenuNetSummary.xui":
+        head = re.search(r"<XuiScene>\r?\n<Properties>.*?</Properties>\r?\n", t, re.S)
+        t = t[:head.end()] + top_bar + t[head.end():]
     write(name, t)
 
 def themed_scrollbars(t):

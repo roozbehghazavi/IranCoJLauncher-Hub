@@ -7,7 +7,8 @@
   "exclude": [
     "README_INSTALL.txt",
     "mods.txt",
-    "CoJ2/Data/Menu/MenuIngameNetGamemode_Scr_PC.binui"
+    "CoJ2/Data/Menu/MenuIngameNetGamemode_Scr_PC.binui",
+    "CoJ2/Data/COJ2 Voices&Texts.bin"
   ],
   "loadDll": [
     "newclasses.dll"
