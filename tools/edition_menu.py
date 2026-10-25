@@ -326,7 +326,7 @@ def recolor(text):
 
         def frame(k):
             props = iter(re.findall(r"<Prop>(.*?)</Prop>", k.group(0)))
-            new = [text_color(v) if n == "TextColor" else color(element_id, v) if n == "Color"
+            new = [text_color(v) if n in ("TextColor", "DefaultFontColor") else color(element_id, v) if n == "Color"
                    else "false" if n == "Show" and kind.get(element_id) == "outline" else v
                    for n, v in zip(names, props)]
             it = iter(new)
