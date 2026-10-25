@@ -496,6 +496,9 @@ for name in ("MenuNetResults.xui", "MenuNetResults_PC.xui", "MenuNetSummary.xui"
     for element_id, color in (("H_HeaderList", DUST), ("H_Score", PARCHMENT)):
         t = re.sub(r"(<Id>" + element_id + r"</Id>(?:(?!</Properties>).)*?)(</Properties>)",
                    lambda m, color=color: m.group(1) + f"<DefaultFontColor>{color}</DefaultFontColor>\r\n" + m.group(2), t, flags=re.S)
+    # The team score sat a few px below the team name on the same line.
+    t = re.sub(r"(<Id>H_Score</Id>(?:(?!</Properties>).)*?<Position>[^,]*,)([^,]*)",
+               lambda m: f"{m.group(1)}{float(m.group(2)) - 4:f}", t, flags=re.S)
     # The rows start 8 px lower (the list 8 px shorter): a gap under the line below the column titles.
     t = re.sub(r"(<Id>L_Players</Id>\r?\n<Width>[^<]*</Width>\r?\n<Height>)([^<]*)(</Height>\r?\n<Position>[^,]*,)([^,]*)",
                lambda m: f"{m.group(1)}{float(m.group(2)) - 8:f}{m.group(3)}{float(m.group(4)) + 8:f}", t)
@@ -554,7 +557,11 @@ t = t[:m.start()] + row + t[m.end():]
 # Scoreboard rows: the game writes them as html with no colour (only yours in yellow), so the names fell back to
 # black on the dark panels.
 m = visual(t, "MyListStatisticsButtonVisual")
-write("CoJ2MenuSkin.xui", t[:m.start()] + set_prop(m.group(0), "H_Info", "DefaultFontColor", PARCHMENT) + t[m.end():])
+v = set_prop(m.group(0), "H_Info", "DefaultFontColor", PARCHMENT)
+# The focused row (the list opens on the first one) gets a quiet flat band, not the menu band's gold bar.
+v = set_prop(set_prop(v, "I_BackgroundSelected", "BaseImage", "irn_flat"), "I_BackgroundSelected", "ImagePath", "irn_flat_0")
+v = set_prop(v, "I_BackgroundSelected", "Color", "0xff4a4236")
+write("CoJ2MenuSkin.xui", t[:m.start()] + v + t[m.end():])
 
 # In game, the loading backdrop is the same snapshot: blurred, not sepia.
 t = written["BackgroundLoading.xui"]
@@ -576,6 +583,12 @@ for element_id, (x, y, w, h, color, font_, style) in {
                         ("TextStyle", style), ("Outline", "false"), ("VerticalAlignDown", "true")):
         t = set_prop(t, element_id, prop, value)
 t = set_prop(t, "map", "Position", f"{MAP_X}.000000,{MAP_Y}.000000,0.000000")
+# The objectives map pictures draw their own dark card with the gold edge (irancoj_mapcard.mat, an Edition file):
+# 14 px larger on every side, the map art inset. Maps whose .trk names no map picture get no card.
+for image in ("I_Image0", "I_Image1"):
+    for prop, value in (("Material", "irancoj_mapcard.mat"), ("Width", "528.000000"), ("Height", "528.000000"),
+                        ("Position", "-14.000000,-14.000000,0.000000"), ("Pivot", "264.000000,264.000000,0.000000")):
+        t = set_prop(t, image, prop, value)
 for desc in ("T_Desc0", "T_Desc1"):  # inside the map group: placed back on the left, under the name
     for prop, value in (("Position", f"{LEFT - MAP_X}.000000,{272 - MAP_Y}.000000,0.000000"), ("Width", "460.000000"),
                         ("Height", "320.000000"), ("TextColor", STORY), ("TextStyle", "4368"), ("Outline", "false")):

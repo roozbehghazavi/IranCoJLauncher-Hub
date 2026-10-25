@@ -1,0 +1,98 @@
+import "EngineDefs.mth"
+import "StdShaders.mth"
+
+// IranCoJ Edition: the loading screen's objectives map (I_Image0 / I_Image1 in BackgroundLoading.xui) on a dark
+// card with a gold top edge. The image is 14 px larger on every side than the map art, which is drawn inset; the
+// card is only drawn when there is a map picture (maps whose .trk names none get an empty image: nothing drawn).
+
+sub material()
+{
+    Tech("std")
+    {
+        Shader(3)
+        {
+            Order(SPRITE);
+
+            Pass()
+            {
+                Cull(NONE);
+                BlendFunc(SRC_ALPHA, INV_SRC_ALPHA);
+
+                VertexShader()
+                {
+                    hlsl() =
+                    "
+                        struct SInput
+                        {
+                            float4  pos     : POSITION;
+                            float2  uv0     : TEXCOORD0;
+                        };
+
+                        struct SOutput
+                        {
+                            float4  pos     : POSITION;
+                            float2  uv0     : TEXCOORD0;
+                        };
+
+                        float4 COMBINED_XFORM[4];
+
+                        void main(SInput i, out SOutput o)
+                        {
+                            o.pos.x = dot(i.pos, COMBINED_XFORM[0]);
+                            o.pos.y = dot(i.pos, COMBINED_XFORM[1]);
+                            o.pos.z = dot(i.pos, COMBINED_XFORM[2]);
+                            o.pos.w = dot(i.pos, COMBINED_XFORM[3]);
+                            o.uv0 = i.uv0;
+                        }
+                    "
+                }
+
+                PixelShader()
+                {
+                    hlsl() =
+                    "
+                        float4 CONST;
+
+                        sampler tmu0;
+
+                        struct SInput
+                        {
+                            float2  uv0     : TEXCOORD0;
+                        };
+
+                        void main( in SInput i, out float4 output : COLOR )
+                        {
+                            // 14 px margin of 528 (500 px map art)
+                            float m = 14.0 / 528.0;
+                            float2 inner = (i.uv0 - m) / (1.0 - 2.0 * m);
+                            float inside = step(0.0, inner.x) * step(inner.x, 1.0) * step(0.0, inner.y) * step(inner.y, 1.0);
+                            float4 map = tex2D(tmu0, saturate(inner));
+
+                            // An empty image (no map picture): nothing anywhere in it - draw no card either.
+                            float4 probe = tex2D(tmu0, float2(0.5, 0.5)) + tex2D(tmu0, float2(0.3, 0.3)) + tex2D(tmu0, float2(0.7, 0.3))
+                                         + tex2D(tmu0, float2(0.3, 0.7)) + tex2D(tmu0, float2(0.7, 0.7));
+                            float present = step(0.02, probe.a) * step(0.02, probe.r + probe.g + probe.b);
+
+                            float3 card = float3(0.114, 0.114, 0.102);
+                            float gold = step(i.uv0.y, 3.0 / 528.0);
+                            float3 col = lerp(card, float3(0.886, 0.694, 0.369), gold);
+                            col = lerp(col, map.rgb, map.a * inside);
+                            float a = lerp(0.94, 1.0, max(gold, map.a * inside));
+                            output = float4(col, a * present * CONST.w);
+                        }
+                    "
+                }
+
+                Tmu("tmu0")
+                {
+                    UserMap(0);
+                    Quality(HIGH);
+                    Filtering(LINEAR_NO_MIP);
+                    AddressFunc(CLAMP, CLAMP, CLAMP);
+                }
+
+                DepthFunc(ALWAYS, FALSE);
+            }
+        }
+    }
+}
