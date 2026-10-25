@@ -237,6 +237,14 @@
         [
           "<MyText>\\\r\\\n<Properties>\\\r\\\n<Id>T_Value</Id>\\\r\\\n<Width>35\\.999985</Width>\\\r\\\n<Height>35\\.000000</Height>\\\r\\\n<Position>150\\.000031,3\\.000000,0\\.000000</Position>\\\r\\\n<Opacity>0\\.000000</Opacity>\\\r\\\n<Anchor>5</Anchor>\\\r\\\n<TextColor>0xffddcda9</TextColor>\\\r\\\n<Font>HUDDigitsBig</Font>\\\r\\\n<TextStyle>4368</TextStyle>\\\r\\\n<Outline>true</Outline>\\\r\\\n</Properties>\\\r\\\n</MyText>\\\r\\\n<MyImage>\\\r\\\n<Properties>\\\r\\\n<Id>I_Image</Id>\\\r\\\n<Width>28\\.000000</Width>\\\r\\\n<Height>35\\.000000</Height>\\\r\\\n<Position>118\\.000053,0\\.000000,0\\.000000</Position>\\\r\\\n<Opacity>0\\.000000</Opacity>\\\r\\\n<Pivot>13\\.999931,17\\.499983,0\\.000000</Pivot>\\\r\\\n<ImagePath>icon_team_timer</ImagePath>\\\r\\\n<HoldAspectRatio>true</HoldAspectRatio>\\\r\\\n<HoldAspectRatioX>true</HoldAspectRatioX>\\\r\\\n<HoldAspectPivotPosition>true</HoldAspectPivotPosition>\\\r\\\n</Properties>\\\r\\\n</MyImage>\\\r\\\n",
           "<MyImage>\r\n<Properties>\r\n<Id>I_Image</Id>\r\n<Width>96.000000</Width>\r\n<Height>36.000000</Height>\r\n<Position>104.000000,0.000000,0.000000</Position>\r\n<Opacity>0.000000</Opacity>\r\n<Pivot>48.000000,18.000000,0.000000</Pivot>\r\n<ImagePath>irn_hud_num</ImagePath>\r\n<HoldAspectRatio>false</HoldAspectRatio>\r\n<HoldAspectRatioX>false</HoldAspectRatioX>\r\n<HoldAspectPivotPosition>true</HoldAspectPivotPosition>\r\n</Properties>\r\n</MyImage>\r\n<MyText>\r\n<Properties>\r\n<Id>T_Value</Id>\r\n<Width>96.000000</Width>\r\n<Height>32.000000</Height>\r\n<Position>104.000000,2.000000,0.000000</Position>\r\n<Opacity>0.000000</Opacity>\r\n<Anchor>5</Anchor>\r\n<TextColor>0xffe2b15e</TextColor>\r\n<Font>HUDDigitsBig</Font>\r\n<TextStyle>5136</TextStyle>\r\n<Outline>true</Outline>\r\n</Properties>\r\n</MyText>\r\n"
+        ],
+        [
+          "<Id>I_Background</Id>\\\r\\\n<Width>870\\.000000</Width>\\\r\\\n<Height>32\\.000000</Height>\\\r\\\n<Position>\\-9\\.999985,\\-3\\.999999,0\\.000000</Position>\\\r\\\n<ImagePath>dialog_frame_a_tile</ImagePath>",
+          "<Id>I_Background</Id>\r\n<Width>870.000000</Width>\r\n<Height>32.000000</Height>\r\n<Position>-9.999985,-3.999999,0.000000</Position>\r\n<ImagePath>irn_hud_strip</ImagePath>"
+        ],
+        [
+          "<Id>T_Title</Id>\\\r\\\n<Width>150\\.000000</Width>\\\r\\\n<Height>24\\.000000</Height>\\\r\\\n<Position>8\\.000000,4\\.000000,0\\.000000</Position>\\\r\\\n<TextColor>0xfe000000</TextColor>",
+          "<Id>T_Title</Id>\r\n<Width>150.000000</Width>\r\n<Height>24.000000</Height>\r\n<Position>8.000000,4.000000,0.000000</Position>\r\n<TextColor>0xffe2b15e</TextColor>"
         ]
       ]
     },
@@ -384,6 +392,17 @@
         [
           "Texture\\(\"Drum\\.dds\", 64, 64\\)",
           "Texture(\"irancoj_spinner.dds\", 64, 64)"
+        ]
+      ]
+    },
+    {
+      "path": "CoJ2/Data/Menu/Hud/HUD_Skin.xui",
+      "pak": "CoJ2/Data0.pak",
+      "entry": "Data/Menu/Hud/HUD_Skin.xui",
+      "replace": [
+        [
+          "<Id>EditBoxChatV</Id>\\\r\\\n<Width>128\\.000000</Width>\\\r\\\n<Height>32\\.000000</Height>\\\r\\\n</Properties>\\\r\\\n<MyTextPresenter>\\\r\\\n<Properties>\\\r\\\n<Id>Text</Id>\\\r\\\n<Width>128\\.000015</Width>\\\r\\\n<Height>32\\.000004</Height>\\\r\\\n<Anchor>15</Anchor>\\\r\\\n<TextColor>0xfe000000</TextColor>\\\r\\\n<DropShadowColor>0x800f0f0f</DropShadowColor>\\\r\\\n<PointSize>12\\.000000</PointSize>\\\r\\\n<Font>HUDSmall</Font>\\\r\\\n<TextStyle>4368</TextStyle>\\\r\\\n</Properties>\\\r\\\n</MyTextPresenter>\\\r\\\n<AdvGroup>\\\r\\\n<Properties>\\\r\\\n<Id>Cursor</Id>\\\r\\\n<Width>1\\.000000</Width>\\\r\\\n<Height>32\\.000004</Height>\\\r\\\n<Position>88\\.000000,0\\.000000,0\\.000000</Position>\\\r\\\n<Anchor>10</Anchor>\\\r\\\n<AllowJumpsFromParents>false</AllowJumpsFromParents>\\\r\\\n<KeepWidth>true</KeepWidth>\\\r\\\n</Properties>\\\r\\\n<MyImage>\\\r\\\n<Properties>\\\r\\\n<Id>Carrige</Id>\\\r\\\n<Width>1\\.000000</Width>\\\r\\\n<Height>32\\.000000</Height>\\\r\\\n<Anchor>10</Anchor>\\\r\\\n<Pivot>\\-0\\.000008,\\-0\\.000001,0\\.000000</Pivot>\\\r\\\n<ImagePath>White\\.dds</ImagePath>\\\r\\\n<KeepWidth>true</KeepWidth>\\\r\\\n<KeepWidthOnResolutionChange>true</KeepWidthOnResolutionChange>\\\r\\\n<KeepHeight>true</KeepHeight>\\\r\\\n<KeepHeightOnResolutionChange>true</KeepHeightOnResolutionChange>\\\r\\\n<KeepPosX>true</KeepPosX>\\\r\\\n<Color>0xfe000000</Color>",
+          "<Id>EditBoxChatV</Id>\r\n<Width>128.000000</Width>\r\n<Height>32.000000</Height>\r\n</Properties>\r\n<MyTextPresenter>\r\n<Properties>\r\n<Id>Text</Id>\r\n<Width>128.000015</Width>\r\n<Height>32.000004</Height>\r\n<Anchor>15</Anchor>\r\n<TextColor>0xfff3ebdd</TextColor>\r\n<DropShadowColor>0x800f0f0f</DropShadowColor>\r\n<PointSize>12.000000</PointSize>\r\n<Font>HUDSmall</Font>\r\n<TextStyle>4368</TextStyle>\r\n</Properties>\r\n</MyTextPresenter>\r\n<AdvGroup>\r\n<Properties>\r\n<Id>Cursor</Id>\r\n<Width>1.000000</Width>\r\n<Height>32.000004</Height>\r\n<Position>88.000000,0.000000,0.000000</Position>\r\n<Anchor>10</Anchor>\r\n<AllowJumpsFromParents>false</AllowJumpsFromParents>\r\n<KeepWidth>true</KeepWidth>\r\n</Properties>\r\n<MyImage>\r\n<Properties>\r\n<Id>Carrige</Id>\r\n<Width>1.000000</Width>\r\n<Height>32.000000</Height>\r\n<Anchor>10</Anchor>\r\n<Pivot>-0.000008,-0.000001,0.000000</Pivot>\r\n<ImagePath>White.dds</ImagePath>\r\n<KeepWidth>true</KeepWidth>\r\n<KeepWidthOnResolutionChange>true</KeepWidthOnResolutionChange>\r\n<KeepHeight>true</KeepHeight>\r\n<KeepHeightOnResolutionChange>true</KeepHeightOnResolutionChange>\r\n<KeepPosX>true</KeepPosX>\r\n<Color>0xffe2b15e</Color>"
         ]
       ]
     }

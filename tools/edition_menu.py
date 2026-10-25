@@ -573,4 +573,5 @@ for desc in ("T_Desc0", "T_Desc1"):  # inside the map group: placed back on the 
         t = set_prop(t, desc, prop, value)
 for element_id in ("Text", "T_Hint", "SubtitleText", "SubtitleText2", "T_Loading"):
     t = set_prop(set_prop(t, element_id, "TextColor", PARCHMENT), element_id, "Outline", "false")
+t = set_prop(t, "Text", "Position", "440.000031,640.000000,0.000000")  # "Please Wait...": under the map card, not on it
 write("BackgroundLoading.xui", t)
