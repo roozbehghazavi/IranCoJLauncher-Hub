@@ -394,6 +394,23 @@
   ],
   "mods": [
     {
+      "id": "GoreMod",
+      "name": "Gore Mod",
+      "version": "1.0.0",
+      "description": "More blood: richer blood and hit effects. By cr1m3.",
+      "package": {
+        "file": "GoreMod-1.0.0.zip",
+        "size": 436273,
+        "sha256": "97d216be93b65e1eeb53bd5533747da96644f24333fce50a16ea19909836bf37",
+        "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/mods/GoreMod-1.0.0.zip"
+      },
+      "exclude": [],
+      "loadDll": [],
+      "shared": [],
+      "disable": [],
+      "optional": true
+    },
+    {
       "id": "GunSoundMod",
       "name": "Gun Sound Mod",
       "version": "1.0.0",
@@ -423,7 +440,8 @@
       },
       "exclude": [
         "README_INSTALL.txt",
-        "mods.txt"
+        "mods.txt",
+        "CoJ2/Data/Menu/MenuIngameNetGamemode_Scr_PC.binui"
       ],
       "loadDll": [
         "newclasses.dll"
@@ -435,6 +453,23 @@
         "CoJ2/Data/common_mp_meshes.rpack",
         "CoJ2/Data/menu_ingame_net.rpack"
       ]
+    },
+    {
+      "id": "NoDofMotionBlur",
+      "name": "No DOF & Motion Blur",
+      "version": "1.0.0",
+      "description": "Turns off depth of field and motion blur for a sharper picture. By cr1m3.",
+      "package": {
+        "file": "NoDofMotionBlur-1.0.0.zip",
+        "size": 649,
+        "sha256": "3fce3f65d8102e2e6a3f1d7824cef48073b5891c169d36a04890b8691fb1ec17",
+        "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/mods/NoDofMotionBlur-1.0.0.zip"
+      },
+      "exclude": [],
+      "loadDll": [],
+      "shared": [],
+      "disable": [],
+      "optional": true
     },
     {
       "id": "ServerListMod",
@@ -461,16 +496,17 @@
     {
       "id": "SpectateMod",
       "name": "Spectate Mod",
-      "version": "1.0.8",
+      "version": "1.0.9",
       "description": "Spectate players in multiplayer, from the in-game menu.",
       "package": {
-        "file": "SpectateMod-1.0.8.zip",
-        "size": 218454,
-        "sha256": "38fbc545d2004506b21a3b927e0998bcd1c5413df1452cfba5c7c573f5f005c1",
-        "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/mods/SpectateMod-1.0.8.zip"
+        "file": "SpectateMod-1.0.9.zip",
+        "size": 218619,
+        "sha256": "f1b5c646266fe0070b52bec36912141f5325bebbd4700c0ad047d5d25149806a",
+        "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/mods/SpectateMod-1.0.9.zip"
       },
       "exclude": [
-        "mods.txt"
+        "mods.txt",
+        "CoJ2/Data/Menu/MenuIngameNetGamemode_Scr_PC.binui"
       ],
       "loadDll": [
         "spectate.dll"
@@ -504,7 +540,7 @@
     }
   ],
   "edition": {
-    "version": "0.5.1",
+    "version": "0.6.0",
     "ownUserFolder": true,
     "menuNavigation": true,
     "include": [
@@ -534,7 +570,6 @@
       "CoJ2/Data/Menu/MenuIngameSingle_Scr_PC.binui",
       "CoJ2/Data/Menu/MenuIngameSingle_Skn_PC.binui",
       "CoJ2/Data/Menu/Movies/Initial_BG.wmv",
-      "CoJ2/Data/Menu/Movies/MenuMovie_0.wmv",
       "CoJ2/Data/Menu/Movies/Ubisoft_720p.wmv",
       "CoJ2/Data/Menu/Movies/Ubisoft_720p_4_3.wmv",
       "CoJ2/Data/MplService.scr",
@@ -546,7 +581,6 @@
       "CoJ2/Data/Music/COJ2_MultiP_Mini_Won_01.ogg",
       "CoJ2/Data/Music/COJ2_MultiP_Won_01.ogg",
       "CoJ2/Data/Music/COJ2_MultiP_Won_02.ogg",
-      "CoJ2/Data/Music/COJ2_New_Menu.ogg",
       "CoJ2/Data/r_device.scr",
       "CoJ2/Data/r_init.scr",
       "CoJ2/Data0.pak",
@@ -577,7 +611,17 @@
       "?CoJ2/Data/magnificent_loading.rpack",
       "?CoJ2/Data/prisonbreak2_loading.rpack",
       "?CoJ2/Data/stinkingsprings2_loading.rpack",
-      "?CoJ2/Data/tombstone_loading.rpack"
+      "?CoJ2/Data/tombstone_loading.rpack",
+      "?CoJ2/Data/Adobes.rpack",
+      "?CoJ2/Data/Civil.rpack",
+      "?CoJ2/Data/CoffeyVille.rpack",
+      "?CoJ2/Data/Frisco.rpack",
+      "?CoJ2/Data/Magnificent.rpack",
+      "?CoJ2/Data/PrisonBreak2.rpack",
+      "?CoJ2/Data/StinkingSprings2.rpack",
+      "?CoJ2/Data/TombStone.rpack",
+      "?CoJ2/Data/engine.rpack",
+      "?CoJ2/Data/textures1.rpack"
     ],
     "exclude": [
       "DirectX/**",
@@ -603,11 +647,9 @@
       "CoJ2/Data/common_mp_meshes.rpack",
       "CoJ2/Data/common_mp_textures.rpack",
       "CoJ2/Data/common_sp_anims.rpack",
-      "CoJ2/Data/Music/COJ2_New_Menu.ogg",
       "CoJ2/Data/Music/COJ2_MultiP_*",
       "CoJ2/Data/Music/COJ2_Multi_*",
       "CoJ2/Data/Music/COJ2_Conc_Mode_4.ogg",
-      "CoJ2/Data/Menu/Movies/MenuMovie_0.wmv",
       "CoJ2/Data/Menu/Movies/Initial_BG.wmv",
       "CoJ2/Data/Menu/Movies/Ubisoft_720p*.wmv"
     ],
@@ -622,19 +664,346 @@
             "MenuMovie_0"
           ]
         ]
+      },
+      {
+        "path": "CoJ2/Data/Menu/TextureDefs/CoJ2MenuTextures.def",
+        "pak": "CoJ2/Data0.pak",
+        "entry": "Data/Menu/TextureDefs/CoJ2MenuTextures.def",
+        "replace": [
+          [
+            "\\z",
+            "\r\n\r\n//IranCoJ Edition main menu\r\nTexture(\"irancoj_band.dds\", 256, 64)\r\n{\r\n\tRectWithCorner(\"irn_band_0\", 0, 0, 256, 64, 32, 8)\r\n}\r\n\r\nTexture(\"irancoj_logo.dds\", 512, 256)\r\n{\r\n\tWhole(\"irn_logo\")\r\n}\r\n\r\nTexture(\"irancoj_panel.dds\", 256, 256)\r\n{\r\n\tTileset(\"irn_panel_tile\")\r\n\t{\r\n\t\tRect(\"irn_panel_tile\", 86, 86, 170, 170)\r\n\t\tRect(\"irn_panel_bottom\", 86, 170, 170, 256)\r\n\t\tRect(\"irn_panel_top\", 86, 0, 170, 86)\r\n\t\tRect(\"irn_panel_left\", 0, 86, 86, 170)\r\n\t\tRect(\"irn_panel_right\", 170, 86, 256, 170)\r\n\t\tRect(\"irn_panel_bottom_left\", 0, 170, 86, 256)\r\n\t\tRect(\"irn_panel_bottom_right\", 170, 170, 256, 256)\r\n\t\tRect(\"irn_panel_top_left\", 0, 0, 86, 86)\r\n\t\tRect(\"irn_panel_top_right\", 170, 0, 256, 86)\r\n\t\tCornerTopLeft(\"irn_panel_top_left\", 100, 0)\r\n\t\tCornerTopRight(\"irn_panel_top_right\", 100, 0)\r\n\t\tCornerBottomLeft(\"irn_panel_bottom_left\", 100, 0)\r\n\t\tCornerBottomRight(\"irn_panel_bottom_right\", 100, 0)\r\n\t\tTop(\"irn_panel_top\", 100, 0)\r\n\t\tBottom(\"irn_panel_bottom\", 100, 0)\r\n\t\tLeft(\"irn_panel_left\", 100, 0)\r\n\t\tRight(\"irn_panel_right\", 100, 0)\r\n\t\tMiddle(\"irn_panel_tile\", 100, 0)\r\n\t}\r\n\tWhole(\"irn_panel_whole\")\r\n}\r\n\r\nTexture(\"irancoj_bg.dds\", 1024, 512)\r\n{\r\n\tWhole(\"irn_bg\")\r\n}\r\n\r\nTexture(\"irancoj_flat.dds\", 64, 16)\r\n{\r\n\tRectWithCorner(\"irn_flat_0\", 0, 0, 64, 16, 4, 4)\r\n}\r\n\r\nTexture(\"irancoj_bar_top.dds\", 256, 64)\r\n{\r\n\tWhole(\"irn_bar_top\")\r\n}\r\n\r\nTexture(\"irancoj_bar_bottom.dds\", 256, 64)\r\n{\r\n\tWhole(\"irn_bar_bottom\")\r\n}\r\n\r\nTexture(\"irancoj_panel_red.dds\", 512, 512)\r\n{\r\n\tWhole(\"irn_panel_red_tile\")\r\n}\r\n\r\nTexture(\"irancoj_panel_blue.dds\", 512, 512)\r\n{\r\n\tWhole(\"irn_panel_blue_tile\")\r\n}\r\n\r\nTexture(\"irancoj_panel_solo.dds\", 512, 512)\r\n{\r\n\tWhole(\"irn_panel_solo\")\r\n}\r\n\r\nTexture(\"irancoj_hud_pill.dds\", 256, 64)\r\n{\r\n\tTileset(\"irn_pill_tile\")\r\n\t{\r\n\t\tRect(\"irn_pill_left\", 0, 0, 40, 64)\r\n\t\tRect(\"irn_pill_mid\", 40, 0, 216, 64)\r\n\t\tRect(\"irn_pill_right\", 216, 0, 256, 64)\r\n\t\tTop(\"irn_pill_mid\", 100, 0)\r\n\t\tCornerTopLeft(\"irn_pill_left\", 100, 0)\r\n\t\tCornerTopRight(\"irn_pill_right\", 100, 0)\r\n\t}\r\n}\r\n\r\nTexture(\"irancoj_scroll_track.dds\", 32, 64)\r\n{\r\n\tWhole(\"irn_scroll_track\")\r\n}\r\n\r\nTexture(\"irancoj_scroll_knob.dds\", 32, 64)\r\n{\r\n\tWhole(\"irn_scroll_knob\")\r\n}\r\n\r\nTexture(\"irancoj_arrow.dds\", 32, 32)\r\n{\r\n\tWhole(\"irn_arrow_0\")\r\n}\r\n\r\n//IranCoJ Edition: HUD icons, defined again after hud_new.scr so ours are drawn\r\nTexture(\"irancoj_hud_icons.dds\", 512, 256)\r\n{\r\n\tRect(\"hud_team_red\", 0, 0, 140, 140)\r\n\tRect(\"hud_team_blue\", 142, 0, 282, 140)\r\n\tRect(\"icon_team_timer\", 284, 0, 340, 70)\r\n\tRect(\"icon_timer\", 342, 0, 384, 76)\r\n\tRect(\"hud_wanted\", 0, 142, 308, 226)\r\n}\r\n\r\nTexture(\"irancoj_outline.dds\", 256, 64)\r\n{\r\n\tRectWithCorner(\"irn_outline_0\", 0, 0, 256, 64, 12, 12)\r\n}\r\n"
+          ]
+        ]
+      },
+      {
+        "path": "CoJ2/Data/Menu/Mat/menu_bckg.mat",
+        "pak": "CoJ2/Data0.pak",
+        "entry": "Data/Menu/Mat/menu_bckg.mat",
+        "replace": [
+          [
+            "t1 = mix\\(t0, t1, 1-CONST\\.w\\);",
+            "t1 = t1 * (1-CONST.w); // IranCoJ: fade through black, not paper"
+          ],
+          [
+            "t1 = max\\(t1\\.g, 1\\.0/255\\.0\\);",
+            "// IranCoJ: the film keeps its colour"
+          ],
+          [
+            "output = mix\\(step9, step7, 0\\.55\\);",
+            "output = t1; output.a = 1;"
+          ],
+          [
+            "output\\.rgb = saturate\\(lerp\\(f_luminance, output\\.rgb, F_OUT_SATURATION\\)\\);",
+            ""
+          ]
+        ]
+      },
+      {
+        "path": "CoJ2/Data/Menu/Mat/menu_bckg_film.mat",
+        "pak": "CoJ2/Data0.pak",
+        "entry": "Data/Menu/Mat/menu_bckg_film.mat",
+        "replace": [
+          [
+            "t1 = mix\\(1, t1, CONST\\.w\\);",
+            "t1 = t1 * CONST.w; // IranCoJ: fade through black, not white"
+          ],
+          [
+            "t1 = max\\(t1\\.g, 1\\.0/255\\.0\\);",
+            "// IranCoJ: the film keeps its colour"
+          ],
+          [
+            "output = mix\\(step9, step7, 0\\.55\\);",
+            "output = t1; output.a = 1;"
+          ],
+          [
+            "output\\.rgb = saturate\\(lerp\\(f_luminance, output\\.rgb, F_OUT_SATURATION\\)\\);",
+            ""
+          ]
+        ]
+      },
+      {
+        "path": "CoJ2/Data/Menu/Hud/HUD_Net.xui",
+        "pak": "CoJ2/Data0.pak",
+        "entry": "Data/Menu/Hud/HUD_Net.xui",
+        "replace": [
+          [
+            "<Material>menu_bckg_screenshot_alpha\\.mat</Material>\\r?\\n</Properties>\\r?\\n</MyImage>\\r?\\n",
+            "<Material>irancoj_blur.mat</Material>\r\n</Properties>\r\n</MyImage>\r\n<MyImage>\r\n<Properties>\r\n<Id>I_IrnTopBar</Id>\r\n<Width>1280.000000</Width>\r\n<Height>100.000000</Height>\r\n<ImagePath>irn_bar_top</ImagePath>\r\n</Properties>\r\n</MyImage>\r\n<MyImage>\r\n<Properties>\r\n<Id>I_IrnBottomBar</Id>\r\n<Width>1280.000000</Width>\r\n<Height>124.000000</Height>\r\n<Position>0.000000,596.000000,0.000000</Position>\r\n<ImagePath>irn_bar_bottom</ImagePath>\r\n</Properties>\r\n</MyImage>\r\n<MyImage>\r\n<Properties>\r\n<Id>I_IrnSpecTopBar</Id>\r\n<Width>1280.000000</Width>\r\n<Height>60.000000</Height>\r\n<Show>false</Show>\r\n<ImagePath>irn_bar_top</ImagePath>\r\n</Properties>\r\n</MyImage>\r\n<MyImage>\r\n<Properties>\r\n<Id>I_IrnSpecBottomBar</Id>\r\n<Width>1280.000000</Width>\r\n<Height>60.000000</Height>\r\n<Position>0.000000,660.000000,0.000000</Position>\r\n<Show>false</Show>\r\n<ImagePath>irn_bar_bottom</ImagePath>\r\n</Properties>\r\n</MyImage>\r\n"
+          ],
+          [
+            "<MyText>\\\r\\\n<Properties>\\\r\\\n<Id>ID_TIME</Id>\\\r\\\n<Width>435\\.000000</Width>\\\r\\\n<Height>54\\.000000</Height>\\\r\\\n<Position>28\\.000000,2\\.000002,0\\.000000</Position>\\\r\\\n<Anchor>32</Anchor>\\\r\\\n<TextColor>0xffddcda9</TextColor>\\\r\\\n<DropShadowColor>0x800f0f0f</DropShadowColor>\\\r\\\n<PointSize>20\\.000000</PointSize>\\\r\\\n<Font>HUDDigitsBig</Font>\\\r\\\n<TextStyle>4112</TextStyle>\\\r\\\n<Outline>true</Outline>\\\r\\\n</Properties>\\\r\\\n</MyText>\\\r\\\n<MyImage>\\\r\\\n<Properties>\\\r\\\n<Id>ID_TIME_ICON</Id>\\\r\\\n<Width>21\\.000000</Width>\\\r\\\n<Height>38\\.000000</Height>\\\r\\\n<Position>0\\.000000,8\\.000003,0\\.000000</Position>\\\r\\\n<Pivot>10\\.499993,18\\.999992,0\\.000000</Pivot>\\\r\\\n<Show>false</Show>\\\r\\\n<ImagePath>icon_timer\\.dds</ImagePath>\\\r\\\n<HoldAspectRatio>true</HoldAspectRatio>\\\r\\\n<HoldAspectRatioX>true</HoldAspectRatioX>\\\r\\\n<HoldAspectPivotPosition>true</HoldAspectPivotPosition>\\\r\\\n</Properties>\\\r\\\n</MyImage>\\\r\\\n",
+            "<MyImage>\r\n<Properties>\r\n<Id>ID_TIME_ICON</Id>\r\n<Width>160.000000</Width>\r\n<Height>52.000000</Height>\r\n<Position>-12.000000,1.000000,0.000000</Position>\r\n<Pivot>80.000000,26.000000,0.000000</Pivot>\r\n<Show>false</Show>\r\n<ImagePath>irn_hud_timer</ImagePath>\r\n<HoldAspectRatio>false</HoldAspectRatio>\r\n<HoldAspectRatioX>false</HoldAspectRatioX>\r\n<HoldAspectPivotPosition>true</HoldAspectPivotPosition>\r\n</Properties>\r\n</MyImage>\r\n<MyText>\r\n<Properties>\r\n<Id>ID_TIME</Id>\r\n<Width>435.000000</Width>\r\n<Height>54.000000</Height>\r\n<Position>44.000000,2.000002,0.000000</Position>\r\n<Anchor>32</Anchor>\r\n<TextColor>0xfff3ebdd</TextColor>\r\n<DropShadowColor>0x800f0f0f</DropShadowColor>\r\n<PointSize>20.000000</PointSize>\r\n<Font>HUDDigitsBig</Font>\r\n<TextStyle>4112</TextStyle>\r\n<Outline>true</Outline>\r\n</Properties>\r\n</MyText>\r\n"
+          ],
+          [
+            "<Id>ID_TEAM_RED</Id>\\\r\\\n<Width>70\\.000000</Width>\\\r\\\n<Height>70\\.000000</Height>\\\r\\\n<Position>1133\\.000000,37\\.000000,0\\.000000</Position>\\\r\\\n<Scale>1\\.500000,1\\.500000,1\\.000000</Scale>\\\r\\\n<Opacity>0\\.000000</Opacity>\\\r\\\n<Pivot>35\\.000000,35\\.000000,0\\.000000</Pivot>\\\r\\\n",
+            "<Id>ID_TEAM_RED</Id>\r\n<Width>206.000000</Width>\r\n<Height>54.000000</Height>\r\n<Position>1010.000000,40.000000,0.000000</Position>\r\n<Scale>1.000000,1.000000,1.000000</Scale>\r\n<Opacity>0.000000</Opacity>\r\n<Pivot>103.000000,27.000000,0.000000</Pivot>\r\n"
+          ],
+          [
+            "<MyImage>\\\r\\\n<Properties>\\\r\\\n<Id>IMG</Id>\\\r\\\n<Width>70\\.000000</Width>\\\r\\\n<Height>70\\.000000</Height>\\\r\\\n<Pivot>34\\.999954,35\\.000000,0\\.000000</Pivot>\\\r\\\n<SizeMode>4</SizeMode>\\\r\\\n<ImagePath>Textures\\\\temp\\\\hud_team_red\\.dds</ImagePath>\\\r\\\n<HoldAspectRatio>true</HoldAspectRatio>\\\r\\\n<HoldAspectRatioX>true</HoldAspectRatioX>\\\r\\\n<HoldAspectPivotPosition>true</HoldAspectPivotPosition>\\\r\\\n</Properties>\\\r\\\n</MyImage>\\\r\\\n(?=</AdvGroup>\\r\\n<AdvGroup>\\r\\n<Properties>\\r\\n<Id>ID_TEAM_BLUE)",
+            "<MyImage>\r\n<Properties>\r\n<Id>IMG</Id>\r\n<Width>206.000000</Width>\r\n<Height>54.000000</Height>\r\n<Pivot>103.000000,27.000000,0.000000</Pivot>\r\n<SizeMode>4</SizeMode>\r\n<ImagePath>irn_badge_red</ImagePath>\r\n<HoldAspectRatio>false</HoldAspectRatio>\r\n<HoldAspectRatioX>false</HoldAspectRatioX>\r\n<HoldAspectPivotPosition>true</HoldAspectPivotPosition>\r\n</Properties>\r\n</MyImage>\r\n"
+          ],
+          [
+            "<Id>ID_TEAM_BLUE</Id>\\\r\\\n<Width>70\\.000000</Width>\\\r\\\n<Height>70\\.000000</Height>\\\r\\\n<Position>1133\\.000000,37\\.000000,0\\.000000</Position>\\\r\\\n<Scale>1\\.500000,1\\.500000,1\\.000000</Scale>\\\r\\\n<Opacity>0\\.000000</Opacity>\\\r\\\n<Pivot>35\\.000000,35\\.000000,0\\.000000</Pivot>\\\r\\\n",
+            "<Id>ID_TEAM_BLUE</Id>\r\n<Width>206.000000</Width>\r\n<Height>54.000000</Height>\r\n<Position>1010.000000,40.000000,0.000000</Position>\r\n<Scale>1.000000,1.000000,1.000000</Scale>\r\n<Opacity>0.000000</Opacity>\r\n<Pivot>103.000000,27.000000,0.000000</Pivot>\r\n"
+          ],
+          [
+            "<MyImage>\\\r\\\n<Properties>\\\r\\\n<Id>IMG</Id>\\\r\\\n<Width>70\\.000000</Width>\\\r\\\n<Height>70\\.000000</Height>\\\r\\\n<Pivot>34\\.999943,34\\.999996,0\\.000000</Pivot>\\\r\\\n<SizeMode>4</SizeMode>\\\r\\\n<ImagePath>Textures\\\\temp\\\\hud_team_blue\\.dds</ImagePath>\\\r\\\n<HoldAspectRatio>true</HoldAspectRatio>\\\r\\\n<HoldAspectRatioX>true</HoldAspectRatioX>\\\r\\\n<HoldAspectPivotPosition>true</HoldAspectPivotPosition>\\\r\\\n</Properties>\\\r\\\n</MyImage>\\\r\\\n(?=</AdvGroup>\\r\\n<XuiGroup>)",
+            "<MyImage>\r\n<Properties>\r\n<Id>IMG</Id>\r\n<Width>206.000000</Width>\r\n<Height>54.000000</Height>\r\n<Pivot>103.000000,27.000000,0.000000</Pivot>\r\n<SizeMode>4</SizeMode>\r\n<ImagePath>irn_badge_blue</ImagePath>\r\n<HoldAspectRatio>false</HoldAspectRatio>\r\n<HoldAspectRatioX>false</HoldAspectRatioX>\r\n<HoldAspectPivotPosition>true</HoldAspectPivotPosition>\r\n</Properties>\r\n</MyImage>\r\n"
+          ],
+          [
+            "<Id>ID_WANTED_GROUP</Id>\\\r\\\n<Width>154\\.000000</Width>\\\r\\\n<Height>154\\.000000</Height>\\\r\\\n<Position>1048\\.000122,32\\.000000,0\\.000000</Position>\\\r\\\n",
+            "<Id>ID_WANTED_GROUP</Id>\r\n<Width>154.000000</Width>\r\n<Height>154.000000</Height>\r\n<Position>1062.000000,48.000000,0.000000</Position>\r\n"
+          ],
+          [
+            "<Id>G_LeftTimer</Id>\\\r\\\n<Width>100\\.000015</Width>\\\r\\\n<Height>34\\.999992</Height>\\\r\\\n<Position>8\\.000000,\\-1\\.000011,0\\.000000</Position>\\\r\\\n",
+            "<Id>G_LeftTimer</Id>\r\n<Width>304.000031</Width>\r\n<Height>34.999992</Height>\r\n<Position>0.000000,39.000000,0.000000</Position>\r\n"
+          ],
+          [
+            "<MyText>\\\r\\\n<Properties>\\\r\\\n<Id>T_Value</Id>\\\r\\\n<Width>72\\.000000</Width>\\\r\\\n<Height>35\\.000000</Height>\\\r\\\n<Position>\\-4\\.999969,3\\.000000,0\\.000000</Position>\\\r\\\n<Opacity>0\\.000000</Opacity>\\\r\\\n<TextColor>0xffddcda9</TextColor>\\\r\\\n<Font>HUDDigitsBig</Font>\\\r\\\n<TextStyle>4624</TextStyle>\\\r\\\n<Outline>true</Outline>\\\r\\\n</Properties>\\\r\\\n</MyText>\\\r\\\n<MyImage>\\\r\\\n<Properties>\\\r\\\n<Id>I_Image</Id>\\\r\\\n<Width>28\\.000000</Width>\\\r\\\n<Height>35\\.000000</Height>\\\r\\\n<Position>72\\.000053,0\\.000000,0\\.000000</Position>\\\r\\\n<Opacity>0\\.000000</Opacity>\\\r\\\n<Pivot>13\\.999931,17\\.499992,0\\.000000</Pivot>\\\r\\\n<ImagePath>icon_team_timer</ImagePath>\\\r\\\n<HoldAspectRatio>true</HoldAspectRatio>\\\r\\\n<HoldAspectRatioX>true</HoldAspectRatioX>\\\r\\\n<HoldAspectPivotPosition>true</HoldAspectPivotPosition>\\\r\\\n</Properties>\\\r\\\n</MyImage>\\\r\\\n",
+            "<MyImage>\r\n<Properties>\r\n<Id>I_Image</Id>\r\n<Width>96.000000</Width>\r\n<Height>36.000000</Height>\r\n<Position>104.000000,0.000000,0.000000</Position>\r\n<Opacity>0.000000</Opacity>\r\n<Pivot>48.000000,18.000000,0.000000</Pivot>\r\n<ImagePath>irn_hud_num</ImagePath>\r\n<HoldAspectRatio>false</HoldAspectRatio>\r\n<HoldAspectRatioX>false</HoldAspectRatioX>\r\n<HoldAspectPivotPosition>true</HoldAspectPivotPosition>\r\n</Properties>\r\n</MyImage>\r\n<MyText>\r\n<Properties>\r\n<Id>T_Value</Id>\r\n<Width>96.000000</Width>\r\n<Height>32.000000</Height>\r\n<Position>104.000000,2.000000,0.000000</Position>\r\n<Opacity>0.000000</Opacity>\r\n<Anchor>5</Anchor>\r\n<TextColor>0xffe2b15e</TextColor>\r\n<Font>HUDDigitsBig</Font>\r\n<TextStyle>5136</TextStyle>\r\n<Outline>true</Outline>\r\n</Properties>\r\n</MyText>\r\n"
+          ],
+          [
+            "<Id>G_RightTimer</Id>\\\r\\\n<Width>100\\.000015</Width>\\\r\\\n<Height>34\\.999992</Height>\\\r\\\n<Position>196\\.000015,\\-1\\.000011,0\\.000000</Position>\\\r\\\n",
+            "<Id>G_RightTimer</Id>\r\n<Width>304.000031</Width>\r\n<Height>34.999992</Height>\r\n<Position>0.000000,39.000000,0.000000</Position>\r\n"
+          ],
+          [
+            "<MyText>\\\r\\\n<Properties>\\\r\\\n<Id>T_Value</Id>\\\r\\\n<Width>72\\.000000</Width>\\\r\\\n<Height>35\\.000000</Height>\\\r\\\n<Position>33\\.000031,3\\.000000,0\\.000000</Position>\\\r\\\n<Opacity>0\\.000000</Opacity>\\\r\\\n<Anchor>5</Anchor>\\\r\\\n<TextColor>0xffddcda9</TextColor>\\\r\\\n<Font>HUDDigitsBig</Font>\\\r\\\n<TextStyle>4368</TextStyle>\\\r\\\n<Outline>true</Outline>\\\r\\\n</Properties>\\\r\\\n</MyText>\\\r\\\n<MyImage>\\\r\\\n<Properties>\\\r\\\n<Id>I_Image</Id>\\\r\\\n<Width>28\\.000000</Width>\\\r\\\n<Height>35\\.000000</Height>\\\r\\\n<Position>0\\.000061,0\\.000000,0\\.000000</Position>\\\r\\\n<Opacity>0\\.000000</Opacity>\\\r\\\n<Pivot>13\\.999941,17\\.499992,0\\.000000</Pivot>\\\r\\\n<ImagePath>icon_team_timer</ImagePath>\\\r\\\n<HoldAspectRatio>true</HoldAspectRatio>\\\r\\\n<HoldAspectRatioX>true</HoldAspectRatioX>\\\r\\\n<HoldAspectPivotPosition>true</HoldAspectPivotPosition>\\\r\\\n</Properties>\\\r\\\n</MyImage>\\\r\\\n",
+            "<MyImage>\r\n<Properties>\r\n<Id>I_Image</Id>\r\n<Width>96.000000</Width>\r\n<Height>36.000000</Height>\r\n<Position>104.000000,0.000000,0.000000</Position>\r\n<Opacity>0.000000</Opacity>\r\n<Pivot>48.000000,18.000000,0.000000</Pivot>\r\n<ImagePath>irn_hud_num</ImagePath>\r\n<HoldAspectRatio>false</HoldAspectRatio>\r\n<HoldAspectRatioX>false</HoldAspectRatioX>\r\n<HoldAspectPivotPosition>true</HoldAspectPivotPosition>\r\n</Properties>\r\n</MyImage>\r\n<MyText>\r\n<Properties>\r\n<Id>T_Value</Id>\r\n<Width>96.000000</Width>\r\n<Height>32.000000</Height>\r\n<Position>104.000000,2.000000,0.000000</Position>\r\n<Opacity>0.000000</Opacity>\r\n<Anchor>5</Anchor>\r\n<TextColor>0xffe2b15e</TextColor>\r\n<Font>HUDDigitsBig</Font>\r\n<TextStyle>5136</TextStyle>\r\n<Outline>true</Outline>\r\n</Properties>\r\n</MyText>\r\n"
+          ],
+          [
+            "<Id>G_CenterTimer</Id>\\\r\\\n<Width>304\\.000031</Width>\\\r\\\n<Height>34\\.999992</Height>\\\r\\\n<Position>0\\.000004,62\\.999992,0\\.000000</Position>\\\r\\\n",
+            "<Id>G_CenterTimer</Id>\r\n<Width>304.000031</Width>\r\n<Height>34.999992</Height>\r\n<Position>0.000000,66.000000,0.000000</Position>\r\n"
+          ],
+          [
+            "<MyText>\\\r\\\n<Properties>\\\r\\\n<Id>T_Value</Id>\\\r\\\n<Width>35\\.999985</Width>\\\r\\\n<Height>35\\.000000</Height>\\\r\\\n<Position>150\\.000031,3\\.000000,0\\.000000</Position>\\\r\\\n<Opacity>0\\.000000</Opacity>\\\r\\\n<Anchor>5</Anchor>\\\r\\\n<TextColor>0xffddcda9</TextColor>\\\r\\\n<Font>HUDDigitsBig</Font>\\\r\\\n<TextStyle>4368</TextStyle>\\\r\\\n<Outline>true</Outline>\\\r\\\n</Properties>\\\r\\\n</MyText>\\\r\\\n<MyImage>\\\r\\\n<Properties>\\\r\\\n<Id>I_Image</Id>\\\r\\\n<Width>28\\.000000</Width>\\\r\\\n<Height>35\\.000000</Height>\\\r\\\n<Position>118\\.000053,0\\.000000,0\\.000000</Position>\\\r\\\n<Opacity>0\\.000000</Opacity>\\\r\\\n<Pivot>13\\.999931,17\\.499983,0\\.000000</Pivot>\\\r\\\n<ImagePath>icon_team_timer</ImagePath>\\\r\\\n<HoldAspectRatio>true</HoldAspectRatio>\\\r\\\n<HoldAspectRatioX>true</HoldAspectRatioX>\\\r\\\n<HoldAspectPivotPosition>true</HoldAspectPivotPosition>\\\r\\\n</Properties>\\\r\\\n</MyImage>\\\r\\\n",
+            "<MyImage>\r\n<Properties>\r\n<Id>I_Image</Id>\r\n<Width>96.000000</Width>\r\n<Height>36.000000</Height>\r\n<Position>104.000000,0.000000,0.000000</Position>\r\n<Opacity>0.000000</Opacity>\r\n<Pivot>48.000000,18.000000,0.000000</Pivot>\r\n<ImagePath>irn_hud_num</ImagePath>\r\n<HoldAspectRatio>false</HoldAspectRatio>\r\n<HoldAspectRatioX>false</HoldAspectRatioX>\r\n<HoldAspectPivotPosition>true</HoldAspectPivotPosition>\r\n</Properties>\r\n</MyImage>\r\n<MyText>\r\n<Properties>\r\n<Id>T_Value</Id>\r\n<Width>96.000000</Width>\r\n<Height>32.000000</Height>\r\n<Position>104.000000,2.000000,0.000000</Position>\r\n<Opacity>0.000000</Opacity>\r\n<Anchor>5</Anchor>\r\n<TextColor>0xffe2b15e</TextColor>\r\n<Font>HUDDigitsBig</Font>\r\n<TextStyle>5136</TextStyle>\r\n<Outline>true</Outline>\r\n</Properties>\r\n</MyText>\r\n"
+          ]
+        ]
+      },
+      {
+        "path": "CoJ2/Data/Menu/Mat/irancoj_blur.mat",
+        "pak": "CoJ2/Data0.pak",
+        "entry": "Data/Menu/Mat/menu_bckg_screenshot_alpha.mat",
+        "replace": [
+          [
+            "menu_bckg_screenshot\\.mtt",
+            "irancoj_blur.mtt"
+          ]
+        ]
+      },
+      {
+        "path": "CoJ2/Data/Menu/Mat/irancoj_blur.mtt",
+        "pak": "CoJ2/Data0.pak",
+        "entry": "Data/Menu/Mat/menu_bckg_screenshot.mtt",
+        "replace": [
+          [
+            "#include <menu_bckg_screenshot_ps\\.hlsl>",
+            "#include <irancoj_blur_ps.hlsl>"
+          ]
+        ]
+      },
+      {
+        "path": "CoJ2/Data/Menu/Mat/irancoj_blur_ps.hlsl",
+        "pak": "CoJ2/Data0.pak",
+        "entry": "Data/Menu/Mat/menu_bckg_screenshot_ps.hlsl",
+        "replace": [
+          [
+            "void main\\(PIX_PARAMS\\)[\\s\\S]*\\z",
+            "void main(PIX_PARAMS)\r\n{\r\n    // IranCoJ Edition: the snapshot behind in-game menus, blurred and darkened (it was sepia paper).\r\n    FLOAT2 uv = V_UV_0_TC.xy;\r\n    FLOAT4 sum = 0;\r\n    for (int x = -3; x <= 3; x++)\r\n        for (int y = -3; y <= 3; y++)\r\n            sum += Sample(s_screen, uv + FLOAT2(x * 0.0035, y * 0.0062));\r\n    FLOAT3 c = sum.rgb / 49.0;\r\n    c = lerp(Luminance_Equal(c).xxx, c, 0.8) * 0.6;\r\n    OUT.v_clr = FLOAT4(c, 1.0);\r\n\r\n    #if defined(ALPHA_BLEND_ON)\r\n        OUT.v_clr.a = CONST_0.w;\r\n    #endif\r\n}\r\n"
+          ]
+        ]
+      },
+      {
+        "path": "CoJ2/Data/Menu/TextureDefs/HUDTextures.def",
+        "pak": "CoJ2/Data0.pak",
+        "entry": "Data/Menu/TextureDefs/HUDTextures.def",
+        "replace": [
+          [
+            "\\z",
+            "\r\n\r\n//IranCoJ Edition: the in-game screens' top and bottom bars (HUD_Net.xui)\r\nTexture(\"irancoj_bar_top.dds\", 256, 64)\r\n{\r\n\tWhole(\"irn_bar_top\")\r\n}\r\n\r\nTexture(\"irancoj_bar_bottom.dds\", 256, 64)\r\n{\r\n\tWhole(\"irn_bar_bottom\")\r\n}\r\n\r\nTexture(\"irancoj_hud_strip.dds\", 64, 64)\r\n{\r\n\tWhole(\"irn_hud_strip\")\r\n}\r\n\r\n//IranCoJ Edition: HUD icons, defined again after hud_new.scr so ours are drawn\r\nTexture(\"irancoj_hud_icons.dds\", 512, 256)\r\n{\r\n\tRect(\"hud_team_red\", 0, 0, 140, 140)\r\n\tRect(\"hud_team_blue\", 142, 0, 282, 140)\r\n\tRect(\"icon_team_timer\", 284, 0, 340, 70)\r\n\tRect(\"icon_timer\", 342, 0, 384, 76)\r\n\tRect(\"hud_wanted\", 0, 142, 308, 226)\r\n}\r\n\r\nTexture(\"irancoj_hud_pill.dds\", 256, 64)\r\n{\r\n\tTileset(\"irn_pill_tile\")\r\n\t{\r\n\t\tRect(\"irn_pill_left\", 0, 0, 40, 64)\r\n\t\tRect(\"irn_pill_mid\", 40, 0, 216, 64)\r\n\t\tRect(\"irn_pill_right\", 216, 0, 256, 64)\r\n\t\tTop(\"irn_pill_mid\", 100, 0)\r\n\t\tCornerTopLeft(\"irn_pill_left\", 100, 0)\r\n\t\tCornerTopRight(\"irn_pill_right\", 100, 0)\r\n\t}\r\n}\r\n\r\nTexture(\"irancoj_panel.dds\", 256, 256)\r\n{\r\n\tTileset(\"irn_hudwin_tile\")\r\n\t{\r\n\t\tRect(\"irn_hudwin_tile\", 86, 86, 170, 170)\r\n\t\tRect(\"irn_hudwin_bottom\", 86, 170, 170, 256)\r\n\t\tRect(\"irn_hudwin_top\", 86, 0, 170, 86)\r\n\t\tRect(\"irn_hudwin_left\", 0, 86, 86, 170)\r\n\t\tRect(\"irn_hudwin_right\", 170, 86, 256, 170)\r\n\t\tRect(\"irn_hudwin_bottom_left\", 0, 170, 86, 256)\r\n\t\tRect(\"irn_hudwin_bottom_right\", 170, 170, 256, 256)\r\n\t\tRect(\"irn_hudwin_top_left\", 0, 0, 86, 86)\r\n\t\tRect(\"irn_hudwin_top_right\", 170, 0, 256, 86)\r\n\t\tCornerTopLeft(\"irn_hudwin_top_left\", 100, 0)\r\n\t\tCornerTopRight(\"irn_hudwin_top_right\", 100, 0)\r\n\t\tCornerBottomLeft(\"irn_hudwin_bottom_left\", 100, 0)\r\n\t\tCornerBottomRight(\"irn_hudwin_bottom_right\", 100, 0)\r\n\t\tTop(\"irn_hudwin_top\", 100, 0)\r\n\t\tBottom(\"irn_hudwin_bottom\", 100, 0)\r\n\t\tLeft(\"irn_hudwin_left\", 100, 0)\r\n\t\tRight(\"irn_hudwin_right\", 100, 0)\r\n\t\tMiddle(\"irn_hudwin_tile\", 100, 0)\r\n\t}\r\n}\r\n\r\nTexture(\"irancoj_hud_chips.dds\", 256, 256)\r\n{\r\n\tRect(\"irn_hud_timer\", 0, 0, 160, 52)\r\n\tRect(\"irn_hud_countdown\", 0, 56, 96, 92)\r\n\tRect(\"irn_hud_num\", 100, 56, 196, 92)\r\n\tRect(\"irn_badge_red\", 0, 96, 206, 150)\r\n\tRect(\"irn_badge_blue\", 0, 154, 206, 208)\r\n}\r\n"
+          ]
+        ]
+      },
+      {
+        "path": "CoJ2/Data/Menu/Hud/HUD_Common.xui",
+        "pak": "CoJ2/Data0.pak",
+        "entry": "Data/Menu/Hud/HUD_Common.xui",
+        "replace": [
+          [
+            "<ImagePath>button_1</ImagePath>",
+            "<ImagePath>irn_hud_strip</ImagePath>"
+          ],
+          [
+            "<BackgroundTexture>button_tile</BackgroundTexture>",
+            "<BackgroundTexture>irn_pill_tile</BackgroundTexture>"
+          ],
+          [
+            "0xff1f1810",
+            "0xffffffff"
+          ],
+          [
+            "menu_button_back_maskquad\\.mat",
+            "sprite_button.mat"
+          ],
+          [
+            "menu_button_back100_static\\.mat",
+            "sprite_button.mat"
+          ],
+          [
+            "<ImagePath>hud_window_tile</ImagePath>",
+            "<ImagePath>irn_hudwin_tile</ImagePath>"
+          ],
+          [
+            "<Id>IMAGE_3</Id>\\\r\\\n<Width>700\\.000000</Width>\\\r\\\n<Height>38\\.909092</Height>\\\r\\\n<Position>0\\.000000,\\-0\\.454540,0\\.000000</Position>\\\r\\\n<Opacity>0\\.000000</Opacity>\\\r\\\n<Anchor>15</Anchor>\\\r\\\n<Pivot>349\\.999939,19\\.454535,0\\.000000</Pivot>\\\r\\\n<ImagePath>hud_window_tile</ImagePath>\\\r\\\n<Color>0xfe000000</Color>\\\r\\\n<Material>menu_button_back100_static\\.mat</Material>\\\r\\\n<NextTextureStrideY>0\\.125000</NextTextureStrideY>\\\r\\\n</Properties>",
+            "<Id>IMAGE_3</Id>\r\n<Width>700.000000</Width>\r\n<Height>38.909092</Height>\r\n<Position>0.000000,-0.454540,0.000000</Position>\r\n<Opacity>0.000000</Opacity>\r\n<Anchor>15</Anchor>\r\n<Pivot>349.999939,19.454535,0.000000</Pivot>\r\n<ImagePath>hud_window_tile</ImagePath>\r\n<Color>0xffffffff</Color>\r\n<Material>menu_button_back100_static.mat</Material>\r\n<NextTextureStrideY>0.125000</NextTextureStrideY>\r\n</Properties>"
+          ]
+        ]
+      },
+      {
+        "path": "CoJ2/Data/Menu/Mat/irancoj_blur_pc.mat",
+        "pak": "CoJ2/Data0.pak",
+        "entry": "Data/Menu/Mat/menu_bckg_screenshot_PC.mat",
+        "replace": [
+          [
+            "menu_bckg_screenshot\\.mtt",
+            "irancoj_blur.mtt"
+          ]
+        ]
+      },
+      {
+        "path": "CoJ2/Data/COJ2 Voices&Texts.bin",
+        "pak": "CoJ2/DataEn.pak",
+        "entry": "Data/COJ2 Voices&Texts.bin",
+        "replace": [
+          [
+            "MenuNetSelectClass_UpgradeReady\\x0a\\x00U\\x00P\\x00G\\x00R\\x00A\\x00D\\x00E\\x00\\ \\x00T\\x00O\\x00",
+            "MenuNetSelectClass_UpgradeReady\u0007\u0000U\u0000P\u0000G\u0000R\u0000A\u0000D\u0000E\u0000"
+          ],
+          [
+            "NetMsg_TeamBlue\\x0d\\x00L\\x00A\\x00W\\x00M\\x00E\\x00N\\x00\\ \\x00\\(\\x00b\\x00l\\x00u\\x00e\\x00\\)\\x00",
+            "NetMsg_TeamBlue\u0006\u0000L\u0000A\u0000W\u0000M\u0000E\u0000N\u0000"
+          ],
+          [
+            "NetMsg_TeamRed\\x0d\\x00O\\x00U\\x00T\\x00L\\x00A\\x00W\\x00S\\x00\\ \\x00\\(\\x00r\\x00e\\x00d\\x00\\)\\x00",
+            "NetMsg_TeamRed\u0007\u0000O\u0000U\u0000T\u0000L\u0000A\u0000W\u0000S\u0000"
+          ]
+        ]
       }
     ],
     "files": [
       {
+        "path": "CoJ2/Data/Menu/Background_Scr_PC.binui",
+        "size": 12476,
+        "sha256": "c328a943938d90a9f8a5d234ce72b147e0f289f528ec69d2676538a480a392e4",
+        "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/edition/Background_Scr_PC.binui"
+      },
+      {
+        "path": "CoJ2/Data/Menu/Background_Skn_PC.binui",
+        "size": 3035,
+        "sha256": "5e6ffb37c15e23066bdec82b046e58e26e69bffb343c67b5f60263a08d84194a",
+        "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/edition/Background_Skn_PC.binui"
+      },
+      {
+        "path": "CoJ2/Data/Menu/Dashboard_Scr_PC.binui",
+        "size": 197232,
+        "sha256": "aa55eb64bffd7b09960e700bc4da6c837ad2bfc57c7a72f5eb325580169d679c",
+        "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/edition/Dashboard_Scr_PC.binui"
+      },
+      {
+        "path": "CoJ2/Data/Menu/Dashboard_Skn_PC.binui",
+        "size": 936025,
+        "sha256": "955891e7a705ca3470264e1b8268cc13921d3b5e7b869f631fc2745a1c476a25",
+        "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/edition/Dashboard_Skn_PC.binui"
+      },
+      {
+        "path": "CoJ2/Data/Menu/Fadeout_Scr_PC.binui",
+        "size": 7314,
+        "sha256": "16478f2cb0ef073d2feaa9d79450a904d1a9f1c4f65dfd3c8fead47d9ead068c",
+        "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/edition/Fadeout_Scr_PC.binui"
+      },
+      {
+        "path": "CoJ2/Data/Menu/Fadeout_Skn_PC.binui",
+        "size": 1632,
+        "sha256": "860ce933f50918f97a0cc0fe5be4f1c56ae8ac6e4e8562bb7be4dba58d8cfded",
+        "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/edition/Fadeout_Skn_PC.binui"
+      },
+      {
+        "path": "CoJ2/Data/Menu/Intro_Scr_PC.binui",
+        "size": 6883,
+        "sha256": "e4e7835111e75cfa4e87258f6e8a978a1db7d550cff14eda8825ca701a340b7b",
+        "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/edition/Intro_Scr_PC.binui"
+      },
+      {
+        "path": "CoJ2/Data/Menu/Intro_Skn_PC.binui",
+        "size": 3319,
+        "sha256": "bca50d73a9feccfdb3e35f5bc092694cd18689778eadc6e04c760f6a8272883a",
+        "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/edition/Intro_Skn_PC.binui"
+      },
+      {
         "path": "CoJ2/Data/Menu/MenuCommon_Scr_PC.binui",
-        "size": 223700,
-        "sha256": "318fd5931946fee93af282c9c12da10195548ceb4e005fdd4e76ad3dff1cf5b3",
+        "size": 224330,
+        "sha256": "4488d09cfc1fdb486cf90476a4dda83c315c993e7b4e9fb88039ada13ac51a89",
         "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/edition/MenuCommon_Scr_PC.binui"
       },
       {
+        "path": "CoJ2/Data/Menu/MenuCommon_Skn_PC.binui",
+        "size": 936700,
+        "sha256": "5f3e228d559f75310a517f24137ec4858fdb687f90b229bd690a9db05d475fbc",
+        "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/edition/MenuCommon_Skn_PC.binui"
+      },
+      {
+        "path": "CoJ2/Data/Menu/MenuIngameNetGamemode_Scr_PC.binui",
+        "size": 578074,
+        "sha256": "394a74826092849daa8b23a9177c3be9db599521dac84d396ead47883d0ef010",
+        "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/edition/MenuIngameNetGamemode_Scr_PC.binui"
+      },
+      {
+        "path": "CoJ2/Data/Menu/MenuIngameNetGamemode_Skn_PC.binui",
+        "size": 15776,
+        "sha256": "d3ea03ca5826cb1964100f4d43e6265503e5a773ee36fce5bbb428b85a989e8a",
+        "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/edition/MenuIngameNetGamemode_Skn_PC.binui"
+      },
+      {
+        "path": "CoJ2/Data/Menu/MenuIngameNet_Scr_PC.binui",
+        "size": 15975,
+        "sha256": "50c27400ac945f76380a2d7a692afa286e6e7ea0b7057c93aedf0fcff6935302",
+        "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/edition/MenuIngameNet_Scr_PC.binui"
+      },
+      {
+        "path": "CoJ2/Data/Menu/MenuIngameNet_Skn_PC.binui",
+        "size": 15473,
+        "sha256": "e90eeb5ff30e9332bafd4bba221d6319a0f12fa5995e46328e900317ef92f7b0",
+        "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/edition/MenuIngameNet_Skn_PC.binui"
+      },
+      {
+        "path": "CoJ2/Data/Menu/MenuIngameSingle_Scr_PC.binui",
+        "size": 247010,
+        "sha256": "cfedb8bcf66e75fd2b7efc600d2edb7d7a12549f3b983de5b2c36cee8e44fc0a",
+        "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/edition/MenuIngameSingle_Scr_PC.binui"
+      },
+      {
+        "path": "CoJ2/Data/Menu/MenuIngameSingle_Skn_PC.binui",
+        "size": 15473,
+        "sha256": "e90eeb5ff30e9332bafd4bba221d6319a0f12fa5995e46328e900317ef92f7b0",
+        "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/edition/MenuIngameSingle_Skn_PC.binui"
+      },
+      {
+        "path": "CoJ2/Data/Menu/MenuIngame_Scr_PC.binui",
+        "size": 197979,
+        "sha256": "203a228aa670b2b89e4fbdbdbdeafd8be273aee88e8fdf7bd14643ffda3fa827",
+        "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/edition/MenuIngame_Scr_PC.binui"
+      },
+      {
+        "path": "CoJ2/Data/Menu/MenuIngame_Skn_PC.binui",
+        "size": 15314,
+        "sha256": "ac06a964ff80a376f13beb35d2967c629f6294f496859c0b4e55908261784282",
+        "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/edition/MenuIngame_Skn_PC.binui"
+      },
+      {
         "path": "CoJ2/Data/Menu/MenuMain_Scr_PC.binui",
-        "size": 615430,
-        "sha256": "9c86a3f852984736986f6e88955fc4c28673099fe84bacd05d07086b3a8e66d0",
+        "size": 614725,
+        "sha256": "dbce86fc5861a19313778759f5fc7a72552418e067066c4e8b1f2199c46af641",
         "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/edition/MenuMain_Scr_PC.binui"
       },
       {
@@ -642,6 +1011,168 @@
         "size": 15194,
         "sha256": "5819c9f3ee60ce3192294dec97d6e7afa891181bd893ae513c09ec793f275c30",
         "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/edition/MenuMain_Skn_PC.binui"
+      },
+      {
+        "path": "CoJ2/Data/Menu/Movies/MenuMovie_0.wmv",
+        "size": 19431551,
+        "sha256": "0ae11c8ca0e2bc0b5275898075d595e0e730737806947931239c43b87bc8d981",
+        "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/edition/MenuMovie_0.wmv"
+      },
+      {
+        "path": "CoJ2/Data/Menu/scr/Credits_PC.scr",
+        "size": 3954,
+        "sha256": "765d964033e8ca2ccf10f1c3c21c0545c9a29f58ee91e5b5e52481f9fede22b2",
+        "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/edition/Credits_PC.scr"
+      },
+      {
+        "path": "CoJ2/Data/Menu/textures/irancoj_arrow.dds",
+        "size": 4224,
+        "sha256": "19f22ca7147242c14413097971d3c66bb8f963b1670089eaf848dd5c8c03a1e6",
+        "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/edition/irancoj_arrow.dds"
+      },
+      {
+        "path": "CoJ2/Data/Menu/textures/irancoj_band.dds",
+        "size": 65664,
+        "sha256": "de3bdc071c4df0723e202a28f575c44c9f1829f7463f0079acc0b0b7fea7d510",
+        "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/edition/irancoj_band.dds"
+      },
+      {
+        "path": "CoJ2/Data/Menu/textures/irancoj_bar_bottom.dds",
+        "size": 65664,
+        "sha256": "b50b6eb67c7926c37996d5b4e88a0ee4af7e6baab12a6accf7dc3588bac640d7",
+        "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/edition/irancoj_bar_bottom.dds"
+      },
+      {
+        "path": "CoJ2/Data/Menu/textures/irancoj_bar_top.dds",
+        "size": 65664,
+        "sha256": "28b085f2c764f0e9482a759933ef861801a3b21001d36fa6048d25bcc425a24b",
+        "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/edition/irancoj_bar_top.dds"
+      },
+      {
+        "path": "CoJ2/Data/Menu/textures/irancoj_bg.dds",
+        "size": 2097280,
+        "sha256": "dbdd16b98b1a8cf9b9f252cb08436d7d48df64c4a7ddab2a8c896c3bca6588b7",
+        "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/edition/irancoj_bg.dds"
+      },
+      {
+        "path": "CoJ2/Data/Menu/textures/irancoj_flat.dds",
+        "size": 4224,
+        "sha256": "0e63b2005a3923cbb007208f90952d5e77d4d19b17f43b5efe3852f62672d2c2",
+        "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/edition/irancoj_flat.dds"
+      },
+      {
+        "path": "CoJ2/Data/Menu/textures/irancoj_hud_chips.dds",
+        "size": 262272,
+        "sha256": "2251c11824331e8d8630227aa9a3b57f856d8f98c4d4d24ddec81bd475ff25f9",
+        "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/edition/irancoj_hud_chips.dds"
+      },
+      {
+        "path": "CoJ2/Data/Menu/textures/irancoj_hud_icons.dds",
+        "size": 524416,
+        "sha256": "6bcc0cb93be12655a652cf7aa7cc147093157af74612c7f1d2c32eac852c2efe",
+        "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/edition/irancoj_hud_icons.dds"
+      },
+      {
+        "path": "CoJ2/Data/Menu/textures/irancoj_hud_pill.dds",
+        "size": 65664,
+        "sha256": "15221cd352bb52e7c2b10d1750b6179b1a8515f8cc501e485365891c4a98c3f3",
+        "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/edition/irancoj_hud_pill.dds"
+      },
+      {
+        "path": "CoJ2/Data/Menu/textures/irancoj_hud_strip.dds",
+        "size": 16512,
+        "sha256": "73e4898874db35dd1bb1bc32af3b4864055cb97a4076c4769d3411f815dbac2b",
+        "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/edition/irancoj_hud_strip.dds"
+      },
+      {
+        "path": "CoJ2/Data/Menu/textures/irancoj_logo.dds",
+        "size": 524416,
+        "sha256": "a580f75b1f3034a8bbc5e69977536fc8d331c1780f74a0f9e30d2d5aaf698199",
+        "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/edition/irancoj_logo.dds"
+      },
+      {
+        "path": "CoJ2/Data/Menu/textures/irancoj_outline.dds",
+        "size": 65664,
+        "sha256": "875174d7e7e1e55b7d7c0696a2cfee0a5ed6db0b62ac514eb3776f64b15e6192",
+        "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/edition/irancoj_outline.dds"
+      },
+      {
+        "path": "CoJ2/Data/Menu/textures/irancoj_panel.dds",
+        "size": 262272,
+        "sha256": "91d8791aea3af8e92132f56bd776fd915969d34f23c45c92d952420189020d48",
+        "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/edition/irancoj_panel.dds"
+      },
+      {
+        "path": "CoJ2/Data/Menu/textures/irancoj_panel_blue.dds",
+        "size": 1048704,
+        "sha256": "e21b815d7e2bc890a46232942f231d43572656cda20e3bee303385657601fb84",
+        "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/edition/irancoj_panel_blue.dds"
+      },
+      {
+        "path": "CoJ2/Data/Menu/textures/irancoj_panel_red.dds",
+        "size": 1048704,
+        "sha256": "69fc2f9e2cd354e778ed971786051b1d1c43ab39536216de8e3d6690f9ba74e5",
+        "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/edition/irancoj_panel_red.dds"
+      },
+      {
+        "path": "CoJ2/Data/Menu/textures/irancoj_panel_solo.dds",
+        "size": 1048704,
+        "sha256": "916dca821c60a14ea244444f8803f18e3396a53e28ec83b9464b6bcd3304f74d",
+        "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/edition/irancoj_panel_solo.dds"
+      },
+      {
+        "path": "CoJ2/Data/Menu/textures/irancoj_scroll_knob.dds",
+        "size": 8320,
+        "sha256": "0c3019c2dcf5b5aaf409f048c2b00a7225285fccffe520aae47c93879805476e",
+        "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/edition/irancoj_scroll_knob.dds"
+      },
+      {
+        "path": "CoJ2/Data/Menu/textures/irancoj_scroll_track.dds",
+        "size": 8320,
+        "sha256": "8b6013f4e45e8b6127bb6f49bbe57cc4d841e3a960b331d818714602bb402336",
+        "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/edition/irancoj_scroll_track.dds"
+      },
+      {
+        "path": "CoJ2/Data/Music/COJ2_New_Menu.ogg",
+        "size": 544719,
+        "sha256": "dd48a559348a32678c5c20b6abd62bf0f0718b0678e0756d49cb68562ea484ff",
+        "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/edition/COJ2_New_Menu.ogg"
+      },
+      {
+        "path": "CoJ2/Data/Panel/Clarendon Condensed_32.dds",
+        "size": 2097280,
+        "sha256": "ec65c31a5bdb3bcec8561622b54fea3daf8908a1bc62c10febdaa59c3aaa7343",
+        "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/edition/Clarendon.Condensed_32.dds"
+      },
+      {
+        "path": "CoJ2/Data/Panel/Clarendon Condensed_32.fm",
+        "size": 7272,
+        "sha256": "9dd86b7bf45200e32fe7e8ee956d30046ac404e3cf5f7662a9d5e020cf9b9707",
+        "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/edition/Clarendon.Condensed_32.fm"
+      },
+      {
+        "path": "CoJ2/Data/Panel/Typodermic_24.dds",
+        "size": 1048704,
+        "sha256": "daa145943adfa9bf5a11ccb19b807486280dae0397cdf50ee33f76068f5cbffc",
+        "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/edition/Typodermic_24.dds"
+      },
+      {
+        "path": "CoJ2/Data/Panel/Typodermic_24.fm",
+        "size": 7171,
+        "sha256": "1da0386644261d9248c905abba60b145c8a8dd50713ce48812354dc8ef32982a",
+        "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/edition/Typodermic_24.fm"
+      },
+      {
+        "path": "CoJ2/Data/Panel/Typodermic_36.dds",
+        "size": 131200,
+        "sha256": "fd1fd0483f5161fe11ad8f67e752ee8af6dfab16330d91d649b1f1946fd795b8",
+        "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/edition/Typodermic_36.dds"
+      },
+      {
+        "path": "CoJ2/Data/Panel/Typodermic_36.fm",
+        "size": 899,
+        "sha256": "a8d5c041d4fbcfbdf214525846232a3c9cf71c4b950667a07467af4de2164974",
+        "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/edition/Typodermic_36.fm"
       },
       {
         "path": "CoJ2/Data/debugconf.scr",
