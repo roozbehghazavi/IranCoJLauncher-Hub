@@ -145,6 +145,18 @@ def solo_panel():
     return score_panel(GOLD, 0, 32)
 
 
+def spinner():
+    """64x64 loading spinner (replaces the revolver drum; the game spins it): a wood ring with a gold arc that
+    fades out behind its head."""
+    im = Image.new("RGBA", (64, 64))
+    d = ImageDraw.Draw(im)
+    box = [6, 6, 57, 57]
+    d.ellipse(box, outline=WOOD + (255,), width=5)
+    for k in range(48):
+        d.arc(box, -90 + k * 5, -90 + k * 5 + 6, fill=GOLD + (int(255 * k / 47),), width=5)
+    return im
+
+
 def still(source):
     """1024x512 (stretched back to 16:9 on screen): the background, softened and darkened, for the profile pages."""
     from PIL import ImageFilter
@@ -213,6 +225,7 @@ if __name__ == "__main__":
     write_dds(team_panel((196, 72, 52)), os.path.join(out, "textures", "irancoj_panel_red.dds"))
     write_dds(team_panel((76, 140, 190)), os.path.join(out, "textures", "irancoj_panel_blue.dds"))
     write_dds(solo_panel(), os.path.join(out, "textures", "irancoj_panel_solo.dds"))
+    write_dds(spinner(), os.path.join(out, "textures", "irancoj_spinner.dds"))
     write_dds(bar(True), os.path.join(out, "textures", "irancoj_bar_top.dds"))
     write_dds(bar(False), os.path.join(out, "textures", "irancoj_bar_bottom.dds"))
     write_dds(scroll_track(), os.path.join(out, "textures", "irancoj_scroll_track.dds"))

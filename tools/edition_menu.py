@@ -552,4 +552,28 @@ write("CoJ2MenuSkin.xui", t[:m.start()] + row + t[m.end():])
 # In game, the loading backdrop is the same snapshot: blurred, not sepia.
 t = written["BackgroundLoading.xui"]
 t = set_prop(t, "MenuBackgroundIngame", "Material", "irancoj_blur_pc.mat")
+# Multiplayer loading (design: tools/mockups/loading_mockup.py). The map's own picture in colour behind, darker on
+# the left, and the dark card under the objectives map are drawn by loading_bckg.mat (edition.json), so nothing is
+# added here. Left: mode, map name, place and date, the story; right: the objectives map; bottom right: spinner.
+# The place labels on the map keep their outline (they sit on the light map art).
+LEFT, MAP_X, MAP_Y = 96, 690, 108
+for element_id, (x, y, w, h, color, font_, style) in {
+        "T_Mode": (LEFT, 122, 560, 40, GOLD, "TextMedium", "4368"),
+        "T_MapName": (LEFT, 150, 560, 60, PARCHMENT, "TextHuge", "4368"),
+        "T_Flavour": (LEFT, 214, 560, 40, SAND, "TextNormal", "4368"),
+        "T_Loading": (900, 648, 240, 32, PARCHMENT, "TextMedium", "4624")}.items():
+    t = set_prop(t, element_id, "Position", f"{x}.000000,{y}.000000,0.000000")
+    for prop, value in (("Width", f"{w}.000000"), ("Height", f"{h}.000000"), ("TextColor", color), ("Font", font_),
+                        ("TextStyle", style), ("Outline", "false"), ("VerticalAlignDown", "true")):
+        t = set_prop(t, element_id, prop, value)
+t = set_prop(t, "map", "Position", f"{MAP_X}.000000,{MAP_Y}.000000,0.000000")
+for desc in ("T_Desc0", "T_Desc1"):  # inside the map group: placed back on the left, under the name
+    for prop, value in (("Position", f"{LEFT - MAP_X}.000000,{272 - MAP_Y}.000000,0.000000"), ("Width", "500.000000"),
+                        ("Height", "320.000000"), ("TextColor", PARCHMENT), ("TextStyle", "4368"), ("Outline", "false")):
+        t = set_prop(t, desc, prop, value)
+for drum_prop, value in (("Position", "1156.000000,640.000000,0.000000"), ("Width", "48.000000"), ("Height", "48.000000"),
+                         ("Pivot", "24.000000,24.000000,0.000000")):
+    t = set_prop(t, "Drum", drum_prop, value)  # the first Drum: the loading spinner (irancoj_spinner.dds, see edition.json)
+for element_id in ("Text", "T_Hint", "SubtitleText", "SubtitleText2"):
+    t = set_prop(set_prop(t, element_id, "TextColor", PARCHMENT), element_id, "Outline", "false")
 write("BackgroundLoading.xui", t)
