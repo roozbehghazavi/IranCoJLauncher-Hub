@@ -15,6 +15,9 @@ import sys
 import tempfile
 import zipfile
 
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from clean_map_paks import allowed as map_file_allowed  # noqa: E402
+
 REPO = os.environ["GITHUB_REPOSITORY"]
 BRANCH = os.environ.get("HUB_BRANCH", "main")
 MAPS_DIR = "MapsNet"
@@ -124,14 +127,16 @@ def git_map_files():
 
 
 def check_map_pak(name, path):
-    """A map pak must not carry a player's profile: the game reads every pak, so an out/ folder in one (e.g. a
-    lastuser.scr naming its maker) overrides every player's own out/ files."""
+    """A map pak may only carry Data/MapsNet/... and a map-named .scr at its root (tools/clean_map_paks.py removes
+    the rest): the game reads every pak, so server config (ServerAdmins.scr), a player's out/ folder or copies of
+    the game's own files in one map override them for everyone."""
     if not name.lower().endswith(".pak"):
         return
     with zipfile.ZipFile(path) as z:
-        bad = [n for n in z.namelist() if n.replace("\\", "/").lower().startswith("out/")]
+        bad = [n for n in z.namelist() if not n.endswith("/") and not map_file_allowed(n)]
     if bad:
-        sys.exit(f"{MAPS_DIR}/{name}: ships profile files ({', '.join(bad[:5])}) - remove the out/ folder from the pak")
+        sys.exit(f"{MAPS_DIR}/{name}: ships files a map must not ({', '.join(bad[:5])}"
+                 f"{'...' if len(bad) > 5 else ''}) - run python tools/clean_map_paks.py {MAPS_DIR}/{name}")
 
 
 def sync_maps_to_release():
