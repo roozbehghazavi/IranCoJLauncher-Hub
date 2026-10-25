@@ -57,16 +57,13 @@ def mix(a, b, t):
     return tuple(round(x * (1 - t) + y * t) for x, y in zip(a, b))
 
 
-def score():
-    """The team score's plate, 184x52 in a 256x64 texture (its rect is exactly the plate, so however the score's
-    html draws its background, blue stays left and red right): dark blue | dark red, wood frame and divider."""
+def pill():
+    """256x64 for html backgrounds (they take a tileset laid out like the game's button_tile: left cap 0-40,
+    stretched middle 40-216, right cap 216-256, all full height): dark smoke, rounded, gold bar on the left."""
     im = Image.new("RGBA", (256, 64))
     d = ImageDraw.Draw(im)
-    d.rectangle([0, 0, 183, 51], fill=INK + (255,))
-    d.rectangle([2, 2, 90, 49], fill=mix(INK, BLUE, 0.5) + (255,))
-    d.rectangle([93, 2, 181, 49], fill=mix(INK, RED, 0.5) + (255,))
-    d.rectangle([91, 4, 92, 47], fill=WOOD + (255,))
-    d.rectangle([0, 0, 183, 51], outline=WOOD + (255,), width=2)
+    d.rounded_rectangle([0, 4, 255, 59], radius=10, fill=INK + (225,), outline=WOOD + (255,), width=2)
+    d.rectangle([10, 16, 13, 47], fill=GOLD + (255,))
     return im
 
 
@@ -134,6 +131,6 @@ def icons():
 
 if __name__ == "__main__":
     out = os.path.join(sys.argv[1], "textures")
-    for name, image in (("irancoj_hud_strip", strip()), ("irancoj_hud_score", score()), ("irancoj_hud_icons", icons()),
+    for name, image in (("irancoj_hud_strip", strip()), ("irancoj_hud_pill", pill()), ("irancoj_hud_icons", icons()),
                         ("irancoj_hud_chips", chips())):
         write_dds(image, os.path.join(out, name + ".dds"))

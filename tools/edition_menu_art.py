@@ -119,16 +119,30 @@ def flat():
     return Image.new("RGBA", (64, 16), (255, 255, 255, 235))
 
 
-def team_panel(color):
-    """A scoreboard team panel, drawn whole (the game draws only a tileset's middle there): 512x512 stretched to
-    the panel's 568x457, so the header band covers the team name and column titles (the top 58 px)."""
+def score_panel(color, band, rule):
+    """A scoreboard panel, drawn whole (the game draws only a tileset's middle there): 512x512 stretched to the
+    panel's 568x457. A faint team tint behind the team name row (top `band` px, the game colours that text in the
+    team colour, so the tint stays dark), a coloured top edge, and a line under the column titles at `rule` px."""
     sy = 512 / 457
     im = Image.new("RGBA", (512, 512), SMOKE + (238,))
     d = ImageDraw.Draw(im)
-    d.rectangle([0, 0, 511, round(58 * sy)], fill=tuple(round(c * 0.45 + s * 0.55) for c, s in zip(color, SMOKE)) + (245,))
+    if band:
+        d.rectangle([0, 0, 511, round(band * sy)], fill=tuple(round(c * 0.18 + s * 0.82) for c, s in zip(color, SMOKE)) + (245,))
     d.rectangle([0, 0, 511, 511], outline=WOOD + (255,), width=2)
-    d.rectangle([0, 0, 511, 3], fill=color + (255,))  # team-coloured top edge
+    d.rectangle([0, 0, 511, 3], fill=color + (255,))
+    y = round(rule * sy)
+    d.rectangle([16, y, 495, y + 1], fill=WOOD + (255,))
     return im
+
+
+def team_panel(color):
+    """Team page: name row 9..33, column titles 33..55, rows from 57."""
+    return score_panel(color, 34, 56)
+
+
+def solo_panel():
+    """One-page scoreboard (shootout, wanted): column titles 9..31, rows from 33; gold edge, no band."""
+    return score_panel(GOLD, 0, 32)
 
 
 def still(source):
@@ -198,6 +212,7 @@ if __name__ == "__main__":
     write_dds(panel(), os.path.join(out, "textures", "irancoj_panel.dds"))
     write_dds(team_panel((196, 72, 52)), os.path.join(out, "textures", "irancoj_panel_red.dds"))
     write_dds(team_panel((76, 140, 190)), os.path.join(out, "textures", "irancoj_panel_blue.dds"))
+    write_dds(solo_panel(), os.path.join(out, "textures", "irancoj_panel_solo.dds"))
     write_dds(bar(True), os.path.join(out, "textures", "irancoj_bar_top.dds"))
     write_dds(bar(False), os.path.join(out, "textures", "irancoj_bar_bottom.dds"))
     write_dds(scroll_track(), os.path.join(out, "textures", "irancoj_scroll_track.dds"))

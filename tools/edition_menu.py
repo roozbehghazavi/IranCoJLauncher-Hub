@@ -436,8 +436,9 @@ for n in range(3):
             g = set_prop(g, icon, "Position", "0.000000,0.000000,0.000000")
         return g
     t = in_group(t, "G_ClassInfo", lambda g, f=weapon_row, n=n: in_group(g, f"Weapon{n}", f))
-# The info's second line (what the upgrade adds) is the one beside the cost.
-for element_id, (x, y, w, h) in {"H_UpgradeInfoLabel": (8, 378, 240, 58), "T_UpgradeInfoCost": (196, 404, 132, 32),
+# The info's second line (what the upgrade adds) is the one beside the cost (the html's lines sit higher than
+# an even split of its box: the cost is raised to meet it).
+for element_id, (x, y, w, h) in {"H_UpgradeInfoLabel": (8, 378, 240, 58), "T_UpgradeInfoCost": (196, 390, 132, 32),
                                  "B_Upgrade": (8, 444, 320, 36), "T_WarningNotAvailable": (8, 444, 320, 36)}.items():
     t = set_prop(t, element_id, "Position", f"{x}.000000,{y}.000000,0.000000")
     t = set_prop(t, element_id, "Width", f"{w}.000000")
@@ -482,8 +483,13 @@ for name in ("MenuNetResults.xui", "MenuNetResults_PC.xui"):
     t = written[name]
     t = flat_texts(t, {"T_MapName": PARCHMENT, "T_ModeName": GOLD, "T_Timer": GOLD, "T_GameSettings": PARCHMENT})
     t = baseline(t, [(("T_MapName", "T_ModeName", "T_Timer", "T_GameSettings"), (34, 50))])
-    for group, panel in (("G_RedBackground", "irn_panel_red_tile"), ("G_BlueBackground", "irn_panel_blue_tile")):
+    for group, panel in (("G_RedBackground", "irn_panel_red_tile"), ("G_BlueBackground", "irn_panel_blue_tile"),
+                         ("G_Individual", "irn_panel_solo")):
         t = in_group(t, group, lambda g, panel=panel: set_prop(g, "Background", "ImagePath", panel))
+    # Column titles in sand over the panel's rule, the team score in parchment (the team name keeps its colour).
+    for element_id, color in (("H_HeaderList", DUST), ("H_Score", PARCHMENT)):
+        t = re.sub(r"(<Id>" + element_id + r"</Id>(?:(?!</Properties>).)*?)(</Properties>)",
+                   lambda m, color=color: m.group(1) + f"<DefaultFontColor>{color}</DefaultFontColor>\r\n" + m.group(2), t, flags=re.S)
     head = re.search(r"<XuiScene>\r?\n<Properties>.*?</Properties>\r?\n", t, re.S)
     t = t[:head.end()] + top_bar + t[head.end():]
     write(name, t)
