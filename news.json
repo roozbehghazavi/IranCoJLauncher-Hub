@@ -12,18 +12,20 @@
   {
     "id": "third-person",
     "tag": "NEW",
-    "title": "Third person\nand crosshairs",
-    "text": "Press F5 for an over-the-shoulder view, the middle mouse button swaps shoulders. Pick your crosshair in Settings: classic, dot, circle, ticks or none.",
-    "date": "2026-10-26",
+    "title": "Third Person",
+    "text": "Press F5 for an over-the-shoulder view; the middle mouse button swaps shoulders. Scopes switch to first person. Pick your crosshair in Settings.",
+    "date": "2026-10-27",
     "action": "settings",
-    "actionLabel": "Choose crosshair"
+    "actionLabel": "Choose crosshair",
+    "slide": true,
+    "image": "https://raw.githubusercontent.com/roozbehghazavi/IranCoJLauncher-Hub/main/news/images/third-person.jpg"
   },
   {
-    "id": "new-classes-2",
+    "id": "new-classes-202",
     "tag": "MOD UPDATE",
-    "title": "New Classes 2.0",
-    "text": "Silas Greaves, John Wesley Hardin and Billy the Kid join the fight as the Rancher, Duelist and Rifleman, with new class pictures and a fix for the crash on death.",
-    "date": "2026-10-26",
+    "title": "New Classes 2.0.2",
+    "text": "Silas Greaves, John Wesley Hardin and Billy the Kid as the Rancher, Duelist and Rifleman. 2.0.2 cuts the stutter when they spawn and adds the crosshair styles.",
+    "date": "2026-10-27",
     "slide": true,
     "action": "mods",
     "actionLabel": "Update",
