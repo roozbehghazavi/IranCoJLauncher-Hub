@@ -1,0 +1,11 @@
+; IranCoJ client mods - one DLL per line. ';' or '#' begins a comment.
+; Files are loaded from this folder (next to dinput8.dll).
+;
+; A name listed here that is not installed is simply skipped, so this file is
+; safe to copy over as-is: you get whichever of these you actually have.
+
+spectate.dll
+voicechat.dll
+directjoinfix.dll
+newclasses.dll
+

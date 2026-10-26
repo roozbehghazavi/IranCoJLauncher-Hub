@@ -573,25 +573,42 @@ t = set_prop(t, "Loading", "Material", "irancoj_loading.mat")  # its own copy of
 # added here. Left: mode, map name, place and date, the story; right: the objectives map; bottom right: spinner.
 # The place labels on the map keep their outline (they sit on the light map art). The game places the spinner
 # (Drum) and "Loading..." under it itself, from the screen size, at the bottom right: the card stays left of them.
-LEFT, MAP_X, MAP_Y = 96, 590, 108
+# The map group is drawn at MAP_SCALE (map art, card and the place labels the game puts on it shrink together) with
+# its card's top-left at CARD_X, CARD_Y, so long map names get NAME_W px before it. The story texts live in the same
+# group, so they get the inverse scale and a position worked back through the group's.
+LEFT, NAME_W = 96, 560
+MAP_SCALE, CARD_X, CARD_Y = 0.82, 700, 94
+PIVOT = 250  # the map group's own pivot (its centre; the group is 500x500)
+MAP_X = CARD_X - PIVOT + MAP_SCALE * (PIVOT + 14)  # card = map art + 14 px, scaled around the pivot
+MAP_Y = CARD_Y - PIVOT + MAP_SCALE * (PIVOT + 14)
+
+
+def in_map(x, y):
+    """Group-local position that lands on screen (x, y) inside the scaled map group."""
+    return PIVOT + (x - MAP_X - PIVOT) / MAP_SCALE, PIVOT + (y - MAP_Y - PIVOT) / MAP_SCALE
+
+
 STORY = "0xffdccfb6"  # the map's story / hint: light sand, so the body text doesn't read as plain white
 for element_id, (x, y, w, h, color, font_, style) in {
-        "T_Mode": (LEFT, 122, 460, 40, GOLD, "TextMedium", "4368"),
-        "T_MapName": (LEFT, 150, 460, 60, PARCHMENT, "TextHuge", "4368"),
-        "T_Flavour": (LEFT, 214, 460, 40, SAND, "TextNormal", "4368")}.items():
+        "T_Mode": (LEFT, 122, NAME_W, 40, GOLD, "TextMedium", "4368"),
+        "T_MapName": (LEFT, 150, NAME_W, 60, PARCHMENT, "TextHuge", "4368"),
+        "T_Flavour": (LEFT, 214, NAME_W, 40, SAND, "TextNormal", "4368")}.items():
     t = set_prop(t, element_id, "Position", f"{x}.000000,{y}.000000,0.000000")
     for prop, value in (("Width", f"{w}.000000"), ("Height", f"{h}.000000"), ("TextColor", color), ("Font", font_),
                         ("TextStyle", style), ("Outline", "false"), ("VerticalAlignDown", "true")):
         t = set_prop(t, element_id, prop, value)
-t = set_prop(t, "map", "Position", f"{MAP_X}.000000,{MAP_Y}.000000,0.000000")
+t = set_prop(t, "map", "Position", f"{MAP_X:.6f},{MAP_Y:.6f},0.000000")
+t = set_prop(t, "map", "Scale", f"{MAP_SCALE:.6f},{MAP_SCALE:.6f},1.000000")
 # The objectives map pictures draw their own dark card with the gold edge (irancoj_mapcard.mat, an Edition file):
 # 14 px larger on every side, the map art inset. Maps whose .trk names no map picture get no card.
 for image in ("I_Image0", "I_Image1"):
     for prop, value in (("Material", "irancoj_mapcard.mat"), ("Width", "528.000000"), ("Height", "528.000000"),
                         ("Position", "-14.000000,-14.000000,0.000000"), ("Pivot", "264.000000,264.000000,0.000000")):
         t = set_prop(t, image, prop, value)
-for desc in ("T_Desc0", "T_Desc1"):  # inside the map group: placed back on the left, under the name
-    for prop, value in (("Position", f"{LEFT - MAP_X}.000000,{272 - MAP_Y}.000000,0.000000"), ("Width", "460.000000"),
+DESC_X, DESC_Y = in_map(LEFT, 272)
+for desc in ("T_Desc0", "T_Desc1"):  # inside the map group: placed back on the left, under the name, at full size
+    for prop, value in (("Position", f"{DESC_X:.6f},{DESC_Y:.6f},0.000000"), ("Pivot", "0.000000,0.000000,0.000000"),
+                        ("Scale", f"{1 / MAP_SCALE:.6f},{1 / MAP_SCALE:.6f},1.000000"), ("Width", "460.000000"),
                         ("Height", "320.000000"), ("TextColor", STORY), ("TextStyle", "4368"), ("Outline", "false")):
         t = set_prop(t, desc, prop, value)
 for element_id in ("Text", "T_Hint", "SubtitleText", "SubtitleText2", "T_Loading"):

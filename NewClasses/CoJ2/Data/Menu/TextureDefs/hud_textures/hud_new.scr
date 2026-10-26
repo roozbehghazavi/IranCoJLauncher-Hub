@@ -104,7 +104,6 @@ Texture("hud_new.dds",1024,1024)
     Rect("hud_icons_star_silver"          , 276, 891, 312, 927) //  36x 36
     Rect("hud_mp_star_gold"               , 276, 929, 312, 965) //  36x 36
     Rect("hud_mp_star_silver"             , 276, 967, 312,1003) //  36x 36
-    Rect("hud_crosshair_helper"           , 258, 224, 290, 256) //  32x 32
     Rect("hud_ping_a"                     , 292, 224, 324, 256) //  32x 32
     Rect("hud_ping_b"                     , 326, 224, 358, 256) //  32x 32
     Rect("hud_ping_c"                     , 967,  57, 999,  89) //  32x 32
@@ -141,7 +140,6 @@ Texture("hud_new.dds",1024,1024)
     Rect("hud_voice_idle"                 , 789, 350, 809, 367) //  20x 17
     Rect("hud_voice_on"                   , 811, 350, 831, 367) //  20x 17
     Rect("quality_box"                    , 360, 246, 370, 256) //  10x 10
-    Rect("hud_crosshair"                  , 384, 251, 406, 255) //  22x  4
     Rect("white"                          , 378, 201, 382, 205) //   4x  4
     Rect("hud_skull_drum_left"            , 258, 126, 306, 222) //  48x 96 //left side
     Rect("hud_skull_drum_right"           , 306, 126, 354, 222) //  48x 96 //right side
@@ -158,3 +156,11 @@ Texture("net_characters.dds",4096,2048)
     Rect("hud_icon_idle_tomahawk"         ,3864,   4,3954,  94) //  90x 90 IranCoJ: the tomahawk (kill list) - in the loose net_characters.dds
     Rect("hud_icons_tomahawk"             ,3864,   4,3954,  94) //  90x 90 IranCoJ: the same
 }
+
+// IranCoJ: irancoj_crosshair.dds is really 128x64 (twice as sharp), declared at the vanilla pieces' size
+Texture("irancoj_crosshair.dds",64,32)
+{
+    Rect("hud_crosshair_helper"           ,   0,   0,  32,  32) //  32x 32 IranCoJ: the crosshair style's centre ring
+    Rect("hud_crosshair"                  ,  32,   0,  54,   4) //  22x  4 IranCoJ: its spread tick
+}
+// irancoj_crosshair.dds is written by the launcher (Settings > Crosshair) from Hud/Textures/irancoj_crosshair_<style>.dds

@@ -50,7 +50,7 @@ On the Steam Deck, open it in Desktop Mode; you can then add it to Steam as a no
 - **IranCoJ Edition:** a multiplayer-only copy of the game with a new look (menus, in-game screens, HUD and
   fonts), its own menu music, and profiles and settings kept apart from your original game.
 - **Every community map**, downloaded and updated automatically.
-- **Mods, ready to play.** Server list, spectating, voice chat and the new classes come with the Edition.
+- **Mods, ready to play.** Server list, spectating, voice chat, the new classes and the third-person camera come with the Edition.
   Extra mods can be switched on or off from the launcher at any time.
 
 | Mod | What it does |
@@ -58,7 +58,8 @@ On the Steam Deck, open it in Desktop Mode; you can then add it to Steam as a no
 | Server List | In-game server list and direct join |
 | Spectate | Watch other players from the in-game menu |
 | Voice Chat | Talk to other players in game |
-| New Classes | Rancher and Redneck as playable classes; Silas Greaves, John Wesley Hardin and Billy the Kid as characters |
+| New Classes | Rancher and Redneck as playable classes; Silas Greaves, John Wesley Hardin and Billy the Kid as characters; crosshair styles |
+| Third-Person Camera | Over-the-shoulder view (F5), middle mouse swaps shoulders |
 | Gore *(optional)* | Richer blood and hit effects |
 | No DOF & Motion Blur *(optional)* | A sharper picture without depth of field and motion blur |
 | Gun Sounds *(optional)* | Replacement weapon and explosion sounds |

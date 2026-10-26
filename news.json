@@ -10,6 +10,15 @@
     "image": "https://raw.githubusercontent.com/roozbehghazavi/IranCoJLauncher-Hub/main/news/images/edition.jpg"
   },
   {
+    "id": "third-person",
+    "tag": "NEW",
+    "title": "Third person\nand crosshairs",
+    "text": "Press F5 for an over-the-shoulder view, the middle mouse button swaps shoulders. Pick your crosshair in Settings: classic, dot, circle, ticks or none.",
+    "date": "2026-10-26",
+    "action": "settings",
+    "actionLabel": "Choose crosshair"
+  },
+  {
     "id": "new-classes-2",
     "tag": "MOD UPDATE",
     "title": "New Classes 2.0",
