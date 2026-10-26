@@ -1,0 +1,6 @@
+import "border_gun_a.mtt"
+
+sub material()
+{
+    use mtt_character();
+}

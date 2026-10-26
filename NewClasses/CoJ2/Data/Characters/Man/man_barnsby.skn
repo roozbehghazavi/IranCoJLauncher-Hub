@@ -1,0 +1,379 @@
+// ======================== Barnsby ========================
+Skin("Barnsby")
+{
+	!include("man_surfaces.skt")
+	!include("man_disable_anims_on_lod.skt")
+	!include("man_shoes_c.skt")
+	!include("barnsby_pants.skt")
+	!include("barnsby_torso.skt")
+	!include("man_hands_a.skt")
+	!include("barnsby_head.skt")
+	!include("barnsby_accessories.skt")
+	
+	Hide("HolsterL")
+
+    ColorPreset("South")
+    {
+       ColorI(0, 255, 255, 255)
+       ColorI(2, 255, 255, 255)
+       ColorI(3, 105, 112, 116)
+    }
+}
+Skin("Barnsby_player")
+{
+	FilterInEditor()
+	!include("man_surfaces.skt")
+	!include("man_disable_anims_on_lod.skt")
+	!include("man_shoes_c.skt")
+	!include("barnsby_pants.skt")
+	!include("barnsby_torso.skt")
+	!include("man_hands_a.skt")
+	!include("barnsby_head.skt")
+	!include("barnsby_accessories.skt")
+	!include("man_player.skt")
+	
+	
+	Hide("HolsterL")
+}
+Skin("Barnsby_highlight")
+{
+	FilterInEditor()
+	!include("man_surfaces.skt")
+	!include("man_disable_anims_on_lod.skt")
+	!include("man_shoes_c.skt")
+	!include("barnsby_pants.skt")
+	!include("barnsby_torso.skt")
+	!include("man_hands_a.skt")
+	!include("barnsby_head.skt")
+	!include("barnsby_accessories.skt")
+	
+	
+	Hide("HolsterL")
+}
+Skin("Barnsby_marked")
+{
+	FilterInEditor()
+	!include("man_surfaces.skt")
+	!include("man_disable_anims_on_lod.skt")
+	!include("man_shoes_c.skt")
+	!include("barnsby_pants.skt")
+	!include("barnsby_torso.skt")
+	!include("man_hands_a.skt")
+	!include("barnsby_head.skt")
+	!include("barnsby_accessories.skt")
+	
+	
+	Hide("HolsterL")
+}
+Skin("Barnsby_null")
+{
+	FilterInEditor()
+	!include("man_surfaces.skt")
+	!include("man_disable_anims_on_lod.skt")
+	!include("man_shoes_c.skt")
+	!include("barnsby_pants.skt")
+	!include("barnsby_torso.skt")
+	!include("man_hands_a.skt")
+	!include("barnsby_head.skt")
+	!include("barnsby_accessories.skt")
+	
+	
+	Hide("HolsterL")
+}
+
+// ======================== BarnsbyBandage ========================
+Skin("BarnsbyBandage")
+{
+	!include("man_surfaces.skt")
+	!include("man_disable_anims_on_lod.skt")
+	!include("man_shoes_c.skt")
+	!include("barnsby_pants.skt")
+	!include("barnsby_torso.skt")
+	!include("man_hands_a.skt")
+	!include("barnsby_headbandage.skt")
+	!include("man_accessories_hideall.skt")
+	
+	Hide("HolsterL")
+	Hide("HolsterR")
+	
+	Replace("barnsby_head.mat", "barnsby_head_dirt.mat")
+	Replace("barnsby_torso.mat", "barnsby_torso_dirt.mat")
+	Replace("man_shoes_c.mat", "man_shoes_c_dirt.mat")
+
+    ColorPreset("South")
+    {
+       ColorI(0, 255, 255, 255)
+       ColorI(2, 255, 255, 255)
+       ColorI(3, 173, 179, 182)
+    }
+}
+Skin("BarnsbyBandage_player")
+{
+	FilterInEditor()
+	!include("man_surfaces.skt")
+	!include("man_disable_anims_on_lod.skt")
+	!include("man_shoes_c.skt")
+	!include("barnsby_pants.skt")
+	!include("barnsby_torso.skt")
+	!include("man_hands_a.skt")
+	!include("barnsby_headbandage.skt")
+	!include("man_accessories_hideall.skt")
+	!include("man_player.skt")
+	
+	
+	Replace("barnsby_head.mat", "barnsby_head_dirt.mat")
+	Replace("barnsby_torso.mat", "barnsby_torso_dirt.mat")
+	Replace("man_shoes_c.mat", "man_shoes_c_dirt.mat")
+	
+	Hide("HolsterL")
+	Hide("HolsterR")
+}
+Skin("BarnsbyBandage_highlight")
+{
+	FilterInEditor()
+	!include("man_surfaces.skt")
+	!include("man_disable_anims_on_lod.skt")
+	!include("man_shoes_c.skt")
+	!include("barnsby_pants.skt")
+	!include("barnsby_torso.skt")
+	!include("man_hands_a.skt")
+	!include("barnsby_headbandage.skt")
+	!include("man_accessories_hideall.skt")
+	
+	
+	Replace("barnsby_head.mat", "barnsby_head_dirt_hl.mat")
+	Replace("barnsby_torso.mat", "barnsby_torso_dirt_hl.mat")
+	Replace("man_shoes_c.mat", "man_shoes_c_dirt_hl.mat")
+	
+	Hide("HolsterL")
+	Hide("HolsterR")
+}
+Skin("BarnsbyBandage_marked")
+{
+	FilterInEditor()
+	!include("man_surfaces.skt")
+	!include("man_disable_anims_on_lod.skt")
+	!include("man_shoes_c.skt")
+	!include("barnsby_pants.skt")
+	!include("barnsby_torso.skt")
+	!include("man_hands_a.skt")
+	!include("barnsby_headbandage.skt")
+	!include("man_accessories_hideall.skt")
+	
+	
+	Replace("barnsby_head.mat", "barnsby_head_dirt_mrk.mat")
+	Replace("barnsby_torso.mat", "barnsby_torso_dirt_mrk.mat")
+	Replace("man_shoes_c.mat", "man_shoes_c_dirt_mrk.mat")
+	
+	Hide("HolsterL")
+	Hide("HolsterR")
+}
+Skin("BarnsbyBandage_null")
+{
+	FilterInEditor()
+	!include("man_surfaces.skt")
+	!include("man_disable_anims_on_lod.skt")
+	!include("man_shoes_c.skt")
+	!include("barnsby_pants.skt")
+	!include("barnsby_torso.skt")
+	!include("man_hands_a.skt")
+	!include("barnsby_headbandage.skt")
+	!include("man_accessories_hideall.skt")
+	
+	
+	Hide("HolsterL")
+	Hide("HolsterR")
+}
+
+// ======================== BarnsbyDirt ========================
+Skin("BarnsbyDirt")
+{
+	!include("man_surfaces.skt")
+	!include("man_disable_anims_on_lod.skt")
+	!include("man_shoes_c.skt")
+	!include("barnsby_pants.skt")
+	!include("barnsby_torso.skt")
+	!include("man_hands_a.skt")
+	!include("barnsby_head.skt")
+	!include("barnsby_accessories.skt")
+	
+	Hide("HolsterL")
+	
+	Replace("barnsby_head.mat", "barnsby_head_dirt.mat")
+	Replace("barnsby_torso.mat", "barnsby_torso_dirt.mat")
+	Replace("man_shoes_c.mat", "man_shoes_c_dirt.mat")
+	
+    ColorPreset("South")
+    {
+       ColorI(0, 255, 255, 255)
+       ColorI(2, 255, 255, 255)
+       ColorI(3, 173, 179, 182)
+    }
+}
+Skin("BarnsbyDirt_player")
+{
+	FilterInEditor()
+	!include("man_surfaces.skt")
+	!include("man_disable_anims_on_lod.skt")
+	!include("man_shoes_c.skt")
+	!include("barnsby_pants.skt")
+	!include("barnsby_torso.skt")
+	!include("man_hands_a.skt")
+	!include("barnsby_head.skt")
+	!include("barnsby_accessories.skt")
+	!include("man_player.skt")
+	
+	
+	Replace("barnsby_head.mat", "barnsby_head_dirt.mat")
+	Replace("barnsby_torso.mat", "barnsby_torso_dirt.mat")
+	Replace("man_shoes_c.mat", "man_shoes_c_dirt.mat")
+	
+	Hide("HolsterL")
+}
+Skin("BarnsbyDirt_highlight")
+{
+	FilterInEditor()
+	!include("man_surfaces.skt")
+	!include("man_disable_anims_on_lod.skt")
+	!include("man_shoes_c.skt")
+	!include("barnsby_pants.skt")
+	!include("barnsby_torso.skt")
+	!include("man_hands_a.skt")
+	!include("barnsby_head.skt")
+	!include("barnsby_accessories.skt")
+	
+	
+	Replace("barnsby_head.mat", "barnsby_head_dirt_hl.mat")
+	Replace("barnsby_torso.mat", "barnsby_torso_dirt_hl.mat")
+	Replace("man_shoes_c.mat", "man_shoes_c_dirt_hl.mat")
+	
+	Hide("HolsterL")
+}
+Skin("BarnsbyDirt_marked")
+{
+	FilterInEditor()
+	!include("man_surfaces.skt")
+	!include("man_disable_anims_on_lod.skt")
+	!include("man_shoes_c.skt")
+	!include("barnsby_pants.skt")
+	!include("barnsby_torso.skt")
+	!include("man_hands_a.skt")
+	!include("barnsby_head.skt")
+	!include("barnsby_accessories.skt")
+	
+	
+	Replace("barnsby_head.mat", "barnsby_head_dirt_mrk.mat")
+	Replace("barnsby_torso.mat", "barnsby_torso_dirt_mrk.mat")
+	Replace("man_shoes_c.mat", "man_shoes_c_dirt_mrk.mat")
+	
+	Hide("HolsterL")
+}
+Skin("BarnsbyDirt_null")
+{
+	FilterInEditor()
+	!include("man_surfaces.skt")
+	!include("man_disable_anims_on_lod.skt")
+	!include("man_shoes_c.skt")
+	!include("barnsby_pants.skt")
+	!include("barnsby_torso.skt")
+	!include("man_hands_a.skt")
+	!include("barnsby_head.skt")
+	!include("barnsby_accessories.skt")
+	
+	
+	Hide("HolsterL")
+}
+
+// ---------------------------------------------------------------
+
+
+Skin("BarnsbyTeam")
+{
+	!include("man_surfaces.skt")
+	!include("man_disable_anims_on_lod.skt")
+	!include("man_shoes_c.skt")
+	!include("barnsby_pants.skt")
+	!include("barnsby_torso.skt")
+	!include("man_hands_a.skt")
+	!include("barnsby_head.skt")
+	!include("barnsby_accessories.skt")
+	
+	Hide("HolsterL")
+
+    ColorPreset("South")
+    {
+       ColorI(0, 255, 255, 255)
+       ColorI(2, 255, 255, 255)
+       ColorI(3, 105, 112, 116)
+    }
+	Replace("barnsby_torso.mat", "barnsby_torso_team.mat")
+}
+
+Skin("BarnsbyTeam_player")
+{
+	FilterInEditor()
+	!include("man_surfaces.skt")
+	!include("man_disable_anims_on_lod.skt")
+	!include("man_shoes_c.skt")
+	!include("barnsby_pants.skt")
+	!include("barnsby_torso.skt")
+	!include("man_hands_a.skt")
+	!include("barnsby_head.skt")
+	!include("barnsby_accessories.skt")
+	!include("man_player.skt")
+	
+	
+	Hide("HolsterL")
+	Replace("barnsby_torso.mat", "barnsby_torso_team.mat")
+}
+
+Skin("BarnsbyTeam_null")
+{
+	FilterInEditor()
+	!include("man_surfaces.skt")
+	!include("man_disable_anims_on_lod.skt")
+	!include("man_shoes_c.skt")
+	!include("barnsby_pants.skt")
+	!include("barnsby_torso.skt")
+	!include("man_hands_a.skt")
+	!include("barnsby_head.skt")
+	!include("barnsby_accessories.skt")
+	
+	
+	Hide("HolsterL")
+	Replace("barnsby_torso.mat", "barnsby_torso_team.mat")
+}
+
+Skin("BarnsbyTeam_highlight")
+{
+	FilterInEditor()
+	!include("man_surfaces.skt")
+	!include("man_disable_anims_on_lod.skt")
+	!include("man_shoes_c.skt")
+	!include("barnsby_pants.skt")
+	!include("barnsby_torso.skt")
+	!include("man_hands_a.skt")
+	!include("barnsby_head.skt")
+	!include("barnsby_accessories.skt")
+	
+	
+	Hide("HolsterL")
+	Replace("barnsby_torso.mat", "barnsby_torso_team.mat")
+}
+
+Skin("BarnsbyTeam_marked")
+{
+	FilterInEditor()
+	!include("man_surfaces.skt")
+	!include("man_disable_anims_on_lod.skt")
+	!include("man_shoes_c.skt")
+	!include("barnsby_pants.skt")
+	!include("barnsby_torso.skt")
+	!include("man_hands_a.skt")
+	!include("barnsby_head.skt")
+	!include("barnsby_accessories.skt")
+	
+	
+	Hide("HolsterL")
+	Replace("barnsby_torso.mat", "barnsby_torso_team.mat")
+}

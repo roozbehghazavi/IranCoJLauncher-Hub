@@ -1,0 +1,13 @@
+// IranCoJ: John Wesley Hardin (CoJ Gunslinger): cowboy_hat_h
+import "templates.mtt"
+
+sub material()
+{
+    use mtt_objects(
+        s_clr = "hardin_hat.dds",
+        s_nrm = "hardin_hat_nrm.dds",
+        s_shn = "hardin_hat_shn.dds",
+        f_shn_factor = 0.3
+    );
+}
+

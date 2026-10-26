@@ -1,0 +1,20 @@
+!include("Weapon_Event.def")
+!include("PlayerFpp_ThrowingKnife.scr")
+!include("PlayerOldFpp_ThrowingKnife.scr")
+!include("knife_net_Tpp.scr")
+
+// IranCoJ: the tomahawk runs on the bow's logic, whose hand states play two-handed track names (no R_ / L_):
+// FPP_<weapon>_Shot (the draw), _ShotFingers (the release), _ShotRecoil, _ShotDamage, _ShotNoAmmo, _Aim, _Position.
+// The knife's animations only have the right-hand ones - the bow's names, pointed at them.
+SeqTrackAlias("FPP_ThrowingKnife_Position",			"FPP_ThrowingKnife_R_Position")
+SeqTrackAlias("FPP_ThrowingKnife_Idle0",			"FPP_ThrowingKnife_R_Idle0")
+SeqTrackAlias("FPP_ThrowingKnife_Wall_L",			"FPP_ThrowingKnife_R_Wall_L")
+SeqTrackAlias("FPP_ThrowingKnife_Wall_R",			"FPP_ThrowingKnife_R_Wall_R")
+SeqTrackAlias("FPP_ThrowingKnife_Aim",				"FPP_ThrowingKnife_R_Aim")
+SeqTrackAlias("FPP_ThrowingKnife_Shot",				"FPP_ThrowingKnife_R_Aim")		// the bow's draw: hold the aim pose
+SeqTrackAlias("FPP_ThrowingKnife_ShotFingers",		"FPP_ThrowingKnife_R_ShotFingers")	// the release: the throw
+SeqTrackAlias("FPP_ThrowingKnife_Aim_ShotFingers",	"FPP_ThrowingKnife_R_Aim_ShotFingers")
+SeqTrackAlias("FPP_ThrowingKnife_ShotRecoil",		"FPP_ThrowingKnife_R_Aim")
+SeqTrackAlias("FPP_ThrowingKnife_ShotDamage",		"FPP_ThrowingKnife_R_Aim")
+SeqTrackAlias("FPP_ThrowingKnife_ShotNoAmmo",		"FPP_ThrowingKnife_R_Idle0")
+SeqTrackAlias("FPP_ThrowingKnife_Aim_ShotNoAmmo",	"FPP_ThrowingKnife_R_Aim")

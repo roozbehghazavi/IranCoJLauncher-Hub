@@ -1,0 +1,12 @@
+// Synced with the dedicated server: every value here is the server's.
+// Only SkinName / SkinIcon / ColorI belong to the skin pack.
+!include("_Net_Miner_Properties.scr")
+!include("_NetWeapon_Miner_Properties.scr")
+
+MeshFileName("Man.msh")
+
+SkinName("Rattler")
+ColorI(0, 29, 31, 41)
+ColorI(2, 221, 220, 204)
+ColorI(3, 78, 31, 29)
+SkinIcon("character_miner")

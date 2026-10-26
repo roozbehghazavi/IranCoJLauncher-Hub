@@ -1,0 +1,10 @@
+!include("surface.def")
+
+Skin("Default")
+{
+    Replace("throwingknife.mat", "throwingknife.mat")
+    Replace("throwingknife_lod.mat", "throwingknife_lod.mat")
+
+//    ReplaceSurface(<old surface id>, <new surface id>, <surface flags>)
+    ReplaceSurface("Unknown", "Metal", "")
+}

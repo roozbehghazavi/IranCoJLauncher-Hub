@@ -1,0 +1,114 @@
+// IranCoJ: third-person knife tracks for multiplayer - the one-handed pistol set (as the Peacemaker uses it) under the knife's names
+SeqTrackAlias("TPP_ThrowingKnife_Stand",           	"TPP_Pistol_Stand")
+
+// ROTATE
+SeqTrackAlias("TPP_ThrowingKnife_RotateRightLoop",		"TPP_Pistol_RotateRightLoop")
+SeqTrackAlias("TPP_ThrowingKnife_RotateLeftLoop", 		"TPP_Pistol_RotateLeftLoop")
+
+// WALK
+SeqTrackAlias("TPP_ThrowingKnife_WalkForward",			"TPP_Pistol_WalkForward")
+SeqTrackAlias("TPP_ThrowingKnife_WalkBackward",		"TPP_Pistol_WalkBackward")
+SeqTrackAlias("TPP_ThrowingKnife_WalkLeft",			"TPP_Pistol_WalkLeft")
+SeqTrackAlias("TPP_ThrowingKnife_WalkRight",			"TPP_Pistol_WalkRight")
+
+// TROT
+SeqTrackAlias("TPP_ThrowingKnife_TrotForward",			"TPP_Pistol_TrotForward")
+SeqTrackAlias("TPP_ThrowingKnife_TrotBackward",		"TPP_Pistol_TrotBackward")
+SeqTrackAlias("TPP_ThrowingKnife_TrotLeft",			"TPP_Pistol_TrotLeft")
+SeqTrackAlias("TPP_ThrowingKnife_TrotRight",			"TPP_Pistol_TrotRight")
+
+// RUN
+SeqTrackAlias("TPP_ThrowingKnife_RunForward",			"TPP_Pistol_RunForward")
+SeqTrackAlias("TPP_ThrowingKnife_RunBackward",			"TPP_Pistol_RunBackward")
+SeqTrackAlias("TPP_ThrowingKnife_RunLeft",				"TPP_Pistol_RunLeft")
+SeqTrackAlias("TPP_ThrowingKnife_RunRight",			"TPP_Pistol_RunRight")
+
+// SPRINT
+SeqTrackAlias("TPP_ThrowingKnife_SprintForward",		"TPP_Pistol_SprintForward")
+
+// JUMP
+SeqTrackAlias("TPP_ThrowingKnife_JumpBeg",				"TPP_Pistol_JumpBeg")
+SeqTrackAlias("TPP_ThrowingKnife_JumpLoop",			"TPP_Pistol_JumpLoop")
+SeqTrackAlias("TPP_ThrowingKnife_JumpEnd",				"TPP_Pistol_JumpEnd")
+
+//SHOW HIDE
+SeqTrackAlias("TPP_ThrowingKnife_ShowEnd", 			"TPP_Pistol_ShowEnd")
+SeqTrackAlias("TPP_ThrowingKnife_HideBeg", 			"TPP_Pistol_HideBeg")
+
+// FIRE
+// SeqTrackAlias("TPP_ThrowingKnife_L_FireBeg",        "TPP_Pistol_L_FireBeg")
+SeqTrackAlias("TPP_ThrowingKnife_L_FireLoop",        	"TPP_Pistol_L_FireLoop")
+SeqTrackAlias("TPP_ThrowingKnife_L_FireEnd",         	"TPP_Pistol_L_FireEnd")
+
+// SeqTrackAlias("TPP_ThrowingKnife_R_FireBeg",      	"TPP_Pistol_R_FireEnd")
+SeqTrackAlias("TPP_ThrowingKnife_R_FireLoop",        	"TPP_Pistol_R_FireLoop")
+SeqTrackAlias("TPP_ThrowingKnife_R_FireEnd",         	"TPP_Pistol_R_FireEnd")
+
+// SeqTrackAlias("TPP_ThrowingKnife_L_NoAmmoBeg",    	"TPP_Pistol_L_NoAmmoBeg")
+SeqTrackAlias("TPP_ThrowingKnife_L_NoAmmoLoop",      	"TPP_Pistol_L_NoAmmoLoop")
+SeqTrackAlias("TPP_ThrowingKnife_L_NoAmmoEnd",   		"TPP_Pistol_L_NoAmmoEnd")
+
+// SeqTrackAlias("TPP_ThrowingKnife_R_NoAmmoBeg",   	"TPP_Pistol_R_NoAmmoBeg")
+SeqTrackAlias("TPP_ThrowingKnife_R_NoAmmoLoop",     	"TPP_Pistol_R_NoAmmoLoop")
+SeqTrackAlias("TPP_ThrowingKnife_R_NoAmmoEnd",      	"TPP_Pistol_R_NoAmmoEnd")
+
+// RELOAD
+SeqTrackAlias("TPP_ThrowingKnife_L_ReloadBeg",      	"TPP_Pistol_L_ReloadBeg")
+SeqTrackAlias("TPP_ThrowingKnife_L_ReloadLoop",     	"TPP_Pistol_L_ReloadLoop")
+SeqTrackAlias("TPP_ThrowingKnife_L_ReloadEnd",      	"TPP_Pistol_L_ReloadEnd")
+
+SeqTrackAlias("TPP_ThrowingKnife_R_ReloadBeg",      	"TPP_Pistol_R_ReloadBeg")
+SeqTrackAlias("TPP_ThrowingKnife_R_ReloadLoop",     	"TPP_Pistol_R_ReloadLoop")
+SeqTrackAlias("TPP_ThrowingKnife_R_ReloadEnd",      	"TPP_Pistol_R_ReloadEnd")
+
+//WALL
+SeqTrackAlias("TPP_ThrowingKnife_L_WallLoop", 			"TPP_Pistol_L_WallLoop")
+SeqTrackAlias("TPP_ThrowingKnife_R_WallLoop", 			"TPP_Pistol_R_WallLoop")
+
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////
+SeqTrackAlias("TPP_ThrowingKnife_A_Stand",          	"TPP_Pistol_A_Stand")
+
+// ROTATE
+SeqTrackAlias("TPP_ThrowingKnife_A_RotateRightLoop",	"TPP_Pistol_A_RotateRightLoop")
+SeqTrackAlias("TPP_ThrowingKnife_A_RotateLeftLoop", 	"TPP_Pistol_A_RotateLeftLoop")
+
+// WALK
+SeqTrackAlias("TPP_ThrowingKnife_A_WalkForward",		"TPP_Pistol_A_WalkForward")
+SeqTrackAlias("TPP_ThrowingKnife_A_WalkBackward",		"TPP_Pistol_A_WalkBackward")
+SeqTrackAlias("TPP_ThrowingKnife_A_WalkLeft",			"TPP_Pistol_A_WalkLeft")
+SeqTrackAlias("TPP_ThrowingKnife_A_WalkRight",			"TPP_Pistol_A_WalkRight")
+
+// TROT
+SeqTrackAlias("TPP_ThrowingKnife_A_TrotForward",		"TPP_Pistol_A_TrotForward")
+SeqTrackAlias("TPP_ThrowingKnife_A_TrotBackward",		"TPP_Pistol_A_TrotBackward")
+SeqTrackAlias("TPP_ThrowingKnife_A_TrotLeft",			"TPP_Pistol_A_TrotLeft")
+SeqTrackAlias("TPP_ThrowingKnife_A_TrotRight",			"TPP_Pistol_A_TrotRight")
+
+// RUN
+SeqTrackAlias("TPP_ThrowingKnife_A_RunForward",		"TPP_Pistol_A_RunForward")
+SeqTrackAlias("TPP_ThrowingKnife_A_RunBackward",		"TPP_Pistol_A_RunBackward")
+SeqTrackAlias("TPP_ThrowingKnife_A_RunLeft",			"TPP_Pistol_A_RunLeft")
+SeqTrackAlias("TPP_ThrowingKnife_A_RunRight",			"TPP_Pistol_A_RunRight")
+
+// JUMP
+SeqTrackAlias("TPP_ThrowingKnife_A_JumpBeg",			"TPP_Pistol_A_JumpBeg")
+SeqTrackAlias("TPP_ThrowingKnife_A_JumpLoop",			"TPP_Pistol_A_JumpLoop")
+SeqTrackAlias("TPP_ThrowingKnife_A_JumpEnd",			"TPP_Pistol_A_JumpEnd")
+
+//SHOW HIDE
+SeqTrackAlias("TPP_ThrowingKnife_A_ShowEnd", 			"TPP_Pistol_A_ShowEnd")
+SeqTrackAlias("TPP_ThrowingKnife_A_HideBeg", 			"TPP_Pistol_A_HideBeg")
+
+// FIRE
+// SeqTrackAlias("TPP_ThrowingKnife_R_FireBeg",     	"TPP_Pistol_R_A_FireBeg")
+SeqTrackAlias("TPP_ThrowingKnife_R_A_FireLoop",     	"TPP_Pistol_R_A_FireLoop")
+SeqTrackAlias("TPP_ThrowingKnife_R_A_FireEnd",      	"TPP_Pistol_R_A_FireEnd")
+
+// SeqTrackAlias("TPP_ThrowingKnife_R_NoAmmoBeg",   	"TPP_Pistol_R_A_NoAmmoBeg")
+SeqTrackAlias("TPP_ThrowingKnife_R_A_NoAmmoLoop",   	"TPP_Pistol_R_A_NoAmmoLoop")
+SeqTrackAlias("TPP_ThrowingKnife_R_A_NoAmmoEnd",    	"TPP_Pistol_R_A_NoAmmoEnd")
+
+//WALL
+SeqTrackAlias("TPP_ThrowingKnife_R_A_WallLoop", 		"TPP_Pistol_R_A_WallLoop")

@@ -1,0 +1,3 @@
+!include("Man_Animations.scr")
+!include("Player_Animations.scr")
+

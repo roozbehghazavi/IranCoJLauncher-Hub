@@ -1,0 +1,101 @@
+// IranCoJ: Billy the Kid (CoJ Gunslinger) on the Man skeleton - skins for the Rifleman class
+Skin("Default")
+{
+	!include("man_surfaces.skt")
+}
+
+Skin("Billy")
+{
+	!include("man_surfaces.skt")
+	Hide("HolsterL")
+	Hide("HolsterR")
+}
+
+Skin("Billy_player")
+{
+	FilterInEditor()
+	!include("man_surfaces.skt")
+	Replace("billy_head.mat", "man_null.mat")
+	Replace("billy_eyes.mat", "man_null.mat")
+	Replace("billy_teeth.mat", "man_null.mat")
+	Replace("billy_hair.mat", "man_null.mat")
+	Replace("billy_hat.mat", "man_null.mat")
+	Replace("billy_hatband.mat", "man_null.mat")
+	Hide("HolsterL")
+	Hide("HolsterR")
+}
+
+Skin("Billy_highlight")
+{
+	FilterInEditor()
+	!include("man_surfaces.skt")
+	Hide("HolsterL")
+	Hide("HolsterR")
+}
+
+Skin("Billy_marked")
+{
+	FilterInEditor()
+	!include("man_surfaces.skt")
+	Hide("HolsterL")
+	Hide("HolsterR")
+}
+
+Skin("Billy_null")
+{
+	FilterInEditor()
+	!include("man_surfaces.skt")
+	Hide("HolsterL")
+	Hide("HolsterR")
+}
+
+Skin("BillyTeam")
+{
+	!include("man_surfaces.skt")
+	Replace("billy_torso.mat", "billy_torso_team.mat")
+	Hide("HolsterL")
+	Hide("HolsterR")
+}
+
+Skin("BillyTeam_player")
+{
+	FilterInEditor()
+	!include("man_surfaces.skt")
+	Replace("billy_torso.mat", "billy_torso_team.mat")
+	Replace("billy_head.mat", "man_null.mat")
+	Replace("billy_eyes.mat", "man_null.mat")
+	Replace("billy_teeth.mat", "man_null.mat")
+	Replace("billy_hair.mat", "man_null.mat")
+	Replace("billy_hat.mat", "man_null.mat")
+	Replace("billy_hatband.mat", "man_null.mat")
+	Hide("HolsterL")
+	Hide("HolsterR")
+}
+
+Skin("BillyTeam_highlight")
+{
+	FilterInEditor()
+	!include("man_surfaces.skt")
+	Replace("billy_torso.mat", "billy_torso_team.mat")
+	Hide("HolsterL")
+	Hide("HolsterR")
+}
+
+Skin("BillyTeam_marked")
+{
+	FilterInEditor()
+	!include("man_surfaces.skt")
+	Replace("billy_torso.mat", "billy_torso_team.mat")
+	Hide("HolsterL")
+	Hide("HolsterR")
+}
+
+Skin("BillyTeam_null")
+{
+	FilterInEditor()
+	!include("man_surfaces.skt")
+	Replace("billy_torso.mat", "billy_torso_team.mat")
+	Hide("HolsterL")
+	Hide("HolsterR")
+}
+

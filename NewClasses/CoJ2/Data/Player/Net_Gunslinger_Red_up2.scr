@@ -1,0 +1,9 @@
+// Synced with the dedicated server: every value here is the server's.
+// Only SkinName / SkinIcon / ColorI belong to the skin pack.
+!include("Net_Gunslinger_up2.scr")
+!include("TeamColor_Red.scr")
+// IranCoJ: Ray's red coat in a lighter, paler team colour (user colour 0 multiplies the coat: TeamColor's red was too saturated next to the other characters)
+ColorI(0, 232, 150, 136)
+
+SkinIcon("character_gunslinger_red")
+SkinName("RayTeam")

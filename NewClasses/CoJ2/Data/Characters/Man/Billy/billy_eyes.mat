@@ -1,0 +1,14 @@
+// IranCoJ: Billy the Kid (CoJ Gunslinger): eyes_def
+import "templates.mtt"
+
+sub material()
+{
+    use mtt_objects(
+        s_clr = "billy_eyes.dds",
+        s_nrm = "billy_eyes_nrm.dds",
+        s_shn = "billy_eyes_shn.dds",
+        b_render_shadows_on = FALSE,
+        f_shn_factor = 0.6
+    );
+}
+

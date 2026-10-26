@@ -58,7 +58,7 @@ On the Steam Deck, open it in Desktop Mode; you can then add it to Steam as a no
 | Server List | In-game server list and direct join |
 | Spectate | Watch other players from the in-game menu |
 | Voice Chat | Talk to other players in game |
-| New Classes | Rancher and Redneck as playable classes |
+| New Classes | Rancher and Redneck as playable classes; Silas Greaves, John Wesley Hardin and Billy the Kid as characters |
 | Gore *(optional)* | Richer blood and hit effects |
 | No DOF & Motion Blur *(optional)* | A sharper picture without depth of field and motion blur |
 | Gun Sounds *(optional)* | Replacement weapon and explosion sounds |

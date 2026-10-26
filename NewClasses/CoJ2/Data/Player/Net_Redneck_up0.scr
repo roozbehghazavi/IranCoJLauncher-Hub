@@ -1,0 +1,11 @@
+// IranCoJ new class test: own skin (Farmer_A); its own class picture (character_redneck in net_characters.dds)
+!include("_Net_Redneck_Properties.scr")
+!include("_NetWeapon_Redneck_Properties.scr")
+
+MeshFileName("Man.msh")
+SkinName("Farmer_A")
+ColorI(0, 126, 94, 75)
+ColorI(2, 199, 154, 63)
+ColorI(3, 138, 170, 172)
+
+SkinIcon("character_redneck")

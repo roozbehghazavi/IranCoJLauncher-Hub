@@ -1,0 +1,13 @@
+// IranCoJ: Billy the Kid (CoJ Gunslinger): billy_the_kid_head
+import "templates.mtt"
+
+sub material()
+{
+    use mtt_objects(
+        s_clr = "billy_head.dds",
+        s_nrm = "billy_head_nrm.dds",
+        s_shn = "billy_head_shn.dds",
+        f_shn_factor = 0.6
+    );
+}
+

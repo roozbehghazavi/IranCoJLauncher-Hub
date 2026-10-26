@@ -1,0 +1,37 @@
+// Synced with the dedicated server: every value here is the server's.
+// Only the voice set below belongs to the skin pack.
+!include("PlayerProperties.def")
+!include("NetPlayerHealthRecovery.scr")
+!include("NetPlayerSlots.scr")
+
+AlternateFire()
+BreakOffDoor()
+MaxHealth(700)
+DamageMul(5)
+ArmorStopDamageProbability(0)
+MaxCarrySize(130)
+MaxCarryMass(75)
+HeavyCarryMass(20)
+JumpHeight(110)
+MoveSpeed(450)//(700)
+SmallSpeed(250)
+MoveAcceleration(1500)//(2000)
+MoveDeceleration(5000)
+StopDeceleration(2500)//(1400)
+ZeroDeceleration(2500)
+Buoyancy(0.8) // 1.0 - tomek 
+PhysicsScriptFileName("Data/Physics/WalkFly/PlayerNetOwner.scr")
+PhysicsScriptNotOwnerFileName("Data/Physics/WalkFly/PlayerNetNotOwner.scr")
+RagdollScriptFileName("Data/Physics/Ragdoll/HumanHeadCamera.phx")
+RagdollScriptNotOwnerFileName("Data/Physics/Ragdoll/HumanSimple.phx")
+NetSpeechDir("Data/Sounds/player/Native01")
+NetSpeechPrefix("Native01")
+
+CanKick(false)
+CanSprint(true)
+
+
+Cash(0)
+Name("&NET_CHARACTER_Sniper&")
+FlavourText("&NET_Sniper_Desc&")
+

@@ -1,0 +1,63 @@
+//--------- File generated automatically by TextureMergeTool ----------//
+// Generated: Tue Mar 03 13:23:19 2009
+
+//WARNING: do not add anything manually because any changes will be lost when this file will be generated again!
+//WARNING: please do not add any comments because they will be lost!
+//WARNING: do not modify (unless you know what are you doing)!
+
+!Texture(s, i, i) //texture file/ filename, width, height
+!HiddenInEditor(i) //if present, texture won't be visible in UIEditor combobox
+!Rect(s, i, i, i, i) //texture part / name, left, top, right, bottom (in pixels)
+!RectWithCorner(s, i, i, i, i, i, i) //texture part / name, left, top, right, bottom, corner width, corner height (in pixels)
+!Whole(s)
+
+Texture("net_characters.dds",4096,2048)
+{
+    Rect("character_aristocrat"       ,    8,   30,  320,  385) // 312x355 of its 320x442 slot (build_atlas.CROP)
+    Rect("character_aristocrat_blue"  ,    8,  473,  320,  828) // 312x355 of its 320x442 slot (build_atlas.CROP)
+    Rect("character_aristocrat_red"   ,    8,  916,  320, 1271) // 312x355 of its 320x442 slot (build_atlas.CROP)
+    Rect("character_bandit"           ,    8, 1359,  320, 1714) // 312x355 of its 320x442 slot (build_atlas.CROP)
+    Rect("character_bandit_blue"      ,  329,   30,  641,  385) // 312x355 of its 320x442 slot (build_atlas.CROP)
+    Rect("character_bandit_red"       ,  329,  473,  641,  828) // 312x355 of its 320x442 slot (build_atlas.CROP)
+    Rect("character_doc"              ,  329,  916,  641, 1271) // 312x355 of its 320x442 slot (build_atlas.CROP)
+    Rect("character_doc_blue"         ,  329, 1359,  641, 1714) // 312x355 of its 320x442 slot (build_atlas.CROP)
+    Rect("character_doc_red"          ,  650,   30,  962,  385) // 312x355 of its 320x442 slot (build_atlas.CROP)
+    Rect("character_gunslinger"       ,  650,  473,  962,  828) // 312x355 of its 320x442 slot (build_atlas.CROP)
+    Rect("character_gunslinger_blue"  ,  650,  916,  962, 1271) // 312x355 of its 320x442 slot (build_atlas.CROP)
+    Rect("character_gunslinger_red"   ,  650, 1359,  962, 1714) // 312x355 of its 320x442 slot (build_atlas.CROP)
+    Rect("character_gunsmith"         ,  971,   30, 1283,  385) // 312x355 of its 320x442 slot (build_atlas.CROP)
+    Rect("character_gunsmith_blue"    ,  971,  473, 1283,  828) // 312x355 of its 320x442 slot (build_atlas.CROP)
+    Rect("character_gunsmith_red"     ,  971,  916, 1283, 1271) // 312x355 of its 320x442 slot (build_atlas.CROP)
+    Rect("character_miner"            ,  971, 1359, 1283, 1714) // 312x355 of its 320x442 slot (build_atlas.CROP)
+    Rect("character_miner_blue"       , 1292,   30, 1604,  385) // 312x355 of its 320x442 slot (build_atlas.CROP)
+    Rect("character_miner_red"        , 1292,  473, 1604,  828) // 312x355 of its 320x442 slot (build_atlas.CROP)
+    Rect("character_rifleman"         , 1292,  916, 1604, 1271) // 312x355 of its 320x442 slot (build_atlas.CROP)
+    Rect("character_rifleman_blue"    , 1292, 1359, 1604, 1714) // 312x355 of its 320x442 slot (build_atlas.CROP)
+    Rect("character_rifleman_red"     , 1613,   30, 1925,  385) // 312x355 of its 320x442 slot (build_atlas.CROP)
+    Rect("character_sniper"           , 1613,  473, 1925,  828) // 312x355 of its 320x442 slot (build_atlas.CROP)
+    Rect("character_sniper_blue"      , 1613,  916, 1925, 1271) // 312x355 of its 320x442 slot (build_atlas.CROP)
+    Rect("character_sniper_red"       , 1613, 1359, 1925, 1714) // 312x355 of its 320x442 slot (build_atlas.CROP)
+    Rect("character_thief"            , 1934,   30, 2246,  385) // 312x355 of its 320x442 slot (build_atlas.CROP)
+    Rect("character_thief_blue"       , 1934,  473, 2246,  828) // 312x355 of its 320x442 slot (build_atlas.CROP)
+    Rect("character_thief_red"        , 1934,  916, 2246, 1271) // 312x355 of its 320x442 slot (build_atlas.CROP)
+    Rect("character_traper"           , 1934, 1359, 2246, 1714) // 312x355 of its 320x442 slot (build_atlas.CROP)
+    Rect("character_traper_blue"      , 2255,   30, 2567,  385) // 312x355 of its 320x442 slot (build_atlas.CROP)
+    Rect("character_traper_red"       , 2576,   30, 2888,  385) // 312x355 of its 320x442 slot (build_atlas.CROP)
+    Rect("character_tribewarrior"     , 2897,   30, 3209,  385) // 312x355 of its 320x442 slot (build_atlas.CROP)
+    Rect("character_tribewarrior_blue", 3218,   30, 3530,  385) // 312x355 of its 320x442 slot (build_atlas.CROP)
+    Rect("character_tribewarrior_red" , 3539,   30, 3851,  385) // 312x355 of its 320x442 slot (build_atlas.CROP)
+    Rect("character_veteran"          , 2255,  473, 2567,  828) // 312x355 of its 320x442 slot (build_atlas.CROP)
+    Rect("character_veteran_blue"     , 2255,  916, 2567, 1271) // 312x355 of its 320x442 slot (build_atlas.CROP)
+    Rect("character_veteran_red"      , 2255, 1359, 2567, 1714) // 312x355 of its 320x442 slot (build_atlas.CROP)
+    Rect("character_vigilante"        , 2576,  473, 2888,  828) // 312x355 of its 320x442 slot (build_atlas.CROP)
+    Rect("character_vigilante_blue"   , 2576,  916, 2888, 1271) // 312x355 of its 320x442 slot (build_atlas.CROP)
+    Rect("character_vigilante_red"    , 2576, 1359, 2888, 1714) // 312x355 of its 320x442 slot (build_atlas.CROP)
+    Rect("character_rancher"         , 2897,  473, 3209,  828) // 312x355 of its 320x442 slot (build_atlas.CROP)
+    Rect("character_rancher_blue"    , 3218,  473, 3530,  828) // 312x355 of its 320x442 slot (build_atlas.CROP)
+    Rect("character_rancher_red"     , 3539,  473, 3851,  828) // 312x355 of its 320x442 slot (build_atlas.CROP)
+    Rect("character_redneck"         , 2897,  916, 3209, 1271) // 312x355 of its 320x442 slot (build_atlas.CROP)
+    Rect("character_redneck_blue"    , 3218,  916, 3530, 1271) // 312x355 of its 320x442 slot (build_atlas.CROP)
+    Rect("character_redneck_red"     , 3539,  916, 3851, 1271) // 312x355 of its 320x442 slot (build_atlas.CROP)
+    Rect("hud_icon_idle_tomahawk"     ,3864,   4,3954,  94) //  90x 90 IranCoJ: the tomahawk, rendered from its model
+    Rect("hud_icons_tomahawk"         ,3864,   4,3954,  94) //  90x 90 IranCoJ: the same
+}

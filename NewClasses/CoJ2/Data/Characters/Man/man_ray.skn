@@ -1,0 +1,398 @@
+// ======================== Ray ========================
+Skin("Ray")
+{
+	!include("man_surfaces.skt")
+	!include("man_disable_anims_on_lod.skt")
+	!include("man_shoes_b.skt")
+	!include("ray_pants.skt")
+	!include("ray_torso.skt")
+	!include("ray_hands.skt")
+	!include("ray_head_hat.skt")
+	!include("ray_accessories.skt")
+    ColorPreset("color_1")
+    {
+       ColorI(0, 32, 33, 38)
+       ColorI(2, 0, 0, 0)
+       ColorI(3, 118, 113, 95)
+    }	
+}
+Skin("Ray_player")
+{
+	FilterInEditor()
+	!include("man_surfaces.skt")
+	!include("man_disable_anims_on_lod.skt")
+	!include("man_shoes_b.skt")
+	!include("ray_pants.skt")
+	!include("ray_torso.skt")
+	!include("ray_hands.skt")
+	!include("ray_head_hat.skt")
+	!include("ray_accessories.skt")
+	!include("man_player.skt")
+
+}
+Skin("Ray_null")
+{
+	FilterInEditor()
+	!include("man_surfaces.skt")
+	!include("man_disable_anims_on_lod.skt")
+	!include("man_shoes_b.skt")
+	!include("ray_pants.skt")
+	!include("ray_torso.skt")
+	!include("ray_hands.skt")
+	!include("ray_head_hat.skt")
+	!include("ray_accessories.skt")
+
+}
+Skin("Ray_highlight")
+{
+	FilterInEditor()
+	!include("man_surfaces.skt")
+	!include("man_disable_anims_on_lod.skt")
+	!include("man_shoes_b.skt")
+	!include("ray_pants.skt")
+	!include("ray_torso.skt")
+	!include("ray_hands.skt")
+	!include("ray_head_hat.skt")
+	!include("ray_accessories.skt")
+
+}
+Skin("Ray_marked")
+{
+	FilterInEditor()
+	!include("man_surfaces.skt")
+	!include("man_disable_anims_on_lod.skt")
+	!include("man_shoes_b.skt")
+	!include("ray_pants.skt")
+	!include("ray_torso.skt")
+	!include("ray_hands.skt")
+	!include("ray_head_hat.skt")
+	!include("ray_accessories.skt")
+
+}
+
+// ======================== RayNoHat ========================
+Skin("RayNoHat")
+{
+	!include("man_surfaces.skt")
+	!include("man_disable_anims_on_lod.skt")
+	!include("man_shoes_b.skt")
+	!include("ray_pants.skt")
+	!include("ray_torso.skt")
+	!include("ray_hands.skt")
+	!include("ray_head.skt")
+	!include("ray_accessories.skt")
+    ColorPreset("color_1")
+    {
+       ColorI(0, 32, 33, 38)
+       ColorI(2, 0, 0, 0)
+       ColorI(3, 118, 113, 95)
+    }	
+}
+Skin("RayNoHat_player")
+{
+	FilterInEditor()
+	!include("man_surfaces.skt")
+	!include("man_disable_anims_on_lod.skt")
+	!include("man_shoes_b.skt")
+	!include("ray_pants.skt")
+	!include("ray_torso.skt")
+	!include("ray_hands.skt")
+	!include("ray_head.skt")
+	!include("ray_accessories.skt")
+	!include("man_player.skt")
+
+}
+Skin("RayNoHat_null")
+{
+	FilterInEditor()
+	!include("man_surfaces.skt")
+	!include("man_disable_anims_on_lod.skt")
+	!include("man_shoes_b.skt")
+	!include("ray_pants.skt")
+	!include("ray_torso.skt")
+	!include("ray_hands.skt")
+	!include("ray_head.skt")
+	!include("ray_accessories.skt")
+
+}
+Skin("RayNoHat_highlight")
+{
+	FilterInEditor()
+	!include("man_surfaces.skt")
+	!include("man_disable_anims_on_lod.skt")
+	!include("man_shoes_b.skt")
+	!include("ray_pants.skt")
+	!include("ray_torso.skt")
+	!include("ray_hands.skt")
+	!include("ray_head.skt")
+	!include("ray_accessories.skt")
+
+}
+Skin("RayNoHat_marked")
+{
+	FilterInEditor()
+	!include("man_surfaces.skt")
+	!include("man_disable_anims_on_lod.skt")
+	!include("man_shoes_b.skt")
+	!include("ray_pants.skt")
+	!include("ray_torso.skt")
+	!include("ray_hands.skt")
+	!include("ray_head.skt")
+	!include("ray_accessories.skt")
+
+}
+
+// ======================== RaySoldier ========================
+Skin("RaySoldier")
+{
+	!include("man_surfaces.skt")
+	!include("man_disable_anims_on_lod.skt")
+	!include("man_shoes_d.skt")
+	!include("man_pants_a.skt")
+	!include("man_torso_c.skt")
+	!include("man_hands_a.skt")
+	!include("ray_head_soldier.skt")
+	!include("rebelb_accessories.skt")
+	
+	Replace("man_torso_c_rank.mat", "man_torso_c_sergeant.mat")
+	
+	Hide("HolsterL")
+	
+    ColorPreset("South")
+    {
+       ColorI(0, 198, 197, 187)
+       ColorI(2, 0, 0, 0)
+       ColorI(3, 186, 184, 167)
+    }
+}
+Skin("RaySoldier_player")
+{
+	FilterInEditor()
+	!include("man_surfaces.skt")
+	!include("man_disable_anims_on_lod.skt")
+	!include("man_shoes_d.skt")
+	!include("man_pants_a.skt")
+	!include("man_torso_c.skt")
+	!include("thomas_hands.skt")
+	!include("ray_head_soldier.skt")
+	!include("rebelb_accessories.skt")
+	!include("man_player.skt")
+	
+	
+	Replace("man_torso_c_rank.mat", "man_torso_c_sergeant.mat")
+	
+	Hide("HolsterL")
+}
+Skin("RaySoldier_highlight")
+{
+	FilterInEditor()
+	!include("man_surfaces.skt")
+	!include("man_disable_anims_on_lod.skt")
+	!include("man_shoes_d.skt")
+	!include("man_pants_a.skt")
+	!include("man_torso_c.skt")
+	!include("man_hands_a.skt")
+	!include("ray_head_soldier.skt")
+	!include("rebelb_accessories.skt")
+	
+	
+	Replace("man_torso_c_rank.mat", "man_torso_c_sergeant_hl.mat")
+}
+Skin("RaySoldier_marked")
+{
+	FilterInEditor()
+	!include("man_surfaces.skt")
+	!include("man_disable_anims_on_lod.skt")
+	!include("man_shoes_d.skt")
+	!include("man_pants_a.skt")
+	!include("man_torso_c.skt")
+	!include("man_hands_a.skt")
+	!include("ray_head_soldier.skt")
+	!include("rebelb_accessories.skt")
+	
+	
+	Replace("man_torso_c_rank.mat", "man_torso_c_sergeant_mrk.mat")
+	
+	Hide("HolsterL")
+}
+Skin("RaySoldier_null")
+{
+	FilterInEditor()
+	!include("man_surfaces.skt")
+	!include("man_disable_anims_on_lod.skt")
+	!include("man_shoes_d.skt")
+	!include("man_pants_a.skt")
+	!include("man_torso_c.skt")
+	!include("man_hands_a.skt")
+	!include("ray_head_soldier.skt")
+	!include("rebelb_accessories.skt")
+	
+	Hide("HolsterL")
+}
+
+// ======================== RaySoldierNoHat ========================
+Skin("RaySoldierNoHat")
+{
+	!include("man_surfaces.skt")
+	!include("man_disable_anims_on_lod.skt")
+	!include("man_shoes_d.skt")
+	!include("man_pants_a.skt")
+	!include("man_torso_c.skt")
+	!include("man_hands_a.skt")
+	!include("ray_head.skt")
+	!include("rebelb_accessories.skt")
+	
+	Replace("man_torso_c_rank.mat", "man_torso_c_sergeant.mat")
+	
+	Hide("HolsterL")
+	
+    ColorPreset("South")
+    {
+       ColorI(0, 198, 197, 187)
+       ColorI(2, 0, 0, 0)
+       ColorI(3, 186, 184, 167)
+    }
+}
+Skin("RaySoldierNoHat_player")
+{
+	FilterInEditor()
+	!include("man_surfaces.skt")
+	!include("man_disable_anims_on_lod.skt")
+	!include("man_shoes_d.skt")
+	!include("man_pants_a.skt")
+	!include("man_torso_c.skt")
+	!include("man_hands_a.skt")
+	!include("thomas_hands.skt")
+	!include("rebelb_accessories.skt")
+	!include("man_player.skt")
+	
+	
+	Replace("man_torso_c_rank.mat", "man_torso_c_sergeant.mat")
+	
+	Hide("HolsterL")
+}
+Skin("RaySoldierNoHat_highlight")
+{
+	FilterInEditor()
+	!include("man_surfaces.skt")
+	!include("man_disable_anims_on_lod.skt")
+	!include("man_shoes_d.skt")
+	!include("man_pants_a.skt")
+	!include("man_torso_c.skt")
+	!include("man_hands_a.skt")
+	!include("ray_head.skt")
+	!include("rebelb_accessories.skt")
+	
+	
+	Replace("man_torso_c_rank.mat", "man_torso_c_sergeant_hl.mat")
+	
+	Hide("HolsterL")
+}
+Skin("RaySoldierNoHat_marked")
+{
+	FilterInEditor()
+	!include("man_surfaces.skt")
+	!include("man_disable_anims_on_lod.skt")
+	!include("man_shoes_d.skt")
+	!include("man_pants_a.skt")
+	!include("man_torso_c.skt")
+	!include("man_hands_a.skt")
+	!include("ray_head.skt")
+	!include("rebelb_accessories.skt")
+	
+	
+	Replace("man_torso_c_rank.mat", "man_torso_c_sergeant_mrk.mat")
+	
+	Hide("HolsterL")
+}
+Skin("RaySoldierNoHat_null")
+{
+	FilterInEditor()
+	!include("man_surfaces.skt")
+	!include("man_disable_anims_on_lod.skt")
+	!include("man_shoes_d.skt")
+	!include("man_pants_a.skt")
+	!include("man_torso_c.skt")
+	!include("man_hands_a.skt")
+	!include("ray_head.skt")
+	!include("rebelb_accessories.skt")
+	
+	Hide("HolsterL")
+}
+
+
+Skin("RayTeam")
+{
+	!include("man_surfaces.skt")
+	!include("man_disable_anims_on_lod.skt")
+	!include("man_shoes_b.skt")
+	!include("ray_pants.skt")
+	!include("ray_torso.skt")
+	!include("ray_hands.skt")
+	!include("ray_head_hat.skt")
+	!include("ray_accessories.skt")
+    ColorPreset("color_1")
+    {
+       ColorI(0, 32, 33, 38)
+       ColorI(2, 0, 0, 0)
+       ColorI(3, 118, 113, 95)
+    }
+	Replace("ray_coat.mat", "ray_coat_team.mat")
+}
+
+Skin("RayTeam_player")
+{
+	FilterInEditor()
+	!include("man_surfaces.skt")
+	!include("man_disable_anims_on_lod.skt")
+	!include("man_shoes_b.skt")
+	!include("ray_pants.skt")
+	!include("ray_torso.skt")
+	!include("ray_hands.skt")
+	!include("ray_head_hat.skt")
+	!include("ray_accessories.skt")
+	!include("man_player.skt")
+	Replace("ray_coat.mat", "ray_coat_team.mat")
+}
+
+Skin("RayTeam_null")
+{
+	FilterInEditor()
+	!include("man_surfaces.skt")
+	!include("man_disable_anims_on_lod.skt")
+	!include("man_shoes_b.skt")
+	!include("ray_pants.skt")
+	!include("ray_torso.skt")
+	!include("ray_hands.skt")
+	!include("ray_head_hat.skt")
+	!include("ray_accessories.skt")
+	Replace("ray_coat.mat", "ray_coat_team.mat")
+}
+
+Skin("RayTeam_highlight")
+{
+	FilterInEditor()
+	!include("man_surfaces.skt")
+	!include("man_disable_anims_on_lod.skt")
+	!include("man_shoes_b.skt")
+	!include("ray_pants.skt")
+	!include("ray_torso.skt")
+	!include("ray_hands.skt")
+	!include("ray_head_hat.skt")
+	!include("ray_accessories.skt")
+	Replace("ray_coat.mat", "ray_coat_team.mat")
+}
+
+Skin("RayTeam_marked")
+{
+	FilterInEditor()
+	!include("man_surfaces.skt")
+	!include("man_disable_anims_on_lod.skt")
+	!include("man_shoes_b.skt")
+	!include("ray_pants.skt")
+	!include("ray_torso.skt")
+	!include("ray_hands.skt")
+	!include("ray_head_hat.skt")
+	!include("ray_accessories.skt")
+	Replace("ray_coat.mat", "ray_coat_team.mat")
+}

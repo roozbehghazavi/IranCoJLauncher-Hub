@@ -1,0 +1,4 @@
+!include("Net_Redneck_up2.scr")
+!include("TeamColor_Red.scr")
+
+SkinIcon("character_redneck_red")

@@ -1,0 +1,5 @@
+// IranCoJ new classes: upgrade 2 boosts the strong side (health), like the stock classes
+!include("Net_Redneck_up0.scr")
+
+MaxHealth(1250)
+MoveSpeed(500)

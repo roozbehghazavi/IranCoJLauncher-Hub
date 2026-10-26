@@ -1,0 +1,13 @@
+// IranCoJ: Silas Greaves (CoJ Gunslinger): eyes
+import "templates.mtt"
+
+sub material()
+{
+    use mtt_objects(
+        s_clr = "silas_eyes.dds",
+        s_nrm = "silas_eyes_nrm.dds",
+        s_shn = "dummy",
+        f_shn_factor = 0.6
+    );
+}
+

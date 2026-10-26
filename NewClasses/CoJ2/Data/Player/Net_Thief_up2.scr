@@ -1,0 +1,6 @@
+// Synced with the dedicated server: every value here is the server's.
+// Only SkinName / SkinIcon / ColorI belong to the skin pack.
+!include("Net_Thief_up0.scr")
+
+MaxHealth(850)
+MoveSpeed(700)

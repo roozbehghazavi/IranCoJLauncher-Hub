@@ -1,0 +1,7 @@
+!include("Net_Rancher_up1.scr")
+!include("TeamColor_Red.scr")
+
+SkinIcon("character_rancher_red")
+
+// team modes: Silas with the poncho in the team colour (Silas.skn)
+SkinName("SilasTeam")

@@ -1,0 +1,12 @@
+!NetAmmo(s, i) // ammo type and amount of ammo pieces to be added
+!NetWeapon(s) // weapon that player will receive on start in multiplayer game
+!NetDefaultWeaponL(s) // weapon that player will have in left hand on start in multiplayer game
+!NetDefaultWeaponR(s) // weapon that player will have in right hand on start in multiplayer game
+
+// IranCoJ test: the Redneck carries the Springfield musket (defined in WeaponsParams.scr as net weapon 14)
+NetDefaultWeaponR("WeaponPistolFrontierUpgradeNet")
+NetWeapon("WeaponPistolFrontierUpgradeNet")
+// as much rifle ammo as the Sniper
+NetAmmo("AmmoRifle", 45)
+// IranCoJ test: and the tomahawk (net weapon "WeaponPistolLemantUpgradeNet") (a clip of 3)
+NetWeapon("WeaponPistolLemantUpgradeNet")

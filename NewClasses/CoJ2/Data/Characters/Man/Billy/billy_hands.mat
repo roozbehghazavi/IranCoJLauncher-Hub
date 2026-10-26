@@ -1,0 +1,13 @@
+// IranCoJ: Billy the Kid (CoJ Gunslinger): hands_a
+import "templates.mtt"
+
+sub material()
+{
+    use mtt_objects(
+        s_clr = "billy_hands.dds",
+        s_nrm = "billy_hands_nrm.dds",
+        s_shn = "billy_hands_shn.dds",
+        f_shn_factor = 0.6
+    );
+}
+

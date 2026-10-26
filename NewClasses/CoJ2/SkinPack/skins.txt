@@ -1,0 +1,156 @@
+CoJ2 MULTIPLAYER - USABLE SkinName VALUES
+==============================================================================
+
+Put the name in  SkinName("...")  inside Data/Player/Net_<class>_up0.scr
+Team modes read Net_<class>_Blue_up0.scr / _Red_up0.scr - a SkinName after
+the includes there overrides the base one.
+
+  TINT   = accepts blue/red team colour (needs b_clr_usr_on on a visible part)
+  CLOTH  = MeshPartCloth entries it adds; the engine asserts above 25 total
+  STREAM = KB of textures not preloaded by the MP rpack (load-time cost)
+
+skin                       TINT   CLOTH  STREAM   defined in
+------------------------------------------------------------------------------
+ArizonaBanditA             yes    0      342      man_arizona_bandits.skn
+ArizonaBanditB             yes    0      342      man_arizona_bandits.skn
+ArizonaBanditC             yes    0      342      man_arizona_bandits.skn
+ArizonaBanditD             yes    0      267      man_arizona_bandits.skn
+ArizonaBanditE             yes    0      267      man_arizona_bandits.skn
+ArizonaBanditF             yes    0      267      man_arizona_bandits.skn
+ArizonaBanditG             yes    0      267      man_arizona_bandits.skn
+ArizonaBanditH             yes    0      258      man_arizona_bandits.skn
+ArizonaBanditI             yes    0      258      man_arizona_bandits.skn
+ArizonaBanditJ             yes    0      258      man_arizona_bandits.skn
+ArizonaBanditK             yes    0      258      man_arizona_bandits.skn
+Barnsby                    -      1      1203     man_barnsby.skn
+BarnsbyBandage             -      0      625      man_barnsby.skn
+BarnsbyDirt                -      1      1203     man_barnsby.skn
+BarnsbyTeam                yes    0      1037     man_barnsby.skn
+CivilianSuit               yes    1      310      man_civilians.skn
+CivilianSuitB              yes    1      310      man_civilians.skn
+CivilianSuitC              yes    1      310      man_civilians.skn
+CivilianSuitD              yes    1      310      man_civilians.skn
+Devlin                     yes    0      473      man_chcaracters.skn
+Farmer_A                   yes    0      662      man_civilians.skn
+Farmer_B                   yes    0      662      man_civilians.skn
+FederalMarshal             yes    1      502      man_chcaracters.skn
+Indian_Apache_A            yes    4      663      man_apache.skn
+Indian_Apache_B            yes    4      657      man_apache.skn
+Indian_Apache_C            yes    4      636      man_apache.skn
+Indian_Apache_D            yes    5      417      man_apache.skn
+Indian_Apache_E            yes    5      412      man_apache.skn
+Indian_Apache_F            yes    5      390      man_apache.skn
+Indian_Navaho_A            yes    0      721      man_navaho.skn
+Indian_Navaho_B            yes    0      1257     man_navaho.skn
+Indian_Navaho_C            yes    0      721      man_navaho.skn
+Indian_Navaho_D            yes    5      380      man_navaho.skn
+Indian_Navaho_E            yes    5      916      man_navaho.skn
+Indian_Navaho_F            yes    4      625      man_navaho.skn
+Indian_Navaho_G            yes    4      1161     man_navaho.skn
+IndianA                    yes    3      1252     man_comanche.skn
+IndianB                    yes    3      983      man_comanche.skn
+IndianC                    yes    5      686      man_comanche.skn
+IndianD                    yes    5      417      man_comanche.skn
+Juarez                     yes    2      1330     man_chcaracters.skn
+Juarez_Duel                yes    2      1330     man_chcaracters.skn
+MexicanA                   yes    0      996      man_mexican_bandits.skn
+MexicanB                   yes    0      438      man_mexican_bandits.skn
+MexicanC                   yes    0      438      man_mexican_bandits.skn
+MexicanD                   yes    0      878      man_mexican_bandits.skn
+MexicanE                   yes    0      320      man_mexican_bandits.skn
+MexicanF                   yes    0      320      man_mexican_bandits.skn
+MexicanG                   yes    0      1207     man_mexican_bandits.skn
+MexicanH                   yes    0      649      man_mexican_bandits.skn
+MexicanI                   yes    0      649      man_mexican_bandits.skn
+ODonell                    -      0      608      man_chcaracters.skn
+OfficerA                   yes    0      481      man_rebels.skn
+OfficerB                   yes    0      481      man_rebels.skn
+OfficerC                   yes    0      481      man_rebels.skn
+OfficerD                   yes    0      481      man_rebels.skn
+PeasantA                   yes    0      1291     man_peasants.skn
+PeasantB                   yes    0      733      man_peasants.skn
+PeasantC                   yes    0      733      man_peasants.skn
+Pinkerton                  yes    1      916      man_chcaracters.skn
+PinkertonA                 yes    2      332      man_pinkertons.skn
+PinkertonB                 yes    2      332      man_pinkertons.skn
+PinkertonC                 yes    2      332      man_pinkertons.skn
+PinkertonD                 yes    2      332      man_pinkertons.skn
+Professional_A             yes    1      310      man_proffesionals.skn
+Professional_A_Coat        yes    2      310      man_proffesionals.skn
+Professional_B             yes    1      310      man_proffesionals.skn
+Professional_B_Coat        yes    2      310      man_proffesionals.skn
+Professional_C             yes    1      310      man_proffesionals.skn
+Professional_C_Coat        yes    2      310      man_proffesionals.skn
+Professional_D             yes    1      310      man_proffesionals.skn
+Professional_D_Coat        yes    2      310      man_proffesionals.skn
+PumaPaw                    yes    3      1418     man_chcaracters.skn
+Rattler                    yes    2      822      man_chcaracters.skn
+Ray                        -      2      2228     man_ray.skn
+RayNoHat                   -      2      2228     man_ray.skn
+RaySoldier                 yes    0      438      man_ray.skn
+RaySoldierNoHat            yes    0      1569     man_ray.skn
+RunningRiver               yes    9      1340     man_chcaracters.skn
+SeeingFarther              yes    5      1256     man_chcaracters.skn
+Soldier_1st_Lt_A           yes    0      481      man_army.skn
+Soldier_1st_Lt_B           yes    0      481      man_army.skn
+Soldier_1st_Lt_C           yes    0      481      man_army.skn
+Soldier_1st_Lt_D           yes    0      481      man_army.skn
+Soldier_2nd_Lt_A           yes    0      481      man_army.skn
+Soldier_2nd_Lt_B           yes    0      481      man_army.skn
+Soldier_2nd_Lt_C           yes    0      481      man_army.skn
+Soldier_2nd_Lt_D           yes    0      481      man_army.skn
+Soldier_Captain_A          yes    0      481      man_army.skn
+Soldier_Captain_B          yes    0      481      man_army.skn
+Soldier_Captain_C          yes    0      481      man_army.skn
+Soldier_Captain_D          yes    0      481      man_army.skn
+Soldier_Corporal_A         yes    0      459      man_army.skn
+Soldier_Corporal_B         yes    0      459      man_army.skn
+Soldier_Corporal_C         yes    0      459      man_army.skn
+Soldier_Corporal_D         yes    0      459      man_army.skn
+Soldier_Private_A          yes    0      459      man_army.skn
+Soldier_Private_A_Backpack yes    0      604      man_army.skn
+Soldier_Private_A_Open     yes    0      246      man_army.skn
+Soldier_Private_B          yes    0      459      man_army.skn
+Soldier_Private_B_Backpack yes    0      604      man_army.skn
+Soldier_Private_B_Open     yes    0      246      man_army.skn
+Soldier_Private_C          yes    0      459      man_army.skn
+Soldier_Private_C_Backpack yes    0      604      man_army.skn
+Soldier_Private_C_Open     yes    0      246      man_army.skn
+Soldier_Private_D          yes    0      459      man_army.skn
+Soldier_Private_D_Backpack yes    0      604      man_army.skn
+Soldier_Private_D_Open     yes    0      246      man_army.skn
+Soldier_Sergeant_A         yes    0      481      man_army.skn
+Soldier_Sergeant_B         yes    0      481      man_army.skn
+Soldier_Sergeant_C         yes    0      481      man_army.skn
+Soldier_Sergeant_D         yes    0      481      man_army.skn
+SoldierA                   yes    0      481      man_rebels.skn
+SoldierA_Gallows           -      0      246      man_rebels.skn
+SoldierA_Open              yes    0      246      man_rebels.skn
+SoldierB                   yes    0      459      man_rebels.skn
+SoldierB_Gallows           -      0      246      man_rebels.skn
+SoldierB_Open              yes    0      246      man_rebels.skn
+SoldierBandage             yes    0      779      man_rebels.skn
+SoldierC                   yes    0      481      man_rebels.skn
+SoldierC_Gallows           -      0      246      man_rebels.skn
+SoldierC_Open              yes    0      246      man_rebels.skn
+SoldierD                   yes    0      459      man_rebels.skn
+SoldierD_Gallows           -      0      246      man_rebels.skn
+SoldierD_Open              yes    0      246      man_rebels.skn
+SoldierE                   yes    0      481      man_rebels.skn
+SoldierF                   yes    0      459      man_rebels.skn
+SoldierG                   yes    0      481      man_rebels.skn
+SoldierH                   yes    0      459      man_rebels.skn
+Thomas                     -      2      1305     man_thomas.skn
+Thomas_No_Cubemap          -      2      1305     man_thomas.skn
+ThomasNoHat                -      2      1305     man_thomas.skn
+ThomasSoldier              yes    0      405      man_thomas.skn
+ThomasSoldierNoHat         yes    0      1537     man_thomas.skn
+William                    -      3      1273     man_william.skn
+WilliamNoBag               -      3      1273     man_william.skn
+WilliamTeam                yes    1      1059     man_william.skn
+
+
+total usable skins: 137   (122 tintable, 15 not)
+
+CHEAPEST TO LOAD (STREAM = 0, all preloaded):
+

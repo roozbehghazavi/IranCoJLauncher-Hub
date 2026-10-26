@@ -1,0 +1,20 @@
+import "templates.mtt"
+
+sub mtt_character(bool b_marked_on = FALSE, bool b_highlight_on = FALSE)
+{
+    use mtt_objects(
+        b_marked_on = b_marked_on || b_highlight_on,
+        e_highlight_type = (b_highlight_on) ? e_hl_cm : e_highlight_type_def,
+		s_clr = "border_gun_a.dds",
+		s_env = s_env_def,
+		__env_falloff = s_falloff_out_1,
+		f_env_mask_max = 1.0,
+		f_env_mask_min = 0.5,
+		s_shn = "border_gun_a_SHN.dds",
+		s_nrm = "border_gun_NRM.dds",
+		s_nrm_srf = "srf_metal_gun_nrm.dds",
+		f_shn_factor = 1.0,
+		f_srf_uv_scale = 17.0,
+		e_srf_id = SRF_METAL
+	);
+}

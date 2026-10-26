@@ -1,0 +1,6 @@
+// IranCoJ new classes: their only upgrade ($1000) - speed and health together (no upgrade 2: its class id
+// would not fit the network range 0..172 for the blue team)
+!include("Net_Rancher_up0.scr")
+
+MaxHealth(1150)
+MoveSpeed(500)

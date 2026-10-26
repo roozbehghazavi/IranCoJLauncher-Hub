@@ -1,0 +1,13 @@
+// IranCoJ: the Duelist (Doc) is John Wesley Hardin from CoJ Gunslinger (Data/Characters/Man/Hardin: Hardin.msh on the Man
+// skeleton, skins in Hardin.skn); otherwise the game's own Net_Doc_up0.scr. Client side only: the server keeps Man.msh,
+// same skeleton and animations, so hits line up. Net_Doc_up1/up2 and the team scripts include this file.
+!include("_Net_Doc_Properties.scr")
+!include("_NetWeapon_Doc_Properties.scr")
+
+MeshFileName("Hardin.msh")
+SkinName("Hardin")
+ColorI(0, 183, 188, 210)
+ColorI(2, 252, 238, 220)
+ColorI(3, 255, 239, 217)
+
+SkinIcon("character_doc")

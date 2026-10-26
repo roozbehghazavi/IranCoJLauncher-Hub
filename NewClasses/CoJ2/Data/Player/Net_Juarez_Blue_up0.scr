@@ -1,0 +1,8 @@
+// Synced with the dedicated server: every value here is the server's.
+// Only SkinName / SkinIcon / ColorI belong to the skin pack.
+!include("Net_Juarez_up0.scr")
+!include("TeamColor_Blue.scr")
+
+SkinIcon("character_vigilante_blue")
+SkinName("BarnsbyTeam")
+ColorI(0, 92, 140, 228)

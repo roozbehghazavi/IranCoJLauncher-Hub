@@ -1,0 +1,12 @@
+// Synced with the dedicated server: every value here is the server's.
+// Only SkinName / SkinIcon / ColorI belong to the skin pack.
+!include("_Net_Aristocrat_Properties.scr")
+!include("_NetWeapon_Aristocrat_Properties.scr")
+
+MeshFileName("Man.msh")
+
+SkinName("SeeingFarther")
+ColorI(0, 255, 255, 255)
+ColorI(2, 128, 0, 0)
+ColorI(3, 128, 64, 0)
+SkinIcon("character_aristocrat")

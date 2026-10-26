@@ -1,0 +1,17 @@
+// IranCoJ: Silas Greaves: poncho in the team colour (team modes)
+import "templates.mtt"
+
+sub material()
+{
+    use mtt_objects(
+        s_clr = "silas_poncho_team.dds",
+        s_nrm = "silas_poncho_nrm.dds",
+        s_shn = "silas_poncho_shn.dds",
+        s_msk = "silas_white_msk.dds",
+        b_clr_usr_on = TRUE,
+        __clr_usr_msk = s_msk_g,
+        e_cull = NONE,
+        f_shn_factor = 0.3
+    );
+}
+

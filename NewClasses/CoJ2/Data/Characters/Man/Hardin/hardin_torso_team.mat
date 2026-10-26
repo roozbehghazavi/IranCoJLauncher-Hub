@@ -1,0 +1,16 @@
+// IranCoJ: John Wesley Hardin: shirt in the team colour (team modes)
+import "templates.mtt"
+
+sub material()
+{
+    use mtt_objects(
+        s_clr = "hardin_torso_team.dds",
+        s_nrm = "hardin_torso_nrm.dds",
+        s_shn = "hardin_torso_shn.dds",
+        s_msk = "hardin_torso_team_msk.dds",
+        b_clr_usr_on = TRUE,
+        __clr_usr_msk = s_msk_g,
+        f_shn_factor = 0.3
+    );
+}
+

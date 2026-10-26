@@ -1,0 +1,20 @@
+Skin("Default")
+{
+    Replace("border_gun_a.mat", "border_gun_a.mat")
+}
+
+Skin("Rusty")
+{
+    Replace("border_gun_a.mat", "border_gun_a.mat")
+}
+
+Skin("Grand")
+{
+    Replace("border_gun_a.mat", "border_gun_a.mat")
+}
+
+Skin("Superb")
+{
+    Replace("border_gun_a.mat", "border_gun_a.mat")
+}
+

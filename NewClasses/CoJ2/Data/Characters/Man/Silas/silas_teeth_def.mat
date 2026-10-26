@@ -1,0 +1,13 @@
+// IranCoJ: Silas Greaves (CoJ Gunslinger): teeth_def
+import "templates.mtt"
+
+sub material()
+{
+    use mtt_objects(
+        s_clr = "silas_teeth.dds",
+        s_nrm = "dummy",
+        s_shn = "dummy",
+        f_shn_factor = 0.3
+    );
+}
+

@@ -1,0 +1,36 @@
+!include("PlayerProperties.def")
+!include("NetPlayerHealthRecovery.scr")
+!include("NetPlayerSlots.scr")
+
+AlternateFire()
+BreakOffDoor()
+MaxHealth(1000)
+DamageMul(5)
+ArmorStopDamageProbability(0)
+MaxCarrySize(130)
+MaxCarryMass(75)
+HeavyCarryMass(20)
+JumpHeight(110)
+MoveSpeed(450)//(700)
+SmallSpeed(250)
+MoveAcceleration(1500)//(2000)
+MoveDeceleration(5000)
+StopDeceleration(2500)//(1400)
+ZeroDeceleration(2500)
+Buoyancy(0.8) // 1.0 - tomek 
+PhysicsScriptFileName("Data/Physics/WalkFly/PlayerNetOwner.scr")
+PhysicsScriptNotOwnerFileName("Data/Physics/WalkFly/PlayerNetNotOwner.scr")
+RagdollScriptFileName("Data/Physics/Ragdoll/HumanHeadCamera.phx")
+RagdollScriptNotOwnerFileName("Data/Physics/Ragdoll/HumanSimple.phx")
+// IranCoJ: Silas Greaves' own hit / death voice from CoJ Gunslinger (player_hitreaction / player_death, SpeechEn)
+NetSpeechDir("Data/Sounds/Player/Silas")
+NetSpeechPrefix("Silas")
+
+CanKick(false)
+CanSprint(true)
+
+
+Cash(6000)
+Name("&NET_CHARACTER_Rancher&")
+FlavourText("&NET_Rancher_Desc&")
+

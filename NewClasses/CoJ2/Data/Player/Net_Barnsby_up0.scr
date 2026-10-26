@@ -1,0 +1,12 @@
+// Synced with the dedicated server: every value here is the server's.
+// Only SkinName / SkinIcon / ColorI belong to the skin pack.
+!include("_Net_Barnsby_Properties.scr")
+!include("_NetWeapon_Barnsby_Properties.scr")
+
+MeshFileName("Man.msh")
+
+SkinName("Thomas")
+ColorI(0, 65, 55, 46)
+ColorI(2, 0, 0, 0)
+ColorI(3, 140, 182, 213)
+SkinIcon("character_veteran")

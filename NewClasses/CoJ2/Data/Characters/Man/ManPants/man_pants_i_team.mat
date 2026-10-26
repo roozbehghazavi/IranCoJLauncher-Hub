@@ -1,0 +1,30 @@
+// IranCoJ: PeasantA's trousers (man_pants_i) with the team tint on the cloth (stock: no tint at all).
+// Referenced only from the PeasantATeam skins (team modes).
+import "templates.mtt"
+
+sub material()
+{
+    use mtt_objects(
+        s_clr = "man_pants_i.dds",
+        s_nrm = "man_pants_i_nrm.dds",
+        s_msk = "man_pants_i_msk.dds",
+
+        __clr_srf_msk = s_msk_g,
+        __nrm_srf_msk = s_msk_g,
+        s_clr_srf = "srf_fabric_cloth_b.dds",
+        s_nrm_srf = "srf_fabric_cloth_b_nrm.dds",
+        f_nrm_srf_scale = 1.0,
+
+        __clr_srf_a_msk = s_msk_g_inv,
+        __nrm_srf_a_msk = s_msk_g_inv,
+        s_clr_srf_a = "srf_skin_hand_a.dds",
+        s_nrm_srf_a = "srf_skin_hand_a_nrm.dds",
+        f_nrm_srf_a_scale = 0.2,
+
+        b_clr_usr_on = TRUE,
+        __clr_usr_msk = s_msk_g,
+
+        f_srf_uv_scale = 25.0,
+        f_shn_factor = 0.1
+    );
+}

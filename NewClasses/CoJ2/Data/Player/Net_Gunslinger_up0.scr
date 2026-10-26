@@ -1,0 +1,12 @@
+// Synced with the dedicated server: every value here is the server's.
+// Only SkinName / SkinIcon / ColorI belong to the skin pack.
+!include("_Net_Gunslinger_Properties.scr")
+!include("_NetWeapon_Gunslinger_Properties.scr")
+
+MeshFileName("Man.msh")
+
+SkinName("Ray")
+ColorI(0, 126, 94, 75)
+ColorI(2, 199, 154, 63)
+ColorI(3, 138, 170, 172)
+SkinIcon("character_gunslinger")

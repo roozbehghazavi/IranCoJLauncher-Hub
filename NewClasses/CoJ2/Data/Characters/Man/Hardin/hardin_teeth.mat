@@ -1,0 +1,14 @@
+// IranCoJ: John Wesley Hardin (CoJ Gunslinger): teeth_a
+import "templates.mtt"
+
+sub material()
+{
+    use mtt_objects(
+        s_clr = "hardin_teeth.dds",
+        s_nrm = "dummy",
+        s_shn = "dummy",
+        b_render_shadows_on = FALSE,
+        f_shn_factor = 0.3
+    );
+}
+

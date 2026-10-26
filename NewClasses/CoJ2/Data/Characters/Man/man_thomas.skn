@@ -1,0 +1,469 @@
+// ======================== Thomas ========================
+Skin("Thomas")
+{
+	!include("man_surfaces.skt")
+	!include("man_disable_anims_on_lod.skt")
+	!include("man_shoes_a.skt")
+	!include("thomas_pants.skt")
+	!include("thomas_torso.skt")
+	!include("thomas_hands.skt")
+	!include("thomas_head_hat.skt")
+	!include("thomas_accessories.skt")
+	
+	Hide("HolsterL")
+	
+    ColorPreset("color_1")
+    {
+       ColorI(0, 65, 55, 46)
+       ColorI(2, 0, 0, 0)
+       ColorI(3, 140, 182, 213)
+    }
+	Hide("thomas_lasso")
+}
+Skin("Thomas_player")
+{
+	FilterInEditor()
+	!include("man_surfaces.skt")
+	!include("man_disable_anims_on_lod.skt")
+	!include("man_shoes_a.skt")
+	!include("thomas_pants.skt")
+	!include("thomas_torso.skt")
+	!include("thomas_hands.skt")
+	!include("thomas_head_hat.skt")
+	!include("thomas_accessories.skt")
+	!include("man_player.skt")
+	
+	
+	Hide("HolsterL")
+	Hide("thomas_lasso")
+}
+Skin("Thomas_null")
+{
+	FilterInEditor()
+	!include("man_surfaces.skt")
+	!include("man_disable_anims_on_lod.skt")
+	!include("man_shoes_a.skt")
+	!include("thomas_pants.skt")
+	!include("thomas_torso.skt")
+	!include("thomas_hands.skt")
+	!include("thomas_head_hat.skt")
+	!include("thomas_accessories.skt")
+
+	
+	Hide("HolsterL")
+	Hide("thomas_lasso")
+}
+Skin("Thomas_highlight")
+{
+	FilterInEditor()
+	!include("man_surfaces.skt")
+	!include("man_disable_anims_on_lod.skt")
+	!include("man_shoes_a.skt")
+	!include("thomas_pants.skt")
+	!include("thomas_torso.skt")
+	!include("thomas_hands.skt")
+	!include("thomas_head_hat.skt")
+	!include("thomas_accessories.skt")
+
+	
+	Hide("HolsterL")
+	Hide("thomas_lasso")
+}
+Skin("Thomas_marked")
+{
+	FilterInEditor()
+	!include("man_surfaces.skt")
+	!include("man_disable_anims_on_lod.skt")
+	!include("man_shoes_a.skt")
+	!include("thomas_pants.skt")
+	!include("thomas_torso.skt")
+	!include("thomas_hands.skt")
+	!include("thomas_head_hat.skt")
+	!include("thomas_accessories.skt")
+
+	
+	Hide("HolsterL")
+	Hide("thomas_lasso")
+}
+
+// ======================== Thomas No Cubemap ========================
+Skin("Thomas_No_Cubemap")
+{
+	!include("man_surfaces.skt")
+	!include("man_disable_anims_on_lod.skt")
+	!include("man_shoes_a.skt")
+	!include("thomas_pants.skt")
+	!include("thomas_torso.skt")
+	!include("thomas_hands.skt")
+	!include("thomas_head_hat.skt")
+	!include("thomas_accessories.skt")
+	
+	Replace("man_shirt_a.mat", "man_shirt_a_nocube.mat")
+	
+	Hide("HolsterL")
+	Hide("HolsterR")
+	
+    ColorPreset("color_1")
+    {
+       ColorI(0, 65, 55, 46)
+       ColorI(2, 0, 0, 0)
+       ColorI(3, 140, 182, 213)
+    }
+	Hide("thomas_lasso")
+}
+Skin("Thomas_No_Cubemap_player")
+{
+	FilterInEditor()
+	!include("man_surfaces.skt")
+	!include("man_disable_anims_on_lod.skt")
+	!include("man_shoes_a.skt")
+	!include("thomas_pants.skt")
+	!include("thomas_torso.skt")
+	!include("thomas_hands.skt")
+	!include("thomas_head_hat.skt")
+	!include("thomas_accessories.skt")
+	!include("man_player.skt")
+	
+	Replace("man_shirt_a.mat", "man_shirt_a_nocube.mat")
+	
+	
+	Hide("HolsterL")
+	Hide("HolsterR")
+	Hide("thomas_lasso")
+}
+Skin("Thomas_No_Cubemap_null")
+{
+	FilterInEditor()
+	!include("man_surfaces.skt")
+	!include("man_disable_anims_on_lod.skt")
+	!include("man_shoes_a.skt")
+	!include("thomas_pants.skt")
+	!include("thomas_torso.skt")
+	!include("thomas_hands.skt")
+	!include("thomas_head_hat.skt")
+	!include("thomas_accessories.skt")
+	
+	Replace("man_shirt_a.mat", "man_shirt_a_nocube.mat")
+
+	
+	Hide("HolsterL")
+	Hide("HolsterR")
+	Hide("thomas_lasso")
+}
+Skin("Thomas_No_Cubemap_highlight")
+{
+	FilterInEditor()
+	!include("man_surfaces.skt")
+	!include("man_disable_anims_on_lod.skt")
+	!include("man_shoes_a.skt")
+	!include("thomas_pants.skt")
+	!include("thomas_torso.skt")
+	!include("thomas_hands.skt")
+	!include("thomas_head_hat.skt")
+	!include("thomas_accessories.skt")
+	
+	Replace("man_shirt_a.mat", "man_shirt_a_nocube.mat")
+
+	
+	Hide("HolsterL")
+	Hide("HolsterR")
+	Hide("thomas_lasso")
+}
+Skin("Thomas_No_Cubemap_marked")
+{
+	FilterInEditor()
+	!include("man_surfaces.skt")
+	!include("man_disable_anims_on_lod.skt")
+	!include("man_shoes_a.skt")
+	!include("thomas_pants.skt")
+	!include("thomas_torso.skt")
+	!include("thomas_hands.skt")
+	!include("thomas_head_hat.skt")
+	!include("thomas_accessories.skt")
+	
+	Replace("man_shirt_a.mat", "man_shirt_a_nocube.mat")
+
+	
+	Hide("HolsterL")
+	Hide("HolsterR")
+	Hide("thomas_lasso")
+}
+
+// ======================== ThomasNoHat ========================
+Skin("ThomasNoHat")
+{
+	!include("man_surfaces.skt")
+	!include("man_disable_anims_on_lod.skt")
+	!include("man_shoes_a.skt")
+	!include("thomas_pants.skt")
+	!include("thomas_torso.skt")
+	!include("thomas_hands.skt")
+	!include("thomas_head.skt")
+	!include("thomas_accessories.skt")
+	
+	Hide("HolsterL")
+	
+    ColorPreset("color_1")
+    {
+       ColorI(0, 65, 55, 46)
+       ColorI(2, 0, 0, 0)
+       ColorI(3, 140, 182, 213)
+    }
+	Hide("thomas_lasso")
+}
+Skin("ThomasNoHat_player")
+{
+	FilterInEditor()
+	!include("man_surfaces.skt")
+	!include("man_disable_anims_on_lod.skt")
+	!include("man_shoes_a.skt")
+	!include("thomas_pants.skt")
+	!include("thomas_torso.skt")
+	!include("thomas_hands.skt")
+	!include("thomas_head.skt")
+	!include("thomas_accessories.skt")
+	!include("man_player.skt")
+
+	
+	Hide("HolsterL")
+	Hide("thomas_lasso")
+}
+Skin("ThomasNoHat_null")
+{
+	FilterInEditor()
+	!include("man_surfaces.skt")
+	!include("man_disable_anims_on_lod.skt")
+	!include("man_shoes_a.skt")
+	!include("thomas_pants.skt")
+	!include("thomas_torso.skt")
+	!include("thomas_hands.skt")
+	!include("thomas_head.skt")
+	!include("thomas_accessories.skt")
+
+	
+	Hide("HolsterL")
+	Hide("thomas_lasso")
+}
+Skin("ThomasNoHat_highlight")
+{
+	FilterInEditor()
+	!include("man_surfaces.skt")
+	!include("man_disable_anims_on_lod.skt")
+	!include("man_shoes_a.skt")
+	!include("thomas_pants.skt")
+	!include("thomas_torso.skt")
+	!include("thomas_hands.skt")
+	!include("thomas_head.skt")
+	!include("thomas_accessories.skt")
+
+	
+	Hide("HolsterL")
+	Hide("thomas_lasso")
+}
+Skin("ThomasNoHat_marked")
+{
+	FilterInEditor()
+	!include("man_surfaces.skt")
+	!include("man_disable_anims_on_lod.skt")
+	!include("man_shoes_a.skt")
+	!include("thomas_pants.skt")
+	!include("thomas_torso.skt")
+	!include("thomas_hands.skt")
+	!include("thomas_head.skt")
+	!include("thomas_accessories.skt")
+
+	
+	Hide("HolsterL")
+	Hide("thomas_lasso")
+}
+
+// ======================== ThomasSoldier ========================
+Skin("ThomasSoldier")
+{
+	!include("man_surfaces.skt")
+	!include("man_disable_anims_on_lod.skt")
+	!include("man_shoes_d.skt")
+	!include("man_pants_a.skt")
+	!include("man_torso_c.skt")
+	!include("thomas_hands.skt")
+	!include("thomas_head_soldier.skt")
+	!include("rebelb_accessories.skt")
+	
+	Hide("HolsterL")
+	
+	Replace("man_torso_c_rank.mat", "man_torso_c_first_lieut.mat")
+	
+    ColorPreset("South")
+    {
+       ColorI(0, 198, 197, 187)
+       ColorI(2, 0, 0, 0)
+       ColorI(3, 186, 184, 167)
+    }
+	Hide("thomas_lasso")
+}
+Skin("ThomasSoldier_player")
+{
+	FilterInEditor()
+	!include("man_surfaces.skt")
+	!include("man_disable_anims_on_lod.skt")
+	!include("man_shoes_d.skt")
+	!include("man_pants_a.skt")
+	!include("man_torso_c.skt")
+	!include("thomas_hands.skt")
+	!include("thomas_head_soldier.skt")
+	!include("rebelb_accessories.skt")
+	!include("man_player.skt")
+	
+	
+	Hide("HolsterL")
+	
+	Replace("man_torso_c_rank.mat", "man_torso_c_first_lieut.mat")
+	Hide("thomas_lasso")
+}
+Skin("ThomasSoldier_highlight")
+{
+	FilterInEditor()
+	!include("man_surfaces.skt")
+	!include("man_disable_anims_on_lod.skt")
+	!include("man_shoes_d.skt")
+	!include("man_pants_a.skt")
+	!include("man_torso_c.skt")
+	!include("thomas_hands.skt")
+	!include("thomas_head_soldier.skt")
+	!include("rebelb_accessories.skt")
+	
+	
+	Replace("man_torso_c_rank.mat", "man_torso_c_first_lieut_hl.mat")
+	
+	Hide("HolsterL")
+	Hide("thomas_lasso")
+}
+Skin("ThomasSoldier_marked")
+{
+	FilterInEditor()
+	!include("man_surfaces.skt")
+	!include("man_disable_anims_on_lod.skt")
+	!include("man_shoes_d.skt")
+	!include("man_pants_a.skt")
+	!include("man_torso_c.skt")
+	!include("thomas_hands.skt")
+	!include("thomas_head_soldier.skt")
+	!include("rebelb_accessories.skt")
+	
+	
+	Replace("man_torso_c_rank.mat", "man_torso_c_first_lieut_mrk.mat")
+	
+	Hide("HolsterL")
+	Hide("thomas_lasso")
+}
+Skin("ThomasSoldier_null")
+{
+	FilterInEditor()
+	!include("man_surfaces.skt")
+	!include("man_disable_anims_on_lod.skt")
+	!include("man_shoes_d.skt")
+	!include("man_pants_a.skt")
+	!include("man_torso_c.skt")
+	!include("thomas_hands.skt")
+	!include("thomas_head_soldier.skt")
+	!include("rebelb_accessories.skt")
+	
+	Hide("HolsterL")
+	Hide("thomas_lasso")
+}
+
+// ======================== ThomasSoldierNoHat ========================
+Skin("ThomasSoldierNoHat")
+{
+	!include("man_surfaces.skt")
+	!include("man_disable_anims_on_lod.skt")
+	!include("man_shoes_d.skt")
+	!include("man_pants_a.skt")
+	!include("man_torso_c.skt")
+	!include("thomas_hands.skt")
+	!include("thomas_head.skt")
+	!include("rebelb_accessories.skt")
+	
+	Hide("HolsterL")
+	
+	Replace("man_torso_c_rank.mat", "man_torso_c_first_lieut.mat")
+	
+    ColorPreset("South")
+    {
+       ColorI(0, 198, 197, 187)
+       ColorI(2, 0, 0, 0)
+       ColorI(3, 186, 184, 167)
+    }
+	Hide("thomas_lasso")
+}
+Skin("ThomasSoldierNoHat_player")
+{
+	FilterInEditor()
+	!include("man_surfaces.skt")
+	!include("man_disable_anims_on_lod.skt")
+	!include("man_shoes_d.skt")
+	!include("man_pants_a.skt")
+	!include("man_torso_c.skt")
+	!include("thomas_hands.skt")
+	!include("thomas_head.skt")
+	!include("rebelb_accessories.skt")
+	!include("man_player.skt")
+	
+	
+	Hide("HolsterL")
+	
+	Replace("man_torso_c_rank.mat", "man_torso_c_first_lieut.mat")
+	Hide("thomas_lasso")
+}
+Skin("ThomasSoldierNoHat_highlight")
+{
+	FilterInEditor()
+	!include("man_surfaces.skt")
+	!include("man_disable_anims_on_lod.skt")
+	!include("man_shoes_d.skt")
+	!include("man_pants_a.skt")
+	!include("man_torso_c.skt")
+	!include("thomas_hands.skt")
+	!include("thomas_head.skt")
+	!include("rebelb_accessories.skt")
+	
+	
+	Replace("man_torso_c_rank.mat", "man_torso_c_first_lieut_hl.mat")
+	
+	Hide("HolsterL")
+	Hide("thomas_lasso")
+}
+Skin("ThomasSoldierNoHat_marked")
+{
+	FilterInEditor()
+	!include("man_surfaces.skt")
+	!include("man_disable_anims_on_lod.skt")
+	!include("man_shoes_d.skt")
+	!include("man_pants_a.skt")
+	!include("man_torso_c.skt")
+	!include("thomas_hands.skt")
+	!include("thomas_head.skt")
+	!include("rebelb_accessories.skt")
+	
+	
+	Replace("man_torso_c_rank.mat", "man_torso_c_first_lieut_mrk.mat")
+	
+	Hide("HolsterL")
+	Hide("thomas_lasso")
+}
+Skin("ThomasSoldierNoHat_null")
+{
+	FilterInEditor()
+	!include("man_surfaces.skt")
+	!include("man_disable_anims_on_lod.skt")
+	!include("man_shoes_d.skt")
+	!include("man_pants_a.skt")
+	!include("man_torso_c.skt")
+	!include("thomas_hands.skt")
+	!include("thomas_head.skt")
+	!include("rebelb_accessories.skt")
+	
+	Hide("HolsterL")
+	Hide("thomas_lasso")
+}
+

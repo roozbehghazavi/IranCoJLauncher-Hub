@@ -1,0 +1,99 @@
+// IranCoJ: John Wesley Hardin (CoJ Gunslinger) on the Man skeleton - skins for the Duelist (Doc) class
+Skin("Default")
+{
+	!include("man_surfaces.skt")
+}
+
+Skin("Hardin")
+{
+	!include("man_surfaces.skt")
+	Hide("HolsterL")
+	Hide("HolsterR")
+}
+
+Skin("Hardin_player")
+{
+	FilterInEditor()
+	!include("man_surfaces.skt")
+	Replace("hardin_head.mat", "man_null.mat")
+	Replace("hardin_eyes.mat", "man_null.mat")
+	Replace("hardin_teeth.mat", "man_null.mat")
+	Replace("hardin_hair.mat", "man_null.mat")
+	Replace("hardin_hat.mat", "man_null.mat")
+	Hide("HolsterL")
+	Hide("HolsterR")
+}
+
+Skin("Hardin_highlight")
+{
+	FilterInEditor()
+	!include("man_surfaces.skt")
+	Hide("HolsterL")
+	Hide("HolsterR")
+}
+
+Skin("Hardin_marked")
+{
+	FilterInEditor()
+	!include("man_surfaces.skt")
+	Hide("HolsterL")
+	Hide("HolsterR")
+}
+
+Skin("Hardin_null")
+{
+	FilterInEditor()
+	!include("man_surfaces.skt")
+	Hide("HolsterL")
+	Hide("HolsterR")
+}
+
+Skin("HardinTeam")
+{
+	!include("man_surfaces.skt")
+	Replace("hardin_torso.mat", "hardin_torso_team.mat")
+	Hide("HolsterL")
+	Hide("HolsterR")
+}
+
+Skin("HardinTeam_player")
+{
+	FilterInEditor()
+	!include("man_surfaces.skt")
+	Replace("hardin_torso.mat", "hardin_torso_team.mat")
+	Replace("hardin_head.mat", "man_null.mat")
+	Replace("hardin_eyes.mat", "man_null.mat")
+	Replace("hardin_teeth.mat", "man_null.mat")
+	Replace("hardin_hair.mat", "man_null.mat")
+	Replace("hardin_hat.mat", "man_null.mat")
+	Hide("HolsterL")
+	Hide("HolsterR")
+}
+
+Skin("HardinTeam_highlight")
+{
+	FilterInEditor()
+	!include("man_surfaces.skt")
+	Replace("hardin_torso.mat", "hardin_torso_team.mat")
+	Hide("HolsterL")
+	Hide("HolsterR")
+}
+
+Skin("HardinTeam_marked")
+{
+	FilterInEditor()
+	!include("man_surfaces.skt")
+	Replace("hardin_torso.mat", "hardin_torso_team.mat")
+	Hide("HolsterL")
+	Hide("HolsterR")
+}
+
+Skin("HardinTeam_null")
+{
+	FilterInEditor()
+	!include("man_surfaces.skt")
+	Replace("hardin_torso.mat", "hardin_torso_team.mat")
+	Hide("HolsterL")
+	Hide("HolsterR")
+}
+

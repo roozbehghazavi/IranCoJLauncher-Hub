@@ -1,0 +1,4 @@
+!include("Weapon_Event.def")
+!include("PlayerFpp_ThrowingKnife.scr")
+!include("PlayerOldFpp_ThrowingKnife.scr")
+!include("knife_net_Tpp.scr")

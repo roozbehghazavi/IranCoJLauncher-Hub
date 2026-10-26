@@ -1,0 +1,12 @@
+// Synced with the dedicated server: every value here is the server's.
+// Only SkinName / SkinIcon / ColorI belong to the skin pack.
+!include("_Net_Trapper_Properties.scr")
+!include("_NetWeapon_Trapper_Properties.scr")
+
+MeshFileName("Man.msh")
+
+SkinName("ODonell")
+ColorI(0, 95, 80, 69)
+ColorI(2, 50, 57, 49)
+ColorI(3, 159, 94, 62)
+SkinIcon("character_traper")

@@ -1,0 +1,4 @@
+!include("Weapon_Event.def")
+!include("PlayerFpp_ColtPeacemaker.scr")
+!include("PlayerOldFpp_Peacemaker.scr")
+!include("classic_sixshooter_Tpp.scr")

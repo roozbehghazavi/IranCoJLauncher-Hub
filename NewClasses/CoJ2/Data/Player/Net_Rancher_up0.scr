@@ -1,0 +1,10 @@
+// IranCoJ new class: the Rancher is Silas Greaves from CoJ Gunslinger (Data/Characters/Man/Silas: Silas.msh on the Man skeleton,
+// skins in Silas.skn); its own class picture (character_rancher in net_characters.dds). Client side only: the server keeps
+// Man.msh, same skeleton and animations, so hits line up.
+!include("_Net_Rancher_Properties.scr")
+!include("_NetWeapon_Rancher_Properties.scr")
+
+MeshFileName("Silas.msh")
+SkinName("Silas")
+
+SkinIcon("character_rancher")

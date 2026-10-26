@@ -1,0 +1,551 @@
+// ======================== Professional A ========================
+Skin("Professional_A")
+{
+	!include("man_surfaces.skt")
+	!include("man_disable_anims_on_lod.skt")
+	!include("man_shoes_d.skt")
+	!include("man_pants_a.skt")
+	!include("man_torso_a.skt")
+	!include("man_hands_a.skt")
+	!include("man_head_b.skt")
+	!include("pro_accessories.skt")
+    ColorPreset("color_1")
+    {
+       ColorI(0, 32, 34, 38)
+       ColorI(2, 32, 34, 38)
+       ColorI(3, 32, 34, 38)
+    }
+}
+Skin("Professional_A_highlight")
+{
+	FilterInEditor()
+	!include("man_surfaces.skt")
+	!include("man_disable_anims_on_lod.skt")
+	!include("man_shoes_d.skt")
+	!include("man_pants_a.skt")
+	!include("man_torso_a.skt")
+	!include("man_hands_a.skt")
+	!include("man_head_b.skt")
+	!include("pro_accessories.skt")
+
+}
+Skin("Professional_A_marked")
+{
+	FilterInEditor()
+	!include("man_surfaces.skt")
+	!include("man_disable_anims_on_lod.skt")
+	!include("man_shoes_d.skt")
+	!include("man_pants_a.skt")
+	!include("man_torso_a.skt")
+	!include("man_hands_a.skt")
+	!include("man_head_b.skt")
+	!include("pro_accessories.skt")
+}
+Skin("Professional_A_player")
+{
+	FilterInEditor()
+	!include("man_surfaces.skt")
+	!include("man_disable_anims_on_lod.skt")
+	!include("man_shoes_d.skt")
+	!include("man_pants_a.skt")
+	!include("man_torso_a.skt")
+	!include("man_hands_a.skt")
+	!include("man_head_b.skt")
+	!include("pro_accessories.skt")
+	!include("man_player.skt")
+}
+Skin("Professional_A_null")
+{
+	FilterInEditor()
+	!include("man_surfaces.skt")
+	!include("man_disable_anims_on_lod.skt")
+	!include("man_shoes_d.skt")
+	!include("man_pants_a.skt")
+	!include("man_torso_a.skt")
+	!include("man_hands_a.skt")
+	!include("man_head_b.skt")
+	!include("pro_accessories.skt")
+
+}
+
+// ======================== Professional B ========================
+Skin("Professional_B")
+{
+	!include("man_surfaces.skt")
+	!include("man_disable_anims_on_lod.skt")
+	!include("man_shoes_d.skt")
+	!include("man_pants_a.skt")
+	!include("man_torso_a.skt")
+	!include("man_hands_a.skt")
+	!include("man_head_k.skt")
+	!include("pro_accessories.skt")
+    ColorPreset("color_1")
+    {
+       ColorI(0, 32, 34, 38)
+       ColorI(2, 32, 34, 38)
+       ColorI(3, 32, 34, 38)
+    }
+}
+Skin("Professional_B_highlight")
+{
+	FilterInEditor()
+	!include("man_surfaces.skt")
+	!include("man_disable_anims_on_lod.skt")
+	!include("man_shoes_d.skt")
+	!include("man_pants_a.skt")
+	!include("man_torso_a.skt")
+	!include("man_hands_a.skt")
+	!include("man_head_k.skt")
+	!include("pro_accessories.skt")
+
+}
+Skin("Professional_B_marked")
+{
+	FilterInEditor()
+	!include("man_surfaces.skt")
+	!include("man_disable_anims_on_lod.skt")
+	!include("man_shoes_d.skt")
+	!include("man_pants_a.skt")
+	!include("man_torso_a.skt")
+	!include("man_hands_a.skt")
+	!include("man_head_k.skt")
+	!include("pro_accessories.skt")
+}
+Skin("Professional_B_player")
+{
+	FilterInEditor()
+	!include("man_surfaces.skt")
+	!include("man_disable_anims_on_lod.skt")
+	!include("man_shoes_d.skt")
+	!include("man_pants_a.skt")
+	!include("man_torso_a.skt")
+	!include("man_hands_a.skt")
+	!include("man_head_k.skt")
+	!include("pro_accessories.skt")
+	!include("man_player.skt")
+}
+Skin("Professional_B_null")
+{
+	FilterInEditor()
+	!include("man_surfaces.skt")
+	!include("man_disable_anims_on_lod.skt")
+	!include("man_shoes_d.skt")
+	!include("man_pants_a.skt")
+	!include("man_torso_a.skt")
+	!include("man_hands_a.skt")
+	!include("man_head_k.skt")
+	!include("pro_accessories.skt")
+
+}
+
+// ======================== Professional C ========================
+Skin("Professional_C")
+{
+	!include("man_surfaces.skt")
+	!include("man_disable_anims_on_lod.skt")
+	!include("man_shoes_d.skt")
+	!include("man_pants_a.skt")
+	!include("man_torso_a.skt")
+	!include("man_hands_a.skt")
+	!include("man_head_l.skt")
+	!include("pro_accessories.skt")
+    ColorPreset("color_1")
+    {
+       ColorI(0, 32, 34, 38)
+       ColorI(2, 32, 34, 38)
+       ColorI(3, 32, 34, 38)
+    }
+}
+Skin("Professional_C_highlight")
+{
+	FilterInEditor()
+	!include("man_surfaces.skt")
+	!include("man_disable_anims_on_lod.skt")
+	!include("man_shoes_d.skt")
+	!include("man_pants_a.skt")
+	!include("man_torso_a.skt")
+	!include("man_hands_a.skt")
+	!include("man_head_l.skt")
+	!include("pro_accessories.skt")
+
+}
+Skin("Professional_C_marked")
+{
+	FilterInEditor()
+	!include("man_surfaces.skt")
+	!include("man_disable_anims_on_lod.skt")
+	!include("man_shoes_d.skt")
+	!include("man_pants_a.skt")
+	!include("man_torso_a.skt")
+	!include("man_hands_a.skt")
+	!include("man_head_l.skt")
+	!include("pro_accessories.skt")
+}
+Skin("Professional_C_player")
+{
+	FilterInEditor()
+	!include("man_surfaces.skt")
+	!include("man_disable_anims_on_lod.skt")
+	!include("man_shoes_d.skt")
+	!include("man_pants_a.skt")
+	!include("man_torso_a.skt")
+	!include("man_hands_a.skt")
+	!include("man_head_l.skt")
+	!include("pro_accessories.skt")
+	!include("man_player.skt")
+}
+Skin("Professional_C_null")
+{
+	FilterInEditor()
+	!include("man_surfaces.skt")
+	!include("man_disable_anims_on_lod.skt")
+	!include("man_shoes_d.skt")
+	!include("man_pants_a.skt")
+	!include("man_torso_a.skt")
+	!include("man_hands_a.skt")
+	!include("man_head_l.skt")
+	!include("pro_accessories.skt")
+
+}
+
+// ======================== Professional D ========================
+Skin("Professional_D")
+{
+	!include("man_surfaces.skt")
+	!include("man_disable_anims_on_lod.skt")
+	!include("man_shoes_d.skt")
+	!include("man_pants_a.skt")
+	!include("man_torso_a.skt")
+	!include("man_hands_a.skt")
+	!include("man_head_m.skt")
+	!include("pro_accessories.skt")
+    ColorPreset("color_1")
+    {
+       ColorI(0, 32, 34, 38)
+       ColorI(2, 32, 34, 38)
+       ColorI(3, 32, 34, 38)
+    }
+}
+Skin("Professional_D_highlight")
+{
+	FilterInEditor()
+	!include("man_surfaces.skt")
+	!include("man_disable_anims_on_lod.skt")
+	!include("man_shoes_d.skt")
+	!include("man_pants_a.skt")
+	!include("man_torso_a.skt")
+	!include("man_hands_a.skt")
+	!include("man_head_m.skt")
+	!include("pro_accessories.skt")
+
+}
+Skin("Professional_D_marked")
+{
+	FilterInEditor()
+	!include("man_surfaces.skt")
+	!include("man_disable_anims_on_lod.skt")
+	!include("man_shoes_d.skt")
+	!include("man_pants_a.skt")
+	!include("man_torso_a.skt")
+	!include("man_hands_a.skt")
+	!include("man_head_m.skt")
+	!include("pro_accessories.skt")
+}
+Skin("Professional_D_player")
+{
+	FilterInEditor()
+	!include("man_surfaces.skt")
+	!include("man_disable_anims_on_lod.skt")
+	!include("man_shoes_d.skt")
+	!include("man_pants_a.skt")
+	!include("man_torso_a.skt")
+	!include("man_hands_a.skt")
+	!include("man_head_m.skt")
+	!include("pro_accessories.skt")
+	!include("man_player.skt")
+}
+Skin("Professional_D_null")
+{
+	FilterInEditor()
+	!include("man_surfaces.skt")
+	!include("man_disable_anims_on_lod.skt")
+	!include("man_shoes_d.skt")
+	!include("man_pants_a.skt")
+	!include("man_torso_a.skt")
+	!include("man_hands_a.skt")
+	!include("man_head_m.skt")
+	!include("pro_accessories.skt")
+
+}
+
+// ======================== Professional A Coat ========================
+Skin("Professional_A_Coat")
+{
+	!include("man_surfaces.skt")
+	!include("man_disable_anims_on_lod.skt")
+	!include("man_shoes_d.skt")
+	!include("man_pants_a.skt")
+	!include("man_torso_b.skt")
+	!include("man_hands_a.skt")
+	!include("man_head_b.skt")
+	!include("pro_accessories.skt")
+    ColorPreset("color_1")
+    {
+       ColorI(0, 32, 34, 38)
+       ColorI(2, 32, 34, 38)
+       ColorI(3, 32, 34, 38)
+    }
+}
+Skin("Professional_A_Coat_player")
+{
+	FilterInEditor()
+	!include("man_surfaces.skt")
+	!include("man_disable_anims_on_lod.skt")
+	!include("man_shoes_d.skt")
+	!include("man_pants_a.skt")
+	!include("man_torso_b.skt")
+	!include("man_hands_a.skt")
+	!include("man_head_b.skt")
+	!include("pro_accessories.skt")
+	!include("man_player.skt")
+}
+Skin("Professional_A_Coat_highlight")
+{
+	FilterInEditor()
+	!include("man_surfaces.skt")
+	!include("man_disable_anims_on_lod.skt")
+	!include("man_shoes_d.skt")
+	!include("man_pants_a.skt")
+	!include("man_torso_b.skt")
+	!include("man_hands_a.skt")
+	!include("man_head_b.skt")
+	!include("pro_accessories.skt")
+}
+Skin("Professional_A_Coat_marked")
+{
+	FilterInEditor()
+	!include("man_surfaces.skt")
+	!include("man_disable_anims_on_lod.skt")
+	!include("man_shoes_d.skt")
+	!include("man_pants_a.skt")
+	!include("man_torso_b.skt")
+	!include("man_hands_a.skt")
+	!include("man_head_b.skt")
+	!include("pro_accessories.skt")
+}
+Skin("Professional_A_Coat_null")
+{
+	FilterInEditor()
+	!include("man_surfaces.skt")
+	!include("man_disable_anims_on_lod.skt")
+	!include("man_shoes_d.skt")
+	!include("man_pants_a.skt")
+	!include("man_torso_b.skt")
+	!include("man_hands_a.skt")
+	!include("man_head_b.skt")
+	!include("pro_accessories.skt")
+}
+
+// ======================== Professional B Coat ========================
+Skin("Professional_B_Coat")
+{
+	!include("man_surfaces.skt")
+	!include("man_disable_anims_on_lod.skt")
+	!include("man_shoes_d.skt")
+	!include("man_pants_a.skt")
+	!include("man_torso_b.skt")
+	!include("man_hands_a.skt")
+	!include("man_head_k.skt")
+	!include("pro_accessories.skt")
+    ColorPreset("color_1")
+    {
+       ColorI(0, 32, 34, 38)
+       ColorI(2, 32, 34, 38)
+       ColorI(3, 32, 34, 38)
+    }
+}
+Skin("Professional_B_Coat_player")
+{
+	FilterInEditor()
+	!include("man_surfaces.skt")
+	!include("man_disable_anims_on_lod.skt")
+	!include("man_shoes_d.skt")
+	!include("man_pants_a.skt")
+	!include("man_torso_b.skt")
+	!include("man_hands_a.skt")
+	!include("man_head_k.skt")
+	!include("pro_accessories.skt")
+	!include("man_player.skt")
+}
+Skin("Professional_B_Coat_highlight")
+{
+	FilterInEditor()
+	!include("man_surfaces.skt")
+	!include("man_disable_anims_on_lod.skt")
+	!include("man_shoes_d.skt")
+	!include("man_pants_a.skt")
+	!include("man_torso_b.skt")
+	!include("man_hands_a.skt")
+	!include("man_head_k.skt")
+	!include("pro_accessories.skt")
+}
+Skin("Professional_B_Coat_marked")
+{
+	FilterInEditor()
+	!include("man_surfaces.skt")
+	!include("man_disable_anims_on_lod.skt")
+	!include("man_shoes_d.skt")
+	!include("man_pants_a.skt")
+	!include("man_torso_b.skt")
+	!include("man_hands_a.skt")
+	!include("man_head_k.skt")
+	!include("pro_accessories.skt")
+}
+Skin("Professional_B_Coat_null")
+{
+	FilterInEditor()
+	!include("man_surfaces.skt")
+	!include("man_disable_anims_on_lod.skt")
+	!include("man_shoes_d.skt")
+	!include("man_pants_a.skt")
+	!include("man_torso_b.skt")
+	!include("man_hands_a.skt")
+	!include("man_head_k.skt")
+	!include("pro_accessories.skt")
+}
+
+// ======================== Professional C Coat ========================
+Skin("Professional_C_Coat")
+{
+	!include("man_surfaces.skt")
+	!include("man_disable_anims_on_lod.skt")
+	!include("man_shoes_d.skt")
+	!include("man_pants_a.skt")
+	!include("man_torso_b.skt")
+	!include("man_hands_a.skt")
+	!include("man_head_l.skt")
+	!include("pro_accessories.skt")
+    ColorPreset("color_1")
+    {
+       ColorI(0, 32, 34, 38)
+       ColorI(2, 32, 34, 38)
+       ColorI(3, 32, 34, 38)
+    }
+}
+Skin("Professional_C_Coat_player")
+{
+	FilterInEditor()
+	!include("man_surfaces.skt")
+	!include("man_disable_anims_on_lod.skt")
+	!include("man_shoes_d.skt")
+	!include("man_pants_a.skt")
+	!include("man_torso_b.skt")
+	!include("man_hands_a.skt")
+	!include("man_head_l.skt")
+	!include("pro_accessories.skt")
+	!include("man_player.skt")
+}
+Skin("Professional_C_Coat_highlight")
+{
+	FilterInEditor()
+	!include("man_surfaces.skt")
+	!include("man_disable_anims_on_lod.skt")
+	!include("man_shoes_d.skt")
+	!include("man_pants_a.skt")
+	!include("man_torso_b.skt")
+	!include("man_hands_a.skt")
+	!include("man_head_l.skt")
+	!include("pro_accessories.skt")
+}
+Skin("Professional_C_Coat_marked")
+{
+	FilterInEditor()
+	!include("man_surfaces.skt")
+	!include("man_disable_anims_on_lod.skt")
+	!include("man_shoes_d.skt")
+	!include("man_pants_a.skt")
+	!include("man_torso_b.skt")
+	!include("man_hands_a.skt")
+	!include("man_head_l.skt")
+	!include("pro_accessories.skt")
+}
+Skin("Professional_C_Coat_null")
+{
+	FilterInEditor()
+	!include("man_surfaces.skt")
+	!include("man_disable_anims_on_lod.skt")
+	!include("man_shoes_d.skt")
+	!include("man_pants_a.skt")
+	!include("man_torso_b.skt")
+	!include("man_hands_a.skt")
+	!include("man_head_l.skt")
+	!include("pro_accessories.skt")
+}
+
+// ======================== Professional A Coat ========================
+Skin("Professional_D_Coat")
+{
+	!include("man_surfaces.skt")
+	!include("man_disable_anims_on_lod.skt")
+	!include("man_shoes_d.skt")
+	!include("man_pants_a.skt")
+	!include("man_torso_b.skt")
+	!include("man_hands_a.skt")
+	!include("man_head_m.skt")
+	!include("pro_accessories.skt")
+    ColorPreset("color_1")
+    {
+       ColorI(0, 32, 34, 38)
+       ColorI(2, 32, 34, 38)
+       ColorI(3, 32, 34, 38)
+    }
+}
+Skin("Professional_D_Coat_player")
+{
+	FilterInEditor()
+	!include("man_surfaces.skt")
+	!include("man_disable_anims_on_lod.skt")
+	!include("man_shoes_d.skt")
+	!include("man_pants_a.skt")
+	!include("man_torso_b.skt")
+	!include("man_hands_a.skt")
+	!include("man_head_m.skt")
+	!include("pro_accessories.skt")
+	!include("man_player.skt")
+}
+Skin("Professional_D_Coat_highlight")
+{
+	FilterInEditor()
+	!include("man_surfaces.skt")
+	!include("man_disable_anims_on_lod.skt")
+	!include("man_shoes_d.skt")
+	!include("man_pants_a.skt")
+	!include("man_torso_b.skt")
+	!include("man_hands_a.skt")
+	!include("man_head_m.skt")
+	!include("pro_accessories.skt")
+}
+Skin("Professional_D_Coat_marked")
+{
+	FilterInEditor()
+	!include("man_surfaces.skt")
+	!include("man_disable_anims_on_lod.skt")
+	!include("man_shoes_d.skt")
+	!include("man_pants_a.skt")
+	!include("man_torso_b.skt")
+	!include("man_hands_a.skt")
+	!include("man_head_m.skt")
+	!include("pro_accessories.skt")
+}
+Skin("Professional_D_Coat_null")
+{
+	FilterInEditor()
+	!include("man_surfaces.skt")
+	!include("man_disable_anims_on_lod.skt")
+	!include("man_shoes_d.skt")
+	!include("man_pants_a.skt")
+	!include("man_torso_b.skt")
+	!include("man_hands_a.skt")
+	!include("man_head_m.skt")
+	!include("pro_accessories.skt")
+}

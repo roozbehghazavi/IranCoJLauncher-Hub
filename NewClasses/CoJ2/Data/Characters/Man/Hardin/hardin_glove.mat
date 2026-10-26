@@ -1,0 +1,13 @@
+// IranCoJ: John Wesley Hardin (CoJ Gunslinger): hardin_glove
+import "templates.mtt"
+
+sub material()
+{
+    use mtt_objects(
+        s_clr = "hardin_glove.dds",
+        s_nrm = "hardin_glove_nrm.dds",
+        s_shn = "dummy",
+        f_shn_factor = 0.3
+    );
+}
+

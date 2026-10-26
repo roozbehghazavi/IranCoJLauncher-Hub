@@ -1,0 +1,160 @@
+//--------- File generated automatically by TextureMergeTool ----------//
+// Generated: Fri Mar 20 15:09:14 2009
+
+//WARNING: do not add anything manually because any changes will be lost when this file will be generated again!
+//WARNING: please do not add any comments because they will be lost!
+//WARNING: do not modify (unless you know what are you doing)!
+
+!Texture(s, i, i) //texture file/ filename, width, height
+!HiddenInEditor(i) //if present, texture won't be visible in UIEditor combobox
+!Rect(s, i, i, i, i) //texture part / name, left, top, right, bottom (in pixels)
+!RectWithCorner(s, i, i, i, i, i, i) //texture part / name, left, top, right, bottom, corner width, corner height (in pixels)
+!Whole(s)
+
+Texture("hud_new.dds",1024,1024)
+{
+    Rect("hud_drum"                       ,   0,   0, 256, 256) // 256x256
+    Rect("hud_crosshair_selector"         , 258,   0, 382, 124) // 124x124
+    Rect("hud_drum_selector"              , 384,   0, 467, 155) //  83x155
+    Rect("hud_skull_drum"                 , 258, 126, 354, 222) //  96x 96
+    Rect("list_tab"                       , 469,   0, 597,  64) // 128x 64
+    Rect("hud_cards_flush"                , 469,  66, 559, 156) //  90x 90
+    Rect("hud_cards_four"                 , 469, 158, 559, 248) //  90x 90
+    Rect("hud_cards_full"                 , 599,   0, 689,  90) //  90x 90
+    Rect("hud_cards_pair"                 , 599,  92, 689, 182) //  90x 90
+    Rect("hud_cards_royal"                , 691,   0, 781,  90) //  90x 90
+    Rect("hud_cards_straight"             , 691,  92, 781, 182) //  90x 90
+    Rect("hud_cards_three"                , 783,   0, 873,  90) //  90x 90
+    Rect("hud_counter_d"                  , 875,   0, 965,  90) //  90x 90
+    Rect("hud_gun_icon_selfkill"          , 783,  92, 873, 182) //  90x 90
+    Rect("hud_icon_ammo_bowarrow"         , 875,  92, 965, 182) //  90x 90
+    Rect("hud_icon_goldsack"              ,   0, 258,  90, 348) //  90x 90
+    Rect("hud_icon_headshot"              ,   0, 350,  90, 440) //  90x 90
+    Rect("hud_icon_idle_ammo_pistol"      ,   0, 442,  90, 532) //  90x 90
+    Rect("hud_icon_idle_ammo_rifle"       ,   0, 534,  90, 624) //  90x 90
+    Rect("hud_icon_idle_ammo_shotgun"     ,   0, 626,  90, 716) //  90x 90
+    Rect("hud_icon_idle_bow"              ,   0, 718,  90, 808) //  90x 90
+    Rect("hud_icon_idle_broadknife"       ,   0, 810,  90, 900) //  90x 90
+    Rect("hud_icon_idle_bucket"           ,   0, 902,  90, 992) //  90x 90
+    Rect("hud_icon_idle_chair"            ,  92, 258, 182, 348) //  90x 90
+    Rect("hud_icon_idle_cogswell"         ,  92, 350, 182, 440) //  90x 90
+    Rect("hud_icon_idle_derringer"        ,  92, 442, 182, 532) //  90x 90
+    Rect("hud_icon_idle_dynamite"         ,  92, 534, 182, 624) //  90x 90
+    Rect("hud_icon_idle_fists"            ,  92, 626, 182, 716) //  90x 90
+    Rect("hud_icon_idle_frontier"         ,  92, 718, 182, 808) //  90x 90
+    Rect("hud_icon_idle_gatling"          ,  92, 810, 182, 900) //  90x 90
+    Rect("hud_icon_idle_knife"            ,  92, 902, 182, 992) //  90x 90
+    Rect("hud_icon_idle_lamp"             , 184, 258, 274, 348) //  90x 90
+    Rect("hud_icon_idle_lasso"            , 184, 350, 274, 440) //  90x 90
+    Rect("hud_icon_idle_lemant"           , 184, 442, 274, 532) //  90x 90
+    Rect("hud_icon_idle_peacemaker"       , 184, 534, 274, 624) //  90x 90
+    Rect("hud_icon_idle_remington_db"     , 184, 626, 274, 716) //  90x 90
+    Rect("hud_icon_idle_remington_saw_off", 184, 718, 274, 808) //  90x 90
+    Rect("hud_icon_idle_schofield"        , 184, 810, 274, 900) //  90x 90
+    Rect("hud_icon_idle_sharps"           , 184, 902, 274, 992) //  90x 90
+    Rect("hud_icon_idle_sharps_scope"     , 276, 258, 366, 348) //  90x 90
+    Rect("hud_icon_idle_springfield"      , 368, 258, 458, 348) //  90x 90
+    Rect("hud_icon_idle_volcanic"         , 460, 258, 550, 348) //  90x 90
+    Rect("hud_icon_idle_walker"           , 552, 258, 642, 348) //  90x 90
+    Rect("hud_icon_idle_winchester"       , 644, 258, 734, 348) //  90x 90
+    Rect("hud_icon_idle_winchester_scope" , 736, 258, 826, 348) //  90x 90
+    Rect("hud_icon_selected_keys"         , 828, 258, 918, 348) //  90x 90
+    Rect("concentration_progress"         , 276, 350, 694, 369) // 418x 19
+    Rect("hud_back_strip_"                , 920, 258,1005, 343) //  85x 85
+    Rect("hud_wanted"                     , 276, 371, 430, 413) // 154x 42
+    Rect("hud_team_blue"                  , 384, 157, 454, 227) //  70x 70
+    Rect("hud_team_red"                   , 599, 184, 669, 254) //  70x 70
+    Rect("Net_Problem"                    , 691, 184, 761, 254) //  70x 70
+    Rect("Net_Problem_b"                  , 783, 184, 853, 254) //  70x 70
+    Rect("hud_counter_a"                  , 875, 184, 940, 249) //  65x 65
+    Rect("icon_not_accesable"             , 942, 184,1006, 248) //  64x 64
+    Rect("hud_counter_c"                  , 967,   0,1022,  55) //  55x 55
+    Rect("icon_objective_accomplished"    , 967,  92,1015, 140) //  48x 48
+    Rect("hud_crosshair_ray"              , 276, 415, 322, 461) //  46x 46
+    Rect("hud_crosshair_thomas"           , 276, 463, 322, 509) //  46x 46
+    Rect("hud_locked"                     , 967, 142,1007, 182) //  40x 40
+    Rect("icon_net_aristocrat_big"        , 432, 371, 472, 411) //  40x 40
+    Rect("icon_net_bandit_big"            , 474, 371, 514, 411) //  40x 40
+    Rect("icon_net_doc_big"               , 516, 371, 556, 411) //  40x 40
+    Rect("icon_net_gunslinger_big"        , 558, 371, 598, 411) //  40x 40
+    Rect("icon_net_gunsmith_big"          , 600, 371, 640, 411) //  40x 40
+    Rect("icon_net_miner_big"             , 642, 371, 682, 411) //  40x 40
+    Rect("icon_net_rifleman_big"          , 684, 371, 724, 411) //  40x 40
+    Rect("icon_net_sniper_big"            , 726, 371, 766, 411) //  40x 40
+    Rect("icon_net_thief_big"             , 768, 371, 808, 411) //  40x 40
+    Rect("icon_net_trapper_big"           , 810, 371, 850, 411) //  40x 40
+    Rect("icon_net_tribe_warrior_big"     , 852, 371, 892, 411) //  40x 40
+    Rect("icon_net_veteran_big"           , 894, 371, 934, 411) //  40x 40
+    Rect("icon_net_vigilante_big"         , 936, 371, 976, 411) //  40x 40
+    Rect("hud_crosshair_hit"              , 978, 371,1016, 409) //  38x 38
+    Rect("hud_icons_dynamite"             , 561,  66, 597, 102) //  36x 36
+    Rect("hud_icons_flag_blue"            , 561, 104, 597, 140) //  36x 36
+    Rect("hud_icons_flag_red"             , 561, 158, 597, 194) //  36x 36
+    Rect("hud_icons_friendly"             , 561, 196, 597, 232) //  36x 36
+    Rect("hud_icons_gatling"              , 276, 511, 312, 547) //  36x 36
+    Rect("hud_icons_gold"                 , 276, 549, 312, 585) //  36x 36
+    Rect("hud_icons_guns"                 , 276, 587, 312, 623) //  36x 36
+    Rect("hud_icons_hat"                  , 276, 625, 312, 661) //  36x 36
+    Rect("hud_icons_horse"                , 276, 663, 312, 699) //  36x 36
+    Rect("hud_icons_keys"                 , 276, 701, 312, 737) //  36x 36
+    Rect("hud_icons_lasso"                , 276, 739, 312, 775) //  36x 36
+    Rect("hud_icons_shield"               , 276, 777, 312, 813) //  36x 36
+    Rect("hud_icons_spawn"                , 276, 815, 312, 851) //  36x 36
+    Rect("hud_icons_star_gold"            , 276, 853, 312, 889) //  36x 36
+    Rect("hud_icons_star_silver"          , 276, 891, 312, 927) //  36x 36
+    Rect("hud_mp_star_gold"               , 276, 929, 312, 965) //  36x 36
+    Rect("hud_mp_star_silver"             , 276, 967, 312,1003) //  36x 36
+    Rect("hud_crosshair_helper"           , 258, 224, 290, 256) //  32x 32
+    Rect("hud_ping_a"                     , 292, 224, 324, 256) //  32x 32
+    Rect("hud_ping_b"                     , 326, 224, 358, 256) //  32x 32
+    Rect("hud_ping_c"                     , 967,  57, 999,  89) //  32x 32
+    Rect("hud_ping_d"                     , 324, 415, 356, 447) //  32x 32
+    Rect("hud_ping_server"                , 324, 449, 356, 481) //  32x 32
+    Rect("hud_ping_unknown"               , 324, 483, 356, 515) //  32x 32
+    Rect("icon_team_timer"                , 324, 517, 352, 552) //  28x 35
+    Rect("hud_skull"                      , 324, 554, 355, 585) //  31x 31
+    Rect("quality_gauge"                  , 696, 350, 787, 360) //  91x 10
+    Rect("objective_done"                 , 324, 587, 354, 617) //  30x 30
+    Rect("objective_failed"               , 324, 619, 354, 649) //  30x 30
+    Rect("icon_timer"                     , 356, 126, 377, 164) //  21x 38
+    Rect("hud_crosshair_target"           ,   0, 994,  28,1022) //  28x 28
+    Rect("hud_arrow"                      , 356, 166, 377, 199) //  21x 33
+    Rect("hud_qa_accuracy"                , 384, 229, 414, 249) //  30x 20
+    Rect("hud_qa_durability"              , 416, 229, 446, 249) //  30x 20
+    Rect("hud_qa_fire"                    , 561, 234, 591, 254) //  30x 20
+    Rect("hud_qa_reload"                  ,  30, 994,  60,1014) //  30x 20
+    Rect("hud_qa_rof"                     ,  92, 994, 122,1014) //  30x 20
+    Rect("character_health"               , 124, 994, 154,1014) //  30x 20
+    Rect("character_health_half"          , 184, 994, 214,1014) //  30x 20
+    Rect("character_health_half_update"   , 216, 994, 246,1014) //  30x 20
+    Rect("character_health_upgrade"       , 324, 651, 354, 671) //  30x 20
+    Rect("character_health_upgrade_half"  , 324, 673, 354, 693) //  30x 20
+    Rect("character_speed"                , 324, 695, 354, 715) //  30x 20
+    Rect("character_speed_half"           , 324, 717, 354, 737) //  30x 20
+    Rect("character_speed_half_update"    , 324, 739, 354, 759) //  30x 20
+    Rect("g_icon"                         ,  62, 994,  86,1018) //  24x 24
+    Rect("hud_upgrade"                    , 156, 994, 179,1017) //  23x 23
+    Rect("hud_qa_level"                   , 356, 201, 376, 221) //  20x 20
+    Rect("hud_qa_level_gray"              , 360, 224, 380, 244) //  20x 20
+    Rect("hud_update_pending"             ,1001,  57,1021,  77) //  20x 20
+    Rect("hud_update_ready"               , 248, 994, 268,1014) //  20x 20
+    Rect("hud_voice_idle"                 , 789, 350, 809, 367) //  20x 17
+    Rect("hud_voice_on"                   , 811, 350, 831, 367) //  20x 17
+    Rect("quality_box"                    , 360, 246, 370, 256) //  10x 10
+    Rect("hud_crosshair"                  , 384, 251, 406, 255) //  22x  4
+    Rect("white"                          , 378, 201, 382, 205) //   4x  4
+    Rect("hud_skull_drum_left"            , 258, 126, 306, 222) //  48x 96 //left side
+    Rect("hud_skull_drum_right"           , 306, 126, 354, 222) //  48x 96 //right side
+    Rect("hud_mp_star_silver_InUse"       , 561,  66, 597, 102) //  36x 36 //dynamite icon for location state changes
+    Rect("hud_mp_star_gold_InUse"         , 561,  66, 597, 102) //  36x 36 //dynamite icon for location state changes
+    Rect("hud_icons_shield_InUse"         , 561,  66, 597, 102) //  36x 36 //dynamite icon for location state changes
+    Rect("hud_back_strip"                 , 921, 259,1003, 341) //  82x 82 //to reduce border problems
+    Rect("icon_net_rancher_big"           , 276, 739, 312, 775) //  36x 36 lasso (= hud_icons_lasso)
+    Rect("icon_net_redneck_big"           , 276, 625, 312, 661) //  36x 36 black hat (= hud_icons_hat)
+}
+
+Texture("net_characters.dds",4096,2048)
+{
+    Rect("hud_icon_idle_tomahawk"         ,3864,   4,3954,  94) //  90x 90 IranCoJ: the tomahawk (kill list) - in the loose net_characters.dds
+    Rect("hud_icons_tomahawk"             ,3864,   4,3954,  94) //  90x 90 IranCoJ: the same
+}

@@ -1,0 +1,12 @@
+// Synced with the dedicated server: every value here is the server's.
+// Only SkinName / SkinIcon / ColorI belong to the skin pack.
+!include("_Net_TribeWarrior_Properties.scr")
+!include("_NetWeapon_TribeWarrior_Properties.scr")
+
+MeshFileName("Man.msh")
+
+SkinName("RunningRiver")
+ColorI(0, 26, 26, 26)
+ColorI(2, 115, 113, 77)
+ColorI(3, 255, 255, 255)
+SkinIcon("character_tribewarrior")

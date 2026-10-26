@@ -1,0 +1,101 @@
+// IranCoJ: Silas Greaves (CoJ Gunslinger) on the Man skeleton - skins for the Rancher class
+Skin("Default")
+{
+	!include("man_surfaces.skt")
+}
+
+Skin("Silas")
+{
+	!include("man_surfaces.skt")
+	Hide("HolsterL")
+	Hide("HolsterR")
+}
+
+Skin("Silas_player")
+{
+	FilterInEditor()
+	!include("man_surfaces.skt")
+	Replace("silas_head.mat", "man_null.mat")
+	Replace("silas_eyes.mat", "man_null.mat")
+	Replace("silas_teeth_def.mat", "man_null.mat")
+	Replace("silas_hair.mat", "man_null.mat")
+	Replace("silas_hat.mat", "man_null.mat")
+	Replace("silas_bandana.mat", "man_null.mat")
+	Hide("HolsterL")
+	Hide("HolsterR")
+}
+
+Skin("Silas_highlight")
+{
+	FilterInEditor()
+	!include("man_surfaces.skt")
+	Hide("HolsterL")
+	Hide("HolsterR")
+}
+
+Skin("Silas_marked")
+{
+	FilterInEditor()
+	!include("man_surfaces.skt")
+	Hide("HolsterL")
+	Hide("HolsterR")
+}
+
+Skin("Silas_null")
+{
+	FilterInEditor()
+	!include("man_surfaces.skt")
+	Hide("HolsterL")
+	Hide("HolsterR")
+}
+
+Skin("SilasTeam")
+{
+	!include("man_surfaces.skt")
+	Replace("silas_poncho.mat", "silas_poncho_team.mat")
+	Hide("HolsterL")
+	Hide("HolsterR")
+}
+
+Skin("SilasTeam_player")
+{
+	FilterInEditor()
+	!include("man_surfaces.skt")
+	Replace("silas_poncho.mat", "silas_poncho_team.mat")
+	Replace("silas_head.mat", "man_null.mat")
+	Replace("silas_eyes.mat", "man_null.mat")
+	Replace("silas_teeth_def.mat", "man_null.mat")
+	Replace("silas_hair.mat", "man_null.mat")
+	Replace("silas_hat.mat", "man_null.mat")
+	Replace("silas_bandana.mat", "man_null.mat")
+	Hide("HolsterL")
+	Hide("HolsterR")
+}
+
+Skin("SilasTeam_highlight")
+{
+	FilterInEditor()
+	!include("man_surfaces.skt")
+	Replace("silas_poncho.mat", "silas_poncho_team.mat")
+	Hide("HolsterL")
+	Hide("HolsterR")
+}
+
+Skin("SilasTeam_marked")
+{
+	FilterInEditor()
+	!include("man_surfaces.skt")
+	Replace("silas_poncho.mat", "silas_poncho_team.mat")
+	Hide("HolsterL")
+	Hide("HolsterR")
+}
+
+Skin("SilasTeam_null")
+{
+	FilterInEditor()
+	!include("man_surfaces.skt")
+	Replace("silas_poncho.mat", "silas_poncho_team.mat")
+	Hide("HolsterL")
+	Hide("HolsterR")
+}
+

@@ -1,0 +1,13 @@
+// IranCoJ: Silas Greaves (CoJ Gunslinger): hero_torso
+import "templates.mtt"
+
+sub material()
+{
+    use mtt_objects(
+        s_clr = "silas_torso.dds",
+        s_nrm = "silas_torso_nrm.dds",
+        s_shn = "silas_torso_shn.dds",
+        f_shn_factor = 0.3
+    );
+}
+

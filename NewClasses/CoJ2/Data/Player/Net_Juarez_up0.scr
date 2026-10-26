@@ -1,0 +1,12 @@
+// Synced with the dedicated server: every value here is the server's.
+// Only SkinName / SkinIcon / ColorI belong to the skin pack.
+!include("_Net_Juarez_Properties.scr")
+!include("_NetWeapon_Juarez_Properties.scr")
+
+MeshFileName("Man.msh")
+
+SkinName("Barnsby")
+ColorI(0, 80, 104, 146)
+ColorI(2, 0, 0, 0)
+ColorI(3, 108, 173, 213)
+SkinIcon("character_vigilante")

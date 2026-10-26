@@ -1,0 +1,9 @@
+Skin("Default")
+{
+    Replace("tomahawk_a.mat", "tomahawk_a.mat")
+}
+
+Skin("Old")
+{
+    Replace("tomahawk_a.mat", "tomahawk_b.mat")
+}

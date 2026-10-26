@@ -1,0 +1,14 @@
+// Synced with the dedicated server: every value here is the server's.
+// Only SkinName / SkinIcon / ColorI belong to the skin pack.
+// IranCoJ: the Rifleman is Billy the Kid from CoJ Gunslinger (Data/Characters/Man/Billy: Billy.msh on the Man skeleton,
+// skins in Billy.skn). Client side only: the server keeps Man.msh, same skeleton and animations, so hits line up.
+!include("_Net_Rifleman_Properties.scr")
+!include("_NetWeapon_Rifleman_Properties.scr")
+
+MeshFileName("Billy.msh")
+
+SkinName("Billy")
+ColorI(0, 158, 99, 58)
+ColorI(2, 244, 231, 213)
+ColorI(3, 56, 70, 75)
+SkinIcon("character_rifleman")

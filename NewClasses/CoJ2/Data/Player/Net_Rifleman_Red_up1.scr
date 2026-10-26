@@ -1,0 +1,8 @@
+// Synced with the dedicated server: every value here is the server's.
+// Only SkinName / SkinIcon / ColorI belong to the skin pack.
+!include("Net_Rifleman_up1.scr")
+!include("TeamColor_Red.scr")
+
+SkinIcon("character_rifleman_red")
+// IranCoJ: team modes - Billy the Kid with the shirt in the team colour (Billy.skn)
+SkinName("BillyTeam")

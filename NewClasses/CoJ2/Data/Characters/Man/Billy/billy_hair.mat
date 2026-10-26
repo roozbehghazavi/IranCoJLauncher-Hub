@@ -1,0 +1,13 @@
+// IranCoJ: Billy the Kid (CoJ Gunslinger): billy_the_kid_hair
+import "templates.mtt"
+
+sub material()
+{
+    use mtt_objects(
+        s_clr = "billy_hair.dds",
+        b_tex_kill_on = TRUE,
+        e_cull = NONE,
+        f_shn_factor = 0.3
+    );
+}
+

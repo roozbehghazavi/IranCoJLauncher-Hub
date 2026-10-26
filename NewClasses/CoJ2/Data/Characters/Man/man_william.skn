@@ -1,0 +1,281 @@
+// ======================== William ========================
+Skin("William")
+{
+	!include("man_surfaces.skt")
+	!include("man_disable_anims_on_lod.skt")
+	!include("man_shoes_b.skt")
+	!include("man_pants_a.skt")
+	!include("william_torso.skt")
+	!include("man_hands_a.skt")
+	!include("william_head.skt")
+	!include("william_bag.skt")
+	
+	Hide("HolsterL")
+	Hide("HolsterR")
+
+    ColorPreset("color_1")
+    {
+       ColorI(0, 49, 58, 83)
+       ColorI(2, 240, 240, 238)
+       ColorI(3, 92, 96, 103)
+    }
+
+}
+Skin("William_highlight")
+{
+	FilterInEditor()
+	!include("man_surfaces.skt")
+	!include("man_disable_anims_on_lod.skt")
+	!include("man_shoes_b.skt")
+	!include("man_pants_a.skt")
+	!include("william_torso.skt")
+	!include("man_hands_a.skt")
+	!include("william_head.skt")
+	!include("william_bag.skt")
+
+	
+	Hide("HolsterL")
+	Hide("HolsterR")
+}
+Skin("William_marked")
+{
+	FilterInEditor()
+	!include("man_surfaces.skt")
+	!include("man_disable_anims_on_lod.skt")
+	!include("man_shoes_b.skt")
+	!include("man_pants_a.skt")
+	!include("william_torso.skt")
+	!include("man_hands_a.skt")
+	!include("william_head.skt")
+	!include("william_bag.skt")
+
+	
+	Hide("HolsterL")
+	Hide("HolsterR")
+}
+Skin("William_player")
+{
+	FilterInEditor()
+	!include("man_surfaces.skt")
+	!include("man_disable_anims_on_lod.skt")
+	!include("man_shoes_b.skt")
+	!include("man_pants_a.skt")
+	!include("william_torso.skt")
+	!include("man_hands_a.skt")
+	!include("william_head.skt")
+	!include("william_bag.skt")
+	!include("man_player.skt")
+
+	
+	Hide("HolsterL")
+	Hide("HolsterR")
+}
+Skin("William_null")
+{
+	FilterInEditor()
+	!include("man_surfaces.skt")
+	!include("man_disable_anims_on_lod.skt")
+	!include("man_shoes_b.skt")
+	!include("man_pants_a.skt")
+	!include("william_torso.skt")
+	!include("man_hands_a.skt")
+	!include("william_head.skt")
+	!include("william_bag.skt")
+	
+	
+	Hide("HolsterL")
+	Hide("HolsterR")
+}
+
+// ======================== WilliamNoBag ========================
+Skin("WilliamNoBag")
+{
+	!include("man_surfaces.skt")
+	!include("man_disable_anims_on_lod.skt")
+	!include("man_shoes_b.skt")
+	!include("man_pants_a.skt")
+	!include("william_torso.skt")
+	!include("man_hands_a.skt")
+	!include("william_head.skt")
+	!include("man_accessories_hideall.skt")
+	
+	Hide("HolsterL")
+	Hide("HolsterR")
+
+    ColorPreset("color_1")
+    {
+       ColorI(0, 49, 58, 83)
+       ColorI(2, 240, 240, 238)
+       ColorI(3, 92, 96, 103)
+    }
+
+}
+Skin("WilliamNoBag_highlight")
+{
+	FilterInEditor()
+	!include("man_surfaces.skt")
+	!include("man_disable_anims_on_lod.skt")
+	!include("man_shoes_b.skt")
+	!include("man_pants_a.skt")
+	!include("william_torso.skt")
+	!include("man_hands_a.skt")
+	!include("william_head.skt")
+	!include("man_accessories_hideall.skt")
+	
+	
+	Hide("HolsterL")
+	Hide("HolsterR")
+}
+Skin("WilliamNoBag_marked")
+{
+	FilterInEditor()
+	!include("man_surfaces.skt")
+	!include("man_disable_anims_on_lod.skt")
+	!include("man_shoes_b.skt")
+	!include("man_pants_a.skt")
+	!include("william_torso.skt")
+	!include("man_hands_a.skt")
+	!include("william_head.skt")
+	!include("man_accessories_hideall.skt")
+	
+	
+	Hide("HolsterL")
+	Hide("HolsterR")
+}
+Skin("WilliamNoBag_player")
+{
+	FilterInEditor()
+	!include("man_surfaces.skt")
+	!include("man_disable_anims_on_lod.skt")
+	!include("man_shoes_b.skt")
+	!include("man_pants_a.skt")
+	!include("william_torso.skt")
+	!include("man_hands_a.skt")
+	!include("william_head.skt")
+	!include("man_accessories_hideall.skt")
+	!include("man_player.skt")
+
+	
+	Hide("HolsterL")
+	Hide("HolsterR")
+}
+Skin("WilliamNoBag_null")
+{
+	FilterInEditor()
+	!include("man_surfaces.skt")
+	!include("man_disable_anims_on_lod.skt")
+	!include("man_shoes_b.skt")
+	!include("man_pants_a.skt")
+	!include("william_torso.skt")
+	!include("man_hands_a.skt")
+	!include("william_head.skt")
+	!include("man_accessories_hideall.skt")
+	
+	
+	Hide("HolsterL")
+	Hide("HolsterR")
+}
+
+// ---------------------------------------------------------------
+
+
+Skin("WilliamTeam")
+{
+	!include("man_surfaces.skt")
+	!include("man_disable_anims_on_lod.skt")
+	!include("man_shoes_b.skt")
+	!include("man_pants_a.skt")
+	!include("william_torso.skt")
+	!include("man_hands_a.skt")
+	!include("william_head.skt")
+	!include("william_bag.skt")
+	
+	Hide("HolsterL")
+	Hide("HolsterR")
+
+    ColorPreset("color_1")
+    {
+       ColorI(0, 49, 58, 83)
+       ColorI(2, 240, 240, 238)
+       ColorI(3, 92, 96, 103)
+    }
+	Replace("william_torso.mat", "william_torso_team.mat")
+	Hide("william_bag")
+}
+
+Skin("WilliamTeam_player")
+{
+	FilterInEditor()
+	!include("man_surfaces.skt")
+	!include("man_disable_anims_on_lod.skt")
+	!include("man_shoes_b.skt")
+	!include("man_pants_a.skt")
+	!include("william_torso.skt")
+	!include("man_hands_a.skt")
+	!include("william_head.skt")
+	!include("william_bag.skt")
+	!include("man_player.skt")
+
+	
+	Hide("HolsterL")
+	Hide("HolsterR")
+	Replace("william_torso.mat", "william_torso_team.mat")
+	Hide("william_bag")
+}
+
+Skin("WilliamTeam_null")
+{
+	FilterInEditor()
+	!include("man_surfaces.skt")
+	!include("man_disable_anims_on_lod.skt")
+	!include("man_shoes_b.skt")
+	!include("man_pants_a.skt")
+	!include("william_torso.skt")
+	!include("man_hands_a.skt")
+	!include("william_head.skt")
+	!include("william_bag.skt")
+	
+	
+	Hide("HolsterL")
+	Hide("HolsterR")
+	Replace("william_torso.mat", "william_torso_team.mat")
+	Hide("william_bag")
+}
+
+Skin("WilliamTeam_highlight")
+{
+	FilterInEditor()
+	!include("man_surfaces.skt")
+	!include("man_disable_anims_on_lod.skt")
+	!include("man_shoes_b.skt")
+	!include("man_pants_a.skt")
+	!include("william_torso.skt")
+	!include("man_hands_a.skt")
+	!include("william_head.skt")
+	!include("william_bag.skt")
+
+	
+	Hide("HolsterL")
+	Hide("HolsterR")
+	Replace("william_torso.mat", "william_torso_team.mat")
+	Hide("william_bag")
+}
+
+Skin("WilliamTeam_marked")
+{
+	FilterInEditor()
+	!include("man_surfaces.skt")
+	!include("man_disable_anims_on_lod.skt")
+	!include("man_shoes_b.skt")
+	!include("man_pants_a.skt")
+	!include("william_torso.skt")
+	!include("man_hands_a.skt")
+	!include("william_head.skt")
+	!include("william_bag.skt")
+
+	
+	Hide("HolsterL")
+	Hide("HolsterR")
+	Replace("william_torso.mat", "william_torso_team.mat")
+	Hide("william_bag")
+}

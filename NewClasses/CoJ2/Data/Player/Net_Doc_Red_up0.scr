@@ -1,0 +1,6 @@
+!include("Net_Doc_up0.scr")
+!include("TeamColor_Red.scr")
+
+SkinIcon("character_doc_red")
+// IranCoJ: team modes - John Wesley Hardin with the shirt in the team colour (Hardin.skn)
+SkinName("HardinTeam")

@@ -10,6 +10,17 @@
     "image": "https://raw.githubusercontent.com/roozbehghazavi/IranCoJLauncher-Hub/main/news/images/edition.jpg"
   },
   {
+    "id": "new-classes-2",
+    "tag": "MOD UPDATE",
+    "title": "New Classes 2.0",
+    "text": "Silas Greaves, John Wesley Hardin and Billy the Kid join the fight as the Rancher, Duelist and Rifleman, with new class pictures and a fix for the crash on death.",
+    "date": "2026-10-26",
+    "slide": true,
+    "action": "mods",
+    "actionLabel": "Update",
+    "image": "https://raw.githubusercontent.com/roozbehghazavi/IranCoJLauncher-Hub/main/news/images/new-classes-2.jpg"
+  },
+  {
     "id": "lincoln-town",
     "tag": "NEW MAP",
     "title": "Lincoln Town",
@@ -19,17 +30,6 @@
     "action": "maps",
     "actionLabel": "View in Maps",
     "image": "https://raw.githubusercontent.com/roozbehghazavi/IranCoJLauncher-Hub/main/news/images/lincoln-town.jpg"
-  },
-  {
-    "id": "new-classes",
-    "tag": "MOD",
-    "title": "New Classes",
-    "text": "Play as the Rancher with the Border Gun or the Redneck with the musket, with upgrades and the IranCoJ Skin Pack.",
-    "date": "2026-10-24",
-    "slide": true,
-    "action": "mods",
-    "actionLabel": "Install mod",
-    "image": "https://raw.githubusercontent.com/roozbehghazavi/IranCoJLauncher-Hub/main/news/images/new-classes.jpg"
   },
   {
     "id": "spectate-108",
