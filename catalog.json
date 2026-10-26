@@ -432,13 +432,13 @@
     {
       "id": "NewClasses",
       "name": "New Classes",
-      "version": "2.0.0",
+      "version": "2.0.1",
       "description": "Rancher and Redneck as playable classes, and three classes play as CoJ Gunslinger characters: Silas Greaves (Rancher), John Wesley Hardin (Duelist) and Billy the Kid (Rifleman). With upgrades, new class pictures and the IranCoJ Skin Pack.",
       "package": {
-        "file": "NewClasses-2.0.0.zip",
-        "size": 51941104,
-        "sha256": "bdc4827ad8bdccdae0b4b62f13a854ce53c7e85b984750233625cf030919776d",
-        "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/mods/NewClasses-2.0.0.zip"
+        "file": "NewClasses-2.0.1.zip",
+        "size": 51951372,
+        "sha256": "dc8521811e32c4a891849dd1ae92e4b7c78edda0314a91507efc3b186c0c3009",
+        "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/mods/NewClasses-2.0.1.zip"
       },
       "exclude": [
         "README_INSTALL.txt",
@@ -567,6 +567,29 @@
       "patch": []
     },
     {
+      "id": "TppCam",
+      "name": "Third-Person Camera",
+      "version": "1.0.0",
+      "description": "Over-the-shoulder third-person view. F5 switches first / third person, the middle mouse button swaps shoulders.",
+      "package": {
+        "file": "TppCam-1.0.0.zip",
+        "size": 148917,
+        "sha256": "c6925320c8e4e73f6dd33b6761ea0d2c0d36d63caf0af18eaf52725b7ec29cfd",
+        "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/mods/TppCam-1.0.0.zip"
+      },
+      "exclude": [
+        "mods.txt"
+      ],
+      "loadDll": [
+        "tppcam.dll"
+      ],
+      "shared": [
+        "dinput8.dll"
+      ],
+      "disable": [],
+      "patch": []
+    },
+    {
       "id": "VoiceChatMod",
       "name": "Voice Chat Mod",
       "version": "0.5.0",
@@ -591,7 +614,7 @@
     }
   ],
   "edition": {
-    "version": "0.7.6",
+    "version": "0.7.7",
     "ownUserFolder": true,
     "menuNavigation": true,
     "include": [
@@ -960,7 +983,7 @@
           ],
           [
             "\\z",
-            " \u0000Name_WeaponPistolFrontierUpgrade\u0012\u0000S\u0000p\u0000r\u0000i\u0000n\u0000g\u0000f\u0000i\u0000e\u0000l\u0000d\u0000 \u0000M\u0000u\u0000s\u0000k\u0000e\u0000t\u0000#\u0000Name_WeaponPistolFrontierUpgradeNet\u0012\u0000S\u0000p\u0000r\u0000i\u0000n\u0000g\u0000f\u0000i\u0000e\u0000l\u0000d\u0000 \u0000M\u0000u\u0000s\u0000k\u0000e\u0000t\u0000\u001d\u0000N_WeaponPistolFrontierUpgrade\u0012\u0000S\u0000p\u0000r\u0000i\u0000n\u0000g\u0000f\u0000i\u0000e\u0000l\u0000d\u0000 \u0000M\u0000u\u0000s\u0000k\u0000e\u0000t\u0000\u0017\u0000MenuDerringerUpgradeNet\u000f\u0000T\u0000h\u0000r\u0000o\u0000w\u0000i\u0000n\u0000g\u0000 \u0000K\u0000n\u0000i\u0000v\u0000e\u0000s\u0000$\u0000Name_WeaponPistolDerringerUpgradeNet\u000e\u0000T\u0000h\u0000r\u0000o\u0000w\u0000i\u0000n\u0000g\u0000 \u0000K\u0000n\u0000i\u0000f\u0000e\u0000!\u0000Name_WeaponPistolDerringerUpgrade\u000e\u0000T\u0000h\u0000r\u0000o\u0000w\u0000i\u0000n\u0000g\u0000 \u0000K\u0000n\u0000i\u0000f\u0000e\u0000\u001e\u0000N_WeaponPistolDerringerUpgrade\u000e\u0000T\u0000h\u0000r\u0000o\u0000w\u0000i\u0000n\u0000g\u0000 \u0000K\u0000n\u0000i\u0000f\u0000e\u0000\u0014\u0000MenuLemantUpgradeNet\b\u0000T\u0000o\u0000m\u0000a\u0000h\u0000a\u0000w\u0000k\u0000!\u0000Name_WeaponPistolLemantUpgradeNet\b\u0000T\u0000o\u0000m\u0000a\u0000h\u0000a\u0000w\u0000k\u0000\u001e\u0000Name_WeaponPistolLemantUpgrade\b\u0000T\u0000o\u0000m\u0000a\u0000h\u0000a\u0000w\u0000k\u0000\u001b\u0000N_WeaponPistolLemantUpgrade\b\u0000T\u0000o\u0000m\u0000a\u0000h\u0000a\u0000w\u0000k\u0000\u0011\u0000IrnEditionVersion\u0015\u0000I\u0000r\u0000a\u0000n\u0000C\u0000o\u0000J\u0000 \u0000E\u0000d\u0000i\u0000t\u0000i\u0000o\u0000n\u0000 \u00000\u0000.\u00007\u0000.\u00006\u0000"
+            " \u0000Name_WeaponPistolFrontierUpgrade\u0012\u0000S\u0000p\u0000r\u0000i\u0000n\u0000g\u0000f\u0000i\u0000e\u0000l\u0000d\u0000 \u0000M\u0000u\u0000s\u0000k\u0000e\u0000t\u0000#\u0000Name_WeaponPistolFrontierUpgradeNet\u0012\u0000S\u0000p\u0000r\u0000i\u0000n\u0000g\u0000f\u0000i\u0000e\u0000l\u0000d\u0000 \u0000M\u0000u\u0000s\u0000k\u0000e\u0000t\u0000\u001d\u0000N_WeaponPistolFrontierUpgrade\u0012\u0000S\u0000p\u0000r\u0000i\u0000n\u0000g\u0000f\u0000i\u0000e\u0000l\u0000d\u0000 \u0000M\u0000u\u0000s\u0000k\u0000e\u0000t\u0000\u0017\u0000MenuDerringerUpgradeNet\u000f\u0000T\u0000h\u0000r\u0000o\u0000w\u0000i\u0000n\u0000g\u0000 \u0000K\u0000n\u0000i\u0000v\u0000e\u0000s\u0000$\u0000Name_WeaponPistolDerringerUpgradeNet\u000e\u0000T\u0000h\u0000r\u0000o\u0000w\u0000i\u0000n\u0000g\u0000 \u0000K\u0000n\u0000i\u0000f\u0000e\u0000!\u0000Name_WeaponPistolDerringerUpgrade\u000e\u0000T\u0000h\u0000r\u0000o\u0000w\u0000i\u0000n\u0000g\u0000 \u0000K\u0000n\u0000i\u0000f\u0000e\u0000\u001e\u0000N_WeaponPistolDerringerUpgrade\u000e\u0000T\u0000h\u0000r\u0000o\u0000w\u0000i\u0000n\u0000g\u0000 \u0000K\u0000n\u0000i\u0000f\u0000e\u0000\u0014\u0000MenuLemantUpgradeNet\b\u0000T\u0000o\u0000m\u0000a\u0000h\u0000a\u0000w\u0000k\u0000!\u0000Name_WeaponPistolLemantUpgradeNet\b\u0000T\u0000o\u0000m\u0000a\u0000h\u0000a\u0000w\u0000k\u0000\u001e\u0000Name_WeaponPistolLemantUpgrade\b\u0000T\u0000o\u0000m\u0000a\u0000h\u0000a\u0000w\u0000k\u0000\u001b\u0000N_WeaponPistolLemantUpgrade\b\u0000T\u0000o\u0000m\u0000a\u0000h\u0000a\u0000w\u0000k\u0000\u0011\u0000IrnEditionVersion\u0015\u0000I\u0000r\u0000a\u0000n\u0000C\u0000o\u0000J\u0000 \u0000E\u0000d\u0000i\u0000t\u0000i\u0000o\u0000n\u0000 \u00000\u0000.\u00007\u0000.\u00007\u0000"
           ]
         ]
       },
@@ -1205,8 +1228,8 @@
     "files": [
       {
         "path": "CoJ2/Data/Menu/Background_Scr_PC.binui",
-        "size": 12534,
-        "sha256": "2718d181e2737917b0982ccd6becf9c87e488b530d2a7a5784cd45f477c1399c",
+        "size": 12570,
+        "sha256": "c212c8ad46995b0b8c763080181df6072b18f2b5da3705489bfe375f182102c9",
         "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/edition/Background_Scr_PC.binui"
       },
       {
@@ -1272,7 +1295,7 @@
       {
         "path": "CoJ2/Data/Menu/MenuIngameNetGamemode_Scr_PC.binui",
         "size": 578159,
-        "sha256": "82b6b6e8832b571942d0863f17c75117479b0c41d1e488a7c4a7bf5c661860ec",
+        "sha256": "d2ce205b70adaf08415128d7f659b7bcaab36246711340ddff74bf43f6fb78ed",
         "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/edition/MenuIngameNetGamemode_Scr_PC.binui"
       },
       {
@@ -1320,7 +1343,7 @@
       {
         "path": "CoJ2/Data/Menu/MenuMain_Scr_PC.binui",
         "size": 614725,
-        "sha256": "a28d0e7cf614dbb7e263a0157b81012fbf4a03b07c8708fea5306d8cb8d37af5",
+        "sha256": "d9b91b1a4c1f788507a05f784c10b6b3ce4ff78efde2abb3676d9f8c153718ec",
         "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/edition/MenuMain_Scr_PC.binui"
       },
       {
@@ -1338,7 +1361,7 @@
       {
         "path": "CoJ2/Data/Menu/scr/Credits_PC.scr",
         "size": 4874,
-        "sha256": "05b59ab2c7e3cb051bc15f944eeb5a7da9132b5882991c5876abe861fe154ea0",
+        "sha256": "17a4a9d374f061d324716de286d87c316cb53befcf9e9e0827c1bec0681588b2",
         "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/edition/Credits_PC.scr"
       },
       {
@@ -1527,6 +1550,15 @@
       "action": "settings",
       "actionLabel": "Set up the Edition",
       "image": "https://raw.githubusercontent.com/roozbehghazavi/IranCoJLauncher-Hub/main/news/images/edition.jpg"
+    },
+    {
+      "id": "third-person",
+      "tag": "NEW",
+      "title": "Third person\nand crosshairs",
+      "text": "Press F5 for an over-the-shoulder view, the middle mouse button swaps shoulders. Pick your crosshair in Settings: classic, dot, circle, ticks or none.",
+      "date": "2026-10-26",
+      "action": "settings",
+      "actionLabel": "Choose crosshair"
     },
     {
       "id": "new-classes-2",
