@@ -414,11 +414,12 @@ t = written["MenuNetSelectClass.xui"]
 t = flat_texts(t, {"T_MapName": PARCHMENT, "T_ModeName": GOLD, "T_Timer": GOLD, "T_Wallet": GOLD,
                    "T_CashText": DUST, "T_TeamName": PARCHMENT, "T_Tip": DUST, "T_UpgradeInfoCost": GOLD})
 
-# Middle panel (336x485): portrait, the loadout as rows under it (icon, name; up to three weapons), then the
-# upgrade block - "NEXT UPGRADE" + stars with the cost on the right, what it adds under them, the button under
-# that. Classes have two upgrades (Rancher and Redneck one); fully upgraded, the game leaves the block empty.
-t = in_group(t, "G_ClassInfo", lambda g: set_prop(set_prop(set_prop(g, "I_ClassPicture", "Position", "88.000000,28.000000,0.000000"),
-                                                            "I_ClassPicture", "Width", "160.000000"), "I_ClassPicture", "Height", "221.000000"))
+# Middle panel (336x485): portrait (New Classes 2.0 crops its pictures to 312:355: left edge at 17, 194x221),
+# the loadout as rows under it (icon, name; up to three weapons), then the upgrade block - "NEXT UPGRADE" + stars
+# with the cost on the right, what it adds under them, the button under that. Classes have two upgrades (Rancher
+# and Redneck one); fully upgraded, the game leaves the block empty.
+t = in_group(t, "G_ClassInfo", lambda g: set_prop(set_prop(set_prop(g, "I_ClassPicture", "Position", "17.000000,28.000000,0.000000"),
+                                                            "I_ClassPicture", "Width", "194.225357"), "I_ClassPicture", "Height", "221.000000"))
 for n in range(3):
     def weapon_row(g, n=n):
         g = set_prop(g, f"Weapon{n}", "Position", f"0.000000,{254 + 40 * n}.000000,0.000000")
