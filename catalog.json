@@ -591,7 +591,7 @@
     }
   ],
   "edition": {
-    "version": "0.7.4",
+    "version": "0.7.5",
     "ownUserFolder": true,
     "menuNavigation": true,
     "include": [
@@ -960,7 +960,7 @@
           ],
           [
             "\\z",
-            " \u0000Name_WeaponPistolFrontierUpgrade\u0012\u0000S\u0000p\u0000r\u0000i\u0000n\u0000g\u0000f\u0000i\u0000e\u0000l\u0000d\u0000 \u0000M\u0000u\u0000s\u0000k\u0000e\u0000t\u0000#\u0000Name_WeaponPistolFrontierUpgradeNet\u0012\u0000S\u0000p\u0000r\u0000i\u0000n\u0000g\u0000f\u0000i\u0000e\u0000l\u0000d\u0000 \u0000M\u0000u\u0000s\u0000k\u0000e\u0000t\u0000\u001d\u0000N_WeaponPistolFrontierUpgrade\u0012\u0000S\u0000p\u0000r\u0000i\u0000n\u0000g\u0000f\u0000i\u0000e\u0000l\u0000d\u0000 \u0000M\u0000u\u0000s\u0000k\u0000e\u0000t\u0000\u0017\u0000MenuDerringerUpgradeNet\u000f\u0000T\u0000h\u0000r\u0000o\u0000w\u0000i\u0000n\u0000g\u0000 \u0000K\u0000n\u0000i\u0000v\u0000e\u0000s\u0000$\u0000Name_WeaponPistolDerringerUpgradeNet\u000e\u0000T\u0000h\u0000r\u0000o\u0000w\u0000i\u0000n\u0000g\u0000 \u0000K\u0000n\u0000i\u0000f\u0000e\u0000!\u0000Name_WeaponPistolDerringerUpgrade\u000e\u0000T\u0000h\u0000r\u0000o\u0000w\u0000i\u0000n\u0000g\u0000 \u0000K\u0000n\u0000i\u0000f\u0000e\u0000\u001e\u0000N_WeaponPistolDerringerUpgrade\u000e\u0000T\u0000h\u0000r\u0000o\u0000w\u0000i\u0000n\u0000g\u0000 \u0000K\u0000n\u0000i\u0000f\u0000e\u0000\u0014\u0000MenuLemantUpgradeNet\b\u0000T\u0000o\u0000m\u0000a\u0000h\u0000a\u0000w\u0000k\u0000!\u0000Name_WeaponPistolLemantUpgradeNet\b\u0000T\u0000o\u0000m\u0000a\u0000h\u0000a\u0000w\u0000k\u0000\u001e\u0000Name_WeaponPistolLemantUpgrade\b\u0000T\u0000o\u0000m\u0000a\u0000h\u0000a\u0000w\u0000k\u0000\u001b\u0000N_WeaponPistolLemantUpgrade\b\u0000T\u0000o\u0000m\u0000a\u0000h\u0000a\u0000w\u0000k\u0000\u0011\u0000IrnEditionVersion\u0015\u0000I\u0000r\u0000a\u0000n\u0000C\u0000o\u0000J\u0000 \u0000E\u0000d\u0000i\u0000t\u0000i\u0000o\u0000n\u0000 \u00000\u0000.\u00007\u0000.\u00004\u0000"
+            " \u0000Name_WeaponPistolFrontierUpgrade\u0012\u0000S\u0000p\u0000r\u0000i\u0000n\u0000g\u0000f\u0000i\u0000e\u0000l\u0000d\u0000 \u0000M\u0000u\u0000s\u0000k\u0000e\u0000t\u0000#\u0000Name_WeaponPistolFrontierUpgradeNet\u0012\u0000S\u0000p\u0000r\u0000i\u0000n\u0000g\u0000f\u0000i\u0000e\u0000l\u0000d\u0000 \u0000M\u0000u\u0000s\u0000k\u0000e\u0000t\u0000\u001d\u0000N_WeaponPistolFrontierUpgrade\u0012\u0000S\u0000p\u0000r\u0000i\u0000n\u0000g\u0000f\u0000i\u0000e\u0000l\u0000d\u0000 \u0000M\u0000u\u0000s\u0000k\u0000e\u0000t\u0000\u0017\u0000MenuDerringerUpgradeNet\u000f\u0000T\u0000h\u0000r\u0000o\u0000w\u0000i\u0000n\u0000g\u0000 \u0000K\u0000n\u0000i\u0000v\u0000e\u0000s\u0000$\u0000Name_WeaponPistolDerringerUpgradeNet\u000e\u0000T\u0000h\u0000r\u0000o\u0000w\u0000i\u0000n\u0000g\u0000 \u0000K\u0000n\u0000i\u0000f\u0000e\u0000!\u0000Name_WeaponPistolDerringerUpgrade\u000e\u0000T\u0000h\u0000r\u0000o\u0000w\u0000i\u0000n\u0000g\u0000 \u0000K\u0000n\u0000i\u0000f\u0000e\u0000\u001e\u0000N_WeaponPistolDerringerUpgrade\u000e\u0000T\u0000h\u0000r\u0000o\u0000w\u0000i\u0000n\u0000g\u0000 \u0000K\u0000n\u0000i\u0000f\u0000e\u0000\u0014\u0000MenuLemantUpgradeNet\b\u0000T\u0000o\u0000m\u0000a\u0000h\u0000a\u0000w\u0000k\u0000!\u0000Name_WeaponPistolLemantUpgradeNet\b\u0000T\u0000o\u0000m\u0000a\u0000h\u0000a\u0000w\u0000k\u0000\u001e\u0000Name_WeaponPistolLemantUpgrade\b\u0000T\u0000o\u0000m\u0000a\u0000h\u0000a\u0000w\u0000k\u0000\u001b\u0000N_WeaponPistolLemantUpgrade\b\u0000T\u0000o\u0000m\u0000a\u0000h\u0000a\u0000w\u0000k\u0000\u0011\u0000IrnEditionVersion\u0015\u0000I\u0000r\u0000a\u0000n\u0000C\u0000o\u0000J\u0000 \u0000E\u0000d\u0000i\u0000t\u0000i\u0000o\u0000n\u0000 \u00000\u0000.\u00007\u0000.\u00005\u0000"
           ]
         ]
       },
@@ -971,7 +971,7 @@
         "replace": [
           [
             "Texture\\(\"Drum\\.dds\", 64, 64\\)",
-            "Texture(\"irancoj_spinner.dds\", 64, 64)"
+            "Texture(\"irancoj_spinner.dds\", 128, 128)"
           ]
         ]
       },
@@ -1004,7 +1004,7 @@
         "replace": [
           [
             "(?s)float4 t0 = tex2D\\(tmu0, i\\.uv0\\); //background.*?//output = step7;",
-            "float4 t0 = tex2D(tmu0, i.uv0); //background (kept bound)\n\t\t\t\t\t\t\tfloat4 i1 = tex2D(tmu1, i.uv1); //image 1\n\t\t\t\t\t\t\tfloat4 i2 = tex2D(tmu3, i.uv4); //image 2\n\t\t\t\t\t\t\tfloat4 m0 = tex2D(tmu2, i.uv2); //mask (kept bound)\n\t\t\t\t\t\t\tfloat3 pic = i1.rgb * CONST_6.x + i2.rgb * CONST_6.y;\n\n\t\t\t\t\t\t\t// IranCoJ Edition (loading screen): the map's pictures in colour, darker on the left behind the\n\t\t\t\t\t\t\t// text and at the bottom (the objectives map draws its own card: irancoj_mapcard.mat).\n\t\t\t\t\t\t\tfloat left = saturate(1 - i.uv0.x / 0.62);\n\t\t\t\t\t\t\tfloat shade = 0.82 - 0.62 * pow(left, 0.9);\n\t\t\t\t\t\t\tshade *= 1 - 0.55 * pow(saturate((i.uv0.y - 0.72) / 0.28), 1.6);\n\t\t\t\t\t\t\tfloat3 col = pic * shade + (t0.rgb + m0.rgb) * 0.0001;\n\t\t\t\t\t\t\toutput = float4(col, 1);"
+            "float4 t0 = tex2D(tmu0, i.uv0); //background (kept bound)\n\t\t\t\t\t\t\tfloat4 i1 = tex2D(tmu1, i.uv1); //image 1\n\t\t\t\t\t\t\tfloat4 i2 = tex2D(tmu3, i.uv4); //image 2\n\t\t\t\t\t\t\tfloat4 m0 = tex2D(tmu2, i.uv2); //mask (kept bound)\n\t\t\t\t\t\t\t// Black and white, so the sepia objectives map stands out. From the green channel, as the game's own\n\t\t\t\t\t\t\t// shader read it (many maps store the picture in green only).\n\t\t\t\t\t\t\tfloat l = saturate((i1.g * CONST_6.x + i2.g * CONST_6.y - 0.03) / 0.94);\n\t\t\t\t\t\t\tl = lerp(l, l * l * (3 - 2 * l), 0.3);\n\t\t\t\t\t\t\tfloat3 pic = l * float3(1.0, 0.985, 0.96);\n\n\t\t\t\t\t\t\t// IranCoJ Edition (loading screen): the map's pictures in black and white, darker on the left behind the\n\t\t\t\t\t\t\t// text and at the bottom (the objectives map draws its own card: irancoj_mapcard.mat).\n\t\t\t\t\t\t\tfloat left = saturate(1 - i.uv0.x / 0.62);\n\t\t\t\t\t\t\tfloat shade = 0.82 - 0.62 * pow(left, 0.9);\n\t\t\t\t\t\t\tshade *= 1 - 0.55 * pow(saturate((i.uv0.y - 0.72) / 0.28), 1.6);\n\t\t\t\t\t\t\tfloat3 col = pic * shade + (t0.rgb + m0.rgb) * 0.0001;\n\t\t\t\t\t\t\toutput = float4(col, 1);"
           ]
         ]
       }
@@ -1253,8 +1253,8 @@
       },
       {
         "path": "CoJ2/Data/Menu/Mat/irancoj_mapcard.mat",
-        "size": 3741,
-        "sha256": "198c65237616e9255ab6fb68d67f2f365f794881adc61ed781218a276ac0bf51",
+        "size": 4363,
+        "sha256": "c14e4e92cdda7adf145fc2a7e2f425f8ef3876684e0e6179e75ee1669c04b295",
         "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/edition/irancoj_mapcard.mat"
       },
       {
@@ -1338,7 +1338,7 @@
       {
         "path": "CoJ2/Data/Menu/scr/Credits_PC.scr",
         "size": 4874,
-        "sha256": "098a5753871e54c51a235745a22685555ead4a4675f45cb6af25eb5dac50928d",
+        "sha256": "7177359c714ae60057b36226086d18477145067853aa6f33c8ef5f6de09e86f1",
         "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/edition/Credits_PC.scr"
       },
       {
@@ -1451,8 +1451,8 @@
       },
       {
         "path": "CoJ2/Data/Menu/textures/irancoj_spinner.dds",
-        "size": 16512,
-        "sha256": "0f2d2b2eedb85ab0988f714585304a3dd1bc7a42a43d1eea23a5567284c3aa82",
+        "size": 65664,
+        "sha256": "44d3fe67480028b02b6b3bac81dacdd70c339e1ba7f8f1e5c975553f38820717",
         "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/edition/irancoj_spinner.dds"
       },
       {
