@@ -146,15 +146,23 @@ def solo_panel():
 
 
 def spinner():
-    """64x64 loading spinner (replaces the revolver drum; the game spins it): a wood ring with a gold arc that
-    fades out behind its head."""
-    im = Image.new("RGBA", (64, 64))
+    """128x128 loading spinner (replaces the revolver drum; the game spins it, 64x64 on the 1280x720 menu, so
+    twice the pixels for 1440p): a wood ring with a gold arc that fades out behind its head. Drawn 8x larger and
+    scaled down (premultiplied) for smooth edges - ImageDraw itself doesn't antialias."""
+    ss = 8
+    size = 128 * ss
+    im = Image.new("RGBA", (size, size))
     d = ImageDraw.Draw(im)
-    box = [6, 6, 57, 57]
-    d.ellipse(box, outline=WOOD + (255,), width=5)
-    for k in range(48):
-        d.arc(box, -90 + k * 5, -90 + k * 5 + 6, fill=GOLD + (int(255 * k / 47),), width=5)
-    return im
+    box = [12 * ss, 12 * ss, 116 * ss - 1, 116 * ss - 1]
+    width = 10 * ss
+    d.ellipse(box, outline=WOOD + (255,), width=width)
+    arc = Image.new("RGBA", (size, size))  # its own layer: ImageDraw replaces pixels, it would erase the ring
+    d = ImageDraw.Draw(arc)
+    steps = 240
+    for k in range(steps):
+        d.arc(box, -90 + k * 1.5, -90 + k * 1.5 + 2, fill=GOLD + (int(255 * k / (steps - 1)),), width=width)
+    im.alpha_composite(arc)
+    return im.convert("RGBa").resize((128, 128), Image.LANCZOS).convert("RGBA")
 
 
 def still(source):
