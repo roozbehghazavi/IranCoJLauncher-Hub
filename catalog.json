@@ -432,13 +432,13 @@
     {
       "id": "NewClasses",
       "name": "New Classes",
-      "version": "2.0.1",
+      "version": "2.0.2",
       "description": "Rancher and Redneck as playable classes, and three classes play as CoJ Gunslinger characters: Silas Greaves (Rancher), John Wesley Hardin (Duelist) and Billy the Kid (Rifleman). With upgrades, new class pictures and the IranCoJ Skin Pack.",
       "package": {
-        "file": "NewClasses-2.0.1.zip",
-        "size": 51951372,
-        "sha256": "dc8521811e32c4a891849dd1ae92e4b7c78edda0314a91507efc3b186c0c3009",
-        "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/mods/NewClasses-2.0.1.zip"
+        "file": "NewClasses-2.0.2.zip",
+        "size": 36032657,
+        "sha256": "1aabd8ede3a0e40cdb8973fd080fae5030cebacf77d6adf68205fdd5e1bc5179",
+        "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/mods/NewClasses-2.0.2.zip"
       },
       "exclude": [
         "README_INSTALL.txt",
@@ -1554,18 +1554,20 @@
     {
       "id": "third-person",
       "tag": "NEW",
-      "title": "Third person\nand crosshairs",
-      "text": "Press F5 for an over-the-shoulder view, the middle mouse button swaps shoulders. Pick your crosshair in Settings: classic, dot, circle, ticks or none.",
-      "date": "2026-10-26",
+      "title": "Third Person",
+      "text": "Press F5 for an over-the-shoulder view; the middle mouse button swaps shoulders. Scopes switch to first person. Pick your crosshair in Settings.",
+      "date": "2026-10-27",
       "action": "settings",
-      "actionLabel": "Choose crosshair"
+      "actionLabel": "Choose crosshair",
+      "slide": true,
+      "image": "https://raw.githubusercontent.com/roozbehghazavi/IranCoJLauncher-Hub/main/news/images/third-person.jpg"
     },
     {
-      "id": "new-classes-2",
+      "id": "new-classes-202",
       "tag": "MOD UPDATE",
-      "title": "New Classes 2.0",
-      "text": "Silas Greaves, John Wesley Hardin and Billy the Kid join the fight as the Rancher, Duelist and Rifleman, with new class pictures and a fix for the crash on death.",
-      "date": "2026-10-26",
+      "title": "New Classes 2.0.2",
+      "text": "Silas Greaves, John Wesley Hardin and Billy the Kid as the Rancher, Duelist and Rifleman. 2.0.2 cuts the stutter when they spawn and adds the crosshair styles.",
+      "date": "2026-10-27",
       "slide": true,
       "action": "mods",
       "actionLabel": "Update",
