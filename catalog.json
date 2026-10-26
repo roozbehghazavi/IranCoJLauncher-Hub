@@ -591,7 +591,7 @@
     }
   ],
   "edition": {
-    "version": "0.7.5",
+    "version": "0.7.6",
     "ownUserFolder": true,
     "menuNavigation": true,
     "include": [
@@ -960,7 +960,7 @@
           ],
           [
             "\\z",
-            " \u0000Name_WeaponPistolFrontierUpgrade\u0012\u0000S\u0000p\u0000r\u0000i\u0000n\u0000g\u0000f\u0000i\u0000e\u0000l\u0000d\u0000 \u0000M\u0000u\u0000s\u0000k\u0000e\u0000t\u0000#\u0000Name_WeaponPistolFrontierUpgradeNet\u0012\u0000S\u0000p\u0000r\u0000i\u0000n\u0000g\u0000f\u0000i\u0000e\u0000l\u0000d\u0000 \u0000M\u0000u\u0000s\u0000k\u0000e\u0000t\u0000\u001d\u0000N_WeaponPistolFrontierUpgrade\u0012\u0000S\u0000p\u0000r\u0000i\u0000n\u0000g\u0000f\u0000i\u0000e\u0000l\u0000d\u0000 \u0000M\u0000u\u0000s\u0000k\u0000e\u0000t\u0000\u0017\u0000MenuDerringerUpgradeNet\u000f\u0000T\u0000h\u0000r\u0000o\u0000w\u0000i\u0000n\u0000g\u0000 \u0000K\u0000n\u0000i\u0000v\u0000e\u0000s\u0000$\u0000Name_WeaponPistolDerringerUpgradeNet\u000e\u0000T\u0000h\u0000r\u0000o\u0000w\u0000i\u0000n\u0000g\u0000 \u0000K\u0000n\u0000i\u0000f\u0000e\u0000!\u0000Name_WeaponPistolDerringerUpgrade\u000e\u0000T\u0000h\u0000r\u0000o\u0000w\u0000i\u0000n\u0000g\u0000 \u0000K\u0000n\u0000i\u0000f\u0000e\u0000\u001e\u0000N_WeaponPistolDerringerUpgrade\u000e\u0000T\u0000h\u0000r\u0000o\u0000w\u0000i\u0000n\u0000g\u0000 \u0000K\u0000n\u0000i\u0000f\u0000e\u0000\u0014\u0000MenuLemantUpgradeNet\b\u0000T\u0000o\u0000m\u0000a\u0000h\u0000a\u0000w\u0000k\u0000!\u0000Name_WeaponPistolLemantUpgradeNet\b\u0000T\u0000o\u0000m\u0000a\u0000h\u0000a\u0000w\u0000k\u0000\u001e\u0000Name_WeaponPistolLemantUpgrade\b\u0000T\u0000o\u0000m\u0000a\u0000h\u0000a\u0000w\u0000k\u0000\u001b\u0000N_WeaponPistolLemantUpgrade\b\u0000T\u0000o\u0000m\u0000a\u0000h\u0000a\u0000w\u0000k\u0000\u0011\u0000IrnEditionVersion\u0015\u0000I\u0000r\u0000a\u0000n\u0000C\u0000o\u0000J\u0000 \u0000E\u0000d\u0000i\u0000t\u0000i\u0000o\u0000n\u0000 \u00000\u0000.\u00007\u0000.\u00005\u0000"
+            " \u0000Name_WeaponPistolFrontierUpgrade\u0012\u0000S\u0000p\u0000r\u0000i\u0000n\u0000g\u0000f\u0000i\u0000e\u0000l\u0000d\u0000 \u0000M\u0000u\u0000s\u0000k\u0000e\u0000t\u0000#\u0000Name_WeaponPistolFrontierUpgradeNet\u0012\u0000S\u0000p\u0000r\u0000i\u0000n\u0000g\u0000f\u0000i\u0000e\u0000l\u0000d\u0000 \u0000M\u0000u\u0000s\u0000k\u0000e\u0000t\u0000\u001d\u0000N_WeaponPistolFrontierUpgrade\u0012\u0000S\u0000p\u0000r\u0000i\u0000n\u0000g\u0000f\u0000i\u0000e\u0000l\u0000d\u0000 \u0000M\u0000u\u0000s\u0000k\u0000e\u0000t\u0000\u0017\u0000MenuDerringerUpgradeNet\u000f\u0000T\u0000h\u0000r\u0000o\u0000w\u0000i\u0000n\u0000g\u0000 \u0000K\u0000n\u0000i\u0000v\u0000e\u0000s\u0000$\u0000Name_WeaponPistolDerringerUpgradeNet\u000e\u0000T\u0000h\u0000r\u0000o\u0000w\u0000i\u0000n\u0000g\u0000 \u0000K\u0000n\u0000i\u0000f\u0000e\u0000!\u0000Name_WeaponPistolDerringerUpgrade\u000e\u0000T\u0000h\u0000r\u0000o\u0000w\u0000i\u0000n\u0000g\u0000 \u0000K\u0000n\u0000i\u0000f\u0000e\u0000\u001e\u0000N_WeaponPistolDerringerUpgrade\u000e\u0000T\u0000h\u0000r\u0000o\u0000w\u0000i\u0000n\u0000g\u0000 \u0000K\u0000n\u0000i\u0000f\u0000e\u0000\u0014\u0000MenuLemantUpgradeNet\b\u0000T\u0000o\u0000m\u0000a\u0000h\u0000a\u0000w\u0000k\u0000!\u0000Name_WeaponPistolLemantUpgradeNet\b\u0000T\u0000o\u0000m\u0000a\u0000h\u0000a\u0000w\u0000k\u0000\u001e\u0000Name_WeaponPistolLemantUpgrade\b\u0000T\u0000o\u0000m\u0000a\u0000h\u0000a\u0000w\u0000k\u0000\u001b\u0000N_WeaponPistolLemantUpgrade\b\u0000T\u0000o\u0000m\u0000a\u0000h\u0000a\u0000w\u0000k\u0000\u0011\u0000IrnEditionVersion\u0015\u0000I\u0000r\u0000a\u0000n\u0000C\u0000o\u0000J\u0000 \u0000E\u0000d\u0000i\u0000t\u0000i\u0000o\u0000n\u0000 \u00000\u0000.\u00007\u0000.\u00006\u0000"
           ]
         ]
       },
@@ -1272,7 +1272,7 @@
       {
         "path": "CoJ2/Data/Menu/MenuIngameNetGamemode_Scr_PC.binui",
         "size": 578159,
-        "sha256": "90d4a60c48697f8b4cf2b3d42c8b5904a2e19c3b54347f8d4892fef52eea4ca9",
+        "sha256": "82b6b6e8832b571942d0863f17c75117479b0c41d1e488a7c4a7bf5c661860ec",
         "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/edition/MenuIngameNetGamemode_Scr_PC.binui"
       },
       {
@@ -1338,7 +1338,7 @@
       {
         "path": "CoJ2/Data/Menu/scr/Credits_PC.scr",
         "size": 4874,
-        "sha256": "7177359c714ae60057b36226086d18477145067853aa6f33c8ef5f6de09e86f1",
+        "sha256": "05b59ab2c7e3cb051bc15f944eeb5a7da9132b5882991c5876abe861fe154ea0",
         "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/edition/Credits_PC.scr"
       },
       {
