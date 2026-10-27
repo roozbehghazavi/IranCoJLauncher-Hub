@@ -569,13 +569,13 @@
     {
       "id": "TppCam",
       "name": "Third-Person Camera",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "description": "Over-the-shoulder third-person view. F5 switches first / third person, the middle mouse button swaps shoulders.",
       "package": {
-        "file": "TppCam-1.0.0.zip",
-        "size": 148917,
-        "sha256": "c6925320c8e4e73f6dd33b6761ea0d2c0d36d63caf0af18eaf52725b7ec29cfd",
-        "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/mods/TppCam-1.0.0.zip"
+        "file": "TppCam-1.0.1.zip",
+        "size": 154152,
+        "sha256": "a30c3329f07a48ac74f5c2735fbf1b9a645bc056b8b3ee56370a7a093f2eb082",
+        "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/mods/TppCam-1.0.1.zip"
       },
       "exclude": [
         "mods.txt"
