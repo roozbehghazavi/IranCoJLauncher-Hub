@@ -1,4 +1,4 @@
-IranCoJ New Classes 2.0.2 (with the IranCoJ Skin Pack) - manual install (Linux / Wine, or without the installer)
+IranCoJ New Classes 2.0.3 (with the IranCoJ Skin Pack) - manual install (Linux / Wine, or without the installer)
 ====================================================================================================================
 
 1. Copy everything in this zip into the game folder (the one with CoJBiBGame_x86.exe), merging folders and

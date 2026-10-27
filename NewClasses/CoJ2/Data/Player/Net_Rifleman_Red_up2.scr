@@ -2,6 +2,9 @@
 // Only SkinName / SkinIcon / ColorI belong to the skin pack.
 !include("Net_Rifleman_up2.scr")
 !include("TeamColor_Red.scr")
+// IranCoJ: Billy's red shirt in a lighter, paler team colour (as William / Ray: the grey stains on his shirt read as
+// splotches against TeamColor's dark red)
+ColorI(0, 232, 150, 136)
 
 SkinIcon("character_rifleman_red")
 // IranCoJ: team modes - Billy the Kid with the shirt in the team colour (Billy.skn)
