@@ -432,13 +432,13 @@
     {
       "id": "NewClasses",
       "name": "New Classes",
-      "version": "2.0.2",
+      "version": "2.0.3",
       "description": "Rancher and Redneck as playable classes, and three classes play as CoJ Gunslinger characters: Silas Greaves (Rancher), John Wesley Hardin (Duelist) and Billy the Kid (Rifleman). With upgrades, new class pictures and the IranCoJ Skin Pack.",
       "package": {
-        "file": "NewClasses-2.0.2.zip",
-        "size": 36032657,
-        "sha256": "1aabd8ede3a0e40cdb8973fd080fae5030cebacf77d6adf68205fdd5e1bc5179",
-        "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/mods/NewClasses-2.0.2.zip"
+        "file": "NewClasses-2.0.3.zip",
+        "size": 35519681,
+        "sha256": "2c96cc0dd442b9b16d4df5652ce421c847eb2a3ab57ead9be1c6c6e4dbda1930",
+        "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/mods/NewClasses-2.0.3.zip"
       },
       "exclude": [
         "README_INSTALL.txt",
@@ -1563,10 +1563,10 @@
       "image": "https://raw.githubusercontent.com/roozbehghazavi/IranCoJLauncher-Hub/main/news/images/third-person.jpg"
     },
     {
-      "id": "new-classes-202",
+      "id": "new-classes-203",
       "tag": "MOD UPDATE",
-      "title": "New Classes 2.0.2",
-      "text": "Silas Greaves, John Wesley Hardin and Billy the Kid as the Rancher, Duelist and Rifleman. 2.0.2 cuts the stutter when they spawn and adds the crosshair styles.",
+      "title": "New Classes 2.0.3",
+      "text": "Silas Greaves, John Wesley Hardin and Billy the Kid as the Rancher, Duelist and Rifleman. 2.0.3 makes their spawns lighter, gives Billy a paler red shirt and adds the crosshair styles.",
       "date": "2026-10-27",
       "slide": true,
       "action": "mods",
