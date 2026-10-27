@@ -13,10 +13,10 @@
     "id": "third-person",
     "tag": "NEW",
     "title": "Third Person",
-    "text": "Press F5 for an over-the-shoulder view; the middle mouse button swaps shoulders. Scopes switch to first person. Pick your crosshair in Settings.",
+    "text": "Press F5 for an over-the-shoulder view; the middle mouse button swaps shoulders. Change both keys and your crosshair in Settings. Skirmish and Manhunt stay first person.",
     "date": "2026-10-27",
     "action": "settings",
-    "actionLabel": "Choose crosshair",
+    "actionLabel": "Keys and crosshair",
     "slide": true,
     "image": "https://raw.githubusercontent.com/roozbehghazavi/IranCoJLauncher-Hub/main/news/images/third-person.jpg"
   },

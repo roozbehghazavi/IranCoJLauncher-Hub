@@ -8,8 +8,13 @@ The camera sits behind and above one shoulder at a fixed distance and slides in 
 Your character's head shows in third person. The crosshair stays accurate: the view is aimed at where
 your shots go.
 
-Other keys: create tppcam.ini next to tppcam.dll with
+Other keys: choose them in the IranCoJ Launcher, Settings > In game > Third person. It writes tppcam.ini next to
+tppcam.dll:
     [keys]
-    Toggle=116
-    Swap=4
-using Windows virtual-key codes (116 = F5, 4 = middle mouse button, 81 = Q, 86 = V).
+    Toggle=F5
+    Swap=MOUSEMIDDLE
+Key names: F1-F12, A-Z, 0-9, SPACE, TAB, CTRL, SHIFT, ALT, CAPS, ENTER, MOUSE4, MOUSE5, MOUSEMIDDLE
+(Windows virtual-key codes such as 116 still work).
+
+Skirmish (every kind: team deathmatch, flags, objectives) and Manhunt are first person only. Third person
+switches off there and comes back by itself in the next mode that allows it.

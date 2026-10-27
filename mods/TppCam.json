@@ -1,7 +1,7 @@
 {
   "id": "TppCam",
   "name": "Third-Person Camera",
-  "description": "Over-the-shoulder third-person view. F5 switches first / third person, the middle mouse button swaps shoulders.",
+  "description": "Over-the-shoulder third-person view. F5 switches first / third person, the middle mouse button swaps shoulders (keys in Settings). Skirmish and Manhunt are first person only.",
   "folder": "TppCam",
   "exclude": ["mods.txt"],
   "loadDll": ["tppcam.dll"],
