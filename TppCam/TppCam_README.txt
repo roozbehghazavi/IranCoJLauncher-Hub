@@ -5,6 +5,8 @@ F5                   switch between first and third person
 Middle mouse button  swap shoulders (right / left)
 
 The camera sits behind and above one shoulder at a fixed distance and slides in when a wall is in the way.
+Switching between first and third person is a short glide, and scopes glide into first person as they zoom.
+The debug free camera and the killer view after death are the game's own; Spectate keeps the shoulder view.
 Your character's head shows in third person. The crosshair stays accurate: the view is aimed at where
 your shots go.
 
