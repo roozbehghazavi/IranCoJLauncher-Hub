@@ -569,13 +569,13 @@
     {
       "id": "TppCam",
       "name": "Third-Person Camera",
-      "version": "1.0.4",
+      "version": "1.0.5",
       "description": "Over-the-shoulder third-person view. F5 switches first / third person, the middle mouse button swaps shoulders (keys in Settings). Skirmish and Manhunt are first person only.",
       "package": {
-        "file": "TppCam-1.0.4.zip",
-        "size": 157398,
-        "sha256": "46d8d282f8009b5920536c82a35646e1159a675a018ba3de3b96ac25882d1b53",
-        "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/mods/TppCam-1.0.4.zip"
+        "file": "TppCam-1.0.5.zip",
+        "size": 158222,
+        "sha256": "862e18e4cfec659b67ae96a7182ac57b592ac6ddf1b5cbf2727896f7df3829a4",
+        "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/mods/TppCam-1.0.5.zip"
       },
       "exclude": [
         "mods.txt"
@@ -1558,8 +1558,8 @@
     {
       "id": "third-person",
       "tag": "NEW",
-      "title": "Third Person 1.0.4",
-      "text": "Press F5 for an over-the-shoulder view; it now glides between first and third person. The middle mouse button swaps shoulders; change both keys in Settings. Skirmish and Manhunt stay first person.",
+      "title": "Third Person 1.0.5",
+      "text": "Press F5 for an over-the-shoulder view. Your character now moves naturally on screen, the camera glides between first and third person, and the middle mouse button swaps shoulders. Skirmish and Manhunt stay first person.",
       "date": "2026-11-01",
       "action": "settings",
       "actionLabel": "Keys and crosshair",
