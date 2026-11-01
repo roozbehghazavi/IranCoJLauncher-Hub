@@ -12,8 +12,8 @@
   {
     "id": "third-person",
     "tag": "NEW",
-    "title": "Third Person 1.0.4",
-    "text": "Press F5 for an over-the-shoulder view; it now glides between first and third person. The middle mouse button swaps shoulders; change both keys in Settings. Skirmish and Manhunt stay first person.",
+    "title": "Third Person 1.0.5",
+    "text": "Press F5 for an over-the-shoulder view. Your character now moves naturally on screen, the camera glides between first and third person, and the middle mouse button swaps shoulders. Skirmish and Manhunt stay first person.",
     "date": "2026-11-01",
     "action": "settings",
     "actionLabel": "Keys and crosshair",
