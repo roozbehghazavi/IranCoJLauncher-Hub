@@ -58,6 +58,4 @@ Texture("net_characters.dds",4096,2048)
     Rect("character_redneck"         , 2897,  916, 3209, 1271) // 312x355 of its 320x442 slot (build_atlas.CROP)
     Rect("character_redneck_blue"    , 3218,  916, 3530, 1271) // 312x355 of its 320x442 slot (build_atlas.CROP)
     Rect("character_redneck_red"     , 3539,  916, 3851, 1271) // 312x355 of its 320x442 slot (build_atlas.CROP)
-    Rect("hud_icon_idle_tomahawk"     ,3864,   4,3954,  94) //  90x 90 IranCoJ: the tomahawk, rendered from its model
-    Rect("hud_icons_tomahawk"         ,3864,   4,3954,  94) //  90x 90 IranCoJ: the same
 }
