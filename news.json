@@ -12,13 +12,22 @@
   {
     "id": "third-person",
     "tag": "NEW",
-    "title": "Third Person",
-    "text": "Press F5 for an over-the-shoulder view; the middle mouse button swaps shoulders. Change both keys and your crosshair in Settings. Skirmish and Manhunt stay first person.",
-    "date": "2026-10-27",
+    "title": "Third Person 1.0.4",
+    "text": "Press F5 for an over-the-shoulder view; it now glides between first and third person. The middle mouse button swaps shoulders; change both keys in Settings. Skirmish and Manhunt stay first person.",
+    "date": "2026-11-01",
     "action": "settings",
     "actionLabel": "Keys and crosshair",
     "slide": true,
     "image": "https://raw.githubusercontent.com/roozbehghazavi/IranCoJLauncher-Hub/main/news/images/third-person.jpg"
+  },
+  {
+    "id": "spectate-110",
+    "tag": "MOD UPDATE",
+    "title": "Spectate Mod 1.1.0",
+    "text": "First-person spectating hides the player's face, so the camera no longer clips into beards and eyebrows, and shows a dot crosshair.",
+    "date": "2026-11-01",
+    "action": "mods",
+    "actionLabel": "Update"
   },
   {
     "id": "new-classes-203",
@@ -41,15 +50,6 @@
     "action": "maps",
     "actionLabel": "View in Maps",
     "image": "https://raw.githubusercontent.com/roozbehghazavi/IranCoJLauncher-Hub/main/news/images/lincoln-town.jpg"
-  },
-  {
-    "id": "spectate-108",
-    "tag": "MOD UPDATE",
-    "title": "Spectate Mod 1.0.8",
-    "text": "The spectate menu button now has its own place in the menu.",
-    "date": "2026-10-24",
-    "action": "mods",
-    "actionLabel": "Update"
   },
   {
     "id": "irancoj-server",

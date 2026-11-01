@@ -1,11 +1,19 @@
-IranCoJ Spectate  v1.0.7 beta
-=============================
+IranCoJ Spectate  v1.1.0
+========================
 
 Spectate other players while you are dead, from the multiplayer class-selection
 screen. Third person by default, first person optional.
 
 
-WHAT'S NEW IN 1.0.7
+WHAT'S NEW IN 1.1.0
+-------------------
+* First person hides the watched player's face on your screen (the same face-
+  less skin the game gives your own player), so the camera no longer dips into
+  beards and eyebrows while they run. Everyone else still sees their face.
+* First person shows a dot crosshair in the middle of the screen (IranCoJ
+  Edition 0.7.8+).
+
+WHAT WAS NEW IN 1.0.7
 -------------------
 * Coming back from spectate, the buttons answer straight away. They used to be
   dead for about four seconds.
