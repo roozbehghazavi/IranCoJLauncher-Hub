@@ -1,0 +1,15 @@
+{
+  "id": "IranCoJHud",
+  "name": "IranCoJ HUD",
+  "description": "The Edition's in-game HUD: kill feed, chat, team score bar, Shootout / Wanted standing and weapon names.",
+  "folder": "IranCoJHud",
+  "exclude": [
+    "mods.txt"
+  ],
+  "loadDll": [
+    "irancojhud.dll"
+  ],
+  "shared": [
+    "dinput8.dll"
+  ]
+}

@@ -9,8 +9,8 @@ Version {version}
 
 = CREATED BY
 Thomas (Roozbeh)
-Launcher, Edition, menus, maps, servers and the IranCoJ mods:
-New Classes, Spectate, Voice Chat
+Launcher, Edition, menus, HUD, maps, servers and the IranCoJ mods:
+New Classes, Spectate, Third-Person Camera, IranCoJ HUD, Voice Chat
 
 = COMMUNITY
 - Discord Community Creator & Coordinator, Map Creator

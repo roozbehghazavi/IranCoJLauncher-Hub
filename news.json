@@ -10,6 +10,15 @@
     "image": "https://raw.githubusercontent.com/roozbehghazavi/IranCoJLauncher-Hub/main/news/images/edition.jpg"
   },
   {
+    "id": "edition-100",
+    "tag": "IRANCOJ EDITION 1.0.0",
+    "title": "A new HUD",
+    "text": "The whole in-game HUD is redrawn: sharper icons, a team score bar with the Lawmen star and the Outlaws skull, a cleaner kill feed with streak cards, a chat that colours names and tags and keeps five lines, your weapon's name when you switch, and a new Shootout and Wanted standing. Menus and loading screens got tidier too.",
+    "date": "2026-11-02",
+    "action": "settings",
+    "actionLabel": "Update the Edition"
+  },
+  {
     "id": "third-person",
     "tag": "NEW",
     "title": "Third Person 1.0.5",
@@ -21,20 +30,20 @@
     "image": "https://raw.githubusercontent.com/roozbehghazavi/IranCoJLauncher-Hub/main/news/images/third-person.jpg"
   },
   {
-    "id": "spectate-110",
+    "id": "spectate-111",
     "tag": "MOD UPDATE",
-    "title": "Spectate Mod 1.1.0",
-    "text": "First-person spectating hides the player's face, so the camera no longer clips into beards and eyebrows, and shows a dot crosshair.",
-    "date": "2026-11-01",
+    "title": "Spectate Mod 1.1.1",
+    "text": "Switching between first and third person glides like the Third-Person Camera, and the face hides at the same moment it does there. First-person spectating keeps the dot crosshair.",
+    "date": "2026-11-02",
     "action": "mods",
     "actionLabel": "Update"
   },
   {
-    "id": "new-classes-203",
+    "id": "new-classes-206",
     "tag": "MOD UPDATE",
-    "title": "New Classes 2.0.3",
-    "text": "Silas Greaves, John Wesley Hardin and Billy the Kid as the Rancher, Duelist and Rifleman. 2.0.3 makes their spawns lighter, gives Billy a paler red shirt and adds the crosshair styles.",
-    "date": "2026-10-27",
+    "title": "New Classes 2.0.6",
+    "text": "Silas Greaves, John Wesley Hardin and Billy the Kid as the Rancher, Duelist and Rifleman. 2.0.6 brings the remastered tomahawk icon, no hands in the sniper scope and the crosshair styles.",
+    "date": "2026-11-02",
     "slide": true,
     "action": "mods",
     "actionLabel": "Update",
