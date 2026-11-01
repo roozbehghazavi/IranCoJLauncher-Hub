@@ -432,13 +432,13 @@
     {
       "id": "NewClasses",
       "name": "New Classes",
-      "version": "2.0.4",
+      "version": "2.0.5",
       "description": "Rancher and Redneck as playable classes, and three classes play as CoJ Gunslinger characters: Silas Greaves (Rancher), John Wesley Hardin (Duelist) and Billy the Kid (Rifleman). With upgrades, new class pictures and the IranCoJ Skin Pack.",
       "package": {
-        "file": "NewClasses-2.0.4.zip",
-        "size": 35519823,
-        "sha256": "c2c52a6b7b1bbd99d5e643c7de08365e3d29b738a5bb6591accdab359882edf4",
-        "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/mods/NewClasses-2.0.4.zip"
+        "file": "NewClasses-2.0.5.zip",
+        "size": 35519884,
+        "sha256": "280b4a96336baa09dfb3ba2949f1440023dfe3245aaa132b11f19309de99839f",
+        "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/mods/NewClasses-2.0.5.zip"
       },
       "exclude": [
         "README_INSTALL.txt",
