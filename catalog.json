@@ -569,13 +569,13 @@
     {
       "id": "TppCam",
       "name": "Third-Person Camera",
-      "version": "1.0.2",
+      "version": "1.0.3",
       "description": "Over-the-shoulder third-person view. F5 switches first / third person, the middle mouse button swaps shoulders (keys in Settings). Skirmish and Manhunt are first person only.",
       "package": {
-        "file": "TppCam-1.0.2.zip",
-        "size": 155894,
-        "sha256": "c31c03ca771d896df3a4b4603b5aeb89bdde4b3aa0c1e273e48647c86a3430f1",
-        "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/mods/TppCam-1.0.2.zip"
+        "file": "TppCam-1.0.3.zip",
+        "size": 157274,
+        "sha256": "85245598a6833132fcbd6c7ef9d597d35a5244db61dbfe5282a8022998ea4bc0",
+        "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/mods/TppCam-1.0.3.zip"
       },
       "exclude": [
         "mods.txt"
