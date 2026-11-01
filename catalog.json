@@ -432,13 +432,13 @@
     {
       "id": "NewClasses",
       "name": "New Classes",
-      "version": "2.0.3",
+      "version": "2.0.4",
       "description": "Rancher and Redneck as playable classes, and three classes play as CoJ Gunslinger characters: Silas Greaves (Rancher), John Wesley Hardin (Duelist) and Billy the Kid (Rifleman). With upgrades, new class pictures and the IranCoJ Skin Pack.",
       "package": {
-        "file": "NewClasses-2.0.3.zip",
-        "size": 35519681,
-        "sha256": "2c96cc0dd442b9b16d4df5652ce421c847eb2a3ab57ead9be1c6c6e4dbda1930",
-        "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/mods/NewClasses-2.0.3.zip"
+        "file": "NewClasses-2.0.4.zip",
+        "size": 35519823,
+        "sha256": "c2c52a6b7b1bbd99d5e643c7de08365e3d29b738a5bb6591accdab359882edf4",
+        "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/mods/NewClasses-2.0.4.zip"
       },
       "exclude": [
         "README_INSTALL.txt",
@@ -545,13 +545,13 @@
     {
       "id": "SpectateMod",
       "name": "Spectate Mod",
-      "version": "1.0.9",
+      "version": "1.1.0",
       "description": "Spectate players in multiplayer, from the in-game menu.",
       "package": {
-        "file": "SpectateMod-1.0.9.zip",
-        "size": 218619,
-        "sha256": "f1b5c646266fe0070b52bec36912141f5325bebbd4700c0ad047d5d25149806a",
-        "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/mods/SpectateMod-1.0.9.zip"
+        "file": "SpectateMod-1.1.0.zip",
+        "size": 219926,
+        "sha256": "feb525d41323e94b7fb6c99d685d0d68c19607b34e781ce51a06314021236a53",
+        "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/mods/SpectateMod-1.1.0.zip"
       },
       "exclude": [
         "mods.txt",
@@ -614,7 +614,7 @@
     }
   ],
   "edition": {
-    "version": "0.7.7",
+    "version": "0.7.8",
     "ownUserFolder": true,
     "menuNavigation": true,
     "include": [
@@ -746,6 +746,10 @@
           [
             "\\z",
             "\r\n\r\n//IranCoJ Edition main menu\r\nTexture(\"irancoj_band.dds\", 256, 64)\r\n{\r\n\tRectWithCorner(\"irn_band_0\", 0, 0, 256, 64, 32, 8)\r\n}\r\n\r\nTexture(\"irancoj_logo.dds\", 512, 256)\r\n{\r\n\tWhole(\"irn_logo\")\r\n}\r\n\r\nTexture(\"irancoj_panel.dds\", 256, 256)\r\n{\r\n\tTileset(\"irn_panel_tile\")\r\n\t{\r\n\t\tRect(\"irn_panel_tile\", 86, 86, 170, 170)\r\n\t\tRect(\"irn_panel_bottom\", 86, 170, 170, 256)\r\n\t\tRect(\"irn_panel_top\", 86, 0, 170, 86)\r\n\t\tRect(\"irn_panel_left\", 0, 86, 86, 170)\r\n\t\tRect(\"irn_panel_right\", 170, 86, 256, 170)\r\n\t\tRect(\"irn_panel_bottom_left\", 0, 170, 86, 256)\r\n\t\tRect(\"irn_panel_bottom_right\", 170, 170, 256, 256)\r\n\t\tRect(\"irn_panel_top_left\", 0, 0, 86, 86)\r\n\t\tRect(\"irn_panel_top_right\", 170, 0, 256, 86)\r\n\t\tCornerTopLeft(\"irn_panel_top_left\", 100, 0)\r\n\t\tCornerTopRight(\"irn_panel_top_right\", 100, 0)\r\n\t\tCornerBottomLeft(\"irn_panel_bottom_left\", 100, 0)\r\n\t\tCornerBottomRight(\"irn_panel_bottom_right\", 100, 0)\r\n\t\tTop(\"irn_panel_top\", 100, 0)\r\n\t\tBottom(\"irn_panel_bottom\", 100, 0)\r\n\t\tLeft(\"irn_panel_left\", 100, 0)\r\n\t\tRight(\"irn_panel_right\", 100, 0)\r\n\t\tMiddle(\"irn_panel_tile\", 100, 0)\r\n\t}\r\n\tWhole(\"irn_panel_whole\")\r\n}\r\n\r\nTexture(\"irancoj_bg.dds\", 1024, 512)\r\n{\r\n\tWhole(\"irn_bg\")\r\n}\r\n\r\nTexture(\"irancoj_flat.dds\", 64, 16)\r\n{\r\n\tRectWithCorner(\"irn_flat_0\", 0, 0, 64, 16, 4, 4)\r\n}\r\n\r\nTexture(\"irancoj_bar_top.dds\", 256, 64)\r\n{\r\n\tWhole(\"irn_bar_top\")\r\n}\r\n\r\nTexture(\"irancoj_bar_bottom.dds\", 256, 64)\r\n{\r\n\tWhole(\"irn_bar_bottom\")\r\n}\r\n\r\nTexture(\"irancoj_panel_red.dds\", 512, 512)\r\n{\r\n\tWhole(\"irn_panel_red_tile\")\r\n}\r\n\r\nTexture(\"irancoj_panel_blue.dds\", 512, 512)\r\n{\r\n\tWhole(\"irn_panel_blue_tile\")\r\n}\r\n\r\nTexture(\"irancoj_panel_solo.dds\", 512, 512)\r\n{\r\n\tWhole(\"irn_panel_solo\")\r\n}\r\n\r\nTexture(\"irancoj_hud_pill.dds\", 256, 64)\r\n{\r\n\tTileset(\"irn_pill_tile\")\r\n\t{\r\n\t\tRect(\"irn_pill_left\", 0, 0, 40, 64)\r\n\t\tRect(\"irn_pill_mid\", 40, 0, 216, 64)\r\n\t\tRect(\"irn_pill_right\", 216, 0, 256, 64)\r\n\t\tTop(\"irn_pill_mid\", 100, 0)\r\n\t\tCornerTopLeft(\"irn_pill_left\", 100, 0)\r\n\t\tCornerTopRight(\"irn_pill_right\", 100, 0)\r\n\t}\r\n}\r\n\r\nTexture(\"irancoj_scroll_track.dds\", 32, 64)\r\n{\r\n\tWhole(\"irn_scroll_track\")\r\n}\r\n\r\nTexture(\"irancoj_scroll_knob.dds\", 32, 64)\r\n{\r\n\tWhole(\"irn_scroll_knob\")\r\n}\r\n\r\nTexture(\"irancoj_arrow.dds\", 32, 32)\r\n{\r\n\tWhole(\"irn_arrow_0\")\r\n}\r\n\r\n//IranCoJ Edition: HUD icons, defined again after hud_new.scr so ours are drawn\r\nTexture(\"irancoj_hud_icons.dds\", 512, 256)\r\n{\r\n\tRect(\"hud_team_red\", 0, 0, 140, 140)\r\n\tRect(\"hud_team_blue\", 142, 0, 282, 140)\r\n\tRect(\"icon_team_timer\", 284, 0, 340, 70)\r\n\tRect(\"icon_timer\", 342, 0, 384, 76)\r\n\tRect(\"hud_wanted\", 0, 142, 308, 226)\r\n}\r\n\r\nTexture(\"irancoj_outline.dds\", 256, 64)\r\n{\r\n\tRectWithCorner(\"irn_outline_0\", 0, 0, 256, 64, 12, 12)\r\n}\r\n"
+          ],
+          [
+            "\\z",
+            "\r\n\r\n//IranCoJ Edition: the spectate crosshair: a dot (it can't follow the spectated player's spread)\r\nTexture(\"irancoj_crosshair_dot.dds\", 64, 32)\r\n{\r\n\tRect(\"irn_spec_ring\", 0, 0, 32, 32)\r\n\tRect(\"irn_spec_tick\", 32, 0, 54, 4)\r\n}\r\n"
           ]
         ]
       },
@@ -983,7 +987,7 @@
           ],
           [
             "\\z",
-            " \u0000Name_WeaponPistolFrontierUpgrade\u0012\u0000S\u0000p\u0000r\u0000i\u0000n\u0000g\u0000f\u0000i\u0000e\u0000l\u0000d\u0000 \u0000M\u0000u\u0000s\u0000k\u0000e\u0000t\u0000#\u0000Name_WeaponPistolFrontierUpgradeNet\u0012\u0000S\u0000p\u0000r\u0000i\u0000n\u0000g\u0000f\u0000i\u0000e\u0000l\u0000d\u0000 \u0000M\u0000u\u0000s\u0000k\u0000e\u0000t\u0000\u001d\u0000N_WeaponPistolFrontierUpgrade\u0012\u0000S\u0000p\u0000r\u0000i\u0000n\u0000g\u0000f\u0000i\u0000e\u0000l\u0000d\u0000 \u0000M\u0000u\u0000s\u0000k\u0000e\u0000t\u0000\u0017\u0000MenuDerringerUpgradeNet\u000f\u0000T\u0000h\u0000r\u0000o\u0000w\u0000i\u0000n\u0000g\u0000 \u0000K\u0000n\u0000i\u0000v\u0000e\u0000s\u0000$\u0000Name_WeaponPistolDerringerUpgradeNet\u000e\u0000T\u0000h\u0000r\u0000o\u0000w\u0000i\u0000n\u0000g\u0000 \u0000K\u0000n\u0000i\u0000f\u0000e\u0000!\u0000Name_WeaponPistolDerringerUpgrade\u000e\u0000T\u0000h\u0000r\u0000o\u0000w\u0000i\u0000n\u0000g\u0000 \u0000K\u0000n\u0000i\u0000f\u0000e\u0000\u001e\u0000N_WeaponPistolDerringerUpgrade\u000e\u0000T\u0000h\u0000r\u0000o\u0000w\u0000i\u0000n\u0000g\u0000 \u0000K\u0000n\u0000i\u0000f\u0000e\u0000\u0014\u0000MenuLemantUpgradeNet\b\u0000T\u0000o\u0000m\u0000a\u0000h\u0000a\u0000w\u0000k\u0000!\u0000Name_WeaponPistolLemantUpgradeNet\b\u0000T\u0000o\u0000m\u0000a\u0000h\u0000a\u0000w\u0000k\u0000\u001e\u0000Name_WeaponPistolLemantUpgrade\b\u0000T\u0000o\u0000m\u0000a\u0000h\u0000a\u0000w\u0000k\u0000\u001b\u0000N_WeaponPistolLemantUpgrade\b\u0000T\u0000o\u0000m\u0000a\u0000h\u0000a\u0000w\u0000k\u0000\u0011\u0000IrnEditionVersion\u0015\u0000I\u0000r\u0000a\u0000n\u0000C\u0000o\u0000J\u0000 \u0000E\u0000d\u0000i\u0000t\u0000i\u0000o\u0000n\u0000 \u00000\u0000.\u00007\u0000.\u00007\u0000"
+            " \u0000Name_WeaponPistolFrontierUpgrade\u0012\u0000S\u0000p\u0000r\u0000i\u0000n\u0000g\u0000f\u0000i\u0000e\u0000l\u0000d\u0000 \u0000M\u0000u\u0000s\u0000k\u0000e\u0000t\u0000#\u0000Name_WeaponPistolFrontierUpgradeNet\u0012\u0000S\u0000p\u0000r\u0000i\u0000n\u0000g\u0000f\u0000i\u0000e\u0000l\u0000d\u0000 \u0000M\u0000u\u0000s\u0000k\u0000e\u0000t\u0000\u001d\u0000N_WeaponPistolFrontierUpgrade\u0012\u0000S\u0000p\u0000r\u0000i\u0000n\u0000g\u0000f\u0000i\u0000e\u0000l\u0000d\u0000 \u0000M\u0000u\u0000s\u0000k\u0000e\u0000t\u0000\u0017\u0000MenuDerringerUpgradeNet\u000f\u0000T\u0000h\u0000r\u0000o\u0000w\u0000i\u0000n\u0000g\u0000 \u0000K\u0000n\u0000i\u0000v\u0000e\u0000s\u0000$\u0000Name_WeaponPistolDerringerUpgradeNet\u000e\u0000T\u0000h\u0000r\u0000o\u0000w\u0000i\u0000n\u0000g\u0000 \u0000K\u0000n\u0000i\u0000f\u0000e\u0000!\u0000Name_WeaponPistolDerringerUpgrade\u000e\u0000T\u0000h\u0000r\u0000o\u0000w\u0000i\u0000n\u0000g\u0000 \u0000K\u0000n\u0000i\u0000f\u0000e\u0000\u001e\u0000N_WeaponPistolDerringerUpgrade\u000e\u0000T\u0000h\u0000r\u0000o\u0000w\u0000i\u0000n\u0000g\u0000 \u0000K\u0000n\u0000i\u0000f\u0000e\u0000\u0014\u0000MenuLemantUpgradeNet\b\u0000T\u0000o\u0000m\u0000a\u0000h\u0000a\u0000w\u0000k\u0000!\u0000Name_WeaponPistolLemantUpgradeNet\b\u0000T\u0000o\u0000m\u0000a\u0000h\u0000a\u0000w\u0000k\u0000\u001e\u0000Name_WeaponPistolLemantUpgrade\b\u0000T\u0000o\u0000m\u0000a\u0000h\u0000a\u0000w\u0000k\u0000\u001b\u0000N_WeaponPistolLemantUpgrade\b\u0000T\u0000o\u0000m\u0000a\u0000h\u0000a\u0000w\u0000k\u0000\u0011\u0000IrnEditionVersion\u0015\u0000I\u0000r\u0000a\u0000n\u0000C\u0000o\u0000J\u0000 \u0000E\u0000d\u0000i\u0000t\u0000i\u0000o\u0000n\u0000 \u00000\u0000.\u00007\u0000.\u00008\u0000"
           ]
         ]
       },
@@ -1229,25 +1233,25 @@
       {
         "path": "CoJ2/Data/Menu/Background_Scr_PC.binui",
         "size": 12570,
-        "sha256": "c212c8ad46995b0b8c763080181df6072b18f2b5da3705489bfe375f182102c9",
+        "sha256": "ccb0fbf8bb745e7891efc8a63cef36f6d582fc25389330f246734ea77552d10a",
         "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/edition/Background_Scr_PC.binui"
       },
       {
         "path": "CoJ2/Data/Menu/Background_Skn_PC.binui",
         "size": 3035,
-        "sha256": "5e6ffb37c15e23066bdec82b046e58e26e69bffb343c67b5f60263a08d84194a",
+        "sha256": "acd5b8d083fb72ec7c021ef969e84ba5324af104432cd26fd062f0f25c262318",
         "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/edition/Background_Skn_PC.binui"
       },
       {
         "path": "CoJ2/Data/Menu/Dashboard_Scr_PC.binui",
         "size": 197232,
-        "sha256": "385530687e5f8048a019727ef8e8bcdb3a675b78ce0c7c4945b68d908cc06977",
+        "sha256": "f11bd9508848d5587ed698619d8107d04cab281683951896c43c4b0584b5d3e8",
         "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/edition/Dashboard_Scr_PC.binui"
       },
       {
         "path": "CoJ2/Data/Menu/Dashboard_Skn_PC.binui",
         "size": 936033,
-        "sha256": "e12dd2ed1a166ace0150dab110f3c80524975e0595e86c397cbb9f0373b111ce",
+        "sha256": "bacb23ae8a7fe55e12f5f1c8fc30f01045f78f8d53628928570bd4a8546d52d7",
         "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/edition/Dashboard_Skn_PC.binui"
       },
       {
@@ -1294,8 +1298,8 @@
       },
       {
         "path": "CoJ2/Data/Menu/MenuIngameNetGamemode_Scr_PC.binui",
-        "size": 578159,
-        "sha256": "d2ce205b70adaf08415128d7f659b7bcaab36246711340ddff74bf43f6fb78ed",
+        "size": 582188,
+        "sha256": "19d12889363dcb78d8f80a52624b22792a858fc61d086c43fadf395c12a90ffe",
         "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/edition/MenuIngameNetGamemode_Scr_PC.binui"
       },
       {
@@ -1343,7 +1347,7 @@
       {
         "path": "CoJ2/Data/Menu/MenuMain_Scr_PC.binui",
         "size": 614725,
-        "sha256": "d9b91b1a4c1f788507a05f784c10b6b3ce4ff78efde2abb3676d9f8c153718ec",
+        "sha256": "a8712a26402da5d02980572ba41df24a298d658aa4fadb3b09b7c590cff06b4d",
         "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/edition/MenuMain_Scr_PC.binui"
       },
       {
@@ -1361,7 +1365,7 @@
       {
         "path": "CoJ2/Data/Menu/scr/Credits_PC.scr",
         "size": 4874,
-        "sha256": "17a4a9d374f061d324716de286d87c316cb53befcf9e9e0827c1bec0681588b2",
+        "sha256": "8c44e6f81e4629871a04b360f1c7f1cf1c5e5dce443a5c68132eb7d64c409237",
         "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/edition/Credits_PC.scr"
       },
       {
@@ -1554,13 +1558,22 @@
     {
       "id": "third-person",
       "tag": "NEW",
-      "title": "Third Person",
-      "text": "Press F5 for an over-the-shoulder view; the middle mouse button swaps shoulders. Change both keys and your crosshair in Settings. Skirmish and Manhunt stay first person.",
-      "date": "2026-10-27",
+      "title": "Third Person 1.0.4",
+      "text": "Press F5 for an over-the-shoulder view; it now glides between first and third person. The middle mouse button swaps shoulders; change both keys in Settings. Skirmish and Manhunt stay first person.",
+      "date": "2026-11-01",
       "action": "settings",
       "actionLabel": "Keys and crosshair",
       "slide": true,
       "image": "https://raw.githubusercontent.com/roozbehghazavi/IranCoJLauncher-Hub/main/news/images/third-person.jpg"
+    },
+    {
+      "id": "spectate-110",
+      "tag": "MOD UPDATE",
+      "title": "Spectate Mod 1.1.0",
+      "text": "First-person spectating hides the player's face, so the camera no longer clips into beards and eyebrows, and shows a dot crosshair.",
+      "date": "2026-11-01",
+      "action": "mods",
+      "actionLabel": "Update"
     },
     {
       "id": "new-classes-203",
@@ -1583,15 +1596,6 @@
       "action": "maps",
       "actionLabel": "View in Maps",
       "image": "https://raw.githubusercontent.com/roozbehghazavi/IranCoJLauncher-Hub/main/news/images/lincoln-town.jpg"
-    },
-    {
-      "id": "spectate-108",
-      "tag": "MOD UPDATE",
-      "title": "Spectate Mod 1.0.8",
-      "text": "The spectate menu button now has its own place in the menu.",
-      "date": "2026-10-24",
-      "action": "mods",
-      "actionLabel": "Update"
     },
     {
       "id": "irancoj-server",
