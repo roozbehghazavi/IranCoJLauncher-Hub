@@ -45,12 +45,12 @@ def strip():
 
 
 def clock():
-    """64x64 gold clock: the round timer and the round countdown (were an hourglass and a pocket watch)."""
-    im = Image.new("RGBA", (64, 64))
+    """Gold clock for the round countdown (was a pocket watch), drawn large so it scales down sharp."""
+    im = Image.new("RGBA", (256, 256))
     d = ImageDraw.Draw(im)
-    d.ellipse([6, 6, 57, 57], outline=GOLD + (255,), width=6)
-    d.line([(32, 32), (32, 16)], fill=GOLD + (255,), width=6)
-    d.line([(32, 32), (44, 38)], fill=GOLD + (255,), width=6)
+    d.ellipse([24, 24, 231, 231], outline=GOLD + (255,), width=24)
+    d.line([(128, 128), (128, 64)], fill=GOLD + (255,), width=24)
+    d.line([(128, 128), (176, 152)], fill=GOLD + (255,), width=24)
     return im
 
 
@@ -88,30 +88,60 @@ def wanted():
     return im
 
 
+CHIPS_REAL = 2   # irancoj_hud_chips.dds is 512x512 but declared 256x256: twice as sharp, same rects
+CHIPS_SS = 4     # drawn this much larger again, then scaled down (smooth edges)
+
+
 def chips():
-    """256x256: round timer chip (clock + room for the time), round countdown chip, team badges (concept)."""
-    atlas = Image.new("RGBA", (256, 256))
+    """Round timer chip (a clock + room for the time), round countdown chip, team badges. Laid out in the
+    declared 256x256 space; the file is CHIPS_REAL times that."""
+    s = CHIPS_REAL * CHIPS_SS
+    atlas = Image.new("RGBA", (256 * s, 256 * s))
     d = ImageDraw.Draw(atlas)
 
-    def chip(box, outline=WOOD):
-        d.rounded_rectangle(box, radius=6, fill=INK + (215,), outline=outline + (255,), width=1)
+    def chip(box, outline=WOOD, width=1):
+        d.rounded_rectangle([v * s for v in box], radius=6 * s, fill=INK + (215,), outline=outline + (255,),
+                            width=width * s)
 
-    chip((0, 0, 159, 51))                                   # irn_hud_timer: 160x52
-    d.ellipse([12, 13, 38, 39], outline=GOLD + (255,), width=3)
-    d.line([(25, 26), (25, 17)], fill=GOLD + (255,), width=3)
-    d.line([(25, 26), (32, 29)], fill=GOLD + (255,), width=3)
+    def clock_at(x, y, size):
+        atlas.alpha_composite(clock().resize((size * s, size * s), Image.LANCZOS), (x * s, y * s))
+
+    chip((0, 0, 121, 51))                                   # irn_hud_timer: 122x52 (the clock + "00:00")
+    clock_at(11, 12, 28)
     chip((0, 56, 95, 91))                                   # irn_hud_countdown: 96x36
-    d.ellipse([9, 64, 28, 83], outline=GOLD + (255,), width=2)
-    d.line([(18, 74), (18, 68)], fill=GOLD + (255,), width=2)
-    d.line([(18, 74), (23, 76)], fill=GOLD + (255,), width=2)
+    clock_at(8, 63, 21)
     chip((100, 56, 195, 91))                                # irn_hud_num: 96x36, numbers only (team timers)
-    for y, color, name in ((96, RED, "OUTLAWS"), (154, BLUE, "LAWMEN")):  # irn_badge_red / _blue: 206x54
-        chip((0, y, 205, y + 53), color)
-        d.rectangle([1, y + 1, 204, y + 52], outline=color + (255,), width=2)
-        emblem = EMBLEM[color](38, color)
-        atlas.alpha_composite(emblem, (11, y + 8))
-        d.text((56, y + 27), name, font=font(28), fill=PARCH + (255,), anchor="lm")
-    return atlas
+    for y, color, name in ((96, RED, "OUTLAWS"), (154, BLUE, "LAWMEN")):  # irn_badge_red / _blue: 180x54 (fits OUTLAWS)
+        chip((0, y, 179, y + 53), color)
+        d.rectangle([1 * s, (y + 1) * s, 178 * s, (y + 52) * s], outline=color + (255,), width=2 * s)
+        emblem = EMBLEM[color](38 * s, color)
+        atlas.alpha_composite(emblem, (11 * s, (y + 8) * s))
+        d.text((56 * s, (y + 27) * s), name, font=font(28 * s), fill=PARCH + (255,), anchor="lm")
+    return atlas.resize((256 * CHIPS_REAL, 256 * CHIPS_REAL), Image.LANCZOS)
+
+
+def killfeed_shade():
+    """512x256 soft shade behind the kill feed (its html can't draw boxes): darkest at the right edge, where the
+    lines end, fading out to the left, up and down - no edge reads as a box. Shown and hidden with the feed's
+    own group."""
+    def smooth(v):
+        v = min(1.0, max(0.0, v))
+        return v * v * (3 - 2 * v)
+
+    im = Image.new("RGBA", (512, 256), INK + (0,))
+    px = im.load()
+    for y in range(256):
+        fy = smooth(y / 48.0) * smooth((255 - y) / 48.0)     # soft top and bottom: stretched to the lines shown
+        for x in range(512):
+            fx = smooth(x / 511.0) ** 1.4                     # strongest at the right, gone before the left
+            a = 215 * fx * fy
+            px[x, y] = INK + (int(a),)
+    return im
+
+
+def chat_shade():
+    """The kill feed's shade mirrored, for the chat: darkest at the left, where the lines start."""
+    return killfeed_shade().transpose(Image.FLIP_LEFT_RIGHT)
 
 
 # The game draws these icons by name on every screen (HUD, class screen, scoreboard); they are rects in the
@@ -123,8 +153,9 @@ ICONS = {"hud_team_red": (0, 0, 140, 140), "hud_team_blue": (142, 0, 140, 140), 
 
 def icons():
     atlas = Image.new("RGBA", (512, 256))
-    art = {"hud_team_red": team(RED), "hud_team_blue": team(BLUE), "icon_team_timer": clock(), "icon_timer": clock(),
-           "hud_wanted": wanted()}
+    # icon_timer (the scoreboard's and the class screen's time) stays empty: the time alone, no clock
+    art = {"hud_team_red": team(RED), "hud_team_blue": team(BLUE), "icon_team_timer": clock(),
+           "icon_timer": Image.new("RGBA", (42, 76)), "hud_wanted": wanted()}
     for name, (x, y, w, h) in ICONS.items():
         im = art[name]
         im.thumbnail((w, h), Image.LANCZOS)  # keep the art's shape, centred in the game's box
@@ -135,5 +166,6 @@ def icons():
 if __name__ == "__main__":
     out = os.path.join(sys.argv[1], "textures")
     for name, image in (("irancoj_hud_strip", strip()), ("irancoj_hud_pill", pill()), ("irancoj_hud_icons", icons()),
-                        ("irancoj_hud_chips", chips())):
+                        ("irancoj_hud_chips", chips()), ("irancoj_killfeed_shade", killfeed_shade()),
+                        ("irancoj_chat_shade", chat_shade())):
         write_dds(image, os.path.join(out, name + ".dds"))

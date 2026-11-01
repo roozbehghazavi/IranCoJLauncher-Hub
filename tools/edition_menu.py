@@ -468,10 +468,16 @@ def baseline(t, pairs):
     return t
 
 
-t = baseline(t, [(("T_MapName", "T_ModeName", "T_Timer"), (34, 50)), (("T_Wallet", "T_CashText", "T_TeamName"), (-67, 50))])
+# the top row sits in the HUD backdrop's 60 px bar (I_IrnTopBar, edition.json), like the Tab scoreboard
+t = baseline(t, [(("T_MapName", "T_ModeName", "T_Timer"), (5, 50))])
 # Small labels sit ~3 px low beside the big text in the same box; the team star was below the team name.
-t = set_prop(t, "T_CashText", "Position", "136.000031,-70.000000,0.000000")
-t = set_prop(t, "I_TeamImage", "Position", "730.999939,-78.000000,0.000000")
+# Cash and the team name share the top row's baseline (29 px higher with the 60 px bar); the badge sits inside the bar.
+t = baseline(t, [(("T_Wallet", "T_CashText", "T_TeamName"), (-96, 50))])
+t = set_prop(t, "T_CashText", "Position", "136.000031,-99.000000,0.000000")
+# the badge was 70 px, taller than the bar: 52 px, centred in it (same centre across)
+for prop, value in (("Width", "52.000000"), ("Height", "52.000000"), ("Position", "740.000000,-97.000000,0.000000"),
+                    ("Pivot", "26.000000,26.000000,0.000000")):
+    t = set_prop(t, "I_TeamImage", prop, value)
 
 # Spectate (Spectate mod's bar in the same screen) keeps its places - spectate.dll hit-tests those buttons at
 # fixed rects (y=676), which is inside the bottom bar anyway; it gets the class screen's buttons and text.
@@ -484,12 +490,13 @@ write("MenuNetSelectClass.xui", t)
 # the rest by name); inside the 90 px G_GameInfo group it was not drawn.
 # The end-of-round screen (MenuNetSummary) has the same scoreboard and top texts; it sits on the HUD backdrop,
 # whose top bar is already up, so it gets no bar of its own.
-top_bar = element("MyImage", "I_IrnTopBar", [("Width", "1280.000000"), ("Height", "100.000000"), ("ImagePath", "irn_bar_top")])
+# Every top bar is 60 px (the texts move up into it): a clear gap between it and the panel below.
+top_bar = element("MyImage", "I_IrnTopBar", [("Width", "1280.000000"), ("Height", "60.000000"), ("ImagePath", "irn_bar_top")])
 for name in ("MenuNetResults.xui", "MenuNetResults_PC.xui", "MenuNetSummary.xui"):
     t = written[name]
     t = flat_texts(t, {"T_MapName": PARCHMENT, "T_ModeName": GOLD, "T_Timer": GOLD, "T_GameSettings": PARCHMENT,
                        "T_ServerName": PARCHMENT})
-    t = baseline(t, [(("T_MapName", "T_ModeName", "T_Timer", "T_GameSettings"), (34, 50))])
+    t = baseline(t, [(("T_MapName", "T_ModeName", "T_Timer", "T_GameSettings"), (5, 50))])
     for group, panel in (("G_RedBackground", "irn_panel_red_tile"), ("G_BlueBackground", "irn_panel_blue_tile"),
                          ("G_Individual", "irn_panel_solo")):
         t = in_group(t, group, lambda g, panel=panel: set_prop(g, "Background", "ImagePath", panel))
@@ -562,6 +569,16 @@ v = set_prop(m.group(0), "H_Info", "DefaultFontColor", PARCHMENT)
 # The focused row (the list opens on the first one) gets a quiet flat band, not the menu band's gold bar.
 v = set_prop(set_prop(v, "I_BackgroundSelected", "BaseImage", "irn_flat"), "I_BackgroundSelected", "ImagePath", "irn_flat_0")
 v = set_prop(v, "I_BackgroundSelected", "Color", "0xff4a4236")
+t = t[:m.start()] + v + t[m.end():]
+# Profile rows (sign-in screen): the band showed on every profile, so no row looked chosen - this image draws
+# whatever its colour's alpha. Its timeline switches it with Show instead (like the frames): the band and a gold
+# name only on the focused row (Focus / Press, 6-37: the one the arrows or the mouse are on, which logs in).
+m = visual(t, "ProfileListButtonV")
+v = set_prop(m.group(0), "RandomBackground", "Show", "false")
+v = re.sub(r"(<Timeline>\r?\n<Id>RandomBackground</Id>\r?\n<TimelineProp>)Color(</TimelineProp>)", r"\1Show\2", v)
+v = keyframes(v, "RandomBackground", lambda time, props: ["true" if 6 <= time <= 37 else "false"])
+v = set_prop(v, "RandomBackground", "Color", "0xffffffff")
+v = keyframes(v, "TextPrezenter", lambda time, props: [GOLD if 6 <= time <= 37 else props[0], props[1]])
 write("CoJ2MenuSkin.xui", t[:m.start()] + v + t[m.end():])
 
 # In game, the loading backdrop is the same snapshot: blurred, not sepia.
@@ -613,6 +630,9 @@ for desc in ("T_Desc0", "T_Desc1"):  # inside the map group: placed back on the 
         t = set_prop(t, desc, prop, value)
 for element_id in ("Text", "T_Hint", "SubtitleText", "SubtitleText2", "T_Loading"):
     t = set_prop(set_prop(t, element_id, "TextColor", PARCHMENT), element_id, "Outline", "false")
+# The objective labels sit on the light map art, not a dark panel: back to the game's black (recolor made them parchment).
+for place in ("T_Place0", "T_Place1"):
+    t = set_prop(t, place, "TextColor", "0xfe000000")
 write("BackgroundLoading.xui", t)
 
 # "Please wait..." during loading is the key hint of the MenuLoading overlay: lower, under the map card.

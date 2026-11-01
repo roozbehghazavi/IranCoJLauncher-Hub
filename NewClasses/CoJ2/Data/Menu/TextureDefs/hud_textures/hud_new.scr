@@ -149,12 +149,12 @@ Texture("hud_new.dds",1024,1024)
     Rect("hud_back_strip"                 , 921, 259,1003, 341) //  82x 82 //to reduce border problems
     Rect("icon_net_rancher_big"           , 276, 739, 312, 775) //  36x 36 lasso (= hud_icons_lasso)
     Rect("icon_net_redneck_big"           , 276, 625, 312, 661) //  36x 36 black hat (= hud_icons_hat)
+    Rect("hud_icon_idle_tomahawk"         , 432, 412, 522, 502) //  90x 90 IranCoJ: the tomahawk (kill list, class screen) - remastered, blade to the right like the guns
+    Rect("hud_icons_tomahawk"             , 432, 412, 522, 502) //  90x 90 IranCoJ: the same
 }
 
 Texture("net_characters.dds",4096,2048)
 {
-    Rect("hud_icon_idle_tomahawk"         ,3864,   4,3954,  94) //  90x 90 IranCoJ: the tomahawk (kill list) - in the loose net_characters.dds
-    Rect("hud_icons_tomahawk"             ,3864,   4,3954,  94) //  90x 90 IranCoJ: the same
 }
 
 // IranCoJ: irancoj_crosshair.dds is really 128x64 (twice as sharp), declared at the vanilla pieces' size
