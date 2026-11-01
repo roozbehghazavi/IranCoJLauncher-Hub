@@ -430,15 +430,38 @@
       "optional": true
     },
     {
+      "id": "IranCoJHud",
+      "name": "IranCoJ HUD",
+      "version": "1.0.0",
+      "description": "The Edition's in-game HUD: kill feed, chat, team score bar, Shootout / Wanted standing and weapon names.",
+      "package": {
+        "file": "IranCoJHud-1.0.0.zip",
+        "size": 175157,
+        "sha256": "40dc6d78ca563fcd7d1b2ff859649b6247b3930449499b0f4cf091edd3db6681",
+        "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/mods/IranCoJHud-1.0.0.zip"
+      },
+      "exclude": [
+        "mods.txt"
+      ],
+      "loadDll": [
+        "irancojhud.dll"
+      ],
+      "shared": [
+        "dinput8.dll"
+      ],
+      "disable": [],
+      "patch": []
+    },
+    {
       "id": "NewClasses",
       "name": "New Classes",
-      "version": "2.0.5",
+      "version": "2.0.6",
       "description": "Rancher and Redneck as playable classes, and three classes play as CoJ Gunslinger characters: Silas Greaves (Rancher), John Wesley Hardin (Duelist) and Billy the Kid (Rifleman). With upgrades, new class pictures and the IranCoJ Skin Pack.",
       "package": {
-        "file": "NewClasses-2.0.5.zip",
-        "size": 35519884,
-        "sha256": "280b4a96336baa09dfb3ba2949f1440023dfe3245aaa132b11f19309de99839f",
-        "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/mods/NewClasses-2.0.5.zip"
+        "file": "NewClasses-2.0.6.zip",
+        "size": 35519833,
+        "sha256": "f1adf5e76d20258d79cd4841358fd826e1589416ce3954a6ade5205d5b64294a",
+        "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/mods/NewClasses-2.0.6.zip"
       },
       "exclude": [
         "README_INSTALL.txt",
@@ -545,13 +568,13 @@
     {
       "id": "SpectateMod",
       "name": "Spectate Mod",
-      "version": "1.1.0",
+      "version": "1.1.1",
       "description": "Spectate players in multiplayer, from the in-game menu.",
       "package": {
-        "file": "SpectateMod-1.1.0.zip",
-        "size": 219926,
-        "sha256": "feb525d41323e94b7fb6c99d685d0d68c19607b34e781ce51a06314021236a53",
-        "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/mods/SpectateMod-1.1.0.zip"
+        "file": "SpectateMod-1.1.1.zip",
+        "size": 220615,
+        "sha256": "5102cb34e6a98be41f8c0d11ef1ac4485108d99c87d4ba738b66a2cbbda66dbf",
+        "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/mods/SpectateMod-1.1.1.zip"
       },
       "exclude": [
         "mods.txt",
@@ -614,7 +637,7 @@
     }
   ],
   "edition": {
-    "version": "0.7.8",
+    "version": "1.0.0",
     "ownUserFolder": true,
     "menuNavigation": true,
     "include": [
@@ -806,11 +829,11 @@
         "replace": [
           [
             "<Material>menu_bckg_screenshot_alpha\\.mat</Material>\\r?\\n</Properties>\\r?\\n</MyImage>\\r?\\n",
-            "<Material>irancoj_blur.mat</Material>\r\n</Properties>\r\n</MyImage>\r\n<MyImage>\r\n<Properties>\r\n<Id>I_IrnTopBar</Id>\r\n<Width>1280.000000</Width>\r\n<Height>100.000000</Height>\r\n<ImagePath>irn_bar_top</ImagePath>\r\n</Properties>\r\n</MyImage>\r\n<MyImage>\r\n<Properties>\r\n<Id>I_IrnBottomBar</Id>\r\n<Width>1280.000000</Width>\r\n<Height>124.000000</Height>\r\n<Position>0.000000,596.000000,0.000000</Position>\r\n<ImagePath>irn_bar_bottom</ImagePath>\r\n</Properties>\r\n</MyImage>\r\n<MyImage>\r\n<Properties>\r\n<Id>I_IrnSpecTopBar</Id>\r\n<Width>1280.000000</Width>\r\n<Height>60.000000</Height>\r\n<Show>false</Show>\r\n<ImagePath>irn_bar_top</ImagePath>\r\n</Properties>\r\n</MyImage>\r\n<MyImage>\r\n<Properties>\r\n<Id>I_IrnSpecBottomBar</Id>\r\n<Width>1280.000000</Width>\r\n<Height>60.000000</Height>\r\n<Position>0.000000,660.000000,0.000000</Position>\r\n<Show>false</Show>\r\n<ImagePath>irn_bar_bottom</ImagePath>\r\n</Properties>\r\n</MyImage>\r\n"
+            "<Material>irancoj_blur.mat</Material>\r\n</Properties>\r\n</MyImage>\r\n<MyImage>\r\n<Properties>\r\n<Id>I_IrnTopBar</Id>\r\n<Width>1280.000000</Width>\r\n<Height>60.000000</Height>\r\n<ImagePath>irn_bar_top</ImagePath>\r\n</Properties>\r\n</MyImage>\r\n<MyImage>\r\n<Properties>\r\n<Id>I_IrnBottomBar</Id>\r\n<Width>1280.000000</Width>\r\n<Height>124.000000</Height>\r\n<Position>0.000000,596.000000,0.000000</Position>\r\n<ImagePath>irn_bar_bottom</ImagePath>\r\n</Properties>\r\n</MyImage>\r\n<MyImage>\r\n<Properties>\r\n<Id>I_IrnSpecTopBar</Id>\r\n<Width>1280.000000</Width>\r\n<Height>60.000000</Height>\r\n<Show>false</Show>\r\n<ImagePath>irn_bar_top</ImagePath>\r\n</Properties>\r\n</MyImage>\r\n<MyImage>\r\n<Properties>\r\n<Id>I_IrnSpecBottomBar</Id>\r\n<Width>1280.000000</Width>\r\n<Height>60.000000</Height>\r\n<Position>0.000000,660.000000,0.000000</Position>\r\n<Show>false</Show>\r\n<ImagePath>irn_bar_bottom</ImagePath>\r\n</Properties>\r\n</MyImage>\r\n"
           ],
           [
             "<MyText>\\\r\\\n<Properties>\\\r\\\n<Id>ID_TIME</Id>\\\r\\\n<Width>435\\.000000</Width>\\\r\\\n<Height>54\\.000000</Height>\\\r\\\n<Position>28\\.000000,2\\.000002,0\\.000000</Position>\\\r\\\n<Anchor>32</Anchor>\\\r\\\n<TextColor>0xffddcda9</TextColor>\\\r\\\n<DropShadowColor>0x800f0f0f</DropShadowColor>\\\r\\\n<PointSize>20\\.000000</PointSize>\\\r\\\n<Font>HUDDigitsBig</Font>\\\r\\\n<TextStyle>4112</TextStyle>\\\r\\\n<Outline>true</Outline>\\\r\\\n</Properties>\\\r\\\n</MyText>\\\r\\\n<MyImage>\\\r\\\n<Properties>\\\r\\\n<Id>ID_TIME_ICON</Id>\\\r\\\n<Width>21\\.000000</Width>\\\r\\\n<Height>38\\.000000</Height>\\\r\\\n<Position>0\\.000000,8\\.000003,0\\.000000</Position>\\\r\\\n<Pivot>10\\.499993,18\\.999992,0\\.000000</Pivot>\\\r\\\n<Show>false</Show>\\\r\\\n<ImagePath>icon_timer\\.dds</ImagePath>\\\r\\\n<HoldAspectRatio>true</HoldAspectRatio>\\\r\\\n<HoldAspectRatioX>true</HoldAspectRatioX>\\\r\\\n<HoldAspectPivotPosition>true</HoldAspectPivotPosition>\\\r\\\n</Properties>\\\r\\\n</MyImage>\\\r\\\n",
-            "<MyImage>\r\n<Properties>\r\n<Id>ID_TIME_ICON</Id>\r\n<Width>160.000000</Width>\r\n<Height>52.000000</Height>\r\n<Position>-12.000000,1.000000,0.000000</Position>\r\n<Pivot>80.000000,26.000000,0.000000</Pivot>\r\n<Show>false</Show>\r\n<ImagePath>irn_hud_timer</ImagePath>\r\n<HoldAspectRatio>false</HoldAspectRatio>\r\n<HoldAspectRatioX>false</HoldAspectRatioX>\r\n<HoldAspectPivotPosition>true</HoldAspectPivotPosition>\r\n</Properties>\r\n</MyImage>\r\n<MyText>\r\n<Properties>\r\n<Id>ID_TIME</Id>\r\n<Width>435.000000</Width>\r\n<Height>54.000000</Height>\r\n<Position>44.000000,2.000002,0.000000</Position>\r\n<Anchor>32</Anchor>\r\n<TextColor>0xfff3ebdd</TextColor>\r\n<DropShadowColor>0x800f0f0f</DropShadowColor>\r\n<PointSize>20.000000</PointSize>\r\n<Font>HUDDigitsBig</Font>\r\n<TextStyle>4112</TextStyle>\r\n<Outline>true</Outline>\r\n</Properties>\r\n</MyText>\r\n"
+            "<MyImage>\r\n<Properties>\r\n<Id>ID_TIME_ICON</Id>\r\n<Width>132.000000</Width>\r\n<Height>52.000000</Height>\r\n<Position>-12.000000,1.000000,0.000000</Position>\r\n<Pivot>66.000000,26.000000,0.000000</Pivot>\r\n<Show>false</Show>\r\n<ImagePath>irn_hud_timer</ImagePath>\r\n<HoldAspectRatio>false</HoldAspectRatio>\r\n<HoldAspectRatioX>false</HoldAspectRatioX>\r\n<HoldAspectPivotPosition>true</HoldAspectPivotPosition>\r\n</Properties>\r\n</MyImage>\r\n<MyText>\r\n<Properties>\r\n<Id>ID_TIME</Id>\r\n<Width>435.000000</Width>\r\n<Height>54.000000</Height>\r\n<Position>44.000000,2.000002,0.000000</Position>\r\n<Anchor>32</Anchor>\r\n<TextColor>0xfff3ebdd</TextColor>\r\n<DropShadowColor>0x800f0f0f</DropShadowColor>\r\n<PointSize>20.000000</PointSize>\r\n<Font>HUDDigitsBig</Font>\r\n<TextStyle>4112</TextStyle>\r\n<Outline>true</Outline>\r\n</Properties>\r\n</MyText>\r\n"
           ],
           [
             "<Id>ID_TEAM_RED</Id>\\\r\\\n<Width>70\\.000000</Width>\\\r\\\n<Height>70\\.000000</Height>\\\r\\\n<Position>1133\\.000000,37\\.000000,0\\.000000</Position>\\\r\\\n<Scale>1\\.500000,1\\.500000,1\\.000000</Scale>\\\r\\\n<Opacity>0\\.000000</Opacity>\\\r\\\n<Pivot>35\\.000000,35\\.000000,0\\.000000</Pivot>\\\r\\\n",
@@ -818,7 +841,7 @@
           ],
           [
             "<MyImage>\\\r\\\n<Properties>\\\r\\\n<Id>IMG</Id>\\\r\\\n<Width>70\\.000000</Width>\\\r\\\n<Height>70\\.000000</Height>\\\r\\\n<Pivot>34\\.999954,35\\.000000,0\\.000000</Pivot>\\\r\\\n<SizeMode>4</SizeMode>\\\r\\\n<ImagePath>Textures\\\\temp\\\\hud_team_red\\.dds</ImagePath>\\\r\\\n<HoldAspectRatio>true</HoldAspectRatio>\\\r\\\n<HoldAspectRatioX>true</HoldAspectRatioX>\\\r\\\n<HoldAspectPivotPosition>true</HoldAspectPivotPosition>\\\r\\\n</Properties>\\\r\\\n</MyImage>\\\r\\\n(?=</AdvGroup>\\r\\n<AdvGroup>\\r\\n<Properties>\\r\\n<Id>ID_TEAM_BLUE)",
-            "<MyImage>\r\n<Properties>\r\n<Id>IMG</Id>\r\n<Width>206.000000</Width>\r\n<Height>54.000000</Height>\r\n<Pivot>103.000000,27.000000,0.000000</Pivot>\r\n<SizeMode>4</SizeMode>\r\n<ImagePath>irn_badge_red</ImagePath>\r\n<HoldAspectRatio>false</HoldAspectRatio>\r\n<HoldAspectRatioX>false</HoldAspectRatioX>\r\n<HoldAspectPivotPosition>true</HoldAspectPivotPosition>\r\n</Properties>\r\n</MyImage>\r\n"
+            "<MyImage>\r\n<Properties>\r\n<Id>IMG</Id>\r\n<Width>196.000000</Width>\r\n<Height>54.000000</Height>\r\n<Position>10.000000,0.000000,0.000000</Position>\r\n<Pivot>98.000000,27.000000,0.000000</Pivot>\r\n<SizeMode>4</SizeMode>\r\n<ImagePath>irn_badge_red</ImagePath>\r\n<HoldAspectRatio>false</HoldAspectRatio>\r\n<HoldAspectRatioX>false</HoldAspectRatioX>\r\n<HoldAspectPivotPosition>true</HoldAspectPivotPosition>\r\n</Properties>\r\n</MyImage>\r\n"
           ],
           [
             "<Id>ID_TEAM_BLUE</Id>\\\r\\\n<Width>70\\.000000</Width>\\\r\\\n<Height>70\\.000000</Height>\\\r\\\n<Position>1133\\.000000,37\\.000000,0\\.000000</Position>\\\r\\\n<Scale>1\\.500000,1\\.500000,1\\.000000</Scale>\\\r\\\n<Opacity>0\\.000000</Opacity>\\\r\\\n<Pivot>35\\.000000,35\\.000000,0\\.000000</Pivot>\\\r\\\n",
@@ -826,7 +849,7 @@
           ],
           [
             "<MyImage>\\\r\\\n<Properties>\\\r\\\n<Id>IMG</Id>\\\r\\\n<Width>70\\.000000</Width>\\\r\\\n<Height>70\\.000000</Height>\\\r\\\n<Pivot>34\\.999943,34\\.999996,0\\.000000</Pivot>\\\r\\\n<SizeMode>4</SizeMode>\\\r\\\n<ImagePath>Textures\\\\temp\\\\hud_team_blue\\.dds</ImagePath>\\\r\\\n<HoldAspectRatio>true</HoldAspectRatio>\\\r\\\n<HoldAspectRatioX>true</HoldAspectRatioX>\\\r\\\n<HoldAspectPivotPosition>true</HoldAspectPivotPosition>\\\r\\\n</Properties>\\\r\\\n</MyImage>\\\r\\\n(?=</AdvGroup>\\r\\n<XuiGroup>)",
-            "<MyImage>\r\n<Properties>\r\n<Id>IMG</Id>\r\n<Width>206.000000</Width>\r\n<Height>54.000000</Height>\r\n<Pivot>103.000000,27.000000,0.000000</Pivot>\r\n<SizeMode>4</SizeMode>\r\n<ImagePath>irn_badge_blue</ImagePath>\r\n<HoldAspectRatio>false</HoldAspectRatio>\r\n<HoldAspectRatioX>false</HoldAspectRatioX>\r\n<HoldAspectPivotPosition>true</HoldAspectPivotPosition>\r\n</Properties>\r\n</MyImage>\r\n"
+            "<MyImage>\r\n<Properties>\r\n<Id>IMG</Id>\r\n<Width>196.000000</Width>\r\n<Height>54.000000</Height>\r\n<Position>10.000000,0.000000,0.000000</Position>\r\n<Pivot>98.000000,27.000000,0.000000</Pivot>\r\n<SizeMode>4</SizeMode>\r\n<ImagePath>irn_badge_blue</ImagePath>\r\n<HoldAspectRatio>false</HoldAspectRatio>\r\n<HoldAspectRatioX>false</HoldAspectRatioX>\r\n<HoldAspectPivotPosition>true</HoldAspectPivotPosition>\r\n</Properties>\r\n</MyImage>\r\n"
           ],
           [
             "<Id>ID_WANTED_GROUP</Id>\\\r\\\n<Width>154\\.000000</Width>\\\r\\\n<Height>154\\.000000</Height>\\\r\\\n<Position>1048\\.000122,32\\.000000,0\\.000000</Position>\\\r\\\n",
@@ -863,6 +886,22 @@
           [
             "<Id>T_Title</Id>\\\r\\\n<Width>150\\.000000</Width>\\\r\\\n<Height>24\\.000000</Height>\\\r\\\n<Position>8\\.000000,4\\.000000,0\\.000000</Position>\\\r\\\n<TextColor>0xfe000000</TextColor>",
             "<Id>T_Title</Id>\r\n<Width>150.000000</Width>\r\n<Height>24.000000</Height>\r\n<Position>8.000000,4.000000,0.000000</Position>\r\n<TextColor>0xffe2b15e</TextColor>"
+          ],
+          [
+            "<Id>NetSymbolicMessage</Id>\r\n<Width>1148\\.000122</Width>\r\n<Height>254\\.800018</Height>\r\n<Position>64\\.800049,202\\.800034,0\\.000000</Position>\r\n<Anchor>5</Anchor>\r\n<Show>false</Show>\r\n<ClassOverride>HUDNetSymbolicMessage</ClassOverride>\r\n</Properties>\r\n<MyHtml>\r\n<Properties>\r\n<Id>Texts</Id>\r\n<Width>1144\\.600098</Width>\r\n<Height>250\\.000000</Height>\r\n<Position>3\\.599998,0\\.000000,0\\.000000</Position>\r\n<DefaultVerticalAlign>middle</DefaultVerticalAlign>\r\n<DefaultFont>HUDMedium</DefaultFont>\r\n<Outline>true</Outline>\r\n</Properties>\r\n</MyHtml>\r\n</AdvGroup>\r\n<AdvGroup>\r\n<Properties>\r\n<Id>NetConnectionProblems</Id>\r\n<Width>70\\.000000</Width>\r\n<Height>70\\.000000</Height>\r\n<Position>605\\.000000,222\\.000000,0\\.000000</Position>\r\n<AllowJumpsFromParents>false</AllowJumpsFromParents>\r\n<HoldAspectRatio>true</HoldAspectRatio>\r\n<ClassOverride>HUDNetConnectionProblems</ClassOverride>\r\n</Properties>\r\n<MyImage>\r\n<Properties>\r\n<Id>I_Icon</Id>\r\n<Width>70\\.000000</Width>\r\n<Height>70\\.000000</Height>\r\n<SizeMode>4</SizeMode>\r\n<ImagePath>Net_Problem\\.dds</ImagePath>\r\n</Properties>\r\n</MyImage>\r\n<Timelines>\r\n<NamedFrames>\r\n<NamedFrame>\r\n<Name>Show</Name>\r\n<Time>0</Time>\r\n<Command>stop</Command>\r\n</NamedFrame>\r\n<NamedFrame>\r\n<Name>Blink</Name>\r\n<Time>1</Time>\r\n</NamedFrame>\r\n<NamedFrame>\r\n<Name>EndBlink</Name>\r\n<Time>40</Time>\r\n<Command>goto</Command>\r\n<CommandParams>Blink</CommandParams>\r\n</NamedFrame>\r\n<NamedFrame>\r\n<Name>Hide</Name>\r\n<Time>41</Time>\r\n<Command>stop</Command>\r\n</NamedFrame>\r\n</NamedFrames>\r\n<Timeline>\r\n<Id>I_Icon</Id>\r\n<TimelineProp>Opacity</TimelineProp>\r\n<KeyFrame>\r\n<Time>0</Time>\r\n<Interpolation>0</Interpolation>\r\n<Prop>1\\.000000</Prop>\r\n</KeyFrame>\r\n<KeyFrame>\r\n<Time>1</Time>\r\n<Interpolation>0</Interpolation>\r\n<Prop>0\\.000000</Prop>\r\n</KeyFrame>\r\n<KeyFrame>\r\n<Time>15</Time>\r\n<Interpolation>0</Interpolation>\r\n<Prop>1\\.000000</Prop>\r\n</KeyFrame>\r\n<KeyFrame>\r\n<Time>25</Time>\r\n<Interpolation>0</Interpolation>\r\n<Prop>1\\.000000</Prop>\r\n</KeyFrame>\r\n<KeyFrame>\r\n<Time>40</Time>\r\n<Interpolation>0</Interpolation>\r\n<Prop>0\\.000000</Prop>\r\n</KeyFrame>\r\n<KeyFrame>\r\n<Time>41</Time>\r\n<Interpolation>0</Interpolation>\r\n<Prop>0\\.000000</Prop>\r\n</KeyFrame>\r\n</Timeline>\r\n</Timelines>\r\n</AdvGroup>\r\n<AdvGroup>\r\n<Properties>\r\n<Id>NetChat</Id>\r\n<Width>848\\.000122</Width>\r\n<Height>61\\.000000</Height>\r\n<Position>216\\.000015,594\\.000000,0\\.000000</Position>\r\n<Anchor>5</Anchor>\r\n<Show>false</Show>\r\n<ClassOverride>HUDNetChat</ClassOverride>\r\n</Properties>\r\n<UIListBox>\r\n<Properties>\r\n<Id>ID_LIST_BOX</Id>\r\n<Width>848\\.000122</Width>\r\n<Height>61\\.000031</Height>\r\n<Anchor>5</Anchor>\r\n<ClassOverride>UIListBox</ClassOverride>\r\n<Visual>ListBoxChatV</Visual>\r\n</Properties>\r\n</UIListBox>\r\n<AdvGroup>\r\n<Properties>\r\n<Id>D_PosMenuSummary</Id>\r\n<Width>1\\.000000</Width>\r\n<Height>1\\.000000</Height>\r\n<Position>160\\.000000,5\\.000000,0\\.000000</Position>\r\n</Properties>\r\n</AdvGroup>\r\n<AdvGroup>\r\n<Properties>\r\n<Id>D_PosMenu</Id>\r\n<Width>1\\.000000</Width>\r\n<Height>1\\.000000</Height>\r\n<Position>0\\.000000,7\\.000000,0\\.000000</Position>\r\n</Properties>\r\n</AdvGroup>\r\n<AdvGroup>\r\n<Properties>\r\n<Id>D_PosNormal</Id>\r\n<Width>1\\.000000</Width>\r\n<Height>1\\.000000</Height>\r\n<Position>0\\.000000,-104\\.000000,0\\.000000</Position>\r\n</Properties>\r\n</AdvGroup>\r\n</AdvGroup>\r\n<AdvGroup>\r\n<Properties>\r\n<Id>NetChatEdit</Id>\r\n<Width>850\\.000000</Width>\r\n<Height>24\\.000000</Height>\r\n<Position>216\\.000015,679\\.000000,0\\.000000</Position>\r\n<Show>false</Show>\r\n<ClassOverride>HUDNetChatEdit</ClassOverride>\r\n</Properties>\r\n<MyImage>\r\n<Properties>\r\n<Id>I_Background</Id>\r\n<Width>870\\.000000</Width>\r\n<Height>32\\.000000</Height>\r\n<Position>-9\\.999985,-3\\.999999,0\\.000000</Position>\r\n<ImagePath>irn_hud_strip</ImagePath>\r\n</Properties>\r\n</MyImage>\r\n<UIEditBox>\r\n<Properties>\r\n<Id>E_Text</Id>\r\n<Width>690\\.000000</Width>\r\n<Height>24\\.000000</Height>\r\n",
+            "<Id>NetSymbolicMessage</Id>\r\n<Width>560.000000</Width>\r\n<Height>220.000000</Height>\r\n<Position>700.000000,208.000000,0.000000</Position>\r\n<Anchor>5</Anchor>\r\n<Show>false</Show>\r\n<ClassOverride>HUDNetSymbolicMessage</ClassOverride>\r\n</Properties>\r\n<MyImage>\r\n<Properties>\r\n<Id>I_IrnKillShade1</Id>\r\n<Width>440.000000</Width>\r\n<Height>54.000000</Height>\r\n<Position>130.000000,-3.000000,0.000000</Position>\r\n<Opacity>0.000000</Opacity>\r\n<SizeMode>4</SizeMode>\r\n<ImagePath>irn_kill_pill1</ImagePath>\r\n</Properties>\r\n</MyImage>\r\n<MyImage>\r\n<Properties>\r\n<Id>I_IrnKillShade2</Id>\r\n<Width>440.000000</Width>\r\n<Height>86.000000</Height>\r\n<Position>130.000000,-3.000000,0.000000</Position>\r\n<Opacity>0.000000</Opacity>\r\n<SizeMode>4</SizeMode>\r\n<ImagePath>irn_kill_pill2</ImagePath>\r\n</Properties>\r\n</MyImage>\r\n<MyImage>\r\n<Properties>\r\n<Id>I_IrnKillShade3</Id>\r\n<Width>440.000000</Width>\r\n<Height>118.000000</Height>\r\n<Position>130.000000,-3.000000,0.000000</Position>\r\n<Opacity>0.000000</Opacity>\r\n<SizeMode>4</SizeMode>\r\n<ImagePath>irn_kill_pill3</ImagePath>\r\n</Properties>\r\n</MyImage>\r\n<MyImage>\r\n<Properties>\r\n<Id>I_IrnKillShade4</Id>\r\n<Width>440.000000</Width>\r\n<Height>150.000000</Height>\r\n<Position>130.000000,-3.000000,0.000000</Position>\r\n<Opacity>0.000000</Opacity>\r\n<SizeMode>4</SizeMode>\r\n<ImagePath>irn_kill_pill4</ImagePath>\r\n</Properties>\r\n</MyImage>\r\n<MyImage>\r\n<Properties>\r\n<Id>I_IrnKillShade5</Id>\r\n<Width>440.000000</Width>\r\n<Height>182.000000</Height>\r\n<Position>130.000000,-3.000000,0.000000</Position>\r\n<Opacity>0.000000</Opacity>\r\n<SizeMode>4</SizeMode>\r\n<ImagePath>irn_kill_pill5</ImagePath>\r\n</Properties>\r\n</MyImage>\r\n<MyHtml>\r\n<Properties>\r\n<Id>Texts</Id>\r\n<Width>560.000000</Width>\r\n<Height>220.000000</Height>\r\n<ContentHorizontalAlign>right</ContentHorizontalAlign>\r\n<ContentVerticalAlign>top</ContentVerticalAlign>\r\n<DefaultHorizontalAlign>right</DefaultHorizontalAlign>\r\n<DefaultVerticalAlign>middle</DefaultVerticalAlign>\r\n<DefaultFont>HUDMedium</DefaultFont>\r\n<Outline>true</Outline>\r\n</Properties>\r\n</MyHtml>\r\n</AdvGroup>\r\n<AdvGroup>\r\n<Properties>\r\n<Id>NetConnectionProblems</Id>\r\n<Width>70.000000</Width>\r\n<Height>70.000000</Height>\r\n<Position>605.000000,222.000000,0.000000</Position>\r\n<AllowJumpsFromParents>false</AllowJumpsFromParents>\r\n<HoldAspectRatio>true</HoldAspectRatio>\r\n<ClassOverride>HUDNetConnectionProblems</ClassOverride>\r\n</Properties>\r\n<MyImage>\r\n<Properties>\r\n<Id>I_Icon</Id>\r\n<Width>70.000000</Width>\r\n<Height>70.000000</Height>\r\n<SizeMode>4</SizeMode>\r\n<ImagePath>Net_Problem.dds</ImagePath>\r\n</Properties>\r\n</MyImage>\r\n<Timelines>\r\n<NamedFrames>\r\n<NamedFrame>\r\n<Name>Show</Name>\r\n<Time>0</Time>\r\n<Command>stop</Command>\r\n</NamedFrame>\r\n<NamedFrame>\r\n<Name>Blink</Name>\r\n<Time>1</Time>\r\n</NamedFrame>\r\n<NamedFrame>\r\n<Name>EndBlink</Name>\r\n<Time>40</Time>\r\n<Command>goto</Command>\r\n<CommandParams>Blink</CommandParams>\r\n</NamedFrame>\r\n<NamedFrame>\r\n<Name>Hide</Name>\r\n<Time>41</Time>\r\n<Command>stop</Command>\r\n</NamedFrame>\r\n</NamedFrames>\r\n<Timeline>\r\n<Id>I_Icon</Id>\r\n<TimelineProp>Opacity</TimelineProp>\r\n<KeyFrame>\r\n<Time>0</Time>\r\n<Interpolation>0</Interpolation>\r\n<Prop>1.000000</Prop>\r\n</KeyFrame>\r\n<KeyFrame>\r\n<Time>1</Time>\r\n<Interpolation>0</Interpolation>\r\n<Prop>0.000000</Prop>\r\n</KeyFrame>\r\n<KeyFrame>\r\n<Time>15</Time>\r\n<Interpolation>0</Interpolation>\r\n<Prop>1.000000</Prop>\r\n</KeyFrame>\r\n<KeyFrame>\r\n<Time>25</Time>\r\n<Interpolation>0</Interpolation>\r\n<Prop>1.000000</Prop>\r\n</KeyFrame>\r\n<KeyFrame>\r\n<Time>40</Time>\r\n<Interpolation>0</Interpolation>\r\n<Prop>0.000000</Prop>\r\n</KeyFrame>\r\n<KeyFrame>\r\n<Time>41</Time>\r\n<Interpolation>0</Interpolation>\r\n<Prop>0.000000</Prop>\r\n</KeyFrame>\r\n</Timeline>\r\n</Timelines>\r\n</AdvGroup>\r\n<AdvGroup>\r\n<Properties>\r\n<Id>NetChat</Id>\r\n<Width>848.000122</Width>\r\n<Height>61.000000</Height>\r\n<Position>24.000000,594.000000,0.000000</Position>\r\n<Anchor>5</Anchor>\r\n<Show>false</Show>\r\n<ClassOverride>HUDNetChat</ClassOverride>\r\n</Properties>\r\n<UIListBox>\r\n<Properties>\r\n<Id>ID_LIST_BOX</Id>\r\n<Width>848.000122</Width>\r\n<Height>102.000000</Height>\r\n<Anchor>5</Anchor>\r\n<ClassOverride>UIListBox</ClassOverride>\r\n<Visual>ListBoxChatV</Visual>\r\n</Properties>\r\n</UIListBox>\r\n<MyImage>\r\n<Properties>\r\n<Id>I_IrnChatShade1</Id>\r\n<Width>320.000000</Width>\r\n<Height>43.000000</Height>\r\n<Position>0.000000,0.000000,0.000000</Position>\r\n<Opacity>0.000000</Opacity>\r\n<SizeMode>4</SizeMode>\r\n<ImagePath>irn_chat_pill1</ImagePath>\r\n</Properties>\r\n</MyImage>\r\n<MyImage>\r\n<Properties>\r\n<Id>I_IrnChatShade2</Id>\r\n<Width>320.000000</Width>\r\n<Height>66.000000</Height>\r\n<Position>0.000000,0.000000,0.000000</Position>\r\n<Opacity>0.000000</Opacity>\r\n<SizeMode>4</SizeMode>\r\n<ImagePath>irn_chat_pill2</ImagePath>\r\n</Properties>\r\n</MyImage>\r\n<MyImage>\r\n<Properties>\r\n<Id>I_IrnChatShade3</Id>\r\n<Width>320.000000</Width>\r\n<Height>89.000000</Height>\r\n<Position>0.000000,0.000000,0.000000</Position>\r\n<Opacity>0.000000</Opacity>\r\n<SizeMode>4</SizeMode>\r\n<ImagePath>irn_chat_pill3</ImagePath>\r\n</Properties>\r\n</MyImage>\r\n<MyImage>\r\n<Properties>\r\n<Id>I_IrnChatShade4</Id>\r\n<Width>320.000000</Width>\r\n<Height>112.000000</Height>\r\n<Position>0.000000,0.000000,0.000000</Position>\r\n<Opacity>0.000000</Opacity>\r\n<SizeMode>4</SizeMode>\r\n<ImagePath>irn_chat_pill4</ImagePath>\r\n</Properties>\r\n</MyImage>\r\n<MyImage>\r\n<Properties>\r\n<Id>I_IrnChatShade5</Id>\r\n<Width>320.000000</Width>\r\n<Height>135.000000</Height>\r\n<Position>0.000000,0.000000,0.000000</Position>\r\n<Opacity>0.000000</Opacity>\r\n<SizeMode>4</SizeMode>\r\n<ImagePath>irn_chat_pill5</ImagePath>\r\n</Properties>\r\n</MyImage>\r\n<MyImage>\r\n<Properties>\r\n<Id>I_IrnChatShade6</Id>\r\n<Width>320.000000</Width>\r\n<Height>158.000000</Height>\r\n<Position>0.000000,0.000000,0.000000</Position>\r\n<Opacity>0.000000</Opacity>\r\n<SizeMode>4</SizeMode>\r\n<ImagePath>irn_chat_pill6</ImagePath>\r\n</Properties>\r\n</MyImage>\r\n<MyImage>\r\n<Properties>\r\n<Id>I_IrnChatShade7</Id>\r\n<Width>320.000000</Width>\r\n<Height>181.000000</Height>\r\n<Position>0.000000,0.000000,0.000000</Position>\r\n<Opacity>0.000000</Opacity>\r\n<SizeMode>4</SizeMode>\r\n<ImagePath>irn_chat_pill7</ImagePath>\r\n</Properties>\r\n</MyImage>\r\n<MyImage>\r\n<Properties>\r\n<Id>I_IrnChatShade8</Id>\r\n<Width>320.000000</Width>\r\n<Height>204.000000</Height>\r\n<Position>0.000000,0.000000,0.000000</Position>\r\n<Opacity>0.000000</Opacity>\r\n<SizeMode>4</SizeMode>\r\n<ImagePath>irn_chat_pill8</ImagePath>\r\n</Properties>\r\n</MyImage>\r\n<MyImage>\r\n<Properties>\r\n<Id>I_IrnChatShade9</Id>\r\n<Width>320.000000</Width>\r\n<Height>227.000000</Height>\r\n<Position>0.000000,0.000000,0.000000</Position>\r\n<Opacity>0.000000</Opacity>\r\n<SizeMode>4</SizeMode>\r\n<ImagePath>irn_chat_pill9</ImagePath>\r\n</Properties>\r\n</MyImage>\r\n<MyImage>\r\n<Properties>\r\n<Id>I_IrnChatShade10</Id>\r\n<Width>320.000000</Width>\r\n<Height>250.000000</Height>\r\n<Position>0.000000,0.000000,0.000000</Position>\r\n<Opacity>0.000000</Opacity>\r\n<SizeMode>4</SizeMode>\r\n<ImagePath>irn_chat_pill10</ImagePath>\r\n</Properties>\r\n</MyImage>\r\n<MyImage>\r\n<Properties>\r\n<Id>I_IrnChatShade11</Id>\r\n<Width>320.000000</Width>\r\n<Height>273.000000</Height>\r\n<Position>0.000000,0.000000,0.000000</Position>\r\n<Opacity>0.000000</Opacity>\r\n<SizeMode>4</SizeMode>\r\n<ImagePath>irn_chat_pill11</ImagePath>\r\n</Properties>\r\n</MyImage>\r\n<MyImage>\r\n<Properties>\r\n<Id>I_IrnChatShade12</Id>\r\n<Width>320.000000</Width>\r\n<Height>296.000000</Height>\r\n<Position>0.000000,0.000000,0.000000</Position>\r\n<Opacity>0.000000</Opacity>\r\n<SizeMode>4</SizeMode>\r\n<ImagePath>irn_chat_pill12</ImagePath>\r\n</Properties>\r\n</MyImage>\r\n<MyImage>\r\n<Properties>\r\n<Id>I_IrnChatShade13</Id>\r\n<Width>320.000000</Width>\r\n<Height>319.000000</Height>\r\n<Position>0.000000,0.000000,0.000000</Position>\r\n<Opacity>0.000000</Opacity>\r\n<SizeMode>4</SizeMode>\r\n<ImagePath>irn_chat_pill13</ImagePath>\r\n</Properties>\r\n</MyImage>\r\n<MyImage>\r\n<Properties>\r\n<Id>I_IrnChatShade14</Id>\r\n<Width>320.000000</Width>\r\n<Height>342.000000</Height>\r\n<Position>0.000000,0.000000,0.000000</Position>\r\n<Opacity>0.000000</Opacity>\r\n<SizeMode>4</SizeMode>\r\n<ImagePath>irn_chat_pill14</ImagePath>\r\n</Properties>\r\n</MyImage>\r\n<MyImage>\r\n<Properties>\r\n<Id>I_IrnChatShade15</Id>\r\n<Width>320.000000</Width>\r\n<Height>365.000000</Height>\r\n<Position>0.000000,0.000000,0.000000</Position>\r\n<Opacity>0.000000</Opacity>\r\n<SizeMode>4</SizeMode>\r\n<ImagePath>irn_chat_pill15</ImagePath>\r\n</Properties>\r\n</MyImage>\r\n<MyHtml>\r\n<Properties>\r\n<Id>H_IrnChat</Id>\r\n<Width>296.000000</Width>\r\n<Height>360.000000</Height>\r\n<ContentVerticalAlign>bottom</ContentVerticalAlign>\r\n<DefaultHorizontalAlign>left</DefaultHorizontalAlign>\r\n<DefaultVerticalAlign>bottom</DefaultVerticalAlign>\r\n<DefaultFont>HUDSmall</DefaultFont>\r\n<DefaultFontColor>0xffeee8d8</DefaultFontColor>\r\n<Outline>true</Outline>\r\n</Properties>\r\n</MyHtml>\r\n<AdvGroup>\r\n<Properties>\r\n<Id>D_PosMenuSummary</Id>\r\n<Width>1.000000</Width>\r\n<Height>1.000000</Height>\r\n<Position>160.000000,5.000000,0.000000</Position>\r\n</Properties>\r\n</AdvGroup>\r\n<AdvGroup>\r\n<Properties>\r\n<Id>D_PosMenu</Id>\r\n<Width>1.000000</Width>\r\n<Height>1.000000</Height>\r\n<Position>0.000000,7.000000,0.000000</Position>\r\n</Properties>\r\n</AdvGroup>\r\n<AdvGroup>\r\n<Properties>\r\n<Id>D_PosNormal</Id>\r\n<Width>1.000000</Width>\r\n<Height>1.000000</Height>\r\n<Position>0.000000,-104.000000,0.000000</Position>\r\n</Properties>\r\n</AdvGroup>\r\n</AdvGroup>\r\n<AdvGroup>\r\n<Properties>\r\n<Id>NetChatEdit</Id>\r\n<Width>610.000000</Width>\r\n<Height>24.000000</Height>\r\n<Position>24.000000,679.000000,0.000000</Position>\r\n<Show>false</Show>\r\n<ClassOverride>HUDNetChatEdit</ClassOverride>\r\n</Properties>\r\n<MyImage>\r\n<Properties>\r\n<Id>I_Background</Id>\r\n<Width>620.000000</Width>\r\n<Height>36.000000</Height>\r\n<Position>-12.000000,-6.000000,0.000000</Position>\r\n<SizeMode>4</SizeMode>\r\n<ImagePath>irn_edit_pill</ImagePath>\r\n</Properties>\r\n</MyImage>\r\n<UIEditBox>\r\n<Properties>\r\n<Id>E_Text</Id>\r\n<Width>430.000000</Width>\r\n<Height>24.000000</Height>\r\n"
+          ],
+          [
+            "</Properties>\r\n<MyHtml>\r\n<Properties>\r\n<Id>ID_POINTS_HTML</Id>\r\n<Width>1280\\.000000</Width>\r\n<Height>54\\.000000</Height>\r\n<Position>0\\.000000,36\\.000000,0\\.000000</Position>\r\n<DefaultHorizontalAlign>center</DefaultHorizontalAlign>\r\n",
+            "</Properties>\r\n<MyImage>\r\n<Properties>\r\n<Id>I_IrnPointsShade</Id>\r\n<Width>460.000000</Width>\r\n<Height>84.000000</Height>\r\n<Position>410.000000,6.000000,0.000000</Position>\r\n<Opacity>0.000000</Opacity>\r\n<SizeMode>4</SizeMode>\r\n<ImagePath>irn_standing_band</ImagePath>\r\n</Properties>\r\n</MyImage>\r\n<MyHtml>\r\n<Properties>\r\n<Id>H_IrnStanding</Id>\r\n<Width>460.000000</Width>\r\n<Height>84.000000</Height>\r\n<Position>410.000000,6.000000,0.000000</Position>\r\n<ContentHorizontalAlign>center</ContentHorizontalAlign>\r\n<ContentVerticalAlign>middle</ContentVerticalAlign>\r\n<DefaultHorizontalAlign>center</DefaultHorizontalAlign>\r\n<DefaultFont>HUDBig</DefaultFont>\r\n<DefaultFontColor>0xfff3ebdd</DefaultFontColor>\r\n<Outline>true</Outline>\r\n</Properties>\r\n</MyHtml>\r\n<MyImage>\r\n<Properties>\r\n<Id>I_IrnScorePlate</Id>\r\n<Width>288.000000</Width>\r\n<Height>56.000000</Height>\r\n<Position>496.000000,35.000000,0.000000</Position>\r\n<Opacity>0.000000</Opacity>\r\n<SizeMode>4</SizeMode>\r\n<ImagePath>irn_score_plate</ImagePath>\r\n</Properties>\r\n</MyImage>\r\n<AdvGroup>\r\n<Properties>\r\n<Id>G_IrnScore</Id>\r\n<Width>1280.000000</Width>\r\n<Height>100.000000</Height>\r\n<Opacity>0.000000</Opacity>\r\n</Properties>\r\n<MyImage>\r\n<Properties>\r\n<Id>I_IrnScoreStar</Id>\r\n<Width>60.000000</Width>\r\n<Height>60.000000</Height>\r\n<Position>418.000000,33.000000,0.000000</Position>\r\n<Opacity>1.000000</Opacity>\r\n<SizeMode>4</SizeMode>\r\n<ImagePath>irn_score_star</ImagePath>\r\n</Properties>\r\n</MyImage>\r\n<MyImage>\r\n<Properties>\r\n<Id>I_IrnScoreSkull</Id>\r\n<Width>60.000000</Width>\r\n<Height>60.000000</Height>\r\n<Position>803.000000,33.000000,0.000000</Position>\r\n<Opacity>1.000000</Opacity>\r\n<SizeMode>4</SizeMode>\r\n<ImagePath>irn_score_skull</ImagePath>\r\n</Properties>\r\n</MyImage>\r\n<MyImage>\r\n<Properties>\r\n<Id>I_IrnBarRed</Id>\r\n<Width>306.000000</Width>\r\n<Height>8.000000</Height>\r\n<Position>487.000000,66.000000,0.000000</Position>\r\n<Opacity>1.000000</Opacity>\r\n<SizeMode>4</SizeMode>\r\n<ImagePath>irn_bar_red</ImagePath>\r\n</Properties>\r\n</MyImage>\r\n<MyImage>\r\n<Properties>\r\n<Id>I_IrnBar0</Id>\r\n<Width>10.700000</Width>\r\n<Height>8.000000</Height>\r\n<Position>487.000000,66.000000,0.000000</Position>\r\n<Opacity>0.000000</Opacity>\r\n<SizeMode>4</SizeMode>\r\n<ImagePath>irn_bar_blue_cap</ImagePath>\r\n</Properties>\r\n</MyImage>\r\n<MyImage>\r\n<Properties>\r\n<Id>I_IrnBar1</Id>\r\n<Width>10.700000</Width>\r\n<Height>8.000000</Height>\r\n<Position>497.200000,66.000000,0.000000</Position>\r\n<Opacity>0.000000</Opacity>\r\n<SizeMode>4</SizeMode>\r\n<ImagePath>irn_bar_blue</ImagePath>\r\n</Properties>\r\n</MyImage>\r\n<MyImage>\r\n<Properties>\r\n<Id>I_IrnBar2</Id>\r\n<Width>10.700000</Width>\r\n<Height>8.000000</Height>\r\n<Position>507.400000,66.000000,0.000000</Position>\r\n<Opacity>0.000000</Opacity>\r\n<SizeMode>4</SizeMode>\r\n<ImagePath>irn_bar_blue</ImagePath>\r\n</Properties>\r\n</MyImage>\r\n<MyImage>\r\n<Properties>\r\n<Id>I_IrnBar3</Id>\r\n<Width>10.700000</Width>\r\n<Height>8.000000</Height>\r\n<Position>517.600000,66.000000,0.000000</Position>\r\n<Opacity>0.000000</Opacity>\r\n<SizeMode>4</SizeMode>\r\n<ImagePath>irn_bar_blue</ImagePath>\r\n</Properties>\r\n</MyImage>\r\n<MyImage>\r\n<Properties>\r\n<Id>I_IrnBar4</Id>\r\n<Width>10.700000</Width>\r\n<Height>8.000000</Height>\r\n<Position>527.800000,66.000000,0.000000</Position>\r\n<Opacity>0.000000</Opacity>\r\n<SizeMode>4</SizeMode>\r\n<ImagePath>irn_bar_blue</ImagePath>\r\n</Properties>\r\n</MyImage>\r\n<MyImage>\r\n<Properties>\r\n<Id>I_IrnBar5</Id>\r\n<Width>10.700000</Width>\r\n<Height>8.000000</Height>\r\n<Position>538.000000,66.000000,0.000000</Position>\r\n<Opacity>0.000000</Opacity>\r\n<SizeMode>4</SizeMode>\r\n<ImagePath>irn_bar_blue</ImagePath>\r\n</Properties>\r\n</MyImage>\r\n<MyImage>\r\n<Properties>\r\n<Id>I_IrnBar6</Id>\r\n<Width>10.700000</Width>\r\n<Height>8.000000</Height>\r\n<Position>548.200000,66.000000,0.000000</Position>\r\n<Opacity>0.000000</Opacity>\r\n<SizeMode>4</SizeMode>\r\n<ImagePath>irn_bar_blue</ImagePath>\r\n</Properties>\r\n</MyImage>\r\n<MyImage>\r\n<Properties>\r\n<Id>I_IrnBar7</Id>\r\n<Width>10.700000</Width>\r\n<Height>8.000000</Height>\r\n<Position>558.400000,66.000000,0.000000</Position>\r\n<Opacity>0.000000</Opacity>\r\n<SizeMode>4</SizeMode>\r\n<ImagePath>irn_bar_blue</ImagePath>\r\n</Properties>\r\n</MyImage>\r\n<MyImage>\r\n<Properties>\r\n<Id>I_IrnBar8</Id>\r\n<Width>10.700000</Width>\r\n<Height>8.000000</Height>\r\n<Position>568.600000,66.000000,0.000000</Position>\r\n<Opacity>0.000000</Opacity>\r\n<SizeMode>4</SizeMode>\r\n<ImagePath>irn_bar_blue</ImagePath>\r\n</Properties>\r\n</MyImage>\r\n<MyImage>\r\n<Properties>\r\n<Id>I_IrnBar9</Id>\r\n<Width>10.700000</Width>\r\n<Height>8.000000</Height>\r\n<Position>578.800000,66.000000,0.000000</Position>\r\n<Opacity>0.000000</Opacity>\r\n<SizeMode>4</SizeMode>\r\n<ImagePath>irn_bar_blue</ImagePath>\r\n</Properties>\r\n</MyImage>\r\n<MyImage>\r\n<Properties>\r\n<Id>I_IrnBar10</Id>\r\n<Width>10.700000</Width>\r\n<Height>8.000000</Height>\r\n<Position>589.000000,66.000000,0.000000</Position>\r\n<Opacity>0.000000</Opacity>\r\n<SizeMode>4</SizeMode>\r\n<ImagePath>irn_bar_blue</ImagePath>\r\n</Properties>\r\n</MyImage>\r\n<MyImage>\r\n<Properties>\r\n<Id>I_IrnBar11</Id>\r\n<Width>10.700000</Width>\r\n<Height>8.000000</Height>\r\n<Position>599.200000,66.000000,0.000000</Position>\r\n<Opacity>0.000000</Opacity>\r\n<SizeMode>4</SizeMode>\r\n<ImagePath>irn_bar_blue</ImagePath>\r\n</Properties>\r\n</MyImage>\r\n<MyImage>\r\n<Properties>\r\n<Id>I_IrnBar12</Id>\r\n<Width>10.700000</Width>\r\n<Height>8.000000</Height>\r\n<Position>609.400000,66.000000,0.000000</Position>\r\n<Opacity>0.000000</Opacity>\r\n<SizeMode>4</SizeMode>\r\n<ImagePath>irn_bar_blue</ImagePath>\r\n</Properties>\r\n</MyImage>\r\n<MyImage>\r\n<Properties>\r\n<Id>I_IrnBar13</Id>\r\n<Width>10.700000</Width>\r\n<Height>8.000000</Height>\r\n<Position>619.600000,66.000000,0.000000</Position>\r\n<Opacity>0.000000</Opacity>\r\n<SizeMode>4</SizeMode>\r\n<ImagePath>irn_bar_blue</ImagePath>\r\n</Properties>\r\n</MyImage>\r\n<MyImage>\r\n<Properties>\r\n<Id>I_IrnBar14</Id>\r\n<Width>10.700000</Width>\r\n<Height>8.000000</Height>\r\n<Position>629.800000,66.000000,0.000000</Position>\r\n<Opacity>0.000000</Opacity>\r\n<SizeMode>4</SizeMode>\r\n<ImagePath>irn_bar_blue</ImagePath>\r\n</Properties>\r\n</MyImage>\r\n<MyImage>\r\n<Properties>\r\n<Id>I_IrnBar15</Id>\r\n<Width>10.700000</Width>\r\n<Height>8.000000</Height>\r\n<Position>640.000000,66.000000,0.000000</Position>\r\n<Opacity>0.000000</Opacity>\r\n<SizeMode>4</SizeMode>\r\n<ImagePath>irn_bar_blue</ImagePath>\r\n</Properties>\r\n</MyImage>\r\n<MyImage>\r\n<Properties>\r\n<Id>I_IrnBar16</Id>\r\n<Width>10.700000</Width>\r\n<Height>8.000000</Height>\r\n<Position>650.200000,66.000000,0.000000</Position>\r\n<Opacity>0.000000</Opacity>\r\n<SizeMode>4</SizeMode>\r\n<ImagePath>irn_bar_blue</ImagePath>\r\n</Properties>\r\n</MyImage>\r\n<MyImage>\r\n<Properties>\r\n<Id>I_IrnBar17</Id>\r\n<Width>10.700000</Width>\r\n<Height>8.000000</Height>\r\n<Position>660.400000,66.000000,0.000000</Position>\r\n<Opacity>0.000000</Opacity>\r\n<SizeMode>4</SizeMode>\r\n<ImagePath>irn_bar_blue</ImagePath>\r\n</Properties>\r\n</MyImage>\r\n<MyImage>\r\n<Properties>\r\n<Id>I_IrnBar18</Id>\r\n<Width>10.700000</Width>\r\n<Height>8.000000</Height>\r\n<Position>670.600000,66.000000,0.000000</Position>\r\n<Opacity>0.000000</Opacity>\r\n<SizeMode>4</SizeMode>\r\n<ImagePath>irn_bar_blue</ImagePath>\r\n</Properties>\r\n</MyImage>\r\n<MyImage>\r\n<Properties>\r\n<Id>I_IrnBar19</Id>\r\n<Width>10.700000</Width>\r\n<Height>8.000000</Height>\r\n<Position>680.800000,66.000000,0.000000</Position>\r\n<Opacity>0.000000</Opacity>\r\n<SizeMode>4</SizeMode>\r\n<ImagePath>irn_bar_blue</ImagePath>\r\n</Properties>\r\n</MyImage>\r\n<MyImage>\r\n<Properties>\r\n<Id>I_IrnBar20</Id>\r\n<Width>10.700000</Width>\r\n<Height>8.000000</Height>\r\n<Position>691.000000,66.000000,0.000000</Position>\r\n<Opacity>0.000000</Opacity>\r\n<SizeMode>4</SizeMode>\r\n<ImagePath>irn_bar_blue</ImagePath>\r\n</Properties>\r\n</MyImage>\r\n<MyImage>\r\n<Properties>\r\n<Id>I_IrnBar21</Id>\r\n<Width>10.700000</Width>\r\n<Height>8.000000</Height>\r\n<Position>701.200000,66.000000,0.000000</Position>\r\n<Opacity>0.000000</Opacity>\r\n<SizeMode>4</SizeMode>\r\n<ImagePath>irn_bar_blue</ImagePath>\r\n</Properties>\r\n</MyImage>\r\n<MyImage>\r\n<Properties>\r\n<Id>I_IrnBar22</Id>\r\n<Width>10.700000</Width>\r\n<Height>8.000000</Height>\r\n<Position>711.400000,66.000000,0.000000</Position>\r\n<Opacity>0.000000</Opacity>\r\n<SizeMode>4</SizeMode>\r\n<ImagePath>irn_bar_blue</ImagePath>\r\n</Properties>\r\n</MyImage>\r\n<MyImage>\r\n<Properties>\r\n<Id>I_IrnBar23</Id>\r\n<Width>10.700000</Width>\r\n<Height>8.000000</Height>\r\n<Position>721.600000,66.000000,0.000000</Position>\r\n<Opacity>0.000000</Opacity>\r\n<SizeMode>4</SizeMode>\r\n<ImagePath>irn_bar_blue</ImagePath>\r\n</Properties>\r\n</MyImage>\r\n<MyImage>\r\n<Properties>\r\n<Id>I_IrnBar24</Id>\r\n<Width>10.700000</Width>\r\n<Height>8.000000</Height>\r\n<Position>731.800000,66.000000,0.000000</Position>\r\n<Opacity>0.000000</Opacity>\r\n<SizeMode>4</SizeMode>\r\n<ImagePath>irn_bar_blue</ImagePath>\r\n</Properties>\r\n</MyImage>\r\n<MyImage>\r\n<Properties>\r\n<Id>I_IrnBar25</Id>\r\n<Width>10.700000</Width>\r\n<Height>8.000000</Height>\r\n<Position>742.000000,66.000000,0.000000</Position>\r\n<Opacity>0.000000</Opacity>\r\n<SizeMode>4</SizeMode>\r\n<ImagePath>irn_bar_blue</ImagePath>\r\n</Properties>\r\n</MyImage>\r\n<MyImage>\r\n<Properties>\r\n<Id>I_IrnBar26</Id>\r\n<Width>10.700000</Width>\r\n<Height>8.000000</Height>\r\n<Position>752.200000,66.000000,0.000000</Position>\r\n<Opacity>0.000000</Opacity>\r\n<SizeMode>4</SizeMode>\r\n<ImagePath>irn_bar_blue</ImagePath>\r\n</Properties>\r\n</MyImage>\r\n<MyImage>\r\n<Properties>\r\n<Id>I_IrnBar27</Id>\r\n<Width>10.700000</Width>\r\n<Height>8.000000</Height>\r\n<Position>762.400000,66.000000,0.000000</Position>\r\n<Opacity>0.000000</Opacity>\r\n<SizeMode>4</SizeMode>\r\n<ImagePath>irn_bar_blue</ImagePath>\r\n</Properties>\r\n</MyImage>\r\n<MyImage>\r\n<Properties>\r\n<Id>I_IrnBar28</Id>\r\n<Width>10.700000</Width>\r\n<Height>8.000000</Height>\r\n<Position>772.600000,66.000000,0.000000</Position>\r\n<Opacity>0.000000</Opacity>\r\n<SizeMode>4</SizeMode>\r\n<ImagePath>irn_bar_blue</ImagePath>\r\n</Properties>\r\n</MyImage>\r\n<MyImage>\r\n<Properties>\r\n<Id>I_IrnBar29</Id>\r\n<Width>10.700000</Width>\r\n<Height>8.000000</Height>\r\n<Position>782.800000,66.000000,0.000000</Position>\r\n<Opacity>0.000000</Opacity>\r\n<SizeMode>4</SizeMode>\r\n<ImagePath>irn_bar_blue</ImagePath>\r\n</Properties>\r\n</MyImage>\r\n</AdvGroup>\r\n<MyHtml>\r\n<Properties>\r\n<Id>ID_POINTS_HTML</Id>\r\n<Width>1280.000000</Width>\r\n<Height>54.000000</Height>\r\n<Position>0.000000,23.000000,0.000000</Position>\r\n<DefaultHorizontalAlign>center</DefaultHorizontalAlign>\r\n"
+          ],
+          [
+            "<Id>I_IrnPointsShade</Id>\r\n<Width>460\\.000000</Width>\r\n<Height>84\\.000000</Height>\r\n<Position>410\\.000000,6\\.000000,0\\.000000</Position>\r\n<Opacity>0\\.000000</Opacity>\r\n<SizeMode>4</SizeMode>\r\n<ImagePath>irn_standing_band</ImagePath>\r\n</Properties>\r\n</MyImage>\r\n<MyHtml>\r\n<Properties>\r\n<Id>H_IrnStanding</Id>\r\n<Width>460\\.000000</Width>\r\n<Height>84\\.000000</Height>\r\n<Position>410\\.000000,6\\.000000,0\\.000000</Position>\r\n<ContentHorizontalAlign>center</ContentHorizontalAlign>\r\n",
+            "<Id>I_IrnPointsShade</Id>\r\n<Width>260.000000</Width>\r\n<Height>50.000000</Height>\r\n<Position>510.000000,23.000000,0.000000</Position>\r\n<Opacity>0.000000</Opacity>\r\n<SizeMode>4</SizeMode>\r\n<ImagePath>irn_standing_band</ImagePath>\r\n</Properties>\r\n</MyImage>\r\n<MyHtml>\r\n<Properties>\r\n<Id>H_IrnStanding</Id>\r\n<Width>260.000000</Width>\r\n<Height>50.000000</Height>\r\n<Position>510.000000,23.000000,0.000000</Position>\r\n<ContentHorizontalAlign>center</ContentHorizontalAlign>\r\n"
+          ],
+          [
+            "<Id>I_IrnPointsShade</Id>\r\n<Width>260\\.000000</Width>\r\n<Height>50\\.000000</Height>\r\n<Position>510\\.000000,23\\.000000,0\\.000000</Position>\r\n<Opacity>0\\.000000</Opacity>\r\n<SizeMode>4</SizeMode>\r\n<ImagePath>irn_standing_band</ImagePath>\r\n</Properties>\r\n</MyImage>\r\n<MyHtml>\r\n<Properties>\r\n<Id>H_IrnStanding</Id>\r\n<Width>260\\.000000</Width>\r\n<Height>50\\.000000</Height>\r\n<Position>510\\.000000,23\\.000000,0\\.000000</Position>\r\n<ContentHorizontalAlign>center</ContentHorizontalAlign>\r\n",
+            "<Id>I_IrnPointsShade</Id>\r\n<Width>280.000000</Width>\r\n<Height>66.000000</Height>\r\n<Position>500.000000,15.000000,0.000000</Position>\r\n<Opacity>0.000000</Opacity>\r\n<SizeMode>4</SizeMode>\r\n<ImagePath>irn_standing_band</ImagePath>\r\n</Properties>\r\n</MyImage>\r\n<MyHtml>\r\n<Properties>\r\n<Id>H_IrnStanding</Id>\r\n<Width>280.000000</Width>\r\n<Height>66.000000</Height>\r\n<Position>500.000000,15.000000,0.000000</Position>\r\n<ContentHorizontalAlign>center</ContentHorizontalAlign>\r\n"
           ]
         ]
       },
@@ -906,7 +945,19 @@
         "replace": [
           [
             "\\z",
-            "\r\n\r\n//IranCoJ Edition: the in-game screens' top and bottom bars (HUD_Net.xui)\r\nTexture(\"irancoj_bar_top.dds\", 256, 64)\r\n{\r\n\tWhole(\"irn_bar_top\")\r\n}\r\n\r\nTexture(\"irancoj_bar_bottom.dds\", 256, 64)\r\n{\r\n\tWhole(\"irn_bar_bottom\")\r\n}\r\n\r\nTexture(\"irancoj_hud_strip.dds\", 64, 64)\r\n{\r\n\tWhole(\"irn_hud_strip\")\r\n}\r\n\r\n//IranCoJ Edition: HUD icons, defined again after hud_new.scr so ours are drawn\r\nTexture(\"irancoj_hud_icons.dds\", 512, 256)\r\n{\r\n\tRect(\"hud_team_red\", 0, 0, 140, 140)\r\n\tRect(\"hud_team_blue\", 142, 0, 282, 140)\r\n\tRect(\"icon_team_timer\", 284, 0, 340, 70)\r\n\tRect(\"icon_timer\", 342, 0, 384, 76)\r\n\tRect(\"hud_wanted\", 0, 142, 308, 226)\r\n}\r\n\r\nTexture(\"irancoj_hud_pill.dds\", 256, 64)\r\n{\r\n\tTileset(\"irn_pill_tile\")\r\n\t{\r\n\t\tRect(\"irn_pill_left\", 0, 0, 40, 64)\r\n\t\tRect(\"irn_pill_mid\", 40, 0, 216, 64)\r\n\t\tRect(\"irn_pill_right\", 216, 0, 256, 64)\r\n\t\tTop(\"irn_pill_mid\", 100, 0)\r\n\t\tCornerTopLeft(\"irn_pill_left\", 100, 0)\r\n\t\tCornerTopRight(\"irn_pill_right\", 100, 0)\r\n\t}\r\n}\r\n\r\nTexture(\"irancoj_panel.dds\", 256, 256)\r\n{\r\n\tTileset(\"irn_hudwin_tile\")\r\n\t{\r\n\t\tRect(\"irn_hudwin_tile\", 86, 86, 170, 170)\r\n\t\tRect(\"irn_hudwin_bottom\", 86, 170, 170, 256)\r\n\t\tRect(\"irn_hudwin_top\", 86, 0, 170, 86)\r\n\t\tRect(\"irn_hudwin_left\", 0, 86, 86, 170)\r\n\t\tRect(\"irn_hudwin_right\", 170, 86, 256, 170)\r\n\t\tRect(\"irn_hudwin_bottom_left\", 0, 170, 86, 256)\r\n\t\tRect(\"irn_hudwin_bottom_right\", 170, 170, 256, 256)\r\n\t\tRect(\"irn_hudwin_top_left\", 0, 0, 86, 86)\r\n\t\tRect(\"irn_hudwin_top_right\", 170, 0, 256, 86)\r\n\t\tCornerTopLeft(\"irn_hudwin_top_left\", 100, 0)\r\n\t\tCornerTopRight(\"irn_hudwin_top_right\", 100, 0)\r\n\t\tCornerBottomLeft(\"irn_hudwin_bottom_left\", 100, 0)\r\n\t\tCornerBottomRight(\"irn_hudwin_bottom_right\", 100, 0)\r\n\t\tTop(\"irn_hudwin_top\", 100, 0)\r\n\t\tBottom(\"irn_hudwin_bottom\", 100, 0)\r\n\t\tLeft(\"irn_hudwin_left\", 100, 0)\r\n\t\tRight(\"irn_hudwin_right\", 100, 0)\r\n\t\tMiddle(\"irn_hudwin_tile\", 100, 0)\r\n\t}\r\n}\r\n\r\nTexture(\"irancoj_hud_chips.dds\", 256, 256)\r\n{\r\n\tRect(\"irn_hud_timer\", 0, 0, 160, 52)\r\n\tRect(\"irn_hud_countdown\", 0, 56, 96, 92)\r\n\tRect(\"irn_hud_num\", 100, 56, 196, 92)\r\n\tRect(\"irn_badge_red\", 0, 96, 206, 150)\r\n\tRect(\"irn_badge_blue\", 0, 154, 206, 208)\r\n}\r\n"
+            "\r\n\r\n//IranCoJ Edition: the in-game screens' top and bottom bars (HUD_Net.xui)\r\nTexture(\"irancoj_bar_top.dds\", 256, 64)\r\n{\r\n\tWhole(\"irn_bar_top\")\r\n}\r\n\r\nTexture(\"irancoj_bar_bottom.dds\", 256, 64)\r\n{\r\n\tWhole(\"irn_bar_bottom\")\r\n}\r\n\r\nTexture(\"irancoj_hud_strip.dds\", 64, 64)\r\n{\r\n\tWhole(\"irn_hud_strip\")\r\n}\r\n\r\n//IranCoJ Edition: HUD icons, defined again after hud_new.scr so ours are drawn\r\nTexture(\"irancoj_hud_icons.dds\", 512, 256)\r\n{\r\n\tRect(\"hud_team_red\", 0, 0, 140, 140)\r\n\tRect(\"hud_team_blue\", 142, 0, 282, 140)\r\n\tRect(\"icon_team_timer\", 284, 0, 340, 70)\r\n\tRect(\"icon_timer\", 342, 0, 384, 76)\r\n\tRect(\"hud_wanted\", 0, 142, 308, 226)\r\n}\r\n\r\nTexture(\"irancoj_hud_pill.dds\", 256, 64)\r\n{\r\n\tTileset(\"irn_pill_tile\")\r\n\t{\r\n\t\tRect(\"irn_pill_left\", 0, 0, 40, 64)\r\n\t\tRect(\"irn_pill_mid\", 40, 0, 216, 64)\r\n\t\tRect(\"irn_pill_right\", 216, 0, 256, 64)\r\n\t\tTop(\"irn_pill_mid\", 100, 0)\r\n\t\tCornerTopLeft(\"irn_pill_left\", 100, 0)\r\n\t\tCornerTopRight(\"irn_pill_right\", 100, 0)\r\n\t}\r\n}\r\n\r\nTexture(\"irancoj_panel.dds\", 256, 256)\r\n{\r\n\tTileset(\"irn_hudwin_tile\")\r\n\t{\r\n\t\tRect(\"irn_hudwin_tile\", 86, 86, 170, 170)\r\n\t\tRect(\"irn_hudwin_bottom\", 86, 170, 170, 256)\r\n\t\tRect(\"irn_hudwin_top\", 86, 0, 170, 86)\r\n\t\tRect(\"irn_hudwin_left\", 0, 86, 86, 170)\r\n\t\tRect(\"irn_hudwin_right\", 170, 86, 256, 170)\r\n\t\tRect(\"irn_hudwin_bottom_left\", 0, 170, 86, 256)\r\n\t\tRect(\"irn_hudwin_bottom_right\", 170, 170, 256, 256)\r\n\t\tRect(\"irn_hudwin_top_left\", 0, 0, 86, 86)\r\n\t\tRect(\"irn_hudwin_top_right\", 170, 0, 256, 86)\r\n\t\tCornerTopLeft(\"irn_hudwin_top_left\", 100, 0)\r\n\t\tCornerTopRight(\"irn_hudwin_top_right\", 100, 0)\r\n\t\tCornerBottomLeft(\"irn_hudwin_bottom_left\", 100, 0)\r\n\t\tCornerBottomRight(\"irn_hudwin_bottom_right\", 100, 0)\r\n\t\tTop(\"irn_hudwin_top\", 100, 0)\r\n\t\tBottom(\"irn_hudwin_bottom\", 100, 0)\r\n\t\tLeft(\"irn_hudwin_left\", 100, 0)\r\n\t\tRight(\"irn_hudwin_right\", 100, 0)\r\n\t\tMiddle(\"irn_hudwin_tile\", 100, 0)\r\n\t}\r\n}\r\n\r\nTexture(\"irancoj_hud_chips.dds\", 256, 256)\r\n{\r\n\tRect(\"irn_hud_timer\", 0, 0, 132, 52)\r\n\tRect(\"irn_hud_countdown\", 0, 56, 96, 92)\r\n\tRect(\"irn_hud_num\", 100, 56, 196, 92)\r\n\tRect(\"irn_badge_red\", 0, 96, 196, 150)\r\n\tRect(\"irn_badge_blue\", 0, 154, 196, 208)\r\n}\r\n"
+          ],
+          [
+            "\tRect\\(\"irn_badge_blue\", 0, 154, 196, 208\\)\r\n\\}\r\n",
+            "\tRect(\"irn_badge_blue\", 0, 154, 196, 208)\r\n}\r\n\r\n//IranCoJ Edition: the soft shade behind the kill feed\r\nTexture(\"irancoj_killfeed_shade.dds\", 512, 256)\r\n{\r\n\tRect(\"irn_killfeed_shade\", 0, 0, 512, 256)\r\n}\r\n\r\n//IranCoJ Edition: the streak cards cropped to the fan (the 90x90 rects are a third empty), for the kill feed\r\nTexture(\"hud_new.dds\", 1024, 1024)\r\n{\r\n\tRect(\"irn_cards_flush\", 469, 80, 559, 144)\r\n\tRect(\"irn_cards_four\", 469, 172, 559, 236)\r\n\tRect(\"irn_cards_full\", 599, 14, 689, 78)\r\n\tRect(\"irn_cards_pair\", 599, 106, 689, 170)\r\n\tRect(\"irn_cards_royal\", 691, 14, 781, 78)\r\n\tRect(\"irn_cards_straight\", 691, 106, 781, 170)\r\n\tRect(\"irn_cards_three\", 783, 14, 873, 78)\r\n}\r\n\r\n//IranCoJ Edition: the soft shade behind the chat\r\nTexture(\"irancoj_chat_shade.dds\", 512, 256)\r\n{\r\n\tRect(\"irn_chat_shade\", 0, 0, 512, 256)\r\n}\r\n\r\n//IranCoJ Edition: the soft shade behind the top-centre score / standing\r\nTexture(\"irancoj_center_shade.dds\", 512, 128)\r\n{\r\n\tRect(\"irn_center_shade\", 0, 0, 512, 128)\r\n}\r\n\r\n//IranCoJ Edition: the team score plate (blue | badge | red)\r\nTexture(\"irancoj_score_plate.dds\", 1024, 256)\r\n{\r\n\tRect(\"irn_score_plate\", 0, 0, 1024, 200)\r\n}\r\n\r\n//IranCoJ Edition: Outlaw Showdown HUD - team score, kill feed / chat frames, notice strip\r\nTexture(\"irancoj_score_bits.dds\", 512, 256)\r\n{\r\n\tRect(\"irn_score_star\", 0, 0, 128, 128)\r\n\tRect(\"irn_score_skull\", 128, 0, 256, 128)\r\n\tRect(\"irn_bar_red\", 0, 144, 256, 160)\r\n\tRect(\"irn_bar_blue\", 264, 144, 280, 160)\r\n\tRect(\"irn_bar_blue_cap\", 288, 144, 304, 160)\r\n}\r\nTexture(\"irancoj_killfeed_panel.dds\", 512, 128)\r\n{\r\n\tRect(\"irn_killfeed_panel\", 0, 0, 512, 128)\r\n}\r\nTexture(\"irancoj_rule_star.dds\", 1024, 64)\r\n{\r\n\tRect(\"irn_rule_star\", 0, 0, 1024, 46)\r\n}\r\nTexture(\"irancoj_chat_panel.dds\", 512, 128)\r\n{\r\n\tRect(\"irn_chat_panel\", 0, 0, 512, 128)\r\n}\r\nTexture(\"irancoj_chat_top.dds\", 512, 32)\r\n{\r\n\tRect(\"irn_chat_top\", 0, 0, 512, 32)\r\n}\r\nTexture(\"irancoj_chat_bottom.dds\", 512, 32)\r\n{\r\n\tRect(\"irn_chat_bottom\", 0, 0, 512, 32)\r\n}\r\nTexture(\"irancoj_notice_strip.dds\", 512, 96)\r\n{\r\n\tRect(\"irn_notice_strip\", 0, 0, 512, 96)\r\n}\r\n\r\n//IranCoJ Edition: pill shades behind the kill feed / chat, one per line count\r\nTexture(\"irancoj_kill_pills.dds\", 1024, 1024)\r\n{\r\n\tRect(\"irn_kill_pill1\", 0, 0, 440, 54)\r\n\tRect(\"irn_kill_pill2\", 0, 62, 440, 148)\r\n\tRect(\"irn_kill_pill3\", 0, 156, 440, 274)\r\n\tRect(\"irn_kill_pill4\", 0, 282, 440, 432)\r\n\tRect(\"irn_kill_pill5\", 0, 440, 440, 622)\r\n}\r\nTexture(\"irancoj_chat_pills.dds\", 2048, 2048)\r\n{\r\n\tRect(\"irn_chat_pill1\", 0, 0, 320, 43)\r\n\tRect(\"irn_chat_pill2\", 0, 51, 320, 117)\r\n\tRect(\"irn_chat_pill3\", 0, 125, 320, 214)\r\n\tRect(\"irn_chat_pill4\", 0, 222, 320, 334)\r\n\tRect(\"irn_chat_pill5\", 0, 342, 320, 477)\r\n\tRect(\"irn_chat_pill6\", 328, 0, 648, 158)\r\n\tRect(\"irn_chat_pill7\", 328, 166, 648, 347)\r\n\tRect(\"irn_chat_pill8\", 328, 355, 648, 559)\r\n\tRect(\"irn_chat_pill9\", 328, 567, 648, 794)\r\n\tRect(\"irn_chat_pill10\", 328, 802, 648, 1052)\r\n\tRect(\"irn_chat_pill11\", 656, 0, 976, 273)\r\n\tRect(\"irn_chat_pill12\", 656, 281, 976, 577)\r\n\tRect(\"irn_chat_pill13\", 656, 585, 976, 904)\r\n\tRect(\"irn_chat_pill14\", 656, 912, 976, 1254)\r\n\tRect(\"irn_chat_pill15\", 656, 1262, 976, 1627)\r\n}\r\n\r\n//IranCoJ Edition: the chat typing box\r\nTexture(\"irancoj_edit_pill.dds\", 1024, 64)\r\n{\r\n\tRect(\"irn_edit_pill\", 0, 0, 620, 36)\r\n}\r\n\r\n//IranCoJ Edition: the hint window's pill, the standing line's capsule\r\nTexture(\"irancoj_hint_pill.dds\", 1024, 64)\r\n{\r\n\tRect(\"irn_hint_pill\", 0, 0, 700, 40)\r\n}\r\nTexture(\"irancoj_standing_pill.dds\", 512, 64)\r\n{\r\n\tRect(\"irn_standing_pill\", 0, 0, 400, 50)\r\n}\r\n\r\n//IranCoJ Edition: the Shootout / Wanted standing block\r\nTexture(\"irancoj_standing_band.dds\", 1024, 128)\r\n{\r\n\tRect(\"irn_standing_band\", 0, 0, 460, 84)\r\n\tRect(\"irn_gold_line\", 0, 112, 256, 116)\r\n}\r\n"
+          ],
+          [
+            "\\{\r\n\tRect\\(\"irn_standing_band\", 0, 0, 460, 84\\)\r\n\tRect\\(\"irn_gold_line\", 0, 112, 256, 116\\)\r\n",
+            "{\r\n\tRect(\"irn_standing_band\", 0, 0, 260, 50)\r\n\tRect(\"irn_gold_line\", 0, 112, 256, 116)\r\n"
+          ],
+          [
+            "\\{\r\n\tRect\\(\"irn_standing_band\", 0, 0, 260, 50\\)\r\n\tRect\\(\"irn_gold_line\", 0, 112, 256, 116\\)\r\n",
+            "{\r\n\tRect(\"irn_standing_band\", 0, 0, 280, 66)\r\n\tRect(\"irn_gold_line\", 0, 112, 256, 116)\r\n"
           ]
         ]
       },
@@ -942,6 +993,14 @@
           [
             "<Id>IMAGE_3</Id>\\\r\\\n<Width>700\\.000000</Width>\\\r\\\n<Height>38\\.909092</Height>\\\r\\\n<Position>0\\.000000,\\-0\\.454540,0\\.000000</Position>\\\r\\\n<Opacity>0\\.000000</Opacity>\\\r\\\n<Anchor>15</Anchor>\\\r\\\n<Pivot>349\\.999939,19\\.454535,0\\.000000</Pivot>\\\r\\\n<ImagePath>hud_window_tile</ImagePath>\\\r\\\n<Color>0xfe000000</Color>\\\r\\\n<Material>menu_button_back100_static\\.mat</Material>\\\r\\\n<NextTextureStrideY>0\\.125000</NextTextureStrideY>\\\r\\\n</Properties>",
             "<Id>IMAGE_3</Id>\r\n<Width>700.000000</Width>\r\n<Height>38.909092</Height>\r\n<Position>0.000000,-0.454540,0.000000</Position>\r\n<Opacity>0.000000</Opacity>\r\n<Anchor>15</Anchor>\r\n<Pivot>349.999939,19.454535,0.000000</Pivot>\r\n<ImagePath>hud_window_tile</ImagePath>\r\n<Color>0xffffffff</Color>\r\n<Material>menu_button_back100_static.mat</Material>\r\n<NextTextureStrideY>0.125000</NextTextureStrideY>\r\n</Properties>"
+          ],
+          [
+            "<Properties>\r\n<Id>HUDInventoryIndicator</Id>\r\n<Width>300\\.000000</Width>\r\n<Height>65\\.000000</Height>\r\n<Position>913\\.000061,584\\.000061,0\\.000000</Position>\r\n<HoldAspectRatio>true</HoldAspectRatio>\r\n<HoldAspectRatioX>true</HoldAspectRatioX>\r\n<ClassOverride>HUDInventoryIndicator</ClassOverride>\r\n</Properties>\r\n<AdvGroup>\r\n<Properties>\r\n<Id>MASK_0</Id>\r\n<Width>495\\.000061</Width>\r\n<Height>65\\.000000</Height>\r\n<Position>-264\\.000000,0\\.000000,0\\.000000</Position>\r\n<Opacity>0\\.000000</Opacity>\r\n<Show>false</Show>\r\n</Properties>\r\n</AdvGroup>\r\n<UIRandomImage>\r\n<Properties>\r\n<Id>TEXT_BACK</Id>\r\n<Width>700\\.000000</Width>\r\n<Height>48\\.000000</Height>\r\n<Position>256\\.000000,10\\.000075,0\\.000000</Position>\r\n<Pivot>128\\.000015,23\\.999928,0\\.000000</Pivot>\r\n<ImagePath>irn_hud_strip</ImagePath>\r\n<Color>0xffffffff</Color>\r\n<Material>sprite_button\\.mat</Material>\r\n<MaskPosItem>MASK_0</MaskPosItem>\r\n</Properties>\r\n</UIRandomImage>\r\n<MyText>\r\n<Properties>\r\n<Id>TEXT</Id>\r\n<Width>214\\.000000</Width>\r\n<Height>48\\.000000</Height>\r\n<Position>-0\\.000004,9\\.999954,0\\.000000</Position>\r\n<Opacity>0\\.000000</Opacity>\r\n<Pivot>114\\.000000,23\\.999928,0\\.000000</Pivot>\r\n<Text>xxxxx</Text>\r\n<TextColor>0xffddcda9</TextColor>\r\n<DropShadowColor>0x800f0f0f</DropShadowColor>\r\n<PointSize>32\\.000000</PointSize>\r\n<Font>HUDWpnCon_Name</Font>\r\n<TextStyle>4624</TextStyle>\r\n</Properties>\r\n</MyText>\r\n<MyImage>\r\n<Properties>\r\n<Id>BACK</Id>\r\n<Width>85\\.000000</Width>\r\n<Height>85\\.000000</Height>\r\n<Position>217\\.000000,-9\\.999971,0\\.000000</Position>\r\n<Opacity>0\\.000000</Opacity>\r\n<Pivot>42\\.499985,42\\.499947,0\\.000000</Pivot>\r\n<ImagePath>hud_back_strip\\.dds</ImagePath>\r\n<Color>0xfe000000</Color>\r\n<Material>sprite_button\\.mat</Material>\r\n</Properties>\r\n</MyImage>\r\n<MyImage>\r\n<Properties>\r\n<Id>ITEM</Id>\r\n<Width>90\\.000000</Width>\r\n<Height>90\\.000000</Height>\r\n<Position>215\\.000122,-15\\.999992,0\\.000000</Position>\r\n<Opacity>0\\.000000</Opacity>\r\n<Pivot>44\\.999985,44\\.999947,0\\.000000</Pivot>\r\n<ImagePath>Textures\\\\temp\\\\hud_icon_idle_frontier\\.dds</ImagePath>\r\n</Properties>\r\n</MyImage>\r\n<AdvGroup>\r\n<Properties>\r\n<Id>QUALITY_0</Id>\r\n<Width>20\\.000000</Width>\r\n<Height>20\\.000000</Height>\r\n<Position>274\\.000000,24\\.000000,0\\.000000</Position>\r\n<Rotation>0\\.000000,-0\\.000000,-1\\.000000,0\\.000000</Rotation>\r\n<Opacity>0\\.000000</Opacity>\r\n<Pivot>-16\\.000000,10\\.000000,0\\.000000</Pivot>\r\n</Properties>\r\n<MyImage>\r\n<Properties>\r\n<Id>QUALITY</Id>\r\n<Width>20\\.000000</Width>\r\n<Height>20\\.000000</Height>\r\n<SizeMode>1</SizeMode>\r\n<ImagePath>Textures\\\\temp\\\\hud_qa_level\\.dds</ImagePath>\r\n<RoundPosition>true</RoundPosition>\r\n</Properties>\r\n</MyImage>\r\n</AdvGroup>\r\n<AdvGroup>\r\n<Properties>\r\n<Id>QUALITY_1</Id>\r\n<Width>20\\.000000</Width>\r\n<Height>20\\.000000</Height>\r\n<Position>274\\.000000,24\\.000000,0\\.000000</Position>\r\n<Rotation>0\\.000000,-0\\.000000,-1\\.000000,0\\.000000</Rotation>\r\n<Opacity>0\\.000000</Opacity>\r\n<Pivot>-16\\.000000,10\\.000000,0\\.000000</Pivot>\r\n</Properties>\r\n<MyImage>\r\n<Properties>\r\n<Id>QUALITY</Id>\r\n<Width>20\\.000000</Width>\r\n<Height>20\\.000000</Height>\r\n<SizeMode>1</SizeMode>\r\n<ImagePath>Textures\\\\temp\\\\hud_qa_level\\.dds</ImagePath>\r\n<RoundPosition>true</RoundPosition>\r\n</Properties>\r\n</MyImage>\r\n</AdvGroup>\r\n<AdvGroup>\r\n<Properties>\r\n<Id>QUALITY_2</Id>\r\n<Width>20\\.000000</Width>\r\n<Height>20\\.000000</Height>\r\n<Position>274\\.000000,24\\.000000,0\\.000000</Position>\r\n<Rotation>0\\.000000,-0\\.000000,-1\\.000000,0\\.000000</Rotation>\r\n<Opacity>0\\.000000</Opacity>\r\n<Pivot>-16\\.000000,10\\.000000,0\\.000000</Pivot>\r\n</Properties>\r\n<MyImage>\r\n<Properties>\r\n<Id>QUALITY</Id>\r\n<Width>20\\.000000</Width>\r\n<Height>20\\.000000</Height>\r\n<SizeMode>1</SizeMode>\r\n<ImagePath>Textures\\\\temp\\\\hud_qa_level\\.dds</ImagePath>\r\n<RoundPosition>true</RoundPosition>\r\n</Properties>\r\n</MyImage>\r\n</AdvGroup>\r\n<Timelines>\r\n<NamedFrames>\r\n<NamedFrame>\r\n<Name>Show</Name>\r\n<Time>0</Time>\r\n</NamedFrame>\r\n<NamedFrame>\r\n<Name>Showed</Name>\r\n<Time>10</Time>\r\n</NamedFrame>\r\n<NamedFrame>\r\n<Name>ShortShowEnd</Name>\r\n<Time>60</Time>\r\n</NamedFrame>\r\n<NamedFrame>\r\n<Name>EndShow</Name>\r\n<Time>180</Time>\r\n<Command>goto</Command>\r\n<CommandParams>Hide</CommandParams>\r\n</NamedFrame>\r\n<NamedFrame>\r\n<Name>XFade</Name>\r\n<Time>181</Time>\r\n</NamedFrame>\r\n<NamedFrame>\r\n<Name>XFadeMiddle</Name>\r\n<Time>186</Time>\r\n</NamedFrame>\r\n<NamedFrame>\r\n<Name>EndXFade</Name>\r\n<Time>191</Time>\r\n<Command>goto</Command>\r\n<CommandParams>Showed</CommandParams>\r\n</NamedFrame>\r\n<NamedFrame>\r\n<Name>Hide</Name>\r\n<Time>192</Time>\r\n</NamedFrame>\r\n<NamedFrame>\r\n<Name>EndHide</Name>\r\n<Time>202</Time>\r\n<Command>stop</Command>\r\n</NamedFrame>\r\n</NamedFrames>\r\n<Timeline>\r\n<Id>BACK</Id>\r\n<TimelineProp>Opacity</TimelineProp>\r\n<KeyFrame>\r\n<Time>0</Time>\r\n<Interpolation>0</Interpolation>\r\n<Prop>0\\.000000</Prop>\r\n</KeyFrame>\r\n<KeyFrame>\r\n<Time>4</Time>\r\n<Interpolation>0</Interpolation>\r\n<Prop>1\\.000000</Prop>\r\n</KeyFrame>\r\n<KeyFrame>\r\n<Time>10</Time>\r\n<Interpolation>0</Interpolation>\r\n<Prop>1\\.000000</Prop>\r\n</KeyFrame>\r\n<KeyFrame>\r\n<Time>192</Time>\r\n<Interpolation>0</Interpolation>\r\n<Prop>1\\.000000</Prop>\r\n</KeyFrame>\r\n<KeyFrame>\r\n<Time>197</Time>\r\n<Interpolation>0</Interpolation>\r\n<Prop>1\\.000000</Prop>\r\n</KeyFrame>\r\n<KeyFrame>\r\n<Time>202</Time>\r\n<Interpolation>0</Interpolation>\r\n<Prop>0\\.000000</Prop>\r\n</KeyFrame>\r\n</Timeline>\r\n<Timeline>\r\n<Id>ITEM</Id>\r\n<TimelineProp>Opacity</TimelineProp>\r\n<KeyFrame>\r\n<Time>0</Time>\r\n<Interpolation>0</Interpolation>\r\n<Prop>0\\.000000</Prop>\r\n</KeyFrame>\r\n<KeyFrame>\r\n<Time>5</Time>\r\n<Interpolation>0</Interpolation>\r\n<Prop>0\\.000000</Prop>\r\n</KeyFrame>\r\n<KeyFrame>\r\n<Time>10</Time>\r\n<Interpolation>0</Interpolation>\r\n<Prop>1\\.000000</Prop>\r\n</KeyFrame>\r\n<KeyFrame>\r\n<Time>180</Time>\r\n<Interpolation>0</Interpolation>\r\n<Prop>1\\.000000</Prop>\r\n</KeyFrame>\r\n<KeyFrame>\r\n<Time>181</Time>\r\n<Interpolation>0</Interpolation>\r\n<Prop>1\\.000000</Prop>\r\n</KeyFrame>\r\n<KeyFrame>\r\n<Time>186</Time>\r\n<Interpolation>0</Interpolation>\r\n<Prop>0\\.000000</Prop>\r\n</KeyFrame>\r\n<KeyFrame>\r\n<Time>191</Time>\r\n<Interpolation>0</Interpolation>\r\n<Prop>1\\.000000</Prop>\r\n</KeyFrame>\r\n<KeyFrame>\r\n<Time>192</Time>\r\n<Interpolation>0</Interpolation>\r\n<Prop>1\\.000000</Prop>\r\n</KeyFrame>\r\n<KeyFrame>\r\n<Time>198</Time>\r\n<Interpolation>0</Interpolation>\r\n<Prop>0\\.000000</Prop>\r\n</KeyFrame>\r\n<KeyFrame>\r\n<Time>202</Time>\r\n<Interpolation>0</Interpolation>\r\n<Prop>0\\.000000</Prop>\r\n</KeyFrame>\r\n</Timeline>\r\n<Timeline>\r\n<Id>QUALITY_0</Id>\r\n<TimelineProp>Opacity</TimelineProp>\r\n<KeyFrame>\r\n<Time>0</Time>\r\n<Interpolation>0</Interpolation>\r\n<Prop>0\\.000000</Prop>\r\n</KeyFrame>\r\n<KeyFrame>\r\n<Time>6</Time>\r\n<Interpolation>0</Interpolation>\r\n<Prop>0\\.000000</Prop>\r\n</KeyFrame>\r\n<KeyFrame>\r\n<Time>10</Time>\r\n<Interpolation>0</Interpolation>\r\n<Prop>1\\.000000</Prop>\r\n</KeyFrame>\r\n<KeyFrame>\r\n<Time>180</Time>\r\n<Interpolation>0</Interpolation>\r\n<Prop>1\\.000000</Prop>\r\n</KeyFrame>\r\n<KeyFrame>\r\n<Time>181</Time>\r\n<Interpolation>0</Interpolation>\r\n<Prop>1\\.000000</Prop>\r\n</KeyFrame>\r\n<KeyFrame>\r\n<Time>186</Time>\r\n<Interpolation>0</Interpolation>\r\n<Prop>0\\.000000</Prop>\r\n</KeyFrame>\r\n<KeyFrame>\r\n<Time>191</Time>\r\n<Interpolation>0</Interpolation>\r\n<Prop>1\\.000000</Prop>\r\n</KeyFrame>\r\n<KeyFrame>\r\n<Time>192</Time>\r\n<Interpolation>0</Interpolation>\r\n<Prop>1\\.000000</Prop>\r\n</KeyFrame>\r\n<KeyFrame>\r\n<Time>197</Time>\r\n<Interpolation>0</Interpolation>\r\n<Prop>0\\.000000</Prop>\r\n</KeyFrame>\r\n<KeyFrame>\r\n<Time>202</Time>\r\n<Interpolation>0</Interpolation>\r\n<Prop>0\\.000000</Prop>\r\n</KeyFrame>\r\n</Timeline>\r\n<Timeline>\r\n<Id>TEXT_BACK</Id>\r\n<TimelineProp>Position</TimelineProp>\r\n<TimelineProp>Opacity</TimelineProp>\r\n<KeyFrame>\r\n<Time>0</Time>\r\n<Interpolation>0</Interpolation>\r\n<Prop>256\\.000000,10\\.000075,0\\.000000</Prop>\r\n<Prop>1\\.000000</Prop>\r\n</KeyFrame>\r\n<KeyFrame>\r\n<Time>5</Time>\r\n<Interpolation>0</Interpolation>\r\n<Prop>76\\.800003,10\\.000075,0\\.000000</Prop>\r\n<Prop>1\\.000000</Prop>\r\n</KeyFrame>\r\n<KeyFrame>\r\n<Time>10</Time>\r\n<Interpolation>0</Interpolation>\r\n<Prop>0\\.000000,10\\.000075,0\\.000000</Prop>\r\n<Prop>1\\.000000</Prop>\r\n</KeyFrame>\r\n<KeyFrame>\r\n<Time>180</Time>\r\n<Interpolation>0</Interpolation>\r\n<Prop>0\\.000000,10\\.000075,0\\.000000</Prop>\r\n<Prop>1\\.000000</Prop>\r\n</KeyFrame>\r\n<KeyFrame>\r\n<Time>181</Time>\r\n<Interpolation>0</Interpolation>\r\n<Prop>0\\.000000,10\\.000075,0\\.000000</Prop>\r\n<Prop>1\\.000000</Prop>\r\n</KeyFrame>\r\n<KeyFrame>\r\n<Time>186</Time>\r\n<Interpolation>0</Interpolation>\r\n<Prop>0\\.000000,10\\.000075,0\\.000000</Prop>\r\n<Prop>1\\.000000</Prop>\r\n</KeyFrame>\r\n<KeyFrame>\r\n<Time>191</Time>\r\n<Interpolation>0</Interpolation>\r\n<Prop>0\\.000000,10\\.000075,0\\.000000</Prop>\r\n<Prop>1\\.000000</Prop>\r\n</KeyFrame>\r\n<KeyFrame>\r\n<Time>192</Time>\r\n<Interpolation>0</Interpolation>\r\n<Prop>0\\.000000,10\\.000075,0\\.000000</Prop>\r\n<Prop>1\\.000000</Prop>\r\n</KeyFrame>\r\n<KeyFrame>\r\n<Time>197</Time>\r\n<Interpolation>0</Interpolation>\r\n<Prop>76\\.800003,10\\.000075,0\\.000000</Prop>\r\n<Prop>1\\.000000</Prop>\r\n</KeyFrame>\r\n<KeyFrame>\r\n<Time>202</Time>\r\n<Interpolation>0</Interpolation>\r\n<Prop>256\\.000000,10\\.000075,0\\.000000</Prop>\r\n<Prop>0\\.000000</Prop>\r\n</KeyFrame>\r\n</Timeline>\r\n<Timeline>\r\n<Id>TEXT</Id>\r\n<TimelineProp>Opacity</TimelineProp>\r\n<KeyFrame>\r\n<Time>0</Time>\r\n<Interpolation>0</Interpolation>\r\n<Prop>0\\.000000</Prop>\r\n</KeyFrame>\r\n<KeyFrame>\r\n<Time>7</Time>\r\n<Interpolation>0</Interpolation>\r\n<Prop>1\\.000000</Prop>\r\n</KeyFrame>\r\n<KeyFrame>\r\n<Time>10</Time>\r\n<Interpolation>0</Interpolation>\r\n<Prop>1\\.000000</Prop>\r\n</KeyFrame>\r\n<KeyFrame>\r\n<Time>180</Time>\r\n<Interpolation>0</Interpolation>\r\n<Prop>1\\.000000</Prop>\r\n</KeyFrame>\r\n<KeyFrame>\r\n<Time>181</Time>\r\n<Interpolation>0</Interpolation>\r\n<Prop>1\\.000000</Prop>\r\n</KeyFrame>\r\n<KeyFrame>\r\n<Time>186</Time>\r\n<Interpolation>0</Interpolation>\r\n<Prop>0\\.000000</Prop>\r\n</KeyFrame>\r\n<KeyFrame>\r\n<Time>191</Time>\r\n<Interpolation>0</Interpolation>\r\n<Prop>1\\.000000</Prop>\r\n</KeyFrame>\r\n<KeyFrame>\r\n<Time>192</Time>\r\n<Interpolation>0</Interpolation>\r\n<Prop>1\\.000000</Prop>\r\n</KeyFrame>\r\n<KeyFrame>\r\n<Time>195</Time>\r\n<Interpolation>0</Interpolation>\r\n<Prop>1\\.000000</Prop>\r\n</KeyFrame>\r\n<KeyFrame>\r\n<Time>202</Time>\r\n<Interpolation>0</Interpolation>\r\n<Prop>0\\.000000</Prop>\r\n</KeyFrame>\r\n</Timeline>\r\n<Timeline>\r\n<Id>QUALITY_1</Id>\r\n<TimelineProp>Opacity</TimelineProp>\r\n<KeyFrame>\r\n<Time>0</Time>\r\n<Interpolation>0</Interpolation>\r\n<Prop>0\\.000000</Prop>\r\n</KeyFrame>\r\n<KeyFrame>\r\n<Time>6</Time>\r\n<Interpolation>0</Interpolation>\r\n<Prop>0\\.000000</Prop>\r\n</KeyFrame>\r\n<KeyFrame>\r\n<Time>10</Time>\r\n<Interpolation>0</Interpolation>\r\n<Prop>1\\.000000</Prop>\r\n</KeyFrame>\r\n<KeyFrame>\r\n<Time>180</Time>\r\n<Interpolation>0</Interpolation>\r\n<Prop>1\\.000000</Prop>\r\n</KeyFrame>\r\n<KeyFrame>\r\n<Time>181</Time>\r\n<Interpolation>0</Interpolation>\r\n<Prop>1\\.000000</Prop>\r\n</KeyFrame>\r\n<KeyFrame>\r\n<Time>186</Time>\r\n<Interpolation>0</Interpolation>\r\n<Prop>0\\.000000</Prop>\r\n</KeyFrame>\r\n<KeyFrame>\r\n<Time>191</Time>\r\n<Interpolation>0</Interpolation>\r\n<Prop>1\\.000000</Prop>\r\n</KeyFrame>\r\n<KeyFrame>\r\n<Time>192</Time>\r\n<Interpolation>0</Interpolation>\r\n<Prop>1\\.000000</Prop>\r\n</KeyFrame>\r\n<KeyFrame>\r\n<Time>197</Time>\r\n<Interpolation>0</Interpolation>\r\n<Prop>0\\.000000</Prop>\r\n</KeyFrame>\r\n<KeyFrame>\r\n<Time>202</Time>\r\n<Interpolation>0</Interpolation>\r\n<Prop>0\\.000000</Prop>\r\n</KeyFrame>\r\n</Timeline>\r\n<Timeline>\r\n<Id>QUALITY_2</Id>\r\n<TimelineProp>Opacity</TimelineProp>\r\n<KeyFrame>\r\n<Time>0</Time>\r\n<Interpolation>0</Interpolation>\r\n<Prop>0\\.000000</Prop>\r\n</KeyFrame>\r\n<KeyFrame>\r\n<Time>6</Time>\r\n<Interpolation>0</Interpolation>\r\n<Prop>0\\.000000</Prop>\r\n</KeyFrame>\r\n<KeyFrame>\r\n<Time>10</Time>\r\n<Interpolation>0</Interpolation>\r\n<Prop>1\\.000000</Prop>\r\n</KeyFrame>\r\n<KeyFrame>\r\n<Time>180</Time>\r\n<Interpolation>0</Interpolation>\r\n<Prop>1\\.000000</Prop>\r\n</KeyFrame>\r\n<KeyFrame>\r\n<Time>181</Time>\r\n<Interpolation>0</Interpolation>\r\n<Prop>1\\.000000</Prop>\r\n</KeyFrame>\r\n<KeyFrame>\r\n<Time>186</Time>\r\n<Interpolation>0</Interpolation>\r\n<Prop>0\\.000000</Prop>\r\n</KeyFrame>\r\n<KeyFrame>\r\n<Time>191</Time>\r\n<Interpolation>0</Interpolation>\r\n<Prop>1\\.000000</Prop>\r\n</KeyFrame>\r\n<KeyFrame>\r\n<Time>192</Time>\r\n<Interpolation>0</Interpolation>\r\n<Prop>1\\.000000</Prop>\r\n</KeyFrame>\r\n<KeyFrame>\r\n<Time>197</Time>\r\n<Interpolation>0</Interpolation>\r\n<Prop>0\\.000000</Prop>\r\n</KeyFrame>\r\n<KeyFrame>\r\n<Time>202</Time>\r\n<Interpolation>0</Interpolation>\r\n",
+            "<Properties>\r\n<Id>HUDInventoryIndicator</Id><!--IrnNoticeShift-->\r\n<Width>300.000000</Width>\r\n<Height>65.000000</Height>\r\n<Position>913.000061,584.000061,0.000000</Position>\r\n<HoldAspectRatio>true</HoldAspectRatio>\r\n<HoldAspectRatioX>true</HoldAspectRatioX>\r\n<ClassOverride>HUDInventoryIndicator</ClassOverride>\r\n</Properties>\r\n<AdvGroup>\r\n<Properties>\r\n<Id>MASK_0</Id>\r\n<Width>495.000061</Width>\r\n<Height>65.000000</Height>\r\n<Position>-264.000000,0.000000,0.000000</Position>\r\n<Opacity>0.000000</Opacity>\r\n<Show>false</Show>\r\n</Properties>\r\n</AdvGroup>\r\n<UIRandomImage>\r\n<Properties>\r\n<Id>TEXT_BACK</Id>\r\n<Width>700.000000</Width>\r\n<Height>48.000000</Height>\r\n<Position>256.000000,10.000075,0.000000</Position>\r\n<Pivot>128.000015,23.999928,0.000000</Pivot>\r\n<ImagePath>irn_notice_strip</ImagePath>\r\n<Color>0xffffffff</Color>\r\n<Material>sprite_button.mat</Material>\r\n<MaskPosItem>MASK_0</MaskPosItem>\r\n</Properties>\r\n</UIRandomImage>\r\n<MyText>\r\n<Properties>\r\n<Id>TEXT</Id>\r\n<Width>214.000000</Width>\r\n<Height>48.000000</Height>\r\n<Position>29.999996,9.999954,0.000000</Position>\r\n<Opacity>0.000000</Opacity>\r\n<Pivot>114.000000,23.999928,0.000000</Pivot>\r\n<Text>xxxxx</Text>\r\n<TextColor>0xffddcda9</TextColor>\r\n<DropShadowColor>0x800f0f0f</DropShadowColor>\r\n<PointSize>32.000000</PointSize>\r\n<Font>HUDWpnCon_Name</Font>\r\n<TextStyle>4624</TextStyle>\r\n</Properties>\r\n</MyText>\r\n<MyImage>\r\n<Properties>\r\n<Id>BACK</Id>\r\n<Show>false</Show>\r\n<Width>85.000000</Width>\r\n<Height>85.000000</Height>\r\n<Position>217.000000,-9.999971,0.000000</Position>\r\n<Opacity>0.000000</Opacity>\r\n<Pivot>42.499985,42.499947,0.000000</Pivot>\r\n<ImagePath>hud_back_strip.dds</ImagePath>\r\n<Color>0xfe000000</Color>\r\n<Material>sprite_button.mat</Material>\r\n</Properties>\r\n</MyImage>\r\n<MyImage>\r\n<Properties>\r\n<Id>ITEM</Id>\r\n<Width>90.000000</Width>\r\n<Height>90.000000</Height>\r\n<Position>245.000122,-15.999992,0.000000</Position>\r\n<Opacity>0.000000</Opacity>\r\n<Pivot>44.999985,44.999947,0.000000</Pivot>\r\n<ImagePath>Textures\\temp\\hud_icon_idle_frontier.dds</ImagePath>\r\n</Properties>\r\n</MyImage>\r\n<AdvGroup>\r\n<Properties>\r\n<Id>QUALITY_0</Id>\r\n<Width>20.000000</Width>\r\n<Height>20.000000</Height>\r\n<Position>304.000000,24.000000,0.000000</Position>\r\n<Rotation>0.000000,-0.000000,-1.000000,0.000000</Rotation>\r\n<Opacity>0.000000</Opacity>\r\n<Pivot>-16.000000,10.000000,0.000000</Pivot>\r\n</Properties>\r\n<MyImage>\r\n<Properties>\r\n<Id>QUALITY</Id>\r\n<Width>20.000000</Width>\r\n<Height>20.000000</Height>\r\n<SizeMode>1</SizeMode>\r\n<ImagePath>Textures\\temp\\hud_qa_level.dds</ImagePath>\r\n<RoundPosition>true</RoundPosition>\r\n</Properties>\r\n</MyImage>\r\n</AdvGroup>\r\n<AdvGroup>\r\n<Properties>\r\n<Id>QUALITY_1</Id>\r\n<Width>20.000000</Width>\r\n<Height>20.000000</Height>\r\n<Position>304.000000,24.000000,0.000000</Position>\r\n<Rotation>0.000000,-0.000000,-1.000000,0.000000</Rotation>\r\n<Opacity>0.000000</Opacity>\r\n<Pivot>-16.000000,10.000000,0.000000</Pivot>\r\n</Properties>\r\n<MyImage>\r\n<Properties>\r\n<Id>QUALITY</Id>\r\n<Width>20.000000</Width>\r\n<Height>20.000000</Height>\r\n<SizeMode>1</SizeMode>\r\n<ImagePath>Textures\\temp\\hud_qa_level.dds</ImagePath>\r\n<RoundPosition>true</RoundPosition>\r\n</Properties>\r\n</MyImage>\r\n</AdvGroup>\r\n<AdvGroup>\r\n<Properties>\r\n<Id>QUALITY_2</Id>\r\n<Width>20.000000</Width>\r\n<Height>20.000000</Height>\r\n<Position>304.000000,24.000000,0.000000</Position>\r\n<Rotation>0.000000,-0.000000,-1.000000,0.000000</Rotation>\r\n<Opacity>0.000000</Opacity>\r\n<Pivot>-16.000000,10.000000,0.000000</Pivot>\r\n</Properties>\r\n<MyImage>\r\n<Properties>\r\n<Id>QUALITY</Id>\r\n<Width>20.000000</Width>\r\n<Height>20.000000</Height>\r\n<SizeMode>1</SizeMode>\r\n<ImagePath>Textures\\temp\\hud_qa_level.dds</ImagePath>\r\n<RoundPosition>true</RoundPosition>\r\n</Properties>\r\n</MyImage>\r\n</AdvGroup>\r\n<Timelines>\r\n<NamedFrames>\r\n<NamedFrame>\r\n<Name>Show</Name>\r\n<Time>0</Time>\r\n</NamedFrame>\r\n<NamedFrame>\r\n<Name>Showed</Name>\r\n<Time>10</Time>\r\n</NamedFrame>\r\n<NamedFrame>\r\n<Name>ShortShowEnd</Name>\r\n<Time>70</Time>\r\n</NamedFrame>\r\n<NamedFrame>\r\n<Name>EndShow</Name>\r\n<Time>75</Time>\r\n<Command>goto</Command>\r\n<CommandParams>Hide</CommandParams>\r\n</NamedFrame>\r\n<NamedFrame>\r\n<Name>XFade</Name>\r\n<Time>76</Time>\r\n</NamedFrame>\r\n<NamedFrame>\r\n<Name>XFadeMiddle</Name>\r\n<Time>81</Time>\r\n</NamedFrame>\r\n<NamedFrame>\r\n<Name>EndXFade</Name>\r\n<Time>86</Time>\r\n<Command>goto</Command>\r\n<CommandParams>Showed</CommandParams>\r\n</NamedFrame>\r\n<NamedFrame>\r\n<Name>Hide</Name>\r\n<Time>87</Time>\r\n</NamedFrame>\r\n<NamedFrame>\r\n<Name>EndHide</Name>\r\n<Time>97</Time>\r\n<Command>stop</Command>\r\n</NamedFrame>\r\n</NamedFrames>\r\n<Timeline>\r\n<Id>BACK</Id>\r\n<TimelineProp>Opacity</TimelineProp>\r\n<KeyFrame>\r\n<Time>0</Time>\r\n<Interpolation>0</Interpolation>\r\n<Prop>0.000000</Prop>\r\n</KeyFrame>\r\n<KeyFrame>\r\n<Time>4</Time>\r\n<Interpolation>0</Interpolation>\r\n<Prop>1.000000</Prop>\r\n</KeyFrame>\r\n<KeyFrame>\r\n<Time>10</Time>\r\n<Interpolation>0</Interpolation>\r\n<Prop>1.000000</Prop>\r\n</KeyFrame>\r\n<KeyFrame>\r\n<Time>87</Time>\r\n<Interpolation>0</Interpolation>\r\n<Prop>1.000000</Prop>\r\n</KeyFrame>\r\n<KeyFrame>\r\n<Time>92</Time>\r\n<Interpolation>0</Interpolation>\r\n<Prop>1.000000</Prop>\r\n</KeyFrame>\r\n<KeyFrame>\r\n<Time>97</Time>\r\n<Interpolation>0</Interpolation>\r\n<Prop>0.000000</Prop>\r\n</KeyFrame>\r\n</Timeline>\r\n<Timeline>\r\n<Id>ITEM</Id>\r\n<TimelineProp>Opacity</TimelineProp>\r\n<KeyFrame>\r\n<Time>0</Time>\r\n<Interpolation>0</Interpolation>\r\n<Prop>0.000000</Prop>\r\n</KeyFrame>\r\n<KeyFrame>\r\n<Time>5</Time>\r\n<Interpolation>0</Interpolation>\r\n<Prop>0.000000</Prop>\r\n</KeyFrame>\r\n<KeyFrame>\r\n<Time>10</Time>\r\n<Interpolation>0</Interpolation>\r\n<Prop>1.000000</Prop>\r\n</KeyFrame>\r\n<KeyFrame>\r\n<Time>75</Time>\r\n<Interpolation>0</Interpolation>\r\n<Prop>1.000000</Prop>\r\n</KeyFrame>\r\n<KeyFrame>\r\n<Time>76</Time>\r\n<Interpolation>0</Interpolation>\r\n<Prop>1.000000</Prop>\r\n</KeyFrame>\r\n<KeyFrame>\r\n<Time>81</Time>\r\n<Interpolation>0</Interpolation>\r\n<Prop>0.000000</Prop>\r\n</KeyFrame>\r\n<KeyFrame>\r\n<Time>86</Time>\r\n<Interpolation>0</Interpolation>\r\n<Prop>1.000000</Prop>\r\n</KeyFrame>\r\n<KeyFrame>\r\n<Time>87</Time>\r\n<Interpolation>0</Interpolation>\r\n<Prop>1.000000</Prop>\r\n</KeyFrame>\r\n<KeyFrame>\r\n<Time>93</Time>\r\n<Interpolation>0</Interpolation>\r\n<Prop>0.000000</Prop>\r\n</KeyFrame>\r\n<KeyFrame>\r\n<Time>97</Time>\r\n<Interpolation>0</Interpolation>\r\n<Prop>0.000000</Prop>\r\n</KeyFrame>\r\n</Timeline>\r\n<Timeline>\r\n<Id>QUALITY_0</Id>\r\n<TimelineProp>Opacity</TimelineProp>\r\n<KeyFrame>\r\n<Time>0</Time>\r\n<Interpolation>0</Interpolation>\r\n<Prop>0.000000</Prop>\r\n</KeyFrame>\r\n<KeyFrame>\r\n<Time>6</Time>\r\n<Interpolation>0</Interpolation>\r\n<Prop>0.000000</Prop>\r\n</KeyFrame>\r\n<KeyFrame>\r\n<Time>10</Time>\r\n<Interpolation>0</Interpolation>\r\n<Prop>1.000000</Prop>\r\n</KeyFrame>\r\n<KeyFrame>\r\n<Time>75</Time>\r\n<Interpolation>0</Interpolation>\r\n<Prop>1.000000</Prop>\r\n</KeyFrame>\r\n<KeyFrame>\r\n<Time>76</Time>\r\n<Interpolation>0</Interpolation>\r\n<Prop>1.000000</Prop>\r\n</KeyFrame>\r\n<KeyFrame>\r\n<Time>81</Time>\r\n<Interpolation>0</Interpolation>\r\n<Prop>0.000000</Prop>\r\n</KeyFrame>\r\n<KeyFrame>\r\n<Time>86</Time>\r\n<Interpolation>0</Interpolation>\r\n<Prop>1.000000</Prop>\r\n</KeyFrame>\r\n<KeyFrame>\r\n<Time>87</Time>\r\n<Interpolation>0</Interpolation>\r\n<Prop>1.000000</Prop>\r\n</KeyFrame>\r\n<KeyFrame>\r\n<Time>92</Time>\r\n<Interpolation>0</Interpolation>\r\n<Prop>0.000000</Prop>\r\n</KeyFrame>\r\n<KeyFrame>\r\n<Time>97</Time>\r\n<Interpolation>0</Interpolation>\r\n<Prop>0.000000</Prop>\r\n</KeyFrame>\r\n</Timeline>\r\n<Timeline>\r\n<Id>TEXT_BACK</Id>\r\n<TimelineProp>Position</TimelineProp>\r\n<TimelineProp>Opacity</TimelineProp>\r\n<KeyFrame>\r\n<Time>0</Time>\r\n<Interpolation>0</Interpolation>\r\n<Prop>256.000000,10.000075,0.000000</Prop>\r\n<Prop>1.000000</Prop>\r\n</KeyFrame>\r\n<KeyFrame>\r\n<Time>5</Time>\r\n<Interpolation>0</Interpolation>\r\n<Prop>-3.200000,10.000075,0.000000</Prop>\r\n<Prop>1.000000</Prop>\r\n</KeyFrame>\r\n<KeyFrame>\r\n<Time>10</Time>\r\n<Interpolation>0</Interpolation>\r\n<Prop>-80.000000,10.000075,0.000000</Prop>\r\n<Prop>1.000000</Prop>\r\n</KeyFrame>\r\n<KeyFrame>\r\n<Time>75</Time>\r\n<Interpolation>0</Interpolation>\r\n<Prop>-80.000000,10.000075,0.000000</Prop>\r\n<Prop>1.000000</Prop>\r\n</KeyFrame>\r\n<KeyFrame>\r\n<Time>76</Time>\r\n<Interpolation>0</Interpolation>\r\n<Prop>-80.000000,10.000075,0.000000</Prop>\r\n<Prop>1.000000</Prop>\r\n</KeyFrame>\r\n<KeyFrame>\r\n<Time>81</Time>\r\n<Interpolation>0</Interpolation>\r\n<Prop>-80.000000,10.000075,0.000000</Prop>\r\n<Prop>1.000000</Prop>\r\n</KeyFrame>\r\n<KeyFrame>\r\n<Time>86</Time>\r\n<Interpolation>0</Interpolation>\r\n<Prop>-80.000000,10.000075,0.000000</Prop>\r\n<Prop>1.000000</Prop>\r\n</KeyFrame>\r\n<KeyFrame>\r\n<Time>87</Time>\r\n<Interpolation>0</Interpolation>\r\n<Prop>-80.000000,10.000075,0.000000</Prop>\r\n<Prop>1.000000</Prop>\r\n</KeyFrame>\r\n<KeyFrame>\r\n<Time>92</Time>\r\n<Interpolation>0</Interpolation>\r\n<Prop>-3.200000,10.000075,0.000000</Prop>\r\n<Prop>1.000000</Prop>\r\n</KeyFrame>\r\n<KeyFrame>\r\n<Time>97</Time>\r\n<Interpolation>0</Interpolation>\r\n<Prop>256.000000,10.000075,0.000000</Prop>\r\n<Prop>0.000000</Prop>\r\n</KeyFrame>\r\n</Timeline>\r\n<Timeline>\r\n<Id>TEXT</Id>\r\n<TimelineProp>Opacity</TimelineProp>\r\n<KeyFrame>\r\n<Time>0</Time>\r\n<Interpolation>0</Interpolation>\r\n<Prop>0.000000</Prop>\r\n</KeyFrame>\r\n<KeyFrame>\r\n<Time>7</Time>\r\n<Interpolation>0</Interpolation>\r\n<Prop>1.000000</Prop>\r\n</KeyFrame>\r\n<KeyFrame>\r\n<Time>10</Time>\r\n<Interpolation>0</Interpolation>\r\n<Prop>1.000000</Prop>\r\n</KeyFrame>\r\n<KeyFrame>\r\n<Time>75</Time>\r\n<Interpolation>0</Interpolation>\r\n<Prop>1.000000</Prop>\r\n</KeyFrame>\r\n<KeyFrame>\r\n<Time>76</Time>\r\n<Interpolation>0</Interpolation>\r\n<Prop>1.000000</Prop>\r\n</KeyFrame>\r\n<KeyFrame>\r\n<Time>81</Time>\r\n<Interpolation>0</Interpolation>\r\n<Prop>0.000000</Prop>\r\n</KeyFrame>\r\n<KeyFrame>\r\n<Time>86</Time>\r\n<Interpolation>0</Interpolation>\r\n<Prop>1.000000</Prop>\r\n</KeyFrame>\r\n<KeyFrame>\r\n<Time>87</Time>\r\n<Interpolation>0</Interpolation>\r\n<Prop>1.000000</Prop>\r\n</KeyFrame>\r\n<KeyFrame>\r\n<Time>90</Time>\r\n<Interpolation>0</Interpolation>\r\n<Prop>1.000000</Prop>\r\n</KeyFrame>\r\n<KeyFrame>\r\n<Time>97</Time>\r\n<Interpolation>0</Interpolation>\r\n<Prop>0.000000</Prop>\r\n</KeyFrame>\r\n</Timeline>\r\n<Timeline>\r\n<Id>QUALITY_1</Id>\r\n<TimelineProp>Opacity</TimelineProp>\r\n<KeyFrame>\r\n<Time>0</Time>\r\n<Interpolation>0</Interpolation>\r\n<Prop>0.000000</Prop>\r\n</KeyFrame>\r\n<KeyFrame>\r\n<Time>6</Time>\r\n<Interpolation>0</Interpolation>\r\n<Prop>0.000000</Prop>\r\n</KeyFrame>\r\n<KeyFrame>\r\n<Time>10</Time>\r\n<Interpolation>0</Interpolation>\r\n<Prop>1.000000</Prop>\r\n</KeyFrame>\r\n<KeyFrame>\r\n<Time>75</Time>\r\n<Interpolation>0</Interpolation>\r\n<Prop>1.000000</Prop>\r\n</KeyFrame>\r\n<KeyFrame>\r\n<Time>76</Time>\r\n<Interpolation>0</Interpolation>\r\n<Prop>1.000000</Prop>\r\n</KeyFrame>\r\n<KeyFrame>\r\n<Time>81</Time>\r\n<Interpolation>0</Interpolation>\r\n<Prop>0.000000</Prop>\r\n</KeyFrame>\r\n<KeyFrame>\r\n<Time>86</Time>\r\n<Interpolation>0</Interpolation>\r\n<Prop>1.000000</Prop>\r\n</KeyFrame>\r\n<KeyFrame>\r\n<Time>87</Time>\r\n<Interpolation>0</Interpolation>\r\n<Prop>1.000000</Prop>\r\n</KeyFrame>\r\n<KeyFrame>\r\n<Time>92</Time>\r\n<Interpolation>0</Interpolation>\r\n<Prop>0.000000</Prop>\r\n</KeyFrame>\r\n<KeyFrame>\r\n<Time>97</Time>\r\n<Interpolation>0</Interpolation>\r\n<Prop>0.000000</Prop>\r\n</KeyFrame>\r\n</Timeline>\r\n<Timeline>\r\n<Id>QUALITY_2</Id>\r\n<TimelineProp>Opacity</TimelineProp>\r\n<KeyFrame>\r\n<Time>0</Time>\r\n<Interpolation>0</Interpolation>\r\n<Prop>0.000000</Prop>\r\n</KeyFrame>\r\n<KeyFrame>\r\n<Time>6</Time>\r\n<Interpolation>0</Interpolation>\r\n<Prop>0.000000</Prop>\r\n</KeyFrame>\r\n<KeyFrame>\r\n<Time>10</Time>\r\n<Interpolation>0</Interpolation>\r\n<Prop>1.000000</Prop>\r\n</KeyFrame>\r\n<KeyFrame>\r\n<Time>75</Time>\r\n<Interpolation>0</Interpolation>\r\n<Prop>1.000000</Prop>\r\n</KeyFrame>\r\n<KeyFrame>\r\n<Time>76</Time>\r\n<Interpolation>0</Interpolation>\r\n<Prop>1.000000</Prop>\r\n</KeyFrame>\r\n<KeyFrame>\r\n<Time>81</Time>\r\n<Interpolation>0</Interpolation>\r\n<Prop>0.000000</Prop>\r\n</KeyFrame>\r\n<KeyFrame>\r\n<Time>86</Time>\r\n<Interpolation>0</Interpolation>\r\n<Prop>1.000000</Prop>\r\n</KeyFrame>\r\n<KeyFrame>\r\n<Time>87</Time>\r\n<Interpolation>0</Interpolation>\r\n<Prop>1.000000</Prop>\r\n</KeyFrame>\r\n<KeyFrame>\r\n<Time>92</Time>\r\n<Interpolation>0</Interpolation>\r\n<Prop>0.000000</Prop>\r\n</KeyFrame>\r\n<KeyFrame>\r\n<Time>97</Time>\r\n<Interpolation>0</Interpolation>\r\n"
+          ],
+          [
+            "<Id>IMAGE_2</Id>\r\n<Width>700\\.000000</Width>\r\n<Height>38\\.909092</Height>\r\n<Position>0\\.000000,-0\\.454540,0\\.000000</Position>\r\n<Opacity>0\\.000000</Opacity>\r\n<Anchor>15</Anchor>\r\n<Pivot>349\\.999939,19\\.454535,0\\.000000</Pivot>\r\n<ImagePath>button_tile</ImagePath>\r\n<Color>0xfe000000</Color>\r\n<Material>sprite_button\\.mat</Material>\r\n<NextTextureStrideY>0\\.125000</NextTextureStrideY>\r\n</Properties>\r\n</UIRandomImage>\r\n<UIRandomImage>\r\n<Properties>\r\n<Id>IMAGE_3</Id>\r\n<Width>700\\.000000</Width>\r\n<Height>38\\.909092</Height>\r\n<Position>0\\.000000,-0\\.454540,0\\.000000</Position>\r\n<Opacity>0\\.000000</Opacity>\r\n<Anchor>15</Anchor>\r\n<Pivot>349\\.999939,19\\.454535,0\\.000000</Pivot>\r\n<ImagePath>irn_hudwin_tile</ImagePath>\r\n<Color>0xfe000000</Color>\r\n<Material>sprite_button\\.mat</Material>\r\n<NextTextureStrideY>0\\.125000</NextTextureStrideY>\r\n",
+            "<Id>IMAGE_2</Id>\r\n<Show>false</Show>\r\n<Width>700.000000</Width>\r\n<Height>38.909092</Height>\r\n<Position>0.000000,-0.454540,0.000000</Position>\r\n<Opacity>0.000000</Opacity>\r\n<Anchor>15</Anchor>\r\n<Pivot>349.999939,19.454535,0.000000</Pivot>\r\n<ImagePath>button_tile</ImagePath>\r\n<Color>0xfe000000</Color>\r\n<Material>sprite_button.mat</Material>\r\n<NextTextureStrideY>0.125000</NextTextureStrideY>\r\n</Properties>\r\n</UIRandomImage>\r\n<UIRandomImage>\r\n<Properties>\r\n<Id>IMAGE_3</Id>\r\n<Width>700.000000</Width>\r\n<Height>38.909092</Height>\r\n<Position>0.000000,-0.454540,0.000000</Position>\r\n<Opacity>0.000000</Opacity>\r\n<Anchor>15</Anchor>\r\n<Pivot>349.999939,19.454535,0.000000</Pivot>\r\n<SizeMode>4</SizeMode>\r\n<ImagePath>irn_hint_pill</ImagePath>\r\n<Color>0xffffffff</Color>\r\n<NextTextureStrideY>0.125000</NextTextureStrideY>\r\n"
           ]
         ]
       },
@@ -987,7 +1046,7 @@
           ],
           [
             "\\z",
-            " \u0000Name_WeaponPistolFrontierUpgrade\u0012\u0000S\u0000p\u0000r\u0000i\u0000n\u0000g\u0000f\u0000i\u0000e\u0000l\u0000d\u0000 \u0000M\u0000u\u0000s\u0000k\u0000e\u0000t\u0000#\u0000Name_WeaponPistolFrontierUpgradeNet\u0012\u0000S\u0000p\u0000r\u0000i\u0000n\u0000g\u0000f\u0000i\u0000e\u0000l\u0000d\u0000 \u0000M\u0000u\u0000s\u0000k\u0000e\u0000t\u0000\u001d\u0000N_WeaponPistolFrontierUpgrade\u0012\u0000S\u0000p\u0000r\u0000i\u0000n\u0000g\u0000f\u0000i\u0000e\u0000l\u0000d\u0000 \u0000M\u0000u\u0000s\u0000k\u0000e\u0000t\u0000\u0017\u0000MenuDerringerUpgradeNet\u000f\u0000T\u0000h\u0000r\u0000o\u0000w\u0000i\u0000n\u0000g\u0000 \u0000K\u0000n\u0000i\u0000v\u0000e\u0000s\u0000$\u0000Name_WeaponPistolDerringerUpgradeNet\u000e\u0000T\u0000h\u0000r\u0000o\u0000w\u0000i\u0000n\u0000g\u0000 \u0000K\u0000n\u0000i\u0000f\u0000e\u0000!\u0000Name_WeaponPistolDerringerUpgrade\u000e\u0000T\u0000h\u0000r\u0000o\u0000w\u0000i\u0000n\u0000g\u0000 \u0000K\u0000n\u0000i\u0000f\u0000e\u0000\u001e\u0000N_WeaponPistolDerringerUpgrade\u000e\u0000T\u0000h\u0000r\u0000o\u0000w\u0000i\u0000n\u0000g\u0000 \u0000K\u0000n\u0000i\u0000f\u0000e\u0000\u0014\u0000MenuLemantUpgradeNet\b\u0000T\u0000o\u0000m\u0000a\u0000h\u0000a\u0000w\u0000k\u0000!\u0000Name_WeaponPistolLemantUpgradeNet\b\u0000T\u0000o\u0000m\u0000a\u0000h\u0000a\u0000w\u0000k\u0000\u001e\u0000Name_WeaponPistolLemantUpgrade\b\u0000T\u0000o\u0000m\u0000a\u0000h\u0000a\u0000w\u0000k\u0000\u001b\u0000N_WeaponPistolLemantUpgrade\b\u0000T\u0000o\u0000m\u0000a\u0000h\u0000a\u0000w\u0000k\u0000\u0011\u0000IrnEditionVersion\u0015\u0000I\u0000r\u0000a\u0000n\u0000C\u0000o\u0000J\u0000 \u0000E\u0000d\u0000i\u0000t\u0000i\u0000o\u0000n\u0000 \u00000\u0000.\u00007\u0000.\u00008\u0000"
+            " \u0000Name_WeaponPistolFrontierUpgrade\u0012\u0000S\u0000p\u0000r\u0000i\u0000n\u0000g\u0000f\u0000i\u0000e\u0000l\u0000d\u0000 \u0000M\u0000u\u0000s\u0000k\u0000e\u0000t\u0000#\u0000Name_WeaponPistolFrontierUpgradeNet\u0012\u0000S\u0000p\u0000r\u0000i\u0000n\u0000g\u0000f\u0000i\u0000e\u0000l\u0000d\u0000 \u0000M\u0000u\u0000s\u0000k\u0000e\u0000t\u0000\u001d\u0000N_WeaponPistolFrontierUpgrade\u0012\u0000S\u0000p\u0000r\u0000i\u0000n\u0000g\u0000f\u0000i\u0000e\u0000l\u0000d\u0000 \u0000M\u0000u\u0000s\u0000k\u0000e\u0000t\u0000\u0017\u0000MenuDerringerUpgradeNet\u000f\u0000T\u0000h\u0000r\u0000o\u0000w\u0000i\u0000n\u0000g\u0000 \u0000K\u0000n\u0000i\u0000v\u0000e\u0000s\u0000$\u0000Name_WeaponPistolDerringerUpgradeNet\u000e\u0000T\u0000h\u0000r\u0000o\u0000w\u0000i\u0000n\u0000g\u0000 \u0000K\u0000n\u0000i\u0000f\u0000e\u0000!\u0000Name_WeaponPistolDerringerUpgrade\u000e\u0000T\u0000h\u0000r\u0000o\u0000w\u0000i\u0000n\u0000g\u0000 \u0000K\u0000n\u0000i\u0000f\u0000e\u0000\u001e\u0000N_WeaponPistolDerringerUpgrade\u000e\u0000T\u0000h\u0000r\u0000o\u0000w\u0000i\u0000n\u0000g\u0000 \u0000K\u0000n\u0000i\u0000f\u0000e\u0000\u0014\u0000MenuLemantUpgradeNet\b\u0000T\u0000o\u0000m\u0000a\u0000h\u0000a\u0000w\u0000k\u0000!\u0000Name_WeaponPistolLemantUpgradeNet\b\u0000T\u0000o\u0000m\u0000a\u0000h\u0000a\u0000w\u0000k\u0000\u001e\u0000Name_WeaponPistolLemantUpgrade\b\u0000T\u0000o\u0000m\u0000a\u0000h\u0000a\u0000w\u0000k\u0000\u001b\u0000N_WeaponPistolLemantUpgrade\b\u0000T\u0000o\u0000m\u0000a\u0000h\u0000a\u0000w\u0000k\u0000\u0011\u0000IrnEditionVersion\u0015\u0000I\u0000r\u0000a\u0000n\u0000C\u0000o\u0000J\u0000 \u0000E\u0000d\u0000i\u0000t\u0000i\u0000o\u0000n\u0000 \u00001\u0000.\u00000\u0000.\u00000\u0000"
           ]
         ]
       },
@@ -1032,6 +1091,32 @@
           [
             "(?s)float4 t0 = tex2D\\(tmu0, i\\.uv0\\); //background.*?//output = step7;",
             "float4 t0 = tex2D(tmu0, i.uv0); //background (kept bound)\n\t\t\t\t\t\t\tfloat4 i1 = tex2D(tmu1, i.uv1); //image 1\n\t\t\t\t\t\t\tfloat4 i2 = tex2D(tmu3, i.uv4); //image 2\n\t\t\t\t\t\t\tfloat4 m0 = tex2D(tmu2, i.uv2); //mask (kept bound)\n\t\t\t\t\t\t\t// Black and white, so the sepia objectives map stands out. From the green channel, as the game's own\n\t\t\t\t\t\t\t// shader read it (many maps store the picture in green only).\n\t\t\t\t\t\t\tfloat l = saturate((i1.g * CONST_6.x + i2.g * CONST_6.y - 0.03) / 0.94);\n\t\t\t\t\t\t\tl = lerp(l, l * l * (3 - 2 * l), 0.3);\n\t\t\t\t\t\t\tfloat3 pic = l * float3(1.0, 0.985, 0.96);\n\n\t\t\t\t\t\t\t// IranCoJ Edition (loading screen): the map's pictures in black and white, darker on the left behind the\n\t\t\t\t\t\t\t// text and at the bottom (the objectives map draws its own card: irancoj_mapcard.mat).\n\t\t\t\t\t\t\tfloat left = saturate(1 - i.uv0.x / 0.62);\n\t\t\t\t\t\t\tfloat shade = 0.82 - 0.62 * pow(left, 0.9);\n\t\t\t\t\t\t\tshade *= 1 - 0.55 * pow(saturate((i.uv0.y - 0.72) / 0.28), 1.6);\n\t\t\t\t\t\t\tfloat3 col = pic * shade + (t0.rgb + m0.rgb) * 0.0001;\n\t\t\t\t\t\t\toutput = float4(col, 1);"
+          ]
+        ]
+      },
+      {
+        "path": "CoJ2/Data/Menu/BasicFonts.scr",
+        "pak": "CoJ2/Data0.pak",
+        "entry": "Data/Menu/BasicFonts.scr",
+        "replace": [
+          [
+            "(Font\\(\"Clarendon 32\", \"Clarendon Condensed\", 32, 0, \"\", 1\\.0\\)\\r?\\n)",
+            "${1}// IranCoJ Edition: twice the pixels for the big titles (TextHuge was this font drawn at 1.2x, soft)\r\nFont(\"Clarendon 64\", \"Clarendon Condensed\", 64, 0, \"\", 1.0)\r\n"
+          ]
+        ]
+      },
+      {
+        "path": "CoJ2/Data/Menu/FontStyles.scr",
+        "pak": "CoJ2/Data0.pak",
+        "entry": "Data/Menu/FontStyles.scr",
+        "replace": [
+          [
+            "FontStyle\\(\"TextHuge\",(\\s*)\"Clarendon 32\", 1\\.2, 3\\)",
+            "FontStyle(\"TextHuge\",${1}\"Clarendon 64\", 0.6, 3)  // IranCoJ Edition: the same size from the 64 px font"
+          ],
+          [
+            "\\z",
+            "\r\n// IranCoJ Edition: the Shootout / Wanted standing (irancojhud.dll), between the game's steps\r\nFontStyle(\"IrnStandingPlace\",\t\"Clarendon 32\", 0.66, 3)\r\nFontStyle(\"IrnStandingGain\",\t\"Clarendon 32\", 0.55, 3)\r\nHtmlFontStyleAlias(\"irancoj\", 1, \"IrnStandingPlace\")\r\nHtmlFontStyleAlias(\"irancoj\", 2, \"IrnStandingGain\")\r\n"
           ]
         ]
       }
@@ -1233,7 +1318,7 @@
       {
         "path": "CoJ2/Data/Menu/Background_Scr_PC.binui",
         "size": 12570,
-        "sha256": "ccb0fbf8bb745e7891efc8a63cef36f6d582fc25389330f246734ea77552d10a",
+        "sha256": "9ef43eddee3e7fadf80cef3f9e0967c7d2feba86da82c7608954496f9a052472",
         "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/edition/Background_Scr_PC.binui"
       },
       {
@@ -1245,13 +1330,13 @@
       {
         "path": "CoJ2/Data/Menu/Dashboard_Scr_PC.binui",
         "size": 197232,
-        "sha256": "f11bd9508848d5587ed698619d8107d04cab281683951896c43c4b0584b5d3e8",
+        "sha256": "083d03ab5536f063279c48695ca8a8745e62b8404779c93341339792ec7e78ed",
         "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/edition/Dashboard_Scr_PC.binui"
       },
       {
         "path": "CoJ2/Data/Menu/Dashboard_Skn_PC.binui",
-        "size": 936033,
-        "sha256": "bacb23ae8a7fe55e12f5f1c8fc30f01045f78f8d53628928570bd4a8546d52d7",
+        "size": 934699,
+        "sha256": "f8865bd32fedca71002d63f80af9e9a143b188ba238cd0770948ea9e94e7a69b",
         "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/edition/Dashboard_Skn_PC.binui"
       },
       {
@@ -1265,6 +1350,12 @@
         "size": 1632,
         "sha256": "860ce933f50918f97a0cc0fe5be4f1c56ae8ac6e4e8562bb7be4dba58d8cfded",
         "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/edition/Fadeout_Skn_PC.binui"
+      },
+      {
+        "path": "CoJ2/Data/Menu/Hud/Textures/hud_new.dds",
+        "size": 22369776,
+        "sha256": "5f180d684fe4707311abd937c5043de9b7e9c08f12fdcfb327eaa1b9fa45a06b",
+        "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/edition/hud_new.dds"
       },
       {
         "path": "CoJ2/Data/Menu/Intro_Scr_PC.binui",
@@ -1292,14 +1383,14 @@
       },
       {
         "path": "CoJ2/Data/Menu/MenuCommon_Skn_PC.binui",
-        "size": 936708,
-        "sha256": "0f5e102ebaf21635e4f3bcb3d8d5ec7a10c2b4c34adde76328b071b6173482c0",
+        "size": 935374,
+        "sha256": "0b32446ca6ce627c6875bd0bb0025e8f9898eb2d38a6564421f9768696d953ea",
         "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/edition/MenuCommon_Skn_PC.binui"
       },
       {
         "path": "CoJ2/Data/Menu/MenuIngameNetGamemode_Scr_PC.binui",
         "size": 582188,
-        "sha256": "19d12889363dcb78d8f80a52624b22792a858fc61d086c43fadf395c12a90ffe",
+        "sha256": "eb15b0a5be860b11be85f53ad048bd16db2038c0ab464d95a8764e21afd04853",
         "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/edition/MenuIngameNetGamemode_Scr_PC.binui"
       },
       {
@@ -1347,7 +1438,7 @@
       {
         "path": "CoJ2/Data/Menu/MenuMain_Scr_PC.binui",
         "size": 614725,
-        "sha256": "a8712a26402da5d02980572ba41df24a298d658aa4fadb3b09b7c590cff06b4d",
+        "sha256": "5e2bc4ddcd634027288c664491a6479f7dd3e3039bb2d9a9c030af754083a183",
         "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/edition/MenuMain_Scr_PC.binui"
       },
       {
@@ -1363,10 +1454,28 @@
         "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/edition/MenuMovie_0.wmv"
       },
       {
+        "path": "CoJ2/Data/Menu/cursors/cursor.dds",
+        "size": 22000,
+        "sha256": "168472a37e7cd677ee733bce7a8fabbcc3a3021ad07fbb418ce6652548e5f21d",
+        "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/edition/cursor.dds"
+      },
+      {
         "path": "CoJ2/Data/Menu/scr/Credits_PC.scr",
-        "size": 4874,
-        "sha256": "8c44e6f81e4629871a04b360f1c7f1cf1c5e5dce443a5c68132eb7d64c409237",
+        "size": 4952,
+        "sha256": "7c7355ac80eb48208a8e348cb449a28c6768ec6c86031651001245e023df175f",
         "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/edition/Credits_PC.scr"
+      },
+      {
+        "path": "CoJ2/Data/Menu/textures/drum.dds",
+        "size": 87536,
+        "sha256": "917e3e918bfb7b5b30097c6b5a4d084b98500d7d0f9b8333cc8b08e2e3971cbf",
+        "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/edition/drum.dds"
+      },
+      {
+        "path": "CoJ2/Data/Menu/textures/icon_item_not_available.dds",
+        "size": 87536,
+        "sha256": "434176ce68f348d18cc79c47ce10f4fcbb6f33aa1071a207229737bed0bf2491",
+        "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/edition/icon_item_not_available.dds"
       },
       {
         "path": "CoJ2/Data/Menu/textures/irancoj_arrow.dds",
@@ -1399,21 +1508,69 @@
         "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/edition/irancoj_bg.dds"
       },
       {
+        "path": "CoJ2/Data/Menu/textures/irancoj_center_shade.dds",
+        "size": 262272,
+        "sha256": "222a4761bb698e245bb0ddab967002f556d5542b6facc2f32bc05bacdd5f3232",
+        "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/edition/irancoj_center_shade.dds"
+      },
+      {
+        "path": "CoJ2/Data/Menu/textures/irancoj_chat_bottom.dds",
+        "size": 65664,
+        "sha256": "55235701b63b60278e7815f570284b5c51a074ae1b95c5187f2c1b0eb9602790",
+        "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/edition/irancoj_chat_bottom.dds"
+      },
+      {
+        "path": "CoJ2/Data/Menu/textures/irancoj_chat_panel.dds",
+        "size": 262272,
+        "sha256": "220c91b5b9267b1ac2d325210952a2b9731683f1ca5e7231453f574cc9f90fbb",
+        "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/edition/irancoj_chat_panel.dds"
+      },
+      {
+        "path": "CoJ2/Data/Menu/textures/irancoj_chat_pills.dds",
+        "size": 16777344,
+        "sha256": "9496c049e1ab111fd6040827a08fad5ac611969b206f72d7800d0254030bf187",
+        "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/edition/irancoj_chat_pills.dds"
+      },
+      {
+        "path": "CoJ2/Data/Menu/textures/irancoj_chat_shade.dds",
+        "size": 524416,
+        "sha256": "75da21d0b3c2ce233ab9566ee61ccf170027591249334e386b69c4e75ee00815",
+        "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/edition/irancoj_chat_shade.dds"
+      },
+      {
+        "path": "CoJ2/Data/Menu/textures/irancoj_chat_top.dds",
+        "size": 65664,
+        "sha256": "55235701b63b60278e7815f570284b5c51a074ae1b95c5187f2c1b0eb9602790",
+        "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/edition/irancoj_chat_top.dds"
+      },
+      {
+        "path": "CoJ2/Data/Menu/textures/irancoj_edit_pill.dds",
+        "size": 262272,
+        "sha256": "92b9810f9cf7a29b32ba20e71047f210aa11bb590baf31212103451b4fa7c8f9",
+        "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/edition/irancoj_edit_pill.dds"
+      },
+      {
         "path": "CoJ2/Data/Menu/textures/irancoj_flat.dds",
         "size": 4224,
         "sha256": "0e63b2005a3923cbb007208f90952d5e77d4d19b17f43b5efe3852f62672d2c2",
         "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/edition/irancoj_flat.dds"
       },
       {
-        "path": "CoJ2/Data/Menu/textures/irancoj_hud_chips.dds",
+        "path": "CoJ2/Data/Menu/textures/irancoj_hint_pill.dds",
         "size": 262272,
-        "sha256": "38a30a631a6edc7c0d5409404945273f5477dc0a7b3b8bc4fcc2a0c07fca094a",
+        "sha256": "3234db3d63f25563b3a2a7fe8df38e121ec70995428712c13d8ab6c435a93956",
+        "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/edition/irancoj_hint_pill.dds"
+      },
+      {
+        "path": "CoJ2/Data/Menu/textures/irancoj_hud_chips.dds",
+        "size": 1048704,
+        "sha256": "6f0bcff0bda6a9f6111a4073cfcde257cf9032ce5785cfa2dd99423764614239",
         "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/edition/irancoj_hud_chips.dds"
       },
       {
         "path": "CoJ2/Data/Menu/textures/irancoj_hud_icons.dds",
         "size": 524416,
-        "sha256": "bbc82c520df53e9b80e306655d9df5b00a0e125baa0c33c8b8caeed7e4249024",
+        "sha256": "ed2fe3d7fc9066938e4ee45a339d03a202e0402528caa80d8a729a053e95618c",
         "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/edition/irancoj_hud_icons.dds"
       },
       {
@@ -1429,10 +1586,34 @@
         "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/edition/irancoj_hud_strip.dds"
       },
       {
+        "path": "CoJ2/Data/Menu/textures/irancoj_kill_pills.dds",
+        "size": 4194432,
+        "sha256": "23ef58cbba664266d07d7024490a9315733290d8b7f42a7d4a6c37518f5141f7",
+        "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/edition/irancoj_kill_pills.dds"
+      },
+      {
+        "path": "CoJ2/Data/Menu/textures/irancoj_killfeed_panel.dds",
+        "size": 262272,
+        "sha256": "6215bb4f0927b4d3e66ee82f8fba7ab8a6a712bd9a60ad627c7045fba304adc0",
+        "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/edition/irancoj_killfeed_panel.dds"
+      },
+      {
+        "path": "CoJ2/Data/Menu/textures/irancoj_killfeed_shade.dds",
+        "size": 524416,
+        "sha256": "634f9c263ee64b0ac6ae08a74ac9eb8d979f8ff9dd53be79401eb41e848a78ae",
+        "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/edition/irancoj_killfeed_shade.dds"
+      },
+      {
         "path": "CoJ2/Data/Menu/textures/irancoj_logo.dds",
         "size": 524416,
         "sha256": "a580f75b1f3034a8bbc5e69977536fc8d331c1780f74a0f9e30d2d5aaf698199",
         "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/edition/irancoj_logo.dds"
+      },
+      {
+        "path": "CoJ2/Data/Menu/textures/irancoj_notice_strip.dds",
+        "size": 196736,
+        "sha256": "3ff2b3853e1e86830e9cfcfe95d49ec36b875707f85f5281de61a16ca2518fea",
+        "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/edition/irancoj_notice_strip.dds"
       },
       {
         "path": "CoJ2/Data/Menu/textures/irancoj_outline.dds",
@@ -1465,6 +1646,24 @@
         "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/edition/irancoj_panel_solo.dds"
       },
       {
+        "path": "CoJ2/Data/Menu/textures/irancoj_rule_star.dds",
+        "size": 262272,
+        "sha256": "703147ab544347ea738afaf68c02ddbe916312ac3e9f458e4758cdde9c723ab1",
+        "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/edition/irancoj_rule_star.dds"
+      },
+      {
+        "path": "CoJ2/Data/Menu/textures/irancoj_score_bits.dds",
+        "size": 524416,
+        "sha256": "217b5c9418d1615e1a4cdaefcf8c40ef48bd060f38e1f7b022865275cd3846a3",
+        "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/edition/irancoj_score_bits.dds"
+      },
+      {
+        "path": "CoJ2/Data/Menu/textures/irancoj_score_plate.dds",
+        "size": 1048704,
+        "sha256": "9583d48bb64e6cea296ed715f2ce237319d14468abce7f7be3137e266f2d3cb5",
+        "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/edition/irancoj_score_plate.dds"
+      },
+      {
         "path": "CoJ2/Data/Menu/textures/irancoj_scroll_knob.dds",
         "size": 8320,
         "sha256": "0c3019c2dcf5b5aaf409f048c2b00a7225285fccffe520aae47c93879805476e",
@@ -1481,6 +1680,36 @@
         "size": 65664,
         "sha256": "44d3fe67480028b02b6b3bac81dacdd70c339e1ba7f8f1e5c975553f38820717",
         "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/edition/irancoj_spinner.dds"
+      },
+      {
+        "path": "CoJ2/Data/Menu/textures/irancoj_standing_band.dds",
+        "size": 524416,
+        "sha256": "fd2ef7dccedbe517fb11cfdc4c3cc960c2e3063aac18a2a833e9b5a8cc15f2a7",
+        "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/edition/irancoj_standing_band.dds"
+      },
+      {
+        "path": "CoJ2/Data/Menu/textures/irancoj_standing_pill.dds",
+        "size": 131200,
+        "sha256": "aac2fc5e0f242d812ac1109cd928f71bc47901c2cee50970a804819b20ed05e4",
+        "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/edition/irancoj_standing_pill.dds"
+      },
+      {
+        "path": "CoJ2/Data/Menu/textures/trophy_bronze.dds",
+        "size": 87536,
+        "sha256": "d523a8b30be067e89270f1c99e93b5fe9d7d23132f0067038fc309ddc8aa3188",
+        "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/edition/trophy_bronze.dds"
+      },
+      {
+        "path": "CoJ2/Data/Menu/textures/trophy_gold.dds",
+        "size": 87536,
+        "sha256": "bfaf57c64585f4ce696fa8e0651208c6023e3d70f2a2d61b5e7225d55f9224c0",
+        "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/edition/trophy_gold.dds"
+      },
+      {
+        "path": "CoJ2/Data/Menu/textures/trophy_silver.dds",
+        "size": 87536,
+        "sha256": "4382ab0da7111af2f8f8e524279b9fe72d157699e3b0d5167c5f11b6c1e41565",
+        "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/edition/trophy_silver.dds"
       },
       {
         "path": "CoJ2/Data/Music/COJ2_New_Menu.ogg",
@@ -1556,6 +1785,15 @@
       "image": "https://raw.githubusercontent.com/roozbehghazavi/IranCoJLauncher-Hub/main/news/images/edition.jpg"
     },
     {
+      "id": "edition-100",
+      "tag": "IRANCOJ EDITION 1.0.0",
+      "title": "A new HUD",
+      "text": "The whole in-game HUD is redrawn: sharper icons, a team score bar with the Lawmen star and the Outlaws skull, a cleaner kill feed with streak cards, a chat that colours names and tags and keeps five lines, your weapon's name when you switch, and a new Shootout and Wanted standing. Menus and loading screens got tidier too.",
+      "date": "2026-11-02",
+      "action": "settings",
+      "actionLabel": "Update the Edition"
+    },
+    {
       "id": "third-person",
       "tag": "NEW",
       "title": "Third Person 1.0.5",
@@ -1567,20 +1805,20 @@
       "image": "https://raw.githubusercontent.com/roozbehghazavi/IranCoJLauncher-Hub/main/news/images/third-person.jpg"
     },
     {
-      "id": "spectate-110",
+      "id": "spectate-111",
       "tag": "MOD UPDATE",
-      "title": "Spectate Mod 1.1.0",
-      "text": "First-person spectating hides the player's face, so the camera no longer clips into beards and eyebrows, and shows a dot crosshair.",
-      "date": "2026-11-01",
+      "title": "Spectate Mod 1.1.1",
+      "text": "Switching between first and third person glides like the Third-Person Camera, and the face hides at the same moment it does there. First-person spectating keeps the dot crosshair.",
+      "date": "2026-11-02",
       "action": "mods",
       "actionLabel": "Update"
     },
     {
-      "id": "new-classes-203",
+      "id": "new-classes-206",
       "tag": "MOD UPDATE",
-      "title": "New Classes 2.0.3",
-      "text": "Silas Greaves, John Wesley Hardin and Billy the Kid as the Rancher, Duelist and Rifleman. 2.0.3 makes their spawns lighter, gives Billy a paler red shirt and adds the crosshair styles.",
-      "date": "2026-10-27",
+      "title": "New Classes 2.0.6",
+      "text": "Silas Greaves, John Wesley Hardin and Billy the Kid as the Rancher, Duelist and Rifleman. 2.0.6 brings the remastered tomahawk icon, no hands in the sniper scope and the crosshair styles.",
+      "date": "2026-11-02",
       "slide": true,
       "action": "mods",
       "actionLabel": "Update",
