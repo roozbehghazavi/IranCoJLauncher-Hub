@@ -111,6 +111,7 @@ Skin("CivilianSuit_null")
 	!include("man_accessories_hideall.skt")
 	!include("man_null.skt")
 	
+	Hide("man_hands_a")
 	Hide("HolsterL")
 	Hide("HolsterR")
 }
@@ -229,6 +230,7 @@ Skin("CivilianSuitB_null")
 	!include("man_accessories_hideall.skt")
 	!include("man_null.skt")
 	
+	Hide("man_hands_a")
 	Hide("HolsterL")
 	Hide("HolsterR")
 }
@@ -346,6 +348,7 @@ Skin("CivilianSuitC_null")
 	!include("man_accessories_hideall.skt")
 	!include("man_null.skt")
 	
+	Hide("man_hands_a")
 	Hide("HolsterL")
 	Hide("HolsterR")
 }
@@ -463,6 +466,7 @@ Skin("CivilianSuitD_null")
 	!include("man_accessories_hideall.skt")
 	!include("man_null.skt")
 	
+	Hide("man_hands_a")
 	Hide("HolsterL")
 	Hide("HolsterR")
 }
@@ -568,6 +572,7 @@ Skin("Farmer_A_null")
 	!include("man_head_l.skt")
 	!include("man_accessories_hideall.skt")
 	
+	Hide("man_hands_a")
 	Hide("HolsterL")
 	Hide("HolsterR")
 }
@@ -685,6 +690,7 @@ Skin("Farmer_B_null")
 	!include("man_accessories_hideall.skt")
 	!include("man_null.skt")
 	
+	Hide("man_hands_a")
 	Hide("HolsterL")
 	Hide("HolsterR")
 }

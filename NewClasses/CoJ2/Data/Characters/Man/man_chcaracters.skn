@@ -79,6 +79,7 @@ Skin("FederalMarshal_null")
 	!include("man_belt_a.skt")
 	
 	
+	Hide("man_hands_a")
 	Hide("HolsterL")
 }
 
@@ -162,6 +163,7 @@ Skin("Pinkerton_null")
 	!include("pinkerton_accessories.skt")
 
 	
+	Hide("man_hands_a")
 	Hide("HolsterL")
 }
 
@@ -259,6 +261,7 @@ Skin("Juarez_null")
 	!include("juarez_accessories.skt")
 	
 	
+	Hide("man_hands_a")
 	Hide("HolsterL")
 	Hide("HolsterR")
 }
@@ -357,6 +360,7 @@ Skin("Juarez_Duel_null")
 	!include("juarez_accessories_duel.skt")
 	
 	
+	Hide("man_hands_a")
 	Hide("HolsterL")
 	Hide("HolsterR")
 }
@@ -443,6 +447,7 @@ Skin("ODonell_null")
 	!include("odonell_holster.skt")
 	
 	
+	Hide("man_hands_a")
 	Hide("HolsterL")
 }
 
@@ -531,6 +536,7 @@ Skin("Devlin_null")
 	!include("man_accessories_hideall.skt")
 
 	
+	Hide("man_hands_a")
 	Hide("HolsterL")
 	Hide("HolsterR")
 }
@@ -615,6 +621,7 @@ Skin("Rattler_null")
 	!include("man_belt_b.skt")
 
 	
+	Hide("man_hands_a")
 	Hide("HolsterL")
 }
 
@@ -710,6 +717,7 @@ Skin("RunningRiver_null")
 	!include("man_rag_b.skt")
 
 	
+	Hide("man_hands_a")
 	Hide("HolsterL")
 	Hide("HolsterR")
 }
@@ -806,6 +814,7 @@ Skin("SeeingFarther_null")
 	!include("man_accessories_hideall.skt")
 
 	
+	Hide("man_hands_a")
 	Hide("HolsterL")
 	Hide("HolsterR")
 }
@@ -902,6 +911,7 @@ Skin("PumaPaw_null")
 	!include("man_accessories_hideall.skt")
 
 	
+	Hide("man_hands_a")
 	Hide("HolsterL")
 	Hide("HolsterR")
 }

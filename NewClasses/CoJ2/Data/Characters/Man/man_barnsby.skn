@@ -78,6 +78,7 @@ Skin("Barnsby_null")
 	!include("barnsby_accessories.skt")
 	
 	
+	Hide("man_hands_a")
 	Hide("HolsterL")
 }
 
@@ -181,6 +182,7 @@ Skin("BarnsbyBandage_null")
 	!include("man_accessories_hideall.skt")
 	
 	
+	Hide("man_hands_a")
 	Hide("HolsterL")
 	Hide("HolsterR")
 }
@@ -281,6 +283,7 @@ Skin("BarnsbyDirt_null")
 	!include("barnsby_accessories.skt")
 	
 	
+	Hide("man_hands_a")
 	Hide("HolsterL")
 }
 
@@ -340,6 +343,7 @@ Skin("BarnsbyTeam_null")
 	!include("barnsby_accessories.skt")
 	
 	
+	Hide("man_hands_a")
 	Hide("HolsterL")
 	Replace("barnsby_torso.mat", "barnsby_torso_team.mat")
 }

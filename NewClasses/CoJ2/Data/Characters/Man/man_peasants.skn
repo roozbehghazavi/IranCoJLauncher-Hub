@@ -102,6 +102,7 @@ Skin("PeasantA_null")
 	!include("man_accessories_hideall.skt")	
 
 	
+	Hide("man_hands_a")
 	Hide("HolsterL")
 	Hide("HolsterR")
 }
@@ -222,6 +223,7 @@ Skin("PeasantATeam_null")
 	
 	Replace("man_torso_j.mat", "man_torso_j_team.mat")
 	Replace("man_pants_i.mat", "man_pants_i_team.mat")
+	Hide("man_hands_a")
 	Hide("HolsterL")
 	Hide("HolsterR")
 }
@@ -330,6 +332,7 @@ Skin("PeasantB_null")
 	!include("man_accessories_hideall.skt")	
 
 	
+	Hide("man_hands_a")
 	Hide("HolsterL")
 	Hide("HolsterR")
 }
@@ -438,6 +441,7 @@ Skin("PeasantC_null")
 	!include("man_accessories_hideall.skt")	
 
 	
+	Hide("man_hands_a")
 	Hide("HolsterL")
 	Hide("HolsterR")
 }

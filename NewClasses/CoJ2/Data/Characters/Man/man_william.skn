@@ -83,6 +83,7 @@ Skin("William_null")
 	!include("william_bag.skt")
 	
 	
+	Hide("man_hands_a")
 	Hide("HolsterL")
 	Hide("HolsterR")
 }
@@ -172,6 +173,7 @@ Skin("WilliamNoBag_null")
 	!include("man_accessories_hideall.skt")
 	
 	
+	Hide("man_hands_a")
 	Hide("HolsterL")
 	Hide("HolsterR")
 }
@@ -236,6 +238,7 @@ Skin("WilliamTeam_null")
 	!include("william_bag.skt")
 	
 	
+	Hide("man_hands_a")
 	Hide("HolsterL")
 	Hide("HolsterR")
 	Replace("william_torso.mat", "william_torso_team.mat")

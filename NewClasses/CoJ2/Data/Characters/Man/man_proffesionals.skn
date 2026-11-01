@@ -66,6 +66,7 @@ Skin("Professional_A_null")
 	!include("man_head_b.skt")
 	!include("pro_accessories.skt")
 
+	Hide("man_hands_a")
 }
 
 // ======================== Professional B ========================
@@ -136,6 +137,7 @@ Skin("Professional_B_null")
 	!include("man_head_k.skt")
 	!include("pro_accessories.skt")
 
+	Hide("man_hands_a")
 }
 
 // ======================== Professional C ========================
@@ -206,6 +208,7 @@ Skin("Professional_C_null")
 	!include("man_head_l.skt")
 	!include("pro_accessories.skt")
 
+	Hide("man_hands_a")
 }
 
 // ======================== Professional D ========================
@@ -276,6 +279,7 @@ Skin("Professional_D_null")
 	!include("man_head_m.skt")
 	!include("pro_accessories.skt")
 
+	Hide("man_hands_a")
 }
 
 // ======================== Professional A Coat ========================
@@ -344,6 +348,7 @@ Skin("Professional_A_Coat_null")
 	!include("man_hands_a.skt")
 	!include("man_head_b.skt")
 	!include("pro_accessories.skt")
+	Hide("man_hands_a")
 }
 
 // ======================== Professional B Coat ========================
@@ -412,6 +417,7 @@ Skin("Professional_B_Coat_null")
 	!include("man_hands_a.skt")
 	!include("man_head_k.skt")
 	!include("pro_accessories.skt")
+	Hide("man_hands_a")
 }
 
 // ======================== Professional C Coat ========================
@@ -480,6 +486,7 @@ Skin("Professional_C_Coat_null")
 	!include("man_hands_a.skt")
 	!include("man_head_l.skt")
 	!include("pro_accessories.skt")
+	Hide("man_hands_a")
 }
 
 // ======================== Professional A Coat ========================
@@ -548,4 +555,5 @@ Skin("Professional_D_Coat_null")
 	!include("man_hands_a.skt")
 	!include("man_head_m.skt")
 	!include("pro_accessories.skt")
+	Hide("man_hands_a")
 }

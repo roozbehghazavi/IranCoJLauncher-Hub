@@ -227,6 +227,7 @@ Skin("RaySoldier_null")
 	!include("ray_head_soldier.skt")
 	!include("rebelb_accessories.skt")
 	
+	Hide("man_hands_a")
 	Hide("HolsterL")
 }
 
@@ -317,6 +318,7 @@ Skin("RaySoldierNoHat_null")
 	!include("ray_head.skt")
 	!include("rebelb_accessories.skt")
 	
+	Hide("man_hands_a")
 	Hide("HolsterL")
 }
 
