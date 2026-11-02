@@ -10,6 +10,17 @@
     "image": "https://raw.githubusercontent.com/roozbehghazavi/IranCoJLauncher-Hub/main/news/images/edition.jpg"
   },
   {
+    "id": "launcher-leaderboard",
+    "tag": "LAUNCHER 3.0.0-ALPHA.23",
+    "title": "The leaderboard,\nright here",
+    "text": "The community leaderboard is now in the launcher: all time, this month or this week, with or without bot matches. Search any outlaw and open their full record.",
+    "date": "2026-11-02",
+    "slide": true,
+    "action": "leaderboard",
+    "actionLabel": "Open the leaderboard",
+    "image": "https://raw.githubusercontent.com/roozbehghazavi/IranCoJLauncher-Hub/main/news/images/launcher-leaderboard.jpg"
+  },
+  {
     "id": "edition-101",
     "tag": "IRANCOJ EDITION 1.0.1",
     "title": "Chat fixes",
@@ -25,7 +36,9 @@
     "text": "The whole in-game HUD is redrawn: sharper icons, a team score bar with the Lawmen star and the Outlaws skull, a cleaner kill feed with streak cards, a chat that colours names and tags and keeps five lines, your weapon's name when you switch, and a new Shootout and Wanted standing. Menus and loading screens got tidier too.",
     "date": "2026-11-02",
     "action": "settings",
-    "actionLabel": "Update the Edition"
+    "actionLabel": "Update the Edition",
+    "slide": true,
+    "image": "https://raw.githubusercontent.com/roozbehghazavi/IranCoJLauncher-Hub/main/news/images/edition-hud.jpg"
   },
   {
     "id": "third-person",
