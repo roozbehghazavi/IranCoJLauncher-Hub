@@ -432,13 +432,13 @@
     {
       "id": "IranCoJHud",
       "name": "IranCoJ HUD",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "description": "The Edition's in-game HUD: kill feed, chat, team score bar, Shootout / Wanted standing and weapon names.",
       "package": {
-        "file": "IranCoJHud-1.0.0.zip",
-        "size": 175157,
-        "sha256": "40dc6d78ca563fcd7d1b2ff859649b6247b3930449499b0f4cf091edd3db6681",
-        "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/mods/IranCoJHud-1.0.0.zip"
+        "file": "IranCoJHud-1.0.1.zip",
+        "size": 179497,
+        "sha256": "6a9c9ff18929e4282797b5c8991375d9aa92b01625d02082f146a55f23767053",
+        "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/mods/IranCoJHud-1.0.1.zip"
       },
       "exclude": [
         "mods.txt"
@@ -637,7 +637,7 @@
     }
   ],
   "edition": {
-    "version": "1.0.0",
+    "version": "1.0.1",
     "ownUserFolder": true,
     "menuNavigation": true,
     "include": [
@@ -902,6 +902,10 @@
           [
             "<Id>I_IrnPointsShade</Id>\r\n<Width>260\\.000000</Width>\r\n<Height>50\\.000000</Height>\r\n<Position>510\\.000000,23\\.000000,0\\.000000</Position>\r\n<Opacity>0\\.000000</Opacity>\r\n<SizeMode>4</SizeMode>\r\n<ImagePath>irn_standing_band</ImagePath>\r\n</Properties>\r\n</MyImage>\r\n<MyHtml>\r\n<Properties>\r\n<Id>H_IrnStanding</Id>\r\n<Width>260\\.000000</Width>\r\n<Height>50\\.000000</Height>\r\n<Position>510\\.000000,23\\.000000,0\\.000000</Position>\r\n<ContentHorizontalAlign>center</ContentHorizontalAlign>\r\n",
             "<Id>I_IrnPointsShade</Id>\r\n<Width>280.000000</Width>\r\n<Height>66.000000</Height>\r\n<Position>500.000000,15.000000,0.000000</Position>\r\n<Opacity>0.000000</Opacity>\r\n<SizeMode>4</SizeMode>\r\n<ImagePath>irn_standing_band</ImagePath>\r\n</Properties>\r\n</MyImage>\r\n<MyHtml>\r\n<Properties>\r\n<Id>H_IrnStanding</Id>\r\n<Width>280.000000</Width>\r\n<Height>66.000000</Height>\r\n<Position>500.000000,15.000000,0.000000</Position>\r\n<ContentHorizontalAlign>center</ContentHorizontalAlign>\r\n"
+          ],
+          [
+            "<Id>I_IrnChatShade1</Id>\r\n<Width>320\\.000000</Width>\r\n<Height>43\\.000000</Height>\r\n<Position>0\\.000000,0\\.000000,0\\.000000</Position>\r\n<Opacity>0\\.000000</Opacity>\r\n<SizeMode>4</SizeMode>\r\n<ImagePath>irn_chat_pill1</ImagePath>\r\n</Properties>\r\n</MyImage>\r\n<MyImage>\r\n<Properties>\r\n<Id>I_IrnChatShade2</Id>\r\n<Width>320\\.000000</Width>\r\n<Height>66\\.000000</Height>\r\n<Position>0\\.000000,0\\.000000,0\\.000000</Position>\r\n<Opacity>0\\.000000</Opacity>\r\n<SizeMode>4</SizeMode>\r\n<ImagePath>irn_chat_pill2</ImagePath>\r\n</Properties>\r\n</MyImage>\r\n<MyImage>\r\n<Properties>\r\n<Id>I_IrnChatShade3</Id>\r\n<Width>320\\.000000</Width>\r\n<Height>89\\.000000</Height>\r\n<Position>0\\.000000,0\\.000000,0\\.000000</Position>\r\n<Opacity>0\\.000000</Opacity>\r\n<SizeMode>4</SizeMode>\r\n<ImagePath>irn_chat_pill3</ImagePath>\r\n</Properties>\r\n</MyImage>\r\n<MyImage>\r\n<Properties>\r\n<Id>I_IrnChatShade4</Id>\r\n<Width>320\\.000000</Width>\r\n<Height>112\\.000000</Height>\r\n<Position>0\\.000000,0\\.000000,0\\.000000</Position>\r\n<Opacity>0\\.000000</Opacity>\r\n<SizeMode>4</SizeMode>\r\n<ImagePath>irn_chat_pill4</ImagePath>\r\n</Properties>\r\n</MyImage>\r\n<MyImage>\r\n<Properties>\r\n<Id>I_IrnChatShade5</Id>\r\n<Width>320\\.000000</Width>\r\n<Height>135\\.000000</Height>\r\n<Position>0\\.000000,0\\.000000,0\\.000000</Position>\r\n<Opacity>0\\.000000</Opacity>\r\n<SizeMode>4</SizeMode>\r\n<ImagePath>irn_chat_pill5</ImagePath>\r\n</Properties>\r\n</MyImage>\r\n<MyImage>\r\n<Properties>\r\n<Id>I_IrnChatShade6</Id>\r\n<Width>320\\.000000</Width>\r\n<Height>158\\.000000</Height>\r\n<Position>0\\.000000,0\\.000000,0\\.000000</Position>\r\n<Opacity>0\\.000000</Opacity>\r\n<SizeMode>4</SizeMode>\r\n<ImagePath>irn_chat_pill6</ImagePath>\r\n</Properties>\r\n</MyImage>\r\n<MyImage>\r\n<Properties>\r\n<Id>I_IrnChatShade7</Id>\r\n<Width>320\\.000000</Width>\r\n<Height>181\\.000000</Height>\r\n<Position>0\\.000000,0\\.000000,0\\.000000</Position>\r\n<Opacity>0\\.000000</Opacity>\r\n<SizeMode>4</SizeMode>\r\n<ImagePath>irn_chat_pill7</ImagePath>\r\n</Properties>\r\n</MyImage>\r\n<MyImage>\r\n<Properties>\r\n<Id>I_IrnChatShade8</Id>\r\n<Width>320\\.000000</Width>\r\n<Height>204\\.000000</Height>\r\n<Position>0\\.000000,0\\.000000,0\\.000000</Position>\r\n<Opacity>0\\.000000</Opacity>\r\n<SizeMode>4</SizeMode>\r\n<ImagePath>irn_chat_pill8</ImagePath>\r\n</Properties>\r\n</MyImage>\r\n<MyImage>\r\n<Properties>\r\n<Id>I_IrnChatShade9</Id>\r\n<Width>320\\.000000</Width>\r\n<Height>227\\.000000</Height>\r\n<Position>0\\.000000,0\\.000000,0\\.000000</Position>\r\n<Opacity>0\\.000000</Opacity>\r\n<SizeMode>4</SizeMode>\r\n<ImagePath>irn_chat_pill9</ImagePath>\r\n</Properties>\r\n</MyImage>\r\n<MyImage>\r\n<Properties>\r\n<Id>I_IrnChatShade10</Id>\r\n<Width>320\\.000000</Width>\r\n<Height>250\\.000000</Height>\r\n<Position>0\\.000000,0\\.000000,0\\.000000</Position>\r\n<Opacity>0\\.000000</Opacity>\r\n<SizeMode>4</SizeMode>\r\n<ImagePath>irn_chat_pill10</ImagePath>\r\n</Properties>\r\n</MyImage>\r\n<MyImage>\r\n<Properties>\r\n<Id>I_IrnChatShade11</Id>\r\n<Width>320\\.000000</Width>\r\n<Height>273\\.000000</Height>\r\n<Position>0\\.000000,0\\.000000,0\\.000000</Position>\r\n<Opacity>0\\.000000</Opacity>\r\n<SizeMode>4</SizeMode>\r\n<ImagePath>irn_chat_pill11</ImagePath>\r\n</Properties>\r\n</MyImage>\r\n<MyImage>\r\n<Properties>\r\n<Id>I_IrnChatShade12</Id>\r\n<Width>320\\.000000</Width>\r\n<Height>296\\.000000</Height>\r\n<Position>0\\.000000,0\\.000000,0\\.000000</Position>\r\n<Opacity>0\\.000000</Opacity>\r\n<SizeMode>4</SizeMode>\r\n<ImagePath>irn_chat_pill12</ImagePath>\r\n</Properties>\r\n</MyImage>\r\n<MyImage>\r\n<Properties>\r\n<Id>I_IrnChatShade13</Id>\r\n<Width>320\\.000000</Width>\r\n<Height>319\\.000000</Height>\r\n<Position>0\\.000000,0\\.000000,0\\.000000</Position>\r\n<Opacity>0\\.000000</Opacity>\r\n<SizeMode>4</SizeMode>\r\n<ImagePath>irn_chat_pill13</ImagePath>\r\n</Properties>\r\n</MyImage>\r\n<MyImage>\r\n<Properties>\r\n<Id>I_IrnChatShade14</Id>\r\n<Width>320\\.000000</Width>\r\n<Height>342\\.000000</Height>\r\n<Position>0\\.000000,0\\.000000,0\\.000000</Position>\r\n<Opacity>0\\.000000</Opacity>\r\n<SizeMode>4</SizeMode>\r\n<ImagePath>irn_chat_pill14</ImagePath>\r\n</Properties>\r\n</MyImage>\r\n<MyImage>\r\n<Properties>\r\n<Id>I_IrnChatShade15</Id>\r\n<Width>320\\.000000</Width>\r\n<Height>365\\.000000</Height>\r\n<Position>0\\.000000,0\\.000000,0\\.000000</Position>\r\n<Opacity>0\\.000000</Opacity>\r\n<SizeMode>4</SizeMode>\r\n<ImagePath>irn_chat_pill15</ImagePath>\r\n</Properties>\r\n</MyImage>\r\n<MyHtml>\r\n<Properties>\r\n<Id>H_IrnChat</Id>\r\n<Width>296\\.000000</Width>\r\n<Height>360\\.000000</Height>\r\n",
+            "<Id>I_IrnChatShade1</Id>\r\n<Width>424.000000</Width>\r\n<Height>43.000000</Height>\r\n<Position>0.000000,0.000000,0.000000</Position>\r\n<Opacity>0.000000</Opacity>\r\n<SizeMode>4</SizeMode>\r\n<ImagePath>irn_chat_pill1</ImagePath>\r\n</Properties>\r\n</MyImage>\r\n<MyImage>\r\n<Properties>\r\n<Id>I_IrnChatShade2</Id>\r\n<Width>424.000000</Width>\r\n<Height>66.000000</Height>\r\n<Position>0.000000,0.000000,0.000000</Position>\r\n<Opacity>0.000000</Opacity>\r\n<SizeMode>4</SizeMode>\r\n<ImagePath>irn_chat_pill2</ImagePath>\r\n</Properties>\r\n</MyImage>\r\n<MyImage>\r\n<Properties>\r\n<Id>I_IrnChatShade3</Id>\r\n<Width>424.000000</Width>\r\n<Height>89.000000</Height>\r\n<Position>0.000000,0.000000,0.000000</Position>\r\n<Opacity>0.000000</Opacity>\r\n<SizeMode>4</SizeMode>\r\n<ImagePath>irn_chat_pill3</ImagePath>\r\n</Properties>\r\n</MyImage>\r\n<MyImage>\r\n<Properties>\r\n<Id>I_IrnChatShade4</Id>\r\n<Width>424.000000</Width>\r\n<Height>112.000000</Height>\r\n<Position>0.000000,0.000000,0.000000</Position>\r\n<Opacity>0.000000</Opacity>\r\n<SizeMode>4</SizeMode>\r\n<ImagePath>irn_chat_pill4</ImagePath>\r\n</Properties>\r\n</MyImage>\r\n<MyImage>\r\n<Properties>\r\n<Id>I_IrnChatShade5</Id>\r\n<Width>424.000000</Width>\r\n<Height>135.000000</Height>\r\n<Position>0.000000,0.000000,0.000000</Position>\r\n<Opacity>0.000000</Opacity>\r\n<SizeMode>4</SizeMode>\r\n<ImagePath>irn_chat_pill5</ImagePath>\r\n</Properties>\r\n</MyImage>\r\n<MyImage>\r\n<Properties>\r\n<Id>I_IrnChatShade6</Id>\r\n<Width>424.000000</Width>\r\n<Height>158.000000</Height>\r\n<Position>0.000000,0.000000,0.000000</Position>\r\n<Opacity>0.000000</Opacity>\r\n<SizeMode>4</SizeMode>\r\n<ImagePath>irn_chat_pill6</ImagePath>\r\n</Properties>\r\n</MyImage>\r\n<MyImage>\r\n<Properties>\r\n<Id>I_IrnChatShade7</Id>\r\n<Width>424.000000</Width>\r\n<Height>181.000000</Height>\r\n<Position>0.000000,0.000000,0.000000</Position>\r\n<Opacity>0.000000</Opacity>\r\n<SizeMode>4</SizeMode>\r\n<ImagePath>irn_chat_pill7</ImagePath>\r\n</Properties>\r\n</MyImage>\r\n<MyImage>\r\n<Properties>\r\n<Id>I_IrnChatShade8</Id>\r\n<Width>424.000000</Width>\r\n<Height>204.000000</Height>\r\n<Position>0.000000,0.000000,0.000000</Position>\r\n<Opacity>0.000000</Opacity>\r\n<SizeMode>4</SizeMode>\r\n<ImagePath>irn_chat_pill8</ImagePath>\r\n</Properties>\r\n</MyImage>\r\n<MyImage>\r\n<Properties>\r\n<Id>I_IrnChatShade9</Id>\r\n<Width>424.000000</Width>\r\n<Height>227.000000</Height>\r\n<Position>0.000000,0.000000,0.000000</Position>\r\n<Opacity>0.000000</Opacity>\r\n<SizeMode>4</SizeMode>\r\n<ImagePath>irn_chat_pill9</ImagePath>\r\n</Properties>\r\n</MyImage>\r\n<MyImage>\r\n<Properties>\r\n<Id>I_IrnChatShade10</Id>\r\n<Width>424.000000</Width>\r\n<Height>250.000000</Height>\r\n<Position>0.000000,0.000000,0.000000</Position>\r\n<Opacity>0.000000</Opacity>\r\n<SizeMode>4</SizeMode>\r\n<ImagePath>irn_chat_pill10</ImagePath>\r\n</Properties>\r\n</MyImage>\r\n<MyImage>\r\n<Properties>\r\n<Id>I_IrnChatShade11</Id>\r\n<Width>424.000000</Width>\r\n<Height>273.000000</Height>\r\n<Position>0.000000,0.000000,0.000000</Position>\r\n<Opacity>0.000000</Opacity>\r\n<SizeMode>4</SizeMode>\r\n<ImagePath>irn_chat_pill11</ImagePath>\r\n</Properties>\r\n</MyImage>\r\n<MyImage>\r\n<Properties>\r\n<Id>I_IrnChatShade12</Id>\r\n<Width>424.000000</Width>\r\n<Height>296.000000</Height>\r\n<Position>0.000000,0.000000,0.000000</Position>\r\n<Opacity>0.000000</Opacity>\r\n<SizeMode>4</SizeMode>\r\n<ImagePath>irn_chat_pill12</ImagePath>\r\n</Properties>\r\n</MyImage>\r\n<MyImage>\r\n<Properties>\r\n<Id>I_IrnChatShade13</Id>\r\n<Width>424.000000</Width>\r\n<Height>319.000000</Height>\r\n<Position>0.000000,0.000000,0.000000</Position>\r\n<Opacity>0.000000</Opacity>\r\n<SizeMode>4</SizeMode>\r\n<ImagePath>irn_chat_pill13</ImagePath>\r\n</Properties>\r\n</MyImage>\r\n<MyImage>\r\n<Properties>\r\n<Id>I_IrnChatShade14</Id>\r\n<Width>424.000000</Width>\r\n<Height>342.000000</Height>\r\n<Position>0.000000,0.000000,0.000000</Position>\r\n<Opacity>0.000000</Opacity>\r\n<SizeMode>4</SizeMode>\r\n<ImagePath>irn_chat_pill14</ImagePath>\r\n</Properties>\r\n</MyImage>\r\n<MyImage>\r\n<Properties>\r\n<Id>I_IrnChatShade15</Id>\r\n<Width>424.000000</Width>\r\n<Height>365.000000</Height>\r\n<Position>0.000000,0.000000,0.000000</Position>\r\n<Opacity>0.000000</Opacity>\r\n<SizeMode>4</SizeMode>\r\n<ImagePath>irn_chat_pill15</ImagePath>\r\n</Properties>\r\n</MyImage>\r\n<MyHtml>\r\n<Properties>\r\n<Id>H_IrnChat</Id>\r\n<Width>400.000000</Width>\r\n<Height>360.000000</Height>\r\n"
           ]
         ]
       },
@@ -958,6 +962,10 @@
           [
             "\\{\r\n\tRect\\(\"irn_standing_band\", 0, 0, 260, 50\\)\r\n\tRect\\(\"irn_gold_line\", 0, 112, 256, 116\\)\r\n",
             "{\r\n\tRect(\"irn_standing_band\", 0, 0, 280, 66)\r\n\tRect(\"irn_gold_line\", 0, 112, 256, 116)\r\n"
+          ],
+          [
+            "\\{\r\n\tRect\\(\"irn_chat_pill1\", 0, 0, 320, 43\\)\r\n\tRect\\(\"irn_chat_pill2\", 0, 51, 320, 117\\)\r\n\tRect\\(\"irn_chat_pill3\", 0, 125, 320, 214\\)\r\n\tRect\\(\"irn_chat_pill4\", 0, 222, 320, 334\\)\r\n\tRect\\(\"irn_chat_pill5\", 0, 342, 320, 477\\)\r\n\tRect\\(\"irn_chat_pill6\", 328, 0, 648, 158\\)\r\n\tRect\\(\"irn_chat_pill7\", 328, 166, 648, 347\\)\r\n\tRect\\(\"irn_chat_pill8\", 328, 355, 648, 559\\)\r\n\tRect\\(\"irn_chat_pill9\", 328, 567, 648, 794\\)\r\n\tRect\\(\"irn_chat_pill10\", 328, 802, 648, 1052\\)\r\n\tRect\\(\"irn_chat_pill11\", 656, 0, 976, 273\\)\r\n\tRect\\(\"irn_chat_pill12\", 656, 281, 976, 577\\)\r\n\tRect\\(\"irn_chat_pill13\", 656, 585, 976, 904\\)\r\n\tRect\\(\"irn_chat_pill14\", 656, 912, 976, 1254\\)\r\n\tRect\\(\"irn_chat_pill15\", 656, 1262, 976, 1627\\)\r\n\\}\r\n",
+            "{\r\n\tRect(\"irn_chat_pill1\", 0, 0, 424, 43)\r\n\tRect(\"irn_chat_pill2\", 0, 51, 424, 117)\r\n\tRect(\"irn_chat_pill3\", 0, 125, 424, 214)\r\n\tRect(\"irn_chat_pill4\", 0, 222, 424, 334)\r\n\tRect(\"irn_chat_pill5\", 0, 342, 424, 477)\r\n\tRect(\"irn_chat_pill6\", 432, 0, 856, 158)\r\n\tRect(\"irn_chat_pill7\", 432, 166, 856, 347)\r\n\tRect(\"irn_chat_pill8\", 432, 355, 856, 559)\r\n\tRect(\"irn_chat_pill9\", 432, 567, 856, 794)\r\n\tRect(\"irn_chat_pill10\", 432, 802, 856, 1052)\r\n\tRect(\"irn_chat_pill11\", 864, 0, 1288, 273)\r\n\tRect(\"irn_chat_pill12\", 864, 281, 1288, 577)\r\n\tRect(\"irn_chat_pill13\", 864, 585, 1288, 904)\r\n\tRect(\"irn_chat_pill14\", 864, 912, 1288, 1254)\r\n\tRect(\"irn_chat_pill15\", 864, 1262, 1288, 1627)\r\n}\r\n"
           ]
         ]
       },
@@ -1046,7 +1054,7 @@
           ],
           [
             "\\z",
-            " \u0000Name_WeaponPistolFrontierUpgrade\u0012\u0000S\u0000p\u0000r\u0000i\u0000n\u0000g\u0000f\u0000i\u0000e\u0000l\u0000d\u0000 \u0000M\u0000u\u0000s\u0000k\u0000e\u0000t\u0000#\u0000Name_WeaponPistolFrontierUpgradeNet\u0012\u0000S\u0000p\u0000r\u0000i\u0000n\u0000g\u0000f\u0000i\u0000e\u0000l\u0000d\u0000 \u0000M\u0000u\u0000s\u0000k\u0000e\u0000t\u0000\u001d\u0000N_WeaponPistolFrontierUpgrade\u0012\u0000S\u0000p\u0000r\u0000i\u0000n\u0000g\u0000f\u0000i\u0000e\u0000l\u0000d\u0000 \u0000M\u0000u\u0000s\u0000k\u0000e\u0000t\u0000\u0017\u0000MenuDerringerUpgradeNet\u000f\u0000T\u0000h\u0000r\u0000o\u0000w\u0000i\u0000n\u0000g\u0000 \u0000K\u0000n\u0000i\u0000v\u0000e\u0000s\u0000$\u0000Name_WeaponPistolDerringerUpgradeNet\u000e\u0000T\u0000h\u0000r\u0000o\u0000w\u0000i\u0000n\u0000g\u0000 \u0000K\u0000n\u0000i\u0000f\u0000e\u0000!\u0000Name_WeaponPistolDerringerUpgrade\u000e\u0000T\u0000h\u0000r\u0000o\u0000w\u0000i\u0000n\u0000g\u0000 \u0000K\u0000n\u0000i\u0000f\u0000e\u0000\u001e\u0000N_WeaponPistolDerringerUpgrade\u000e\u0000T\u0000h\u0000r\u0000o\u0000w\u0000i\u0000n\u0000g\u0000 \u0000K\u0000n\u0000i\u0000f\u0000e\u0000\u0014\u0000MenuLemantUpgradeNet\b\u0000T\u0000o\u0000m\u0000a\u0000h\u0000a\u0000w\u0000k\u0000!\u0000Name_WeaponPistolLemantUpgradeNet\b\u0000T\u0000o\u0000m\u0000a\u0000h\u0000a\u0000w\u0000k\u0000\u001e\u0000Name_WeaponPistolLemantUpgrade\b\u0000T\u0000o\u0000m\u0000a\u0000h\u0000a\u0000w\u0000k\u0000\u001b\u0000N_WeaponPistolLemantUpgrade\b\u0000T\u0000o\u0000m\u0000a\u0000h\u0000a\u0000w\u0000k\u0000\u0011\u0000IrnEditionVersion\u0015\u0000I\u0000r\u0000a\u0000n\u0000C\u0000o\u0000J\u0000 \u0000E\u0000d\u0000i\u0000t\u0000i\u0000o\u0000n\u0000 \u00001\u0000.\u00000\u0000.\u00000\u0000"
+            " \u0000Name_WeaponPistolFrontierUpgrade\u0012\u0000S\u0000p\u0000r\u0000i\u0000n\u0000g\u0000f\u0000i\u0000e\u0000l\u0000d\u0000 \u0000M\u0000u\u0000s\u0000k\u0000e\u0000t\u0000#\u0000Name_WeaponPistolFrontierUpgradeNet\u0012\u0000S\u0000p\u0000r\u0000i\u0000n\u0000g\u0000f\u0000i\u0000e\u0000l\u0000d\u0000 \u0000M\u0000u\u0000s\u0000k\u0000e\u0000t\u0000\u001d\u0000N_WeaponPistolFrontierUpgrade\u0012\u0000S\u0000p\u0000r\u0000i\u0000n\u0000g\u0000f\u0000i\u0000e\u0000l\u0000d\u0000 \u0000M\u0000u\u0000s\u0000k\u0000e\u0000t\u0000\u0017\u0000MenuDerringerUpgradeNet\u000f\u0000T\u0000h\u0000r\u0000o\u0000w\u0000i\u0000n\u0000g\u0000 \u0000K\u0000n\u0000i\u0000v\u0000e\u0000s\u0000$\u0000Name_WeaponPistolDerringerUpgradeNet\u000e\u0000T\u0000h\u0000r\u0000o\u0000w\u0000i\u0000n\u0000g\u0000 \u0000K\u0000n\u0000i\u0000f\u0000e\u0000!\u0000Name_WeaponPistolDerringerUpgrade\u000e\u0000T\u0000h\u0000r\u0000o\u0000w\u0000i\u0000n\u0000g\u0000 \u0000K\u0000n\u0000i\u0000f\u0000e\u0000\u001e\u0000N_WeaponPistolDerringerUpgrade\u000e\u0000T\u0000h\u0000r\u0000o\u0000w\u0000i\u0000n\u0000g\u0000 \u0000K\u0000n\u0000i\u0000f\u0000e\u0000\u0014\u0000MenuLemantUpgradeNet\b\u0000T\u0000o\u0000m\u0000a\u0000h\u0000a\u0000w\u0000k\u0000!\u0000Name_WeaponPistolLemantUpgradeNet\b\u0000T\u0000o\u0000m\u0000a\u0000h\u0000a\u0000w\u0000k\u0000\u001e\u0000Name_WeaponPistolLemantUpgrade\b\u0000T\u0000o\u0000m\u0000a\u0000h\u0000a\u0000w\u0000k\u0000\u001b\u0000N_WeaponPistolLemantUpgrade\b\u0000T\u0000o\u0000m\u0000a\u0000h\u0000a\u0000w\u0000k\u0000\u0011\u0000IrnEditionVersion\u0015\u0000I\u0000r\u0000a\u0000n\u0000C\u0000o\u0000J\u0000 \u0000E\u0000d\u0000i\u0000t\u0000i\u0000o\u0000n\u0000 \u00001\u0000.\u00000\u0000.\u00001\u0000"
           ]
         ]
       },
@@ -1462,7 +1470,7 @@
       {
         "path": "CoJ2/Data/Menu/scr/Credits_PC.scr",
         "size": 4952,
-        "sha256": "7c7355ac80eb48208a8e348cb449a28c6768ec6c86031651001245e023df175f",
+        "sha256": "13b0a3a7caba43ada6e343336c5a1ae3fe9d2b363ac47084ada5d0af80036acc",
         "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/edition/Credits_PC.scr"
       },
       {
@@ -1528,7 +1536,7 @@
       {
         "path": "CoJ2/Data/Menu/textures/irancoj_chat_pills.dds",
         "size": 16777344,
-        "sha256": "9496c049e1ab111fd6040827a08fad5ac611969b206f72d7800d0254030bf187",
+        "sha256": "99b8626e273d49f59d3af270c893c06a5bd39474cdee2b9b8c5a9bca3fc46a6f",
         "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/edition/irancoj_chat_pills.dds"
       },
       {
@@ -1588,7 +1596,7 @@
       {
         "path": "CoJ2/Data/Menu/textures/irancoj_kill_pills.dds",
         "size": 4194432,
-        "sha256": "23ef58cbba664266d07d7024490a9315733290d8b7f42a7d4a6c37518f5141f7",
+        "sha256": "ba94c66c1f84dc95a35d772df9ad1b3e7b4a3aa2db3ec319c01ba7d1809c586e",
         "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/edition/irancoj_kill_pills.dds"
       },
       {
@@ -1783,6 +1791,15 @@
       "action": "settings",
       "actionLabel": "Set up the Edition",
       "image": "https://raw.githubusercontent.com/roozbehghazavi/IranCoJLauncher-Hub/main/news/images/edition.jpg"
+    },
+    {
+      "id": "edition-101",
+      "tag": "IRANCOJ EDITION 1.0.1",
+      "title": "Chat fixes",
+      "text": "IranCoJ HUD 1.0.1: a wider chat that shows whole messages, names in team colours (orange without a team), green team chat and red server messages, shades that fit the kill feed and chat, the chat on the scoreboard from the moment you join, and no chat or kill feed over the class screen.",
+      "date": "2026-11-02",
+      "action": "settings",
+      "actionLabel": "Update the Edition"
     },
     {
       "id": "edition-100",
