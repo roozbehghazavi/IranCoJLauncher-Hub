@@ -10,6 +10,15 @@
     "image": "https://raw.githubusercontent.com/roozbehghazavi/IranCoJLauncher-Hub/main/news/images/edition.jpg"
   },
   {
+    "id": "edition-101",
+    "tag": "IRANCOJ EDITION 1.0.1",
+    "title": "Chat fixes",
+    "text": "IranCoJ HUD 1.0.1: a wider chat that shows whole messages, names in team colours (orange without a team), green team chat and red server messages, shades that fit the kill feed and chat, the chat on the scoreboard from the moment you join, and no chat or kill feed over the class screen.",
+    "date": "2026-11-02",
+    "action": "settings",
+    "actionLabel": "Update the Edition"
+  },
+  {
     "id": "edition-100",
     "tag": "IRANCOJ EDITION 1.0.0",
     "title": "A new HUD",

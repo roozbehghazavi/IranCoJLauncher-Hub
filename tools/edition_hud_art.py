@@ -249,7 +249,7 @@ def chat_rim(bottom=False):
 
 
 KILL_PILLS = [(440, 22 + 32 * n) for n in range(1, 6)]    # the kill feed's shades, by its line count
-CHAT_PILLS = [(320, 20 + 23 * n) for n in range(1, 16)]   # the chat's, by its rows
+CHAT_PILLS = [(424, 20 + 23 * n) for n in range(1, 16)]   # the chat's, by its rows
 
 
 def pill_atlas(sizes, alpha, columns, size, dark_side="left"):
@@ -279,7 +279,7 @@ def pill_atlas(sizes, alpha, columns, size, dark_side="left"):
 
 
 EDIT_PILL = (620, 36)   # the chat's typing box (HUD_Net.xui NetChatEdit I_Background)
-SHADE_ALPHA = {"kill": 150, "chat": 160, "edit": 170}
+SHADE_ALPHA = {"kill": 120, "chat": 130, "edit": 170}
 
 
 def hint_pill(w=700, hh=40):
