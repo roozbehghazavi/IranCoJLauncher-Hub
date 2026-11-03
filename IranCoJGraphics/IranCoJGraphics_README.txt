@@ -1,4 +1,4 @@
-IranCoJ Graphics 1.1.0 - the Edition's remastered graphics, by Thomas (Roozbeh).
+IranCoJ Graphics 1.1.1 - the Edition's remastered graphics, by Thomas (Roozbeh).
 
 Everything is set in the IranCoJ Launcher: Settings > Graphics & Sound > Remastered or Vanilla, and each feature on
 its own in the Remastered group. The launcher writes irancojfx.ini and edited copies of the game's own pipeline
@@ -16,3 +16,6 @@ scripts and shaders (from your install); Vanilla removes them again. Nothing of 
 
 irancojfx.dll also logs every shader the engine fails to compile to irancojfx.log (with irancojfx_shader_fail_*.hlsl
 next to it), for anyone working on the shaders.
+
+1.1.1: joining servers with Remastered on works again: the map check the game runs before loading a map (the
+"wrong map crc" error) now reads the map files as they are, not with the scaled distances.
