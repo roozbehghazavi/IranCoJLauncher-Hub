@@ -6,5 +6,6 @@
   "version": "1.0.0",
   "disable": [
     "CoJ2/Data/textures1.rpack"
-  ]
+  ],
+  "optional": true
 }

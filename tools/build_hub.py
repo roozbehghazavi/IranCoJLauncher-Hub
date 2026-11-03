@@ -279,7 +279,27 @@ def build_mods():
         if platforms:
             entry["platforms"] = platforms
         mods.append(entry)
+    prune_old_packages(manifests, assets)
     return mods
+
+
+def prune_old_packages(manifests, assets):
+    """Only each mod's current package stays in the mods release: an older "<Id>-<version>.zip" of a mod that is
+    still listed is deleted (the catalog never points at it again). Files of other names are left alone."""
+    keep, ids = set(), []
+    for mod in manifests:
+        ids.append(mod["id"])
+        keep.add(mod["package"])
+        for p in ("windows", "linux"):
+            if isinstance(mod.get(p, {}).get("package"), str):
+                keep.add(mod[p]["package"])
+    for name in sorted(assets):
+        if name in keep or not name.lower().endswith(".zip"):
+            continue
+        owner = next((i for i in ids if name.startswith(i + "-") and name[len(i) + 1:len(i) + 2].isdigit()), None)
+        if owner:
+            print(f"delete {MODS_RELEASE}/{name} (older {owner})")
+            gh("release", "delete-asset", MODS_RELEASE, name, "-y", capture=False)
 
 
 # ---------- legacy (launcher v2.0.1) ----------
