@@ -7,6 +7,8 @@ writing both under a game font's name changes every text that uses it, menus and
     Clarendon Condensed_32   menus, dialogs, lists
     Typodermic_24            in-game headers and HUD texts (map, mode, cash, team, notices)
     Typodermic_36            big HUD digits
+    Clarendon Condensed_64   map names on the loading screen (TextHuge): Oswald at twice the 32's size, so big
+                             titles stay sharp. The game has no 64 of its own: its layout is the 32's, doubled.
 
     python tools/edition_font.py <game>/CoJ2 tools/fonts/Oswald.ttf <out: edition/files/CoJ2/Data/Panel>
 
@@ -29,10 +31,11 @@ from edition_menu_art import write_dds  # noqa: E402
 # packed tight bleed in - the row below showed as a faint "reflection" under the text.
 GAP_X, GAP_Y = 3, 6
 
-FONTS = {  # game font -> Oswald weight, horizontal gap
-    "Clarendon Condensed_32": (500, GAP_X),
-    "Typodermic_24": (500, GAP_X),
-    "Typodermic_36": (500, 1),  # big digits in a 256x128 atlas: tight sideways, the rows still apart
+FONTS = {  # font -> Oswald weight, horizontal gap, the game font whose layout it takes, scale
+    "Clarendon Condensed_32": (500, GAP_X, None, 1),
+    "Typodermic_24": (500, GAP_X, None, 1),
+    "Typodermic_36": (500, 1, None, 1),  # big digits in a 256x128 atlas: tight sideways, the rows still apart
+    "Clarendon Condensed_64": (500, 2 * GAP_X, "Clarendon Condensed_32", 2),
 }
 
 
@@ -102,11 +105,15 @@ ARROWS = {"[ArrowLeftRight]": ["left", "right"], "[ArrowUpDown]": ["up", "down"]
           "[ArrowUp]": ["up"], "[ArrowLeft]": ["left"], "[ArrowRight]": ["right"]}
 
 
-def build(coj2, ttf, out, name, weight, gap_x):
-    fm = game_file(coj2, f"Panel/{name}.fm").decode("latin1")
-    original = Image.open(io.BytesIO(game_file(coj2, f"Panel/{name}.dds"))).convert("RGBA")
+def build(coj2, ttf, out, name, weight, gap_x, source=None, scale=1):
+    source = source or name
+    fm = game_file(coj2, f"Panel/{source}.fm").decode("latin1")
+    original = Image.open(io.BytesIO(game_file(coj2, f"Panel/{source}.dds"))).convert("RGBA")
     map_w, map_h, cell, chars, specials = metrics(fm)
     baseline, cap_height, probe = measure(original, chars)
+    if scale != 1:
+        map_w, map_h, cell, baseline, cap_height = (v * scale for v in (map_w, map_h, cell, baseline, cap_height))
+        specials = [(c, adv * scale, tuple(v * scale for v in box), note) for c, adv, box, note in specials]
     font = oswald(ttf, weight, cap_height, probe)
     # Icon glyphs (gamepad buttons, arrows) sit in reserved rects; keep glyphs above them.
     reserved = min([box[1] for _, _, box, _ in specials], default=map_h)
@@ -124,7 +131,7 @@ def build(coj2, ttf, out, name, weight, gap_x):
             continue
         width = max(1, round(font.getlength(ch))) + 2
         if x + width > map_w:
-            x, y = 0, y + cell + GAP_Y
+            x, y = 0, y + cell + GAP_Y * scale
             if y + cell > reserved:
                 raise SystemExit(f"{name}: atlas full")
         # Drawn clipped to its own box: ink past it (accents, descenders) would sit in the gap, where the
@@ -151,5 +158,5 @@ def build(coj2, ttf, out, name, weight, gap_x):
 
 if __name__ == "__main__":
     coj2, ttf, out = sys.argv[1:4]
-    for name, (weight, gap_x) in FONTS.items():
-        build(coj2, ttf, out, name, weight, gap_x)
+    for name, (weight, gap_x, source, scale) in FONTS.items():
+        build(coj2, ttf, out, name, weight, gap_x, source, scale)
