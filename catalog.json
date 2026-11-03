@@ -430,15 +430,38 @@
       "optional": true
     },
     {
+      "id": "IranCoJGraphics",
+      "name": "IranCoJ Graphics",
+      "version": "1.1.0",
+      "description": "The Edition's remastered graphics: GGX lighting and metal, ambient occlusion (GTAO), soft shadows, temporal anti-aliasing, sharpening and colour, and every map's detail and draw distances. Settings > Graphics > Remastered or Vanilla.",
+      "package": {
+        "file": "IranCoJGraphics-1.1.0.zip",
+        "size": 175385,
+        "sha256": "4dcfca2bd1ee6b485cd7b2b5900dd80dec9f03ce6a8c6a0c907b85982a07fc13",
+        "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/mods/IranCoJGraphics-1.1.0.zip"
+      },
+      "exclude": [
+        "mods.txt"
+      ],
+      "loadDll": [
+        "irancojfx.dll"
+      ],
+      "shared": [
+        "dinput8.dll"
+      ],
+      "disable": [],
+      "patch": []
+    },
+    {
       "id": "IranCoJHud",
       "name": "IranCoJ HUD",
-      "version": "1.0.1",
+      "version": "1.0.2",
       "description": "The Edition's in-game HUD: kill feed, chat, team score bar, Shootout / Wanted standing and weapon names.",
       "package": {
-        "file": "IranCoJHud-1.0.1.zip",
-        "size": 179497,
-        "sha256": "6a9c9ff18929e4282797b5c8991375d9aa92b01625d02082f146a55f23767053",
-        "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/mods/IranCoJHud-1.0.1.zip"
+        "file": "IranCoJHud-1.0.2.zip",
+        "size": 179581,
+        "sha256": "6021292151648c0985ba6ee8fec92fc65ae789ef1af4001ac5031784943adf63",
+        "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/mods/IranCoJHud-1.0.2.zip"
       },
       "exclude": [
         "mods.txt"
@@ -455,13 +478,13 @@
     {
       "id": "NewClasses",
       "name": "New Classes",
-      "version": "2.0.6",
+      "version": "2.0.7",
       "description": "Rancher and Redneck as playable classes, and three classes play as CoJ Gunslinger characters: Silas Greaves (Rancher), John Wesley Hardin (Duelist) and Billy the Kid (Rifleman). With upgrades, new class pictures and the IranCoJ Skin Pack.",
       "package": {
-        "file": "NewClasses-2.0.6.zip",
-        "size": 35519833,
-        "sha256": "f1adf5e76d20258d79cd4841358fd826e1589416ce3954a6ade5205d5b64294a",
-        "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/mods/NewClasses-2.0.6.zip"
+        "file": "NewClasses-2.0.7.zip",
+        "size": 35520991,
+        "sha256": "1979eb1107edee569b239b9dac90114efa4c375c7ef8fce26565d16f9e3d26c0",
+        "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/mods/NewClasses-2.0.7.zip"
       },
       "exclude": [
         "README_INSTALL.txt",
@@ -637,7 +660,7 @@
     }
   ],
   "edition": {
-    "version": "1.0.1",
+    "version": "1.1.0",
     "ownUserFolder": true,
     "menuNavigation": true,
     "include": [
@@ -1322,6 +1345,588 @@
         ]
       }
     },
+    "graphics": {
+      "version": "1.1.0",
+      "rewrites": [
+        {
+          "path": "CoJ2/Data/Shaders/postprocess/irancoj_fx.mtt",
+          "pak": "CoJ2/Data1.pak",
+          "entry": "Data/Shaders/postprocess/copy.mtt",
+          "replace": [
+            [
+              "copy_ps\\.hlsl",
+              "irancoj_fx_ps.hlsl"
+            ]
+          ]
+        },
+        {
+          "path": "CoJ2/Data/Postprocess/Effects/screen_copy_30.ppfx",
+          "pak": "CoJ2/Data0.pak",
+          "entry": "Data/Postprocess/Effects/screen_copy_30.ppfx",
+          "replace": [
+            [
+              "(?<=screen_copy_30_setup\\.ppfx\"\\)(?:(?!SetRenderTarget|!include)[\\s\\S])*)QuadScreen\\(\"copy(_gamma_win)?(?:_blinn)?(_out)?\\.mat\"",
+              "QuadScreen(\"irancoj_fx$1$2.mat\""
+            ]
+          ]
+        },
+        {
+          "path": "CoJ2/Data/Postprocess/Effects/screen_copy_30simple.ppfx",
+          "pak": "CoJ2/Data0.pak",
+          "entry": "Data/Postprocess/Effects/screen_copy_30simple.ppfx",
+          "replace": [
+            [
+              "(?<=screen_copy_30_setup\\.ppfx\"\\)(?:(?!SetRenderTarget|!include)[\\s\\S])*)QuadScreen\\(\"copy(_gamma_win)?(?:_blinn)?(_out)?\\.mat\"",
+              "QuadScreen(\"irancoj_fx$1$2.mat\""
+            ]
+          ]
+        },
+        {
+          "path": "CoJ2/Data/Postprocess/Effects/screen_copy_32.ppfx",
+          "pak": "CoJ2/Data0.pak",
+          "entry": "Data/Postprocess/Effects/screen_copy_32.ppfx",
+          "replace": [
+            [
+              "(?<=screen_copy_30_setup\\.ppfx\"\\)(?:(?!SetRenderTarget|!include)[\\s\\S])*)QuadScreen\\(\"copy(_gamma_win)?(?:_blinn)?(_out)?\\.mat\"",
+              "QuadScreen(\"irancoj_fx$1$2.mat\""
+            ]
+          ]
+        },
+        {
+          "path": "CoJ2/Data/Postprocess/scene30.ppfx",
+          "pak": "CoJ2/Data0.pak",
+          "entry": "Data/Postprocess/scene30.ppfx",
+          "replace": [
+            [
+              "(?<=screen_copy_30_setup\\.ppfx\"\\)(?:(?!SetRenderTarget|!include)[\\s\\S])*)QuadScreen\\(\"copy(_gamma_win)?(?:_blinn)?(_out)?\\.mat\"",
+              "QuadScreen(\"irancoj_fx$1$2.mat\""
+            ]
+          ]
+        },
+        {
+          "path": "CoJ2/Data/Postprocess/scene32.ppfx",
+          "pak": "CoJ2/Data0.pak",
+          "entry": "Data/Postprocess/scene32.ppfx",
+          "replace": [
+            [
+              "(?<=screen_copy_30_setup\\.ppfx\"\\)(?:(?!SetRenderTarget|!include)[\\s\\S])*)QuadScreen\\(\"copy(_gamma_win)?(?:_blinn)?(_out)?\\.mat\"",
+              "QuadScreen(\"irancoj_fx$1$2.mat\""
+            ]
+          ]
+        },
+        {
+          "path": "CoJ2/Data/Shaders/Common/shadows.hlsl",
+          "pak": "CoJ2/Data1.pak",
+          "entry": "Data/Shaders/Common/shadows.hlsl",
+          "when": {
+            "shadow_filter": [
+              "medium",
+              "high"
+            ]
+          },
+          "replace": [
+            [
+              "(?=FLOAT Shadows_Calc_PCF\\(float3 v_uv_shadowmap\\))",
+              "FLOAT Irn_Shadows_PCF(float3 v_uv_shadowmap)\r\n                {\r\n                    // IranCoJ Edition: hardware-filtered taps around the point (each already a 2x2 compare)\r\n                    FLOAT f_sum = 0.0;\r\n                    float2 v_texel = TEX_INV_SIZE_s_shadowmap.xy;\r\n                    for (int y = -{{pcf_r}}; y <= {{pcf_r}}; y++)\r\n                        for (int x = -{{pcf_r}}; x <= {{pcf_r}}; x++)\r\n                            f_sum += Shadows_Calc(float3(v_uv_shadowmap.xy + float2(x, y) * v_texel, v_uv_shadowmap.z));\r\n                    return f_sum / {{pcf_n}};\r\n                }\r\n\r\n                "
+            ],
+            [
+              "(Shadows_Calc_PCF\\(float3 v_uv_shadowmap\\)\\s*\\{\\s*FLOAT f_shadow = 1\\.0;\\s*#if defined\\(SHADER_PATH_PS3\\) \\|\\| \\(HSM_MODE == HSMM_NVIDIA\\)\\s*)f_shadow = Shadows_Calc\\(v_uv_shadowmap\\);",
+              "$1f_shadow = Irn_Shadows_PCF(v_uv_shadowmap);"
+            ]
+          ]
+        },
+        {
+          "path": "CoJ2/Data/Scripts/varlist_shadows_bias.scr",
+          "pak": "CoJ2/Data0.pak",
+          "entry": "Data/Scripts/varlist_shadows_bias.scr",
+          "when": {
+            "shadow_bias": [
+              "on"
+            ]
+          },
+          "replace": [
+            [
+              "\\[2\\.0+, 8\\.0+, 32\\.0+, 128\\.0+\\]",
+              "[{{bias0}}, {{bias1}}, {{bias2}}, {{bias3}}]"
+            ]
+          ]
+        },
+        {
+          "path": "CoJ2/Data/Postprocess/scene30_init_core.ppfx",
+          "pak": "CoJ2/Data0.pak",
+          "entry": "Data/Postprocess/scene30_init_core.ppfx",
+          "when": {
+            "ao": [
+              "full"
+            ]
+          },
+          "replace": [
+            [
+              "\\z",
+              "\r\n//IranCoJ Edition: full-resolution occlusion / cloud shadow mask (Normal pipeline)\r\nBufferScreenFormat(\"IRN_SHD\", 1, \"A8R8G8B8\", \"temp\")\r\n"
+            ]
+          ]
+        },
+        {
+          "path": "CoJ2/Data/Postprocess/scene30_init_core.ppfx",
+          "pak": "CoJ2/Data0.pak",
+          "entry": "Data/Postprocess/scene30_init_core.ppfx",
+          "when": {
+            "ao": [
+              "half"
+            ]
+          },
+          "replace": [
+            [
+              "\\z",
+              "\r\n//IranCoJ Edition: half-resolution occlusion / cloud shadow mask and its depth (Normal pipeline)\r\nBufferScreenFormat(\"IRN_SHD\", 2, \"A8R8G8B8\", \"temp\")\r\nBufferScreenFormat(\"IRN_DPT_2\", 2, \"R32F\", \"temp\")\r\n"
+            ]
+          ]
+        },
+        {
+          "path": "CoJ2/Data/Postprocess/Effects/depth_resolve_30.ppfx",
+          "pak": "CoJ2/Data0.pak",
+          "entry": "Data/Postprocess/Effects/depth_resolve_30.ppfx",
+          "when": {
+            "ao": [
+              "half"
+            ]
+          },
+          "replace": [
+            [
+              "\\z",
+              "\r\nSetRenderTarget(\"IRN_DPT_2\", \"\") //IranCoJ Edition: half-resolution depth\r\n    QuadScreen(\"copy_2_depth.mat\", \"std\", 2)\r\n"
+            ]
+          ]
+        },
+        {
+          "path": "CoJ2/Data/Postprocess/Effects/opq_shadows_30.ppfx",
+          "pak": "CoJ2/Data0.pak",
+          "entry": "Data/Postprocess/Effects/opq_shadows_30.ppfx",
+          "when": {
+            "ao": [
+              "half",
+              "full"
+            ]
+          },
+          "replace": [
+            [
+              "\\ASetRenderTarget\\(\"4_SHD\", \"\"\\)(\\s*)SetTexture\\(8, \"DPT_4_32F\"\\)",
+              "SetRenderTarget(\"IRN_SHD\", \"\")$1SetTexture(8, \"{{ao_depth}}\")"
+            ],
+            [
+              "QuadScreen\\(\"(shadows_blur|shadows_blur_noclouds|ssao)\\.mat\", \"std\", 4\\)",
+              "QuadScreen(\"$1.mat\", \"std\", {{ao_div}})\r\n        SetRenderTarget(\"4_SHD\", \"\") //IranCoJ Edition: averaged down for rain and forward materials\r\n            SetTexture(8, \"IRN_SHD\")\r\n                QuadScreen(\"copy_blinn.mat\", \"std\", 4)"
+            ]
+          ]
+        },
+        {
+          "path": "CoJ2/Data/Postprocess/Effects/opq_lighting_setup_tex.ppfx",
+          "pak": "CoJ2/Data0.pak",
+          "entry": "Data/Postprocess/Effects/opq_lighting_setup_tex.ppfx",
+          "when": {
+            "ao": [
+              "half",
+              "full"
+            ]
+          },
+          "replace": [
+            [
+              "SetTexture\\(8, \"4_SHD\"\\)",
+              "SetTexture(8, \"IRN_SHD\")"
+            ],
+            [
+              "SetTexture\\(9, \"DPT_4_32F\"\\)",
+              "SetTexture(9, \"{{ao_depth}}\")"
+            ]
+          ]
+        },
+        {
+          "path": "CoJ2/Data/Shaders/postprocess/lighting_pp_vs.hlsl",
+          "pak": "CoJ2/Data1.pak",
+          "entry": "Data/Shaders/postprocess/lighting_pp_vs.hlsl",
+          "when": {
+            "ao": [
+              "half",
+              "full"
+            ]
+          },
+          "replace": [
+            [
+              "RENDER_TARGET_PARAMS\\.zw \\* 0\\.25\\)",
+              "RENDER_TARGET_PARAMS.zw * {{ao_texel}})"
+            ],
+            [
+              "RENDER_TARGET_PARAMS\\.xyxy \\* 4\\.0",
+              "RENDER_TARGET_PARAMS.xyxy * {{ao_point}}"
+            ]
+          ]
+        },
+        {
+          "path": "CoJ2/Data/Shaders/postprocess/shadows_blur_ps.hlsl",
+          "pak": "CoJ2/Data1.pak",
+          "entry": "Data/Shaders/postprocess/shadows_blur_ps.hlsl",
+          "when": {
+            "ao": [
+              "half",
+              "full"
+            ]
+          },
+          "replace": [
+            [
+              "(?=#if defined\\(SHADER_PATH_X360\\)\\s*\\[maxtempreg)",
+              "#if defined(OCCLUSION_ON)\r\n    #include <irancoj_gtao.hlsl> //IranCoJ Edition\r\n#endif\r\n\r\n"
+            ],
+            [
+              "(?s)FLOAT f_occlusion = 0\\.0;.*?f_out_ssao = min\\(f_out_ssao, 0\\.75\\);//fix: light edges",
+              "f_out_ssao = Irn_Gtao(V_UV_SCREEN_TC, V_POS_SS_TC.xy, v_cam_dir_ss, v_pos_center.xyz, v_nrm); //IranCoJ Edition: GTAO"
+            ]
+          ]
+        },
+        {
+          "path": "CoJ2/Data/Scripts/varlist_occlusion.scr",
+          "pak": "CoJ2/Data0.pak",
+          "entry": "Data/Scripts/varlist_occlusion.scr",
+          "when": {
+            "ao": [
+              "half",
+              "full"
+            ]
+          },
+          "replace": [
+            [
+              "VarInt\\( \"i_occlusion_samples\", 3 \\)",
+              "VarInt( \"i_occlusion_samples\", {{ao_rings}} ) //IranCoJ Edition: vanilla 3"
+            ]
+          ]
+        },
+        {
+          "path": "CoJ2/Data/Shaders/postprocess/tonemapping_ps.hlsl",
+          "pak": "CoJ2/Data1.pak",
+          "entry": "Data/Shaders/postprocess/tonemapping_ps.hlsl",
+          "when": {
+            "tonemap": [
+              "0.6",
+              "1"
+            ]
+          },
+          "replace": [
+            [
+              "(?=#if !defined\\(GLOW_ON\\)\\s*sampler s_blur;)",
+              "//IranCoJ Edition: filmic tonemapping (IRN_FILMIC 0 = vanilla Reinhard, 1 = filmic)\r\n#define IRN_FILMIC {{tonemap}}\r\nfloat3 Irn_Filmic(float3 x)\r\n{\r\n    return ((x * (0.22 * x + 0.03) + 0.002) / (x * (0.22 * x + 0.30) + 0.06)) - 0.0333333;\r\n}\r\n\r\n\r\n"
+            ],
+            [
+              "OUT_Clr_0\\.xyz = \\(v_clr_scaled \\* \\(v_clr_scaled \\* INV_WHITELUMINANCE \\+ 1\\.0\\)\\) / \\(1\\.0 \\+ v_clr_scaled\\);\\r?\\n",
+              "OUT_Clr_0.xyz = (v_clr_scaled * (v_clr_scaled * INV_WHITELUMINANCE + 1.0)) / (1.0 + v_clr_scaled);\r\n        float f_irn_white = clamp(rsqrt(max(INV_WHITELUMINANCE, 0.001)), 1.0, 32.0);\r\n        float f_irn_bias = clamp(1.0 + 0.38 * log(f_irn_white * 0.5), 0.6, 2.0);\r\n        float3 v_irn = Irn_Filmic(v_clr_scaled * f_irn_bias) / Irn_Filmic(f_irn_white * f_irn_bias).xxx;\r\n        OUT_Clr_0.xyz = lerp(OUT_Clr_0.xyz, v_irn, IRN_FILMIC);\r\n"
+            ]
+          ]
+        },
+        {
+          "path": "CoJ2/Data/Shaders/Common/values.mtt",
+          "pak": "CoJ2/Data1.pak",
+          "entry": "Data/Shaders/Common/values.mtt",
+          "when": {
+            "aniso": [
+              "8",
+              "16"
+            ]
+          },
+          "replace": [
+            [
+              "export int i_tex_aniso_def = 4;",
+              "export int i_tex_aniso_def = {{aniso}}; //IranCoJ Edition: vanilla 4"
+            ]
+          ]
+        },
+        {
+          "path": "CoJ2/Data/Shaders/Common/common.mtt",
+          "pak": "CoJ2/Data1.pak",
+          "entry": "Data/Shaders/Common/common.mtt",
+          "when": {
+            "detail": [
+              "2",
+              "5",
+              "10"
+            ]
+          },
+          "replace": [
+            [
+              "float f_scale = 0\\.01;",
+              "float f_scale = {{shader_band}}; //IranCoJ Edition: shader LOD bands (vanilla 0.01)"
+            ]
+          ]
+        },
+        {
+          "path": "CoJ2/Data/Shaders/postprocess/lighting_pp_ps.hlsl",
+          "pak": "CoJ2/Data1.pak",
+          "entry": "Data/Shaders/postprocess/lighting_pp_ps.hlsl",
+          "when": {
+            "lighting": [
+              "modern"
+            ]
+          },
+          "replace": [
+            [
+              "\\A(#define PIXELSHADER[^\\r\\n]*\\r?\\n)",
+              "$1#define IRN_GGX 1 //IranCoJ Edition: GGX sun specular (irancoj_ggx.hlsl)\r\n//#define IRN_METAL_DEBUG 1 //IranCoJ Edition: test only, the left half shows the metal mask\r\n"
+            ]
+          ]
+        },
+        {
+          "path": "CoJ2/Data/Shaders/Common/common.hlsl",
+          "pak": "CoJ2/Data1.pak",
+          "entry": "Data/Shaders/Common/common.hlsl",
+          "when": {
+            "lighting": [
+              "modern"
+            ]
+          },
+          "replace": [
+            [
+              "(?m)^(?=[ \\t]*FLOAT3 Lit\\(shading_in IN\\))",
+              "        #if defined(IRN_GGX) //IranCoJ Edition\r\n            #include <irancoj_ggx.hlsl>\r\n        #endif\r\n\r\n"
+            ],
+            [
+              "F_SPECULAR_MULTI = Specular_Shading_Phong\\(IN\\);",
+              "#if defined(IRN_GGX) && defined(F_SHINES) && defined(DIFFUSE_ON) //IranCoJ Edition\r\n                        F_SPECULAR_MULTI = Irn_Ggx(IN.c_lit.v_dir_n, IN.v_nrm_n, IN.v_rfl_dir, F_SHINES);\r\n                    #else\r\n                        F_SPECULAR_MULTI = Specular_Shading_Phong(IN);\r\n                    #endif"
+            ],
+            [
+              "#if defined\\(F_SPECULAR_MULTI\\) && defined\\(F_SHINES\\) && !defined\\(VERTEXSHADER\\)",
+              "#if defined(F_SPECULAR_MULTI) && defined(F_SHINES) && !defined(VERTEXSHADER) && !defined(IRN_GGX)"
+            ]
+          ]
+        },
+        {
+          "path": "CoJ2/Data/Shaders/master/Templates/templates.mtt",
+          "pak": "CoJ2/Data1.pak",
+          "entry": "Data/Shaders/master/Templates/templates.mtt",
+          "when": {
+            "lighting": [
+              "modern"
+            ]
+          },
+          "replace": [
+            [
+              "string __out_nrm_a = \\(b_sss_on\\) \\? \"\\(\" \\+ __sss \\+ \"\\)\" : \"0\\.0\";",
+              "string __out_nrm_a = (b_sss_on) ? \"(\" + __sss + \") * 0.5\" : \"0.0\"; //IranCoJ Edition: SSS x0.5, or 1 = metal\r\n            string __out_nrm_a = (e_srf_id == SRF_METAL) ? \"1.0\" : __out_nrm_a;"
+            ]
+          ]
+        },
+        {
+          "path": "CoJ2/Data/Shaders/master/Templates/grass.mtt",
+          "pak": "CoJ2/Data1.pak",
+          "entry": "Data/Shaders/master/Templates/grass.mtt",
+          "when": {
+            "lighting": [
+              "modern"
+            ]
+          },
+          "replace": [
+            [
+              "saturate\\(dot\\(\" \\+ s_t00_rgb \\+ \",1\\.0/3\\.0\\)\\)\\)\";",
+              "saturate(dot(\" + s_t00_rgb + \",1.0/3.0)) * 0.5)\"; //IranCoJ Edition: SSS x0.5"
+            ]
+          ]
+        },
+        {
+          "path": "CoJ2/Data/Shaders/master/Templates/fx.mtt",
+          "pak": "CoJ2/Data1.pak",
+          "entry": "Data/Shaders/master/Templates/fx.mtt",
+          "when": {
+            "lighting": [
+              "modern"
+            ]
+          },
+          "replace": [
+            [
+              "string __out_nrm = \"half4\\(0\\.5,0\\.5,1,0\\.5\\)\";",
+              "string __out_nrm = \"half4(0.5,0.5,1,0.25)\"; //IranCoJ Edition: SSS x0.5"
+            ]
+          ]
+        },
+        {
+          "path": "CoJ2/Data/Shaders/postprocess/lighting_pp_ps.hlsl",
+          "pak": "CoJ2/Data1.pak",
+          "entry": "Data/Shaders/postprocess/lighting_pp_ps.hlsl",
+          "when": {
+            "lighting": [
+              "modern"
+            ]
+          },
+          "replace": [
+            [
+              "FLOAT f_sss = v_nrm\\.w;",
+              "FLOAT f_irn_metal = step(0.75, v_nrm.w); //IranCoJ Edition: the alpha is SSS x0.5, or 1 = metal\r\n    FLOAT f_sss = saturate(v_nrm.w * 2.0) * (1.0 - f_irn_metal);"
+            ],
+            [
+              "FLOAT3 v_out = Lit\\(c_shading_in\\);",
+              "FLOAT3 v_out = Lit(c_shading_in);\r\n    #if defined(IRN_METAL_ON) //IranCoJ Edition: metal (irancoj_ggx.hlsl)\r\n        v_out = Irn_Metal(v_out, f_irn_metal, c_shading_in);\r\n    #endif"
+            ],
+            [
+              "OUT\\.v_clr\\.xyz = Encode_Clr\\(OUT\\.v_clr\\.xyz\\);",
+              "#if defined(IRN_METAL_DEBUG) //IranCoJ Edition: test view, the left half shows the metal mask\r\n        if (V_UV_0_TC.x < 0.5) OUT.v_clr.xyz = f_irn_metal.xxx;\r\n    #endif\r\n    OUT.v_clr.xyz = Encode_Clr(OUT.v_clr.xyz);"
+            ]
+          ]
+        },
+        {
+          "path": "CoJ2/Data/Shaders/postprocess/irancoj_taa.mtt",
+          "pak": "CoJ2/Data1.pak",
+          "entry": "Data/Shaders/postprocess/blur_camera_motion.mtt",
+          "when": {
+            "taa": [
+              "on"
+            ]
+          },
+          "replace": [
+            [
+              "BlendFunc\\(SRC_ALPHA, INV_SRC_ALPHA, ONE, ONE\\);",
+              "//IranCoJ Edition: TAA writes its result (no blending)"
+            ],
+            [
+              "(?s)extern float FPS;.*?Define\\(\"I_SAMPLES\", i_samples\\);",
+              "//IranCoJ Edition: no constants (the motion blur's are not used)"
+            ],
+            [
+              "(?s)int i_cst_i_current = i_const_int_first;.*?Define\\(s_cst_name \\+ \"000\", s_cst_000\\);",
+              "//IranCoJ Edition: no constants"
+            ],
+            [
+              "use PP_TMU\\(s_sampler = \"s_clr\", i_user_map = 8, e_filter = LINEAR_NO_MIP, e_tile = MIRROR\\);",
+              "use PP_TMU(s_sampler = \"s_clr\", i_user_map = 8, e_filter = LINEAR_NO_MIP, e_tile = CLAMP);"
+            ],
+            [
+              "(use PP_TMU\\(s_sampler = \"s_dpt_4\", i_user_map = 9, e_filter = NO_FILTERING, e_tile = CLAMP\\);)",
+              "$1\r\n\t\t\t\tuse PP_TMU(s_sampler = \"s_hist\", i_user_map = 10, e_filter = LINEAR_NO_MIP, e_tile = CLAMP);"
+            ],
+            [
+              "#include <blur_camera_motion_ps\\.hlsl>",
+              "#include <irancoj_taa_ps.hlsl>"
+            ]
+          ]
+        },
+        {
+          "path": "CoJ2/Data/Postprocess/scene30_init_core.ppfx",
+          "pak": "CoJ2/Data0.pak",
+          "entry": "Data/Postprocess/scene30_init_core.ppfx",
+          "when": {
+            "taa": [
+              "on"
+            ]
+          },
+          "replace": [
+            [
+              "\\z",
+              "\r\n//IranCoJ Edition: temporal anti-aliasing (history kept between frames, and the pass result)\r\nBufferScreenFormat(\"IRN_TAA_HIST\", 1, \"A8R8G8B8\", \"\")\r\nBufferScreenFormat(\"IRN_TAA_TMP\", 1, \"A8R8G8B8\", \"temp\")\r\n"
+            ]
+          ]
+        },
+        {
+          "path": "CoJ2/Data/Postprocess/scene30.ppfx",
+          "pak": "CoJ2/Data0.pak",
+          "entry": "Data/Postprocess/scene30.ppfx",
+          "when": {
+            "taa": [
+              "on"
+            ]
+          },
+          "replace": [
+            [
+              "!include\\(\"screen_copy_30_setup\\.ppfx\"\\)(\\s*)SetTexture\\(8, \"CLR\"\\)",
+              "//IranCoJ Edition: temporal anti-aliasing of CLR (irancoj_taa.mat), the history kept for the next frame\r\n            SetRenderTarget(\"IRN_TAA_TMP\", \"\")\r\n                SetTexture(8, \"CLR\")\r\n                SetTexture(9, \"DPT_4_32F\")\r\n                SetTexture(10, \"IRN_TAA_HIST\")\r\n                    QuadScreen(\"irancoj_taa.mat\", \"std\", 1)\r\n            SetRenderTarget(\"IRN_TAA_HIST\", \"\")\r\n                SetTexture(8, \"IRN_TAA_TMP\")\r\n                    QuadScreen(\"copy.mat\", \"std\", 1)\r\n            SetTextureVar(9, \"s_curves\") //IranCoJ Edition: slot 9 back to the colour curves (TAA had the depth there)\r\n\r\n            !include(\"screen_copy_30_setup.ppfx\")$1SetTexture(8, \"IRN_TAA_TMP\")"
+            ],
+            [
+              "!include\\(\"screen_copy_30_setup\\.ppfx\"\\)(\\s*)SetTexture\\(8, \"PRV\"\\)",
+              "//IranCoJ Edition: temporal anti-aliasing of PRV (irancoj_taa.mat), the history kept for the next frame\r\n            SetRenderTarget(\"IRN_TAA_TMP\", \"\")\r\n                SetTexture(8, \"PRV\")\r\n                SetTexture(9, \"DPT_4_32F\")\r\n                SetTexture(10, \"IRN_TAA_HIST\")\r\n                    QuadScreen(\"irancoj_taa.mat\", \"std\", 1)\r\n            SetRenderTarget(\"IRN_TAA_HIST\", \"\")\r\n                SetTexture(8, \"IRN_TAA_TMP\")\r\n                    QuadScreen(\"copy.mat\", \"std\", 1)\r\n            SetTextureVar(9, \"s_curves\") //IranCoJ Edition: slot 9 back to the colour curves (TAA had the depth there)\r\n\r\n            !include(\"screen_copy_30_setup.ppfx\")$1SetTexture(8, \"IRN_TAA_TMP\")"
+            ]
+          ]
+        },
+        {
+          "path": "CoJ2/Data/Postprocess/Effects/screen_copy_30.ppfx",
+          "pak": "CoJ2/Data0.pak",
+          "entry": "Data/Postprocess/Effects/screen_copy_30.ppfx",
+          "when": {
+            "taa": [
+              "on"
+            ]
+          },
+          "replace": [
+            [
+              "!include\\(\"screen_copy_30_setup\\.ppfx\"\\)(\\s*)SetTexture\\(8, \"CLR\"\\)",
+              "//IranCoJ Edition: temporal anti-aliasing of CLR (irancoj_taa.mat), the history kept for the next frame\r\n            SetRenderTarget(\"IRN_TAA_TMP\", \"\")\r\n                SetTexture(8, \"CLR\")\r\n                SetTexture(9, \"DPT_4_32F\")\r\n                SetTexture(10, \"IRN_TAA_HIST\")\r\n                    QuadScreen(\"irancoj_taa.mat\", \"std\", 1)\r\n            SetRenderTarget(\"IRN_TAA_HIST\", \"\")\r\n                SetTexture(8, \"IRN_TAA_TMP\")\r\n                    QuadScreen(\"copy.mat\", \"std\", 1)\r\n            SetTextureVar(9, \"s_curves\") //IranCoJ Edition: slot 9 back to the colour curves (TAA had the depth there)\r\n\r\n            !include(\"screen_copy_30_setup.ppfx\")$1SetTexture(8, \"IRN_TAA_TMP\")"
+            ],
+            [
+              "!include\\(\"screen_copy_30_setup\\.ppfx\"\\)(\\s*)SetTexture\\(8, \"PRV\"\\)",
+              "//IranCoJ Edition: temporal anti-aliasing of PRV (irancoj_taa.mat), the history kept for the next frame\r\n            SetRenderTarget(\"IRN_TAA_TMP\", \"\")\r\n                SetTexture(8, \"PRV\")\r\n                SetTexture(9, \"DPT_4_32F\")\r\n                SetTexture(10, \"IRN_TAA_HIST\")\r\n                    QuadScreen(\"irancoj_taa.mat\", \"std\", 1)\r\n            SetRenderTarget(\"IRN_TAA_HIST\", \"\")\r\n                SetTexture(8, \"IRN_TAA_TMP\")\r\n                    QuadScreen(\"copy.mat\", \"std\", 1)\r\n            SetTextureVar(9, \"s_curves\") //IranCoJ Edition: slot 9 back to the colour curves (TAA had the depth there)\r\n\r\n            !include(\"screen_copy_30_setup.ppfx\")$1SetTexture(8, \"IRN_TAA_TMP\")"
+            ]
+          ]
+        },
+        {
+          "path": "CoJ2/Data/Shaders/Common/common.hlsl",
+          "pak": "CoJ2/Data1.pak",
+          "entry": "Data/Shaders/Common/common.hlsl",
+          "when": {
+            "taa": [
+              "on"
+            ]
+          },
+          "replace": [
+            [
+              "(?m)^(?=[ \\t]*float4 Pos_Out\\(float4 v_pos\\))",
+              "#define IRN_TAA 1\r\n        //IranCoJ Edition: TAA jitter - the scene a sub-pixel off, a new offset each frame\r\n        #if defined(IRN_TAA) && defined(VERTEXSHADER) && !defined(TECH_SHD_ON) && !defined(TECH_RFL_ON)\r\n            float4 Irn_Jitter(float4 v_pos)\r\n            {\r\n                float2 v_j = frac(sin(floor(TIME * 997.0) * float2(12.9898, 78.233)) * 43758.5453) - 0.5;\r\n                v_pos.xy += v_j * 2.0 * RENDER_TARGET_PARAMS.xy * v_pos.w;\r\n                return v_pos;\r\n            }\r\n        #else\r\n            #define Irn_Jitter(v) (v)\r\n        #endif\r\n\r\n"
+            ],
+            [
+              "return Mul44\\(v_pos, COMBINED_XFORM\\);",
+              "return Irn_Jitter(Mul44(v_pos, COMBINED_XFORM));"
+            ],
+            [
+              "(float4 Pos_Out_WS\\(float4 v_pos\\)\\s*\\{\\s*)return Mul44\\(v_pos, VIEWPROJ_XFORM\\);",
+              "$1return Irn_Jitter(Mul44(v_pos, VIEWPROJ_XFORM));"
+            ],
+            [
+              "(float4 Pos_Out_CS\\(float4 v_pos\\)\\s*\\{\\s*)return Mul44\\(v_pos, PROJECTION_XFORM\\);",
+              "$1return Irn_Jitter(Mul44(v_pos, PROJECTION_XFORM));"
+            ]
+          ]
+        },
+        {
+          "path": "CoJ2/Data/Shaders/postprocess/lighting_pp_stencil_simple.mat",
+          "pak": "CoJ2/Data1.pak",
+          "entry": "Data/Shaders/postprocess/lighting_pp_stencil.mat",
+          "replace": [
+            [
+              "use mtt\\(b_stencil_on = TRUE\\);",
+              "use mtt(b_stencil_on = TRUE, b_simple_on = TRUE); //IranCoJ Edition: the Simple pipeline rain lighting"
+            ]
+          ]
+        },
+        {
+          "path": "CoJ2/Data/FX/fx_long_trace.mat",
+          "pak": "CoJ2/Data0.pak",
+          "entry": "Data/FX/trace.mat",
+          "replace": [
+            [
+              "\\A",
+              "//IranCoJ Edition: the long bullet traces the engine asks for, as trace.mat\r\n"
+            ]
+          ]
+        }
+      ],
+      "vegetation": {
+        "files": [
+          "_grass.scr",
+          "_foliage.scr"
+        ],
+        "scale": [
+          "(?<=(?:GenerationRange|ReleaseRange|ExtinctionDistance|ExtinctionRange|BlendRange)\\(\\s*)(?<n>\\d+(?:\\.\\d+)?)"
+        ],
+        "replace": [
+          [
+            "MaxShadowMapIndex\\(\\s*0\\s*\\)",
+            "MaxShadowMapIndex(3)"
+          ]
+        ]
+      }
+    },
     "files": [
       {
         "path": "CoJ2/Data/Menu/Background_Scr_PC.binui",
@@ -1791,6 +2396,15 @@
       "action": "settings",
       "actionLabel": "Set up the Edition",
       "image": "https://raw.githubusercontent.com/roozbehghazavi/IranCoJLauncher-Hub/main/news/images/edition.jpg"
+    },
+    {
+      "id": "edition-110-graphics",
+      "tag": "IRANCOJ EDITION 1.1.0",
+      "title": "Remastered graphics",
+      "text": "Bound in Blood, remastered: physically based sun highlights and metal, ground-truth ambient occlusion, soft shadows on a 4096 map, temporal anti-aliasing, filmic colour, buildings, trees and props at full detail to the horizon, and three times the vegetation distance. Turn each part on or off in Settings > Graphics > Remastered, or go back to Vanilla. Add IranCoJ HD Textures in Mods for every texture at twice its resolution, your weapons and hands at four times, and the New Classes characters at full size. Needs launcher 3.0.0-alpha.24.",
+      "date": "2026-11-03",
+      "action": "settings",
+      "actionLabel": "Open Graphics settings"
     },
     {
       "id": "launcher-leaderboard",
