@@ -432,13 +432,13 @@
     {
       "id": "IranCoJGraphics",
       "name": "IranCoJ Graphics",
-      "version": "1.1.0",
+      "version": "1.1.1",
       "description": "The Edition's remastered graphics: GGX lighting and metal, ambient occlusion (GTAO), soft shadows, temporal anti-aliasing, sharpening and colour, and every map's detail and draw distances. Settings > Graphics > Remastered or Vanilla.",
       "package": {
-        "file": "IranCoJGraphics-1.1.0.zip",
-        "size": 175385,
-        "sha256": "4dcfca2bd1ee6b485cd7b2b5900dd80dec9f03ce6a8c6a0c907b85982a07fc13",
-        "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/mods/IranCoJGraphics-1.1.0.zip"
+        "file": "IranCoJGraphics-1.1.1.zip",
+        "size": 175923,
+        "sha256": "091e3221d13af4472d90bb744b9a18ae0bbfcd7b68194121fd8994c0fbb6f94f",
+        "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/mods/IranCoJGraphics-1.1.1.zip"
       },
       "exclude": [
         "mods.txt"
@@ -680,7 +680,7 @@
     }
   ],
   "edition": {
-    "version": "1.1.0",
+    "version": "1.1.1",
     "ownUserFolder": true,
     "menuNavigation": true,
     "include": [
@@ -1163,7 +1163,7 @@
         "replace": [
           [
             "FontStyle\\(\"TextHuge\",(\\s*)\"Clarendon 32\", 1\\.2, 3\\)",
-            "FontStyle(\"TextHuge\",${1}\"Clarendon 64\", 0.6, 3)  // IranCoJ Edition: the same size from the 64 px font"
+            "FontStyle(\"TextHuge\",${1}\"Clarendon 64\", 0.6, 3)  // IranCoJ Edition: the same size from the 64 px font (edition/files Panel, Oswald)"
           ],
           [
             "\\z",
@@ -2363,6 +2363,18 @@
         "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/edition/Clarendon.Condensed_32.fm"
       },
       {
+        "path": "CoJ2/Data/Panel/Clarendon Condensed_64.dds",
+        "size": 8388736,
+        "sha256": "654b9308ec1a5c0912705f7bccfde649f9c4c985e647f862b3ee1af584ebfe42",
+        "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/edition/Clarendon.Condensed_64.dds"
+      },
+      {
+        "path": "CoJ2/Data/Panel/Clarendon Condensed_64.fm",
+        "size": 7621,
+        "sha256": "e8e8a0fbde37e44975df825f6fd9fe35152dcda7e05b738af21e5feeb340438e",
+        "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/edition/Clarendon.Condensed_64.fm"
+      },
+      {
         "path": "CoJ2/Data/Panel/Typodermic_24.dds",
         "size": 1048704,
         "sha256": "daa145943adfa9bf5a11ccb19b807486280dae0397cdf50ee33f76068f5cbffc",
@@ -2407,6 +2419,15 @@
     ]
   },
   "news": [
+    {
+      "id": "edition-111",
+      "tag": "IRANCOJ EDITION 1.1.1",
+      "title": "Fixes: joining, map names",
+      "text": "On most PCs the map name on the loading screen showed as a red box, or too big for its place: the sharp title font it uses was missing. The Edition now brings it along. With Remastered graphics on, joining a server could fail with a wrong map CRC: IranCoJ Graphics 1.1.1 fixes that. Launcher 3.0.0-beta.3: the Edition shortcut while the launcher is open plays from the open launcher instead of starting a second one, and Vanilla graphics give the game its own anti-aliasing back.",
+      "date": "2026-11-03",
+      "action": "settings",
+      "actionLabel": "Update the Edition"
+    },
     {
       "id": "launcher-beta-2",
       "tag": "LAUNCHER 3.0.0-BETA.2",
