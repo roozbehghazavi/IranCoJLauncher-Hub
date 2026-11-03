@@ -1,0 +1,10 @@
+import "irancoj_fx.mtt"
+
+// IranCoJ Edition: the scene's final pass (irancoj_fx_ps.hlsl) in place of copy.mat / copy_blinn.mat, fullscreen.
+
+sub material()
+{
+    use mtt(
+        e_filter = LINEAR_NO_MIP
+    );
+}

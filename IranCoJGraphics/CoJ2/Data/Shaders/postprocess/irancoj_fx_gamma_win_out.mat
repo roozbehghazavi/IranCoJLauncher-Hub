@@ -1,0 +1,15 @@
+import "irancoj_fx.mtt"
+
+// IranCoJ Edition: the scene's final pass in place of copy_gamma_win_out.mat (curves, output correction, windowed gamma).
+
+sub material()
+{
+    use mtt(
+        e_filter = LINEAR_NO_MIP,
+        b_curves_on = TRUE,
+        i_curves_usermap = 9,
+        b_gamma_window_out_on = TRUE,
+        b_sat_correction_on = TRUE,
+        b_out_correction_on = TRUE
+    );
+}

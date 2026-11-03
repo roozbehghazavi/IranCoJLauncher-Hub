@@ -1,0 +1,14 @@
+import "irancoj_fx.mtt"
+
+// IranCoJ Edition: the scene's final pass in place of copy_out.mat / copy_blinn_out.mat (the level's curves and output correction).
+
+sub material()
+{
+    use mtt(
+        e_filter = LINEAR_NO_MIP,
+        b_curves_on = TRUE,
+        i_curves_usermap = 9,
+        b_sat_correction_on = TRUE,
+        b_out_correction_on = TRUE
+    );
+}

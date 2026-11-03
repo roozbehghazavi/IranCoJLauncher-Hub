@@ -1,0 +1,15 @@
+{
+  "id": "IranCoJGraphics",
+  "name": "IranCoJ Graphics",
+  "description": "The Edition's remastered graphics: final pass (sharpening, edge smoothing, colour), map detail and draw distances, shadow and culling settings. Settings > Graphics > Remastered or Vanilla.",
+  "folder": "IranCoJGraphics",
+  "exclude": [
+    "mods.txt"
+  ],
+  "loadDll": [
+    "irancojfx.dll"
+  ],
+  "shared": [
+    "dinput8.dll"
+  ]
+}
