@@ -234,11 +234,18 @@ rewrites.append(rw('Data/Shaders/postprocess/lighting_pp_stencil_simple.mat', D1
     (r'use mtt\(b_stencil_on = TRUE\);', 'use mtt(b_stencil_on = TRUE, b_simple_on = TRUE); //IranCoJ Edition: the Simple pipeline rain lighting')
 ]))
 rewrites.append(rw('Data/FX/fx_long_trace.mat', D0, 'Data/FX/trace.mat', [
-    (r'\A', '//IranCoJ Edition: the long bullet traces the engine asks for, as trace.mat' + N)
+    # at the end: the material parser wants its directives first (a comment before !include is a syntax error)
+    (r'\z', N + '//IranCoJ Edition: the long bullet traces the engine asks for, as trace.mat' + N)
+]))
+# ChromEd writes a map's river material only into the map's rpack cache (Tombstone: no source in any pak, nor in its
+# editor files), so hidden it drew as the engine's default - a glowing yellow river. The game's own river template
+# in its place; the map CRC doesn't cover materials.
+rewrites.append(rw('Data/MapsNet/Tombstone/river/tombstone_river.mat', D1, 'Data/Shaders/master/Templates/river_a.mat', [
+    (r'\z', N + '//IranCoJ Edition: Tombstone\'s river (its own material is only in the rpack cache), from river_a.mat' + N)
 ]))
 
 graphics = {
-    'version': '1.1.0',
+    'version': '1.1.1',
     'rewrites': rewrites,
     'vegetation': {
         'files': ['_grass.scr', '_foliage.scr'],

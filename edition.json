@@ -686,7 +686,7 @@
     }
   },
   "graphics": {
-    "version": "1.1.0",
+    "version": "1.1.1",
     "rewrites": [
       {
         "path": "CoJ2/Data/Shaders/postprocess/irancoj_fx.mtt",
@@ -1245,8 +1245,19 @@
         "entry": "Data/FX/trace.mat",
         "replace": [
           [
-            "\\A",
-            "//IranCoJ Edition: the long bullet traces the engine asks for, as trace.mat\r\n"
+            "\\z",
+            "\r\n//IranCoJ Edition: the long bullet traces the engine asks for, as trace.mat\r\n"
+          ]
+        ]
+      },
+      {
+        "path": "CoJ2/Data/MapsNet/Tombstone/river/tombstone_river.mat",
+        "pak": "CoJ2/Data1.pak",
+        "entry": "Data/Shaders/master/Templates/river_a.mat",
+        "replace": [
+          [
+            "\\z",
+            "\r\n//IranCoJ Edition: Tombstone's river (its own material is only in the rpack cache), from river_a.mat\r\n"
           ]
         ]
       }
