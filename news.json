@@ -1,5 +1,14 @@
 [
   {
+    "id": "launcher-beta-2",
+    "tag": "LAUNCHER 3.0.0-BETA.2",
+    "title": "Your Edition stands on its own",
+    "text": "The original game is only needed to create the Edition: after that the Edition updates from its own files, so you may uninstall the original if you want the space. New Editions can bring your profiles over from the game, and Settings > IranCoJ Edition has a button that copies any you don't have yet. Remastered graphics remember your choice while HD Textures isn't installed and turn on by themselves once it is, and uninstalling HD Textures gives New Classes its own characters back.",
+    "date": "2026-11-03",
+    "action": "settings",
+    "actionLabel": "Open Settings"
+  },
+  {
     "id": "launcher-beta",
     "tag": "LAUNCHER 3.0.0-BETA.1",
     "title": "The launcher\nis in beta",
