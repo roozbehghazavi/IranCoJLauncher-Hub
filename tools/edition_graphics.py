@@ -127,7 +127,9 @@ rewrites.append(rw('Data/Shaders/Common/common.mtt', D1, 'Data/Shaders/Common/co
 # GGX sun specular (the mod's irancoj_ggx.hlsl), only where lighting_pp_ps.hlsl defines IRN_GGX.
 LIGHT = {'lighting': ['modern']}
 rewrites.append(rw('Data/Shaders/postprocess/lighting_pp_ps.hlsl', D1, 'Data/Shaders/postprocess/lighting_pp_ps.hlsl', [
-    (r'\A', '#define IRN_GGX 1 //IranCoJ Edition: GGX sun specular (irancoj_ggx.hlsl)' + N)
+    (r'\A(#define PIXELSHADER[^\r\n]*\r?\n)',
+     '$1#define IRN_GGX 1 //IranCoJ Edition: GGX sun specular (irancoj_ggx.hlsl)' + N +
+     '//#define IRN_METAL_DEBUG 1 //IranCoJ Edition: test only, the left half shows the metal mask' + N)
 ], when=LIGHT))
 rewrites.append(rw('Data/Shaders/Common/common.hlsl', D1, 'Data/Shaders/Common/common.hlsl', [
     (r'(?m)^(?=[ \t]*FLOAT3 Lit\(shading_in IN\))',
@@ -140,8 +142,103 @@ rewrites.append(rw('Data/Shaders/Common/common.hlsl', D1, 'Data/Shaders/Common/c
      '#if defined(F_SPECULAR_MULTI) && defined(F_SHINES) && !defined(VERTEXSHADER) && !defined(IRN_GGX)')
 ], when=LIGHT))
 
+# Metal, packed into the normal buffer's alpha (a 4th render target disturbed the engine's frame: the sun went out at
+# some camera angles). That channel only carried subsurface scattering, which metal never has: it now holds SSS x 0.5,
+# or 1 for a material whose surface type is SRF_METAL. Every writer is encoded, and the sun lighting (its only reader)
+# decodes it.
+rewrites.append(rw('Data/Shaders/master/Templates/templates.mtt', D1, 'Data/Shaders/master/Templates/templates.mtt', [
+    (r'string __out_nrm_a = \(b_sss_on\) \? "\(" \+ __sss \+ "\)" : "0\.0";',
+     'string __out_nrm_a = (b_sss_on) ? "(" + __sss + ") * 0.5" : "0.0"; //IranCoJ Edition: SSS x0.5, or 1 = metal' + N +
+     '            string __out_nrm_a = (e_srf_id == SRF_METAL) ? "1.0" : __out_nrm_a;')
+], when=LIGHT))
+rewrites.append(rw('Data/Shaders/master/Templates/grass.mtt', D1, 'Data/Shaders/master/Templates/grass.mtt', [
+    (r'saturate\(dot\(" \+ s_t00_rgb \+ ",1\.0/3\.0\)\)\)";',
+     'saturate(dot(" + s_t00_rgb + ",1.0/3.0)) * 0.5)"; //IranCoJ Edition: SSS x0.5')
+], when=LIGHT))
+rewrites.append(rw('Data/Shaders/master/Templates/fx.mtt', D1, 'Data/Shaders/master/Templates/fx.mtt', [
+    (r'string __out_nrm = "half4\(0\.5,0\.5,1,0\.5\)";',
+     'string __out_nrm = "half4(0.5,0.5,1,0.25)"; //IranCoJ Edition: SSS x0.5')
+], when=LIGHT))
+rewrites.append(rw('Data/Shaders/postprocess/lighting_pp_ps.hlsl', D1, 'Data/Shaders/postprocess/lighting_pp_ps.hlsl', [
+    (r'FLOAT f_sss = v_nrm\.w;',
+     'FLOAT f_irn_metal = step(0.75, v_nrm.w); //IranCoJ Edition: the alpha is SSS x0.5, or 1 = metal' + N +
+     '    FLOAT f_sss = saturate(v_nrm.w * 2.0) * (1.0 - f_irn_metal);'),
+    (r'FLOAT3 v_out = Lit\(c_shading_in\);',
+     'FLOAT3 v_out = Lit(c_shading_in);' + N + '    #if defined(IRN_METAL_ON) //IranCoJ Edition: metal (irancoj_ggx.hlsl)' + N +
+     '        v_out = Irn_Metal(v_out, f_irn_metal, c_shading_in);' + N + '    #endif'),
+    (r'OUT\.v_clr\.xyz = Encode_Clr\(OUT\.v_clr\.xyz\);',
+     '#if defined(IRN_METAL_DEBUG) //IranCoJ Edition: test view, the left half shows the metal mask' + N +
+     '        if (V_UV_0_TC.x < 0.5) OUT.v_clr.xyz = f_irn_metal.xxx;' + N +
+     '    #endif' + N + '    OUT.v_clr.xyz = Encode_Clr(OUT.v_clr.xyz);')
+], when=LIGHT))
+
+# Temporal anti-aliasing (the mod's irancoj_taa_ps.hlsl / .mat): the scene is drawn a sub-pixel off each frame and
+# blended into a history reprojected with the camera's last view-projection. The material's template is the player's
+# own blur_camera_motion.mtt (its vertex shader gives the world-space camera direction), with a history sampler.
+TAA = {'taa': ['on']}
+rewrites.append(rw('Data/Shaders/postprocess/irancoj_taa.mtt', D1, 'Data/Shaders/postprocess/blur_camera_motion.mtt', [
+    (r'BlendFunc\(SRC_ALPHA, INV_SRC_ALPHA, ONE, ONE\);', '//IranCoJ Edition: TAA writes its result (no blending)'),
+    # the motion blur's float and int constants: the TAA shader has neither, and a constant the shader lacks may fail it
+    (r'(?s)extern float FPS;.*?Define\("I_SAMPLES", i_samples\);', '//IranCoJ Edition: no constants (the motion blur\'s are not used)'),
+    (r'(?s)int i_cst_i_current = i_const_int_first;.*?Define\(s_cst_name \+ "000", s_cst_000\);', '//IranCoJ Edition: no constants'),
+    (r'use PP_TMU\(s_sampler = "s_clr", i_user_map = 8, e_filter = LINEAR_NO_MIP, e_tile = MIRROR\);',
+     'use PP_TMU(s_sampler = "s_clr", i_user_map = 8, e_filter = LINEAR_NO_MIP, e_tile = CLAMP);'),
+    (r'(use PP_TMU\(s_sampler = "s_dpt_4", i_user_map = 9, e_filter = NO_FILTERING, e_tile = CLAMP\);)',
+     '$1' + N + '				use PP_TMU(s_sampler = "s_hist", i_user_map = 10, e_filter = LINEAR_NO_MIP, e_tile = CLAMP);'),
+    (r'#include <blur_camera_motion_ps\.hlsl>', '#include <irancoj_taa_ps.hlsl>')
+], when=TAA))
+# The history lives across frames (no "temp": the engine may reuse a temp buffer's memory within the frame).
+rewrites.append(rw('Data/Postprocess/scene30_init_core.ppfx', D0, 'Data/Postprocess/scene30_init_core.ppfx', [
+    (r'\z', N + '//IranCoJ Edition: temporal anti-aliasing (history kept between frames, and the pass result)' + N +
+     'BufferScreenFormat("IRN_TAA_HIST", 1, "A8R8G8B8", "")' + N + 'BufferScreenFormat("IRN_TAA_TMP", 1, "A8R8G8B8", "temp")' + N)
+], when=TAA))
+# In both final-copy branches (in game the image is in CLR, at other times in PRV): TAA on that source into our own
+# IRN_TAA_TMP, the history copied from it, and the final pass reads IRN_TAA_TMP. The game's buffers are never written
+# (writing PRV, which the in-game branch reads again, turned the screen white).
+def taa_block(src):
+    return ('//IranCoJ Edition: temporal anti-aliasing of ' + src + ' (irancoj_taa.mat), the history kept for the next frame' + N +
+            '            SetRenderTarget("IRN_TAA_TMP", "")' + N + '                SetTexture(8, "' + src + '")' + N +
+            '                SetTexture(9, "DPT_4_32F")' + N + '                SetTexture(10, "IRN_TAA_HIST")' + N +
+            '                    QuadScreen("irancoj_taa.mat", "std", 1)' + N +
+            '            SetRenderTarget("IRN_TAA_HIST", "")' + N + '                SetTexture(8, "IRN_TAA_TMP")' + N +
+            '                    QuadScreen("copy.mat", "std", 1)' + N +
+            '            SetTextureVar(9, "s_curves") //IranCoJ Edition: slot 9 back to the colour curves (TAA had the depth there)' + N + N +
+            '            ')
+for f in ('scene30.ppfx', 'Effects/screen_copy_30.ppfx'):
+    rewrites.append(rw('Data/Postprocess/' + f, D0, 'Data/Postprocess/' + f, [
+        (r'!include\("screen_copy_30_setup\.ppfx"\)(\s*)SetTexture\(8, "CLR"\)',
+         taa_block('CLR') + '!include("screen_copy_30_setup.ppfx")$1SetTexture(8, "IRN_TAA_TMP")'),
+        (r'!include\("screen_copy_30_setup\.ppfx"\)(\s*)SetTexture\(8, "PRV"\)',
+         taa_block('PRV') + '!include("screen_copy_30_setup.ppfx")$1SetTexture(8, "IRN_TAA_TMP")')
+    ], when=TAA))
+# The jitter: every main-camera vertex shader (not shadow maps, reflections, sprites) a sub-pixel off, the same
+# offset for all shaders of a frame (from the engine's TIME).
+jitter = (
+    '        //IranCoJ Edition: TAA jitter - the scene a sub-pixel off, a new offset each frame' + N +
+    '        #if defined(IRN_TAA) && defined(VERTEXSHADER) && !defined(TECH_SHD_ON) && !defined(TECH_RFL_ON)' + N +
+    '            float4 Irn_Jitter(float4 v_pos)' + N + '            {' + N +
+    '                float2 v_j = frac(sin(floor(TIME * 997.0) * float2(12.9898, 78.233)) * 43758.5453) - 0.5;' + N +
+    '                v_pos.xy += v_j * 2.0 * RENDER_TARGET_PARAMS.xy * v_pos.w;' + N +
+    '                return v_pos;' + N + '            }' + N +
+    '        #else' + N + '            #define Irn_Jitter(v) (v)' + N + '        #endif' + N + N)
+rewrites.append(rw('Data/Shaders/Common/common.hlsl', D1, 'Data/Shaders/Common/common.hlsl', [
+    (r'(?m)^(?=[ \t]*float4 Pos_Out\(float4 v_pos\))', '#define IRN_TAA 1' + N + jitter),
+    (r'return Mul44\(v_pos, COMBINED_XFORM\);', 'return Irn_Jitter(Mul44(v_pos, COMBINED_XFORM));'),
+    (r'(float4 Pos_Out_WS\(float4 v_pos\)\s*\{\s*)return Mul44\(v_pos, VIEWPROJ_XFORM\);', '$1return Irn_Jitter(Mul44(v_pos, VIEWPROJ_XFORM));'),
+    (r'(float4 Pos_Out_CS\(float4 v_pos\)\s*\{\s*)return Mul44\(v_pos, PROJECTION_XFORM\);', '$1return Irn_Jitter(Mul44(v_pos, PROJECTION_XFORM));')
+], when=TAA))
+
+# Materials that lived only in the rpacks' precompiled caches (hidden in Remastered mode so the remastered shader
+# sources are compiled): rebuilt from the player's own files.
+rewrites.append(rw('Data/Shaders/postprocess/lighting_pp_stencil_simple.mat', D1, 'Data/Shaders/postprocess/lighting_pp_stencil.mat', [
+    (r'use mtt\(b_stencil_on = TRUE\);', 'use mtt(b_stencil_on = TRUE, b_simple_on = TRUE); //IranCoJ Edition: the Simple pipeline rain lighting')
+]))
+rewrites.append(rw('Data/FX/fx_long_trace.mat', D0, 'Data/FX/trace.mat', [
+    (r'\A', '//IranCoJ Edition: the long bullet traces the engine asks for, as trace.mat' + N)
+]))
+
 graphics = {
-    'version': '1.0.0',
+    'version': '1.1.0',
     'rewrites': rewrites,
     'vegetation': {
         'files': ['_grass.scr', '_foliage.scr'],

@@ -1,0 +1,9 @@
+import "irancoj_taa.mtt"
+
+// IranCoJ Edition: temporal anti-aliasing (irancoj_taa_ps.hlsl). irancoj_taa.mtt is written by the launcher from the
+// player's own blur_camera_motion.mtt.
+
+sub material()
+{
+    use mtt();
+}

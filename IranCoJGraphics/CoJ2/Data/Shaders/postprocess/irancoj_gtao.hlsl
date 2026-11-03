@@ -17,7 +17,7 @@
 
 float Irn_ACos(float x)
 {
-    float a = abs(x);
+    float a = saturate(abs(x));   // rounding can push a cosine past 1: sqrt of a negative would be NaN
     float r = (-0.156583 * a + IRN_PI_HALF) * sqrt(1.0 - a);
     return x >= 0.0 ? r : IRN_PI - r;
 }
@@ -56,7 +56,8 @@ float Irn_Gtao(float2 v_uv, float2 v_pix, float3 v_cam_dir, float3 v_pos, float3
 
         // The normal projected into the slice plane, and its angle from the view vector.
         float3 v_ortho = v_dir - dot(v_dir, v_view) * v_view;
-        float3 v_axis = normalize(cross(v_ortho, v_view));
+        float3 v_axis = cross(v_ortho, v_view);
+        v_axis *= rsqrt(max(dot(v_axis, v_axis), 0.000001));
         float3 v_proj_nrm = v_nrm - v_axis * dot(v_nrm, v_axis);
         float f_proj_len = length(v_proj_nrm);
         float f_cos_n = saturate(dot(v_proj_nrm, v_view) / max(f_proj_len, 0.0001));

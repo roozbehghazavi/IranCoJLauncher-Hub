@@ -10,6 +10,15 @@
     "image": "https://raw.githubusercontent.com/roozbehghazavi/IranCoJLauncher-Hub/main/news/images/edition.jpg"
   },
   {
+    "id": "edition-110-graphics",
+    "tag": "IRANCOJ EDITION 1.1.0",
+    "title": "Remastered graphics",
+    "text": "Bound in Blood, remastered: physically based sun highlights and metal, ground-truth ambient occlusion, soft shadows on a 4096 map, temporal anti-aliasing, filmic colour, buildings, trees and props at full detail to the horizon, and three times the vegetation distance. Turn each part on or off in Settings > Graphics > Remastered, or go back to Vanilla. Add IranCoJ HD Textures in Mods for every texture at twice its resolution, your weapons and hands at four times, and the New Classes characters at full size. Needs launcher 3.0.0-alpha.24.",
+    "date": "2026-11-03",
+    "action": "settings",
+    "actionLabel": "Open Graphics settings"
+  },
+  {
     "id": "launcher-leaderboard",
     "tag": "LAUNCHER 3.0.0-ALPHA.23",
     "title": "The leaderboard,\nright here",

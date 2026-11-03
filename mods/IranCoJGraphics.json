@@ -1,7 +1,7 @@
 {
   "id": "IranCoJGraphics",
   "name": "IranCoJ Graphics",
-  "description": "The Edition's remastered graphics: final pass (sharpening, edge smoothing, colour), map detail and draw distances, shadow and culling settings. Settings > Graphics > Remastered or Vanilla.",
+  "description": "The Edition's remastered graphics: GGX lighting and metal, ambient occlusion (GTAO), soft shadows, temporal anti-aliasing, sharpening and colour, and every map's detail and draw distances. Settings > Graphics > Remastered or Vanilla.",
   "folder": "IranCoJGraphics",
   "exclude": [
     "mods.txt"

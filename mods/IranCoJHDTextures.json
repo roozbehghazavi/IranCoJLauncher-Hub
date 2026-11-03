@@ -1,0 +1,10 @@
+{
+  "id": "IranCoJHDTextures",
+  "name": "IranCoJ HD Textures",
+  "description": "Every world texture of the game at twice its resolution, and your weapons and hands at four times. With Remastered graphics, the New Classes characters at their full CoJ Gunslinger size too. About 800 MB to download.",
+  "package": "IranCoJHDTextures-1.0.0.zip",
+  "version": "1.0.0",
+  "disable": [
+    "CoJ2/Data/textures1.rpack"
+  ]
+}

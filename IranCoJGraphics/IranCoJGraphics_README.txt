@@ -1,8 +1,18 @@
-IranCoJ Graphics 1.0.0 - the Edition's remastered graphics, by Thomas (Roozbeh).
+IranCoJ Graphics 1.1.0 - the Edition's remastered graphics, by Thomas (Roozbeh).
 
-irancojfx.dll applies the engine settings no script reaches: every map's baked detail and draw distances (scaled as the
-map loads, nothing written to disk), shadow cascades and culling. The final pass (CoJ2/Data/Shaders/postprocess)
-sharpens, smooths edges and grades colour before the HUD is drawn.
+Everything is set in the IranCoJ Launcher: Settings > Graphics & Sound > Remastered or Vanilla, and each feature on
+its own in the Remastered group. The launcher writes irancojfx.ini and edited copies of the game's own pipeline
+scripts and shaders (from your install); Vanilla removes them again. Nothing of the game itself is shipped.
 
-Everything is set in the IranCoJ Launcher: Settings > Graphics & Sound > Remastered or Vanilla. The launcher writes
-irancojfx.ini and the edited copies of the game's own pipeline scripts and shaders; Vanilla removes them again.
+- Lighting: GGX sun highlights (physically based shine from the game's own shininess maps), metal that reflects the
+  sun in its own colour, ground-truth ambient occlusion (GTAO), soft 5x5 shadow edges on a 4096 shadow map with a
+  shadow bias that keeps small shadows (window sills, frames) at every distance.
+- Image: temporal anti-aliasing (stable edges, no shimmer on wires, fences and foliage; the game's own MSAA is turned
+  off with it), FXAA 3.11 quality edge smoothing, sharpening, filmic tone mapping and a light colour grade.
+- Distance: every map's baked detail and draw distances scaled as the map loads (irancojfx.dll, nothing written to
+  disk), vegetation drawn three times further, shadow cascades and culling, 16x texture filtering.
+- So the remastered shaders run: the precompiled shaders in the game's rpacks are hidden in Remastered mode (named
+  back in Vanilla), and the Edition's exe may use 4 GB.
+
+irancojfx.dll also logs every shader the engine fails to compile to irancojfx.log (with irancojfx_shader_fail_*.hlsl
+next to it), for anyone working on the shaders.

@@ -1,5 +1,5 @@
 {
-  "version": "1.0.1",
+  "version": "1.1.0",
   "notes": "0.4: allow-list. Only the game files named in include are copied (by name, from any store; a mod's .disabled copy counts), so mods and maps in the player's install never reach the Edition. ?path = optional, * and ? = whatever is there. exclude/keep stay for launchers older than alpha.5. 0.5: ownUserFolder - the Edition's exe reads its own HKCU key, so profiles, saves and settings live in Documents\\IranCoJ Edition (launcher alpha.8+). 0.5.1: menuNavigation (Play -> Join/Host, Back -> main menu, patched in the Edition's CoJ2_x86.dll by pattern; launcher alpha.10+), compiled menu packs in edition/files, the multiplayer maps' loading screens (*_loading.rpack). Loading music is copied by the launcher from the tracks the maps' .trk files name. 0.6: the multiplayer maps' own rpacks too (compiled map data such as rivers and lightmaps is only there - without them Tombstone had no water), engine.rpack (the engine's compiled shader sets, hit splatters, lighting) and textures1.rpack (shared textures, e.g. the rivers' reflections); Persepolis Dust menus, in-game screens, Oswald font, own menu music and credits. 0.6.1: no DataModding.pak (ChromEd wizard templates; community maps carry their own mode files), texts edited in the compiled COJ2 Voices&Texts.bin with New Classes' strings included (New Classes no longer installs its own copy). 0.7: slimmer Data0, Data1 and SpeechEn (launcher alpha.13+): story-level geometry, story dialogue, AI chatter and level ambience multiplayer never opened (a play-through of 73 maps) and no map names are left out. 0.7.2: steam_appid.txt next to the exe (Steam copies started outside Steam's folder). The scoreboard colour and column fixes are byte patches on Server List Mod's files (mods/ServerListMod.json). 0.7.4: the Edition ships its own CoJBiBGame_x86.exe (edition/files; no DRM wrapper, already pointed at the Edition's registry key - with Techland's OK), so Steam copies no longer hit 'Application load error 5:0000065434'; launcher alpha.16+ (older ones patch the exe before downloading it). 0.7.5: loading pictures in black and white, the objectives map toned in the Edition's palette, both from their green channel (the vanilla screen read only green, so some community maps store green-only pictures); smooth (antialiased) 128x128 loading spinner. 0.7.6: the class picture frame matches New Classes 2.0's cropped pictures (x 17, 194x221). 0.7.7: loading screen objectives map at 82% and further right (map names get 560 px), story text kept full size; class picture frame in the compiled packs. 0.7.8: Spectate 1.1.0's first-person crosshair (G_SpecCrosshair in New Classes' class screen, a dot from irancoj_crosshair_dot.dds via irn_spec_ring / irn_spec_tick in CoJ2MenuTextures.def).",
   "ownUserFolder": true,
   "menuNavigation": true,
@@ -686,7 +686,7 @@
     }
   },
   "graphics": {
-    "version": "1.0.0",
+    "version": "1.1.0",
     "rewrites": [
       {
         "path": "CoJ2/Data/Shaders/postprocess/irancoj_fx.mtt",
@@ -1007,8 +1007,8 @@
         },
         "replace": [
           [
-            "\\A",
-            "#define IRN_GGX 1 //IranCoJ Edition: GGX sun specular (irancoj_ggx.hlsl)\r\n"
+            "\\A(#define PIXELSHADER[^\\r\\n]*\\r?\\n)",
+            "$1#define IRN_GGX 1 //IranCoJ Edition: GGX sun specular (irancoj_ggx.hlsl)\r\n//#define IRN_METAL_DEBUG 1 //IranCoJ Edition: test only, the left half shows the metal mask\r\n"
           ]
         ]
       },
@@ -1033,6 +1033,220 @@
           [
             "#if defined\\(F_SPECULAR_MULTI\\) && defined\\(F_SHINES\\) && !defined\\(VERTEXSHADER\\)",
             "#if defined(F_SPECULAR_MULTI) && defined(F_SHINES) && !defined(VERTEXSHADER) && !defined(IRN_GGX)"
+          ]
+        ]
+      },
+      {
+        "path": "CoJ2/Data/Shaders/master/Templates/templates.mtt",
+        "pak": "CoJ2/Data1.pak",
+        "entry": "Data/Shaders/master/Templates/templates.mtt",
+        "when": {
+          "lighting": [
+            "modern"
+          ]
+        },
+        "replace": [
+          [
+            "string __out_nrm_a = \\(b_sss_on\\) \\? \"\\(\" \\+ __sss \\+ \"\\)\" : \"0\\.0\";",
+            "string __out_nrm_a = (b_sss_on) ? \"(\" + __sss + \") * 0.5\" : \"0.0\"; //IranCoJ Edition: SSS x0.5, or 1 = metal\r\n            string __out_nrm_a = (e_srf_id == SRF_METAL) ? \"1.0\" : __out_nrm_a;"
+          ]
+        ]
+      },
+      {
+        "path": "CoJ2/Data/Shaders/master/Templates/grass.mtt",
+        "pak": "CoJ2/Data1.pak",
+        "entry": "Data/Shaders/master/Templates/grass.mtt",
+        "when": {
+          "lighting": [
+            "modern"
+          ]
+        },
+        "replace": [
+          [
+            "saturate\\(dot\\(\" \\+ s_t00_rgb \\+ \",1\\.0/3\\.0\\)\\)\\)\";",
+            "saturate(dot(\" + s_t00_rgb + \",1.0/3.0)) * 0.5)\"; //IranCoJ Edition: SSS x0.5"
+          ]
+        ]
+      },
+      {
+        "path": "CoJ2/Data/Shaders/master/Templates/fx.mtt",
+        "pak": "CoJ2/Data1.pak",
+        "entry": "Data/Shaders/master/Templates/fx.mtt",
+        "when": {
+          "lighting": [
+            "modern"
+          ]
+        },
+        "replace": [
+          [
+            "string __out_nrm = \"half4\\(0\\.5,0\\.5,1,0\\.5\\)\";",
+            "string __out_nrm = \"half4(0.5,0.5,1,0.25)\"; //IranCoJ Edition: SSS x0.5"
+          ]
+        ]
+      },
+      {
+        "path": "CoJ2/Data/Shaders/postprocess/lighting_pp_ps.hlsl",
+        "pak": "CoJ2/Data1.pak",
+        "entry": "Data/Shaders/postprocess/lighting_pp_ps.hlsl",
+        "when": {
+          "lighting": [
+            "modern"
+          ]
+        },
+        "replace": [
+          [
+            "FLOAT f_sss = v_nrm\\.w;",
+            "FLOAT f_irn_metal = step(0.75, v_nrm.w); //IranCoJ Edition: the alpha is SSS x0.5, or 1 = metal\r\n    FLOAT f_sss = saturate(v_nrm.w * 2.0) * (1.0 - f_irn_metal);"
+          ],
+          [
+            "FLOAT3 v_out = Lit\\(c_shading_in\\);",
+            "FLOAT3 v_out = Lit(c_shading_in);\r\n    #if defined(IRN_METAL_ON) //IranCoJ Edition: metal (irancoj_ggx.hlsl)\r\n        v_out = Irn_Metal(v_out, f_irn_metal, c_shading_in);\r\n    #endif"
+          ],
+          [
+            "OUT\\.v_clr\\.xyz = Encode_Clr\\(OUT\\.v_clr\\.xyz\\);",
+            "#if defined(IRN_METAL_DEBUG) //IranCoJ Edition: test view, the left half shows the metal mask\r\n        if (V_UV_0_TC.x < 0.5) OUT.v_clr.xyz = f_irn_metal.xxx;\r\n    #endif\r\n    OUT.v_clr.xyz = Encode_Clr(OUT.v_clr.xyz);"
+          ]
+        ]
+      },
+      {
+        "path": "CoJ2/Data/Shaders/postprocess/irancoj_taa.mtt",
+        "pak": "CoJ2/Data1.pak",
+        "entry": "Data/Shaders/postprocess/blur_camera_motion.mtt",
+        "when": {
+          "taa": [
+            "on"
+          ]
+        },
+        "replace": [
+          [
+            "BlendFunc\\(SRC_ALPHA, INV_SRC_ALPHA, ONE, ONE\\);",
+            "//IranCoJ Edition: TAA writes its result (no blending)"
+          ],
+          [
+            "(?s)extern float FPS;.*?Define\\(\"I_SAMPLES\", i_samples\\);",
+            "//IranCoJ Edition: no constants (the motion blur's are not used)"
+          ],
+          [
+            "(?s)int i_cst_i_current = i_const_int_first;.*?Define\\(s_cst_name \\+ \"000\", s_cst_000\\);",
+            "//IranCoJ Edition: no constants"
+          ],
+          [
+            "use PP_TMU\\(s_sampler = \"s_clr\", i_user_map = 8, e_filter = LINEAR_NO_MIP, e_tile = MIRROR\\);",
+            "use PP_TMU(s_sampler = \"s_clr\", i_user_map = 8, e_filter = LINEAR_NO_MIP, e_tile = CLAMP);"
+          ],
+          [
+            "(use PP_TMU\\(s_sampler = \"s_dpt_4\", i_user_map = 9, e_filter = NO_FILTERING, e_tile = CLAMP\\);)",
+            "$1\r\n\t\t\t\tuse PP_TMU(s_sampler = \"s_hist\", i_user_map = 10, e_filter = LINEAR_NO_MIP, e_tile = CLAMP);"
+          ],
+          [
+            "#include <blur_camera_motion_ps\\.hlsl>",
+            "#include <irancoj_taa_ps.hlsl>"
+          ]
+        ]
+      },
+      {
+        "path": "CoJ2/Data/Postprocess/scene30_init_core.ppfx",
+        "pak": "CoJ2/Data0.pak",
+        "entry": "Data/Postprocess/scene30_init_core.ppfx",
+        "when": {
+          "taa": [
+            "on"
+          ]
+        },
+        "replace": [
+          [
+            "\\z",
+            "\r\n//IranCoJ Edition: temporal anti-aliasing (history kept between frames, and the pass result)\r\nBufferScreenFormat(\"IRN_TAA_HIST\", 1, \"A8R8G8B8\", \"\")\r\nBufferScreenFormat(\"IRN_TAA_TMP\", 1, \"A8R8G8B8\", \"temp\")\r\n"
+          ]
+        ]
+      },
+      {
+        "path": "CoJ2/Data/Postprocess/scene30.ppfx",
+        "pak": "CoJ2/Data0.pak",
+        "entry": "Data/Postprocess/scene30.ppfx",
+        "when": {
+          "taa": [
+            "on"
+          ]
+        },
+        "replace": [
+          [
+            "!include\\(\"screen_copy_30_setup\\.ppfx\"\\)(\\s*)SetTexture\\(8, \"CLR\"\\)",
+            "//IranCoJ Edition: temporal anti-aliasing of CLR (irancoj_taa.mat), the history kept for the next frame\r\n            SetRenderTarget(\"IRN_TAA_TMP\", \"\")\r\n                SetTexture(8, \"CLR\")\r\n                SetTexture(9, \"DPT_4_32F\")\r\n                SetTexture(10, \"IRN_TAA_HIST\")\r\n                    QuadScreen(\"irancoj_taa.mat\", \"std\", 1)\r\n            SetRenderTarget(\"IRN_TAA_HIST\", \"\")\r\n                SetTexture(8, \"IRN_TAA_TMP\")\r\n                    QuadScreen(\"copy.mat\", \"std\", 1)\r\n            SetTextureVar(9, \"s_curves\") //IranCoJ Edition: slot 9 back to the colour curves (TAA had the depth there)\r\n\r\n            !include(\"screen_copy_30_setup.ppfx\")$1SetTexture(8, \"IRN_TAA_TMP\")"
+          ],
+          [
+            "!include\\(\"screen_copy_30_setup\\.ppfx\"\\)(\\s*)SetTexture\\(8, \"PRV\"\\)",
+            "//IranCoJ Edition: temporal anti-aliasing of PRV (irancoj_taa.mat), the history kept for the next frame\r\n            SetRenderTarget(\"IRN_TAA_TMP\", \"\")\r\n                SetTexture(8, \"PRV\")\r\n                SetTexture(9, \"DPT_4_32F\")\r\n                SetTexture(10, \"IRN_TAA_HIST\")\r\n                    QuadScreen(\"irancoj_taa.mat\", \"std\", 1)\r\n            SetRenderTarget(\"IRN_TAA_HIST\", \"\")\r\n                SetTexture(8, \"IRN_TAA_TMP\")\r\n                    QuadScreen(\"copy.mat\", \"std\", 1)\r\n            SetTextureVar(9, \"s_curves\") //IranCoJ Edition: slot 9 back to the colour curves (TAA had the depth there)\r\n\r\n            !include(\"screen_copy_30_setup.ppfx\")$1SetTexture(8, \"IRN_TAA_TMP\")"
+          ]
+        ]
+      },
+      {
+        "path": "CoJ2/Data/Postprocess/Effects/screen_copy_30.ppfx",
+        "pak": "CoJ2/Data0.pak",
+        "entry": "Data/Postprocess/Effects/screen_copy_30.ppfx",
+        "when": {
+          "taa": [
+            "on"
+          ]
+        },
+        "replace": [
+          [
+            "!include\\(\"screen_copy_30_setup\\.ppfx\"\\)(\\s*)SetTexture\\(8, \"CLR\"\\)",
+            "//IranCoJ Edition: temporal anti-aliasing of CLR (irancoj_taa.mat), the history kept for the next frame\r\n            SetRenderTarget(\"IRN_TAA_TMP\", \"\")\r\n                SetTexture(8, \"CLR\")\r\n                SetTexture(9, \"DPT_4_32F\")\r\n                SetTexture(10, \"IRN_TAA_HIST\")\r\n                    QuadScreen(\"irancoj_taa.mat\", \"std\", 1)\r\n            SetRenderTarget(\"IRN_TAA_HIST\", \"\")\r\n                SetTexture(8, \"IRN_TAA_TMP\")\r\n                    QuadScreen(\"copy.mat\", \"std\", 1)\r\n            SetTextureVar(9, \"s_curves\") //IranCoJ Edition: slot 9 back to the colour curves (TAA had the depth there)\r\n\r\n            !include(\"screen_copy_30_setup.ppfx\")$1SetTexture(8, \"IRN_TAA_TMP\")"
+          ],
+          [
+            "!include\\(\"screen_copy_30_setup\\.ppfx\"\\)(\\s*)SetTexture\\(8, \"PRV\"\\)",
+            "//IranCoJ Edition: temporal anti-aliasing of PRV (irancoj_taa.mat), the history kept for the next frame\r\n            SetRenderTarget(\"IRN_TAA_TMP\", \"\")\r\n                SetTexture(8, \"PRV\")\r\n                SetTexture(9, \"DPT_4_32F\")\r\n                SetTexture(10, \"IRN_TAA_HIST\")\r\n                    QuadScreen(\"irancoj_taa.mat\", \"std\", 1)\r\n            SetRenderTarget(\"IRN_TAA_HIST\", \"\")\r\n                SetTexture(8, \"IRN_TAA_TMP\")\r\n                    QuadScreen(\"copy.mat\", \"std\", 1)\r\n            SetTextureVar(9, \"s_curves\") //IranCoJ Edition: slot 9 back to the colour curves (TAA had the depth there)\r\n\r\n            !include(\"screen_copy_30_setup.ppfx\")$1SetTexture(8, \"IRN_TAA_TMP\")"
+          ]
+        ]
+      },
+      {
+        "path": "CoJ2/Data/Shaders/Common/common.hlsl",
+        "pak": "CoJ2/Data1.pak",
+        "entry": "Data/Shaders/Common/common.hlsl",
+        "when": {
+          "taa": [
+            "on"
+          ]
+        },
+        "replace": [
+          [
+            "(?m)^(?=[ \\t]*float4 Pos_Out\\(float4 v_pos\\))",
+            "#define IRN_TAA 1\r\n        //IranCoJ Edition: TAA jitter - the scene a sub-pixel off, a new offset each frame\r\n        #if defined(IRN_TAA) && defined(VERTEXSHADER) && !defined(TECH_SHD_ON) && !defined(TECH_RFL_ON)\r\n            float4 Irn_Jitter(float4 v_pos)\r\n            {\r\n                float2 v_j = frac(sin(floor(TIME * 997.0) * float2(12.9898, 78.233)) * 43758.5453) - 0.5;\r\n                v_pos.xy += v_j * 2.0 * RENDER_TARGET_PARAMS.xy * v_pos.w;\r\n                return v_pos;\r\n            }\r\n        #else\r\n            #define Irn_Jitter(v) (v)\r\n        #endif\r\n\r\n"
+          ],
+          [
+            "return Mul44\\(v_pos, COMBINED_XFORM\\);",
+            "return Irn_Jitter(Mul44(v_pos, COMBINED_XFORM));"
+          ],
+          [
+            "(float4 Pos_Out_WS\\(float4 v_pos\\)\\s*\\{\\s*)return Mul44\\(v_pos, VIEWPROJ_XFORM\\);",
+            "$1return Irn_Jitter(Mul44(v_pos, VIEWPROJ_XFORM));"
+          ],
+          [
+            "(float4 Pos_Out_CS\\(float4 v_pos\\)\\s*\\{\\s*)return Mul44\\(v_pos, PROJECTION_XFORM\\);",
+            "$1return Irn_Jitter(Mul44(v_pos, PROJECTION_XFORM));"
+          ]
+        ]
+      },
+      {
+        "path": "CoJ2/Data/Shaders/postprocess/lighting_pp_stencil_simple.mat",
+        "pak": "CoJ2/Data1.pak",
+        "entry": "Data/Shaders/postprocess/lighting_pp_stencil.mat",
+        "replace": [
+          [
+            "use mtt\\(b_stencil_on = TRUE\\);",
+            "use mtt(b_stencil_on = TRUE, b_simple_on = TRUE); //IranCoJ Edition: the Simple pipeline rain lighting"
+          ]
+        ]
+      },
+      {
+        "path": "CoJ2/Data/FX/fx_long_trace.mat",
+        "pak": "CoJ2/Data0.pak",
+        "entry": "Data/FX/trace.mat",
+        "replace": [
+          [
+            "\\A",
+            "//IranCoJ Edition: the long bullet traces the engine asks for, as trace.mat\r\n"
           ]
         ]
       }
