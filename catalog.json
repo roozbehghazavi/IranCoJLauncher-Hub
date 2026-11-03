@@ -2408,6 +2408,15 @@
   },
   "news": [
     {
+      "id": "launcher-beta",
+      "tag": "LAUNCHER 3.0.0-BETA.1",
+      "title": "The launcher\nis in beta",
+      "text": "Everything IranCoJ Launcher 3 is meant to do is here: the Edition, maps, mods, servers, the leaderboard and remastered graphics. From now on it is fixes and polish. The Edition shortcut on your desktop now opens the launcher, which updates itself, the Edition, maps and mods before the game starts. Found a bug? Let us know.",
+      "date": "2026-11-03",
+      "slide": true,
+      "image": "https://raw.githubusercontent.com/roozbehghazavi/IranCoJLauncher-Hub/main/news/images/launcher-beta.jpg"
+    },
+    {
       "id": "edition",
       "tag": "IRANCOJ EDITION",
       "title": "Bound in Blood\nMultiplayer",
@@ -2421,10 +2430,12 @@
       "id": "edition-110-graphics",
       "tag": "IRANCOJ EDITION 1.1.0",
       "title": "Remastered graphics",
-      "text": "Bound in Blood, remastered: physically based sun highlights and metal, ground-truth ambient occlusion, soft shadows on a 4096 map, temporal anti-aliasing, filmic colour, buildings, trees and props at full detail to the horizon, and three times the vegetation distance. Turn each part on or off in Settings > Graphics > Remastered, or go back to Vanilla. Add IranCoJ HD Textures in Mods for every texture at twice its resolution, your weapons and hands at four times, and the New Classes characters at full size. Needs launcher 3.0.0-alpha.24.",
+      "text": "Bound in Blood, remastered: physically based sun highlights and metal, ground-truth ambient occlusion, soft shadows on a 4096 map, temporal anti-aliasing, filmic colour, buildings, trees and props at full detail to the horizon, and three times the vegetation distance. Turn each part on or off in Settings > Graphics > Remastered, or go back to Vanilla. Remastered comes with IranCoJ HD Textures (install it in Mods): every texture at twice its resolution, your weapons and hands at four times, and the New Classes characters at full size. Needs launcher 3.0.0-beta.1.",
       "date": "2026-11-03",
-      "action": "settings",
-      "actionLabel": "Open Graphics settings"
+      "slide": true,
+      "action": "mods",
+      "actionLabel": "Get HD Textures",
+      "image": "https://raw.githubusercontent.com/roozbehghazavi/IranCoJLauncher-Hub/main/news/images/edition-graphics.jpg"
     },
     {
       "id": "launcher-leaderboard",
