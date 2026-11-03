@@ -2,8 +2,8 @@
   {
     "id": "edition-111",
     "tag": "IRANCOJ EDITION 1.1.1",
-    "title": "Map names fixed",
-    "text": "On most PCs the map name on the loading screen showed as a red box, or too big for its place: the sharp title font it uses was missing. The Edition now brings it along. Vanilla graphics also give the game its own anti-aliasing back (launcher 3.0.0-beta.3).",
+    "title": "Fixes: joining, map names",
+    "text": "On most PCs the map name on the loading screen showed as a red box, or too big for its place: the sharp title font it uses was missing. The Edition now brings it along. With Remastered graphics on, joining a server could fail with a wrong map CRC: IranCoJ Graphics 1.1.1 fixes that. Launcher 3.0.0-beta.3: the Edition shortcut while the launcher is open plays from the open launcher instead of starting a second one, and Vanilla graphics give the game its own anti-aliasing back.",
     "date": "2026-11-03",
     "action": "settings",
     "actionLabel": "Update the Edition"
