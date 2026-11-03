@@ -88,10 +88,12 @@ rewrites.append(rw('Data/Shaders/postprocess/lighting_pp_vs.hlsl', D1, 'Data/Sha
     (r'RENDER_TARGET_PARAMS\.zw \* 0\.25\)', 'RENDER_TARGET_PARAMS.zw * {{ao_texel}})'),
     (r'RENDER_TARGET_PARAMS\.xyxy \* 4\.0', 'RENDER_TARGET_PARAMS.xyxy * {{ao_point}}')
 ], when=AO))
-# Sample rings at half the spacing in the finer mask's pixels: the vanilla world radius, more samples.
+# GTAO (the mod's irancoj_gtao.hlsl) in place of the vanilla SSAO loop; i_occlusion_samples sets its steps.
 rewrites.append(rw('Data/Shaders/postprocess/shadows_blur_ps.hlsl', D1, 'Data/Shaders/postprocess/shadows_blur_ps.hlsl', [
-    (r'FLOAT f_offset_1 = 1\.0 \+ f_step;', 'FLOAT f_offset_1 = (1.0 + f_step) * 2.0; //IranCoJ Edition: finer mask, vanilla world radius'),
-    (r'FLOAT f_offset_2 = 1\.0 \+ f_offset_1;', 'FLOAT f_offset_2 = f_offset_1 + 2.0;')
+    (r'(?=#if defined\(SHADER_PATH_X360\)\s*\[maxtempreg)',
+     '#if defined(OCCLUSION_ON)' + N + '    #include <irancoj_gtao.hlsl> //IranCoJ Edition' + N + '#endif' + N + N),
+    (r'(?s)FLOAT f_occlusion = 0\.0;.*?f_out_ssao = min\(f_out_ssao, 0\.75\);//fix: light edges',
+     'f_out_ssao = Irn_Gtao(V_UV_SCREEN_TC, V_POS_SS_TC.xy, v_cam_dir_ss, v_pos_center.xyz, v_nrm); //IranCoJ Edition: GTAO')
 ], when=AO))
 rewrites.append(rw('Data/Scripts/varlist_occlusion.scr', D0, 'Data/Scripts/varlist_occlusion.scr', [
     (r'VarInt\( "i_occlusion_samples", 3 \)', 'VarInt( "i_occlusion_samples", {{ao_rings}} ) //IranCoJ Edition: vanilla 3')
@@ -121,6 +123,22 @@ rewrites.append(rw('Data/Shaders/Common/values.mtt', D1, 'Data/Shaders/Common/va
 rewrites.append(rw('Data/Shaders/Common/common.mtt', D1, 'Data/Shaders/Common/common.mtt', [
     (r'float f_scale = 0\.01;', 'float f_scale = {{shader_band}}; //IranCoJ Edition: shader LOD bands (vanilla 0.01)')
 ], when={'detail': ['2', '5', '10']}))
+
+# GGX sun specular (the mod's irancoj_ggx.hlsl), only where lighting_pp_ps.hlsl defines IRN_GGX.
+LIGHT = {'lighting': ['modern']}
+rewrites.append(rw('Data/Shaders/postprocess/lighting_pp_ps.hlsl', D1, 'Data/Shaders/postprocess/lighting_pp_ps.hlsl', [
+    (r'\A', '#define IRN_GGX 1 //IranCoJ Edition: GGX sun specular (irancoj_ggx.hlsl)' + N)
+], when=LIGHT))
+rewrites.append(rw('Data/Shaders/Common/common.hlsl', D1, 'Data/Shaders/Common/common.hlsl', [
+    (r'(?m)^(?=[ \t]*FLOAT3 Lit\(shading_in IN\))',
+     '        #if defined(IRN_GGX) //IranCoJ Edition' + N + '            #include <irancoj_ggx.hlsl>' + N + '        #endif' + N + N),
+    (r'F_SPECULAR_MULTI = Specular_Shading_Phong\(IN\);',
+     '#if defined(IRN_GGX) && defined(F_SHINES) && defined(DIFFUSE_ON) //IranCoJ Edition' + N +
+     '                        F_SPECULAR_MULTI = Irn_Ggx(IN.c_lit.v_dir_n, IN.v_nrm_n, IN.v_rfl_dir, F_SHINES);' + N +
+     '                    #else' + N + '                        F_SPECULAR_MULTI = Specular_Shading_Phong(IN);' + N + '                    #endif'),
+    (r'#if defined\(F_SPECULAR_MULTI\) && defined\(F_SHINES\) && !defined\(VERTEXSHADER\)',
+     '#if defined(F_SPECULAR_MULTI) && defined(F_SHINES) && !defined(VERTEXSHADER) && !defined(IRN_GGX)')
+], when=LIGHT))
 
 graphics = {
     'version': '1.0.0',

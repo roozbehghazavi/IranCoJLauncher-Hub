@@ -914,12 +914,12 @@
         },
         "replace": [
           [
-            "FLOAT f_offset_1 = 1\\.0 \\+ f_step;",
-            "FLOAT f_offset_1 = (1.0 + f_step) * 2.0; //IranCoJ Edition: finer mask, vanilla world radius"
+            "(?=#if defined\\(SHADER_PATH_X360\\)\\s*\\[maxtempreg)",
+            "#if defined(OCCLUSION_ON)\r\n    #include <irancoj_gtao.hlsl> //IranCoJ Edition\r\n#endif\r\n\r\n"
           ],
           [
-            "FLOAT f_offset_2 = 1\\.0 \\+ f_offset_1;",
-            "FLOAT f_offset_2 = f_offset_1 + 2.0;"
+            "(?s)FLOAT f_occlusion = 0\\.0;.*?f_out_ssao = min\\(f_out_ssao, 0\\.75\\);//fix: light edges",
+            "f_out_ssao = Irn_Gtao(V_UV_SCREEN_TC, V_POS_SS_TC.xy, v_cam_dir_ss, v_pos_center.xyz, v_nrm); //IranCoJ Edition: GTAO"
           ]
         ]
       },
@@ -993,6 +993,46 @@
           [
             "float f_scale = 0\\.01;",
             "float f_scale = {{shader_band}}; //IranCoJ Edition: shader LOD bands (vanilla 0.01)"
+          ]
+        ]
+      },
+      {
+        "path": "CoJ2/Data/Shaders/postprocess/lighting_pp_ps.hlsl",
+        "pak": "CoJ2/Data1.pak",
+        "entry": "Data/Shaders/postprocess/lighting_pp_ps.hlsl",
+        "when": {
+          "lighting": [
+            "modern"
+          ]
+        },
+        "replace": [
+          [
+            "\\A",
+            "#define IRN_GGX 1 //IranCoJ Edition: GGX sun specular (irancoj_ggx.hlsl)\r\n"
+          ]
+        ]
+      },
+      {
+        "path": "CoJ2/Data/Shaders/Common/common.hlsl",
+        "pak": "CoJ2/Data1.pak",
+        "entry": "Data/Shaders/Common/common.hlsl",
+        "when": {
+          "lighting": [
+            "modern"
+          ]
+        },
+        "replace": [
+          [
+            "(?m)^(?=[ \\t]*FLOAT3 Lit\\(shading_in IN\\))",
+            "        #if defined(IRN_GGX) //IranCoJ Edition\r\n            #include <irancoj_ggx.hlsl>\r\n        #endif\r\n\r\n"
+          ],
+          [
+            "F_SPECULAR_MULTI = Specular_Shading_Phong\\(IN\\);",
+            "#if defined(IRN_GGX) && defined(F_SHINES) && defined(DIFFUSE_ON) //IranCoJ Edition\r\n                        F_SPECULAR_MULTI = Irn_Ggx(IN.c_lit.v_dir_n, IN.v_nrm_n, IN.v_rfl_dir, F_SHINES);\r\n                    #else\r\n                        F_SPECULAR_MULTI = Specular_Shading_Phong(IN);\r\n                    #endif"
+          ],
+          [
+            "#if defined\\(F_SPECULAR_MULTI\\) && defined\\(F_SHINES\\) && !defined\\(VERTEXSHADER\\)",
+            "#if defined(F_SPECULAR_MULTI) && defined(F_SHINES) && !defined(VERTEXSHADER) && !defined(IRN_GGX)"
           ]
         ]
       }

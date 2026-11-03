@@ -79,6 +79,11 @@ float4 Irn_Vanilla(float4 v)
 
 float3 Irn_Tap(float2 uv) { return Sample_Gamma(s_tex, uv, 0.0).rgb; }
 float Irn_Luma(float3 c) { return dot(c, float3(0.299, 0.587, 0.114)); }
+float Irn_L(float2 uv) { return sqrt(Irn_Luma(Irn_Tap(uv))); } // perceptual luma for the edge search
+
+#define IRN_AA_EDGE     0.125   // local contrast an edge needs, relative to its brightest pixel
+#define IRN_AA_EDGE_MIN 0.0312  // ... and at least this (dark areas)
+#define IRN_AA_SUBPIX   0.75    // how much single-pixel detail (wires, far fences) is smoothed
 
 void main(PIX_PARAMS)
 {
@@ -101,25 +106,67 @@ void main(PIX_PARAMS)
     c = lerp(e, c, step(0.001, IRN_SHARPEN));
 
     #if IRN_AA
-        // Edge anti-aliasing: find the edge direction from the luma of four half-texel diagonals and blur along it only.
-        float lM  = Irn_Luma(e);
-        float lNW = Irn_Luma(Irn_Tap(uv + px * float2(-0.5, -0.5)));
-        float lNE = Irn_Luma(Irn_Tap(uv + px * float2( 0.5, -0.5)));
-        float lSW = Irn_Luma(Irn_Tap(uv + px * float2(-0.5,  0.5)));
-        float lSE = Irn_Luma(Irn_Tap(uv + px * float2( 0.5,  0.5)));
-        float lMin = min(lM, min(min(lNW, lNE), min(lSW, lSE)));
-        float lMax = max(lM, max(max(lNW, lNE), max(lSW, lSE)));
+        // Edge anti-aliasing, FXAA 3.11 quality (12-step edge search): find the edge's direction and both of its ends,
+        // then resample the pixel at its sub-pixel distance from the edge. Edge pixels take that result unsharpened.
+        float lM = Irn_L(uv);
+        float lS = Irn_L(uv + float2(0.0, px.y));
+        float lE = Irn_L(uv + float2(px.x, 0.0));
+        float lN = Irn_L(uv - float2(0.0, px.y));
+        float lW = Irn_L(uv - float2(px.x, 0.0));
+        float lMax = max(max(lN, lW), max(lE, max(lS, lM)));
+        float lMin = min(min(lN, lW), min(lE, min(lS, lM)));
+        float range = lMax - lMin;
 
-        if (lMax - lMin > max(0.0625, lMax * 0.166))
+        if (range >= max(IRN_AA_EDGE_MIN, lMax * IRN_AA_EDGE))
         {
-            float2 dir = float2(-((lNW + lNE) - (lSW + lSE)), (lNW + lSW) - (lNE + lSE));
-            float reduce = max((lNW + lNE + lSW + lSE) * (0.25 / 8.0), 1.0 / 128.0);
-            dir = clamp(dir / (min(abs(dir.x), abs(dir.y)) + reduce), -8.0, 8.0) * px;
+            float lNW = Irn_L(uv - px);
+            float lSE = Irn_L(uv + px);
+            float lNE = Irn_L(uv + float2(px.x, -px.y));
+            float lSW = Irn_L(uv + float2(-px.x, px.y));
 
-            float3 a = 0.5 * (Irn_Tap(uv + dir * (1.0 / 3.0 - 0.5)) + Irn_Tap(uv + dir * (2.0 / 3.0 - 0.5)));
-            float3 b = a * 0.5 + 0.25 * (Irn_Tap(uv - dir * 0.5) + Irn_Tap(uv + dir * 0.5));
-            float lB = Irn_Luma(b);
-            c = (lB < lMin || lB > lMax) ? a : b;
+            float lNS = lN + lS, lWE = lW + lE;
+            float lNESE = lNE + lSE, lNWNE = lNW + lNE, lNWSW = lNW + lSW, lSWSE = lSW + lSE;
+            float edgeHorz = abs(-2.0 * lW + lNWSW) + abs(-2.0 * lM + lNS) * 2.0 + abs(-2.0 * lE + lNESE);
+            float edgeVert = abs(-2.0 * lS + lSWSE) + abs(-2.0 * lM + lWE) * 2.0 + abs(-2.0 * lN + lNWNE);
+            bool horz = edgeHorz >= edgeVert;
+
+            float subpix = saturate(abs(((lNS + lWE) * 2.0 + lNWSW + lNESE) / 12.0 - lM) / range);
+            subpix = (-2.0 * subpix + 3.0) * subpix * subpix;
+
+            // The neighbour across the edge with the steeper step.
+            float lengthSign = horz ? px.y : px.x;
+            if (!horz) { lN = lW; lS = lE; }
+            float gN = lN - lM, gS = lS - lM;
+            bool pairN = abs(gN) >= abs(gS);
+            float gradient = max(abs(gN), abs(gS)) * 0.25;
+            if (pairN) lengthSign = -lengthSign;
+            float lLocal = (pairN ? lN + lM : lS + lM) * 0.5;
+
+            // Walk along the edge both ways until its luma leaves the local average.
+            float2 posB = uv;
+            if (horz) posB.y += lengthSign * 0.5; else posB.x += lengthSign * 0.5;
+            float2 offNP = horz ? float2(px.x, 0.0) : float2(0.0, px.y);
+            float2 posN = posB - offNP, posP = posB + offNP;
+            float endN = Irn_L(posN) - lLocal, endP = Irn_L(posP) - lLocal;
+            bool doneN = abs(endN) >= gradient, doneP = abs(endP) >= gradient;
+            const float steps[11] = { 1.0, 1.0, 1.0, 1.0, 1.5, 2.0, 2.0, 2.0, 2.0, 4.0, 8.0 };
+            [loop]
+            for (int i = 0; i < 11 && !(doneN && doneP); i++)
+            {
+                if (!doneN) { posN -= offNP * steps[i]; endN = Irn_L(posN) - lLocal; doneN = abs(endN) >= gradient; }
+                if (!doneP) { posP += offNP * steps[i]; endP = Irn_L(posP) - lLocal; doneP = abs(endP) >= gradient; }
+            }
+
+            float dstN = horz ? uv.x - posN.x : uv.y - posN.y;
+            float dstP = horz ? posP.x - uv.x : posP.y - uv.y;
+            bool mBelow = lM - lLocal < 0.0;
+            bool good = (dstN < dstP) ? ((endN < 0.0) != mBelow) : ((endP < 0.0) != mBelow);
+            float offset = good ? 0.5 - min(dstN, dstP) / (dstP + dstN) : 0.0;
+            offset = max(offset, subpix * subpix * IRN_AA_SUBPIX);
+
+            float2 posM = uv;
+            if (horz) posM.y += offset * lengthSign; else posM.x += offset * lengthSign;
+            c = Irn_Tap(posM);
         }
     #endif
 
