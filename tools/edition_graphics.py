@@ -243,6 +243,20 @@ rewrites.append(rw('Data/FX/fx_long_trace.mat', D0, 'Data/FX/trace.mat', [
 rewrites.append(rw('Data/MapsNet/Tombstone/river/tombstone_river.mat', D1, 'Data/Shaders/master/Templates/river_a.mat', [
     (r'\z', N + '//IranCoJ Edition: Tombstone\'s river (its own material is only in the rpack cache), from river_a.mat' + N)
 ]))
+# The other water materials maps name (their .exp files) that have no source in any pak - story-map rivers, shores
+# and pools reused by stock and community maps: each from the game's nearest template.
+for path, template in [
+        ('Data/Maps/Battle/River/battle_river_a.mat', 'river_a'),          # Civil, Fort Stanton
+        ('Data/Maps/Battle/River/battle_river_b.mat', 'river_a'),          # Battle Camp
+        ('Data/Maps/Battle/River/battle_shore.mat', 'shore_a'),            # McCall's Villa
+        ('Data/Maps/Battle/River/battle_water_flat_b.mat', 'water_flat_b'),  # McCall's Villa
+        ('Data/Maps/Juarez/Water/juarez_water_a.mat', 'water_a'),          # Fort Stanton
+        ('Data/Shaders/Liquid/Templates/water_shore_a.mat', 'shore_a'),    # Civil, Frisco, Prison Break 2
+        ('Data/World/water_shore.mat', 'shore_a'),                         # Adobes, Coffeyville, Magnificent, ...
+        ('Data/Shaders/Water/water_default.mat', 'water_a')]:              # The Dungeon
+    rewrites.append(rw(path, D1, f'Data/Shaders/master/Templates/{template}.mat', [
+        (r'\z', N + f'//IranCoJ Edition: this material is only in the rpack caches; the game\'s {template}.mat in its place' + N)
+    ]))
 
 graphics = {
     'version': '1.1.1',

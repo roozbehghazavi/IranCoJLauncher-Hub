@@ -1260,6 +1260,94 @@
             "\r\n//IranCoJ Edition: Tombstone's river (its own material is only in the rpack cache), from river_a.mat\r\n"
           ]
         ]
+      },
+      {
+        "path": "CoJ2/Data/Maps/Battle/River/battle_river_a.mat",
+        "pak": "CoJ2/Data1.pak",
+        "entry": "Data/Shaders/master/Templates/river_a.mat",
+        "replace": [
+          [
+            "\\z",
+            "\r\n//IranCoJ Edition: this material is only in the rpack caches; the game's river_a.mat in its place\r\n"
+          ]
+        ]
+      },
+      {
+        "path": "CoJ2/Data/Maps/Battle/River/battle_river_b.mat",
+        "pak": "CoJ2/Data1.pak",
+        "entry": "Data/Shaders/master/Templates/river_a.mat",
+        "replace": [
+          [
+            "\\z",
+            "\r\n//IranCoJ Edition: this material is only in the rpack caches; the game's river_a.mat in its place\r\n"
+          ]
+        ]
+      },
+      {
+        "path": "CoJ2/Data/Maps/Battle/River/battle_shore.mat",
+        "pak": "CoJ2/Data1.pak",
+        "entry": "Data/Shaders/master/Templates/shore_a.mat",
+        "replace": [
+          [
+            "\\z",
+            "\r\n//IranCoJ Edition: this material is only in the rpack caches; the game's shore_a.mat in its place\r\n"
+          ]
+        ]
+      },
+      {
+        "path": "CoJ2/Data/Maps/Battle/River/battle_water_flat_b.mat",
+        "pak": "CoJ2/Data1.pak",
+        "entry": "Data/Shaders/master/Templates/water_flat_b.mat",
+        "replace": [
+          [
+            "\\z",
+            "\r\n//IranCoJ Edition: this material is only in the rpack caches; the game's water_flat_b.mat in its place\r\n"
+          ]
+        ]
+      },
+      {
+        "path": "CoJ2/Data/Maps/Juarez/Water/juarez_water_a.mat",
+        "pak": "CoJ2/Data1.pak",
+        "entry": "Data/Shaders/master/Templates/water_a.mat",
+        "replace": [
+          [
+            "\\z",
+            "\r\n//IranCoJ Edition: this material is only in the rpack caches; the game's water_a.mat in its place\r\n"
+          ]
+        ]
+      },
+      {
+        "path": "CoJ2/Data/Shaders/Liquid/Templates/water_shore_a.mat",
+        "pak": "CoJ2/Data1.pak",
+        "entry": "Data/Shaders/master/Templates/shore_a.mat",
+        "replace": [
+          [
+            "\\z",
+            "\r\n//IranCoJ Edition: this material is only in the rpack caches; the game's shore_a.mat in its place\r\n"
+          ]
+        ]
+      },
+      {
+        "path": "CoJ2/Data/World/water_shore.mat",
+        "pak": "CoJ2/Data1.pak",
+        "entry": "Data/Shaders/master/Templates/shore_a.mat",
+        "replace": [
+          [
+            "\\z",
+            "\r\n//IranCoJ Edition: this material is only in the rpack caches; the game's shore_a.mat in its place\r\n"
+          ]
+        ]
+      },
+      {
+        "path": "CoJ2/Data/Shaders/Water/water_default.mat",
+        "pak": "CoJ2/Data1.pak",
+        "entry": "Data/Shaders/master/Templates/water_a.mat",
+        "replace": [
+          [
+            "\\z",
+            "\r\n//IranCoJ Edition: this material is only in the rpack caches; the game's water_a.mat in its place\r\n"
+          ]
+        ]
       }
     ],
     "vegetation": {
