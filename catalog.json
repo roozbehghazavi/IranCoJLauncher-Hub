@@ -432,13 +432,13 @@
     {
       "id": "IranCoJGraphics",
       "name": "IranCoJ Graphics",
-      "version": "1.1.1",
+      "version": "1.2.0",
       "description": "The Edition's remastered graphics: GGX lighting and metal, ambient occlusion (GTAO), soft shadows, temporal anti-aliasing, sharpening and colour, and every map's detail and draw distances. Settings > Graphics > Remastered or Vanilla.",
       "package": {
-        "file": "IranCoJGraphics-1.1.1.zip",
-        "size": 175923,
-        "sha256": "091e3221d13af4472d90bb744b9a18ae0bbfcd7b68194121fd8994c0fbb6f94f",
-        "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/mods/IranCoJGraphics-1.1.1.zip"
+        "file": "IranCoJGraphics-1.2.0.zip",
+        "size": 178180,
+        "sha256": "33fd6c72af71c692862b90a9f5e87cf493aac48e68632ed3bc3a993f3679e2f8",
+        "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/mods/IranCoJGraphics-1.2.0.zip"
       },
       "exclude": [
         "mods.txt"
@@ -1366,7 +1366,7 @@
       }
     },
     "graphics": {
-      "version": "1.1.1",
+      "version": "1.1.2",
       "rewrites": [
         {
           "path": "CoJ2/Data/Shaders/postprocess/irancoj_fx.mtt",
@@ -1852,11 +1852,11 @@
           "replace": [
             [
               "!include\\(\"screen_copy_30_setup\\.ppfx\"\\)(\\s*)SetTexture\\(8, \"CLR\"\\)",
-              "//IranCoJ Edition: temporal anti-aliasing of CLR (irancoj_taa.mat), the history kept for the next frame\r\n            SetRenderTarget(\"IRN_TAA_TMP\", \"\")\r\n                SetTexture(8, \"CLR\")\r\n                SetTexture(9, \"DPT_4_32F\")\r\n                SetTexture(10, \"IRN_TAA_HIST\")\r\n                    QuadScreen(\"irancoj_taa.mat\", \"std\", 1)\r\n            SetRenderTarget(\"IRN_TAA_HIST\", \"\")\r\n                SetTexture(8, \"IRN_TAA_TMP\")\r\n                    QuadScreen(\"copy.mat\", \"std\", 1)\r\n            SetTextureVar(9, \"s_curves\") //IranCoJ Edition: slot 9 back to the colour curves (TAA had the depth there)\r\n\r\n            !include(\"screen_copy_30_setup.ppfx\")$1SetTexture(8, \"IRN_TAA_TMP\")"
+              "//IranCoJ Edition: temporal anti-aliasing of CLR (irancoj_taa.mat), the history kept for the next frame\r\n            SetRenderTarget(\"IRN_TAA_TMP\", \"\")\r\n                SetTexture(8, \"CLR\")\r\n                SetTexture(9, \"DPT\")\r\n                SetTexture(10, \"IRN_TAA_HIST\")\r\n                    QuadScreen(\"irancoj_taa.mat\", \"std\", 1)\r\n            SetRenderTarget(\"IRN_TAA_HIST\", \"\")\r\n                SetTexture(8, \"IRN_TAA_TMP\")\r\n                    QuadScreen(\"copy.mat\", \"std\", 1)\r\n            SetTextureVar(9, \"s_curves\") //IranCoJ Edition: slot 9 back to the colour curves (TAA had the depth there)\r\n\r\n            !include(\"screen_copy_30_setup.ppfx\")$1SetTexture(8, \"IRN_TAA_TMP\")"
             ],
             [
               "!include\\(\"screen_copy_30_setup\\.ppfx\"\\)(\\s*)SetTexture\\(8, \"PRV\"\\)",
-              "//IranCoJ Edition: temporal anti-aliasing of PRV (irancoj_taa.mat), the history kept for the next frame\r\n            SetRenderTarget(\"IRN_TAA_TMP\", \"\")\r\n                SetTexture(8, \"PRV\")\r\n                SetTexture(9, \"DPT_4_32F\")\r\n                SetTexture(10, \"IRN_TAA_HIST\")\r\n                    QuadScreen(\"irancoj_taa.mat\", \"std\", 1)\r\n            SetRenderTarget(\"IRN_TAA_HIST\", \"\")\r\n                SetTexture(8, \"IRN_TAA_TMP\")\r\n                    QuadScreen(\"copy.mat\", \"std\", 1)\r\n            SetTextureVar(9, \"s_curves\") //IranCoJ Edition: slot 9 back to the colour curves (TAA had the depth there)\r\n\r\n            !include(\"screen_copy_30_setup.ppfx\")$1SetTexture(8, \"IRN_TAA_TMP\")"
+              "//IranCoJ Edition: temporal anti-aliasing of PRV (irancoj_taa.mat), the history kept for the next frame\r\n            SetRenderTarget(\"IRN_TAA_TMP\", \"\")\r\n                SetTexture(8, \"PRV\")\r\n                SetTexture(9, \"DPT\")\r\n                SetTexture(10, \"IRN_TAA_HIST\")\r\n                    QuadScreen(\"irancoj_taa.mat\", \"std\", 1)\r\n            SetRenderTarget(\"IRN_TAA_HIST\", \"\")\r\n                SetTexture(8, \"IRN_TAA_TMP\")\r\n                    QuadScreen(\"copy.mat\", \"std\", 1)\r\n            SetTextureVar(9, \"s_curves\") //IranCoJ Edition: slot 9 back to the colour curves (TAA had the depth there)\r\n\r\n            !include(\"screen_copy_30_setup.ppfx\")$1SetTexture(8, \"IRN_TAA_TMP\")"
             ]
           ]
         },
@@ -1872,11 +1872,11 @@
           "replace": [
             [
               "!include\\(\"screen_copy_30_setup\\.ppfx\"\\)(\\s*)SetTexture\\(8, \"CLR\"\\)",
-              "//IranCoJ Edition: temporal anti-aliasing of CLR (irancoj_taa.mat), the history kept for the next frame\r\n            SetRenderTarget(\"IRN_TAA_TMP\", \"\")\r\n                SetTexture(8, \"CLR\")\r\n                SetTexture(9, \"DPT_4_32F\")\r\n                SetTexture(10, \"IRN_TAA_HIST\")\r\n                    QuadScreen(\"irancoj_taa.mat\", \"std\", 1)\r\n            SetRenderTarget(\"IRN_TAA_HIST\", \"\")\r\n                SetTexture(8, \"IRN_TAA_TMP\")\r\n                    QuadScreen(\"copy.mat\", \"std\", 1)\r\n            SetTextureVar(9, \"s_curves\") //IranCoJ Edition: slot 9 back to the colour curves (TAA had the depth there)\r\n\r\n            !include(\"screen_copy_30_setup.ppfx\")$1SetTexture(8, \"IRN_TAA_TMP\")"
+              "//IranCoJ Edition: temporal anti-aliasing of CLR (irancoj_taa.mat), the history kept for the next frame\r\n            SetRenderTarget(\"IRN_TAA_TMP\", \"\")\r\n                SetTexture(8, \"CLR\")\r\n                SetTexture(9, \"DPT\")\r\n                SetTexture(10, \"IRN_TAA_HIST\")\r\n                    QuadScreen(\"irancoj_taa.mat\", \"std\", 1)\r\n            SetRenderTarget(\"IRN_TAA_HIST\", \"\")\r\n                SetTexture(8, \"IRN_TAA_TMP\")\r\n                    QuadScreen(\"copy.mat\", \"std\", 1)\r\n            SetTextureVar(9, \"s_curves\") //IranCoJ Edition: slot 9 back to the colour curves (TAA had the depth there)\r\n\r\n            !include(\"screen_copy_30_setup.ppfx\")$1SetTexture(8, \"IRN_TAA_TMP\")"
             ],
             [
               "!include\\(\"screen_copy_30_setup\\.ppfx\"\\)(\\s*)SetTexture\\(8, \"PRV\"\\)",
-              "//IranCoJ Edition: temporal anti-aliasing of PRV (irancoj_taa.mat), the history kept for the next frame\r\n            SetRenderTarget(\"IRN_TAA_TMP\", \"\")\r\n                SetTexture(8, \"PRV\")\r\n                SetTexture(9, \"DPT_4_32F\")\r\n                SetTexture(10, \"IRN_TAA_HIST\")\r\n                    QuadScreen(\"irancoj_taa.mat\", \"std\", 1)\r\n            SetRenderTarget(\"IRN_TAA_HIST\", \"\")\r\n                SetTexture(8, \"IRN_TAA_TMP\")\r\n                    QuadScreen(\"copy.mat\", \"std\", 1)\r\n            SetTextureVar(9, \"s_curves\") //IranCoJ Edition: slot 9 back to the colour curves (TAA had the depth there)\r\n\r\n            !include(\"screen_copy_30_setup.ppfx\")$1SetTexture(8, \"IRN_TAA_TMP\")"
+              "//IranCoJ Edition: temporal anti-aliasing of PRV (irancoj_taa.mat), the history kept for the next frame\r\n            SetRenderTarget(\"IRN_TAA_TMP\", \"\")\r\n                SetTexture(8, \"PRV\")\r\n                SetTexture(9, \"DPT\")\r\n                SetTexture(10, \"IRN_TAA_HIST\")\r\n                    QuadScreen(\"irancoj_taa.mat\", \"std\", 1)\r\n            SetRenderTarget(\"IRN_TAA_HIST\", \"\")\r\n                SetTexture(8, \"IRN_TAA_TMP\")\r\n                    QuadScreen(\"copy.mat\", \"std\", 1)\r\n            SetTextureVar(9, \"s_curves\") //IranCoJ Edition: slot 9 back to the colour curves (TAA had the depth there)\r\n\r\n            !include(\"screen_copy_30_setup.ppfx\")$1SetTexture(8, \"IRN_TAA_TMP\")"
             ]
           ]
         },
@@ -2518,6 +2518,15 @@
     ]
   },
   "news": [
+    {
+      "id": "graphics-120",
+      "tag": "IRANCOJ GRAPHICS 1.2.0",
+      "title": "Temporal AA, fixed",
+      "text": "Temporal anti-aliasing now does what it should: smooth, steady edges, wires and foliage, with no shaking when you stand still and no trails when you move. Rivers and shores on Tombstone, Civil, Frisco, Fort Stanton and other maps no longer glow yellow in Remastered, and long bullet traces draw properly again. Turn it on in Settings > Graphics > Remastered > Temporal anti-aliasing.",
+      "date": "2026-11-04",
+      "action": "settings",
+      "actionLabel": "Graphics settings"
+    },
     {
       "id": "edition-111",
       "tag": "IRANCOJ EDITION 1.1.1",
