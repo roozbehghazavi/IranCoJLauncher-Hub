@@ -300,10 +300,11 @@ rewrites.append(rw('Data/MapsNet/Tombstone/river/tombstone_river.mat', D1, 'Data
     (r'(?s)\A.*\z', tombstone_river)
 ]))
 
-def liquid(note, nrm, env, deep, deep_distance, fresnel, deform, shadows=None, deep_opacity=None, blur=None):
+def liquid(note, nrm, env, deep, deep_distance, fresnel, deform, shadows=None, deep_opacity=None, blur=None, env_tex=None):
     """A water material on liquid.mtt with the values read out of a compiled copy. nrm: (texture, scale, translate x,
     translate y, rotate, scale xyz) per normal map; fresnel (scale, bias, power); deform (strength, distance, falloff);
-    blur (strength, distance, falloff, falloff shift, fresnel power) or None."""
+    blur (strength, distance, falloff, falloff shift, fresnel power) or None; env_tex: the reflection cubemap (else the
+    map's s_water_cubemap)."""
     num = lambda x: repr(float(x))
     vec = lambda v: '[' + ', '.join(num(x) for x in v) + ']'
     lines = ['import "liquid.mtt"', '', 'sub material()', '{', '    extern float TIME;', '    extern string s_water_cubemap;', '']
@@ -322,7 +323,7 @@ def liquid(note, nrm, env, deep, deep_distance, fresnel, deform, shadows=None, d
                  f'f_blur_falloff_shift = {num(blur[3])}', f'f_blur_fresnel_power = {num(blur[4])}']
     if shadows:
         args.append(f'e_shadows = {shadows}')
-    args += ['s_env = s_water_cubemap', f'v_env_factor = {vec(env)}', f'f_env_fresnel_scale = {num(fresnel[0])}',
+    args += [f's_env = "{env_tex}"' if env_tex else 's_env = s_water_cubemap', f'v_env_factor = {vec(env)}', f'f_env_fresnel_scale = {num(fresnel[0])}',
              f'f_env_fresnel_bias = {num(fresnel[1])}', f'f_env_fresnel_power = {num(fresnel[2])}',
              'v_liquid_clr = [1.0, 1.0, 1.0, 0.0]']
     for i, (tex, scale, *_ ) in enumerate(nrm):
@@ -334,7 +335,9 @@ def liquid(note, nrm, env, deep, deep_distance, fresnel, deform, shadows=None, d
 
 # The Battle river (Civil.rpack's compiled copy; also in Battle, Medallion and Villa Attack; community maps' copies
 # such as harbor_water.mat carry the same values): a dark river, opaque at 379 cm. Its reflection
-# Battle_river_big_rfl is only in textures1.rpack (off with the HD pack): the map's own s_water_cubemap instead.
+# Battle_river_big_rfl is only in textures1.rpack (off with the HD pack), and so is Civil's own s_water_cubemap
+# (VillageDefend_rfl; civil.scr is in the map CRC): without one the river is a flat green swamp. Frisco_rfl (Data2)
+# instead, a river-side sky - blue sky and clouds over green banks.
 battle_river = liquid('the Battle river, rebuilt from its compiled copy in Civil.rpack (no source exists)',
                       nrm=[('water_waves_n.dds', 2.0, 0.08, 0.051, 5.0, (16.0, 0.55, 1.0)),
                            ('water_waves_2_n.dds', 2.5, -0.01, -0.03, -2.0, (16.4, 0.52, 1.3)),
@@ -342,13 +345,15 @@ battle_river = liquid('the Battle river, rebuilt from its compiled copy in Civil
                            ('water_waves_2_n.dds', 2.0, 0.001, 0.005, -1.0, (0.4, 0.025, 0.025))],
                       env=(0.22, 0.2, 0.2), deep=(0.12, 0.13, 0.08), deep_distance=379.0, deep_opacity=1.0,
                       fresnel=(1.5, 0.5, 1.0), deform=(0.25, 100.0, 2500.0), shadows='e_shadows_pp_simple',
-                      blur=(1.0, 500.0, 5000.0, 500.0, 1.0))
-# Juarez's water (Juarez.rpack's compiled copy): two normal maps, opaque at 100 cm, no shadows.
+                      blur=(1.0, 500.0, 5000.0, 500.0, 1.0), env_tex='Frisco_rfl.dds')
+# Juarez's water (Juarez.rpack's compiled copy): two normal maps, opaque at 100 cm, no shadows. Its Juarez_rfl is
+# only in textures1.rpack too.
 juarez_water = liquid('Juarez\'s water, rebuilt from its compiled copy in Juarez.rpack (no source exists)',
                       nrm=[('water_waves_n.dds', 0.5, 0.08, 0.051, 5.0, (16.0, 0.55, 1.0)),
                            ('water_waves_n.dds', 0.5, -0.081, -0.055, -5.0, (14.0, 0.5, 1.2))],
                       env=(0.26, 0.27, 0.25), deep=(0.14, 0.15, 0.1), deep_distance=100.0, deep_opacity=1.0,
-                      fresnel=(1.5, 0.5, 1.0), deform=(0.2, 32.0, None), shadows='e_shadows_none')
+                      fresnel=(1.5, 0.5, 1.0), deform=(0.2, 32.0, None), shadows='e_shadows_none',
+                      env_tex='Frisco_rfl.dds')
 for path, text in [('Data/Maps/Battle/River/battle_river_a.mat', battle_river),   # Civil, Fort Stanton
                    ('Data/Maps/Battle/River/battle_river_b.mat', battle_river),   # Battle Camp (no compiled copy: as _a)
                    ('Data/Maps/Juarez/Water/juarez_water_a.mat', juarez_water)]:  # Fort Stanton
@@ -381,7 +386,7 @@ rewrites.append(rw('Data/Shaders/postprocess/dofs.mtt', D1, 'Data/Shaders/postpr
 ]))
 
 graphics = {
-    'version': '1.1.4',
+    'version': '1.1.5',
     'rewrites': rewrites,
     'vegetation': {
         'files': ['_grass.scr', '_foliage.scr'],
