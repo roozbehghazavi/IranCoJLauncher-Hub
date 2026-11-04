@@ -238,19 +238,127 @@ rewrites.append(rw('Data/FX/fx_long_trace.mat', D0, 'Data/FX/trace.mat', [
     (r'\z', N + '//IranCoJ Edition: the long bullet traces the engine asks for, as trace.mat' + N)
 ]))
 # ChromEd writes a map's river material only into the map's rpack cache (Tombstone: no source in any pak, nor in its
-# editor files), so hidden it drew as the engine's default - a glowing yellow river. The game's own river template
-# in its place; the map CRC doesn't cover materials.
+# editor files), so hidden it drew as the engine's default - a glowing yellow river. Rebuilt on the game's river
+# template with the values read out of TombStone.rpack's compiled copy (its constants and transforms): a murky
+# green-grey river, opaque at 80 cm. The one change: the reflection is the map's own cubemap (s_water_cubemap,
+# tombstone_rfl.dds in Data2) - the original's Battle_river_big_rfl is only in textures1.rpack, which the HD pack
+# (needed for Remastered) turns off. The map CRC doesn't cover materials.
+tombstone_river = N.join([
+    'import "liquid.mtt"',
+    '',
+    'sub material()',
+    '{',
+    '    extern float TIME;',
+    '    extern string s_water_cubemap;',
+    '',
+    '    mtx m_nrm_0_xfm = translate( 0.3  * TIME, -0.0106 * TIME, 0.0) * rotate(0.0, 0.0,  5.0) * scale(3.2,  1.3, 1.0);',
+    '    mtx m_nrm_1_xfm = translate(-0.3  * TIME, -0.0114 * TIME, 0.0) * rotate(0.0, 0.0, -2.0) * scale(3.24, 1.2, 1.3);',
+    '    mtx m_nrm_2_xfm = translate( 0.04 * TIME, -0.009  * TIME, 0.0) * rotate(0.0, 0.0,  7.0) * scale(0.5,  0.6, 1.2);',
+    '    mtx m_nrm_3_xfm = translate(-0.04 * TIME, -0.01   * TIME, 0.0) * rotate(0.0, 0.0, -7.0) * scale(0.67, 0.4, 0.025);',
+    '',
+    '    use mtt_liquid(',
+    '        e_opq_order = or_seetrough_1,',
+    '        e_nrm_order = 2,',
+    '        e_trn_order = 2,',
+    '        e_bdf_order = 2,',
+    '',
+    '        f_blend_distance = 16.0,',
+    '',
+    '        v_deep_color = [0.42, 0.45, 0.3],',
+    '        f_deep_distance = 80.0,',
+    '        f_deep_opacity = 0.95,',
+    '',
+    '        f_deform_strength = 0.2,',
+    '        f_deform_falloff = 2500.0,',
+    '',
+    '        s_env = s_water_cubemap,',
+    '        v_env_factor = [0.72, 0.724, 0.718],',
+    '        f_env_fresnel_power = 2.0,',
+    '',
+    '        v_liquid_clr = [1.0, 1.0, 1.0, 0.0],',
+    '',
+    '        s_nrm_0 = "water_waves_n.dds",',
+    '        f_nrm_0_scale = 0.4,',
+    '        m_nrm_0_xfm = m_nrm_0_xfm,',
+    '        s_nrm_1 = "water_waves_n.dds",',
+    '        f_nrm_1_scale = 0.5,',
+    '        m_nrm_1_xfm = m_nrm_1_xfm,',
+    '        s_nrm_2 = "water_waves_2_n.dds",',
+    '        f_nrm_2_scale = 1.0,',
+    '        m_nrm_2_xfm = m_nrm_2_xfm,',
+    '        s_nrm_3 = "water_waves_2_n.dds",',
+    '        f_nrm_3_scale = 1.0,',
+    '        m_nrm_3_xfm = m_nrm_3_xfm,',
+    '',
+    '        f_spc_power = 555.0',
+    '    );',
+    '}',
+    '',
+    '//IranCoJ Edition: Tombstone\'s river, rebuilt from its compiled copy in TombStone.rpack (no source exists)',
+    ''])
 rewrites.append(rw('Data/MapsNet/Tombstone/river/tombstone_river.mat', D1, 'Data/Shaders/master/Templates/river_a.mat', [
-    (r'\z', N + '//IranCoJ Edition: Tombstone\'s river (its own material is only in the rpack cache), from river_a.mat' + N)
+    (r'(?s)\A.*\z', tombstone_river)
 ]))
-# The other water materials maps name (their .exp files) that have no source in any pak - story-map rivers, shores
-# and pools reused by stock and community maps: each from the game's nearest template.
+
+def liquid(note, nrm, env, deep, deep_distance, fresnel, deform, shadows=None, deep_opacity=None, blur=None):
+    """A water material on liquid.mtt with the values read out of a compiled copy. nrm: (texture, scale, translate x,
+    translate y, rotate, scale xyz) per normal map; fresnel (scale, bias, power); deform (strength, distance, falloff);
+    blur (strength, distance, falloff, falloff shift, fresnel power) or None."""
+    num = lambda x: repr(float(x))
+    vec = lambda v: '[' + ', '.join(num(x) for x in v) + ']'
+    lines = ['import "liquid.mtt"', '', 'sub material()', '{', '    extern float TIME;', '    extern string s_water_cubemap;', '']
+    for i, (_, _, tx, ty, rot, sc) in enumerate(nrm):
+        lines.append(f'    mtx m_nrm_{i}_xfm = translate({num(tx)} * TIME, {num(ty)} * TIME, 0.0) * rotate(0.0, 0.0, {num(rot)}) '
+                     f'* scale({num(sc[0])}, {num(sc[1])}, {num(sc[2])});')
+    args = ['e_opq_order = or_seetrough_1', 'e_nrm_order = 2', 'e_trn_order = 2', 'e_bdf_order = 2',
+            'f_blend_distance = 16.0', f'v_deep_color = {vec(deep)}', f'f_deep_distance = {num(deep_distance)}']
+    if deep_opacity is not None:
+        args.append(f'f_deep_opacity = {num(deep_opacity)}')
+    args += [f'f_deform_strength = {num(deform[0])}', f'f_deform_distance = {num(deform[1])}']
+    if deform[2]:
+        args.append(f'f_deform_falloff = {num(deform[2])}')
+    if blur:
+        args += [f'f_blur_strength = {num(blur[0])}', f'f_blur_distance = {num(blur[1])}', f'f_blur_falloff = {num(blur[2])}',
+                 f'f_blur_falloff_shift = {num(blur[3])}', f'f_blur_fresnel_power = {num(blur[4])}']
+    if shadows:
+        args.append(f'e_shadows = {shadows}')
+    args += ['s_env = s_water_cubemap', f'v_env_factor = {vec(env)}', f'f_env_fresnel_scale = {num(fresnel[0])}',
+             f'f_env_fresnel_bias = {num(fresnel[1])}', f'f_env_fresnel_power = {num(fresnel[2])}',
+             'v_liquid_clr = [1.0, 1.0, 1.0, 0.0]']
+    for i, (tex, scale, *_ ) in enumerate(nrm):
+        args += [f's_nrm_{i} = "{tex}"', f'f_nrm_{i}_scale = {num(scale)}', f'm_nrm_{i}_xfm = m_nrm_{i}_xfm']
+    args.append('f_spc_power = 555.0')
+    lines += ['    use mtt_liquid(', ',\r\n'.join('        ' + a for a in args), '    );', '}', '', '//IranCoJ Edition: ' + note, '']
+    return N.join(lines)
+
+
+# The Battle river (Civil.rpack's compiled copy; also in Battle, Medallion and Villa Attack; community maps' copies
+# such as harbor_water.mat carry the same values): a dark river, opaque at 379 cm. Its reflection
+# Battle_river_big_rfl is only in textures1.rpack (off with the HD pack): the map's own s_water_cubemap instead.
+battle_river = liquid('the Battle river, rebuilt from its compiled copy in Civil.rpack (no source exists)',
+                      nrm=[('water_waves_n.dds', 2.0, 0.08, 0.051, 5.0, (16.0, 0.55, 1.0)),
+                           ('water_waves_2_n.dds', 2.5, -0.01, -0.03, -2.0, (16.4, 0.52, 1.3)),
+                           ('water_waves_n.dds', 1.5, -0.081, 0.055, -5.0, (14.0, 0.5, 1.2)),
+                           ('water_waves_2_n.dds', 2.0, 0.001, 0.005, -1.0, (0.4, 0.025, 0.025))],
+                      env=(0.22, 0.2, 0.2), deep=(0.12, 0.13, 0.08), deep_distance=379.0, deep_opacity=1.0,
+                      fresnel=(1.5, 0.5, 1.0), deform=(0.25, 100.0, 2500.0), shadows='e_shadows_pp_simple',
+                      blur=(1.0, 500.0, 5000.0, 500.0, 1.0))
+# Juarez's water (Juarez.rpack's compiled copy): two normal maps, opaque at 100 cm, no shadows.
+juarez_water = liquid('Juarez\'s water, rebuilt from its compiled copy in Juarez.rpack (no source exists)',
+                      nrm=[('water_waves_n.dds', 0.5, 0.08, 0.051, 5.0, (16.0, 0.55, 1.0)),
+                           ('water_waves_n.dds', 0.5, -0.081, -0.055, -5.0, (14.0, 0.5, 1.2))],
+                      env=(0.26, 0.27, 0.25), deep=(0.14, 0.15, 0.1), deep_distance=100.0, deep_opacity=1.0,
+                      fresnel=(1.5, 0.5, 1.0), deform=(0.2, 32.0, None), shadows='e_shadows_none')
+for path, text in [('Data/Maps/Battle/River/battle_river_a.mat', battle_river),   # Civil, Fort Stanton
+                   ('Data/Maps/Battle/River/battle_river_b.mat', battle_river),   # Battle Camp (no compiled copy: as _a)
+                   ('Data/Maps/Juarez/Water/juarez_water_a.mat', juarez_water)]:  # Fort Stanton
+    rewrites.append(rw(path, D1, 'Data/Shaders/master/Templates/river_a.mat', [(r'(?s)\A.*\z', text)]))
+
+# The other water materials maps name (their .exp files) with no source in any pak and no compiled copy in any of
+# the game's rpacks (vanilla drew them as the default material too): each from the game's nearest template.
 for path, template in [
-        ('Data/Maps/Battle/River/battle_river_a.mat', 'river_a'),          # Civil, Fort Stanton
-        ('Data/Maps/Battle/River/battle_river_b.mat', 'river_a'),          # Battle Camp
         ('Data/Maps/Battle/River/battle_shore.mat', 'shore_a'),            # McCall's Villa
         ('Data/Maps/Battle/River/battle_water_flat_b.mat', 'water_flat_b'),  # McCall's Villa
-        ('Data/Maps/Juarez/Water/juarez_water_a.mat', 'water_a'),          # Fort Stanton
         ('Data/Shaders/Liquid/Templates/water_shore_a.mat', 'shore_a'),    # Civil, Frisco, Prison Break 2
         ('Data/World/water_shore.mat', 'shore_a'),                         # Adobes, Coffeyville, Magnificent, ...
         ('Data/Shaders/Water/water_default.mat', 'water_a')]:              # The Dungeon
@@ -273,7 +381,7 @@ rewrites.append(rw('Data/Shaders/postprocess/dofs.mtt', D1, 'Data/Shaders/postpr
 ]))
 
 graphics = {
-    'version': '1.1.3',
+    'version': '1.1.4',
     'rewrites': rewrites,
     'vegetation': {
         'files': ['_grass.scr', '_foliage.scr'],

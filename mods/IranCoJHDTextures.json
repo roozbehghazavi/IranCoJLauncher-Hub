@@ -3,9 +3,30 @@
   "name": "IranCoJ HD Textures",
   "description": "Every world texture of the game at twice its resolution, and your weapons and hands at four times. With Remastered graphics, the New Classes characters at their full CoJ Gunslinger size too. About 800 MB to download.",
   "package": "IranCoJHDTextures-1.0.0.zip",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "disable": [
     "CoJ2/Data/textures1.rpack"
+  ],
+  "exclude": [
+    "CoJ2/Data/Characters/Eyes/eye_env.dds",
+    "CoJ2/Data/Characters/Hair/hair_gloss.dds",
+    "CoJ2/Data/MapsNet/Adobes/Adobes_rfl.dds",
+    "CoJ2/Data/MapsNet/CoffeyVille/coffeyville_rfl.dds",
+    "CoJ2/Data/MapsNet/DLCHighNoon/dlchighnoon_rfl.dds",
+    "CoJ2/Data/MapsNet/DLCMine/dlcmine_rfl.dds",
+    "CoJ2/Data/MapsNet/DLCPanoche/dlcpanoche_rfl.dds",
+    "CoJ2/Data/MapsNet/DLCRaid/dlcraid_rfl.dds",
+    "CoJ2/Data/MapsNet/Frisco/Frisco_rfl.dds",
+    "CoJ2/Data/MapsNet/Klondike/klondike_rfl.dds",
+    "CoJ2/Data/MapsNet/Liberate/liberate_rfl.dds",
+    "CoJ2/Data/MapsNet/LittleBighorn/LittleBighorn_rfl.dds",
+    "CoJ2/Data/MapsNet/Magnificent/magnificent_rfl.dds",
+    "CoJ2/Data/MapsNet/PrisonBreak2/PrisonBreak2_rfl.dds",
+    "CoJ2/Data/MapsNet/PrisonCamp/prisoncamp_rfl.dds",
+    "CoJ2/Data/MapsNet/StinkingSprings2/env/stinkingsprings2_rfl.dds",
+    "CoJ2/Data/MapsNet/StinkingSprings2/StinkingSprings2_rfl.dds",
+    "CoJ2/Data/MapsNet/TombStone/tombstone_rfl.dds",
+    "CoJ2/Data/Objects/interior/furniture/Mirror_Interior_rfl.dds"
   ],
   "optional": true
 }
