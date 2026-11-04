@@ -432,13 +432,13 @@
     {
       "id": "IranCoJGraphics",
       "name": "IranCoJ Graphics",
-      "version": "1.2.0",
+      "version": "1.2.1",
       "description": "The Edition's remastered graphics: GGX lighting and metal, ambient occlusion (GTAO), soft shadows, temporal anti-aliasing, sharpening and colour, and every map's detail and draw distances. Settings > Graphics > Remastered or Vanilla.",
       "package": {
-        "file": "IranCoJGraphics-1.2.0.zip",
-        "size": 178180,
-        "sha256": "33fd6c72af71c692862b90a9f5e87cf493aac48e68632ed3bc3a993f3679e2f8",
-        "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/mods/IranCoJGraphics-1.2.0.zip"
+        "file": "IranCoJGraphics-1.2.1.zip",
+        "size": 178664,
+        "sha256": "a3d62395ee7c3950b6de2d81f952c36aadb1f8b2cfa10408eb0170948cd68d2e",
+        "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/mods/IranCoJGraphics-1.2.1.zip"
       },
       "exclude": [
         "mods.txt"
@@ -1366,7 +1366,7 @@
       }
     },
     "graphics": {
-      "version": "1.1.2",
+      "version": "1.1.3",
       "rewrites": [
         {
           "path": "CoJ2/Data/Shaders/postprocess/irancoj_fx.mtt",
@@ -2028,6 +2028,37 @@
               "\r\n//IranCoJ Edition: this material is only in the rpack caches; the game's water_a.mat in its place\r\n"
             ]
           ]
+        },
+        {
+          "path": "CoJ2/Data/Shaders/postprocess/dofs.mtt",
+          "pak": "CoJ2/Data1.pak",
+          "entry": "Data/Shaders/postprocess/dofs.mtt",
+          "replace": [
+            [
+              "extern float fDOFdistance;",
+              "float fDOFdistance = 500.0; //IranCoJ Edition: not extern (the No DOF mod removes the variables)"
+            ],
+            [
+              "extern float fDOFFarDistance;",
+              "float fDOFFarDistance = 2.0;"
+            ],
+            [
+              "extern float fDOFNearDistance;",
+              "float fDOFNearDistance = 0.5;"
+            ],
+            [
+              "extern float fDOFFarOffset;",
+              "float fDOFFarOffset = 1.0;"
+            ],
+            [
+              "extern float fDOFNearOffset;",
+              "float fDOFNearOffset = 1.0;"
+            ],
+            [
+              "extern float fDOFpower;",
+              "float fDOFpower = 0.0;"
+            ]
+          ]
         }
       ],
       "vegetation": {
@@ -2518,6 +2549,15 @@
     ]
   },
   "news": [
+    {
+      "id": "graphics-121",
+      "tag": "IRANCOJ GRAPHICS 1.2.1",
+      "title": "Rain maps fixed",
+      "text": "Rain maps such as Utah looked smeared and grey with Remastered graphics: the rain's depth effect could not be built while No DOF & Motion Blur is installed, and the game drew a placeholder over the whole screen. Fixed - rain looks as it should again.",
+      "date": "2026-11-04",
+      "action": "settings",
+      "actionLabel": "Graphics settings"
+    },
     {
       "id": "graphics-120",
       "tag": "IRANCOJ GRAPHICS 1.2.0",
