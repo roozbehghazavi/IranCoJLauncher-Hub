@@ -198,7 +198,7 @@ rewrites.append(rw('Data/Postprocess/scene30_init_core.ppfx', D0, 'Data/Postproc
 def taa_block(src):
     return ('//IranCoJ Edition: temporal anti-aliasing of ' + src + ' (irancoj_taa.mat), the history kept for the next frame' + N +
             '            SetRenderTarget("IRN_TAA_TMP", "")' + N + '                SetTexture(8, "' + src + '")' + N +
-            '                SetTexture(9, "DPT_4_32F")' + N + '                SetTexture(10, "IRN_TAA_HIST")' + N +
+            '                SetTexture(9, "DPT")' + N + '                SetTexture(10, "IRN_TAA_HIST")' + N +
             '                    QuadScreen("irancoj_taa.mat", "std", 1)' + N +
             '            SetRenderTarget("IRN_TAA_HIST", "")' + N + '                SetTexture(8, "IRN_TAA_TMP")' + N +
             '                    QuadScreen("copy.mat", "std", 1)' + N +
@@ -259,7 +259,7 @@ for path, template in [
     ]))
 
 graphics = {
-    'version': '1.1.1',
+    'version': '1.1.2',
     'rewrites': rewrites,
     'vegetation': {
         'files': ['_grass.scr', '_foliage.scr'],

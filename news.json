@@ -1,5 +1,14 @@
 [
   {
+    "id": "graphics-120",
+    "tag": "IRANCOJ GRAPHICS 1.2.0",
+    "title": "Temporal AA, fixed",
+    "text": "Temporal anti-aliasing now does what it should: smooth, steady edges, wires and foliage, with no shaking when you stand still and no trails when you move. Rivers and shores on Tombstone, Civil, Frisco, Fort Stanton and other maps no longer glow yellow in Remastered, and long bullet traces draw properly again. Turn it on in Settings > Graphics > Remastered > Temporal anti-aliasing.",
+    "date": "2026-11-04",
+    "action": "settings",
+    "actionLabel": "Graphics settings"
+  },
+  {
     "id": "edition-111",
     "tag": "IRANCOJ EDITION 1.1.1",
     "title": "Fixes: joining, map names",
