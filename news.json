@@ -1,5 +1,14 @@
 [
   {
+    "id": "graphics-121",
+    "tag": "IRANCOJ GRAPHICS 1.2.1",
+    "title": "Rain maps fixed",
+    "text": "Rain maps such as Utah looked smeared and grey with Remastered graphics: the rain's depth effect could not be built while No DOF & Motion Blur is installed, and the game drew a placeholder over the whole screen. Fixed - rain looks as it should again.",
+    "date": "2026-11-04",
+    "action": "settings",
+    "actionLabel": "Graphics settings"
+  },
+  {
     "id": "graphics-120",
     "tag": "IRANCOJ GRAPHICS 1.2.0",
     "title": "Temporal AA, fixed",

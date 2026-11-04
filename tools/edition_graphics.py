@@ -258,8 +258,22 @@ for path, template in [
         (r'\z', N + f'//IranCoJ Edition: this material is only in the rpack caches; the game\'s {template}.mat in its place' + N)
     ]))
 
+# Depth of field: the No DOF & Motion Blur mod switches it off by taking the fDOF* variables out of varlist_pp.scr, so
+# dofs.mtt's "extern float fDOF..." fails, and with it every depth_effects_*.mat that imports it. Vanilla never
+# notices (it uses the rpack caches), but compiled from source the rain variant drew the engine's default material
+# over the whole screen. The game's own values, DOF power 0, in place of the externs: it compiles with or without
+# the mod, and the DOF stays off (in Remastered also without the mod).
+rewrites.append(rw('Data/Shaders/postprocess/dofs.mtt', D1, 'Data/Shaders/postprocess/dofs.mtt', [
+    (r'extern float fDOFdistance;', 'float fDOFdistance = 500.0; //IranCoJ Edition: not extern (the No DOF mod removes the variables)'),
+    (r'extern float fDOFFarDistance;', 'float fDOFFarDistance = 2.0;'),
+    (r'extern float fDOFNearDistance;', 'float fDOFNearDistance = 0.5;'),
+    (r'extern float fDOFFarOffset;', 'float fDOFFarOffset = 1.0;'),
+    (r'extern float fDOFNearOffset;', 'float fDOFNearOffset = 1.0;'),
+    (r'extern float fDOFpower;', 'float fDOFpower = 0.0;')
+]))
+
 graphics = {
-    'version': '1.1.2',
+    'version': '1.1.3',
     'rewrites': rewrites,
     'vegetation': {
         'files': ['_grass.scr', '_foliage.scr'],

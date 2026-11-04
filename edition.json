@@ -686,7 +686,7 @@
     }
   },
   "graphics": {
-    "version": "1.1.2",
+    "version": "1.1.3",
     "rewrites": [
       {
         "path": "CoJ2/Data/Shaders/postprocess/irancoj_fx.mtt",
@@ -1346,6 +1346,37 @@
           [
             "\\z",
             "\r\n//IranCoJ Edition: this material is only in the rpack caches; the game's water_a.mat in its place\r\n"
+          ]
+        ]
+      },
+      {
+        "path": "CoJ2/Data/Shaders/postprocess/dofs.mtt",
+        "pak": "CoJ2/Data1.pak",
+        "entry": "Data/Shaders/postprocess/dofs.mtt",
+        "replace": [
+          [
+            "extern float fDOFdistance;",
+            "float fDOFdistance = 500.0; //IranCoJ Edition: not extern (the No DOF mod removes the variables)"
+          ],
+          [
+            "extern float fDOFFarDistance;",
+            "float fDOFFarDistance = 2.0;"
+          ],
+          [
+            "extern float fDOFNearDistance;",
+            "float fDOFNearDistance = 0.5;"
+          ],
+          [
+            "extern float fDOFFarOffset;",
+            "float fDOFFarOffset = 1.0;"
+          ],
+          [
+            "extern float fDOFNearOffset;",
+            "float fDOFNearOffset = 1.0;"
+          ],
+          [
+            "extern float fDOFpower;",
+            "float fDOFpower = 0.0;"
           ]
         ]
       }
