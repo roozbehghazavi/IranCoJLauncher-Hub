@@ -1,5 +1,23 @@
 [
   {
+    "id": "edition-113-smooth",
+    "tag": "IRANCOJ EDITION 1.1.3",
+    "title": "Smooth spawns, visible protection",
+    "text": "No more stutter when players spawn - not even when Hardin, Silas or Billy the Kid join the fight. And every character now glows while they are protected after spawning, so you can see at a glance who can't be hurt yet. Many characters from the skin pack never glowed before. Update the Edition and enjoy a smoother game.",
+    "date": "2026-11-08",
+    "action": "settings",
+    "actionLabel": "Update the Edition"
+  },
+  {
+    "id": "skin-changer-smooth",
+    "tag": "SKIN CHANGER",
+    "title": "Every skin, smooth and protected",
+    "text": "Whatever skins you pick for your classes - IranCoJ, Vanilla or your own mix - they now spawn without stutter and glow while protected, in every mode. Try a new look for your favourite class.",
+    "date": "2026-11-08",
+    "action": "skins",
+    "actionLabel": "Open the Skins page"
+  },
+  {
     "id": "launcher-beta-10",
     "tag": "LAUNCHER 3.0.0-BETA.10",
     "title": "No more respawn freezes",
