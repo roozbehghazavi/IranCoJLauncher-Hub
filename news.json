@@ -1,5 +1,14 @@
 [
   {
+    "id": "launcher-beta-10",
+    "tag": "LAUNCHER 3.0.0-BETA.10",
+    "title": "No more respawn freezes",
+    "text": "The game froze for about a quarter of a second whenever anyone spawned: the spawn-protection glow of every character was built from scratch each time. The glow is now built once, while the map loads, so spawns are smooth again with every skin. New Classes 2.0.9 also keeps its shader cache when you change graphics settings, instead of starting over each time.",
+    "date": "2026-11-08",
+    "action": "settings",
+    "actionLabel": "Settings"
+  },
+  {
     "id": "edition-112",
     "tag": "IRANCOJ EDITION 1.1.2",
     "title": "One badge per team",
