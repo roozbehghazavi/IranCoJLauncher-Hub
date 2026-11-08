@@ -56,7 +56,7 @@ Texture("net_characters_mask.dds",4096,4096)
     Rect("character_redneck_mask"             , 2897,  916, 3209, 1271) // 312x355 of its 320x442 slot (build_atlas.CROP)
     Rect("character_redneck_blue_mask"        , 3218,  916, 3530, 1271) // 312x355 of its 320x442 slot (build_atlas.CROP)
     Rect("character_redneck_red_mask"         , 3539,  916, 3851, 1271) // 312x355 of its 320x442 slot (build_atlas.CROP)
-    // IranCoJ: the vanilla skins' pictures (Skins page) - build_vanilla_atlas.py
+        // IranCoJ: the vanilla skins' pictures (Skins page) - build_vanilla_atlas.py
     Rect("character_aristocrat_vanilla_mask" ,    8, 2078,  320, 2433) // 312x355 of its 320x442 slot (build_atlas.CROP)
     Rect("character_aristocrat_vanilla_blue_mask" ,  329, 2078,  641, 2433) // 312x355 of its 320x442 slot (build_atlas.CROP)
     Rect("character_aristocrat_vanilla_red_mask" ,  650, 2078,  962, 2433) // 312x355 of its 320x442 slot (build_atlas.CROP)
