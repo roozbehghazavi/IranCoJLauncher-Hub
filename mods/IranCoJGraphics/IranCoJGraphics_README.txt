@@ -1,4 +1,4 @@
-IranCoJ Graphics 1.2.1 - the Edition's remastered graphics, by Thomas (Roozbeh).
+IranCoJ Graphics 1.2.2 - the Edition's remastered graphics, by Thomas (Roozbeh).
 
 Everything is set in the IranCoJ Launcher: Settings > Graphics & Sound > Remastered or Vanilla, and each feature on
 its own in the Remastered group. The launcher writes irancojfx.ini and edited copies of the game's own pipeline
@@ -27,3 +27,9 @@ trusts history less the further a pixel moved. Tombstone and other maps' water n
 
 1.2.1: rain maps (Utah, mp23 and others) are no longer smeared grey in Remastered: the depth effects compile
 even with No DOF & Motion Blur installed. The map's baked lighting is always read as it is on disk.
+
+
+1.2.2: temporal anti-aliasing holds still at every resolution: the frame is read back where it really belongs
+(it is drawn up to half a pixel off each time, from 8 evenly spread offsets), so distant detail no longer shakes at
+low resolutions. Shadows no longer flicker on ground and objects: the shadow pass aims at the real surface. Moving
+is sharper: the history and the new frame are read with a sharp filter, not blurred a little more each frame.

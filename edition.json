@@ -686,7 +686,7 @@
     }
   },
   "graphics": {
-    "version": "1.1.5",
+    "version": "1.1.6",
     "rewrites": [
       {
         "path": "CoJ2/Data/Shaders/postprocess/irancoj_fx.mtt",
@@ -920,6 +920,45 @@
           [
             "(?s)FLOAT f_occlusion = 0\\.0;.*?f_out_ssao = min\\(f_out_ssao, 0\\.75\\);//fix: light edges",
             "f_out_ssao = Irn_Gtao(V_UV_SCREEN_TC, V_POS_SS_TC.xy, v_cam_dir_ss, v_pos_center.xyz, v_nrm); //IranCoJ Edition: GTAO"
+          ]
+        ]
+      },
+      {
+        "path": "CoJ2/Data/Shaders/postprocess/shadows_blur_ps.hlsl",
+        "pak": "CoJ2/Data1.pak",
+        "entry": "Data/Shaders/postprocess/shadows_blur_ps.hlsl",
+        "when": {
+          "taa": [
+            "on"
+          ],
+          "ao": [
+            "half",
+            "full"
+          ]
+        },
+        "replace": [
+          [
+            "(float3 v_cam_dir_ss = Cam_Dir_Out_PP\\(V_POS_SS_TC\\);)",
+            "$1\r\n        #if defined(IRN_TAA_JITTER_PX) //IranCoJ Edition: the ray where this depth texel really is (TAA jitter)\r\n            float4 v_irn_pos_ss = V_POS_SS_TC;\r\n            v_irn_pos_ss.xy += Irn_Jitter_Px() * float2(-1.0, 1.0) / {{ao_div}}.0;\r\n            v_cam_dir_ss = Cam_Dir_Out_PP(v_irn_pos_ss);\r\n        #endif"
+          ]
+        ]
+      },
+      {
+        "path": "CoJ2/Data/Shaders/postprocess/shadows_blur_ps.hlsl",
+        "pak": "CoJ2/Data1.pak",
+        "entry": "Data/Shaders/postprocess/shadows_blur_ps.hlsl",
+        "when": {
+          "taa": [
+            "on"
+          ],
+          "ao": [
+            "vanilla"
+          ]
+        },
+        "replace": [
+          [
+            "(float3 v_cam_dir_ss = Cam_Dir_Out_PP\\(V_POS_SS_TC\\);)",
+            "$1\r\n        #if defined(IRN_TAA_JITTER_PX) //IranCoJ Edition: the ray where this depth texel really is (TAA jitter)\r\n            float4 v_irn_pos_ss = V_POS_SS_TC;\r\n            v_irn_pos_ss.xy += Irn_Jitter_Px() * float2(-1.0, 1.0) / 4.0;\r\n            v_cam_dir_ss = Cam_Dir_Out_PP(v_irn_pos_ss);\r\n        #endif"
           ]
         ]
       },
@@ -1212,7 +1251,7 @@
         "replace": [
           [
             "(?m)^(?=[ \\t]*float4 Pos_Out\\(float4 v_pos\\))",
-            "#define IRN_TAA 1\r\n        //IranCoJ Edition: TAA jitter - the scene a sub-pixel off, a new offset each frame\r\n        #if defined(IRN_TAA) && defined(VERTEXSHADER) && !defined(TECH_SHD_ON) && !defined(TECH_RFL_ON)\r\n            float4 Irn_Jitter(float4 v_pos)\r\n            {\r\n                float2 v_j = frac(sin(floor(TIME * 997.0) * float2(12.9898, 78.233)) * 43758.5453) - 0.5;\r\n                v_pos.xy += v_j * 2.0 * RENDER_TARGET_PARAMS.xy * v_pos.w;\r\n                return v_pos;\r\n            }\r\n        #else\r\n            #define Irn_Jitter(v) (v)\r\n        #endif\r\n\r\n"
+            "#define IRN_TAA 1\r\n        //IranCoJ Edition: TAA jitter - the scene a sub-pixel off, a new offset each frame\r\n        #if defined(IRN_TAA)\r\n            #define IRN_TAA_JITTER_PX 1   // irancoj_taa_ps.hlsl un-shifts the frame only when this is here\r\n            // this frame's offset in pixels (x right, y up), within half a pixel\r\n            float2 Irn_Jitter_Px()\r\n            {\r\n                float f_i = floor(frac(sin(floor(TIME * 997.0) * 12.9898) * 43758.5453) * 8.0);\r\n                float2 v_j = float2(0.0625, 0.8889);\r\n                v_j = (f_i < 6.5) ? float2(0.875, 0.5556) : v_j;\r\n                v_j = (f_i < 5.5) ? float2(0.375, 0.2222) : v_j;\r\n                v_j = (f_i < 4.5) ? float2(0.625, 0.7778) : v_j;\r\n                v_j = (f_i < 3.5) ? float2(0.125, 0.4444) : v_j;\r\n                v_j = (f_i < 2.5) ? float2(0.75, 0.1111) : v_j;\r\n                v_j = (f_i < 1.5) ? float2(0.25, 0.6667) : v_j;\r\n                v_j = (f_i < 0.5) ? float2(0.5, 0.3333) : v_j;\r\n                return v_j - 0.5;\r\n            }\r\n        #endif\r\n        #if defined(IRN_TAA) && defined(VERTEXSHADER) && !defined(TECH_SHD_ON) && !defined(TECH_RFL_ON)\r\n            float4 Irn_Jitter(float4 v_pos)\r\n            {\r\n                v_pos.xy += Irn_Jitter_Px() * 2.0 * RENDER_TARGET_PARAMS.xy * v_pos.w;\r\n                return v_pos;\r\n            }\r\n        #else\r\n            #define Irn_Jitter(v) (v)\r\n        #endif\r\n\r\n"
           ],
           [
             "return Mul44\\(v_pos, COMBINED_XFORM\\);",

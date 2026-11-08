@@ -1,5 +1,14 @@
 [
   {
+    "id": "graphics-122",
+    "tag": "IRANCOJ GRAPHICS 1.2.2",
+    "title": "Steadier, sharper anti-aliasing",
+    "text": "Temporal anti-aliasing now holds the picture still at every resolution: no more shaking in the distance at lower resolutions, and no more shadows flickering on the ground and objects. Moving around also looks sharper, especially below 1080p. Turn it on in Settings > Graphics > Remastered > Temporal anti-aliasing.",
+    "date": "2026-11-09",
+    "action": "settings",
+    "actionLabel": "Graphics settings"
+  },
+  {
     "id": "edition-113-smooth",
     "tag": "IRANCOJ EDITION 1.1.3",
     "title": "Smooth spawns, visible protection",

@@ -95,6 +95,22 @@ rewrites.append(rw('Data/Shaders/postprocess/shadows_blur_ps.hlsl', D1, 'Data/Sh
     (r'(?s)FLOAT f_occlusion = 0\.0;.*?f_out_ssao = min\(f_out_ssao, 0\.75\);//fix: light edges',
      'f_out_ssao = Irn_Gtao(V_UV_SCREEN_TC, V_POS_SS_TC.xy, v_cam_dir_ss, v_pos_center.xyz, v_nrm); //IranCoJ Edition: GTAO')
 ], when=AO))
+# With TAA the depth this pass reads was drawn up to half a pixel off (Irn_Jitter), but its view ray goes through the
+# pixel's centre: the point it rebuilds sits a little in front of or behind the real surface, and on ground seen at a
+# shallow angle that flipped the shadow test every frame - shadows flickering on and off, the more the bigger the
+# pixels (900p). The ray is aimed where the depth texel really is. The mask is drawn at 1/{{ao_div}} of the screen
+# with AO on, at the vanilla quarter without: the offset in its pixels is the screen's divided by that.
+def shd_unjitter(div):
+    return [(r'(float3 v_cam_dir_ss = Cam_Dir_Out_PP\(V_POS_SS_TC\);)',
+             '$1' + N + '        #if defined(IRN_TAA_JITTER_PX) //IranCoJ Edition: the ray where this depth texel really is (TAA jitter)' + N +
+             '            float4 v_irn_pos_ss = V_POS_SS_TC;' + N +
+             '            v_irn_pos_ss.xy += Irn_Jitter_Px() * float2(-1.0, 1.0) / ' + div + ';' + N +
+             '            v_cam_dir_ss = Cam_Dir_Out_PP(v_irn_pos_ss);' + N +
+             '        #endif')]
+rewrites.append(rw('Data/Shaders/postprocess/shadows_blur_ps.hlsl', D1, 'Data/Shaders/postprocess/shadows_blur_ps.hlsl',
+                   shd_unjitter('{{ao_div}}.0'), when={'taa': ['on'], 'ao': ['half', 'full']}))
+rewrites.append(rw('Data/Shaders/postprocess/shadows_blur_ps.hlsl', D1, 'Data/Shaders/postprocess/shadows_blur_ps.hlsl',
+                   shd_unjitter('4.0'), when={'taa': ['on'], 'ao': ['vanilla']}))
 rewrites.append(rw('Data/Scripts/varlist_occlusion.scr', D0, 'Data/Scripts/varlist_occlusion.scr', [
     (r'VarInt\( "i_occlusion_samples", 3 \)', 'VarInt( "i_occlusion_samples", {{ao_rings}} ) //IranCoJ Edition: vanilla 3')
 ], when=AO))
@@ -212,13 +228,29 @@ for f in ('scene30.ppfx', 'Effects/screen_copy_30.ppfx'):
          taa_block('PRV') + '!include("screen_copy_30_setup.ppfx")$1SetTexture(8, "IRN_TAA_TMP")')
     ], when=TAA))
 # The jitter: every main-camera vertex shader (not shadow maps, reflections, sprites) a sub-pixel off, the same
-# offset for all shaders of a frame (from the engine's TIME).
+# offset for all shaders of a frame (from the engine's TIME). The offset is one of 8 evenly spread points (Halton 2,3),
+# picked per frame: a random offset bunched up and left gaps, so the history never settled evenly. Irn_Jitter_Px is
+# also there for pixel shaders: the TAA pass reads the frame back where it really belongs (irancoj_taa_ps.hlsl).
 jitter = (
     '        //IranCoJ Edition: TAA jitter - the scene a sub-pixel off, a new offset each frame' + N +
+    '        #if defined(IRN_TAA)' + N +
+    '            #define IRN_TAA_JITTER_PX 1   // irancoj_taa_ps.hlsl un-shifts the frame only when this is here' + N +
+    '            // this frame\'s offset in pixels (x right, y up), within half a pixel' + N +
+    '            float2 Irn_Jitter_Px()' + N + '            {' + N +
+    '                float f_i = floor(frac(sin(floor(TIME * 997.0) * 12.9898) * 43758.5453) * 8.0);' + N +
+    '                float2 v_j = float2(0.0625, 0.8889);' + N +
+    '                v_j = (f_i < 6.5) ? float2(0.875, 0.5556) : v_j;' + N +
+    '                v_j = (f_i < 5.5) ? float2(0.375, 0.2222) : v_j;' + N +
+    '                v_j = (f_i < 4.5) ? float2(0.625, 0.7778) : v_j;' + N +
+    '                v_j = (f_i < 3.5) ? float2(0.125, 0.4444) : v_j;' + N +
+    '                v_j = (f_i < 2.5) ? float2(0.75, 0.1111) : v_j;' + N +
+    '                v_j = (f_i < 1.5) ? float2(0.25, 0.6667) : v_j;' + N +
+    '                v_j = (f_i < 0.5) ? float2(0.5, 0.3333) : v_j;' + N +
+    '                return v_j - 0.5;' + N + '            }' + N +
+    '        #endif' + N +
     '        #if defined(IRN_TAA) && defined(VERTEXSHADER) && !defined(TECH_SHD_ON) && !defined(TECH_RFL_ON)' + N +
     '            float4 Irn_Jitter(float4 v_pos)' + N + '            {' + N +
-    '                float2 v_j = frac(sin(floor(TIME * 997.0) * float2(12.9898, 78.233)) * 43758.5453) - 0.5;' + N +
-    '                v_pos.xy += v_j * 2.0 * RENDER_TARGET_PARAMS.xy * v_pos.w;' + N +
+    '                v_pos.xy += Irn_Jitter_Px() * 2.0 * RENDER_TARGET_PARAMS.xy * v_pos.w;' + N +
     '                return v_pos;' + N + '            }' + N +
     '        #else' + N + '            #define Irn_Jitter(v) (v)' + N + '        #endif' + N + N)
 rewrites.append(rw('Data/Shaders/Common/common.hlsl', D1, 'Data/Shaders/Common/common.hlsl', [
@@ -386,7 +418,7 @@ rewrites.append(rw('Data/Shaders/postprocess/dofs.mtt', D1, 'Data/Shaders/postpr
 ]))
 
 graphics = {
-    'version': '1.1.5',
+    'version': '1.1.6',
     'rewrites': rewrites,
     'vegetation': {
         'files': ['_grass.scr', '_foliage.scr'],
