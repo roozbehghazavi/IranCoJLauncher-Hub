@@ -498,13 +498,13 @@
     {
       "id": "NewClasses",
       "name": "New Classes",
-      "version": "2.0.8",
+      "version": "2.0.9",
       "description": "Rancher and Redneck as playable classes, and three classes play as CoJ Gunslinger characters: Silas Greaves (Rancher), John Wesley Hardin (Duelist) and Billy the Kid (Rifleman). With upgrades, new class pictures and the IranCoJ Skin Pack.",
       "package": {
-        "file": "NewClasses-2.0.8.zip",
-        "size": 36456683,
-        "sha256": "39972a412ecb6cae73d61d438ad8c63b844179b51af919071887e970ec576399",
-        "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/mods/NewClasses-2.0.8.zip"
+        "file": "NewClasses-2.0.9.zip",
+        "size": 36456700,
+        "sha256": "1caafd148e23cc43e5497f8d25c2bf7b66db57b29de9a267d92a58fbd82560cf",
+        "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/mods/NewClasses-2.0.9.zip"
       },
       "exclude": [
         "README_INSTALL.txt",
@@ -2549,6 +2549,15 @@
     ]
   },
   "news": [
+    {
+      "id": "launcher-beta-10",
+      "tag": "LAUNCHER 3.0.0-BETA.10",
+      "title": "No more respawn freezes",
+      "text": "The game froze for about a quarter of a second whenever anyone spawned: the spawn-protection glow of every character was built from scratch each time. The glow is now built once, while the map loads, so spawns are smooth again with every skin. New Classes 2.0.9 also keeps its shader cache when you change graphics settings, instead of starting over each time.",
+      "date": "2026-11-08",
+      "action": "settings",
+      "actionLabel": "Settings"
+    },
     {
       "id": "edition-112",
       "tag": "IRANCOJ EDITION 1.1.2",
