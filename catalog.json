@@ -680,7 +680,7 @@
     }
   ],
   "edition": {
-    "version": "1.1.1",
+    "version": "1.1.2",
     "ownUserFolder": true,
     "menuNavigation": true,
     "include": [
@@ -2417,7 +2417,7 @@
       {
         "path": "CoJ2/Data/Menu/textures/irancoj_score_bits.dds",
         "size": 524416,
-        "sha256": "217b5c9418d1615e1a4cdaefcf8c40ef48bd060f38e1f7b022865275cd3846a3",
+        "sha256": "2c01d88b2cacadc86586d5b08ba32c89e8cd383c8aa65fb50ef9d181ea71f43a",
         "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/edition/irancoj_score_bits.dds"
       },
       {
@@ -2549,6 +2549,15 @@
     ]
   },
   "news": [
+    {
+      "id": "edition-112",
+      "tag": "IRANCOJ EDITION 1.1.2",
+      "title": "One badge per team",
+      "text": "The team score at the top of the screen in Posse and Manhunt now shows each team's own badge at its end of the bar: the Lawmen's blue sheriff's star and the Outlaws' skull under a hat, the same ones as on the scoreboard. Launcher 3.0.0-beta.8: custom skins show in team modes too, Rancher and Redneck hide their picture with a custom skin, and characters without a voice of their own also get the game's third multiplayer voice.",
+      "date": "2026-11-08",
+      "action": "settings",
+      "actionLabel": "Update the Edition"
+    },
     {
       "id": "graphics-121",
       "tag": "IRANCOJ GRAPHICS 1.2.1",
