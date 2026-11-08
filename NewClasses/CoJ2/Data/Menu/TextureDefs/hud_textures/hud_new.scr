@@ -153,7 +153,7 @@ Texture("hud_new.dds",1024,1024)
     Rect("hud_icons_tomahawk"             , 432, 412, 522, 502) //  90x 90 IranCoJ: the same
 }
 
-Texture("net_characters.dds",4096,2048)
+Texture("net_characters.dds",4096,4096)
 {
 }
 
