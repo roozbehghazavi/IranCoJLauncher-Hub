@@ -1,5 +1,14 @@
 [
   {
+    "id": "edition-112",
+    "tag": "IRANCOJ EDITION 1.1.2",
+    "title": "One badge per team",
+    "text": "The team score at the top of the screen in Posse and Manhunt now shows each team's own badge at its end of the bar: the Lawmen's blue sheriff's star and the Outlaws' skull under a hat, the same ones as on the scoreboard. Launcher 3.0.0-beta.8: custom skins show in team modes too, Rancher and Redneck hide their picture with a custom skin, and characters without a voice of their own also get the game's third multiplayer voice.",
+    "date": "2026-11-08",
+    "action": "settings",
+    "actionLabel": "Update the Edition"
+  },
+  {
     "id": "graphics-121",
     "tag": "IRANCOJ GRAPHICS 1.2.1",
     "title": "Rain maps fixed",

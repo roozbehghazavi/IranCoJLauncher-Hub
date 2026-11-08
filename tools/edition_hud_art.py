@@ -180,7 +180,8 @@ def score_bits():
     im = Image.new("RGBA", (512 * ss, 256 * ss))
     d = ImageDraw.Draw(im)
     d.ellipse([4 * ss, 4 * ss, 124 * ss, 124 * ss], fill=INK + (230,))
-    star(d, 64 * ss, 66 * ss, 40 * ss, GOLD)                                  # Lawmen: a plain gold star
+    e = sheriff_star(74 * ss, BLUE)                                          # Lawmen: their badge, the sheriff's star
+    im.alpha_composite(e, (64 * ss - e.width // 2, 64 * ss - e.height // 2))
     d.ellipse([132 * ss, 4 * ss, 252 * ss, 124 * ss], fill=INK + (230,))
     e = skull_hat(74 * ss, RED)                                              # Outlaws: the skull under a hat
     im.alpha_composite(e, (192 * ss - e.width // 2, 64 * ss - e.height // 2))
