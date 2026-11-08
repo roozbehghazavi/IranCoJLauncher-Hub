@@ -455,35 +455,15 @@
     {
       "id": "IranCoJHDTextures",
       "name": "IranCoJ HD Textures",
-      "version": "1.0.1",
+      "version": "1.0.2",
       "description": "Every world texture of the game at twice its resolution, and your weapons and hands at four times. With Remastered graphics, the New Classes characters at their full CoJ Gunslinger size too. About 800 MB to download.",
       "package": {
-        "file": "IranCoJHDTextures-1.0.0.zip",
-        "size": 844736887,
-        "sha256": "c91662b74cdfe03107087810e51bda10ec8f3ca0d907d0e19e000b5c00fc330d",
-        "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/mods/IranCoJHDTextures-1.0.0.zip"
+        "file": "IranCoJHDTextures-1.0.2.zip",
+        "size": 845100033,
+        "sha256": "327992ea2925f553443d30825aab52037a95e616ce163cdbc553d205fcb756e4",
+        "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/mods/IranCoJHDTextures-1.0.2.zip"
       },
-      "exclude": [
-        "CoJ2/Data/Characters/Eyes/eye_env.dds",
-        "CoJ2/Data/Characters/Hair/hair_gloss.dds",
-        "CoJ2/Data/MapsNet/Adobes/Adobes_rfl.dds",
-        "CoJ2/Data/MapsNet/CoffeyVille/coffeyville_rfl.dds",
-        "CoJ2/Data/MapsNet/DLCHighNoon/dlchighnoon_rfl.dds",
-        "CoJ2/Data/MapsNet/DLCMine/dlcmine_rfl.dds",
-        "CoJ2/Data/MapsNet/DLCPanoche/dlcpanoche_rfl.dds",
-        "CoJ2/Data/MapsNet/DLCRaid/dlcraid_rfl.dds",
-        "CoJ2/Data/MapsNet/Frisco/Frisco_rfl.dds",
-        "CoJ2/Data/MapsNet/Klondike/klondike_rfl.dds",
-        "CoJ2/Data/MapsNet/Liberate/liberate_rfl.dds",
-        "CoJ2/Data/MapsNet/LittleBighorn/LittleBighorn_rfl.dds",
-        "CoJ2/Data/MapsNet/Magnificent/magnificent_rfl.dds",
-        "CoJ2/Data/MapsNet/PrisonBreak2/PrisonBreak2_rfl.dds",
-        "CoJ2/Data/MapsNet/PrisonCamp/prisoncamp_rfl.dds",
-        "CoJ2/Data/MapsNet/StinkingSprings2/env/stinkingsprings2_rfl.dds",
-        "CoJ2/Data/MapsNet/StinkingSprings2/StinkingSprings2_rfl.dds",
-        "CoJ2/Data/MapsNet/TombStone/tombstone_rfl.dds",
-        "CoJ2/Data/Objects/interior/furniture/Mirror_Interior_rfl.dds"
-      ],
+      "exclude": [],
       "loadDll": [],
       "shared": [],
       "disable": [
@@ -518,13 +498,13 @@
     {
       "id": "NewClasses",
       "name": "New Classes",
-      "version": "2.0.7",
+      "version": "2.0.8",
       "description": "Rancher and Redneck as playable classes, and three classes play as CoJ Gunslinger characters: Silas Greaves (Rancher), John Wesley Hardin (Duelist) and Billy the Kid (Rifleman). With upgrades, new class pictures and the IranCoJ Skin Pack.",
       "package": {
-        "file": "NewClasses-2.0.7.zip",
-        "size": 35520991,
-        "sha256": "1979eb1107edee569b239b9dac90114efa4c375c7ef8fce26565d16f9e3d26c0",
-        "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/mods/NewClasses-2.0.7.zip"
+        "file": "NewClasses-2.0.8.zip",
+        "size": 36456683,
+        "sha256": "39972a412ecb6cae73d61d438ad8c63b844179b51af919071887e970ec576399",
+        "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/mods/NewClasses-2.0.8.zip"
       },
       "exclude": [
         "README_INSTALL.txt",
