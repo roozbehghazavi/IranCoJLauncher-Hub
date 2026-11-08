@@ -1,13 +1,14 @@
 """Removes what a map pak should not ship, keeping every other entry byte for byte (compressed data copied as is).
 
-    python tools/clean_map_paks.py [pak ...]      (default: every pak in MapsNet)
+    python tools/clean_map_paks.py <pak> [pak ...]      (before uploading a map to the maps release)
 
 A map pak may carry Data/MapsNet/... and a map-named .scr at its root (e.g. "Red Hideout.scr": water and fog).
 Everything else goes: server config (ServerAdmins.scr - the game reads it from any pak, so a list in one map made
 its accounts admins on every server with that map), player profiles (out/), editor leftovers
 (FightNodesGenDefaults.scr, Data/Wizard/...) and copies of the game's own files (the map editor exports
 Data/Characters and Data/Creatures skins with variants commented out, which overrode the game's for everyone).
-build_hub.py fails the build on a pak that breaks this rule (check_map_pak).
+build_hub.py checks every new map in the maps release and fails the build on one that breaks this rule
+(check_map_pak).
 """
 
 import os
@@ -15,7 +16,6 @@ import struct
 import sys
 import zipfile
 
-MAPS_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "MapsNet")
 NOT_MAP_FILES = ("serveradmins.scr", "fightnodesgendefaults.scr")
 
 
@@ -68,7 +68,9 @@ def clean(path):
 
 
 if __name__ == "__main__":
-    paks = sys.argv[1:] or sorted(os.path.join(MAPS_DIR, n) for n in os.listdir(MAPS_DIR) if n.lower().endswith(".pak"))
+    paks = sys.argv[1:]
+    if not paks:
+        sys.exit(__doc__)
     for pak in paks:
         before = os.path.getsize(pak)
         removed = clean(pak)

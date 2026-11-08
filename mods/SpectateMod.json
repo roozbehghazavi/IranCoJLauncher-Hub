@@ -2,7 +2,7 @@
   "id": "SpectateMod",
   "name": "Spectate Mod",
   "description": "Spectate players in multiplayer, from the in-game menu.",
-  "folder": "SpectateMod",
+  "folder": "mods/SpectateMod",
   "exclude": [
     "mods.txt",
     "CoJ2/Data/Menu/MenuIngameNetGamemode_Scr_PC.binui"

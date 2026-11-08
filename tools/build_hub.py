@@ -1,9 +1,8 @@
 """Builds the hub's generated files. Run by .github/workflows/hub.yml.
 
-1. Mirrors every map in MapsNet/ to the "maps" GitHub Release (uploads new or changed ones).
-2. Zips every folder mod (mods/<Id>.json with "folder") and uploads it to the "mods" release.
-3. Writes catalog.json  - read by launcher v3: maps and mod packages from the releases.
-4. Writes manifest.json - read by launcher v2.0.1 (legacy): maps stored in git only.
+1. Lists every map in the "maps" GitHub Release (maps are uploaded there by hand; there is no copy in git).
+2. Zips every folder mod (mods/<Id>.json with "folder": "mods/<Id>") and uploads it to the "mods" release.
+3. Writes catalog.json - read by the launcher: maps, mod packages, the Edition and news.
 
 Needs the `gh` CLI with GH_TOKEN set, and GITHUB_REPOSITORY ("owner/name").
 """
@@ -20,14 +19,12 @@ from clean_map_paks import allowed as map_file_allowed  # noqa: E402
 
 REPO = os.environ["GITHUB_REPOSITORY"]
 BRANCH = os.environ.get("HUB_BRANCH", "main")
-MAPS_DIR = "MapsNet"
 MAPS_RELEASE = "maps"
 MODS_DIR = "mods"
 MODS_RELEASE = "mods"
 EDITION_FILES_DIR = os.path.join("edition", "files")
 EDITION_RELEASE = "edition"
 MOD_VERSION_FILE = "version.txt"
-LFS_PREFIX = b"version https://git-lfs.github.com/spec/v1"
 CATALOG_SCHEMA = 2
 
 # Fields copied from mods/<Id>.json into the catalog as they are.
@@ -46,20 +43,6 @@ def sha256_of(path):
         for chunk in iter(lambda: f.read(1 << 20), b""):
             h.update(chunk)
     return h.hexdigest()
-
-
-def is_lfs_pointer(path):
-    with open(path, "rb") as f:
-        return f.read(len(LFS_PREFIX)) == LFS_PREFIX
-
-
-def lfs_tracked_files():
-    try:
-        out = subprocess.run(["git", "lfs", "ls-files", "-n"], check=True, text=True,
-                             stdout=subprocess.PIPE).stdout
-        return {os.path.normpath(p) for p in out.splitlines() if p.strip()}
-    except (OSError, subprocess.CalledProcessError):
-        return set()
 
 
 # ---------- releases ----------
@@ -90,7 +73,7 @@ def maps_assets():
 
 def mods_assets():
     return release_assets(MODS_RELEASE, "Mods",
-                          "Mod packages for launcher v3. Folder mods are zipped by the hub workflow; "
+                          "Mod packages for the launcher. Folder mods are zipped by the hub workflow; "
                           "other mods are uploaded here by hand - see README.md.")
 
 
@@ -120,46 +103,44 @@ def package_entry(asset):
 
 # ---------- maps ----------
 
-def git_map_files():
-    if not os.path.isdir(MAPS_DIR):
-        return []
-    return sorted(n for n in os.listdir(MAPS_DIR) if os.path.isfile(os.path.join(MAPS_DIR, n)))
+def checked_maps():
+    """sha256 of the maps the last catalog lists: those passed check_map_pak already."""
+    try:
+        with open("catalog.json", encoding="utf-8") as f:
+            return {m["sha256"] for m in json.load(f).get("maps", [])}
+    except (OSError, ValueError, KeyError):
+        return set()
 
 
 def check_map_pak(name, path):
     """A map pak may only carry Data/MapsNet/... and a map-named .scr at its root (tools/clean_map_paks.py removes
     the rest): the game reads every pak, so server config (ServerAdmins.scr), a player's out/ folder or copies of
-    the game's own files in one map override them for everyone."""
+    the game's own files in one map override them for everyone. A map that breaks this fails the build."""
     if not name.lower().endswith(".pak"):
         return
     with zipfile.ZipFile(path) as z:
         bad = [n for n in z.namelist() if not n.endswith("/") and not map_file_allowed(n)]
     if bad:
-        sys.exit(f"{MAPS_DIR}/{name}: ships files a map must not ({', '.join(bad[:5])}"
-                 f"{'...' if len(bad) > 5 else ''}) - run python tools/clean_map_paks.py {MAPS_DIR}/{name}")
-
-
-def sync_maps_to_release():
-    assets = maps_assets()
-    changed = False
-    for name in git_map_files():
-        path = os.path.join(MAPS_DIR, name)
-        if is_lfs_pointer(path):
-            print(f"skip {name}: LFS pointer (checkout without LFS content)")
-            continue
-        check_map_pak(name, path)
-        changed |= upload_if_changed(MAPS_RELEASE, path, assets)
-    return maps_assets() if changed else assets
+        sys.exit(f"maps release: {name} ships files a map must not ({', '.join(bad[:5])}"
+                 f"{'...' if len(bad) > 5 else ''}) - clean it with python tools/clean_map_paks.py {name}, "
+                 "then upload it to the maps release again")
 
 
 def catalog_maps(assets):
+    """Every map in the maps release; a new or changed one is downloaded and checked first."""
+    checked = checked_maps()
     maps = []
     for name, a in sorted(assets.items(), key=lambda kv: kv[0].lower()):
-        if not asset_sha256(a):
+        sha = asset_sha256(a)
+        if not sha:
             print(f"warning: {name} has no digest yet, left out of the catalog", file=sys.stderr)
             continue
-        maps.append({"file": name, "size": a["size"], "sha256": asset_sha256(a),
-                     "url": a["browser_download_url"]})
+        if sha not in checked:
+            with tempfile.TemporaryDirectory() as tmp:
+                print(f"check {MAPS_RELEASE}/{name}")
+                gh("release", "download", MAPS_RELEASE, "--pattern", name, "--dir", tmp, capture=False)
+                check_map_pak(name, os.path.join(tmp, name))
+        maps.append({"file": name, "size": a["size"], "sha256": sha, "url": a["browser_download_url"]})
     return maps
 
 
@@ -302,21 +283,6 @@ def prune_old_packages(manifests, assets):
             gh("release", "delete-asset", MODS_RELEASE, name, "-y", capture=False)
 
 
-# ---------- legacy (launcher v2.0.1) ----------
-
-def build_legacy_manifest():
-    # v2.0.1 downloads from raw.githubusercontent.com, which only serves files stored in
-    # git itself. LFS files would arrive as pointer text, so they are left out.
-    lfs = lfs_tracked_files()
-    manifest = {}
-    for name in git_map_files():
-        path = os.path.join(MAPS_DIR, name)
-        if os.path.normpath(path) in lfs or is_lfs_pointer(path):
-            continue
-        manifest[name] = sha256_of(path)
-    return manifest
-
-
 # ---------- edition ----------
 
 def edition_files():
@@ -362,7 +328,7 @@ def write_json(path, data):
 
 if __name__ == "__main__":
     catalog = {"schema": CATALOG_SCHEMA,
-               "maps": catalog_maps(sync_maps_to_release()),
+               "maps": catalog_maps(maps_assets()),
                "mods": build_mods()}
     edition = load_optional_json("edition.json")
     if edition:
@@ -373,4 +339,3 @@ if __name__ == "__main__":
     if news:
         catalog["news"] = news
     write_json("catalog.json", catalog)
-    write_json("manifest.json", build_legacy_manifest())

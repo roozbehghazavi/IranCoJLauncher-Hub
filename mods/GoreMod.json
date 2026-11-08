@@ -2,6 +2,6 @@
   "id": "GoreMod",
   "name": "Gore Mod",
   "description": "More blood: richer blood and hit effects. By cr1m3.",
-  "folder": "GoreMod",
+  "folder": "mods/GoreMod",
   "optional": true
 }

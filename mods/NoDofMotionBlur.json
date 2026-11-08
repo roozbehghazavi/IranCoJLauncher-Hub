@@ -2,6 +2,6 @@
   "id": "NoDofMotionBlur",
   "name": "No DOF & Motion Blur",
   "description": "Turns off depth of field and motion blur for a sharper picture. By cr1m3.",
-  "folder": "NoDofMotionBlur",
+  "folder": "mods/NoDofMotionBlur",
   "optional": true
 }
