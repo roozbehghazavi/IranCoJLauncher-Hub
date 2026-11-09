@@ -545,19 +545,20 @@
     {
       "id": "ServerListMod",
       "name": "Server List Mod",
-      "version": "1.5.2+pb3d3804c",
+      "version": "1.5.2.1+pb3d3804c",
       "description": "In-game server list through OpenSpy, plus direct join. Replaces CoJ2_x86.dll and engine_x86.dll; uninstalling puts the originals back.",
       "package": {
-        "file": "ServerListMod-1.5.2+pb3d3804c.zip",
-        "size": 7047888,
-        "sha256": "afe51fe5a4d016b9b30f960fe94fb6d706114a56de8d2521fdab5e113fb23953",
-        "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/mods/ServerListMod-1.5.2%2Bpb3d3804c.zip"
+        "file": "ServerListMod-1.5.2.1+pb3d3804c.zip",
+        "size": 7094118,
+        "sha256": "a45ba7b1ed21966ef602bcc648ba9901927ce55105e5ab4b6695fe49dc31fefc",
+        "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/mods/ServerListMod-1.5.2.1%2Bpb3d3804c.zip"
       },
       "exclude": [
         "mods.txt"
       ],
       "loadDll": [
-        "directjoinfix.dll"
+        "directjoinfix.dll",
+        "wwlfix.dll"
       ],
       "shared": [
         "dinput8.dll"
@@ -2588,6 +2589,15 @@
     ]
   },
   "news": [
+    {
+      "id": "wwl-crash-fix",
+      "tag": "SERVER LIST MOD 1.5.2.1",
+      "title": "No more crashes on WWL",
+      "text": "Joining the WWL server could crash the game, at random moments and in random places. The game kept too little room for what a busy server like WWL sends, and the overflow broke other parts of the game. That room is now big enough, so WWL plays like any other server. It comes with the next update, nothing to set up.",
+      "date": "2026-11-09",
+      "action": "servers",
+      "actionLabel": "Find a server"
+    },
     {
       "id": "graphics-123",
       "tag": "IRANCOJ GRAPHICS 1.2.3",
