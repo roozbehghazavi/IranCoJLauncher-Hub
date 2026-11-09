@@ -432,13 +432,13 @@
     {
       "id": "IranCoJGraphics",
       "name": "IranCoJ Graphics",
-      "version": "1.2.2",
+      "version": "1.2.3",
       "description": "The Edition's remastered graphics: GGX lighting and metal, ambient occlusion (GTAO), soft shadows, temporal anti-aliasing, sharpening and colour, and every map's detail and draw distances. Settings > Graphics > Remastered or Vanilla.",
       "package": {
-        "file": "IranCoJGraphics-1.2.2.zip",
-        "size": 179691,
-        "sha256": "6859f4cb137223459804a2885ef2e33d2513f6bd47b5f58cea6f6e6c83efbc39",
-        "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/mods/IranCoJGraphics-1.2.2.zip"
+        "file": "IranCoJGraphics-1.2.3.zip",
+        "size": 180224,
+        "sha256": "317b9795aefdc4b8de48df42667ea656d258b57b14262995ae0cda99dc8acd9a",
+        "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/mods/IranCoJGraphics-1.2.3.zip"
       },
       "exclude": [
         "mods.txt"
@@ -2589,10 +2589,10 @@
   },
   "news": [
     {
-      "id": "graphics-122",
-      "tag": "IRANCOJ GRAPHICS 1.2.2",
+      "id": "graphics-123",
+      "tag": "IRANCOJ GRAPHICS 1.2.3",
       "title": "Steadier, sharper anti-aliasing",
-      "text": "Temporal anti-aliasing now holds the picture still at every resolution: no more shaking in the distance at lower resolutions, and no more shadows flickering on the ground and objects. Moving around also looks sharper, especially below 1080p. Turn it on in Settings > Graphics > Remastered > Temporal anti-aliasing.",
+      "text": "Temporal anti-aliasing now holds the picture still at every resolution: no more shaking in the distance and no more flickering edges on roofs and rocks at lower resolutions. Moving around also looks sharper, especially below 1080p - 900p now looks close to 1080p. Turn it on in Settings > Graphics > Remastered > Temporal anti-aliasing.",
       "date": "2026-11-09",
       "action": "settings",
       "actionLabel": "Graphics settings"
