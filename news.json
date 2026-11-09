@@ -1,5 +1,14 @@
 [
   {
+    "id": "wwl-crash-fix",
+    "tag": "SERVER LIST MOD 1.5.2.1",
+    "title": "No more crashes on WWL",
+    "text": "Joining the WWL server could crash the game, at random moments and in random places. The game kept too little room for what a busy server like WWL sends, and the overflow broke other parts of the game. That room is now big enough, so WWL plays like any other server. It comes with the next update, nothing to set up.",
+    "date": "2026-11-09",
+    "action": "servers",
+    "actionLabel": "Find a server"
+  },
+  {
     "id": "graphics-123",
     "tag": "IRANCOJ GRAPHICS 1.2.3",
     "title": "Steadier, sharper anti-aliasing",
