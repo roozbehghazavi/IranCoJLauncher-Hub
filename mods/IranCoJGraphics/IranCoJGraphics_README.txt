@@ -1,4 +1,4 @@
-IranCoJ Graphics 1.2.2 - the Edition's remastered graphics, by Thomas (Roozbeh).
+IranCoJ Graphics 1.2.3 - the Edition's remastered graphics, by Thomas (Roozbeh).
 
 Everything is set in the IranCoJ Launcher: Settings > Graphics & Sound > Remastered or Vanilla, and each feature on
 its own in the Remastered group. The launcher writes irancojfx.ini and edited copies of the game's own pipeline
@@ -33,3 +33,7 @@ even with No DOF & Motion Blur installed. The map's baked lighting is always rea
 (it is drawn up to half a pixel off each time, from 8 evenly spread offsets), so distant detail no longer shakes at
 low resolutions. Shadows no longer flicker on ground and objects: the shadow pass aims at the real surface. Moving
 is sharper: the history and the new frame are read with a sharp filter, not blurred a little more each frame.
+
+1.2.3: thin edges (roofs, rock rims) no longer flicker with temporal anti-aliasing at low resolutions: the
+history gets a little slack before it is held to the pixels around it, bright pixels weigh less in the blend, and
+the blend is a touch smoother.

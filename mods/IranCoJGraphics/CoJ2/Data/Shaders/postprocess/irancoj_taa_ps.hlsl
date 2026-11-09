@@ -17,8 +17,9 @@ sampler s_dpt_4;   // depth: the full-resolution DPT (the quarter one is reused 
 sampler s_hist;    // the last result
 
 //#define IRN_TAA_DEBUG 1    // test only: the left half red, the right half this frame
-#define IRN_TAA_NEW   0.1   // share of the new frame: lower = smoother, slower to react
-#define IRN_TAA_CLIP  1.5    // the history may be this many standard deviations from the neighbourhood's mean
+#define IRN_TAA_NEW   0.08  // share of the new frame: lower = smoother, slower to react
+#define IRN_TAA_MARGIN 0.25 // the history may stray this share of the neighbourhood's range past it before it is held
+#define IRN_TAA_CLIP  1.5    // (unused: the history is held to the neighbourhood's plain min / max)
 #define IRN_TAA_VIEW  120.0  // cm: nearer is the first-person weapon and hands
 #define IRN_TAA_MOTION 0.05  // share of the new frame per pixel moved: 10 px -> half, 20 px and more -> all of it
 
@@ -83,10 +84,10 @@ void main(PIX_PARAMS)
         }
     // this frame's pixel read sharp too (the un-shift reads it between pixels), held to what is really around it
     float3 c_sharp = clamp(Irn_Taa_Sharp(s_clr, uv_c, px), lo, hi);
-    float3 mean = m1 / 9.0;
-    float3 sigma = sqrt(max(m2 / 9.0 - mean * mean, 0.0));
-    lo = max(lo, mean - IRN_TAA_CLIP * sigma);
-    hi = min(hi, mean + IRN_TAA_CLIP * sigma);
+    // The history is held to the plain lowest and highest colours around the pixel. A range narrowed further to the
+    // spread around the mean (mean +- 1.5 sigma) rejected the history of thin edges - a roof's or rock's rim a pixel
+    // or two wide, which slips in and out of the 3x3 as the frame shifts - one frame in, one frame out: they flickered
+    // from about 2 m on. (m1 / m2 are kept for IRN_TAA_CLIP, unused now.)
 
     // Where this pixel was last frame: its position from the depth and the camera direction, through last frame's
     // view-projection. irancojfx.dll keeps that matrix (the engine stores it only for its motion blur). The position
@@ -98,7 +99,11 @@ void main(PIX_PARAMS)
     bool b_reproject = v_pos_prv.w > 0.001 && f_depth > IRN_TAA_VIEW;
     float2 uv_prv = b_reproject ? UV_Screen_From_Pos(v_pos_prv) : uv;
 
-    float3 h = clamp(Irn_Taa_Sharp(s_hist, uv_prv, px), lo, hi);
+    // Held to the neighbourhood with a margin: on a high-contrast edge at low resolution the range jumps with every
+    // shift of the frame, and a history held hard to it was snapped to this frame one time and let go the next - the
+    // edge flickered. A little slack lets it settle; ghosts stay out (the margin is a quarter of the range).
+    float3 v_margin = (hi - lo) * IRN_TAA_MARGIN + 1.0 / 255.0;
+    float3 h = clamp(Irn_Taa_Sharp(s_hist, uv_prv, px), lo - v_margin, hi + v_margin);
 
     // How much of this frame: more the further the pixel moved (fast moves would otherwise drag a fading copy along),
     // all of it when it came from off screen, or when a world pixel's history lands where the weapon is now - the
@@ -116,7 +121,11 @@ void main(PIX_PARAMS)
         if (f_near < IRN_TAA_VIEW) f_new = 1.0;
     }
 
-    OUT.v_clr = float4(lerp(h, c_sharp, f_new), 1.0);
+    // Blended by brightness (bright pixels count less): a pixel that is bright one frame and dark the next - a lit
+    // edge as the frame shifts - can't swing the result back and forth.
+    float f_w_new = f_new / (1.0 + dot(c_sharp, float3(0.299, 0.587, 0.114)));
+    float f_w_hist = (1.0 - f_new) / (1.0 + dot(h, float3(0.299, 0.587, 0.114)));
+    OUT.v_clr = float4(saturate((h * f_w_hist + c_sharp * f_w_new) / max(f_w_hist + f_w_new, 0.0001)), 1.0);
 
     #if defined(IRN_TAA_DEBUG)   // test: the left half red (the pass runs), the right half this frame as read here
         OUT.v_clr = uv.x < 0.5 ? float4(1.0, 0.0, 0.0, 1.0) : float4(c, 1.0);
