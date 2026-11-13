@@ -1,4 +1,4 @@
-IranCoJ Graphics 1.3.0 - the Edition's remastered graphics, by Thomas (Roozbeh).
+IranCoJ Graphics 1.4.0 - the Edition's remastered graphics, by Thomas (Roozbeh).
 
 Everything is set in the IranCoJ Launcher: Settings > Graphics & Sound > Remastered or Vanilla, and each feature on
 its own in the Remastered group. The launcher writes irancojfx.ini and edited copies of the game's own pipeline
@@ -43,3 +43,8 @@ contributors). The launcher puts its d3d9.dll next to the game when the PC has a
 (Settings > Display > Renderer; DirectX 9 otherwise), points it at the dedicated card on laptops and turns vertical
 sync off once. Frame times are much steadier: no more 100 ms stalls during play. Temporal anti-aliasing no longer
 leaves a copy of your gun on the wall when it moves while you stand still (reloading).
+
+1.4.0: render resolution (Settings > Graphics > Remastered, with temporal anti-aliasing): the world is drawn at
+85%, 75% or 67% of your resolution and temporal anti-aliasing rebuilds it at full size - more frames per second, the
+HUD and text stay sharp. irancojfx.dll sizes the engine's post-process buffers and full-screen passes to the scale;
+the Edition's exe (1.3.0) loads it at start, before the engine creates those buffers.

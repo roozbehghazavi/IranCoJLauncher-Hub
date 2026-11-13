@@ -1,5 +1,14 @@
 [
   {
+    "id": "edition-130-render-resolution",
+    "tag": "IRANCOJ EDITION 1.3.0",
+    "title": "More frames with Render resolution",
+    "text": "Settings > Graphics > Remastered has a new Render resolution: the world is drawn at 85%, 75% or 67% of your resolution and temporal anti-aliasing rebuilds it at full size. The HUD and text stay sharp, and the game runs much faster - on a laptop at 1440p, 75% gave about 60% more frames and 67% almost twice as many. Needs Temporal anti-aliasing and launcher 3.0.0-beta.14. Also fixed: standing right at a wall, a reload no longer leaves a copy of your gun on it, and close-up edges no longer drag when you turn.",
+    "date": "2026-11-13",
+    "action": "settings",
+    "actionLabel": "Graphics settings"
+  },
+  {
     "id": "edition-120-vulkan",
     "tag": "IRANCOJ EDITION 1.2.0",
     "title": "Smoother with Vulkan",

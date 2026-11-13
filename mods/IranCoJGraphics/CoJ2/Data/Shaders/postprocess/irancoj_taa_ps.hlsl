@@ -11,6 +11,10 @@
 
 #include <common.hlsl>
 #include <blur_camera_motion_tc.hlsl>
+#include <irancoj_fx_settings.hlsl>   // the launcher's: IRN_RENDER_SCALE (the scene's size / the screen's)
+#if !defined(IRN_RENDER_SCALE)
+    #define IRN_RENDER_SCALE 1.0
+#endif
 
 sampler s_clr;     // this frame (CLR in game, PRV otherwise)
 sampler s_dpt_4;   // depth: the full-resolution DPT (the quarter one is reused by the time this runs)
@@ -22,6 +26,7 @@ sampler s_hist;    // the last result
 #define IRN_TAA_CLIP  1.5    // (unused: the history is held to the neighbourhood's plain min / max)
 #define IRN_TAA_VIEW  120.0  // cm: nearer is the first-person weapon and hands
 #define IRN_TAA_MOTION 0.05  // share of the new frame per pixel moved: 10 px -> half, 20 px and more -> all of it
+#define IRN_TAA_NEAR  0.4    // share of the new frame nearer than IRN_TAA_VIEW (weapon, hands, a wall you stand at)
 
 float3 Irn_Taa_Tap(float2 uv) { return tex2Dlod(s_clr, float4(uv, 0.0, 0.0)).rgb; }
 
@@ -54,6 +59,9 @@ void main(PIX_PARAMS)
 {
     float2 uv = V_UV_SCREEN_TC;
     float2 px = RENDER_TARGET_PARAMS.xy;
+    // This frame's own pixel: with a render scale below 100% it is drawn smaller than the screen and this pass
+    // rebuilds it at full size, so steps within it are its pixels, not the screen's.
+    float2 px_src = px / IRN_RENDER_SCALE;
 
     // This frame was drawn up to half a pixel off (Irn_Jitter): it is read back where it really belongs, so neither
     // the new image nor the colour range the history is held to moves with the jitter. Read as drawn, distant detail
@@ -62,7 +70,7 @@ void main(PIX_PARAMS)
     // (only with the jitter that tells its offset: IRN_TAA_JITTER_PX from the graphics spec's common.hlsl; an older one
     // has no Irn_Jitter_Px, and without this test the pass failed to compile and the screen stayed black)
     #if defined(IRN_TAA_JITTER_PX)
-        float2 v_unjitter = Irn_Jitter_Px() * float2(1.0, -1.0) * px;
+        float2 v_unjitter = Irn_Jitter_Px() * float2(1.0, -1.0) * px_src;
     #else
         float2 v_unjitter = 0.0;
     #endif
@@ -78,12 +86,12 @@ void main(PIX_PARAMS)
         for (int x = -1; x <= 1; x++)
         {
             if (x == 0 && y == 0) continue;
-            float3 s = Irn_Taa_Tap(uv_c + float2(x, y) * px);
+            float3 s = Irn_Taa_Tap(uv_c + float2(x, y) * px_src);
             m1 += s; m2 += s * s;
             lo = min(lo, s); hi = max(hi, s);
         }
     // this frame's pixel read sharp too (the un-shift reads it between pixels), held to what is really around it
-    float3 c_sharp = clamp(Irn_Taa_Sharp(s_clr, uv_c, px), lo, hi);
+    float3 c_sharp = clamp(Irn_Taa_Sharp(s_clr, uv_c, px_src), lo, hi);
     // The history is held to the plain lowest and highest colours around the pixel. A range narrowed further to the
     // spread around the mean (mean +- 1.5 sigma) rejected the history of thin edges - a roof's or rock's rim a pixel
     // or two wide, which slips in and out of the 3x3 as the frame shifts - one frame in, one frame out: they flickered
@@ -102,15 +110,23 @@ void main(PIX_PARAMS)
     // Held to the neighbourhood with a margin: on a high-contrast edge at low resolution the range jumps with every
     // shift of the frame, and a history held hard to it was snapped to this frame one time and let go the next - the
     // edge flickered. A little slack lets it settle; ghosts stay out (the margin is a quarter of the range).
-    float3 v_margin = (hi - lo) * IRN_TAA_MARGIN + 1.0 / 255.0;
+    // Nearer than IRN_TAA_VIEW is the weapon and hands - and a wall or box you stand right at, which can't be told
+    // from them by depth: no slack there (see f_new below).
+    float3 v_margin = f_depth > IRN_TAA_VIEW ? (hi - lo) * IRN_TAA_MARGIN + 1.0 / 255.0 : 0.0;
     float3 h = clamp(Irn_Taa_Sharp(s_hist, uv_prv, px), lo - v_margin, hi + v_margin);
 
     // How much of this frame: more the further the pixel moved (fast moves would otherwise drag a fading copy along),
     // all of it when it came from off screen, or when a world pixel's history lands where the weapon is now - the
     // weapon moves with the camera, so it was there last frame too and that history is the gun, not this wall.
     float f_moved = length((uv_prv - uv) / px);
-    float f_new = max(IRN_TAA_NEW, saturate(f_moved * IRN_TAA_MOTION));
+    // Drawn smaller (a render scale), each frame carries less detail: it gets a smaller share, and the history - built
+    // from frames shifted by different sub-pixel offsets - carries the full-resolution detail.
+    float f_new = max(IRN_TAA_NEW * IRN_RENDER_SCALE, saturate(f_moved * IRN_TAA_MOTION));
     if (any(uv_prv != saturate(uv_prv))) f_new = 1.0;
+    // Up close the history is taken from the same place on screen (the weapon moves with the camera). Hugging a wall,
+    // the wall is that close too: a reload left the gun's colours on it for a second or two, and turning dragged near
+    // edges along. Near pixels take a large share of each frame, so that clears in a frame or two.
+    if (!b_reproject) f_new = max(f_new, IRN_TAA_NEAR);
     if (b_reproject)
     {
         float f_near = Sample_f1(s_dpt_4, uv_prv, 0.0);
