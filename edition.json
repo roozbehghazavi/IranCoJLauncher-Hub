@@ -686,7 +686,7 @@
     }
   },
   "graphics": {
-    "version": "1.1.6",
+    "version": "1.1.7",
     "rewrites": [
       {
         "path": "CoJ2/Data/Shaders/postprocess/irancoj_fx.mtt",
@@ -1195,7 +1195,7 @@
         "replace": [
           [
             "\\z",
-            "\r\n//IranCoJ Edition: temporal anti-aliasing (history kept between frames, and the pass result)\r\nBufferScreenFormat(\"IRN_TAA_HIST\", 1, \"A8R8G8B8\", \"\")\r\nBufferScreenFormat(\"IRN_TAA_TMP\", 1, \"A8R8G8B8\", \"temp\")\r\n"
+            "\r\n//IranCoJ Edition: temporal anti-aliasing (history kept between frames, and the pass result)\r\nBufferScreenFormat(\"IRN_TAA_HIST\", 1, \"A16B16G16R16F\", \"\")\r\nBufferScreenFormat(\"IRN_TAA_TMP\", 1, \"A16B16G16R16F\", \"temp\")\r\n"
           ]
         ]
       },

@@ -27,6 +27,8 @@ sampler s_hist;    // the last result
 #define IRN_TAA_VIEW  120.0  // cm: nearer is the first-person weapon and hands
 #define IRN_TAA_MOTION 0.05  // share of the new frame per pixel moved: 10 px -> half, 20 px and more -> all of it
 #define IRN_TAA_NEAR  0.4    // share of the new frame nearer than IRN_TAA_VIEW (weapon, hands, a wall you stand at)
+#define IRN_TAA_DEPTH 0.04   // last frame's depth may differ this share from where the point was before it is distrusted
+#define IRN_TAA_FAR   60000.0 // cm: beyond, the depth isn't kept precisely enough (half floats) to compare - the sky
 
 float3 Irn_Taa_Tap(float2 uv) { return tex2Dlod(s_clr, float4(uv, 0.0, 0.0)).rgb; }
 
@@ -136,7 +138,7 @@ void main(PIX_PARAMS)
         f_near = min(f_near, Sample_f1(s_dpt_4, uv_prv + float2(0.0, -3.0) * px, 0.0));
         if (f_near < IRN_TAA_VIEW) f_new = 1.0;
 
-        // ... and where the weapon WAS last frame: the history's alpha marks the weapon and hands (0, written below).
+        // ... and where the weapon WAS last frame: the history's alpha marks the weapon and hands (negative, below).
         // Standing still while the gun moves (a reload brings it to the face), the wall behind kept the gun's colours
         // as its history: held only to the wall's own colour range, a dark copy of the gun stayed on the wall until
         // you moved. Read around the spot too: the sharp history read reaches two pixels out.
@@ -145,17 +147,28 @@ void main(PIX_PARAMS)
         f_was_gun = min(f_was_gun, tex2Dlod(s_hist, float4(uv_prv + float2(-1.5,  1.5) * px, 0.0, 0.0)).a);
         f_was_gun = min(f_was_gun, tex2Dlod(s_hist, float4(uv_prv + float2( 1.5, -1.5) * px, 0.0, 0.0)).a);
         f_was_gun = min(f_was_gun, tex2Dlod(s_hist, float4(uv_prv + float2(-1.5, -1.5) * px, 0.0, 0.0)).a);
-        if (f_was_gun < 0.99) f_new = 1.0;
+        if (f_was_gun < 0.0) f_new = 1.0;
+
+        // ... and whether the history there is this surface at all: the history keeps each pixel's depth (its alpha,
+        // below), and where this point was last frame it was v_pos_prv.w away from last frame's camera. A player who
+        // walked past is a different depth there - the camera alone can't follow a moving character, so its history
+        // trailed behind it (and showed through where it had been). A mismatch takes the new frame.
+        float f_dprev = tex2Dlod(s_hist, float4(uv_prv, 0.0, 0.0)).a;
+        if (f_dprev > IRN_TAA_VIEW && f_dprev < IRN_TAA_FAR && v_pos_prv.w < IRN_TAA_FAR)
+        {
+            float f_rel = abs(f_dprev - v_pos_prv.w) / v_pos_prv.w;
+            f_new = max(f_new, saturate((f_rel - IRN_TAA_DEPTH) * 8.0));
+        }
     }
 
     // Blended by brightness (bright pixels count less): a pixel that is bright one frame and dark the next - a lit
     // edge as the frame shifts - can't swing the result back and forth.
     float f_w_new = f_new / (1.0 + dot(c_sharp, float3(0.299, 0.587, 0.114)));
     float f_w_hist = (1.0 - f_new) / (1.0 + dot(h, float3(0.299, 0.587, 0.114)));
-    // alpha: 0 on the weapon and hands, 1 on the world - kept in the history (copy.mat copies it, the final pass to
-    // the screen ignores it) for the test above next frame
+    // alpha: this pixel's depth (cm), negative on the weapon and hands - kept in the history (a half-float buffer;
+    // copy.mat copies it, the final pass to the screen ignores it) for the tests above next frame
     OUT.v_clr = float4(saturate((h * f_w_hist + c_sharp * f_w_new) / max(f_w_hist + f_w_new, 0.0001)),
-                       f_depth > IRN_TAA_VIEW ? 1.0 : 0.0);
+                       f_depth > IRN_TAA_VIEW ? min(f_depth, 65000.0) : -1.0);
 
     #if defined(IRN_TAA_DEBUG)   // test: the left half red (the pass runs), the right half this frame as read here
         OUT.v_clr = uv.x < 0.5 ? float4(1.0, 0.0, 0.0, 1.0) : float4(c, 1.0);

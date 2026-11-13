@@ -203,10 +203,12 @@ rewrites.append(rw('Data/Shaders/postprocess/irancoj_taa.mtt', D1, 'Data/Shaders
      '$1' + N + '				use PP_TMU(s_sampler = "s_hist", i_user_map = 10, e_filter = LINEAR_NO_MIP, e_tile = CLAMP);'),
     (r'#include <blur_camera_motion_ps\.hlsl>', '#include <irancoj_taa_ps.hlsl>')
 ], when=TAA))
-# The history lives across frames (no "temp": the engine may reuse a temp buffer's memory within the frame).
+# The history lives across frames (no "temp": the engine may reuse a temp buffer's memory within the frame). Half floats:
+# the alpha carries each pixel's depth to the next frame (negative on the weapon), which rejects the history of a
+# character that moved (irancoj_taa_ps.hlsl).
 rewrites.append(rw('Data/Postprocess/scene30_init_core.ppfx', D0, 'Data/Postprocess/scene30_init_core.ppfx', [
     (r'\z', N + '//IranCoJ Edition: temporal anti-aliasing (history kept between frames, and the pass result)' + N +
-     'BufferScreenFormat("IRN_TAA_HIST", 1, "A8R8G8B8", "")' + N + 'BufferScreenFormat("IRN_TAA_TMP", 1, "A8R8G8B8", "temp")' + N)
+     'BufferScreenFormat("IRN_TAA_HIST", 1, "A16B16G16R16F", "")' + N + 'BufferScreenFormat("IRN_TAA_TMP", 1, "A16B16G16R16F", "temp")' + N)
 ], when=TAA))
 # In both final-copy branches (in game the image is in CLR, at other times in PRV): TAA on that source into our own
 # IRN_TAA_TMP, the history copied from it, and the final pass reads IRN_TAA_TMP. The game's buffers are never written
@@ -418,7 +420,7 @@ rewrites.append(rw('Data/Shaders/postprocess/dofs.mtt', D1, 'Data/Shaders/postpr
 ]))
 
 graphics = {
-    'version': '1.1.6',
+    'version': '1.1.7',
     'rewrites': rewrites,
     'vegetation': {
         'files': ['_grass.scr', '_foliage.scr'],

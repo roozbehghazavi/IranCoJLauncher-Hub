@@ -2,7 +2,7 @@
 
 // IranCoJ Edition: the final pass of the scene, drawn to the backbuffer before the HUD (it takes the place of the
 // engine's last copy in screen_copy_30/30simple/32 and scene30/32.ppfx, so every pipeline gets it and the HUD never does).
-// In one pass: adaptive sharpening, edge anti-aliasing and a light grade, then the same output steps the vanilla
+// In one pass: sharpening (FSR 1 RCAS), edge anti-aliasing and a light grade, then the same output steps the vanilla
 // copy did (curves, output and saturation correction, window gamma).
 
 #include <common.hlsl>
@@ -97,13 +97,28 @@ void main(PIX_PARAMS)
     float3 w = Irn_Tap(uv + float2(-px.x, 0.0));
     float3 o = Irn_Tap(uv + float2( px.x, 0.0));
 
-    // Contrast-adaptive sharpening: strong where the area is flat, held back on edges that are already hard, so no halos.
-    float3 mn = min(e, min(min(n, s), min(w, o)));
-    float3 mx = max(e, max(max(n, s), max(w, o)));
-    float3 amp = sqrt(saturate(min(mn, 2.0 - mx) / max(mx, 1e-4)));
-    float3 wgt = amp * (-1.0 / lerp(8.0, 5.0, IRN_SHARPEN));
-    float3 c = saturate((e + (n + s + w + o) * wgt) / (1.0 + 4.0 * wgt));
-    c = lerp(e, c, step(0.001, IRN_SHARPEN));
+    // Sharpening: RCAS, the robust contrast-adaptive sharpening of AMD FidelityFX Super Resolution 1 (MIT licence,
+    // (c) 2021 Advanced Micro Devices, Inc.). The sharpening lobe is the most the cross of neighbours allows without
+    // the result leaving their range - no halos, no ringing - and less on noise (a pixel unlike all four neighbours).
+    // Made to restore detail after an upscale (the render resolution); IRN_SHARPEN 1 is its full strength.
+    float3 c = e;
+    if (IRN_SHARPEN > 0.001)
+    {
+        float3 mn4 = min(min(n, s), min(w, o));
+        float3 mx4 = max(max(n, s), max(w, o));
+        float3 hitMin = mn4 / max(4.0 * mx4, 1e-4);
+        float3 hitMax = (1.0 - mx4) / min(4.0 * mn4 - 4.0, -1e-4);
+        float3 lobeRGB = max(-hitMin, hitMax);
+        float sharpness = exp2(-2.0 * (1.0 - IRN_SHARPEN));        // FSR's "stops": 0 at IRN_SHARPEN 1, 2 at 0
+        float lobe = max(-(0.25 - 1.0 / 16.0), min(max(lobeRGB.r, max(lobeRGB.g, lobeRGB.b)), 0.0)) * sharpness;
+        // noise: a centre unlike its whole neighbourhood is held back
+        float lN = Irn_Luma(n), lS = Irn_Luma(s), lW = Irn_Luma(w), lO = Irn_Luma(o), lE = Irn_Luma(e);
+        float nz = 0.25 * (lN + lS + lW + lO) - lE;
+        float lRange = max(max(max(lN, lS), max(lW, lO)), lE) - min(min(min(lN, lS), min(lW, lO)), lE);
+        nz = 1.0 - 0.5 * saturate(abs(nz) / max(lRange, 1e-4));
+        lobe *= nz;
+        c = saturate((lobe * (n + s + w + o) + e) / (4.0 * lobe + 1.0));
+    }
 
     #if IRN_AA
         // Edge anti-aliasing, FXAA 3.11 quality (12-step edge search): find the edge's direction and both of its ends,

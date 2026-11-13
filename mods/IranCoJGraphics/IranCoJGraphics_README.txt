@@ -1,4 +1,4 @@
-IranCoJ Graphics 1.4.0 - the Edition's remastered graphics, by Thomas (Roozbeh).
+IranCoJ Graphics 1.4.1 - the Edition's remastered graphics, by Thomas (Roozbeh).
 
 Everything is set in the IranCoJ Launcher: Settings > Graphics & Sound > Remastered or Vanilla, and each feature on
 its own in the Remastered group. The launcher writes irancojfx.ini and edited copies of the game's own pipeline
@@ -48,3 +48,7 @@ leaves a copy of your gun on the wall when it moves while you stand still (reloa
 85%, 75% or 67% of your resolution and temporal anti-aliasing rebuilds it at full size - more frames per second, the
 HUD and text stay sharp. irancojfx.dll sizes the engine's post-process buffers and full-screen passes to the scale;
 the Edition's exe (1.3.0) loads it at start, before the engine creates those buffers.
+
+1.4.1: sharpening is AMD FidelityFX Super Resolution 1's RCAS (MIT licence, (c) 2021 Advanced Micro Devices, Inc.):
+crisper after an upscale, no halos. Temporal anti-aliasing keeps each pixel's depth in its history (half floats) and
+drops history whose depth doesn't match - players running past no longer leave a trail or a ghost.
