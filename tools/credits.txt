@@ -29,6 +29,10 @@ mx98919
 - Gore Mod, No DOF & Motion Blur
 cr1m3
 
+= VULKAN
+- DXVK (zlib license)
+Philip Rebohle and the DXVK contributors
+
 = TYPE
 - Typeface
 Oswald - The Oswald Project Authors (SIL Open Font License)

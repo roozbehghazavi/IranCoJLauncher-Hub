@@ -1,4 +1,4 @@
-IranCoJ Graphics 1.2.3 - the Edition's remastered graphics, by Thomas (Roozbeh).
+IranCoJ Graphics 1.3.0 - the Edition's remastered graphics, by Thomas (Roozbeh).
 
 Everything is set in the IranCoJ Launcher: Settings > Graphics & Sound > Remastered or Vanilla, and each feature on
 its own in the Remastered group. The launcher writes irancojfx.ini and edited copies of the game's own pipeline
@@ -37,3 +37,9 @@ is sharper: the history and the new frame are read with a sharp filter, not blur
 1.2.3: thin edges (roofs, rock rims) no longer flicker with temporal anti-aliasing at low resolutions: the
 history gets a little slack before it is held to the pixels around it, bright pixels weigh less in the blend, and
 the blend is a touch smoother.
+
+1.3.0: the game draws through Vulkan with DXVK 3.1.1 (dxvk/, zlib licence, by Philip Rebohle and the DXVK
+contributors). The launcher puts its d3d9.dll next to the game when the PC has a graphics card with Vulkan 1.4
+(Settings > Display > Renderer; DirectX 9 otherwise), points it at the dedicated card on laptops and turns vertical
+sync off once. Frame times are much steadier: no more 100 ms stalls during play. Temporal anti-aliasing no longer
+leaves a copy of your gun on the wall when it moves while you stand still (reloading).

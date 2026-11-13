@@ -1,5 +1,23 @@
 [
   {
+    "id": "edition-120-vulkan",
+    "tag": "IRANCOJ EDITION 1.2.0",
+    "title": "Smoother with Vulkan",
+    "text": "The game now draws through Vulkan (DXVK) on every graphics card that supports it, and laptops always use their dedicated card. The frame rate holds steady: no more sudden stalls in the middle of a fight. Vertical sync is turned off once, because it held slower PCs to 30 or 20 fps; you can turn it back on in Settings > Display. Older cards stay on DirectX 9 by themselves, and Settings > Display > Renderer switches between the two. Needs launcher 3.0.0-beta.12.",
+    "date": "2026-11-13",
+    "action": "settings",
+    "actionLabel": "Display settings"
+  },
+  {
+    "id": "graphics-130",
+    "tag": "IRANCOJ GRAPHICS 1.3.0",
+    "title": "No more gun on the wall",
+    "text": "With temporal anti-aliasing on, reloading while standing still could leave a faint copy of your gun on the wall in front of you until you moved. Fixed.",
+    "date": "2026-11-13",
+    "action": "settings",
+    "actionLabel": "Graphics settings"
+  },
+  {
     "id": "wwl-crash-fix",
     "tag": "SERVER LIST MOD 1.5.2.1",
     "title": "No more crashes on WWL",

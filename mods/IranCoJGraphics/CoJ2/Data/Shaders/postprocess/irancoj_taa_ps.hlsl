@@ -119,13 +119,27 @@ void main(PIX_PARAMS)
         f_near = min(f_near, Sample_f1(s_dpt_4, uv_prv + float2(0.0,  3.0) * px, 0.0));
         f_near = min(f_near, Sample_f1(s_dpt_4, uv_prv + float2(0.0, -3.0) * px, 0.0));
         if (f_near < IRN_TAA_VIEW) f_new = 1.0;
+
+        // ... and where the weapon WAS last frame: the history's alpha marks the weapon and hands (0, written below).
+        // Standing still while the gun moves (a reload brings it to the face), the wall behind kept the gun's colours
+        // as its history: held only to the wall's own colour range, a dark copy of the gun stayed on the wall until
+        // you moved. Read around the spot too: the sharp history read reaches two pixels out.
+        float f_was_gun = tex2Dlod(s_hist, float4(uv_prv, 0.0, 0.0)).a;
+        f_was_gun = min(f_was_gun, tex2Dlod(s_hist, float4(uv_prv + float2( 1.5,  1.5) * px, 0.0, 0.0)).a);
+        f_was_gun = min(f_was_gun, tex2Dlod(s_hist, float4(uv_prv + float2(-1.5,  1.5) * px, 0.0, 0.0)).a);
+        f_was_gun = min(f_was_gun, tex2Dlod(s_hist, float4(uv_prv + float2( 1.5, -1.5) * px, 0.0, 0.0)).a);
+        f_was_gun = min(f_was_gun, tex2Dlod(s_hist, float4(uv_prv + float2(-1.5, -1.5) * px, 0.0, 0.0)).a);
+        if (f_was_gun < 0.99) f_new = 1.0;
     }
 
     // Blended by brightness (bright pixels count less): a pixel that is bright one frame and dark the next - a lit
     // edge as the frame shifts - can't swing the result back and forth.
     float f_w_new = f_new / (1.0 + dot(c_sharp, float3(0.299, 0.587, 0.114)));
     float f_w_hist = (1.0 - f_new) / (1.0 + dot(h, float3(0.299, 0.587, 0.114)));
-    OUT.v_clr = float4(saturate((h * f_w_hist + c_sharp * f_w_new) / max(f_w_hist + f_w_new, 0.0001)), 1.0);
+    // alpha: 0 on the weapon and hands, 1 on the world - kept in the history (copy.mat copies it, the final pass to
+    // the screen ignores it) for the test above next frame
+    OUT.v_clr = float4(saturate((h * f_w_hist + c_sharp * f_w_new) / max(f_w_hist + f_w_new, 0.0001)),
+                       f_depth > IRN_TAA_VIEW ? 1.0 : 0.0);
 
     #if defined(IRN_TAA_DEBUG)   // test: the left half red (the pass runs), the right half this frame as read here
         OUT.v_clr = uv.x < 0.5 ? float4(1.0, 0.0, 0.0, 1.0) : float4(c, 1.0);
