@@ -1,5 +1,14 @@
 [
   {
+    "id": "graphics-151",
+    "tag": "IRANCOJ GRAPHICS 1.5.1",
+    "title": "Sharp players at any frame rate",
+    "text": "Temporal anti-aliasing no longer smears moving players at low frame rates. Its history now lasts the same short time whatever your FPS, so players and their name tags stay sharp even on slower PCs.",
+    "date": "2026-11-14",
+    "action": "settings",
+    "actionLabel": "Graphics settings"
+  },
+  {
     "id": "graphics-150",
     "tag": "IRANCOJ GRAPHICS 1.5.0",
     "title": "Light shafts and distant haze",

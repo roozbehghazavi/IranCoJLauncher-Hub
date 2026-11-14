@@ -1,4 +1,4 @@
-IranCoJ Graphics 1.5.0 - the Edition's remastered graphics, by Thomas (Roozbeh).
+IranCoJ Graphics 1.5.1 - the Edition's remastered graphics, by Thomas (Roozbeh).
 
 Everything is set in the IranCoJ Launcher: Settings > Graphics & Sound > Remastered or Vanilla, and each feature on
 its own in the Remastered group. The launcher writes irancojfx.ini and edited copies of the game's own pipeline
@@ -57,3 +57,7 @@ drops history whose depth doesn't match - players running past no longer leave a
 place of the game's sun rays: looking towards the sun, light streams past roofs, trees and hills (a quarter-size
 pass into the game's glow, from the depth and the open sky). Distant haze adds a light haze in the map's own fog
 colour beyond 100 m, thicker in low ground - play distances stay clear. Neither costs a measurable frame rate.
+
+1.5.1: temporal anti-aliasing keeps its history the same length of time at any frame rate. At a fixed share per
+frame it lasted about a second at 13 fps, and moving players (and their name tags) smeared like jelly; at a low
+frame rate each new frame now counts for more (8% at 60 fps, about 32% at 13).

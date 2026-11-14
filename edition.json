@@ -686,7 +686,7 @@
     }
   },
   "graphics": {
-    "version": "1.1.8",
+    "version": "1.1.9",
     "rewrites": [
       {
         "path": "CoJ2/Data/Shaders/postprocess/irancoj_fx.mtt",
@@ -1163,11 +1163,11 @@
           ],
           [
             "(?s)extern float FPS;.*?Define\\(\"I_SAMPLES\", i_samples\\);",
-            "//IranCoJ Edition: no constants (the motion blur's are not used)"
+            "extern float FPS; //IranCoJ Edition: the frame rate, for the TAA blend\r\n                SetConst(i_cst_000, [FREE, FREE, FREE, FPS]);\r\n                Define(\"IRN_TAA_FPS\", s_cst_000 + \".w\");"
           ],
           [
-            "(?s)int i_cst_i_current = i_const_int_first;.*?Define\\(s_cst_name \\+ \"000\", s_cst_000\\);",
-            "//IranCoJ Edition: no constants"
+            "(?s)int i_cst_i_current = i_const_int_first;.*?Define\\(s_cst_i_name \\+ \"00\", s_cst_i_00\\);",
+            "//IranCoJ Edition: no int constants"
           ],
           [
             "use PP_TMU\\(s_sampler = \"s_clr\", i_user_map = 8, e_filter = LINEAR_NO_MIP, e_tile = MIRROR\\);",

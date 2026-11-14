@@ -194,9 +194,14 @@ rewrites.append(rw('Data/Shaders/postprocess/lighting_pp_ps.hlsl', D1, 'Data/Sha
 TAA = {'taa': ['on']}
 rewrites.append(rw('Data/Shaders/postprocess/irancoj_taa.mtt', D1, 'Data/Shaders/postprocess/blur_camera_motion.mtt', [
     (r'BlendFunc\(SRC_ALPHA, INV_SRC_ALPHA, ONE, ONE\);', '//IranCoJ Edition: TAA writes its result (no blending)'),
-    # the motion blur's float and int constants: the TAA shader has neither, and a constant the shader lacks may fail it
-    (r'(?s)extern float FPS;.*?Define\("I_SAMPLES", i_samples\);', '//IranCoJ Edition: no constants (the motion blur\'s are not used)'),
-    (r'(?s)int i_cst_i_current = i_const_int_first;.*?Define\(s_cst_name \+ "000", s_cst_000\);', '//IranCoJ Edition: no constants'),
+    # the motion blur's constants: the TAA shader gets only the frame rate (its history lasts the same time at any
+    # rate: at a fixed share per frame it was a second long at 13 fps and moving players smeared); the int constant
+    # goes (a constant the shader lacks may fail it)
+    (r'(?s)extern float FPS;.*?Define\("I_SAMPLES", i_samples\);',
+     'extern float FPS; //IranCoJ Edition: the frame rate, for the TAA blend' + N +
+     '                SetConst(i_cst_000, [FREE, FREE, FREE, FPS]);' + N +
+     '                Define("IRN_TAA_FPS", s_cst_000 + ".w");'),
+    (r'(?s)int i_cst_i_current = i_const_int_first;.*?Define\(s_cst_i_name \+ "00", s_cst_i_00\);', '//IranCoJ Edition: no int constants'),
     (r'use PP_TMU\(s_sampler = "s_clr", i_user_map = 8, e_filter = LINEAR_NO_MIP, e_tile = MIRROR\);',
      'use PP_TMU(s_sampler = "s_clr", i_user_map = 8, e_filter = LINEAR_NO_MIP, e_tile = CLAMP);'),
     (r'(use PP_TMU\(s_sampler = "s_dpt_4", i_user_map = 9, e_filter = NO_FILTERING, e_tile = CLAMP\);)',
@@ -461,7 +466,7 @@ rewrites.append(rw('Data/Shaders/postprocess/dofs.mtt', D1, 'Data/Shaders/postpr
 ]))
 
 graphics = {
-    'version': '1.1.8',
+    'version': '1.1.9',
     'rewrites': rewrites,
     'vegetation': {
         'files': ['_grass.scr', '_foliage.scr'],

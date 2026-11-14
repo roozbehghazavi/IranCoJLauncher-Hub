@@ -123,7 +123,17 @@ void main(PIX_PARAMS)
     float f_moved = length((uv_prv - uv) / px);
     // Drawn smaller (a render scale), each frame carries less detail: it gets a smaller share, and the history - built
     // from frames shifted by different sub-pixel offsets - carries the full-resolution detail.
-    float f_new = max(IRN_TAA_NEW * IRN_RENDER_SCALE, saturate(f_moved * IRN_TAA_MOTION));
+    // The history lasts the same time at any frame rate: IRN_TAA_NEW is the share at 60 fps, and at a lower rate each
+    // frame stands for more time and takes a larger share (8% at 60 fps, 32% at 13). A fixed share per frame made the
+    // history about a second long at 13 fps: moving players smeared like jelly, their name tags too.
+    // (IRN_TAA_FPS: the engine's frame rate, from the graphics spec's irancoj_taa.mtt; an older one has none: 60)
+    #if defined(IRN_TAA_FPS)
+        float f_fps = clamp(IRN_TAA_FPS, 10.0, 240.0);
+    #else
+        float f_fps = 60.0;
+    #endif
+    float f_base = 1.0 - pow(1.0 - IRN_TAA_NEW * IRN_RENDER_SCALE, 60.0 / f_fps);
+    float f_new = max(f_base, saturate(f_moved * IRN_TAA_MOTION));
     if (any(uv_prv != saturate(uv_prv))) f_new = 1.0;
     // Up close the history is taken from the same place on screen (the weapon moves with the camera). Hugging a wall,
     // the wall is that close too: a reload left the gun's colours on it for a second or two, and turning dragged near
