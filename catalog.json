@@ -394,24 +394,6 @@
   ],
   "mods": [
     {
-      "id": "GoreMod",
-      "name": "Gore Mod",
-      "version": "1.0.0",
-      "description": "More blood: richer blood and hit effects. By cr1m3.",
-      "package": {
-        "file": "GoreMod-1.0.0.zip",
-        "size": 436273,
-        "sha256": "97d216be93b65e1eeb53bd5533747da96644f24333fce50a16ea19909836bf37",
-        "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/mods/GoreMod-1.0.0.zip"
-      },
-      "exclude": [],
-      "loadDll": [],
-      "shared": [],
-      "disable": [],
-      "patch": [],
-      "optional": true
-    },
-    {
       "id": "GunSoundMod",
       "name": "Gun Sound Mod",
       "version": "1.0.0",
@@ -432,13 +414,13 @@
     {
       "id": "IranCoJGraphics",
       "name": "IranCoJ Graphics",
-      "version": "1.6.0",
-      "description": "The Edition's remastered graphics: GGX lighting and metal, ambient occlusion (GTAO), soft shadows, temporal anti-aliasing, sharpening and colour, and every map's detail and draw distances. Settings > Graphics > Remastered or Vanilla.",
+      "version": "1.7.0",
+      "description": "The Edition's remastered graphics: GGX lighting and metal, ambient occlusion (GTAO), soft shadows, temporal anti-aliasing, sharpening and colour, and every map's detail and draw distances. Cinematic blood and wounds. Settings > Graphics > Remastered or Vanilla.",
       "package": {
-        "file": "IranCoJGraphics-1.6.0.zip",
-        "size": 3299978,
-        "sha256": "dc64553cbfc8e3ab15abecc913df769305a2061393cebd4ebf8b6f140827b893",
-        "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/mods/IranCoJGraphics-1.6.0.zip"
+        "file": "IranCoJGraphics-1.7.0.zip",
+        "size": 4061609,
+        "sha256": "3752eb218bf1c4f1967c4d979c9e4dfca7a4e29cff18df1135fe1027d03d52a9",
+        "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/mods/IranCoJGraphics-1.7.0.zip"
       },
       "exclude": [
         "mods.txt"
@@ -2674,6 +2656,15 @@
   },
   "news": [
     {
+      "id": "graphics-170",
+      "tag": "IRANCOJ GRAPHICS 1.7.0",
+      "title": "Gunshots you can see",
+      "text": "IranCoJ Graphics now includes new gore: every hit throws a spray of blood out of the exit side that splatters the ground and walls behind the target, and bodies show wounds. All new effects and textures. The old Gore Mod is retired and removed automatically.",
+      "date": "2026-11-14",
+      "action": "mods",
+      "actionLabel": "Mods"
+    },
+    {
       "id": "graphics-160",
       "tag": "IRANCOJ GRAPHICS 1.6.0",
       "title": "Every map gets its own colour grade",
@@ -2939,5 +2930,8 @@
       "actionLabel": "Join IranCoJ",
       "image": "https://raw.githubusercontent.com/roozbehghazavi/IranCoJLauncher-Hub/main/news/images/irancoj-server.jpg"
     }
+  ],
+  "retiredMods": [
+    "GoreMod"
   ]
 }
