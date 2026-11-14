@@ -1,4 +1,4 @@
-IranCoJ Graphics 1.7.0 - the Edition's remastered graphics, by Thomas (Roozbeh).
+IranCoJ Graphics 1.8.0 - the Edition's remastered graphics, by Thomas (Roozbeh).
 
 Everything is set in the IranCoJ Launcher: Settings > Graphics & Sound > Remastered or Vanilla, and each feature on
 its own in the Remastered group. The launcher writes irancojfx.ini and edited copies of the game's own pipeline
@@ -71,6 +71,14 @@ the final pass after the level's own curves; the map files are not touched.
 stream, a radial burst, clusters of drops and long streaks, a quick spray puff and a faint haze - in a deep red,
 opaque for a moment and then a faint trace. Drops that land splatter the ground and walls, the surface behind the
 target gets a big splatter, bodies show entry wounds instead of a bullet hole in the ground; splatters fade after
-25-40 s. All effects and textures are made for IranCoJ (hub tools/gore_fx.py and tools/gore_textures.py). The game
+25-40 s. All effects and textures are made for IranCoJ (hub tools/gore_fx.py and tools/fx_textures.py). The game
 asks for its flesh-hit effects by name but ships almost none; these fill them in. Thanks to cr1m3, whose Gore Mod
 first did that for CoJ: BiB (it is retired from the hub: the launcher removes it).
+
+1.8.0: gunfire and impacts. Every gun fires a muzzle flash sized to it (derringer to shotgun), embers and a
+black-powder puff blasted downrange that is gone in about a second (it never hangs in your sight), with thin wisps
+from the muzzle; the Peacemaker gets the muzzle effect the game never had, and the lever and reload smoke matches.
+Bullets hitting dirt, sand, wood, stone and metal kick up dust in the surface's colour, throw clods, splinters or
+chips, and spark off stone and metal; shotgun hits are heavier, and a close shotgun blast throws a wide spray of
+blood. The game's older per-gun barrel effects are silenced so nothing vanilla plays alongside. Built by the hub's
+tools/gun_fx.py, tools/impact_fx.py and tools/fx_textures.py.

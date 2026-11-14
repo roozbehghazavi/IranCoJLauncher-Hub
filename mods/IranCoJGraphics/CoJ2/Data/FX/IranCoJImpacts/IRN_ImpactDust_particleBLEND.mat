@@ -1,0 +1,10 @@
+import "fx.mtt"
+
+// IranCoJ Graphics: impact dust (the smoke flipbook, tinted per surface)
+sub material()
+{
+    use mtt_fx(
+        e_blend_mode = e_bm_lerp,
+        s_clr = "IRN_SmokeAnim.dds"
+    );
+}

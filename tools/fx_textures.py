@@ -1,4 +1,4 @@
-"""Draws the IranCoJ Gore mod's textures (all original, procedural) and converts them to DDS.
+"""Draws IranCoJ Graphics' effect textures - gore, muzzle flashes, smoke (all original, procedural) - as DDS.
 
   IRN_BloodSplat.dds  2x2 atlas of splatter decals: a dense centre, a directional spray of drops and streaks
   IRN_BloodDrop.dds   2x2 atlas of round drops (stretched into streaks along their flight by the particles' Trail)
@@ -7,8 +7,11 @@
   IRN_BloodGush.dds   4x1 strip of blood streams (the top of a cell is its flight)
   IRN_BloodCluster.dds 2x2 atlas of drop clusters (one sprite reads as dozens of drops)
   IRN_BloodLine.dds   4x1 strip of long thin streaks
+  IRN_MuzzleFlash.dds 2x2 atlas of muzzle flashes (additive)
+  IRN_Debris*.dds     2x2 atlases of bullet debris: dirt clods, wood splinters, stone chips
+  IRN_SmokeAnim.dds   4x4 flipbook: a black-powder puff billowing out and fraying (played over a particle's life)
 
-usage: python tools/gore_textures.py <output folder>      (needs numpy, Pillow and NVIDIA Texture Tools' nvtt_export)
+usage: python tools/fx_textures.py <output folder>      (needs numpy, Pillow and NVIDIA Texture Tools' nvtt_export)
 """
 import os
 import subprocess
@@ -207,6 +210,83 @@ def strip(cells):
     return np.hstack(cells)
 
 
+def flash(n):
+    """A muzzle flash: a hot core and a few wide flame lobes, ragged by noise, through yellow to orange (additive)."""
+    x, y = grid(n)
+    r = np.sqrt(x * x + y * y)
+    ang = np.arctan2(y, x)
+    k = int(rng.integers(4, 6))
+    phase = rng.uniform(0, 2 * np.pi)
+    lobes = np.abs(np.cos((ang + phase) * k / 2)) ** 2.2
+    flame = noise(n, 7, 4)
+    reach = 0.32 + 0.6 * lobes * (0.6 + 0.8 * flame)
+    i = np.clip(1 - r / np.maximum(reach, 0.05), 0, 1) ** 1.4 * (0.75 + 0.5 * flame)
+    core = np.clip(1 - r / 0.26, 0, 1) ** 1.5
+    i = np.clip(i * 0.9 + core, 0, 1)
+    hot = np.array([1.0, 0.96, 0.85])
+    warm = np.array([1.0, 0.6, 0.16])
+    edge = np.array([0.8, 0.25, 0.04])
+    t = i[..., None]
+    rgb = np.where(t > 0.5, warm + (hot - warm) * ((t - 0.5) / 0.5), edge + (warm - edge) * (t / 0.5))
+    return np.dstack([rgb * t, i])
+
+
+def smoke_frame(n, f, frames, billows, detail):
+    """One frame of a black-powder puff: soft billows that spread and thin out (density -> a feathered alpha)."""
+    x, y = grid(n)
+    u = f / (frames - 1)
+    dens = np.zeros((n, n), np.float32)
+    spread = 0.18 + 0.42 * u
+    for (bx, by, br, bw) in billows:
+        cx, cy = bx * spread / 0.6, by * spread / 0.6 - 0.08 * u      # drifting up a little as it spreads
+        rr = br * (0.8 + 0.9 * u)
+        dens += bw * np.exp(-((x - cx) ** 2 + (y - cy) ** 2) / (2 * rr * rr))
+    d0, d1 = detail
+    dens *= np.clip(0.2 + 1.6 * (d0 * (1 - u) + d1 * u) - 0.35 * u, 0, None)
+    dens *= (1.0 - 0.88 * u) * 1.15
+    alpha = 1 - np.exp(-np.clip(dens, 0, None) * 1.6)
+    alpha *= np.clip((0.98 - (x * x + y * y)) / 0.3, 0, 1)   # feathered at the cell's edge, never a hard circle
+    # soft light from above: the top of the puff a little brighter, its underside a little greyer
+    lit = 0.82 + 0.12 * np.clip(-y, -1, 1) + 0.06 * (d0 - 0.5)
+    rgb = np.dstack([lit * 0.94, lit * 0.93, lit * 0.91])
+    return np.dstack([np.clip(rgb, 0, 1), np.clip(alpha, 0, 1)])
+
+
+def smoke_flipbook(n, frames=16):
+    billows = [(rng.normal(0, 0.45), rng.normal(0, 0.38), rng.uniform(0.07, 0.2), rng.uniform(0.4, 1.0)) for _ in range(18)]
+    detail = (noise(n, 5, 5), noise(n, 5, 5))
+    cells = [smoke_frame(n, f, frames, billows, detail) for f in range(frames)]
+    side = int(np.sqrt(frames))
+    rows = [np.hstack(cells[r * side:(r + 1) * side]) for r in range(side)]
+    return np.vstack(rows)
+
+def debris(n, kind):
+    """A cluster of debris thrown by a bullet: dirt clods, wood splinters or stone chips (grey-brown, tinted per surface
+    by the particle colour), shaded from the top left."""
+    x, y = grid(n)
+    f = np.full((n, n), -1.0, np.float32)
+    count = {'dirt': 26, 'wood': 14, 'stone': 22}[kind]
+    for _ in range(count):
+        d = min(abs(rng.normal(0, 0.35)), 0.8)
+        a = rng.uniform(0, 2 * np.pi)
+        cx, cy = np.cos(a) * d, np.sin(a) * d
+        if kind == 'wood':      # long thin splinters
+            r = rng.uniform(0.015, 0.035)
+            f = np.maximum(f, ellipse(x, y, cx, cy, r * rng.uniform(4, 9), r, rng.uniform(0, np.pi)))
+        elif kind == 'stone':   # angular chips: squashed, rotated, ragged
+            r = rng.uniform(0.025, 0.07) * (1 - d * 0.6)
+            f = np.maximum(f, ellipse(x, y, cx, cy, r * rng.uniform(1, 1.8), r, rng.uniform(0, np.pi)) - noise(n, 20, 2) * 0.6)
+        else:                   # round, lumpy clods
+            r = rng.uniform(0.02, 0.07) * (1 - d * 0.6)
+            f = np.maximum(f, ellipse(x, y, cx, cy, r, r * rng.uniform(0.7, 1.0), rng.uniform(0, np.pi)) - noise(n, 14, 2) * 0.4)
+    mask = np.clip(f * 14 + 0.5, 0, 1)
+    gy, gx = np.gradient(blur(mask, max(1, n // 128)))
+    shade = np.clip(0.72 + (-gx - gy) * n * 0.05, 0.4, 1.0) * (0.85 + 0.3 * noise(n, 18, 3))
+    base = {'dirt': (0.62, 0.55, 0.46), 'wood': (0.82, 0.70, 0.52), 'stone': (0.66, 0.65, 0.63)}[kind]
+    rgb = np.dstack([shade * base[0], shade * base[1], shade * base[2]])
+    return np.dstack([np.clip(rgb, 0, 1), mask])
+
+
 def atlas(cells):
     top = np.hstack(cells[:2])
     bottom = np.hstack(cells[2:])
@@ -228,6 +308,11 @@ def main():
         'IRN_BloodGush': strip([gush(256, 1024) for _ in range(4)]),
         'IRN_BloodCluster': atlas([cluster(512) for _ in range(4)]),
         'IRN_BloodLine': strip([line(128, 512) for _ in range(4)]),
+        'IRN_MuzzleFlash': atlas([flash(256) for _ in range(4)]),
+        'IRN_SmokeAnim': smoke_flipbook(256),
+        'IRN_DebrisDirt': atlas([debris(256, 'dirt') for _ in range(4)]),
+        'IRN_DebrisWood': atlas([debris(256, 'wood') for _ in range(4)]),
+        'IRN_DebrisStone': atlas([debris(256, 'stone') for _ in range(4)]),
     }
     for name, arr in textures.items():
         png = os.path.join(out, name + '.png')

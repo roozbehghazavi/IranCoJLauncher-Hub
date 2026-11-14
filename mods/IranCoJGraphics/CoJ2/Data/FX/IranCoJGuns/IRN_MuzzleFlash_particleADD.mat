@@ -1,0 +1,10 @@
+import "fx.mtt"
+
+// IranCoJ Graphics: the muzzle flash
+sub material()
+{
+    use mtt_fx(
+        e_blend_mode = e_bm_add,
+        s_clr = "IRN_MuzzleFlash.dds"
+    );
+}

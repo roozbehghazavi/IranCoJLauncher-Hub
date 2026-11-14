@@ -1,5 +1,14 @@
 [
   {
+    "id": "graphics-180",
+    "tag": "IRANCOJ GRAPHICS 1.8.0",
+    "title": "Black powder and flying dirt",
+    "text": "Every gun now fires a real muzzle flash and a black-powder puff that clears in a second, and bullets kick up dust, splinters, stone chips and sparks in the colour of what they hit. Shotgun blasts hit harder, blood included.",
+    "date": "2026-11-14",
+    "action": "mods",
+    "actionLabel": "Mods"
+  },
+  {
     "id": "graphics-170",
     "tag": "IRANCOJ GRAPHICS 1.7.0",
     "title": "Gunshots you can see",

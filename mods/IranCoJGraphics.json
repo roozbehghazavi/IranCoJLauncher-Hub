@@ -1,7 +1,7 @@
 {
   "id": "IranCoJGraphics",
   "name": "IranCoJ Graphics",
-  "description": "The Edition's remastered graphics: GGX lighting and metal, ambient occlusion (GTAO), soft shadows, temporal anti-aliasing, sharpening and colour, and every map's detail and draw distances. Cinematic blood and wounds. Settings > Graphics > Remastered or Vanilla.",
+  "description": "The Edition's remastered graphics: GGX lighting and metal, ambient occlusion (GTAO), soft shadows, temporal anti-aliasing, sharpening and colour, and every map's detail and draw distances. Cinematic blood and wounds, black-powder gunfire and bullet impacts. Settings > Graphics > Remastered or Vanilla.",
   "folder": "mods/IranCoJGraphics",
   "exclude": [
     "mods.txt"

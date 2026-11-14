@@ -1,7 +1,7 @@
 """Writes the IranCoJ Gore mod's effects, materials and surface tables (all authored here).
 
 A hit is a layered sequence, the way modern Chrome Engine games build it: big sprites whose textures carry many drops
-(tools/gore_textures.py) - a stream thrown out of the exit side, a radial burst, drop clusters, long streaks, a quick
+(tools/fx_textures.py) - a stream thrown out of the exit side, a radial burst, drop clusters, long streaks, a quick
 spray puff and a faint haze - the elongated ones stretched along their flight (Trail: an Align("on_start") sprite lies
 flat along its flight in this engine, edge-on to the camera and nearly invisible), falling under gravity, opaque for a
 moment and then a faint trace. Clusters and heavy gobs leave splatter decals where they land; the game's blood trace
@@ -155,6 +155,43 @@ for name, e, p, note in layers:
     put('IranCoJGore/%s_particle.fx' % name, p)
     seq += '\n\tDelay(0)\n\n\tSpawn()\n\t{\n\t\tParticleEmiter("%s_emiter.fx", "%s_particle.fx")    // IranCoJ Gore: %s\n\t}\n' % (name, name, note)
 put('FX360/szliniutest/gun_hits/Hitflesh_sequence.fx', seq + '}\n')
+
+# The shotgun's flesh hit (its own hit table below): every pellet that lands spawns one, so a close blast is 8+ of these
+# together - per pellet a second stream, a wider throw and more streaks, a lighter puff and no haze (eight hazes were a
+# red cloud). The particles are the pistol's; only the emitters differ.
+heavy = [
+    ('IRN_BloodGushHeavy', emitter(2, 300, (120, 120, 120), EXIT, 2.2), 'IRN_BloodGush', 'two streams'),
+    ('IRN_BloodBurst', None, 'IRN_BloodBurst', 'the radial burst'),
+    ('IRN_BloodClusterHeavy', emitter((8, 12), 560, (160, 260, 160), EXIT, 1.8, 'IRN_BloodSplatter_trace.fx', 0.5),
+     'IRN_BloodCluster', 'drop clusters, a wider throw'),
+    ('IRN_BloodLineHeavy', emitter((3, 5), 300, (300, 60, 300), EXIT, 1.5), 'IRN_BloodLine', 'more streaks'),
+    ('IRN_BloodPuffHeavy', emitter(3, 300, (220, 220, 220), EXIT, 0.6), 'IRN_BloodPuff', 'a lighter puff'),
+]
+seq = 'SequenceDef()\n{\n' + keys('LifeTime', [(0, 2.2)]) + '\n\tRepeat(1)\n'
+for name, e, part, note in heavy:
+    if e:
+        put('IranCoJGore/%s_emiter.fx' % name, e)
+    seq += '\n\tDelay(0)\n\n\tSpawn()\n\t{\n\t\tParticleEmiter("%s_emiter.fx", "%s_particle.fx")    // IranCoJ Gore: %s\n\t}\n' % (name, part, note)
+put('FX360/szliniutest/gun_hits/RemingtonHit/SHitFlesh_sequence.fx', seq + '}\n')
+put('Weapon/Hit/WeaponHitShotgun.scr', '''
+!include("FXSurface.def")
+
+// IranCoJ Graphics: the shotgun's hit effects by surface - its own flesh hit (SHitFlesh, per pellet)
+SRF_UNKNOWN( "SHitground" )
+SRF_WATER( "SHitwater" )
+SRF_GRASS( "SHitground" )
+SRF_GROUND( "SHitground" )
+SRF_MUD( "SHitground" )
+SRF_GRAVEL( "Hitsand" )
+SRF_FLESH( "SHitFlesh" )
+SRF_WOOD( "SHitwood" )
+SRF_METAL( "SHitmetal" )
+SRF_STONE( "SHitstone" )
+SRF_GROUND_W( "SHitGroundW" )
+SRF_LEAF_GREEN( "SHittree" )
+SRF_LEAF_YELLOW( "SHittree" )
+SRF_LEAF_NEEDLE( "SHittree2" )
+''')
 
 # the game's own flesh-hit emitters: heavy gobs that splat (BulletHitFleshDirt), a back-spray puff (BulletHitFleshSmoke)
 put('Weapon/Hit/BulletHitFleshDirt_emiter.fx', emitter(8, 320, (180, 220, 180), EXIT, 1.5, 'IRN_BloodSplatter_trace.fx', 0.8))
