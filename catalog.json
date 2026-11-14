@@ -432,13 +432,13 @@
     {
       "id": "IranCoJGraphics",
       "name": "IranCoJ Graphics",
-      "version": "1.5.1",
+      "version": "1.6.0",
       "description": "The Edition's remastered graphics: GGX lighting and metal, ambient occlusion (GTAO), soft shadows, temporal anti-aliasing, sharpening and colour, and every map's detail and draw distances. Settings > Graphics > Remastered or Vanilla.",
       "package": {
-        "file": "IranCoJGraphics-1.5.1.zip",
-        "size": 3299550,
-        "sha256": "d297c56fde52a1b6dca70c2a7c5f686f7e12f19721b5d4e9b8df7820141f00dc",
-        "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/mods/IranCoJGraphics-1.5.1.zip"
+        "file": "IranCoJGraphics-1.6.0.zip",
+        "size": 3299978,
+        "sha256": "dc64553cbfc8e3ab15abecc913df769305a2061393cebd4ebf8b6f140827b893",
+        "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/mods/IranCoJGraphics-1.6.0.zip"
       },
       "exclude": [
         "mods.txt"
@@ -1367,7 +1367,7 @@
       }
     },
     "graphics": {
-      "version": "1.1.9",
+      "version": "1.2.0",
       "rewrites": [
         {
           "path": "CoJ2/Data/Shaders/postprocess/irancoj_fx.mtt",
@@ -2017,6 +2017,22 @@
           ]
         },
         {
+          "path": "CoJ2/Data/Shaders/postprocess/irancoj_fx.mtt",
+          "pak": "CoJ2/Data1.pak",
+          "entry": "Data/Shaders/postprocess/copy.mtt",
+          "when": {
+            "grading": [
+              "on"
+            ]
+          },
+          "replace": [
+            [
+              "(?=VertexShader\\(\\) \\{ hlsl\\(s_hlsl_profile_def\\) = \"#include <copy_vs\\.hlsl>\" \\})",
+              "//IranCoJ Edition: the map's colour grade (ASC CDL: slope, offset, power; saturation in slope.w), picked by\r\n                // the map's terrain texture (a map variable every map sets; the menu has DefaultTexture.dds: no grade)\r\n                extern string s_ter_clr;\r\n                int i_cst_005 = i_cst_004 + 1;\r\n                string s_cst_005 = s_const_name + i_cst_005;\r\n                Define(s_cst_name + \"005\", s_cst_005);\r\n                int i_cst_006 = i_cst_004 + 2;\r\n                string s_cst_006 = s_const_name + i_cst_006;\r\n                Define(s_cst_name + \"006\", s_cst_006);\r\n                int i_cst_007 = i_cst_004 + 3;\r\n                string s_cst_007 = s_const_name + i_cst_007;\r\n                Define(s_cst_name + \"007\", s_cst_007);\r\n                // the mood from the map's own lighting, for every map (new ones too): later lines win\r\n                extern vec4 vsuncolor;\r\n                extern float f_rain_strength;\r\n                extern float f_fog_far;\r\n                float f_irn_light = (0.3 * vsuncolor.x + 0.59 * vsuncolor.y + 0.11 * vsuncolor.z) * vsuncolor.w;\r\n                float f_irn_warm = vsuncolor.z / (vsuncolor.x + 0.01);\r\n                int i_irn_grade = 1;\r\n                int i_irn_grade = (f_irn_warm < 0.72) ? 2 : i_irn_grade;\r\n                int i_irn_grade = ((vsuncolor.w < 1.65) && (f_irn_warm > 0.6)) ? 4 : i_irn_grade;\r\n                int i_irn_grade = (f_irn_warm < 0.45) ? 3 : i_irn_grade;\r\n                int i_irn_grade = (f_fog_far < 100000.0) ? 4 : i_irn_grade;\r\n                int i_irn_grade = (f_irn_light < 0.75) ? 5 : i_irn_grade;\r\n                int i_irn_grade = ((f_rain_strength > 0.3) || ((vsuncolor.w < 0.31) && (f_fog_far < 100000.0))) ? 6 : i_irn_grade;\r\n                int i_irn_grade = (s_ter_clr == \"DefaultTexture.dds\") ? 0 : i_irn_grade;   // the menu: no grade\r\n                int i_irn_grade = (s_ter_clr == \"coffeyville_clr.dds\") ? 4 : i_irn_grade;\r\n                int i_irn_grade = (s_ter_clr == \"Frisco_clr.dds\") ? 4 : i_irn_grade;\r\n                int i_irn_grade = (s_ter_clr == \"Ghosts_clr.dds\") ? 3 : i_irn_grade;\r\n                int i_irn_grade = (s_ter_clr == \"The_Cellar_clr.dds\") ? 3 : i_irn_grade;\r\n                int i_irn_grade = (s_ter_clr == \"The_Dungeon_clr.dds\") ? 5 : i_irn_grade;\r\n                int i_irn_grade = (s_ter_clr == \"StinkingSprings2_clr.dds\") ? 2 : i_irn_grade;\r\n                vec4 v_irn_slope = [1.0, 1.0, 1.0, 1.0];\r\n                vec4 v_irn_offset = [0.0, 0.0, 0.0, 0.0];\r\n                vec4 v_irn_power = [1.0, 1.0, 1.0, 0.0];\r\n                vec4 v_irn_slope_1 = [1.030, 1.000, 0.970, 1.120]; // noon\r\n                vec4 v_irn_offset_1 = [0.000, 0.002, 0.010, 0.000];\r\n                vec4 v_irn_power_1 = [1.000, 1.000, 1.000, 0.000];\r\n                vec4 v_irn_slope = (i_irn_grade == 1) ? v_irn_slope_1 : v_irn_slope;\r\n                vec4 v_irn_offset = (i_irn_grade == 1) ? v_irn_offset_1 : v_irn_offset;\r\n                vec4 v_irn_power = (i_irn_grade == 1) ? v_irn_power_1 : v_irn_power;\r\n                vec4 v_irn_slope_2 = [1.050, 1.000, 0.950, 1.100]; // golden\r\n                vec4 v_irn_offset_2 = [0.000, 0.000, 0.012, 0.000];\r\n                vec4 v_irn_power_2 = [0.980, 1.000, 1.020, 0.000];\r\n                vec4 v_irn_slope = (i_irn_grade == 2) ? v_irn_slope_2 : v_irn_slope;\r\n                vec4 v_irn_offset = (i_irn_grade == 2) ? v_irn_offset_2 : v_irn_offset;\r\n                vec4 v_irn_power = (i_irn_grade == 2) ? v_irn_power_2 : v_irn_power;\r\n                vec4 v_irn_slope_3 = [1.060, 0.990, 0.930, 1.060]; // dusk\r\n                vec4 v_irn_offset_3 = [0.006, 0.000, 0.014, 0.000];\r\n                vec4 v_irn_power_3 = [1.000, 1.010, 1.000, 0.000];\r\n                vec4 v_irn_slope = (i_irn_grade == 3) ? v_irn_slope_3 : v_irn_slope;\r\n                vec4 v_irn_offset = (i_irn_grade == 3) ? v_irn_offset_3 : v_irn_offset;\r\n                vec4 v_irn_power = (i_irn_grade == 3) ? v_irn_power_3 : v_irn_power;\r\n                vec4 v_irn_slope_4 = [0.990, 1.000, 1.020, 1.050]; // overcast\r\n                vec4 v_irn_offset_4 = [0.000, 0.003, 0.006, 0.000];\r\n                vec4 v_irn_power_4 = [1.040, 1.040, 1.030, 0.000];\r\n                vec4 v_irn_slope = (i_irn_grade == 4) ? v_irn_slope_4 : v_irn_slope;\r\n                vec4 v_irn_offset = (i_irn_grade == 4) ? v_irn_offset_4 : v_irn_offset;\r\n                vec4 v_irn_power = (i_irn_grade == 4) ? v_irn_power_4 : v_irn_power;\r\n                vec4 v_irn_slope_5 = [0.950, 0.990, 1.060, 0.980]; // night\r\n                vec4 v_irn_offset_5 = [0.000, 0.004, 0.012, 0.000];\r\n                vec4 v_irn_power_5 = [1.050, 1.040, 1.000, 0.000];\r\n                vec4 v_irn_slope = (i_irn_grade == 5) ? v_irn_slope_5 : v_irn_slope;\r\n                vec4 v_irn_offset = (i_irn_grade == 5) ? v_irn_offset_5 : v_irn_offset;\r\n                vec4 v_irn_power = (i_irn_grade == 5) ? v_irn_power_5 : v_irn_power;\r\n                vec4 v_irn_slope_6 = [0.970, 1.000, 1.030, 0.960]; // rain\r\n                vec4 v_irn_offset_6 = [0.000, 0.004, 0.010, 0.000];\r\n                vec4 v_irn_power_6 = [1.060, 1.050, 1.040, 0.000];\r\n                vec4 v_irn_slope = (i_irn_grade == 6) ? v_irn_slope_6 : v_irn_slope;\r\n                vec4 v_irn_offset = (i_irn_grade == 6) ? v_irn_offset_6 : v_irn_offset;\r\n                vec4 v_irn_power = (i_irn_grade == 6) ? v_irn_power_6 : v_irn_power;\r\n                SetConst(i_cst_005, v_irn_slope);\r\n                SetConst(i_cst_006, v_irn_offset);\r\n                SetConst(i_cst_007, v_irn_power);\r\n                Define(\"IRN_GRADE_SLOPE\", s_cst_005);\r\n                Define(\"IRN_GRADE_OFFSET\", s_cst_006);\r\n                Define(\"IRN_GRADE_POWER\", s_cst_007);\r\n\r\n                "
+            ]
+          ]
+        },
+        {
           "path": "CoJ2/Data/Shaders/postprocess/lighting_pp_stencil_simple.mat",
           "pak": "CoJ2/Data1.pak",
           "entry": "Data/Shaders/postprocess/lighting_pp_stencil.mat",
@@ -2657,6 +2673,15 @@
     ]
   },
   "news": [
+    {
+      "id": "graphics-160",
+      "tag": "IRANCOJ GRAPHICS 1.6.0",
+      "title": "Every map gets its own colour grade",
+      "text": "Each map now has a colour grade that suits its light: warm noon sun, golden afternoons, orange dusk, cool overcast, night and rain. New maps are graded automatically from their own lighting. Turn it on or off in Settings > Graphics > Remastered.",
+      "date": "2026-11-14",
+      "action": "settings",
+      "actionLabel": "Graphics settings"
+    },
     {
       "id": "graphics-151",
       "tag": "IRANCOJ GRAPHICS 1.5.1",
