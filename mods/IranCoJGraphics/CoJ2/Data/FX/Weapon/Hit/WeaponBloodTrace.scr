@@ -1,0 +1,12 @@
+!include("FXSurface.def")
+
+// IranCoJ Gore: the splatter on the surface behind a hit, by that surface
+SRF_UNKNOWN( "BulletBloodTraceGround" )
+SRF_GRASS( "BulletBloodTraceGround" )
+SRF_GROUND( "BulletBloodTraceGround" )
+SRF_MUD( "BulletBloodTraceGround" )
+SRF_GRAVEL( "BulletBloodTraceGround" )
+SRF_FLESH( "BulletBloodTraceGround" )
+SRF_WOOD( "BulletBloodTraceWood" )
+SRF_METAL( "BulletBloodTraceMetal" )
+SRF_STONE( "BulletBloodTraceStone" )

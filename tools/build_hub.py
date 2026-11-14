@@ -2,7 +2,7 @@
 
 1. Lists every map in the "maps" GitHub Release (maps are uploaded there by hand; there is no copy in git).
 2. Zips every folder mod (mods/<Id>.json with "folder": "mods/<Id>") and uploads it to the "mods" release.
-3. Writes catalog.json - read by the launcher: maps, mod packages, the Edition and news.
+3. Writes catalog.json - read by the launcher: maps, mod packages, the Edition, news and retired mods.
 
 Needs the `gh` CLI with GH_TOKEN set, and GITHUB_REPOSITORY ("owner/name").
 """
@@ -338,4 +338,9 @@ if __name__ == "__main__":
     news = load_optional_json("news.json")
     if news:
         catalog["news"] = news
+    # Mods taken off the hub: the launcher uninstalls them where they are still installed (their files may now be
+    # carried by another mod - IranCoJ Gore went into IranCoJ Graphics).
+    retired = load_optional_json("retired_mods.json")
+    if retired:
+        catalog["retiredMods"] = retired
     write_json("catalog.json", catalog)

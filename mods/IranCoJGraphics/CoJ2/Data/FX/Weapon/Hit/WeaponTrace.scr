@@ -1,0 +1,12 @@
+!include("FXSurface.def")
+
+// IranCoJ Gore: bullet holes by surface - bodies get a wound, not a hole in the ground
+SRF_UNKNOWN( "BulletTraceGround" )
+SRF_WATER( "BulletTraceWater" )
+SRF_GRASS( "BulletTraceGround" )
+SRF_GROUND( "BulletTraceGround" )
+SRF_MUD( "BulletTraceGround" )
+SRF_FLESH( "BulletTraceFlesh" )
+SRF_WOOD( "BulletTraceWood" )
+SRF_METAL( "BulletTraceMetal" )
+SRF_STONE( "BulletTraceStone" )

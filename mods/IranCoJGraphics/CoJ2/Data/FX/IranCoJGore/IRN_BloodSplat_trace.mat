@@ -1,0 +1,7 @@
+import "trace.mtt"
+
+// IranCoJ Gore: blood splatter decals on the world (like the bullet holes, lit by the map)
+sub material()
+{
+    use mtt(s_clr = "IRN_BloodSplat.dds");
+}

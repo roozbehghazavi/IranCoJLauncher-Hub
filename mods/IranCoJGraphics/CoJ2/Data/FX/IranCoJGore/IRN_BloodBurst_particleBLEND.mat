@@ -1,0 +1,10 @@
+import "fx.mtt"
+
+// IranCoJ Gore: a radial burst (the splatter shape, in the air)
+sub material()
+{
+    use mtt_fx(
+        e_blend_mode = e_bm_lerp,
+        s_clr = "IRN_BloodSplat.dds"
+    );
+}

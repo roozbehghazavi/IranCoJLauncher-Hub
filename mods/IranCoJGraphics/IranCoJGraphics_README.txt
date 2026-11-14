@@ -1,4 +1,4 @@
-IranCoJ Graphics 1.6.0 - the Edition's remastered graphics, by Thomas (Roozbeh).
+IranCoJ Graphics 1.7.0 - the Edition's remastered graphics, by Thomas (Roozbeh).
 
 Everything is set in the IranCoJ Launcher: Settings > Graphics & Sound > Remastered or Vanilla, and each feature on
 its own in the Remastered group. The launcher writes irancojfx.ini and edited copies of the game's own pipeline
@@ -66,3 +66,11 @@ frame rate each new frame now counts for more (8% at 60 fps, about 32% at 13).
 noon, golden afternoon, dusk, overcast, night or rain - worked out from the map's own sun, fog and rain as it loads,
 so newly added maps are graded too. The grade (an ASC CDL: white balance, shadow tint, contrast, saturation) runs in
 the final pass after the level's own curves; the map files are not touched.
+
+1.7.0: gore (formerly a separate mod). Every body hit throws a layered spray of blood out of the exit side - a
+stream, a radial burst, clusters of drops and long streaks, a quick spray puff and a faint haze - in a deep red,
+opaque for a moment and then a faint trace. Drops that land splatter the ground and walls, the surface behind the
+target gets a big splatter, bodies show entry wounds instead of a bullet hole in the ground; splatters fade after
+25-40 s. All effects and textures are made for IranCoJ (hub tools/gore_fx.py and tools/gore_textures.py). The game
+asks for its flesh-hit effects by name but ships almost none; these fill them in. Thanks to cr1m3, whose Gore Mod
+first did that for CoJ: BiB (it is retired from the hub: the launcher removes it).

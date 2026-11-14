@@ -1,5 +1,14 @@
 [
   {
+    "id": "graphics-170",
+    "tag": "IRANCOJ GRAPHICS 1.7.0",
+    "title": "Gunshots you can see",
+    "text": "IranCoJ Graphics now includes new gore: every hit throws a spray of blood out of the exit side that splatters the ground and walls behind the target, and bodies show wounds. All new effects and textures. The old Gore Mod is retired and removed automatically.",
+    "date": "2026-11-14",
+    "action": "mods",
+    "actionLabel": "Mods"
+  },
+  {
     "id": "graphics-160",
     "tag": "IRANCOJ GRAPHICS 1.6.0",
     "title": "Every map gets its own colour grade",

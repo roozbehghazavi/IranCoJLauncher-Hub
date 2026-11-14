@@ -1,0 +1,7 @@
+import "trace.mtt"
+
+// IranCoJ Gore: entry wounds on bodies
+sub material()
+{
+    use mtt(s_clr = "IRN_Wound.dds");
+}
