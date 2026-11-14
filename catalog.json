@@ -432,13 +432,13 @@
     {
       "id": "IranCoJGraphics",
       "name": "IranCoJ Graphics",
-      "version": "1.5.0",
+      "version": "1.5.1",
       "description": "The Edition's remastered graphics: GGX lighting and metal, ambient occlusion (GTAO), soft shadows, temporal anti-aliasing, sharpening and colour, and every map's detail and draw distances. Settings > Graphics > Remastered or Vanilla.",
       "package": {
-        "file": "IranCoJGraphics-1.5.0.zip",
-        "size": 3299206,
-        "sha256": "237f7b9ee55fb47f0524ba7e43c50ac6f67672b89a6cfe77f669ff8f45447aef",
-        "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/mods/IranCoJGraphics-1.5.0.zip"
+        "file": "IranCoJGraphics-1.5.1.zip",
+        "size": 3299550,
+        "sha256": "d297c56fde52a1b6dca70c2a7c5f686f7e12f19721b5d4e9b8df7820141f00dc",
+        "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/mods/IranCoJGraphics-1.5.1.zip"
       },
       "exclude": [
         "mods.txt"
@@ -1367,7 +1367,7 @@
       }
     },
     "graphics": {
-      "version": "1.1.8",
+      "version": "1.1.9",
       "rewrites": [
         {
           "path": "CoJ2/Data/Shaders/postprocess/irancoj_fx.mtt",
@@ -1844,11 +1844,11 @@
             ],
             [
               "(?s)extern float FPS;.*?Define\\(\"I_SAMPLES\", i_samples\\);",
-              "//IranCoJ Edition: no constants (the motion blur's are not used)"
+              "extern float FPS; //IranCoJ Edition: the frame rate, for the TAA blend\r\n                SetConst(i_cst_000, [FREE, FREE, FREE, FPS]);\r\n                Define(\"IRN_TAA_FPS\", s_cst_000 + \".w\");"
             ],
             [
-              "(?s)int i_cst_i_current = i_const_int_first;.*?Define\\(s_cst_name \\+ \"000\", s_cst_000\\);",
-              "//IranCoJ Edition: no constants"
+              "(?s)int i_cst_i_current = i_const_int_first;.*?Define\\(s_cst_i_name \\+ \"00\", s_cst_i_00\\);",
+              "//IranCoJ Edition: no int constants"
             ],
             [
               "use PP_TMU\\(s_sampler = \"s_clr\", i_user_map = 8, e_filter = LINEAR_NO_MIP, e_tile = MIRROR\\);",
@@ -2657,6 +2657,15 @@
     ]
   },
   "news": [
+    {
+      "id": "graphics-151",
+      "tag": "IRANCOJ GRAPHICS 1.5.1",
+      "title": "Sharp players at any frame rate",
+      "text": "Temporal anti-aliasing no longer smears moving players at low frame rates. Its history now lasts the same short time whatever your FPS, so players and their name tags stay sharp even on slower PCs.",
+      "date": "2026-11-14",
+      "action": "settings",
+      "actionLabel": "Graphics settings"
+    },
     {
       "id": "graphics-150",
       "tag": "IRANCOJ GRAPHICS 1.5.0",
