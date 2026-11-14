@@ -1,4 +1,4 @@
-IranCoJ Graphics 1.5.1 - the Edition's remastered graphics, by Thomas (Roozbeh).
+IranCoJ Graphics 1.6.0 - the Edition's remastered graphics, by Thomas (Roozbeh).
 
 Everything is set in the IranCoJ Launcher: Settings > Graphics & Sound > Remastered or Vanilla, and each feature on
 its own in the Remastered group. The launcher writes irancojfx.ini and edited copies of the game's own pipeline
@@ -61,3 +61,8 @@ colour beyond 100 m, thicker in low ground - play distances stay clear. Neither 
 1.5.1: temporal anti-aliasing keeps its history the same length of time at any frame rate. At a fixed share per
 frame it lasted about a second at 13 fps, and moving players (and their name tags) smeared like jelly; at a low
 frame rate each new frame now counts for more (8% at 60 fps, about 32% at 13).
+
+1.6.0: map colour grading (Settings > Graphics > Remastered). Each map gets a colour grade that suits its light -
+noon, golden afternoon, dusk, overcast, night or rain - worked out from the map's own sun, fog and rain as it loads,
+so newly added maps are graded too. The grade (an ASC CDL: white balance, shadow tint, contrast, saturation) runs in
+the final pass after the level's own curves; the map files are not touched.

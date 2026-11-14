@@ -1,5 +1,14 @@
 [
   {
+    "id": "graphics-160",
+    "tag": "IRANCOJ GRAPHICS 1.6.0",
+    "title": "Every map gets its own colour grade",
+    "text": "Each map now has a colour grade that suits its light: warm noon sun, golden afternoons, orange dusk, cool overcast, night and rain. New maps are graded automatically from their own lighting. Turn it on or off in Settings > Graphics > Remastered.",
+    "date": "2026-11-14",
+    "action": "settings",
+    "actionLabel": "Graphics settings"
+  },
+  {
     "id": "graphics-151",
     "tag": "IRANCOJ GRAPHICS 1.5.1",
     "title": "Sharp players at any frame rate",

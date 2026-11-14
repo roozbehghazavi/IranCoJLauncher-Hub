@@ -308,6 +308,87 @@ rewrites.append(rw('Data/Shaders/postprocess/fog_pp_ps.hlsl', D1, 'Data/Shaders/
         '    OUT.v_clr.w *= exp(-IRN_HAZE_DENSITY * max(f_irn_tau, 0.0));']))
 ], when={'haze': ['on']}))
 
+# Map colour grading: each map gets the grade of its mood, chosen from its own lighting (sun colour and strength,
+# fog, rain), in the final pass after the level's curves (irancoj_fx_ps.hlsl). An ASC CDL per mood: slope (white
+# balance, highlights) with saturation in w, offset (the shadows' tint), power (mid-tone contrast per channel). The
+# mood is worked out in the template at run time from the map's own lighting variables (so a newly added map gets
+# one too), with a few hand corrections by terrain texture (s_ter_clr, unique per map; the menu has DefaultTexture.dds:
+# no grade) - the map files are not touched (the map check reads them).
+# Tested in game: the comparison picks Tombstone's grade and leaves the menu alone. Warm highlights keep the sky's
+# blue (a slope of 0.88 in blue turned it olive).
+GRADE_MOODS = {
+    # mood: (slope r, g, b, saturation), (offset r, g, b), (power r, g, b)
+    'noon':     ((1.03, 1.00, 0.97, 1.12), (0.000, 0.002, 0.010), (1.00, 1.00, 1.00)),
+    'golden':   ((1.05, 1.00, 0.95, 1.10), (0.000, 0.000, 0.012), (0.98, 1.00, 1.02)),
+    'dusk':     ((1.06, 0.99, 0.93, 1.06), (0.006, 0.000, 0.014), (1.00, 1.01, 1.00)),
+    'overcast': ((0.99, 1.00, 1.02, 1.05), (0.000, 0.003, 0.006), (1.04, 1.04, 1.03)),
+    'night':    ((0.95, 0.99, 1.06, 0.98), (0.000, 0.004, 0.012), (1.05, 1.04, 1.00)),
+    'rain':     ((0.97, 1.00, 1.03, 0.96), (0.000, 0.004, 0.010), (1.06, 1.05, 1.04)),
+}
+GRADE_MAPS = [
+    # (the map's s_ter_clr exactly as it sets it, mood): only where the classification below picks the wrong mood
+    ('coffeyville_clr.dds', 'overcast'),        # grey, dim sun - not night
+    ('Frisco_clr.dds', 'overcast'),             # the foggy coast
+    ('Ghosts_clr.dds', 'dusk'),                 # low orange light
+    ('The_Cellar_clr.dds', 'dusk'),             # low orange light
+    ('The_Dungeon_clr.dds', 'night'),           # indoors
+    ('StinkingSprings2_clr.dds', 'golden'),     # one terrain for Stinking Springs 2 (dusk) and Coffeyville 2 (noon)
+]
+
+
+def grade_block():
+    moods = list(GRADE_MOODS)
+    v = lambda xs: '[' + ', '.join('%.3f' % x for x in xs) + ']'
+    lines = ['//IranCoJ Edition: the map\'s colour grade (ASC CDL: slope, offset, power; saturation in slope.w), picked by',
+             '                // the map\'s terrain texture (a map variable every map sets; the menu has DefaultTexture.dds: no grade)',
+             '                extern string s_ter_clr;']
+    for i, n in enumerate(('005', '006', '007')):
+        lines += ['                int i_cst_%s = i_cst_004 + %d;' % (n, i + 1),
+                  '                string s_cst_%s = s_const_name + i_cst_%s;' % (n, n),
+                  '                Define(s_cst_name + "%s", s_cst_%s);' % (n, n)]
+    k = {m: moods.index(m) + 1 for m in moods}
+    lines += [
+        '                // the mood from the map\'s own lighting, for every map (new ones too): later lines win',
+        '                extern vec4 vsuncolor;',
+        '                extern float f_rain_strength;',
+        '                extern float f_fog_far;',
+        '                float f_irn_light = (0.3 * vsuncolor.x + 0.59 * vsuncolor.y + 0.11 * vsuncolor.z) * vsuncolor.w;',
+        '                float f_irn_warm = vsuncolor.z / (vsuncolor.x + 0.01);',
+        '                int i_irn_grade = %d;' % k['noon'],
+        '                int i_irn_grade = (f_irn_warm < 0.72) ? %d : i_irn_grade;' % k['golden'],
+        '                int i_irn_grade = ((vsuncolor.w < 1.65) && (f_irn_warm > 0.6)) ? %d : i_irn_grade;' % k['overcast'],
+        '                int i_irn_grade = (f_irn_warm < 0.45) ? %d : i_irn_grade;' % k['dusk'],
+        '                int i_irn_grade = (f_fog_far < 100000.0) ? %d : i_irn_grade;' % k['overcast'],
+        '                int i_irn_grade = (f_irn_light < 0.75) ? %d : i_irn_grade;' % k['night'],
+        '                int i_irn_grade = ((f_rain_strength > 0.3) || ((vsuncolor.w < 0.31) && (f_fog_far < 100000.0))) ? %d : i_irn_grade;' % k['rain'],
+        '                int i_irn_grade = (s_ter_clr == "DefaultTexture.dds") ? 0 : i_irn_grade;   // the menu: no grade']
+    for ter, mood in GRADE_MAPS:
+        lines.append('                int i_irn_grade = (s_ter_clr == "%s") ? %d : i_irn_grade;' % (ter, moods.index(mood) + 1))
+    lines += ['                vec4 v_irn_slope = [1.0, 1.0, 1.0, 1.0];',
+              '                vec4 v_irn_offset = [0.0, 0.0, 0.0, 0.0];',
+              '                vec4 v_irn_power = [1.0, 1.0, 1.0, 0.0];']
+    for i, mood in enumerate(moods):
+        slope, offset, power = GRADE_MOODS[mood]
+        k = i + 1
+        lines += ['                vec4 v_irn_slope_%d = %s; // %s' % (k, v(slope), mood),
+                  '                vec4 v_irn_offset_%d = %s;' % (k, v(offset + (0.0,))),
+                  '                vec4 v_irn_power_%d = %s;' % (k, v(power + (0.0,))),
+                  '                vec4 v_irn_slope = (i_irn_grade == %d) ? v_irn_slope_%d : v_irn_slope;' % (k, k),
+                  '                vec4 v_irn_offset = (i_irn_grade == %d) ? v_irn_offset_%d : v_irn_offset;' % (k, k),
+                  '                vec4 v_irn_power = (i_irn_grade == %d) ? v_irn_power_%d : v_irn_power;' % (k, k)]
+    lines += ['                SetConst(i_cst_005, v_irn_slope);',
+              '                SetConst(i_cst_006, v_irn_offset);',
+              '                SetConst(i_cst_007, v_irn_power);',
+              '                Define("IRN_GRADE_SLOPE", s_cst_005);',
+              '                Define("IRN_GRADE_OFFSET", s_cst_006);',
+              '                Define("IRN_GRADE_POWER", s_cst_007);', '', '                ']
+    return N.join(lines)
+
+
+rewrites.append(rw('Data/Shaders/postprocess/irancoj_fx.mtt', D1, 'Data/Shaders/postprocess/copy.mtt', [
+    (r'(?=VertexShader\(\) \{ hlsl\(s_hlsl_profile_def\) = "#include <copy_vs\.hlsl>" \})', grade_block())
+], when={'grading': ['on']}))
+
 # Materials that lived only in the rpacks' precompiled caches (hidden in Remastered mode so the remastered shader
 # sources are compiled): rebuilt from the player's own files.
 rewrites.append(rw('Data/Shaders/postprocess/lighting_pp_stencil_simple.mat', D1, 'Data/Shaders/postprocess/lighting_pp_stencil.mat', [
@@ -466,7 +547,7 @@ rewrites.append(rw('Data/Shaders/postprocess/dofs.mtt', D1, 'Data/Shaders/postpr
 ]))
 
 graphics = {
-    'version': '1.1.9',
+    'version': '1.2.0',
     'rewrites': rewrites,
     'vegetation': {
         'files': ['_grass.scr', '_foliage.scr'],

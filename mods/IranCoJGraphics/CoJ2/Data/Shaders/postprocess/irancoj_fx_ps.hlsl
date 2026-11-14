@@ -187,6 +187,20 @@ void main(PIX_PARAMS)
 
     OUT.v_clr = Irn_Vanilla(float4(c, centre.a));
 
+    // The map's own colour grade (ASC CDL, per map from the graphics spec's irancoj_fx.mtt): slope (white balance and
+    // highlights), offset (the shadows' tint), power (mid-tone contrast per channel), then saturation (slope.w).
+    #if defined(IRN_GRADE_SLOPE)
+    {
+        float3 v_cdl = pow(max(OUT.v_clr.rgb * IRN_GRADE_SLOPE.rgb + IRN_GRADE_OFFSET.rgb, 0.0), IRN_GRADE_POWER.rgb);
+        v_cdl = saturate(lerp(Irn_Luma(v_cdl), v_cdl, IRN_GRADE_SLOPE.a));
+        #if defined(IRN_GRADE_SPLIT)   // test only: the left half without it
+            if (uv.x >= 0.5) OUT.v_clr.rgb = v_cdl;
+        #else
+            OUT.v_clr.rgb = v_cdl;
+        #endif
+    }
+    #endif
+
     // Grade, after the level's own curves (else they flatten it again): vibrance (dull colours gain the most, skin and
     // sky stay natural), then a soft S-curve around mid grey.
     float3 g = OUT.v_clr.rgb;
