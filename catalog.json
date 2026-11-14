@@ -432,13 +432,13 @@
     {
       "id": "IranCoJGraphics",
       "name": "IranCoJ Graphics",
-      "version": "1.4.1",
+      "version": "1.5.0",
       "description": "The Edition's remastered graphics: GGX lighting and metal, ambient occlusion (GTAO), soft shadows, temporal anti-aliasing, sharpening and colour, and every map's detail and draw distances. Settings > Graphics > Remastered or Vanilla.",
       "package": {
-        "file": "IranCoJGraphics-1.4.1.zip",
-        "size": 3297115,
-        "sha256": "25aec1a5c1ca3ae93f957cf3b2d6d686834e328a9146a3803d3950d233ed70b8",
-        "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/mods/IranCoJGraphics-1.4.1.zip"
+        "file": "IranCoJGraphics-1.5.0.zip",
+        "size": 3299206,
+        "sha256": "237f7b9ee55fb47f0524ba7e43c50ac6f67672b89a6cfe77f669ff8f45447aef",
+        "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/mods/IranCoJGraphics-1.5.0.zip"
       },
       "exclude": [
         "mods.txt"
@@ -1367,7 +1367,7 @@
       }
     },
     "graphics": {
-      "version": "1.1.7",
+      "version": "1.1.8",
       "rewrites": [
         {
           "path": "CoJ2/Data/Shaders/postprocess/irancoj_fx.mtt",
@@ -1945,6 +1945,74 @@
             [
               "(float4 Pos_Out_CS\\(float4 v_pos\\)\\s*\\{\\s*)return Mul44\\(v_pos, PROJECTION_XFORM\\);",
               "$1return Irn_Jitter(Mul44(v_pos, PROJECTION_XFORM));"
+            ]
+          ]
+        },
+        {
+          "path": "CoJ2/Data/Shaders/postprocess/irancoj_shafts.mtt",
+          "pak": "CoJ2/Data1.pak",
+          "entry": "Data/Shaders/postprocess/blur_camera_motion.mtt",
+          "when": {
+            "shafts": [
+              "on"
+            ]
+          },
+          "replace": [
+            [
+              "BlendFunc\\(SRC_ALPHA, INV_SRC_ALPHA, ONE, ONE\\);",
+              "BlendFunc(ONE, ONE); //IranCoJ Edition: light shafts are added to the glow"
+            ],
+            [
+              "(?s)extern float FPS;.*?Define\\(\"I_SAMPLES\", i_samples\\);",
+              "//IranCoJ Edition: no constants (the motion blur's are not used)"
+            ],
+            [
+              "(?s)int i_cst_i_current = i_const_int_first;.*?Define\\(s_cst_name \\+ \"000\", s_cst_000\\);",
+              "//IranCoJ Edition: no constants"
+            ],
+            [
+              "use PP_TMU\\(s_sampler = \"s_clr\", i_user_map = 8, e_filter = LINEAR_NO_MIP, e_tile = MIRROR\\);",
+              "use PP_TMU(s_sampler = \"s_clr\", i_user_map = 8, e_filter = LINEAR_NO_MIP, e_tile = CLAMP);"
+            ],
+            [
+              "#include <blur_camera_motion_ps\\.hlsl>",
+              "#include <irancoj_shafts_ps.hlsl>"
+            ]
+          ]
+        },
+        {
+          "path": "CoJ2/Data/Postprocess/Effects/glow_30.ppfx",
+          "pak": "CoJ2/Data0.pak",
+          "entry": "Data/Postprocess/Effects/glow_30.ppfx",
+          "when": {
+            "shafts": [
+              "on"
+            ]
+          },
+          "replace": [
+            [
+              "(?s)// SUN RAYS\\s*If\\(\"f_sun_rays_factor\".*?\\n\\}\\s*",
+              ""
+            ],
+            [
+              "(?s)(QuadScreen\\(\"add\\.mat\", \"std\", 4\\))\\s*If\\(\"f_sun_rays_factor\".*?\\n        \\}",
+              "$1\r\n\r\n        //IranCoJ Edition: light shafts (irancoj_shafts.mat) in place of the game's sun rays\r\n        SetTexture(8, \"4B\")\r\n        SetTexture(9, \"DPT\")\r\n            QuadScreen(\"irancoj_shafts.mat\", \"std\", 4)"
+            ]
+          ]
+        },
+        {
+          "path": "CoJ2/Data/Shaders/postprocess/fog_pp_ps.hlsl",
+          "pak": "CoJ2/Data1.pak",
+          "entry": "Data/Shaders/postprocess/fog_pp_ps.hlsl",
+          "when": {
+            "haze": [
+              "on"
+            ]
+          },
+          "replace": [
+            [
+              "(OUT\\.v_clr = Fog\\(f_cam_dir_length, normalize\\(-v_cam_dir\\), vSunDir\\);)",
+              "$1\r\n\r\n    //IranCoJ Edition: distant haze - thicker below the camera (valleys, a town seen from a hill), thinner above\r\n    // (hills, the sky line), in the map's own fog colour; nothing within IRN_HAZE_START. The density falls off\r\n    // exponentially with height, integrated along the view: d0 * exp(-k * height above the camera).\r\n    #define IRN_HAZE_DENSITY 1.2e-6   // per cm, at the camera's height\r\n    #define IRN_HAZE_FALLOFF 2.5e-4   // per cm of height (it halves every 28 m up)\r\n    #define IRN_HAZE_START   10000.0  // cm: nothing nearer (play distances stay clear)\r\n    float f_irn_s = min(IRN_HAZE_START, f_cam_dir_length);\r\n    float f_irn_a = IRN_HAZE_FALLOFF * -v_cam_dir.y / max(f_cam_dir_length, 1.0);\r\n    float f_irn_tau = (abs(f_irn_a) > 1e-8)\r\n        ? (exp(clamp(-f_irn_a * f_irn_s, -30.0, 30.0)) - exp(clamp(-f_irn_a * f_cam_dir_length, -30.0, 30.0))) / f_irn_a\r\n        : f_cam_dir_length - f_irn_s;\r\n    OUT.v_clr.w *= exp(-IRN_HAZE_DENSITY * max(f_irn_tau, 0.0));"
             ]
           ]
         },
@@ -2589,6 +2657,15 @@
     ]
   },
   "news": [
+    {
+      "id": "graphics-150",
+      "tag": "IRANCOJ GRAPHICS 1.5.0",
+      "title": "Light shafts and distant haze",
+      "text": "Look towards the sun and light now streams past roofs, trees and hills. Far hills and the skyline get a light haze in each map's own fog colour, while every play distance stays clear. Both are new in Settings > Graphics > Remastered and cost no frame rate.",
+      "date": "2026-11-14",
+      "action": "settings",
+      "actionLabel": "Graphics settings"
+    },
     {
       "id": "graphics-141",
       "tag": "IRANCOJ GRAPHICS 1.4.1",
