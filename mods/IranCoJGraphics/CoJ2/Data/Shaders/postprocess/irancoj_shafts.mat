@@ -1,0 +1,9 @@
+import "irancoj_shafts.mtt"
+
+// IranCoJ Edition: light shafts (irancoj_shafts_ps.hlsl), added to the glow by glow_30.ppfx. irancoj_shafts.mtt is
+// written by the launcher from the player's own blur_camera_motion.mtt.
+
+sub material()
+{
+    use mtt();
+}

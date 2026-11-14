@@ -262,6 +262,47 @@ rewrites.append(rw('Data/Shaders/Common/common.hlsl', D1, 'Data/Shaders/Common/c
     (r'(float4 Pos_Out_CS\(float4 v_pos\)\s*\{\s*)return Mul44\(v_pos, PROJECTION_XFORM\);', '$1return Irn_Jitter(Mul44(v_pos, PROJECTION_XFORM));')
 ], when=TAA))
 
+# Light shafts (the mod's irancoj_shafts_ps.hlsl / .mat), in place of the game's sun rays: drawn at a quarter of the
+# screen into the glow (glow_30.ppfx), where each pixel walks towards the sun and gathers the open sky it passes, so
+# light streams past roofs, trees and hills; the glow's own blur, the tone mapping and TAA smooth it. Tested in game
+# at 1080p and 1440p: no measurable cost. The template is the player's blur_camera_motion.mtt (as for TAA), added.
+SHAFTS = {'shafts': ['on']}
+rewrites.append(rw('Data/Shaders/postprocess/irancoj_shafts.mtt', D1, 'Data/Shaders/postprocess/blur_camera_motion.mtt', [
+    (r'BlendFunc\(SRC_ALPHA, INV_SRC_ALPHA, ONE, ONE\);', 'BlendFunc(ONE, ONE); //IranCoJ Edition: light shafts are added to the glow'),
+    (r'(?s)extern float FPS;.*?Define\("I_SAMPLES", i_samples\);', '//IranCoJ Edition: no constants (the motion blur\'s are not used)'),
+    (r'(?s)int i_cst_i_current = i_const_int_first;.*?Define\(s_cst_name \+ "000", s_cst_000\);', '//IranCoJ Edition: no constants'),
+    (r'use PP_TMU\(s_sampler = "s_clr", i_user_map = 8, e_filter = LINEAR_NO_MIP, e_tile = MIRROR\);',
+     'use PP_TMU(s_sampler = "s_clr", i_user_map = 8, e_filter = LINEAR_NO_MIP, e_tile = CLAMP);'),
+    (r'#include <blur_camera_motion_ps\.hlsl>', '#include <irancoj_shafts_ps.hlsl>')
+], when=SHAFTS))
+rewrites.append(rw('Data/Postprocess/Effects/glow_30.ppfx', D0, 'Data/Postprocess/Effects/glow_30.ppfx', [
+    # the game's sun rays: their mask, and the slices added to the glow
+    (r'(?s)// SUN RAYS\s*If\("f_sun_rays_factor".*?\n\}\s*', ''),
+    (r'(?s)(QuadScreen\("add\.mat", "std", 4\))\s*If\("f_sun_rays_factor".*?\n        \}',
+     '$1' + N + N + '        //IranCoJ Edition: light shafts (irancoj_shafts.mat) in place of the game\'s sun rays' + N +
+     '        SetTexture(8, "4B")' + N + '        SetTexture(9, "DPT")' + N + '            QuadScreen("irancoj_shafts.mat", "std", 4)')
+], when=SHAFTS))
+
+# Distant haze, in the game's own fog pass (fog_pp_ps.hlsl): beyond 100 m, in the map's fog colour (the same colour
+# the map's fog has in that direction, sun glow included), its density falling off with height above the camera -
+# valleys and a town seen from a hill get hazier, hills and the skyline less. Play distances stay clear (asked for:
+# a competitive shooter must not lose visibility; 20 m and double the density was too much).
+rewrites.append(rw('Data/Shaders/postprocess/fog_pp_ps.hlsl', D1, 'Data/Shaders/postprocess/fog_pp_ps.hlsl', [
+    (r'(OUT\.v_clr = Fog\(f_cam_dir_length, normalize\(-v_cam_dir\), vSunDir\);)', '$1' + N + N + N.join([
+        '    //IranCoJ Edition: distant haze - thicker below the camera (valleys, a town seen from a hill), thinner above',
+        '    // (hills, the sky line), in the map\'s own fog colour; nothing within IRN_HAZE_START. The density falls off',
+        '    // exponentially with height, integrated along the view: d0 * exp(-k * height above the camera).',
+        '    #define IRN_HAZE_DENSITY 1.2e-6   // per cm, at the camera\'s height',
+        '    #define IRN_HAZE_FALLOFF 2.5e-4   // per cm of height (it halves every 28 m up)',
+        '    #define IRN_HAZE_START   10000.0  // cm: nothing nearer (play distances stay clear)',
+        '    float f_irn_s = min(IRN_HAZE_START, f_cam_dir_length);',
+        '    float f_irn_a = IRN_HAZE_FALLOFF * -v_cam_dir.y / max(f_cam_dir_length, 1.0);',
+        '    float f_irn_tau = (abs(f_irn_a) > 1e-8)',
+        '        ? (exp(clamp(-f_irn_a * f_irn_s, -30.0, 30.0)) - exp(clamp(-f_irn_a * f_cam_dir_length, -30.0, 30.0))) / f_irn_a',
+        '        : f_cam_dir_length - f_irn_s;',
+        '    OUT.v_clr.w *= exp(-IRN_HAZE_DENSITY * max(f_irn_tau, 0.0));']))
+], when={'haze': ['on']}))
+
 # Materials that lived only in the rpacks' precompiled caches (hidden in Remastered mode so the remastered shader
 # sources are compiled): rebuilt from the player's own files.
 rewrites.append(rw('Data/Shaders/postprocess/lighting_pp_stencil_simple.mat', D1, 'Data/Shaders/postprocess/lighting_pp_stencil.mat', [
@@ -420,7 +461,7 @@ rewrites.append(rw('Data/Shaders/postprocess/dofs.mtt', D1, 'Data/Shaders/postpr
 ]))
 
 graphics = {
-    'version': '1.1.7',
+    'version': '1.1.8',
     'rewrites': rewrites,
     'vegetation': {
         'files': ['_grass.scr', '_foliage.scr'],

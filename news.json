@@ -1,5 +1,14 @@
 [
   {
+    "id": "graphics-150",
+    "tag": "IRANCOJ GRAPHICS 1.5.0",
+    "title": "Light shafts and distant haze",
+    "text": "Look towards the sun and light now streams past roofs, trees and hills. Far hills and the skyline get a light haze in each map's own fog colour, while every play distance stays clear. Both are new in Settings > Graphics > Remastered and cost no frame rate.",
+    "date": "2026-11-14",
+    "action": "settings",
+    "actionLabel": "Graphics settings"
+  },
+  {
     "id": "graphics-141",
     "tag": "IRANCOJ GRAPHICS 1.4.1",
     "title": "Sharper upscaling, no ghosts",
