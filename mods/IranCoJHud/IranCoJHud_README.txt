@@ -6,3 +6,6 @@ the team score bar, the Shootout / Wanted standing, the weapon name when switchi
 titles, five chat lines and the class screen's single-boot upgrade line.
 
 Loaded by dinput8.dll from mods.txt. By Thomas (Roozbeh).
+
+1.0.3: Tab does nothing where the game does not allow it (the final scoreboard, typing): the chat no longer
+moves there.

@@ -1,5 +1,14 @@
 [
   {
+    "id": "edition-131",
+    "tag": "IRANCOJ EDITION 1.3.1",
+    "title": "Guns by their real names",
+    "text": "Every gun now carries its real name: Colt 1873 Peacemaker, Schofield Model 3, Colt 1848 Dragoon, LeMat 1869 Revolver, Winchester 1873, Sharps Long Rifle, Double Barreled Shotgun and more - Rusty, Prime and Superb included. Tab no longer moves the chat on the final scoreboard.",
+    "date": "2026-11-15",
+    "action": "mods",
+    "actionLabel": "Mods"
+  },
+  {
     "id": "graphics-190",
     "tag": "IRANCOJ GRAPHICS 1.9.0",
     "title": "Blood that bleeds",

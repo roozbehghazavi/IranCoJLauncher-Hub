@@ -1,5 +1,5 @@
 {
-  "version": "1.3.0",
+  "version": "1.3.1",
   "notes": "0.4: allow-list. Only the game files named in include are copied (by name, from any store; a mod's .disabled copy counts), so mods and maps in the player's install never reach the Edition. ?path = optional, * and ? = whatever is there. exclude/keep stay for launchers older than alpha.5. 0.5: ownUserFolder - the Edition's exe reads its own HKCU key, so profiles, saves and settings live in Documents\\IranCoJ Edition (launcher alpha.8+). 0.5.1: menuNavigation (Play -> Join/Host, Back -> main menu, patched in the Edition's CoJ2_x86.dll by pattern; launcher alpha.10+), compiled menu packs in edition/files, the multiplayer maps' loading screens (*_loading.rpack). Loading music is copied by the launcher from the tracks the maps' .trk files name. 0.6: the multiplayer maps' own rpacks too (compiled map data such as rivers and lightmaps is only there - without them Tombstone had no water), engine.rpack (the engine's compiled shader sets, hit splatters, lighting) and textures1.rpack (shared textures, e.g. the rivers' reflections); Persepolis Dust menus, in-game screens, Oswald font, own menu music and credits. 0.6.1: no DataModding.pak (ChromEd wizard templates; community maps carry their own mode files), texts edited in the compiled COJ2 Voices&Texts.bin with New Classes' strings included (New Classes no longer installs its own copy). 0.7: slimmer Data0, Data1 and SpeechEn (launcher alpha.13+): story-level geometry, story dialogue, AI chatter and level ambience multiplayer never opened (a play-through of 73 maps) and no map names are left out. 0.7.2: steam_appid.txt next to the exe (Steam copies started outside Steam's folder). The scoreboard colour and column fixes are byte patches on Server List Mod's files (mods/ServerListMod.json). 0.7.4: the Edition ships its own CoJBiBGame_x86.exe (edition/files; no DRM wrapper, already pointed at the Edition's registry key - with Techland's OK), so Steam copies no longer hit 'Application load error 5:0000065434'; launcher alpha.16+ (older ones patch the exe before downloading it). 0.7.5: loading pictures in black and white, the objectives map toned in the Edition's palette, both from their green channel (the vanilla screen read only green, so some community maps store green-only pictures); smooth (antialiased) 128x128 loading spinner. 0.7.6: the class picture frame matches New Classes 2.0's cropped pictures (x 17, 194x221). 0.7.7: loading screen objectives map at 82% and further right (map names get 560 px), story text kept full size; class picture frame in the compiled packs. 0.7.8: Spectate 1.1.0's first-person crosshair (G_SpecCrosshair in New Classes' class screen, a dot from irancoj_crosshair_dot.dds via irn_spec_ring / irn_spec_tick in CoJ2MenuTextures.def). The intro movies (Initial_BG, Ubisoft_720p*) are optional: some editions lack them, and the Edition never plays them (NoLogos, its own menu movie).",
   "ownUserFolder": true,
   "menuNavigation": true,
@@ -412,12 +412,504 @@
           "N_WeaponPistolLemantUpgradeNet\b\u0000T\u0000o\u0000m\u0000a\u0000h\u0000a\u0000w\u0000k\u0000"
         ],
         [
+          "\\x1e\\x00N\\x5fWeaponPistolCogswellAlphaNet\\x09\\x00P\\x00e\\x00p\\x00p\\x00e\\x00r\\x00g\\x00u\\x00n\\x00",
+          "\u001e\u0000N_WeaponPistolCogswellAlphaNet\u0018\u0000V\u0000i\u0000c\u0000t\u0000o\u0000r\u0000 \u0000C\u0000o\u0000l\u0000l\u0000e\u0000t\u0000e\u0000 \u0000P\u0000e\u0000p\u0000p\u0000e\u0000r\u0000b\u0000o\u0000x\u0000"
+        ],
+        [
+          "\\x1d\\x00N\\x5fWeaponPistolCogswellBetaNet\\x09\\x00P\\x00e\\x00p\\x00p\\x00e\\x00r\\x00g\\x00u\\x00n\\x00",
+          "\u001d\u0000N_WeaponPistolCogswellBetaNet\u0018\u0000V\u0000i\u0000c\u0000t\u0000o\u0000r\u0000 \u0000C\u0000o\u0000l\u0000l\u0000e\u0000t\u0000e\u0000 \u0000P\u0000e\u0000p\u0000p\u0000e\u0000r\u0000b\u0000o\u0000x\u0000"
+        ],
+        [
+          "\\x19\\x00N\\x5fWeaponPistolCogswellNet\\x09\\x00P\\x00e\\x00p\\x00p\\x00e\\x00r\\x00g\\x00u\\x00n\\x00",
+          "\u0019\u0000N_WeaponPistolCogswellNet\u0018\u0000V\u0000i\u0000c\u0000t\u0000o\u0000r\u0000 \u0000C\u0000o\u0000l\u0000l\u0000e\u0000t\u0000e\u0000 \u0000P\u0000e\u0000p\u0000p\u0000e\u0000r\u0000b\u0000o\u0000x\u0000"
+        ],
+        [
+          "\\x20\\x00N\\x5fWeaponPistolCogswellUpgradeNet\\x0b\\x00P\\x00e\\x00p\\x00p\\x00e\\x00r\\x00g\\x00u\\x00n\\x00\\x20\\x00\\x2b\\x00",
+          " \u0000N_WeaponPistolCogswellUpgradeNet\u001a\u0000V\u0000i\u0000c\u0000t\u0000o\u0000r\u0000 \u0000C\u0000o\u0000l\u0000l\u0000e\u0000t\u0000e\u0000 \u0000P\u0000e\u0000p\u0000p\u0000e\u0000r\u0000b\u0000o\u0000x\u0000 \u0000+\u0000"
+        ],
+        [
+          "\\x1f\\x00N\\x5fWeaponPistolDerringerAlphaNet\\x0a\\x00L\\x00a\\x00d\\x00i\\x00e\\x00s\\x00\\x20\\x00G\\x00u\\x00n\\x00",
+          "\u001f\u0000N_WeaponPistolDerringerAlphaNet\u0018\u0000R\u0000e\u0000m\u0000i\u0000n\u0000g\u0000t\u0000o\u0000n\u0000 \u00001\u00008\u00006\u00006\u0000 \u0000D\u0000e\u0000r\u0000r\u0000i\u0000n\u0000g\u0000e\u0000r\u0000"
+        ],
+        [
+          "\\x1e\\x00N\\x5fWeaponPistolDerringerBetaNet\\x0a\\x00L\\x00a\\x00d\\x00i\\x00e\\x00s\\x00\\x20\\x00G\\x00u\\x00n\\x00",
+          "\u001e\u0000N_WeaponPistolDerringerBetaNet\u0018\u0000R\u0000e\u0000m\u0000i\u0000n\u0000g\u0000t\u0000o\u0000n\u0000 \u00001\u00008\u00006\u00006\u0000 \u0000D\u0000e\u0000r\u0000r\u0000i\u0000n\u0000g\u0000e\u0000r\u0000"
+        ],
+        [
+          "\\x1a\\x00N\\x5fWeaponPistolDerringerNet\\x0a\\x00L\\x00a\\x00d\\x00i\\x00e\\x00s\\x00\\x20\\x00G\\x00u\\x00n\\x00",
+          "\u001a\u0000N_WeaponPistolDerringerNet\u0018\u0000R\u0000e\u0000m\u0000i\u0000n\u0000g\u0000t\u0000o\u0000n\u0000 \u00001\u00008\u00006\u00006\u0000 \u0000D\u0000e\u0000r\u0000r\u0000i\u0000n\u0000g\u0000e\u0000r\u0000"
+        ],
+        [
+          "\\x1e\\x00N\\x5fWeaponPistolFrontierAlphaNet\\x0a\\x00B\\x00o\\x00r\\x00d\\x00e\\x00r\\x00\\x20\\x00G\\x00u\\x00n\\x00",
+          "\u001e\u0000N_WeaponPistolFrontierAlphaNet\u000f\u0000C\u0000o\u0000l\u0000t\u0000 \u0000M\u0000o\u0000d\u0000e\u0000l\u0000 \u00001\u00008\u00007\u00008\u0000"
+        ],
+        [
+          "\\x1d\\x00N\\x5fWeaponPistolFrontierBetaNet\\x0a\\x00B\\x00o\\x00r\\x00d\\x00e\\x00r\\x00\\x20\\x00G\\x00u\\x00n\\x00",
+          "\u001d\u0000N_WeaponPistolFrontierBetaNet\u000f\u0000C\u0000o\u0000l\u0000t\u0000 \u0000M\u0000o\u0000d\u0000e\u0000l\u0000 \u00001\u00008\u00007\u00008\u0000"
+        ],
+        [
+          "\\x19\\x00N\\x5fWeaponPistolFrontierNet\\x0a\\x00B\\x00o\\x00r\\x00d\\x00e\\x00r\\x00\\x20\\x00G\\x00u\\x00n\\x00",
+          "\u0019\u0000N_WeaponPistolFrontierNet\u000f\u0000C\u0000o\u0000l\u0000t\u0000 \u0000M\u0000o\u0000d\u0000e\u0000l\u0000 \u00001\u00008\u00007\u00008\u0000"
+        ],
+        [
+          "\\x1c\\x00N\\x5fWeaponPistolLemantAlphaNet\\x0a\\x00H\\x00y\\x00b\\x00r\\x00i\\x00d\\x00\\x20\\x00G\\x00u\\x00n\\x00",
+          "\u001c\u0000N_WeaponPistolLemantAlphaNet\u0013\u0000L\u0000e\u0000M\u0000a\u0000t\u0000 \u00001\u00008\u00006\u00009\u0000 \u0000R\u0000e\u0000v\u0000o\u0000l\u0000v\u0000e\u0000r\u0000"
+        ],
+        [
+          "\\x1b\\x00N\\x5fWeaponPistolLemantBetaNet\\x0a\\x00H\\x00y\\x00b\\x00r\\x00i\\x00d\\x00\\x20\\x00G\\x00u\\x00n\\x00",
+          "\u001b\u0000N_WeaponPistolLemantBetaNet\u0013\u0000L\u0000e\u0000M\u0000a\u0000t\u0000 \u00001\u00008\u00006\u00009\u0000 \u0000R\u0000e\u0000v\u0000o\u0000l\u0000v\u0000e\u0000r\u0000"
+        ],
+        [
+          "\\x17\\x00N\\x5fWeaponPistolLemantNet\\x0a\\x00H\\x00y\\x00b\\x00r\\x00i\\x00d\\x00\\x20\\x00G\\x00u\\x00n\\x00",
+          "\u0017\u0000N_WeaponPistolLemantNet\u0013\u0000L\u0000e\u0000M\u0000a\u0000t\u0000 \u00001\u00008\u00006\u00009\u0000 \u0000R\u0000e\u0000v\u0000o\u0000l\u0000v\u0000e\u0000r\u0000"
+        ],
+        [
+          "\\x20\\x00N\\x5fWeaponPistolPeacemakerAlphaNet\\x0b\\x00C\\x00l\\x00a\\x00s\\x00s\\x00i\\x00c\\x00\\x20\\x00G\\x00u\\x00n\\x00",
+          " \u0000N_WeaponPistolPeacemakerAlphaNet\u0014\u0000C\u0000o\u0000l\u0000t\u0000 \u00001\u00008\u00007\u00003\u0000 \u0000P\u0000e\u0000a\u0000c\u0000e\u0000m\u0000a\u0000k\u0000e\u0000r\u0000"
+        ],
+        [
+          "\\x1f\\x00N\\x5fWeaponPistolPeacemakerBetaNet\\x0b\\x00C\\x00l\\x00a\\x00s\\x00s\\x00i\\x00c\\x00\\x20\\x00G\\x00u\\x00n\\x00",
+          "\u001f\u0000N_WeaponPistolPeacemakerBetaNet\u0014\u0000C\u0000o\u0000l\u0000t\u0000 \u00001\u00008\u00007\u00003\u0000 \u0000P\u0000e\u0000a\u0000c\u0000e\u0000m\u0000a\u0000k\u0000e\u0000r\u0000"
+        ],
+        [
+          "\\x1b\\x00N\\x5fWeaponPistolPeacemakerNet\\x0b\\x00C\\x00l\\x00a\\x00s\\x00s\\x00i\\x00c\\x00\\x20\\x00G\\x00u\\x00n\\x00",
+          "\u001b\u0000N_WeaponPistolPeacemakerNet\u0014\u0000C\u0000o\u0000l\u0000t\u0000 \u00001\u00008\u00007\u00003\u0000 \u0000P\u0000e\u0000a\u0000c\u0000e\u0000m\u0000a\u0000k\u0000e\u0000r\u0000"
+        ],
+        [
+          "\\x22\\x00N\\x5fWeaponPistolPeacemakerUpgradeNet\\x0d\\x00C\\x00l\\x00a\\x00s\\x00s\\x00i\\x00c\\x00\\x20\\x00G\\x00u\\x00n\\x00\\x20\\x00\\x2b\\x00",
+          "\"\u0000N_WeaponPistolPeacemakerUpgradeNet\u0016\u0000C\u0000o\u0000l\u0000t\u0000 \u00001\u00008\u00007\u00003\u0000 \u0000P\u0000e\u0000a\u0000c\u0000e\u0000m\u0000a\u0000k\u0000e\u0000r\u0000 \u0000+\u0000"
+        ],
+        [
+          "\\x1f\\x00N\\x5fWeaponPistolSchofieldAlphaNet\\x0c\\x00Q\\x00u\\x00i\\x00c\\x00k\\x00s\\x00h\\x00o\\x00o\\x00t\\x00e\\x00r\\x00",
+          "\u001f\u0000N_WeaponPistolSchofieldAlphaNet\u0011\u0000S\u0000c\u0000h\u0000o\u0000f\u0000i\u0000e\u0000l\u0000d\u0000 \u0000M\u0000o\u0000d\u0000e\u0000l\u0000 \u00003\u0000"
+        ],
+        [
+          "\\x1e\\x00N\\x5fWeaponPistolSchofieldBetaNet\\x0c\\x00Q\\x00u\\x00i\\x00c\\x00k\\x00s\\x00h\\x00o\\x00o\\x00t\\x00e\\x00r\\x00",
+          "\u001e\u0000N_WeaponPistolSchofieldBetaNet\u0011\u0000S\u0000c\u0000h\u0000o\u0000f\u0000i\u0000e\u0000l\u0000d\u0000 \u0000M\u0000o\u0000d\u0000e\u0000l\u0000 \u00003\u0000"
+        ],
+        [
+          "\\x1a\\x00N\\x5fWeaponPistolSchofieldNet\\x0c\\x00Q\\x00u\\x00i\\x00c\\x00k\\x00s\\x00h\\x00o\\x00o\\x00t\\x00e\\x00r\\x00",
+          "\u001a\u0000N_WeaponPistolSchofieldNet\u0011\u0000S\u0000c\u0000h\u0000o\u0000f\u0000i\u0000e\u0000l\u0000d\u0000 \u0000M\u0000o\u0000d\u0000e\u0000l\u0000 \u00003\u0000"
+        ],
+        [
+          "\\x21\\x00N\\x5fWeaponPistolSchofieldUpgradeNet\\x0e\\x00Q\\x00u\\x00i\\x00c\\x00k\\x00s\\x00h\\x00o\\x00o\\x00t\\x00e\\x00r\\x00\\x20\\x00\\x2b\\x00",
+          "!\u0000N_WeaponPistolSchofieldUpgradeNet\u0013\u0000S\u0000c\u0000h\u0000o\u0000f\u0000i\u0000e\u0000l\u0000d\u0000 \u0000M\u0000o\u0000d\u0000e\u0000l\u0000 \u00003\u0000 \u0000+\u0000"
+        ],
+        [
+          "\\x1e\\x00N\\x5fWeaponPistolVolcanicAlphaNet\\x0b\\x00V\\x00o\\x00l\\x00c\\x00a\\x00n\\x00o\\x00\\x20\\x00G\\x00u\\x00n\\x00",
+          "\u001e\u0000N_WeaponPistolVolcanicAlphaNet\u000f\u0000V\u0000o\u0000l\u0000c\u0000a\u0000n\u0000i\u0000c\u0000 \u0000P\u0000i\u0000s\u0000t\u0000o\u0000l\u0000"
+        ],
+        [
+          "\\x1d\\x00N\\x5fWeaponPistolVolcanicBetaNet\\x0b\\x00V\\x00o\\x00l\\x00c\\x00a\\x00n\\x00o\\x00\\x20\\x00G\\x00u\\x00n\\x00",
+          "\u001d\u0000N_WeaponPistolVolcanicBetaNet\u000f\u0000V\u0000o\u0000l\u0000c\u0000a\u0000n\u0000i\u0000c\u0000 \u0000P\u0000i\u0000s\u0000t\u0000o\u0000l\u0000"
+        ],
+        [
+          "\\x19\\x00N\\x5fWeaponPistolVolcanicNet\\x0b\\x00V\\x00o\\x00l\\x00c\\x00a\\x00n\\x00o\\x00\\x20\\x00G\\x00u\\x00n\\x00",
+          "\u0019\u0000N_WeaponPistolVolcanicNet\u000f\u0000V\u0000o\u0000l\u0000c\u0000a\u0000n\u0000i\u0000c\u0000 \u0000P\u0000i\u0000s\u0000t\u0000o\u0000l\u0000"
+        ],
+        [
+          "\\x20\\x00N\\x5fWeaponPistolVolcanicUpgradeNet\\x0d\\x00V\\x00o\\x00l\\x00c\\x00a\\x00n\\x00o\\x00\\x20\\x00G\\x00u\\x00n\\x00\\x20\\x00\\x2b\\x00",
+          " \u0000N_WeaponPistolVolcanicUpgradeNet\u0011\u0000V\u0000o\u0000l\u0000c\u0000a\u0000n\u0000i\u0000c\u0000 \u0000P\u0000i\u0000s\u0000t\u0000o\u0000l\u0000 \u0000+\u0000"
+        ],
+        [
+          "\\x1c\\x00N\\x5fWeaponPistolWalkerAlphaNet\\x06\\x00R\\x00a\\x00n\\x00g\\x00e\\x00r\\x00",
+          "\u001c\u0000N_WeaponPistolWalkerAlphaNet\u0011\u0000C\u0000o\u0000l\u0000t\u0000 \u00001\u00008\u00004\u00008\u0000 \u0000D\u0000r\u0000a\u0000g\u0000o\u0000o\u0000n\u0000"
+        ],
+        [
+          "\\x1b\\x00N\\x5fWeaponPistolWalkerBetaNet\\x06\\x00R\\x00a\\x00n\\x00g\\x00e\\x00r\\x00",
+          "\u001b\u0000N_WeaponPistolWalkerBetaNet\u0011\u0000C\u0000o\u0000l\u0000t\u0000 \u00001\u00008\u00004\u00008\u0000 \u0000D\u0000r\u0000a\u0000g\u0000o\u0000o\u0000n\u0000"
+        ],
+        [
+          "\\x17\\x00N\\x5fWeaponPistolWalkerNet\\x06\\x00R\\x00a\\x00n\\x00g\\x00e\\x00r\\x00",
+          "\u0017\u0000N_WeaponPistolWalkerNet\u0011\u0000C\u0000o\u0000l\u0000t\u0000 \u00001\u00008\u00004\u00008\u0000 \u0000D\u0000r\u0000a\u0000g\u0000o\u0000o\u0000n\u0000"
+        ],
+        [
+          "\\x1e\\x00N\\x5fWeaponPistolWalkerUpgradeNet\\x08\\x00R\\x00a\\x00n\\x00g\\x00e\\x00r\\x00\\x20\\x00\\x2b\\x00",
+          "\u001e\u0000N_WeaponPistolWalkerUpgradeNet\u0013\u0000C\u0000o\u0000l\u0000t\u0000 \u00001\u00008\u00004\u00008\u0000 \u0000D\u0000r\u0000a\u0000g\u0000o\u0000o\u0000n\u0000 \u0000+\u0000"
+        ],
+        [
+          "\\x1e\\x00N\\x5fWeaponRifleRemingtonAlphaNet\\x07\\x00S\\x00h\\x00o\\x00t\\x00g\\x00u\\x00n\\x00",
+          "\u001e\u0000N_WeaponRifleRemingtonAlphaNet\u0017\u0000D\u0000o\u0000u\u0000b\u0000l\u0000e\u0000 \u0000B\u0000a\u0000r\u0000r\u0000e\u0000l\u0000e\u0000d\u0000 \u0000S\u0000h\u0000o\u0000t\u0000g\u0000u\u0000n\u0000"
+        ],
+        [
+          "\\x1d\\x00N\\x5fWeaponRifleRemingtonBetaNet\\x07\\x00S\\x00h\\x00o\\x00t\\x00g\\x00u\\x00n\\x00",
+          "\u001d\u0000N_WeaponRifleRemingtonBetaNet\u0017\u0000D\u0000o\u0000u\u0000b\u0000l\u0000e\u0000 \u0000B\u0000a\u0000r\u0000r\u0000e\u0000l\u0000e\u0000d\u0000 \u0000S\u0000h\u0000o\u0000t\u0000g\u0000u\u0000n\u0000"
+        ],
+        [
+          "\\x19\\x00N\\x5fWeaponRifleRemingtonNet\\x07\\x00S\\x00h\\x00o\\x00t\\x00g\\x00u\\x00n\\x00",
+          "\u0019\u0000N_WeaponRifleRemingtonNet\u0017\u0000D\u0000o\u0000u\u0000b\u0000l\u0000e\u0000 \u0000B\u0000a\u0000r\u0000r\u0000e\u0000l\u0000e\u0000d\u0000 \u0000S\u0000h\u0000o\u0000t\u0000g\u0000u\u0000n\u0000"
+        ],
+        [
+          "\\x24\\x00N\\x5fWeaponRifleRemingtonSawOffAlphaNet\\x09\\x00S\\x00a\\x00w\\x00e\\x00d\\x00\\x2d\\x00O\\x00f\\x00f\\x00",
+          "$$\u0000N_WeaponRifleRemingtonSawOffAlphaNet\u0011\u0000S\u0000a\u0000w\u0000e\u0000d\u0000-\u0000O\u0000f\u0000f\u0000 \u0000S\u0000h\u0000o\u0000t\u0000g\u0000u\u0000n\u0000"
+        ],
+        [
+          "\\x23\\x00N\\x5fWeaponRifleRemingtonSawOffBetaNet\\x09\\x00S\\x00a\\x00w\\x00e\\x00d\\x00\\x2d\\x00O\\x00f\\x00f\\x00",
+          "#\u0000N_WeaponRifleRemingtonSawOffBetaNet\u0011\u0000S\u0000a\u0000w\u0000e\u0000d\u0000-\u0000O\u0000f\u0000f\u0000 \u0000S\u0000h\u0000o\u0000t\u0000g\u0000u\u0000n\u0000"
+        ],
+        [
+          "\\x1f\\x00N\\x5fWeaponRifleRemingtonSawOffNet\\x09\\x00S\\x00a\\x00w\\x00e\\x00d\\x00\\x2d\\x00O\\x00f\\x00f\\x00",
+          "\u001f\u0000N_WeaponRifleRemingtonSawOffNet\u0011\u0000S\u0000a\u0000w\u0000e\u0000d\u0000-\u0000O\u0000f\u0000f\u0000 \u0000S\u0000h\u0000o\u0000t\u0000g\u0000u\u0000n\u0000"
+        ],
+        [
+          "\\x26\\x00N\\x5fWeaponRifleRemingtonSawOffUpgradeNet\\x0b\\x00S\\x00a\\x00w\\x00e\\x00d\\x00\\x2d\\x00O\\x00f\\x00f\\x00\\x20\\x00\\x2b\\x00",
+          "&\u0000N_WeaponRifleRemingtonSawOffUpgradeNet\u0013\u0000S\u0000a\u0000w\u0000e\u0000d\u0000-\u0000O\u0000f\u0000f\u0000 \u0000S\u0000h\u0000o\u0000t\u0000g\u0000u\u0000n\u0000 \u0000+\u0000"
+        ],
+        [
+          "\\x20\\x00N\\x5fWeaponRifleRemingtonUpgradeNet\\x09\\x00S\\x00h\\x00o\\x00t\\x00g\\x00u\\x00n\\x00\\x20\\x00\\x2b\\x00",
+          " \u0000N_WeaponRifleRemingtonUpgradeNet\u0019\u0000D\u0000o\u0000u\u0000b\u0000l\u0000e\u0000 \u0000B\u0000a\u0000r\u0000r\u0000e\u0000l\u0000e\u0000d\u0000 \u0000S\u0000h\u0000o\u0000t\u0000g\u0000u\u0000n\u0000 \u0000+\u0000"
+        ],
+        [
+          "\\x1b\\x00N\\x5fWeaponRifleSharpsAlphaNet\\x0b\\x00H\\x00e\\x00a\\x00v\\x00y\\x00\\x20\\x00R\\x00i\\x00f\\x00l\\x00e\\x00",
+          "\u001b\u0000N_WeaponRifleSharpsAlphaNet\u0011\u0000S\u0000h\u0000a\u0000r\u0000p\u0000s\u0000 \u0000L\u0000o\u0000n\u0000g\u0000 \u0000R\u0000i\u0000f\u0000l\u0000e\u0000"
+        ],
+        [
+          "\\x1a\\x00N\\x5fWeaponRifleSharpsBetaNet\\x0b\\x00H\\x00e\\x00a\\x00v\\x00y\\x00\\x20\\x00R\\x00i\\x00f\\x00l\\x00e\\x00",
+          "\u001a\u0000N_WeaponRifleSharpsBetaNet\u0011\u0000S\u0000h\u0000a\u0000r\u0000p\u0000s\u0000 \u0000L\u0000o\u0000n\u0000g\u0000 \u0000R\u0000i\u0000f\u0000l\u0000e\u0000"
+        ],
+        [
+          "\\x16\\x00N\\x5fWeaponRifleSharpsNet\\x0b\\x00H\\x00e\\x00a\\x00v\\x00y\\x00\\x20\\x00R\\x00i\\x00f\\x00l\\x00e\\x00",
+          "\u0016\u0000N_WeaponRifleSharpsNet\u0011\u0000S\u0000h\u0000a\u0000r\u0000p\u0000s\u0000 \u0000L\u0000o\u0000n\u0000g\u0000 \u0000R\u0000i\u0000f\u0000l\u0000e\u0000"
+        ],
+        [
+          "\\x20\\x00N\\x5fWeaponRifleSharpsScopeAlphaNet\\x0c\\x00H\\x00e\\x00a\\x00v\\x00y\\x00\\x20\\x00S\\x00c\\x00o\\x00p\\x00e\\x00d\\x00",
+          " \u0000N_WeaponRifleSharpsScopeAlphaNet\u0018\u0000S\u0000h\u0000a\u0000r\u0000p\u0000s\u0000 \u0000L\u0000o\u0000n\u0000g\u0000 \u0000R\u0000i\u0000f\u0000l\u0000e\u0000 \u0000S\u0000c\u0000o\u0000p\u0000e\u0000d\u0000"
+        ],
+        [
+          "\\x1f\\x00N\\x5fWeaponRifleSharpsScopeBetaNet\\x0c\\x00H\\x00e\\x00a\\x00v\\x00y\\x00\\x20\\x00S\\x00c\\x00o\\x00p\\x00e\\x00d\\x00",
+          "\u001f\u0000N_WeaponRifleSharpsScopeBetaNet\u0018\u0000S\u0000h\u0000a\u0000r\u0000p\u0000s\u0000 \u0000L\u0000o\u0000n\u0000g\u0000 \u0000R\u0000i\u0000f\u0000l\u0000e\u0000 \u0000S\u0000c\u0000o\u0000p\u0000e\u0000d\u0000"
+        ],
+        [
+          "\\x1b\\x00N\\x5fWeaponRifleSharpsScopeNet\\x0c\\x00H\\x00e\\x00a\\x00v\\x00y\\x00\\x20\\x00S\\x00c\\x00o\\x00p\\x00e\\x00d\\x00",
+          "\u001b\u0000N_WeaponRifleSharpsScopeNet\u0018\u0000S\u0000h\u0000a\u0000r\u0000p\u0000s\u0000 \u0000L\u0000o\u0000n\u0000g\u0000 \u0000R\u0000i\u0000f\u0000l\u0000e\u0000 \u0000S\u0000c\u0000o\u0000p\u0000e\u0000d\u0000"
+        ],
+        [
+          "\\x22\\x00N\\x5fWeaponRifleSharpsScopeUpgradeNet\\x0e\\x00H\\x00e\\x00a\\x00v\\x00y\\x00\\x20\\x00S\\x00c\\x00o\\x00p\\x00e\\x00d\\x00\\x20\\x00\\x2b\\x00",
+          "\"\u0000N_WeaponRifleSharpsScopeUpgradeNet\u001a\u0000S\u0000h\u0000a\u0000r\u0000p\u0000s\u0000 \u0000L\u0000o\u0000n\u0000g\u0000 \u0000R\u0000i\u0000f\u0000l\u0000e\u0000 \u0000S\u0000c\u0000o\u0000p\u0000e\u0000d\u0000 \u0000+\u0000"
+        ],
+        [
+          "\\x1d\\x00N\\x5fWeaponRifleSharpsUpgradeNet\\x0d\\x00H\\x00e\\x00a\\x00v\\x00y\\x00\\x20\\x00R\\x00i\\x00f\\x00l\\x00e\\x00\\x20\\x00\\x2b\\x00",
+          "\u001d\u0000N_WeaponRifleSharpsUpgradeNet\u0013\u0000S\u0000h\u0000a\u0000r\u0000p\u0000s\u0000 \u0000L\u0000o\u0000n\u0000g\u0000 \u0000R\u0000i\u0000f\u0000l\u0000e\u0000 \u0000+\u0000"
+        ],
+        [
+          "\\x1f\\x00N\\x5fWeaponRifleWinchesterAlphaNet\\x0d\\x00C\\x00l\\x00a\\x00s\\x00s\\x00i\\x00c\\x00\\x20\\x00R\\x00i\\x00f\\x00l\\x00e\\x00",
+          "\u001f\u0000N_WeaponRifleWinchesterAlphaNet\u000f\u0000W\u0000i\u0000n\u0000c\u0000h\u0000e\u0000s\u0000t\u0000e\u0000r\u0000 \u00001\u00008\u00007\u00003\u0000"
+        ],
+        [
+          "\\x1e\\x00N\\x5fWeaponRifleWinchesterBetaNet\\x0d\\x00C\\x00l\\x00a\\x00s\\x00s\\x00i\\x00c\\x00\\x20\\x00R\\x00i\\x00f\\x00l\\x00e\\x00",
+          "\u001e\u0000N_WeaponRifleWinchesterBetaNet\u000f\u0000W\u0000i\u0000n\u0000c\u0000h\u0000e\u0000s\u0000t\u0000e\u0000r\u0000 \u00001\u00008\u00007\u00003\u0000"
+        ],
+        [
+          "\\x1a\\x00N\\x5fWeaponRifleWinchesterNet\\x0d\\x00C\\x00l\\x00a\\x00s\\x00s\\x00i\\x00c\\x00\\x20\\x00R\\x00i\\x00f\\x00l\\x00e\\x00",
+          "\u001a\u0000N_WeaponRifleWinchesterNet\u000f\u0000W\u0000i\u0000n\u0000c\u0000h\u0000e\u0000s\u0000t\u0000e\u0000r\u0000 \u00001\u00008\u00007\u00003\u0000"
+        ],
+        [
+          "\\x24\\x00N\\x5fWeaponRifleWinchesterScopeAlphaNet\\x0e\\x00C\\x00l\\x00a\\x00s\\x00s\\x00i\\x00c\\x00\\x20\\x00S\\x00c\\x00o\\x00p\\x00e\\x00d\\x00",
+          "$$\u0000N_WeaponRifleWinchesterScopeAlphaNet\u0016\u0000W\u0000i\u0000n\u0000c\u0000h\u0000e\u0000s\u0000t\u0000e\u0000r\u0000 \u00001\u00008\u00007\u00003\u0000 \u0000S\u0000c\u0000o\u0000p\u0000e\u0000d\u0000"
+        ],
+        [
+          "\\x23\\x00N\\x5fWeaponRifleWinchesterScopeBetaNet\\x0e\\x00C\\x00l\\x00a\\x00s\\x00s\\x00i\\x00c\\x00\\x20\\x00S\\x00c\\x00o\\x00p\\x00e\\x00d\\x00",
+          "#\u0000N_WeaponRifleWinchesterScopeBetaNet\u0016\u0000W\u0000i\u0000n\u0000c\u0000h\u0000e\u0000s\u0000t\u0000e\u0000r\u0000 \u00001\u00008\u00007\u00003\u0000 \u0000S\u0000c\u0000o\u0000p\u0000e\u0000d\u0000"
+        ],
+        [
+          "\\x1f\\x00N\\x5fWeaponRifleWinchesterScopeNet\\x0e\\x00C\\x00l\\x00a\\x00s\\x00s\\x00i\\x00c\\x00\\x20\\x00S\\x00c\\x00o\\x00p\\x00e\\x00d\\x00",
+          "\u001f\u0000N_WeaponRifleWinchesterScopeNet\u0016\u0000W\u0000i\u0000n\u0000c\u0000h\u0000e\u0000s\u0000t\u0000e\u0000r\u0000 \u00001\u00008\u00007\u00003\u0000 \u0000S\u0000c\u0000o\u0000p\u0000e\u0000d\u0000"
+        ],
+        [
+          "\\x26\\x00N\\x5fWeaponRifleWinchesterScopeUpgradeNet\\x10\\x00C\\x00l\\x00a\\x00s\\x00s\\x00i\\x00c\\x00\\x20\\x00S\\x00c\\x00o\\x00p\\x00e\\x00d\\x00\\x20\\x00\\x2b\\x00",
+          "&\u0000N_WeaponRifleWinchesterScopeUpgradeNet\u0018\u0000W\u0000i\u0000n\u0000c\u0000h\u0000e\u0000s\u0000t\u0000e\u0000r\u0000 \u00001\u00008\u00007\u00003\u0000 \u0000S\u0000c\u0000o\u0000p\u0000e\u0000d\u0000 \u0000+\u0000"
+        ],
+        [
+          "\\x21\\x00N\\x5fWeaponRifleWinchesterUpgradeNet\\x0f\\x00C\\x00l\\x00a\\x00s\\x00s\\x00i\\x00c\\x00\\x20\\x00R\\x00i\\x00f\\x00l\\x00e\\x00\\x20\\x00\\x2b\\x00",
+          "!\u0000N_WeaponRifleWinchesterUpgradeNet\u0011\u0000W\u0000i\u0000n\u0000c\u0000h\u0000e\u0000s\u0000t\u0000e\u0000r\u0000 \u00001\u00008\u00007\u00003\u0000 \u0000+\u0000"
+        ],
+        [
+          "\\x12\\x00Name\\x5fWeaponGatling\\x07\\x00G\\x00a\\x00t\\x00l\\x00i\\x00n\\x00g\\x00",
+          "\u0012\u0000Name_WeaponGatling\u000b\u0000G\u0000a\u0000t\u0000l\u0000i\u0000n\u0000g\u0000 \u0000G\u0000u\u0000n\u0000"
+        ],
+        [
+          "\\x19\\x00Name\\x5fWeaponPistolCogswell\\x09\\x00P\\x00e\\x00p\\x00p\\x00e\\x00r\\x00g\\x00u\\x00n\\x00",
+          "\u0019\u0000Name_WeaponPistolCogswell\u0018\u0000V\u0000i\u0000c\u0000t\u0000o\u0000r\u0000 \u0000C\u0000o\u0000l\u0000l\u0000e\u0000t\u0000e\u0000 \u0000P\u0000e\u0000p\u0000p\u0000e\u0000r\u0000b\u0000o\u0000x\u0000"
+        ],
+        [
+          "\\x1e\\x00Name\\x5fWeaponPistolCogswellAlpha\\x0f\\x00P\\x00r\\x00i\\x00m\\x00e\\x00\\x20\\x00P\\x00e\\x00p\\x00p\\x00e\\x00r\\x00g\\x00u\\x00n\\x00",
+          "\u001e\u0000Name_WeaponPistolCogswellAlpha\u001e\u0000P\u0000r\u0000i\u0000m\u0000e\u0000 \u0000V\u0000i\u0000c\u0000t\u0000o\u0000r\u0000 \u0000C\u0000o\u0000l\u0000l\u0000e\u0000t\u0000e\u0000 \u0000P\u0000e\u0000p\u0000p\u0000e\u0000r\u0000b\u0000o\u0000x\u0000"
+        ],
+        [
+          "\\x1d\\x00Name\\x5fWeaponPistolCogswellBeta\\x10\\x00S\\x00u\\x00p\\x00e\\x00r\\x00b\\x00\\x20\\x00P\\x00e\\x00p\\x00p\\x00e\\x00r\\x00g\\x00u\\x00n\\x00",
+          "\u001d\u0000Name_WeaponPistolCogswellBeta\u001f\u0000S\u0000u\u0000p\u0000e\u0000r\u0000b\u0000 \u0000V\u0000i\u0000c\u0000t\u0000o\u0000r\u0000 \u0000C\u0000o\u0000l\u0000l\u0000e\u0000t\u0000e\u0000 \u0000P\u0000e\u0000p\u0000p\u0000e\u0000r\u0000b\u0000o\u0000x\u0000"
+        ],
+        [
+          "\\x1c\\x00Name\\x5fWeaponPistolCogswellNet\\x09\\x00P\\x00e\\x00p\\x00p\\x00e\\x00r\\x00g\\x00u\\x00n\\x00",
+          "\u001c\u0000Name_WeaponPistolCogswellNet\u0018\u0000V\u0000i\u0000c\u0000t\u0000o\u0000r\u0000 \u0000C\u0000o\u0000l\u0000l\u0000e\u0000t\u0000e\u0000 \u0000P\u0000e\u0000p\u0000p\u0000e\u0000r\u0000b\u0000o\u0000x\u0000"
+        ],
+        [
+          "\\x1e\\x00Name\\x5fWeaponPistolCogswellRusty\\x0f\\x00R\\x00u\\x00s\\x00t\\x00y\\x00\\x20\\x00P\\x00e\\x00p\\x00p\\x00e\\x00r\\x00g\\x00u\\x00n\\x00",
+          "\u001e\u0000Name_WeaponPistolCogswellRusty\u001e\u0000R\u0000u\u0000s\u0000t\u0000y\u0000 \u0000V\u0000i\u0000c\u0000t\u0000o\u0000r\u0000 \u0000C\u0000o\u0000l\u0000l\u0000e\u0000t\u0000e\u0000 \u0000P\u0000e\u0000p\u0000p\u0000e\u0000r\u0000b\u0000o\u0000x\u0000"
+        ],
+        [
+          "\\x1a\\x00Name\\x5fWeaponPistolDerringer\\x0a\\x00L\\x00a\\x00d\\x00i\\x00e\\x00s\\x00\\x20\\x00G\\x00u\\x00n\\x00",
+          "\u001a\u0000Name_WeaponPistolDerringer\u0018\u0000R\u0000e\u0000m\u0000i\u0000n\u0000g\u0000t\u0000o\u0000n\u0000 \u00001\u00008\u00006\u00006\u0000 \u0000D\u0000e\u0000r\u0000r\u0000i\u0000n\u0000g\u0000e\u0000r\u0000"
+        ],
+        [
+          "\\x1f\\x00Name\\x5fWeaponPistolDerringerAlpha\\x10\\x00P\\x00r\\x00i\\x00m\\x00e\\x00\\x20\\x00L\\x00a\\x00d\\x00i\\x00e\\x00s\\x00\\x20\\x00G\\x00u\\x00n\\x00",
+          "\u001f\u0000Name_WeaponPistolDerringerAlpha\u001e\u0000P\u0000r\u0000i\u0000m\u0000e\u0000 \u0000R\u0000e\u0000m\u0000i\u0000n\u0000g\u0000t\u0000o\u0000n\u0000 \u00001\u00008\u00006\u00006\u0000 \u0000D\u0000e\u0000r\u0000r\u0000i\u0000n\u0000g\u0000e\u0000r\u0000"
+        ],
+        [
+          "\\x1e\\x00Name\\x5fWeaponPistolDerringerBeta\\x11\\x00S\\x00u\\x00p\\x00e\\x00r\\x00b\\x00\\x20\\x00L\\x00a\\x00d\\x00i\\x00e\\x00s\\x00\\x20\\x00G\\x00u\\x00n\\x00",
+          "\u001e\u0000Name_WeaponPistolDerringerBeta\u001f\u0000S\u0000u\u0000p\u0000e\u0000r\u0000b\u0000 \u0000R\u0000e\u0000m\u0000i\u0000n\u0000g\u0000t\u0000o\u0000n\u0000 \u00001\u00008\u00006\u00006\u0000 \u0000D\u0000e\u0000r\u0000r\u0000i\u0000n\u0000g\u0000e\u0000r\u0000"
+        ],
+        [
+          "\\x1d\\x00Name\\x5fWeaponPistolDerringerNet\\x0a\\x00L\\x00a\\x00d\\x00i\\x00e\\x00s\\x00\\x20\\x00G\\x00u\\x00n\\x00",
+          "\u001d\u0000Name_WeaponPistolDerringerNet\u0018\u0000R\u0000e\u0000m\u0000i\u0000n\u0000g\u0000t\u0000o\u0000n\u0000 \u00001\u00008\u00006\u00006\u0000 \u0000D\u0000e\u0000r\u0000r\u0000i\u0000n\u0000g\u0000e\u0000r\u0000"
+        ],
+        [
+          "\\x1f\\x00Name\\x5fWeaponPistolDerringerRusty\\x10\\x00R\\x00u\\x00s\\x00t\\x00y\\x00\\x20\\x00L\\x00a\\x00d\\x00i\\x00e\\x00s\\x00\\x20\\x00G\\x00u\\x00n\\x00",
+          "\u001f\u0000Name_WeaponPistolDerringerRusty\u001e\u0000R\u0000u\u0000s\u0000t\u0000y\u0000 \u0000R\u0000e\u0000m\u0000i\u0000n\u0000g\u0000t\u0000o\u0000n\u0000 \u00001\u00008\u00006\u00006\u0000 \u0000D\u0000e\u0000r\u0000r\u0000i\u0000n\u0000g\u0000e\u0000r\u0000"
+        ],
+        [
+          "\\x19\\x00Name\\x5fWeaponPistolFrontier\\x0a\\x00B\\x00o\\x00r\\x00d\\x00e\\x00r\\x00\\x20\\x00G\\x00u\\x00n\\x00",
+          "\u0019\u0000Name_WeaponPistolFrontier\u000f\u0000C\u0000o\u0000l\u0000t\u0000 \u0000M\u0000o\u0000d\u0000e\u0000l\u0000 \u00001\u00008\u00007\u00008\u0000"
+        ],
+        [
+          "\\x1e\\x00Name\\x5fWeaponPistolFrontierAlpha\\x10\\x00P\\x00r\\x00i\\x00m\\x00e\\x00\\x20\\x00B\\x00o\\x00r\\x00d\\x00e\\x00r\\x00\\x20\\x00G\\x00u\\x00n\\x00",
+          "\u001e\u0000Name_WeaponPistolFrontierAlpha\u0015\u0000P\u0000r\u0000i\u0000m\u0000e\u0000 \u0000C\u0000o\u0000l\u0000t\u0000 \u0000M\u0000o\u0000d\u0000e\u0000l\u0000 \u00001\u00008\u00007\u00008\u0000"
+        ],
+        [
+          "\\x1d\\x00Name\\x5fWeaponPistolFrontierBeta\\x11\\x00S\\x00u\\x00p\\x00e\\x00r\\x00b\\x00\\x20\\x00B\\x00o\\x00r\\x00d\\x00e\\x00r\\x00\\x20\\x00G\\x00u\\x00n\\x00",
+          "\u001d\u0000Name_WeaponPistolFrontierBeta\u0016\u0000S\u0000u\u0000p\u0000e\u0000r\u0000b\u0000 \u0000C\u0000o\u0000l\u0000t\u0000 \u0000M\u0000o\u0000d\u0000e\u0000l\u0000 \u00001\u00008\u00007\u00008\u0000"
+        ],
+        [
+          "\\x1c\\x00Name\\x5fWeaponPistolFrontierNet\\x0a\\x00B\\x00o\\x00r\\x00d\\x00e\\x00r\\x00\\x20\\x00G\\x00u\\x00n\\x00",
+          "\u001c\u0000Name_WeaponPistolFrontierNet\u000f\u0000C\u0000o\u0000l\u0000t\u0000 \u0000M\u0000o\u0000d\u0000e\u0000l\u0000 \u00001\u00008\u00007\u00008\u0000"
+        ],
+        [
+          "\\x1e\\x00Name\\x5fWeaponPistolFrontierRusty\\x10\\x00R\\x00u\\x00s\\x00t\\x00y\\x00\\x20\\x00B\\x00o\\x00r\\x00d\\x00e\\x00r\\x00\\x20\\x00G\\x00u\\x00n\\x00",
+          "\u001e\u0000Name_WeaponPistolFrontierRusty\u0015\u0000R\u0000u\u0000s\u0000t\u0000y\u0000 \u0000C\u0000o\u0000l\u0000t\u0000 \u0000M\u0000o\u0000d\u0000e\u0000l\u0000 \u00001\u00008\u00007\u00008\u0000"
+        ],
+        [
+          "\\x17\\x00Name\\x5fWeaponPistolLemant\\x0a\\x00H\\x00y\\x00b\\x00r\\x00i\\x00d\\x00\\x20\\x00G\\x00u\\x00n\\x00",
+          "\u0017\u0000Name_WeaponPistolLemant\u0013\u0000L\u0000e\u0000M\u0000a\u0000t\u0000 \u00001\u00008\u00006\u00009\u0000 \u0000R\u0000e\u0000v\u0000o\u0000l\u0000v\u0000e\u0000r\u0000"
+        ],
+        [
+          "\\x1c\\x00Name\\x5fWeaponPistolLemantAlpha\\x10\\x00P\\x00r\\x00i\\x00m\\x00e\\x00\\x20\\x00H\\x00y\\x00b\\x00r\\x00i\\x00d\\x00\\x20\\x00G\\x00u\\x00n\\x00",
+          "\u001c\u0000Name_WeaponPistolLemantAlpha\u0019\u0000P\u0000r\u0000i\u0000m\u0000e\u0000 \u0000L\u0000e\u0000M\u0000a\u0000t\u0000 \u00001\u00008\u00006\u00009\u0000 \u0000R\u0000e\u0000v\u0000o\u0000l\u0000v\u0000e\u0000r\u0000"
+        ],
+        [
+          "\\x1b\\x00Name\\x5fWeaponPistolLemantBeta\\x11\\x00S\\x00u\\x00p\\x00e\\x00r\\x00b\\x00\\x20\\x00H\\x00y\\x00b\\x00r\\x00i\\x00d\\x00\\x20\\x00G\\x00u\\x00n\\x00",
+          "\u001b\u0000Name_WeaponPistolLemantBeta\u001a\u0000S\u0000u\u0000p\u0000e\u0000r\u0000b\u0000 \u0000L\u0000e\u0000M\u0000a\u0000t\u0000 \u00001\u00008\u00006\u00009\u0000 \u0000R\u0000e\u0000v\u0000o\u0000l\u0000v\u0000e\u0000r\u0000"
+        ],
+        [
+          "\\x1a\\x00Name\\x5fWeaponPistolLemantNet\\x0a\\x00H\\x00y\\x00b\\x00r\\x00i\\x00d\\x00\\x20\\x00G\\x00u\\x00n\\x00",
+          "\u001a\u0000Name_WeaponPistolLemantNet\u0013\u0000L\u0000e\u0000M\u0000a\u0000t\u0000 \u00001\u00008\u00006\u00009\u0000 \u0000R\u0000e\u0000v\u0000o\u0000l\u0000v\u0000e\u0000r\u0000"
+        ],
+        [
+          "\\x1c\\x00Name\\x5fWeaponPistolLemantRusty\\x10\\x00R\\x00u\\x00s\\x00t\\x00y\\x00\\x20\\x00H\\x00y\\x00b\\x00r\\x00i\\x00d\\x00\\x20\\x00G\\x00u\\x00n\\x00",
+          "\u001c\u0000Name_WeaponPistolLemantRusty\u0019\u0000R\u0000u\u0000s\u0000t\u0000y\u0000 \u0000L\u0000e\u0000M\u0000a\u0000t\u0000 \u00001\u00008\u00006\u00009\u0000 \u0000R\u0000e\u0000v\u0000o\u0000l\u0000v\u0000e\u0000r\u0000"
+        ],
+        [
+          "\\x1b\\x00Name\\x5fWeaponPistolPeacemaker\\x0b\\x00C\\x00l\\x00a\\x00s\\x00s\\x00i\\x00c\\x00\\x20\\x00G\\x00u\\x00n\\x00",
+          "\u001b\u0000Name_WeaponPistolPeacemaker\u0014\u0000C\u0000o\u0000l\u0000t\u0000 \u00001\u00008\u00007\u00003\u0000 \u0000P\u0000e\u0000a\u0000c\u0000e\u0000m\u0000a\u0000k\u0000e\u0000r\u0000"
+        ],
+        [
+          "\\x20\\x00Name\\x5fWeaponPistolPeacemakerAlpha\\x11\\x00P\\x00r\\x00i\\x00m\\x00e\\x00\\x20\\x00C\\x00l\\x00a\\x00s\\x00s\\x00i\\x00c\\x00\\x20\\x00G\\x00u\\x00n\\x00",
+          " \u0000Name_WeaponPistolPeacemakerAlpha\u001a\u0000P\u0000r\u0000i\u0000m\u0000e\u0000 \u0000C\u0000o\u0000l\u0000t\u0000 \u00001\u00008\u00007\u00003\u0000 \u0000P\u0000e\u0000a\u0000c\u0000e\u0000m\u0000a\u0000k\u0000e\u0000r\u0000"
+        ],
+        [
+          "\\x1f\\x00Name\\x5fWeaponPistolPeacemakerBeta\\x12\\x00S\\x00u\\x00p\\x00e\\x00r\\x00b\\x00\\x20\\x00C\\x00l\\x00a\\x00s\\x00s\\x00i\\x00c\\x00\\x20\\x00G\\x00u\\x00n\\x00",
+          "\u001f\u0000Name_WeaponPistolPeacemakerBeta\u001b\u0000S\u0000u\u0000p\u0000e\u0000r\u0000b\u0000 \u0000C\u0000o\u0000l\u0000t\u0000 \u00001\u00008\u00007\u00003\u0000 \u0000P\u0000e\u0000a\u0000c\u0000e\u0000m\u0000a\u0000k\u0000e\u0000r\u0000"
+        ],
+        [
+          "\\x1e\\x00Name\\x5fWeaponPistolPeacemakerNet\\x0b\\x00C\\x00l\\x00a\\x00s\\x00s\\x00i\\x00c\\x00\\x20\\x00G\\x00u\\x00n\\x00",
+          "\u001e\u0000Name_WeaponPistolPeacemakerNet\u0014\u0000C\u0000o\u0000l\u0000t\u0000 \u00001\u00008\u00007\u00003\u0000 \u0000P\u0000e\u0000a\u0000c\u0000e\u0000m\u0000a\u0000k\u0000e\u0000r\u0000"
+        ],
+        [
+          "\\x20\\x00Name\\x5fWeaponPistolPeacemakerRusty\\x11\\x00R\\x00u\\x00s\\x00t\\x00y\\x00\\x20\\x00C\\x00l\\x00a\\x00s\\x00s\\x00i\\x00c\\x00\\x20\\x00G\\x00u\\x00n\\x00",
+          " \u0000Name_WeaponPistolPeacemakerRusty\u001a\u0000R\u0000u\u0000s\u0000t\u0000y\u0000 \u0000C\u0000o\u0000l\u0000t\u0000 \u00001\u00008\u00007\u00003\u0000 \u0000P\u0000e\u0000a\u0000c\u0000e\u0000m\u0000a\u0000k\u0000e\u0000r\u0000"
+        ],
+        [
+          "\\x1a\\x00Name\\x5fWeaponPistolSchofield\\x0c\\x00Q\\x00u\\x00i\\x00c\\x00k\\x00s\\x00h\\x00o\\x00o\\x00t\\x00e\\x00r\\x00",
+          "\u001a\u0000Name_WeaponPistolSchofield\u0011\u0000S\u0000c\u0000h\u0000o\u0000f\u0000i\u0000e\u0000l\u0000d\u0000 \u0000M\u0000o\u0000d\u0000e\u0000l\u0000 \u00003\u0000"
+        ],
+        [
+          "\\x1f\\x00Name\\x5fWeaponPistolSchofieldAlpha\\x12\\x00P\\x00r\\x00i\\x00m\\x00e\\x00\\x20\\x00Q\\x00u\\x00i\\x00c\\x00k\\x00s\\x00h\\x00o\\x00o\\x00t\\x00e\\x00r\\x00",
+          "\u001f\u0000Name_WeaponPistolSchofieldAlpha\u0017\u0000P\u0000r\u0000i\u0000m\u0000e\u0000 \u0000S\u0000c\u0000h\u0000o\u0000f\u0000i\u0000e\u0000l\u0000d\u0000 \u0000M\u0000o\u0000d\u0000e\u0000l\u0000 \u00003\u0000"
+        ],
+        [
+          "\\x1e\\x00Name\\x5fWeaponPistolSchofieldBeta\\x13\\x00S\\x00u\\x00p\\x00e\\x00r\\x00b\\x00\\x20\\x00Q\\x00u\\x00i\\x00c\\x00k\\x00s\\x00h\\x00o\\x00o\\x00t\\x00e\\x00r\\x00",
+          "\u001e\u0000Name_WeaponPistolSchofieldBeta\u0018\u0000S\u0000u\u0000p\u0000e\u0000r\u0000b\u0000 \u0000S\u0000c\u0000h\u0000o\u0000f\u0000i\u0000e\u0000l\u0000d\u0000 \u0000M\u0000o\u0000d\u0000e\u0000l\u0000 \u00003\u0000"
+        ],
+        [
+          "\\x1d\\x00Name\\x5fWeaponPistolSchofieldNet\\x0c\\x00Q\\x00u\\x00i\\x00c\\x00k\\x00s\\x00h\\x00o\\x00o\\x00t\\x00e\\x00r\\x00",
+          "\u001d\u0000Name_WeaponPistolSchofieldNet\u0011\u0000S\u0000c\u0000h\u0000o\u0000f\u0000i\u0000e\u0000l\u0000d\u0000 \u0000M\u0000o\u0000d\u0000e\u0000l\u0000 \u00003\u0000"
+        ],
+        [
+          "\\x1f\\x00Name\\x5fWeaponPistolSchofieldRusty\\x12\\x00R\\x00u\\x00s\\x00t\\x00y\\x00\\x20\\x00Q\\x00u\\x00i\\x00c\\x00k\\x00s\\x00h\\x00o\\x00o\\x00t\\x00e\\x00r\\x00",
+          "\u001f\u0000Name_WeaponPistolSchofieldRusty\u0017\u0000R\u0000u\u0000s\u0000t\u0000y\u0000 \u0000S\u0000c\u0000h\u0000o\u0000f\u0000i\u0000e\u0000l\u0000d\u0000 \u0000M\u0000o\u0000d\u0000e\u0000l\u0000 \u00003\u0000"
+        ],
+        [
+          "\\x19\\x00Name\\x5fWeaponPistolVolcanic\\x0b\\x00V\\x00o\\x00l\\x00c\\x00a\\x00n\\x00o\\x00\\x20\\x00G\\x00u\\x00n\\x00",
+          "\u0019\u0000Name_WeaponPistolVolcanic\u000f\u0000V\u0000o\u0000l\u0000c\u0000a\u0000n\u0000i\u0000c\u0000 \u0000P\u0000i\u0000s\u0000t\u0000o\u0000l\u0000"
+        ],
+        [
+          "\\x1e\\x00Name\\x5fWeaponPistolVolcanicAlpha\\x11\\x00P\\x00r\\x00i\\x00m\\x00e\\x00\\x20\\x00V\\x00o\\x00l\\x00c\\x00a\\x00n\\x00o\\x00\\x20\\x00G\\x00u\\x00n\\x00",
+          "\u001e\u0000Name_WeaponPistolVolcanicAlpha\u0015\u0000P\u0000r\u0000i\u0000m\u0000e\u0000 \u0000V\u0000o\u0000l\u0000c\u0000a\u0000n\u0000i\u0000c\u0000 \u0000P\u0000i\u0000s\u0000t\u0000o\u0000l\u0000"
+        ],
+        [
+          "\\x1d\\x00Name\\x5fWeaponPistolVolcanicBeta\\x12\\x00S\\x00u\\x00p\\x00e\\x00r\\x00b\\x00\\x20\\x00V\\x00o\\x00l\\x00c\\x00a\\x00n\\x00o\\x00\\x20\\x00G\\x00u\\x00n\\x00",
+          "\u001d\u0000Name_WeaponPistolVolcanicBeta\u0016\u0000S\u0000u\u0000p\u0000e\u0000r\u0000b\u0000 \u0000V\u0000o\u0000l\u0000c\u0000a\u0000n\u0000i\u0000c\u0000 \u0000P\u0000i\u0000s\u0000t\u0000o\u0000l\u0000"
+        ],
+        [
+          "\\x1c\\x00Name\\x5fWeaponPistolVolcanicNet\\x0b\\x00V\\x00o\\x00l\\x00c\\x00a\\x00n\\x00o\\x00\\x20\\x00G\\x00u\\x00n\\x00",
+          "\u001c\u0000Name_WeaponPistolVolcanicNet\u000f\u0000V\u0000o\u0000l\u0000c\u0000a\u0000n\u0000i\u0000c\u0000 \u0000P\u0000i\u0000s\u0000t\u0000o\u0000l\u0000"
+        ],
+        [
+          "\\x1e\\x00Name\\x5fWeaponPistolVolcanicRusty\\x11\\x00R\\x00u\\x00s\\x00t\\x00y\\x00\\x20\\x00V\\x00o\\x00l\\x00c\\x00a\\x00n\\x00o\\x00\\x20\\x00G\\x00u\\x00n\\x00",
+          "\u001e\u0000Name_WeaponPistolVolcanicRusty\u0015\u0000R\u0000u\u0000s\u0000t\u0000y\u0000 \u0000V\u0000o\u0000l\u0000c\u0000a\u0000n\u0000i\u0000c\u0000 \u0000P\u0000i\u0000s\u0000t\u0000o\u0000l\u0000"
+        ],
+        [
+          "\\x17\\x00Name\\x5fWeaponPistolWalker\\x06\\x00R\\x00a\\x00n\\x00g\\x00e\\x00r\\x00",
+          "\u0017\u0000Name_WeaponPistolWalker\u0011\u0000C\u0000o\u0000l\u0000t\u0000 \u00001\u00008\u00004\u00008\u0000 \u0000D\u0000r\u0000a\u0000g\u0000o\u0000o\u0000n\u0000"
+        ],
+        [
+          "\\x1c\\x00Name\\x5fWeaponPistolWalkerAlpha\\x0c\\x00P\\x00r\\x00i\\x00m\\x00e\\x00\\x20\\x00R\\x00a\\x00n\\x00g\\x00e\\x00r\\x00",
+          "\u001c\u0000Name_WeaponPistolWalkerAlpha\u0017\u0000P\u0000r\u0000i\u0000m\u0000e\u0000 \u0000C\u0000o\u0000l\u0000t\u0000 \u00001\u00008\u00004\u00008\u0000 \u0000D\u0000r\u0000a\u0000g\u0000o\u0000o\u0000n\u0000"
+        ],
+        [
+          "\\x1b\\x00Name\\x5fWeaponPistolWalkerBeta\\x0d\\x00S\\x00u\\x00p\\x00e\\x00r\\x00b\\x00\\x20\\x00R\\x00a\\x00n\\x00g\\x00e\\x00r\\x00",
+          "\u001b\u0000Name_WeaponPistolWalkerBeta\u0018\u0000S\u0000u\u0000p\u0000e\u0000r\u0000b\u0000 \u0000C\u0000o\u0000l\u0000t\u0000 \u00001\u00008\u00004\u00008\u0000 \u0000D\u0000r\u0000a\u0000g\u0000o\u0000o\u0000n\u0000"
+        ],
+        [
+          "\\x1a\\x00Name\\x5fWeaponPistolWalkerNet\\x06\\x00R\\x00a\\x00n\\x00g\\x00e\\x00r\\x00",
+          "\u001a\u0000Name_WeaponPistolWalkerNet\u0011\u0000C\u0000o\u0000l\u0000t\u0000 \u00001\u00008\u00004\u00008\u0000 \u0000D\u0000r\u0000a\u0000g\u0000o\u0000o\u0000n\u0000"
+        ],
+        [
+          "\\x1c\\x00Name\\x5fWeaponPistolWalkerRusty\\x0c\\x00R\\x00u\\x00s\\x00t\\x00y\\x00\\x20\\x00R\\x00a\\x00n\\x00g\\x00e\\x00r\\x00",
+          "\u001c\u0000Name_WeaponPistolWalkerRusty\u0017\u0000R\u0000u\u0000s\u0000t\u0000y\u0000 \u0000C\u0000o\u0000l\u0000t\u0000 \u00001\u00008\u00004\u00008\u0000 \u0000D\u0000r\u0000a\u0000g\u0000o\u0000o\u0000n\u0000"
+        ],
+        [
+          "\\x19\\x00Name\\x5fWeaponRifleRemington\\x07\\x00S\\x00h\\x00o\\x00t\\x00g\\x00u\\x00n\\x00",
+          "\u0019\u0000Name_WeaponRifleRemington\u0017\u0000D\u0000o\u0000u\u0000b\u0000l\u0000e\u0000 \u0000B\u0000a\u0000r\u0000r\u0000e\u0000l\u0000e\u0000d\u0000 \u0000S\u0000h\u0000o\u0000t\u0000g\u0000u\u0000n\u0000"
+        ],
+        [
+          "\\x1e\\x00Name\\x5fWeaponRifleRemingtonAlpha\\x0d\\x00P\\x00r\\x00i\\x00m\\x00e\\x00\\x20\\x00S\\x00h\\x00o\\x00t\\x00g\\x00u\\x00n\\x00",
+          "\u001e\u0000Name_WeaponRifleRemingtonAlpha\u001d\u0000P\u0000r\u0000i\u0000m\u0000e\u0000 \u0000D\u0000o\u0000u\u0000b\u0000l\u0000e\u0000 \u0000B\u0000a\u0000r\u0000r\u0000e\u0000l\u0000e\u0000d\u0000 \u0000S\u0000h\u0000o\u0000t\u0000g\u0000u\u0000n\u0000"
+        ],
+        [
+          "\\x1d\\x00Name\\x5fWeaponRifleRemingtonBeta\\x0e\\x00S\\x00u\\x00p\\x00e\\x00r\\x00b\\x00\\x20\\x00S\\x00h\\x00o\\x00t\\x00g\\x00u\\x00n\\x00",
+          "\u001d\u0000Name_WeaponRifleRemingtonBeta\u001e\u0000S\u0000u\u0000p\u0000e\u0000r\u0000b\u0000 \u0000D\u0000o\u0000u\u0000b\u0000l\u0000e\u0000 \u0000B\u0000a\u0000r\u0000r\u0000e\u0000l\u0000e\u0000d\u0000 \u0000S\u0000h\u0000o\u0000t\u0000g\u0000u\u0000n\u0000"
+        ],
+        [
+          "\\x1c\\x00Name\\x5fWeaponRifleRemingtonNet\\x07\\x00S\\x00h\\x00o\\x00t\\x00g\\x00u\\x00n\\x00",
+          "\u001c\u0000Name_WeaponRifleRemingtonNet\u0017\u0000D\u0000o\u0000u\u0000b\u0000l\u0000e\u0000 \u0000B\u0000a\u0000r\u0000r\u0000e\u0000l\u0000e\u0000d\u0000 \u0000S\u0000h\u0000o\u0000t\u0000g\u0000u\u0000n\u0000"
+        ],
+        [
+          "\\x1e\\x00Name\\x5fWeaponRifleRemingtonRusty\\x0d\\x00R\\x00u\\x00s\\x00t\\x00y\\x00\\x20\\x00S\\x00h\\x00o\\x00t\\x00g\\x00u\\x00n\\x00",
+          "\u001e\u0000Name_WeaponRifleRemingtonRusty\u001d\u0000R\u0000u\u0000s\u0000t\u0000y\u0000 \u0000D\u0000o\u0000u\u0000b\u0000l\u0000e\u0000 \u0000B\u0000a\u0000r\u0000r\u0000e\u0000l\u0000e\u0000d\u0000 \u0000S\u0000h\u0000o\u0000t\u0000g\u0000u\u0000n\u0000"
+        ],
+        [
+          "\\x1f\\x00Name\\x5fWeaponRifleRemingtonSawOff\\x09\\x00S\\x00a\\x00w\\x00e\\x00d\\x00\\x2d\\x00O\\x00f\\x00f\\x00",
+          "\u001f\u0000Name_WeaponRifleRemingtonSawOff\u0011\u0000S\u0000a\u0000w\u0000e\u0000d\u0000-\u0000O\u0000f\u0000f\u0000 \u0000S\u0000h\u0000o\u0000t\u0000g\u0000u\u0000n\u0000"
+        ],
+        [
+          "\\x24\\x00Name\\x5fWeaponRifleRemingtonSawOffAlpha\\x0f\\x00P\\x00r\\x00i\\x00m\\x00e\\x00\\x20\\x00S\\x00a\\x00w\\x00e\\x00d\\x00\\x2d\\x00O\\x00f\\x00f\\x00",
+          "$$\u0000Name_WeaponRifleRemingtonSawOffAlpha\u0017\u0000P\u0000r\u0000i\u0000m\u0000e\u0000 \u0000S\u0000a\u0000w\u0000e\u0000d\u0000-\u0000O\u0000f\u0000f\u0000 \u0000S\u0000h\u0000o\u0000t\u0000g\u0000u\u0000n\u0000"
+        ],
+        [
+          "\\x23\\x00Name\\x5fWeaponRifleRemingtonSawOffBeta\\x10\\x00S\\x00u\\x00p\\x00e\\x00r\\x00b\\x00\\x20\\x00S\\x00a\\x00w\\x00e\\x00d\\x00\\x2d\\x00O\\x00f\\x00f\\x00",
+          "#\u0000Name_WeaponRifleRemingtonSawOffBeta\u0018\u0000S\u0000u\u0000p\u0000e\u0000r\u0000b\u0000 \u0000S\u0000a\u0000w\u0000e\u0000d\u0000-\u0000O\u0000f\u0000f\u0000 \u0000S\u0000h\u0000o\u0000t\u0000g\u0000u\u0000n\u0000"
+        ],
+        [
+          "\\x22\\x00Name\\x5fWeaponRifleRemingtonSawOffNet\\x09\\x00S\\x00a\\x00w\\x00e\\x00d\\x00\\x2d\\x00O\\x00f\\x00f\\x00",
+          "\"\u0000Name_WeaponRifleRemingtonSawOffNet\u0011\u0000S\u0000a\u0000w\u0000e\u0000d\u0000-\u0000O\u0000f\u0000f\u0000 \u0000S\u0000h\u0000o\u0000t\u0000g\u0000u\u0000n\u0000"
+        ],
+        [
+          "\\x24\\x00Name\\x5fWeaponRifleRemingtonSawOffRusty\\x0f\\x00R\\x00u\\x00s\\x00t\\x00y\\x00\\x20\\x00S\\x00a\\x00w\\x00e\\x00d\\x00\\x2d\\x00O\\x00f\\x00f\\x00",
+          "$$\u0000Name_WeaponRifleRemingtonSawOffRusty\u0017\u0000R\u0000u\u0000s\u0000t\u0000y\u0000 \u0000S\u0000a\u0000w\u0000e\u0000d\u0000-\u0000O\u0000f\u0000f\u0000 \u0000S\u0000h\u0000o\u0000t\u0000g\u0000u\u0000n\u0000"
+        ],
+        [
+          "\\x16\\x00Name\\x5fWeaponRifleSharps\\x0b\\x00H\\x00e\\x00a\\x00v\\x00y\\x00\\x20\\x00R\\x00i\\x00f\\x00l\\x00e\\x00",
+          "\u0016\u0000Name_WeaponRifleSharps\u0011\u0000S\u0000h\u0000a\u0000r\u0000p\u0000s\u0000 \u0000L\u0000o\u0000n\u0000g\u0000 \u0000R\u0000i\u0000f\u0000l\u0000e\u0000"
+        ],
+        [
+          "\\x1b\\x00Name\\x5fWeaponRifleSharpsAlpha\\x11\\x00P\\x00r\\x00i\\x00m\\x00e\\x00\\x20\\x00H\\x00e\\x00a\\x00v\\x00y\\x00\\x20\\x00R\\x00i\\x00f\\x00l\\x00e\\x00",
+          "\u001b\u0000Name_WeaponRifleSharpsAlpha\u0017\u0000P\u0000r\u0000i\u0000m\u0000e\u0000 \u0000S\u0000h\u0000a\u0000r\u0000p\u0000s\u0000 \u0000L\u0000o\u0000n\u0000g\u0000 \u0000R\u0000i\u0000f\u0000l\u0000e\u0000"
+        ],
+        [
+          "\\x1a\\x00Name\\x5fWeaponRifleSharpsBeta\\x12\\x00S\\x00u\\x00p\\x00e\\x00r\\x00b\\x00\\x20\\x00H\\x00e\\x00a\\x00v\\x00y\\x00\\x20\\x00R\\x00i\\x00f\\x00l\\x00e\\x00",
+          "\u001a\u0000Name_WeaponRifleSharpsBeta\u0018\u0000S\u0000u\u0000p\u0000e\u0000r\u0000b\u0000 \u0000S\u0000h\u0000a\u0000r\u0000p\u0000s\u0000 \u0000L\u0000o\u0000n\u0000g\u0000 \u0000R\u0000i\u0000f\u0000l\u0000e\u0000"
+        ],
+        [
+          "\\x1b\\x00Name\\x5fWeaponRifleSharpsRusty\\x11\\x00R\\x00u\\x00s\\x00t\\x00y\\x00\\x20\\x00H\\x00e\\x00a\\x00v\\x00y\\x00\\x20\\x00R\\x00i\\x00f\\x00l\\x00e\\x00",
+          "\u001b\u0000Name_WeaponRifleSharpsRusty\u0017\u0000R\u0000u\u0000s\u0000t\u0000y\u0000 \u0000S\u0000h\u0000a\u0000r\u0000p\u0000s\u0000 \u0000L\u0000o\u0000n\u0000g\u0000 \u0000R\u0000i\u0000f\u0000l\u0000e\u0000"
+        ],
+        [
+          "\\x1b\\x00Name\\x5fWeaponRifleSharpsScope\\x0c\\x00H\\x00e\\x00a\\x00v\\x00y\\x00\\x20\\x00S\\x00c\\x00o\\x00p\\x00e\\x00d\\x00",
+          "\u001b\u0000Name_WeaponRifleSharpsScope\u0018\u0000S\u0000h\u0000a\u0000r\u0000p\u0000s\u0000 \u0000L\u0000o\u0000n\u0000g\u0000 \u0000R\u0000i\u0000f\u0000l\u0000e\u0000 \u0000S\u0000c\u0000o\u0000p\u0000e\u0000d\u0000"
+        ],
+        [
+          "\\x20\\x00Name\\x5fWeaponRifleSharpsScopeAlpha\\x12\\x00P\\x00r\\x00i\\x00m\\x00e\\x00\\x20\\x00H\\x00e\\x00a\\x00v\\x00y\\x00\\x20\\x00S\\x00c\\x00o\\x00p\\x00e\\x00d\\x00",
+          " \u0000Name_WeaponRifleSharpsScopeAlpha\u001e\u0000P\u0000r\u0000i\u0000m\u0000e\u0000 \u0000S\u0000h\u0000a\u0000r\u0000p\u0000s\u0000 \u0000L\u0000o\u0000n\u0000g\u0000 \u0000R\u0000i\u0000f\u0000l\u0000e\u0000 \u0000S\u0000c\u0000o\u0000p\u0000e\u0000d\u0000"
+        ],
+        [
+          "\\x1f\\x00Name\\x5fWeaponRifleSharpsScopeBeta\\x13\\x00S\\x00u\\x00p\\x00e\\x00r\\x00b\\x00\\x20\\x00H\\x00e\\x00a\\x00v\\x00y\\x00\\x20\\x00S\\x00c\\x00o\\x00p\\x00e\\x00d\\x00",
+          "\u001f\u0000Name_WeaponRifleSharpsScopeBeta\u001f\u0000S\u0000u\u0000p\u0000e\u0000r\u0000b\u0000 \u0000S\u0000h\u0000a\u0000r\u0000p\u0000s\u0000 \u0000L\u0000o\u0000n\u0000g\u0000 \u0000R\u0000i\u0000f\u0000l\u0000e\u0000 \u0000S\u0000c\u0000o\u0000p\u0000e\u0000d\u0000"
+        ],
+        [
+          "\\x20\\x00Name\\x5fWeaponRifleSharpsScopeRusty\\x12\\x00R\\x00u\\x00s\\x00t\\x00y\\x00\\x20\\x00H\\x00e\\x00a\\x00v\\x00y\\x00\\x20\\x00S\\x00c\\x00o\\x00p\\x00e\\x00d\\x00",
+          " \u0000Name_WeaponRifleSharpsScopeRusty\u001e\u0000R\u0000u\u0000s\u0000t\u0000y\u0000 \u0000S\u0000h\u0000a\u0000r\u0000p\u0000s\u0000 \u0000L\u0000o\u0000n\u0000g\u0000 \u0000R\u0000i\u0000f\u0000l\u0000e\u0000 \u0000S\u0000c\u0000o\u0000p\u0000e\u0000d\u0000"
+        ],
+        [
+          "\\x1a\\x00Name\\x5fWeaponRifleWinchester\\x0d\\x00C\\x00l\\x00a\\x00s\\x00s\\x00i\\x00c\\x00\\x20\\x00R\\x00i\\x00f\\x00l\\x00e\\x00",
+          "\u001a\u0000Name_WeaponRifleWinchester\u000f\u0000W\u0000i\u0000n\u0000c\u0000h\u0000e\u0000s\u0000t\u0000e\u0000r\u0000 \u00001\u00008\u00007\u00003\u0000"
+        ],
+        [
+          "\\x1f\\x00Name\\x5fWeaponRifleWinchesterAlpha\\x13\\x00P\\x00r\\x00i\\x00m\\x00e\\x00\\x20\\x00C\\x00l\\x00a\\x00s\\x00s\\x00i\\x00c\\x00\\x20\\x00R\\x00i\\x00f\\x00l\\x00e\\x00",
+          "\u001f\u0000Name_WeaponRifleWinchesterAlpha\u0015\u0000P\u0000r\u0000i\u0000m\u0000e\u0000 \u0000W\u0000i\u0000n\u0000c\u0000h\u0000e\u0000s\u0000t\u0000e\u0000r\u0000 \u00001\u00008\u00007\u00003\u0000"
+        ],
+        [
+          "\\x1e\\x00Name\\x5fWeaponRifleWinchesterBeta\\x14\\x00S\\x00u\\x00p\\x00e\\x00r\\x00b\\x00\\x20\\x00C\\x00l\\x00a\\x00s\\x00s\\x00i\\x00c\\x00\\x20\\x00R\\x00i\\x00f\\x00l\\x00e\\x00",
+          "\u001e\u0000Name_WeaponRifleWinchesterBeta\u0016\u0000S\u0000u\u0000p\u0000e\u0000r\u0000b\u0000 \u0000W\u0000i\u0000n\u0000c\u0000h\u0000e\u0000s\u0000t\u0000e\u0000r\u0000 \u00001\u00008\u00007\u00003\u0000"
+        ],
+        [
+          "\\x20\\x00Name\\x5fWeaponRifleWinchesterIndian\\x13\\x00R\\x00u\\x00s\\x00t\\x00y\\x00\\x20\\x00C\\x00l\\x00a\\x00s\\x00s\\x00i\\x00c\\x00\\x20\\x00R\\x00i\\x00f\\x00l\\x00e\\x00",
+          " \u0000Name_WeaponRifleWinchesterIndian\u0015\u0000R\u0000u\u0000s\u0000t\u0000y\u0000 \u0000W\u0000i\u0000n\u0000c\u0000h\u0000e\u0000s\u0000t\u0000e\u0000r\u0000 \u00001\u00008\u00007\u00003\u0000"
+        ],
+        [
+          "\\x1d\\x00Name\\x5fWeaponRifleWinchesterNet\\x0d\\x00C\\x00l\\x00a\\x00s\\x00s\\x00i\\x00c\\x00\\x20\\x00R\\x00i\\x00f\\x00l\\x00e\\x00",
+          "\u001d\u0000Name_WeaponRifleWinchesterNet\u000f\u0000W\u0000i\u0000n\u0000c\u0000h\u0000e\u0000s\u0000t\u0000e\u0000r\u0000 \u00001\u00008\u00007\u00003\u0000"
+        ],
+        [
+          "\\x1f\\x00Name\\x5fWeaponRifleWinchesterRusty\\x13\\x00R\\x00u\\x00s\\x00t\\x00y\\x00\\x20\\x00C\\x00l\\x00a\\x00s\\x00s\\x00i\\x00c\\x00\\x20\\x00R\\x00i\\x00f\\x00l\\x00e\\x00",
+          "\u001f\u0000Name_WeaponRifleWinchesterRusty\u0015\u0000R\u0000u\u0000s\u0000t\u0000y\u0000 \u0000W\u0000i\u0000n\u0000c\u0000h\u0000e\u0000s\u0000t\u0000e\u0000r\u0000 \u00001\u00008\u00007\u00003\u0000"
+        ],
+        [
+          "\\x1f\\x00Name\\x5fWeaponRifleWinchesterScope\\x0e\\x00C\\x00l\\x00a\\x00s\\x00s\\x00i\\x00c\\x00\\x20\\x00S\\x00c\\x00o\\x00p\\x00e\\x00d\\x00",
+          "\u001f\u0000Name_WeaponRifleWinchesterScope\u0016\u0000W\u0000i\u0000n\u0000c\u0000h\u0000e\u0000s\u0000t\u0000e\u0000r\u0000 \u00001\u00008\u00007\u00003\u0000 \u0000S\u0000c\u0000o\u0000p\u0000e\u0000d\u0000"
+        ],
+        [
+          "\\x24\\x00Name\\x5fWeaponRifleWinchesterScopeAlpha\\x14\\x00P\\x00r\\x00i\\x00m\\x00e\\x00\\x20\\x00C\\x00l\\x00a\\x00s\\x00s\\x00i\\x00c\\x00\\x20\\x00S\\x00c\\x00o\\x00p\\x00e\\x00d\\x00",
+          "$$\u0000Name_WeaponRifleWinchesterScopeAlpha\u001c\u0000P\u0000r\u0000i\u0000m\u0000e\u0000 \u0000W\u0000i\u0000n\u0000c\u0000h\u0000e\u0000s\u0000t\u0000e\u0000r\u0000 \u00001\u00008\u00007\u00003\u0000 \u0000S\u0000c\u0000o\u0000p\u0000e\u0000d\u0000"
+        ],
+        [
+          "\\x23\\x00Name\\x5fWeaponRifleWinchesterScopeBeta\\x15\\x00S\\x00u\\x00p\\x00e\\x00r\\x00b\\x00\\x20\\x00C\\x00l\\x00a\\x00s\\x00s\\x00i\\x00c\\x00\\x20\\x00S\\x00c\\x00o\\x00p\\x00e\\x00d\\x00",
+          "#\u0000Name_WeaponRifleWinchesterScopeBeta\u001d\u0000S\u0000u\u0000p\u0000e\u0000r\u0000b\u0000 \u0000W\u0000i\u0000n\u0000c\u0000h\u0000e\u0000s\u0000t\u0000e\u0000r\u0000 \u00001\u00008\u00007\u00003\u0000 \u0000S\u0000c\u0000o\u0000p\u0000e\u0000d\u0000"
+        ],
+        [
+          "\\x22\\x00Name\\x5fWeaponRifleWinchesterScopeNet\\x0e\\x00C\\x00l\\x00a\\x00s\\x00s\\x00i\\x00c\\x00\\x20\\x00S\\x00c\\x00o\\x00p\\x00e\\x00d\\x00",
+          "\"\u0000Name_WeaponRifleWinchesterScopeNet\u0016\u0000W\u0000i\u0000n\u0000c\u0000h\u0000e\u0000s\u0000t\u0000e\u0000r\u0000 \u00001\u00008\u00007\u00003\u0000 \u0000S\u0000c\u0000o\u0000p\u0000e\u0000d\u0000"
+        ],
+        [
+          "\\x24\\x00Name\\x5fWeaponRifleWinchesterScopeRusty\\x14\\x00R\\x00u\\x00s\\x00t\\x00y\\x00\\x20\\x00C\\x00l\\x00a\\x00s\\x00s\\x00i\\x00c\\x00\\x20\\x00S\\x00c\\x00o\\x00p\\x00e\\x00d\\x00",
+          "$$\u0000Name_WeaponRifleWinchesterScopeRusty\u001c\u0000R\u0000u\u0000s\u0000t\u0000y\u0000 \u0000W\u0000i\u0000n\u0000c\u0000h\u0000e\u0000s\u0000t\u0000e\u0000r\u0000 \u00001\u00008\u00007\u00003\u0000 \u0000S\u0000c\u0000o\u0000p\u0000e\u0000d\u0000"
+        ],
+        [
           "\\A\\x01\\x00\\x00\\x00\\x87\\x20\\x00\\x00",
           "\u0001\u0000\u0000\u0000 \u0000\u0000"
         ],
         [
           "\\z",
-          " \u0000Name_WeaponPistolFrontierUpgrade\u0012\u0000S\u0000p\u0000r\u0000i\u0000n\u0000g\u0000f\u0000i\u0000e\u0000l\u0000d\u0000 \u0000M\u0000u\u0000s\u0000k\u0000e\u0000t\u0000#\u0000Name_WeaponPistolFrontierUpgradeNet\u0012\u0000S\u0000p\u0000r\u0000i\u0000n\u0000g\u0000f\u0000i\u0000e\u0000l\u0000d\u0000 \u0000M\u0000u\u0000s\u0000k\u0000e\u0000t\u0000\u001d\u0000N_WeaponPistolFrontierUpgrade\u0012\u0000S\u0000p\u0000r\u0000i\u0000n\u0000g\u0000f\u0000i\u0000e\u0000l\u0000d\u0000 \u0000M\u0000u\u0000s\u0000k\u0000e\u0000t\u0000\u0017\u0000MenuDerringerUpgradeNet\u000f\u0000T\u0000h\u0000r\u0000o\u0000w\u0000i\u0000n\u0000g\u0000 \u0000K\u0000n\u0000i\u0000v\u0000e\u0000s\u0000$\u0000Name_WeaponPistolDerringerUpgradeNet\u000e\u0000T\u0000h\u0000r\u0000o\u0000w\u0000i\u0000n\u0000g\u0000 \u0000K\u0000n\u0000i\u0000f\u0000e\u0000!\u0000Name_WeaponPistolDerringerUpgrade\u000e\u0000T\u0000h\u0000r\u0000o\u0000w\u0000i\u0000n\u0000g\u0000 \u0000K\u0000n\u0000i\u0000f\u0000e\u0000\u001e\u0000N_WeaponPistolDerringerUpgrade\u000e\u0000T\u0000h\u0000r\u0000o\u0000w\u0000i\u0000n\u0000g\u0000 \u0000K\u0000n\u0000i\u0000f\u0000e\u0000\u0014\u0000MenuLemantUpgradeNet\b\u0000T\u0000o\u0000m\u0000a\u0000h\u0000a\u0000w\u0000k\u0000!\u0000Name_WeaponPistolLemantUpgradeNet\b\u0000T\u0000o\u0000m\u0000a\u0000h\u0000a\u0000w\u0000k\u0000\u001e\u0000Name_WeaponPistolLemantUpgrade\b\u0000T\u0000o\u0000m\u0000a\u0000h\u0000a\u0000w\u0000k\u0000\u001b\u0000N_WeaponPistolLemantUpgrade\b\u0000T\u0000o\u0000m\u0000a\u0000h\u0000a\u0000w\u0000k\u0000\u0011\u0000IrnEditionVersion\u0015\u0000I\u0000r\u0000a\u0000n\u0000C\u0000o\u0000J\u0000 \u0000E\u0000d\u0000i\u0000t\u0000i\u0000o\u0000n\u0000 \u00001\u0000.\u00003\u0000.\u00000\u0000"
+          " \u0000Name_WeaponPistolFrontierUpgrade\u0012\u0000S\u0000p\u0000r\u0000i\u0000n\u0000g\u0000f\u0000i\u0000e\u0000l\u0000d\u0000 \u0000M\u0000u\u0000s\u0000k\u0000e\u0000t\u0000#\u0000Name_WeaponPistolFrontierUpgradeNet\u0012\u0000S\u0000p\u0000r\u0000i\u0000n\u0000g\u0000f\u0000i\u0000e\u0000l\u0000d\u0000 \u0000M\u0000u\u0000s\u0000k\u0000e\u0000t\u0000\u001d\u0000N_WeaponPistolFrontierUpgrade\u0012\u0000S\u0000p\u0000r\u0000i\u0000n\u0000g\u0000f\u0000i\u0000e\u0000l\u0000d\u0000 \u0000M\u0000u\u0000s\u0000k\u0000e\u0000t\u0000\u0017\u0000MenuDerringerUpgradeNet\u000f\u0000T\u0000h\u0000r\u0000o\u0000w\u0000i\u0000n\u0000g\u0000 \u0000K\u0000n\u0000i\u0000v\u0000e\u0000s\u0000$\u0000Name_WeaponPistolDerringerUpgradeNet\u000e\u0000T\u0000h\u0000r\u0000o\u0000w\u0000i\u0000n\u0000g\u0000 \u0000K\u0000n\u0000i\u0000f\u0000e\u0000!\u0000Name_WeaponPistolDerringerUpgrade\u000e\u0000T\u0000h\u0000r\u0000o\u0000w\u0000i\u0000n\u0000g\u0000 \u0000K\u0000n\u0000i\u0000f\u0000e\u0000\u001e\u0000N_WeaponPistolDerringerUpgrade\u000e\u0000T\u0000h\u0000r\u0000o\u0000w\u0000i\u0000n\u0000g\u0000 \u0000K\u0000n\u0000i\u0000f\u0000e\u0000\u0014\u0000MenuLemantUpgradeNet\b\u0000T\u0000o\u0000m\u0000a\u0000h\u0000a\u0000w\u0000k\u0000!\u0000Name_WeaponPistolLemantUpgradeNet\b\u0000T\u0000o\u0000m\u0000a\u0000h\u0000a\u0000w\u0000k\u0000\u001e\u0000Name_WeaponPistolLemantUpgrade\b\u0000T\u0000o\u0000m\u0000a\u0000h\u0000a\u0000w\u0000k\u0000\u001b\u0000N_WeaponPistolLemantUpgrade\b\u0000T\u0000o\u0000m\u0000a\u0000h\u0000a\u0000w\u0000k\u0000\u0011\u0000IrnEditionVersion\u0015\u0000I\u0000r\u0000a\u0000n\u0000C\u0000o\u0000J\u0000 \u0000E\u0000d\u0000i\u0000t\u0000i\u0000o\u0000n\u0000 \u00001\u0000.\u00003\u0000.\u00001\u0000"
         ]
       ]
     },
