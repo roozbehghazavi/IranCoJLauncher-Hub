@@ -1,5 +1,14 @@
 [
   {
+    "id": "weapon-finish",
+    "tag": "IRANCOJ LAUNCHER",
+    "title": "Pick your gun finish",
+    "text": "Settings > In game > Multiplayer weapons: choose plain, Prime (silver) or Superb (gold) weapons for each profile. Going back from Superb now works too: the game no longer switches it back on from your wallet. Needs IranCoJ Graphics 1.9.1.",
+    "date": "2026-11-15",
+    "action": "settings",
+    "actionLabel": "Settings"
+  },
+  {
     "id": "edition-131",
     "tag": "IRANCOJ EDITION 1.3.1",
     "title": "Guns by their real names",

@@ -1,4 +1,4 @@
-IranCoJ Graphics 1.9.0 - the Edition's remastered graphics, by Thomas (Roozbeh).
+IranCoJ Graphics 1.9.1 - the Edition's remastered graphics, by Thomas (Roozbeh).
 
 Everything is set in the IranCoJ Launcher: Settings > Graphics & Sound > Remastered or Vanilla, and each feature on
 its own in the Remastered group. The launcher writes irancojfx.ini and edited copies of the game's own pipeline
@@ -90,3 +90,8 @@ wounded player falls dead, a pool spreads under the body. Hits now throw real st
 the exit side and a little back-spatter (until now those were drawn with a material the engine cannot stretch along
 a flight, and never showed). The shotgun's muzzle flash is smaller. The wounds, heartbeat, headshots and pools are
 driven by irancojfx.dll (no game effect exists for them; [gore] enabled=0 in irancojfx.ini turns them off).
+
+1.9.1: the multiplayer weapon finish you pick in the launcher (Settings > In game > Multiplayer weapons: plain,
+Prime or Superb, per profile) now stays. The game turns Prime and Superb on by itself from your wallet (200,000 and
+1,000,000) every time it saves, and never off; with a finish picked ([weapons] finish_lock=1 in irancojfx.ini)
+irancojfx.dll skips those automatic unlocks, so going back from Superb to Prime or plain works.
