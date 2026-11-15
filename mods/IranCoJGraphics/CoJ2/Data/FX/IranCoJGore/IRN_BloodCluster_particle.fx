@@ -26,9 +26,7 @@ ParticleDef()
 
 	Size()
 	{
-		keyf(0, 26)
-		keyf(0.4, 32)
-		keyf(1.8, 55)
+		randf(0, 20, 30)
 	}
 
 	Rotation()

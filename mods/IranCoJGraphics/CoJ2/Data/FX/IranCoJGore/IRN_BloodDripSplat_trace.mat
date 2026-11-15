@@ -1,0 +1,7 @@
+import "trace.mtt"
+
+// IranCoJ Gore: drops of blood fallen to the ground (wet beads)
+sub material()
+{
+    use mtt(s_clr = "IRN_BloodDripSplat.dds");
+}

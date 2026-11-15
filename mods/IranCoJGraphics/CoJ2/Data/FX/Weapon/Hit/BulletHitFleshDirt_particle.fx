@@ -26,16 +26,18 @@ ParticleDef()
 
 	Size()
 	{
-		randf(0, 9, 15)
+		randf(0, 12, 18)
 	}
 
-	Rotation()
+	Align("always")
+
+	AspectRatio()
 	{
-		randf(0, 0, 360)
+		randf(0, 0.25, 0.35)
 	}
 
-	Material("IRN_BloodDrop_particleBLEND.mat", "IRN_BloodDrop_particleBLEND.mat")
+	Material("IRN_BloodLine_particleBLEND.mat", "IRN_BloodLine_particleBLEND.mat")
 
-	TexMultiRect(2, 2, 4)
+	TexMultiRect(4, 1, 4)
 	TexPlayMode("random_once", 1)
 }

@@ -9,7 +9,7 @@ EmiterDef()
 
 	NumParticles()
 	{
-		randf(0, 12, 18)
+		randf(0, 8, 12)
 	}
 
 	StartVelocity()

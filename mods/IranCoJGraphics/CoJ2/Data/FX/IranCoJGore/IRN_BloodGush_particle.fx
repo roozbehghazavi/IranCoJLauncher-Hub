@@ -26,12 +26,17 @@ ParticleDef()
 
 	Size()
 	{
-		keyf(0, 50)
-		keyf(0.2, 58)
-		keyf(2.5, 165)
+		keyf(0, 18)
+		keyf(0.2, 24)
+		keyf(2.2, 40)
 	}
 
-	Trail()
+	Align("always")
+
+	AspectRatio()
+	{
+		randf(0, 0.25, 0.35)
+	}
 
 	Material("IRN_BloodGush_particleBLEND.mat", "IRN_BloodGush_particleBLEND.mat")
 

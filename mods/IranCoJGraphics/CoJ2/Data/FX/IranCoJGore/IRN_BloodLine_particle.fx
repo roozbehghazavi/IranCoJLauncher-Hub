@@ -26,10 +26,15 @@ ParticleDef()
 
 	Size()
 	{
-		randf(0, 45, 70)
+		randf(0, 22, 35)
 	}
 
-	Trail()
+	Align("always")
+
+	AspectRatio()
+	{
+		randf(0, 0.25, 0.35)
+	}
 
 	Material("IRN_BloodLine_particleBLEND.mat", "IRN_BloodLine_particleBLEND.mat")
 

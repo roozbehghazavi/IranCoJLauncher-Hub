@@ -77,7 +77,7 @@ CLASSES = {
     'derringer': dict(flash=(10, 22), puffs=3, speed=650, size=(8, 22, 55), life=0.8, embers=5),
     'pistol':    dict(flash=(14, 30), puffs=5, speed=800, size=(10, 28, 70), life=0.9, embers=8),
     'rifle':     dict(flash=(20, 40), puffs=6, speed=950, size=(12, 34, 85), life=1.0, embers=10),
-    'shotgun':   dict(flash=(30, 60), puffs=8, speed=1000, size=(16, 45, 105), life=1.2, embers=16),
+    'shotgun':   dict(flash=(16, 32), puffs=8, speed=1000, size=(16, 45, 105), life=1.2, embers=8),
     'gatling':   dict(flash=(16, 30), puffs=2, speed=600, size=(10, 26, 55), life=0.8, embers=3),   # fires fast
 }
 # the game's fire sequences (FXFireName) by gun class

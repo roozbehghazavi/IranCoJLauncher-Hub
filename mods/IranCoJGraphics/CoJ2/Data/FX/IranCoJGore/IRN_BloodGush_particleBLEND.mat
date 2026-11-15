@@ -1,10 +1,11 @@
 import "fx.mtt"
 
-// IranCoJ Gore: a stream of blood (the texture's top is its flight)
+// IranCoJ Gore: a stream of blood (drawn along its flight)
 sub material()
 {
     use mtt_fx(
         e_blend_mode = e_bm_lerp,
+        e_type = e_type_fx_ws,
         s_clr = "IRN_BloodGush.dds"
     );
 }

@@ -1,5 +1,14 @@
 [
   {
+    "id": "graphics-190",
+    "tag": "IRANCOJ GRAPHICS 1.9.0",
+    "title": "Blood that bleeds",
+    "text": "Wounds now bleed from where the bullet went in: a fresh wound pulses with the heartbeat, then drips, leaving a trail of wet drops as the wounded man runs. Headshots throw a heavier spray, and a pool spreads under the dead. Hits throw real streams of blood, and the shotgun's muzzle flash is smaller.",
+    "date": "2026-11-15",
+    "action": "mods",
+    "actionLabel": "Mods"
+  },
+  {
     "id": "graphics-180",
     "tag": "IRANCOJ GRAPHICS 1.8.0",
     "title": "Black powder and flying dirt",

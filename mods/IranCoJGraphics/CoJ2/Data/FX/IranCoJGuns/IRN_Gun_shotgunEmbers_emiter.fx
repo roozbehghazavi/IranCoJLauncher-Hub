@@ -11,7 +11,7 @@ EmiterDef()
 
 	NumParticles()
 	{
-		keyf(0, 16)
+		keyf(0, 8)
 	}
 
 	StartVelocity()

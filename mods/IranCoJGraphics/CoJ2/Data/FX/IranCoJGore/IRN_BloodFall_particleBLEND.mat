@@ -1,0 +1,10 @@
+import "fx.mtt"
+
+// IranCoJ Gore: a falling drop (its head and the blur of its fall)
+sub material()
+{
+    use mtt_fx(
+        e_blend_mode = e_bm_lerp,
+        s_clr = "IRN_BloodFall.dds"
+    );
+}

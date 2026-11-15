@@ -1,0 +1,7 @@
+import "trace.mtt"
+
+// IranCoJ Gore: pools of blood under bodies
+sub material()
+{
+    use mtt(s_clr = "IRN_BloodPool.dds");
+}

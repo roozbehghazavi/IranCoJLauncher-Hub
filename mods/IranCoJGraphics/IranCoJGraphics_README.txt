@@ -1,4 +1,4 @@
-IranCoJ Graphics 1.8.0 - the Edition's remastered graphics, by Thomas (Roozbeh).
+IranCoJ Graphics 1.9.0 - the Edition's remastered graphics, by Thomas (Roozbeh).
 
 Everything is set in the IranCoJ Launcher: Settings > Graphics & Sound > Remastered or Vanilla, and each feature on
 its own in the Remastered group. The launcher writes irancojfx.ini and edited copies of the game's own pipeline
@@ -82,3 +82,11 @@ Bullets hitting dirt, sand, wood, stone and metal kick up dust in the surface's 
 chips, and spark off stone and metal; shotgun hits are heavier, and a close shotgun blast throws a wide spray of
 blood. The game's older per-gun barrel effects are silenced so nothing vanilla plays alongside. Built by the hub's
 tools/gun_fx.py, tools/impact_fx.py and tools/fx_textures.py.
+
+1.9.0: blood that behaves like a liquid. A wounded player (or horse) bleeds from where he was hit: a fresh wound
+pulses with his heartbeat - a thin jet on every beat, weaker beat by beat - then settles into dripping, falling drops
+landing as small wet beads, a trail as he moves; more hits, more blood. A headshot throws a heavier spray. When a
+wounded player falls dead, a pool spreads under the body. Hits now throw real streams and streaks of blood out of
+the exit side and a little back-spatter (until now those were drawn with a material the engine cannot stretch along
+a flight, and never showed). The shotgun's muzzle flash is smaller. The wounds, heartbeat, headshots and pools are
+driven by irancojfx.dll (no game effect exists for them; [gore] enabled=0 in irancojfx.ini turns them off).

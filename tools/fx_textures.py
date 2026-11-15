@@ -10,6 +10,9 @@
   IRN_MuzzleFlash.dds 2x2 atlas of muzzle flashes (additive)
   IRN_Debris*.dds     2x2 atlases of bullet debris: dirt clods, wood splinters, stone chips
   IRN_SmokeAnim.dds   4x4 flipbook: a black-powder puff billowing out and fraying (played over a particle's life)
+  IRN_BloodPool.dds   2x2 atlas of smooth pools with runs at the edge (decals under bodies)
+  IRN_BloodDripSplat.dds 2x2 atlas of fallen drops: wet beads with a crown and satellites (decals)
+  IRN_BloodFall.dds   4x1 strip of falling drops: a round head and the fading blur of its fall
 
 usage: python tools/fx_textures.py <output folder>      (needs numpy, Pillow and NVIDIA Texture Tools' nvtt_export)
 """
@@ -287,6 +290,88 @@ def debris(n, kind):
     return np.dstack([np.clip(rgb, 0, 1), mask])
 
 
+def pool(n):
+    """A pool of blood on the ground: a smooth, thick, irregular blob with a few runs flowing out at its edge (a decal,
+    laid many times over each other under a body - each one a piece of the spreading pool)."""
+    x, y = grid(n)
+    r = np.sqrt(x * x + y * y)
+    a = np.arctan2(y, x)
+    edge = (0.5 + 0.09 * np.sin(a * 3 + rng.uniform(0, 6.3)) + 0.05 * np.sin(a * 5 + rng.uniform(0, 6.3)) +
+            (noise(n, 6, 3) - 0.5) * 0.16)
+    field = edge - r
+    for _ in range(int(rng.integers(3, 6))):   # runs along the ground
+        ang = rng.uniform(0, 2 * np.pi)
+        d = rng.uniform(0.42, 0.6)
+        field = np.maximum(field, ellipse(x, y, np.cos(ang) * d, np.sin(ang) * d, rng.uniform(0.08, 0.16),
+                                          rng.uniform(0.05, 0.09), ang) * 0.12)
+    field = np.where(r > 0.97, -1.0, field)
+    mask = np.clip(field * 40.0 + 0.5, 0, 1)
+    thick = np.clip(blur(mask, n // 24) * 1.3 - 0.2, 0, 1) ** 1.5
+    rgb = THIN[None, None, :] * (1 - thick[..., None]) + THICK[None, None, :] * 0.75 * thick[..., None]
+    rgb *= (0.9 + 0.2 * noise(n, 20, 3))[..., None]
+    return np.dstack([wet(rgb, mask, n // 28, 0.5), mask])
+
+
+def wet(rgb, mask, r, gloss):
+    """Liquid on a surface: the edge of the film rises like a meniscus (shaded from the top left, a dark rim on the far
+    side) and catches a sharp highlight - painted in, as the decal material has no specular of its own."""
+    h = blur(mask, max(1, r))
+    gy, gx = np.gradient(h)
+    lit = (gx + gy) * mask.shape[0] / (r * 2.0 + 1)           # the rim facing the light (top left)
+    shade = np.clip(1.0 + lit * 0.6, 0.55, 1.25)
+    spec = np.clip(lit - 0.5, 0, None) ** 2 * gloss * mask
+    out = rgb * shade[..., None] + np.array([0.8, 0.62, 0.6])[None, None, :] * spec[..., None]
+    return np.clip(out, 0, 1)
+
+
+def drip_splat(n):
+    """Drops of blood fallen to the ground: a round bead with a scalloped crown edge, satellite droplets thrown out by
+    the impact and sometimes a short tail (a drop that fell from someone moving). Small decals - a trail of these."""
+    x, y = grid(n)
+    a = np.arctan2(y, x)
+    r = np.sqrt(x * x + y * y)
+    rad = rng.uniform(0.26, 0.36)
+    crown = 0.012 * np.sin(a * int(rng.integers(7, 12)) + rng.uniform(0, 6.3)) + (noise(n, 6, 2) - 0.5) * 0.06
+    field = rad + crown - r
+    tail = rng.uniform(0, 2 * np.pi)
+    if rng.random() < 0.6:   # moving: the drop smears a little along its way, a droplet ahead of it
+        field = np.maximum(field, ellipse(x, y, np.cos(tail) * rad * 0.9, np.sin(tail) * rad * 0.9, rad * 0.9,
+                                          rad * 0.35, tail) * 0.25)
+        field = np.maximum(field, ellipse(x, y, np.cos(tail) * rad * 2.1, np.sin(tail) * rad * 2.1, 0.06, 0.05, 0) * 0.1)
+    for _ in range(int(rng.integers(4, 10))):   # satellites
+        ang = rng.uniform(0, 2 * np.pi)
+        d = rad + rng.uniform(0.08, 0.45)
+        s = rng.uniform(0.015, 0.045) * (1.2 - d)
+        field = np.maximum(field, ellipse(x, y, np.cos(ang) * d, np.sin(ang) * d, s * 1.4, s, ang) * 0.06)
+    field = np.where(r > 0.97, -1.0, field)
+    mask = np.clip(field * 60.0 + 0.5, 0, 1)
+    thick = np.clip(blur(mask, n // 20) * 1.4 - 0.25, 0, 1)
+    rgb = THIN[None, None, :] * 0.8 * (1 - thick[..., None]) + THICK[None, None, :] * thick[..., None]
+    return np.dstack([wet(rgb, mask, n // 32, 0.9), mask])
+
+
+def falling_drop(w, h):
+    """A drop of blood falling, as the eye sees it: a small round head at the bottom with a highlight, and the blur of
+    its fall above it - a tail thinning and fading upwards (the cell is tall; the particle draws it upright)."""
+    y, x = np.mgrid[0:h, 0:w].astype(np.float32)
+    u = (x + 0.5) / w * 2 - 1                     # across: -1..1 (w pixels)
+    v = (y + 0.5) / h * 2 - 1                     # down: -1 (top) .. 1 (bottom)
+    k = h / w                                     # one unit of u in units of v
+    hv = rng.uniform(0.6, 0.72)                   # the head's centre
+    hr = rng.uniform(0.5, 0.65)                   # its radius, in u
+    du, dv = u / hr, (v - hv) * k / hr
+    head = np.clip((1 - np.sqrt(du * du + dv * dv)) * 6, 0, 1)
+    top = rng.uniform(-0.95, -0.6)                # where the blur of the fall starts
+    t = np.clip((v - top) / (hv - top), 0, 1)     # 0 at the tail's tip .. 1 at the head
+    width = hr * (0.15 + 0.75 * t ** 1.5)
+    tail = np.clip((width - np.abs(u)) / width * 3, 0, 1) * (t ** 1.3) * 0.75 * (v < hv)
+    a = np.clip(np.maximum(head, tail), 0, 1)
+    rgb = AIR[None, None, :] * 0.9 * np.ones((h, w, 1))
+    hl = np.clip(1 - np.sqrt(((u + hr * 0.35) / (hr * 0.3)) ** 2 + ((v - hv + 0.3 * hr / k) * k / (hr * 0.3)) ** 2), 0, 1) * head
+    rgb = rgb * (1 - hl[..., None] * 0.6) + np.array([0.75, 0.55, 0.52])[None, None, :] * hl[..., None] * 0.6
+    return np.dstack([np.clip(rgb, 0, 1), a])
+
+
 def atlas(cells):
     top = np.hstack(cells[:2])
     bottom = np.hstack(cells[2:])
@@ -313,6 +398,10 @@ def main():
         'IRN_DebrisDirt': atlas([debris(256, 'dirt') for _ in range(4)]),
         'IRN_DebrisWood': atlas([debris(256, 'wood') for _ in range(4)]),
         'IRN_DebrisStone': atlas([debris(256, 'stone') for _ in range(4)]),
+        # new ones go last: the ones above keep their random draws
+        'IRN_BloodPool': atlas([pool(256) for _ in range(4)]),
+        'IRN_BloodDripSplat': atlas([drip_splat(128) for _ in range(4)]),
+        'IRN_BloodFall': strip([falling_drop(64, 256) for _ in range(4)]),
     }
     for name, arr in textures.items():
         png = os.path.join(out, name + '.png')

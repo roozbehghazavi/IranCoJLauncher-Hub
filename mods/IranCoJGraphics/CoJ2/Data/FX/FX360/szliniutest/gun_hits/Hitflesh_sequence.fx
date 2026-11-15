@@ -18,7 +18,14 @@ SequenceDef()
 
 	Spawn()
 	{
-		ParticleEmiter("IRN_BloodBurst_emiter.fx", "IRN_BloodBurst_particle.fx")    // IranCoJ Gore: the radial burst
+		ParticleEmiter("IRN_BloodSpray_emiter.fx", "IRN_BloodSpray_particle.fx")    // IranCoJ Gore: a spray of streaks out of the exit
+	}
+
+	Delay(0)
+
+	Spawn()
+	{
+		ParticleEmiter("IRN_BloodBack_emiter.fx", "IRN_BloodBack_particle.fx")    // IranCoJ Gore: back-spatter towards the shooter
 	}
 
 	Delay(0)
