@@ -57,6 +57,7 @@ button, the same way on Windows and Linux, and keeps a backup of every game file
 | `loadDll` | Lines the launcher adds to `mods.txt` (and removes on uninstall). |
 | `shared` | Files several mods ship (e.g. `dinput8.dll`): kept until the last mod using them is uninstalled. |
 | `disable` | Game files renamed to `.disabled` while the mod is installed. |
+| `rewrite` | Launcher 3.0.0-beta.21+: the mod's own text edits to files it doesn't ship (the Edition's `CoJ2/Data/COJ2 Voices&Texts.bin`, New Classes' `WeaponsParams.scr`): `[{"path": "...", "replace": [["regex", "replacement"], ...]}]`, .NET regexes over the file read as Latin-1, like `edition.json`'s rewrites. Applied while the mod is installed, on top of whatever the other mods and the Edition wrote; uninstalling takes them off. A package mod bumps its `version` when they change (folder mods get it automatically). Example: IranCoJ Guns' gun names. |
 | `optional` | `true`: installed only when the player chooses it. Without it the mod is core: launcher alpha.7+ installs it into every Edition automatically. Installed mods of either kind are kept up to date. |
 | `windows` / `linux` | Optional per-platform overrides of any field above. |
 

@@ -28,7 +28,7 @@ MOD_VERSION_FILE = "version.txt"
 CATALOG_SCHEMA = 2
 
 # Fields copied from mods/<Id>.json into the catalog as they are.
-MOD_FIELDS = ("exclude", "loadDll", "shared", "disable", "patch")
+MOD_FIELDS = ("exclude", "loadDll", "shared", "disable", "patch", "rewrite")
 
 
 def gh(*args, capture=True):
@@ -221,6 +221,9 @@ def build_mods():
                     check_patches(mod)
                     # Installs carry the patches: a new set must reach players as an update.
                     mod["version"] += "+p" + hashlib.sha256(json.dumps(mod["patch"], sort_keys=True).encode()).hexdigest()[:8]
+                if mod.get("rewrite"):
+                    # Installs keep the text edits they were given: a new set must reach players as an update.
+                    mod["version"] += "+r" + hashlib.sha256(json.dumps(mod["rewrite"], sort_keys=True).encode()).hexdigest()[:8]
                 mod["package"] = f"{mod['id']}-{mod['version']}.zip"
                 path = os.path.join(tmp, mod["package"])
                 zip_folder(mod["folder"], path)
