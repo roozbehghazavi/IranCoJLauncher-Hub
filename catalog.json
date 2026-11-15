@@ -415,13 +415,13 @@
     {
       "id": "IranCoJGraphics",
       "name": "IranCoJ Graphics",
-      "version": "1.9.1",
+      "version": "1.9.2",
       "description": "The Edition's remastered graphics: GGX lighting and metal, ambient occlusion (GTAO), soft shadows, temporal anti-aliasing, sharpening and colour, and every map's detail and draw distances. Liquid blood: wounds that pulse and drip, headshots, pools under bodies. Black-powder gunfire and bullet impacts. Settings > Graphics > Remastered or Vanilla.",
       "package": {
-        "file": "IranCoJGraphics-1.9.1.zip",
-        "size": 5183852,
-        "sha256": "f1340a3ab5c6f4924f2e76b5d63112b0ae5792517653aaaeb2baeec4b6307aa4",
-        "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/mods/IranCoJGraphics-1.9.1.zip"
+        "file": "IranCoJGraphics-1.9.2.zip",
+        "size": 5186829,
+        "sha256": "f47191213cae4fc9928199e0901034902f7d754e05a871535528bbaee6fc81bd",
+        "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/mods/IranCoJGraphics-1.9.2.zip"
       },
       "exclude": [
         "mods.txt"
@@ -3157,6 +3157,15 @@
     ]
   },
   "news": [
+    {
+      "id": "graphics-192",
+      "tag": "IRANCOJ GRAPHICS 1.9.2",
+      "title": "Blood on the boards",
+      "text": "Blood now lands on floors, balconies and roofs instead of falling through to the ground below. Splinters, stone chips and dirt kicked up by bullets land and lie where they fall for a few seconds. The weapon finish you pick in the launcher no longer switches back to Prime at a 200,000 wallet.",
+      "date": "2026-11-15",
+      "action": "mods",
+      "actionLabel": "Mods"
+    },
     {
       "id": "weapon-finish",
       "tag": "IRANCOJ LAUNCHER",
