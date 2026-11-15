@@ -1,0 +1,84 @@
+{
+  "id": "IranCoJGuns",
+  "name": "IranCoJ Guns",
+  "description": "Call of Juarez: Gunslinger's guns for every class, each with Gunslinger's engraved legendary as its Prime (silver) or Superb (gold) finish: Colt Walker, Remington 1890 Six-Shooter, Schofield, Winchester 1892, Remington 1889 shotgun and sawed-off, dynamite - and an 1851 Colt Navy with gold-inlaid engraving as the Rancher's Border Gun. Multiplayer weapons. Uninstall for the game's own models. About 40 MB to download.",
+  "package": "IranCoJGuns-0.2.0.zip",
+  "version": "0.2.0",
+  "optional": true,
+  "rewrite": [
+    {
+      "path": "CoJ2/Data/Player/Equipment/WeaponsParams.scr",
+      "replace": [
+        [
+          "(Param\\(\"WpnVisual\\w*\", \"WpnVisualPistolWalkerNet\", \"[^\"]*\"\\)\\r?\\n[ \\t]*\\{\\r?\\n)(?:[ \\t]*MeshFileName\\(\"[^\"]*\"\\);[^\\r\\n]*\\r?\\n)?",
+          "${1}        MeshFileName(\"walker_gs.msh\");   // IranCoJ Guns\r\n"
+        ],
+        [
+          "(Param\\(\"WpnVisual\\w*\", \"WpnVisualPistolPeacemakerNet\", \"[^\"]*\"\\)\\r?\\n[ \\t]*\\{\\r?\\n)(?:[ \\t]*MeshFileName\\(\"[^\"]*\"\\);[^\\r\\n]*\\r?\\n)?",
+          "${1}        MeshFileName(\"classic_gs.msh\");   // IranCoJ Guns\r\n"
+        ],
+        [
+          "(Param\\(\"WpnVisual\\w*\", \"WpnVisualPistolSchofieldNet\", \"[^\"]*\"\\)\\r?\\n[ \\t]*\\{\\r?\\n)(?:[ \\t]*MeshFileName\\(\"[^\"]*\"\\);[^\\r\\n]*\\r?\\n)?",
+          "${1}        MeshFileName(\"schofield_gs.msh\");   // IranCoJ Guns\r\n"
+        ],
+        [
+          "(Param\\(\"WpnVisual\\w*\", \"WpnVisualPistolFrontierNet\", \"[^\"]*\"\\)\\r?\\n[ \\t]*\\{\\r?\\n)(?:[ \\t]*MeshFileName\\(\"[^\"]*\"\\);[^\\r\\n]*\\r?\\n)?",
+          "${1}        MeshFileName(\"navy_1851.msh\");   // IranCoJ Guns\r\n"
+        ],
+        [
+          "(Param\\(\"WpnVisual\\w*\", \"WpnVisualRifleWinchesterNet\", \"[^\"]*\"\\)\\r?\\n[ \\t]*\\{\\r?\\n)(?:[ \\t]*MeshFileName\\(\"[^\"]*\"\\);[^\\r\\n]*\\r?\\n)?",
+          "${1}        MeshFileName(\"winchester_gs.msh\");   // IranCoJ Guns\r\n"
+        ],
+        [
+          "(Param\\(\"WpnVisual\\w*\", \"WpnVisualRifleRemingtonNet\", \"[^\"]*\"\\)\\r?\\n[ \\t]*\\{\\r?\\n)(?:[ \\t]*MeshFileName\\(\"[^\"]*\"\\);[^\\r\\n]*\\r?\\n)?",
+          "${1}        MeshFileName(\"shotgun_gs.msh\");   // IranCoJ Guns\r\n"
+        ],
+        [
+          "(Param\\(\"WpnVisual\\w*\", \"WpnVisualRifleRemingtonSawOffNet\", \"[^\"]*\"\\)\\r?\\n[ \\t]*\\{\\r?\\n)(?:[ \\t]*MeshFileName\\(\"[^\"]*\"\\);[^\\r\\n]*\\r?\\n)?",
+          "${1}        MeshFileName(\"sawoff_gs.msh\");   // IranCoJ Guns\r\n"
+        ],
+        [
+          "(Param\\(\"WpnVisual\\w*\", \"WpnVisualDynamite\", \"[^\"]*\"\\)\\r?\\n[ \\t]*\\{\\r?\\n)(?:[ \\t]*MeshFileName\\(\"[^\"]*\"\\);[^\\r\\n]*\\r?\\n)?",
+          "${1}        MeshFileName(\"dynamite_gs.msh\");   // IranCoJ Guns\r\n"
+        ]
+      ]
+    },
+    {
+      "path": "CoJ2/Data/COJ2 Voices&Texts.bin",
+      "replace": [
+        [
+          "\\x0f\\x00C\\x00o\\x00l\\x00t\\x00\\ \\x00M\\x00o\\x00d\\x00e\\x00l\\x00\\ \\x001\\x008\\x007\\x008\\x00",
+          "\u0017\u0000C\u0000o\u0000l\u0000t\u0000 \u0000N\u0000a\u0000v\u0000y\u0000 \u0000R\u0000e\u0000v\u0000o\u0000l\u0000v\u0000e\u0000r\u0000 \u00001\u00008\u00005\u00001\u0000"
+        ],
+        [
+          "\\x11\\x00C\\x00o\\x00l\\x00t\\x00\\ \\x00M\\x00o\\x00d\\x00e\\x00l\\x00\\ \\x001\\x008\\x007\\x008\\x00\\ \\x00\\+\\x00",
+          "\u0019\u0000C\u0000o\u0000l\u0000t\u0000 \u0000N\u0000a\u0000v\u0000y\u0000 \u0000R\u0000e\u0000v\u0000o\u0000l\u0000v\u0000e\u0000r\u0000 \u00001\u00008\u00005\u00001\u0000 \u0000+\u0000"
+        ],
+        [
+          "\\x15\\x00P\\x00r\\x00i\\x00m\\x00e\\x00\\ \\x00C\\x00o\\x00l\\x00t\\x00\\ \\x00M\\x00o\\x00d\\x00e\\x00l\\x00\\ \\x001\\x008\\x007\\x008\\x00",
+          "\u001d\u0000P\u0000r\u0000i\u0000m\u0000e\u0000 \u0000C\u0000o\u0000l\u0000t\u0000 \u0000N\u0000a\u0000v\u0000y\u0000 \u0000R\u0000e\u0000v\u0000o\u0000l\u0000v\u0000e\u0000r\u0000 \u00001\u00008\u00005\u00001\u0000"
+        ],
+        [
+          "\\x17\\x00P\\x00r\\x00i\\x00m\\x00e\\x00\\ \\x00C\\x00o\\x00l\\x00t\\x00\\ \\x00M\\x00o\\x00d\\x00e\\x00l\\x00\\ \\x001\\x008\\x007\\x008\\x00\\ \\x00\\+\\x00",
+          "\u001f\u0000P\u0000r\u0000i\u0000m\u0000e\u0000 \u0000C\u0000o\u0000l\u0000t\u0000 \u0000N\u0000a\u0000v\u0000y\u0000 \u0000R\u0000e\u0000v\u0000o\u0000l\u0000v\u0000e\u0000r\u0000 \u00001\u00008\u00005\u00001\u0000 \u0000+\u0000"
+        ],
+        [
+          "\\x16\\x00S\\x00u\\x00p\\x00e\\x00r\\x00b\\x00\\ \\x00C\\x00o\\x00l\\x00t\\x00\\ \\x00M\\x00o\\x00d\\x00e\\x00l\\x00\\ \\x001\\x008\\x007\\x008\\x00",
+          "\u001e\u0000S\u0000u\u0000p\u0000e\u0000r\u0000b\u0000 \u0000C\u0000o\u0000l\u0000t\u0000 \u0000N\u0000a\u0000v\u0000y\u0000 \u0000R\u0000e\u0000v\u0000o\u0000l\u0000v\u0000e\u0000r\u0000 \u00001\u00008\u00005\u00001\u0000"
+        ],
+        [
+          "\\x18\\x00S\\x00u\\x00p\\x00e\\x00r\\x00b\\x00\\ \\x00C\\x00o\\x00l\\x00t\\x00\\ \\x00M\\x00o\\x00d\\x00e\\x00l\\x00\\ \\x001\\x008\\x007\\x008\\x00\\ \\x00\\+\\x00",
+          " \u0000S\u0000u\u0000p\u0000e\u0000r\u0000b\u0000 \u0000C\u0000o\u0000l\u0000t\u0000 \u0000N\u0000a\u0000v\u0000y\u0000 \u0000R\u0000e\u0000v\u0000o\u0000l\u0000v\u0000e\u0000r\u0000 \u00001\u00008\u00005\u00001\u0000 \u0000+\u0000"
+        ],
+        [
+          "\\x15\\x00R\\x00u\\x00s\\x00t\\x00y\\x00\\ \\x00C\\x00o\\x00l\\x00t\\x00\\ \\x00M\\x00o\\x00d\\x00e\\x00l\\x00\\ \\x001\\x008\\x007\\x008\\x00",
+          "\u001d\u0000R\u0000u\u0000s\u0000t\u0000y\u0000 \u0000C\u0000o\u0000l\u0000t\u0000 \u0000N\u0000a\u0000v\u0000y\u0000 \u0000R\u0000e\u0000v\u0000o\u0000l\u0000v\u0000e\u0000r\u0000 \u00001\u00008\u00005\u00001\u0000"
+        ],
+        [
+          "\\x17\\x00R\\x00u\\x00s\\x00t\\x00y\\x00\\ \\x00C\\x00o\\x00l\\x00t\\x00\\ \\x00M\\x00o\\x00d\\x00e\\x00l\\x00\\ \\x001\\x008\\x007\\x008\\x00\\ \\x00\\+\\x00",
+          "\u001f\u0000R\u0000u\u0000s\u0000t\u0000y\u0000 \u0000C\u0000o\u0000l\u0000t\u0000 \u0000N\u0000a\u0000v\u0000y\u0000 \u0000R\u0000e\u0000v\u0000o\u0000l\u0000v\u0000e\u0000r\u0000 \u00001\u00008\u00005\u00001\u0000 \u0000+\u0000"
+        ]
+      ]
+    }
+  ]
+}

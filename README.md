@@ -63,12 +63,14 @@ On the Steam Deck, open it in Desktop Mode; you can then add it to Steam as a no
 | Gore *(optional)* | Richer blood and hit effects |
 | No DOF & Motion Blur *(optional)* | A sharper picture without depth of field and motion blur |
 | Gun Sounds *(optional)* | Replacement weapon and explosion sounds |
+| IranCoJ Guns *(optional)* | Call of Juarez: Gunslinger's guns with their engraved legendary finishes, and an 1851 Colt Navy as the Border Gun |
 
 ## Credits
 
 - **IranCoJ Launcher and Edition:** Thomas (Roozbeh)
 - **Server List Mod:** mx98919
 - **No DOF & Motion Blur:** cr1m3
+- **IranCoJ Guns:** guns from *Call of Juarez: Gunslinger* (Techland), converted; "1851 Colt Navy Revolver" by Steven Jurriaans (Sketchfab, CC BY 4.0)
 - **Font:** Oswald, by Vernon Adams and contributors (SIL Open Font License)
 
 *Call of Juarez: Bound in Blood* belongs to its owners. This project ships none of the game's files:

@@ -24,22 +24,23 @@ SPEC = os.path.join(HERE, "..", "edition.json")
 ENTRY = "Data/COJ2 Voices&Texts.bin"
 DEFAULT_PAK = r"C:\Games\IranCoJ Edition\CoJ2\DataEn.pak"
 
-# the weapon's script name (after "N_" / "Name_") -> (the game's name, the real gun)
+# the weapon's script name (after "N_" / "Name_") -> (the game's name, the real gun: the model, per IMFDB's
+# Call of Juarez: Bound in Blood page). Names of models the optional IranCoJ Guns mod swaps in are its own rewrite.
 NAMES = {
-    "WeaponPistolWalker": ("Ranger", "Colt 1848 Dragoon"),
-    "WeaponPistolPeacemaker": ("Classic Gun", "Colt 1873 Peacemaker"),
+    "WeaponPistolWalker": ("Ranger", "Colt Walker 1847"),
+    "WeaponPistolPeacemaker": ("Classic Gun", "Remington 1890"),
     "WeaponPistolSchofield": ("Quickshooter", "Schofield Model 3"),
-    "WeaponPistolCogswell": ("Peppergun", "Victor Collete Pepperbox"),
+    "WeaponPistolCogswell": ("Peppergun", "Lefaucheux Pepperbox"),
     "WeaponPistolDerringer": ("Ladies Gun", "Remington 1866 Derringer"),
     "WeaponPistolLemant": ("Hybrid Gun", "LeMat 1869 Revolver"),
     "WeaponPistolVolcanic": ("Volcano Gun", "Volcanic Pistol"),
     "WeaponPistolFrontier": ("Border Gun", "Colt Model 1878"),
-    "WeaponRifleWinchester": ("Classic Rifle", "Winchester 1873"),   # "Repeater" made it wrap on the class screen
-    "WeaponRifleWinchesterScope": ("Classic Scoped", "Winchester 1873 Scoped"),
-    "WeaponRifleSharps": ("Heavy Rifle", "Sharps Long Rifle"),
-    "WeaponRifleSharpsScope": ("Heavy Scoped", "Sharps Long Rifle Scoped"),
-    "WeaponRifleRemington": ("Shotgun", "Double Barreled Shotgun"),
-    "WeaponRifleRemingtonSawOff": ("Sawed-Off", "Sawed-Off Shotgun"),
+    "WeaponRifleWinchester": ("Classic Rifle", "Winchester 1892"),   # "Repeater" made it wrap on the class screen
+    "WeaponRifleWinchesterScope": ("Classic Scoped", "Winchester 1892 Scoped"),
+    "WeaponRifleSharps": ("Heavy Rifle", "Sharps 1874"),
+    "WeaponRifleSharpsScope": ("Heavy Scoped", "Sharps 1874 Scoped"),
+    "WeaponRifleRemington": ("Shotgun", "Remington 1889 Shotgun"),
+    "WeaponRifleRemingtonSawOff": ("Sawed-Off", "Remington 1889 Sawed-Off"),
     "WeaponGatling": ("Gatling", "Gatling Gun"),
     # the bow keeps its name
 }
