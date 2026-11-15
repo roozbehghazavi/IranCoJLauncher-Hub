@@ -414,13 +414,13 @@
     {
       "id": "IranCoJGraphics",
       "name": "IranCoJ Graphics",
-      "version": "1.8.0",
-      "description": "The Edition's remastered graphics: GGX lighting and metal, ambient occlusion (GTAO), soft shadows, temporal anti-aliasing, sharpening and colour, and every map's detail and draw distances. Cinematic blood and wounds, black-powder gunfire and bullet impacts. Settings > Graphics > Remastered or Vanilla.",
+      "version": "1.9.0",
+      "description": "The Edition's remastered graphics: GGX lighting and metal, ambient occlusion (GTAO), soft shadows, temporal anti-aliasing, sharpening and colour, and every map's detail and draw distances. Liquid blood: wounds that pulse and drip, headshots, pools under bodies. Black-powder gunfire and bullet impacts. Settings > Graphics > Remastered or Vanilla.",
       "package": {
-        "file": "IranCoJGraphics-1.8.0.zip",
-        "size": 5038884,
-        "sha256": "c7bb518bffba8cc4dc047c11d436e9570279176fe2f92931b82f8b2215edd31c",
-        "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/mods/IranCoJGraphics-1.8.0.zip"
+        "file": "IranCoJGraphics-1.9.0.zip",
+        "size": 5183451,
+        "sha256": "d61cc799259499f37b5545a717406ecf72b264973d9319a87c723e486332dedc",
+        "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/mods/IranCoJGraphics-1.9.0.zip"
       },
       "exclude": [
         "mods.txt"
@@ -2655,6 +2655,15 @@
     ]
   },
   "news": [
+    {
+      "id": "graphics-190",
+      "tag": "IRANCOJ GRAPHICS 1.9.0",
+      "title": "Blood that bleeds",
+      "text": "Wounds now bleed from where the bullet went in: a fresh wound pulses with the heartbeat, then drips, leaving a trail of wet drops as the wounded man runs. Headshots throw a heavier spray, and a pool spreads under the dead. Hits throw real streams of blood, and the shotgun's muzzle flash is smaller.",
+      "date": "2026-11-15",
+      "action": "mods",
+      "actionLabel": "Mods"
+    },
     {
       "id": "graphics-180",
       "tag": "IRANCOJ GRAPHICS 1.8.0",
