@@ -1,0 +1,71 @@
+{
+  "id": "IranCoJGunslingerSounds",
+  "name": "IranCoJ Gunslinger Sounds",
+  "description": "Call of Juarez: Gunslinger's gun sounds for the guns it has - Classic Gun, Quickshooter, Ranger, Winchester, shotgun, sawed-off: shots (yours and other players'), hammers, cylinders, reloads, empty clicks, the revolvers' draw and holster; five dynamite blasts - at the game's own loudness. Every other gun keeps its sounds. Use it instead of Gun Sound Mod.",
+  "package": "IranCoJGunslingerSounds-1.0.0.zip",
+  "version": "1.0.0",
+  "optional": true,
+  "rewrite": [
+    {
+      "path": "CoJ2/Data/Player/Equipment/WeaponsParams.scr",
+      "replace": [
+        [
+          "(Param\\(\"WpnFXFire\", \"WpnFXRifleWinchesterFire\", \"[^\"]*\"\\)\\s*\\{[^}]*\\}\\r?\\n)",
+          "${1}   // IranCoJ Gunslinger Sounds\r\n    Param(\"WpnFXFire\", \"WpnFXRifleWinchesterGunslingerFire\", \"WpnFXRifleWinchesterFire\")   // IranCoJ Gunslinger Sounds\r\n    {   // IranCoJ Gunslinger Sounds\r\n        SBAttack(\"data/sounds/irngunslinger/winchester/irngs_winchester_\");   // IranCoJ Gunslinger Sounds\r\n        SBAttackNoAmmo(\"data/sounds/irngunslinger/irngs_wctr_empty\");   // IranCoJ Gunslinger Sounds\r\n    }   // IranCoJ Gunslinger Sounds\r\n"
+        ],
+        [
+          "(Param\\(\"WpnAttackFire\", \"WpnAttackRifleWinchesterNetFire\", \"[^\"]*\"\\)\\r?\\n[ \\t]*\\{\\r?\\n)",
+          "${1}        WpnFXHit(\"WpnFXRifleWinchesterGunslingerFire\");   // IranCoJ Gunslinger Sounds\r\n"
+        ],
+        [
+          "(Param\\(\"WpnAttackFire\", \"WpnAttackRifleWinchesterNoAmmo\", \"[^\"]*\"\\)\\s*\\{[^}]*\\}\\r?\\n)",
+          "${1}   // IranCoJ Gunslinger Sounds\r\n    Param(\"WpnAttackFire\", \"WpnAttackRifleWinchesterGunslingerNoAmmo\", \"WpnAttackRifleWinchesterNoAmmo\")   // IranCoJ Gunslinger Sounds\r\n    {   // IranCoJ Gunslinger Sounds\r\n        WpnFXHit(\"WpnFXRifleWinchesterGunslingerFire\");   // IranCoJ Gunslinger Sounds\r\n    }   // IranCoJ Gunslinger Sounds\r\n"
+        ],
+        [
+          "(Weapon\\(\"\\w+\", \"WeaponRifleWinchesterNet\", \"[^\"]*\"\\)\\s*\\{[^}]*?)\"WpnAttackRifleWinchesterNoAmmo\"",
+          "${1}\"WpnAttackRifleWinchesterGunslingerNoAmmo\""
+        ],
+        [
+          "(Weapon\\(\"\\w+\", \"WeaponRifleWinchesterNet\", \"[^\"]*\"\\)\\s*\\{[^}]*?)\"WpnAttackRifleWinchesterNoAmmo\"",
+          "${1}\"WpnAttackRifleWinchesterGunslingerNoAmmo\""
+        ],
+        [
+          "(Param\\(\"WpnFXFire\", \"WpnFXPistolPeacemakerFire\", \"[^\"]*\"\\)\\r?\\n[ \\t]*\\{\\r?\\n)",
+          "${1}        SBAttackNoAmmo(\"data/sounds/irngunslinger/irngs_ss_empty\");   // IranCoJ Gunslinger Sounds\r\n"
+        ],
+        [
+          "(Param\\(\"WpnFXFire\", \"WpnFXPistolSchofieldFire\", \"[^\"]*\"\\)\\r?\\n[ \\t]*\\{\\r?\\n)",
+          "${1}        SBAttackNoAmmo(\"data/sounds/irngunslinger/irngs_qs_empty\");   // IranCoJ Gunslinger Sounds\r\n"
+        ],
+        [
+          "(Param\\(\"WpnFXFire\", \"WpnFXPistolWalkerFire\", \"[^\"]*\"\\)\\r?\\n[ \\t]*\\{\\r?\\n)",
+          "${1}        SBAttackNoAmmo(\"data/sounds/irngunslinger/irngs_wr_empty\");   // IranCoJ Gunslinger Sounds\r\n"
+        ],
+        [
+          "(Param\\(\"WpnFXFire\", \"WpnFXShotgunRemingtonFireL\", \"[^\"]*\"\\)\\r?\\n[ \\t]*\\{\\r?\\n)",
+          "${1}        SBAttackNoAmmo(\"data/sounds/irngunslinger/irngs_rmngtn_empty\");   // IranCoJ Gunslinger Sounds\r\n"
+        ],
+        [
+          "(Param\\(\"WpnFXFire\", \"WpnFXShotgunRemingtonSawOffFireL\", \"[^\"]*\"\\)\\r?\\n[ \\t]*\\{\\r?\\n)",
+          "${1}        SBAttackNoAmmo(\"data/sounds/irngunslinger/irngs_rmngtn_empty\");   // IranCoJ Gunslinger Sounds\r\n"
+        ],
+        [
+          "(Param\\(\"WpnVisual\", \"WpnVisualPistolPeacemakerNet\", \"[^\"]*\"\\)\\r?\\n[ \\t]*\\{\\r?\\n)",
+          "${1}        SBPullOut(\"data/sounds/irngunslinger/irngs_pistol_pull_out\");   // IranCoJ Gunslinger Sounds\r\n        SBPutAway(\"data/sounds/irngunslinger/irngs_pistol_putaway\");   // IranCoJ Gunslinger Sounds\r\n"
+        ],
+        [
+          "(Param\\(\"WpnVisual\", \"WpnVisualPistolSchofieldNet\", \"[^\"]*\"\\)\\r?\\n[ \\t]*\\{\\r?\\n)",
+          "${1}        SBPullOut(\"data/sounds/irngunslinger/irngs_pistol_pull_out\");   // IranCoJ Gunslinger Sounds\r\n        SBPutAway(\"data/sounds/irngunslinger/irngs_pistol_putaway\");   // IranCoJ Gunslinger Sounds\r\n"
+        ],
+        [
+          "(Param\\(\"WpnVisual\", \"WpnVisualPistolWalkerNet\", \"[^\"]*\"\\)\\r?\\n[ \\t]*\\{\\r?\\n)",
+          "${1}        SBPullOut(\"data/sounds/irngunslinger/irngs_pistol_pull_out\");   // IranCoJ Gunslinger Sounds\r\n        SBPutAway(\"data/sounds/irngunslinger/irngs_pistol_putaway\");   // IranCoJ Gunslinger Sounds\r\n"
+        ],
+        [
+          "SBExplosion\\(\"data/sounds/explosion/dynamite_explosion\"\\)",
+          "SBExplosion(\"data/sounds/irngunslinger/irngs_dynamite_\")"
+        ]
+      ]
+    }
+  ]
+}

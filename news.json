@@ -1,5 +1,23 @@
 [
   {
+    "id": "gunslinger-guns-sounds",
+    "tag": "IRANCOJ GUNS & GUNSLINGER SOUNDS",
+    "title": "Gunslinger's guns, Gunslinger's sounds",
+    "text": "Two new optional mods. IranCoJ Guns brings Call of Juarez: Gunslinger's Colt Walker, Six-Shooter, Schofield, Winchester, shotgun, sawed-off and dynamite, each with its engraved legendary as the Prime (silver) or Superb (gold) finish, and makes the Rancher's Border Gun an 1851 Colt Navy with gold-inlaid engraving. IranCoJ Gunslinger Sounds gives those guns Gunslinger's shots, hammers, reloads and empty clicks, and the dynamite five different blasts. Every other gun keeps its own. Use it instead of Gun Sound Mod. Needs launcher 3.0.0-beta.22.",
+    "date": "2026-11-15",
+    "action": "mods",
+    "actionLabel": "Mods"
+  },
+  {
+    "id": "blood-system",
+    "tag": "IRANCOJ GRAPHICS",
+    "title": "The new blood",
+    "text": "Blood in IranCoJ Graphics now behaves like blood: wounds bleed from where the bullet went in, pulse with the heartbeat and drip a trail as the wounded run; headshots throw a heavier spray and a pool spreads under the dead. It lands where it falls - floors, balconies, roofs - and so do the splinters, stone chips and dirt your bullets kick up. Install or update IranCoJ Graphics in Mods.",
+    "date": "2026-11-15",
+    "action": "mods",
+    "actionLabel": "Mods"
+  },
+  {
     "id": "graphics-192",
     "tag": "IRANCOJ GRAPHICS 1.9.2",
     "title": "Blood on the boards",

@@ -63,6 +63,7 @@ On the Steam Deck, open it in Desktop Mode; you can then add it to Steam as a no
 | Gore *(optional)* | Richer blood and hit effects |
 | No DOF & Motion Blur *(optional)* | A sharper picture without depth of field and motion blur |
 | Gun Sounds *(optional)* | Replacement weapon and explosion sounds |
+| IranCoJ Gunslinger Sounds *(optional)* | Call of Juarez: Gunslinger's sounds for the guns it has: shots, hammers, reloads, empty clicks, dynamite (use instead of Gun Sounds) |
 | IranCoJ Guns *(optional)* | Call of Juarez: Gunslinger's guns with their engraved legendary finishes, and an 1851 Colt Navy as the Border Gun |
 
 ## Credits
@@ -70,6 +71,7 @@ On the Steam Deck, open it in Desktop Mode; you can then add it to Steam as a no
 - **IranCoJ Launcher and Edition:** Thomas (Roozbeh)
 - **Server List Mod:** mx98919
 - **No DOF & Motion Blur:** cr1m3
+- **IranCoJ Gunslinger Sounds:** sounds from *Call of Juarez: Gunslinger* (Techland)
 - **IranCoJ Guns:** guns from *Call of Juarez: Gunslinger* (Techland), converted; "1851 Colt Navy Revolver" by Steven Jurriaans (Sketchfab, CC BY 4.0)
 - **Font:** Oswald, by Vernon Adams and contributors (SIL Open Font License)
 

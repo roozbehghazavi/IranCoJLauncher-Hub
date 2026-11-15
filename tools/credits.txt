@@ -33,6 +33,8 @@ cr1m3
 - IranCoJ Guns
 Call of Juarez: Gunslinger's guns - Techland
 1851 Colt Navy Revolver - Steven Jurriaans (CC BY 4.0)
+- IranCoJ Gunslinger Sounds
+Call of Juarez: Gunslinger's gun sounds - Techland
 
 = VULKAN
 - DXVK (zlib license)
