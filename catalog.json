@@ -414,13 +414,13 @@
     {
       "id": "IranCoJGraphics",
       "name": "IranCoJ Graphics",
-      "version": "1.9.0",
+      "version": "1.9.1",
       "description": "The Edition's remastered graphics: GGX lighting and metal, ambient occlusion (GTAO), soft shadows, temporal anti-aliasing, sharpening and colour, and every map's detail and draw distances. Liquid blood: wounds that pulse and drip, headshots, pools under bodies. Black-powder gunfire and bullet impacts. Settings > Graphics > Remastered or Vanilla.",
       "package": {
-        "file": "IranCoJGraphics-1.9.0.zip",
-        "size": 5183451,
-        "sha256": "d61cc799259499f37b5545a717406ecf72b264973d9319a87c723e486332dedc",
-        "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/mods/IranCoJGraphics-1.9.0.zip"
+        "file": "IranCoJGraphics-1.9.1.zip",
+        "size": 5183852,
+        "sha256": "f1340a3ab5c6f4924f2e76b5d63112b0ae5792517653aaaeb2baeec4b6307aa4",
+        "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/mods/IranCoJGraphics-1.9.1.zip"
       },
       "exclude": [
         "mods.txt"
@@ -3147,6 +3147,15 @@
     ]
   },
   "news": [
+    {
+      "id": "weapon-finish",
+      "tag": "IRANCOJ LAUNCHER",
+      "title": "Pick your gun finish",
+      "text": "Settings > In game > Multiplayer weapons: choose plain, Prime (silver) or Superb (gold) weapons for each profile. Going back from Superb now works too: the game no longer switches it back on from your wallet. Needs IranCoJ Graphics 1.9.1.",
+      "date": "2026-11-15",
+      "action": "settings",
+      "actionLabel": "Settings"
+    },
     {
       "id": "edition-131",
       "tag": "IRANCOJ EDITION 1.3.1",
