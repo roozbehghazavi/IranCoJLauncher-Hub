@@ -1,0 +1,7 @@
+import "trace.mtt"
+
+// IranCoJ Graphics: a piece of bullet debris lying where it landed (stone)
+sub material()
+{
+    use mtt(s_clr = "IRN_DebrisStone.dds");
+}

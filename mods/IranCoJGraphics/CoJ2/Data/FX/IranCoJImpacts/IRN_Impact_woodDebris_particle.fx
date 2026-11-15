@@ -2,7 +2,7 @@ ParticleDef()
 {
 	LifeTime()
 	{
-		keyf(0, 1.3)
+		keyf(0, 2)
 	}
 
 	GravityMul()
@@ -23,8 +23,8 @@ ParticleDef()
 	Color()
 	{
 		keyv4(0, 1, 1, 1, 1)
-		keyv4(0.9, 1, 1, 1, 1)
-		keyv4(1.3, 1, 1, 1, 0)
+		keyv4(1.6, 1, 1, 1, 1)
+		keyv4(2, 1, 1, 1, 0)
 	}
 
 	Size()

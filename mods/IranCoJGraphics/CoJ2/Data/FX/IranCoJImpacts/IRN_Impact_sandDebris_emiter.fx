@@ -2,7 +2,7 @@ EmiterDef()
 {
 	LifeTime()
 	{
-		keyf(0, 1.3)
+		keyf(0, 2)
 	}
 
 	GenType("one_time")
@@ -28,4 +28,10 @@ EmiterDef()
 	}
 
 	GenArea("point")
+
+	CollisionAction("spawn_fx")
+	{
+		Trace("IRN_DebrisDirt_trace.fx")
+		Probability(1)
+	}
 }

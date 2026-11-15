@@ -43,14 +43,32 @@ sub material()
 fx_mat('IRN_ImpactDust_particleBLEND', 'IRN_SmokeAnim.dds', 'e_bm_lerp', 'impact dust (the smoke flipbook, tinted per surface)')
 for kind in ('Dirt', 'Wood', 'Stone'):
     fx_mat('IRN_Debris%s_particleBLEND' % kind, 'IRN_Debris%s.dds' % kind, 'e_bm_lerp', 'bullet debris: %s' % kind.lower())
+    # the piece where it lands: a small decal from the same sheet (on the ground, floors, balconies - the engine's
+    # particle collision sees buildings with irancojfx.dll's gore floors patch, Graphics 1.9.2)
+    put('IranCoJImpacts/IRN_Debris%s_trace.mat' % kind, '''
+import "trace.mtt"
+
+// IranCoJ Graphics: a piece of bullet debris lying where it landed (%s)
+sub material()
+{
+    use mtt(s_clr = "IRN_Debris%s.dds");
+}
+''' % (kind.lower(), kind))
+    put('IranCoJImpacts/IRN_Debris%s_trace.fx' % kind, 'TraceDef()\n{\n' + keys('LifeTime', [(0, 8)]) + '\n' +
+        keys('Size', [(0, 8, 14)], 'randf') + '\n\tMaxNumTraces(200)\n\n' +
+        keys('Color', [(0, 1, 1, 1, 1), (5, 1, 1, 1, 1), (8, 1, 1, 1, 0)], 'keyv4') + '\n' +
+        keys('Rotation', [(0, 0, 360)], 'randf') +
+        '\n\tMaterial("IRN_Debris%s_trace.mat")\n\n\tTexPlayMode("random_once", 0)\n\tTexMultiRect(2, 2, 0, 0)\n}\n' % kind)
 
 
-def emitter(count, speed, rand, life, direction=OUT):
+def emitter(count, speed, rand, life, direction=OUT, trace_fx=None):
     e = 'EmiterDef()\n{\n' + keys('LifeTime', [(0, life)]) + '\n\tGenType("one_time")\n\n'
     e += keys('NumParticles', [(0,) + (count if isinstance(count, tuple) else (count,))], 'randf' if isinstance(count, tuple) else 'keyf')
     e += '\n' + keys('StartVelocity', [(0, speed)]) + '\n' + keys('StartVelocityRand', [(0,) + rand], 'keyv')
-    e += '\n' + keys('Direction', [(0,) + direction], 'keyv') + '\n\tGenArea("point")\n}\n'
-    return e
+    e += '\n' + keys('Direction', [(0,) + direction], 'keyv') + '\n\tGenArea("point")\n'
+    if trace_fx:   # where a piece lands it lies: the particle goes, a decal stays
+        e += '\n\tCollisionAction("spawn_fx")\n\t{\n\t\tTrace("%s")\n\t\tProbability(1)\n\t}\n' % trace_fx
+    return e + '}\n'
 
 
 def particle(life, size, color, material, rect, play, grav=0.0, drag=1.0, wind=0.0, trail=False, size_fn=None):
@@ -91,8 +109,10 @@ def layers(srf, heavy):
                          'IRN_ImpactDust_particleBLEND.mat', '4, 4, 16', '"forward", %g' % round(16 / life, 2),
                          grav=0.05, drag=4.0, wind=1.0), 'dust'))
     if deb:
-        out.append(('IRN_Impact_%sDebris' % tag, emitter((int(5 * k), int(9 * k)), 420, (240, 220, 240), 1.3),
-                    particle(1.3, [(0, 18, 32)], [(0, 1, 1, 1, 1), (0.9, 1, 1, 1, 1), (1.3, 1, 1, 1, 0)],
+        # flies long enough to come down (2 s); where it lands it lies a while (the trace), else it fades in the air
+        out.append(('IRN_Impact_%sDebris' % tag, emitter((int(5 * k), int(9 * k)), 420, (240, 220, 240), 2.0,
+                                                          trace_fx='IRN_Debris%s_trace.fx' % deb),
+                    particle(2.0, [(0, 18, 32)], [(0, 1, 1, 1, 1), (1.6, 1, 1, 1, 1), (2.0, 1, 1, 1, 0)],
                              'IRN_Debris%s_particleBLEND.mat' % deb, '2, 2, 4', '"random_once", 1', grav=1.7, drag=0.6),
                     'debris'))
     if sparks:

@@ -1,5 +1,14 @@
 [
   {
+    "id": "graphics-192",
+    "tag": "IRANCOJ GRAPHICS 1.9.2",
+    "title": "Blood on the boards",
+    "text": "Blood now lands on floors, balconies and roofs instead of falling through to the ground below. Splinters, stone chips and dirt kicked up by bullets land and lie where they fall for a few seconds. The weapon finish you pick in the launcher no longer switches back to Prime at a 200,000 wallet.",
+    "date": "2026-11-15",
+    "action": "mods",
+    "actionLabel": "Mods"
+  },
+  {
     "id": "weapon-finish",
     "tag": "IRANCOJ LAUNCHER",
     "title": "Pick your gun finish",

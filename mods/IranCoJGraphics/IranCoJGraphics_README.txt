@@ -1,4 +1,4 @@
-IranCoJ Graphics 1.9.1 - the Edition's remastered graphics, by Thomas (Roozbeh).
+IranCoJ Graphics 1.9.2 - the Edition's remastered graphics, by Thomas (Roozbeh).
 
 Everything is set in the IranCoJ Launcher: Settings > Graphics & Sound > Remastered or Vanilla, and each feature on
 its own in the Remastered group. The launcher writes irancojfx.ini and edited copies of the game's own pipeline
@@ -95,3 +95,9 @@ driven by irancojfx.dll (no game effect exists for them; [gore] enabled=0 in ira
 Prime or Superb, per profile) now stays. The game turns Prime and Superb on by itself from your wallet (200,000 and
 1,000,000) every time it saves, and never off; with a finish picked ([weapons] finish_lock=1 in irancojfx.ini)
 irancojfx.dll skips those automatic unlocks, so going back from Superb to Prime or plain works.
+
+1.9.2: blood lands on floors, balconies and roofs: effect particles that react to what they hit were only tested
+against the terrain, so blood fell through the boards to the ground below; irancojfx.dll lets them see the map's
+buildings too (not players or horses; [gore] floors=0 in irancojfx.ini turns it off). Bullet debris - splinters,
+stone chips, clods - now lands and lies a few seconds where it falls, ground and floors alike. The weapon finish you
+pick in the launcher also holds against the 200,000 wallet unlock (it switched you to Prime with its message).
