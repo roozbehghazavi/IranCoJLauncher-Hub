@@ -3339,7 +3339,9 @@
       "text": "Two new optional mods. IranCoJ Guns brings Call of Juarez: Gunslinger's Colt Walker, Six-Shooter, Schofield, Winchester, shotgun, sawed-off and dynamite, each with its engraved legendary as the Prime (silver) or Superb (gold) finish, and makes the Rancher's Border Gun an 1851 Colt Navy with gold-inlaid engraving. IranCoJ Gunslinger Sounds gives those guns Gunslinger's shots, hammers, reloads and empty clicks, and the dynamite five different blasts. Every other gun keeps its own. Use it instead of Gun Sound Mod. Needs launcher 3.0.0-beta.22.",
       "date": "2026-11-15",
       "action": "mods",
-      "actionLabel": "Mods"
+      "actionLabel": "Mods",
+      "slide": true,
+      "image": "https://raw.githubusercontent.com/roozbehghazavi/IranCoJLauncher-Hub/main/news/images/gunslinger-guns.jpg"
     },
     {
       "id": "blood-system",
