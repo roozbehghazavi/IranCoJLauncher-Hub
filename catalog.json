@@ -531,6 +531,87 @@
       "optional": true
     },
     {
+      "id": "IranCoJGunslingerSounds",
+      "name": "IranCoJ Gunslinger Sounds",
+      "version": "1.0.0",
+      "description": "Call of Juarez: Gunslinger's gun sounds for the guns it has - Classic Gun, Quickshooter, Ranger, Winchester, shotgun, sawed-off: shots (yours and other players'), hammers, cylinders, reloads, empty clicks, the revolvers' draw and holster; five dynamite blasts - at the game's own loudness. Every other gun keeps its sounds. Use it instead of Gun Sound Mod.",
+      "package": {
+        "file": "IranCoJGunslingerSounds-1.0.0.zip",
+        "size": 10789697,
+        "sha256": "81b08985aaf9369996be8dfba678bf7ed3c92cb10d242fb0f3ef89b27e70e553",
+        "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/mods/IranCoJGunslingerSounds-1.0.0.zip"
+      },
+      "exclude": [],
+      "loadDll": [],
+      "shared": [],
+      "disable": [],
+      "patch": [],
+      "rewrite": [
+        {
+          "path": "CoJ2/Data/Player/Equipment/WeaponsParams.scr",
+          "replace": [
+            [
+              "(Param\\(\"WpnFXFire\", \"WpnFXRifleWinchesterFire\", \"[^\"]*\"\\)\\s*\\{[^}]*\\}\\r?\\n)",
+              "${1}   // IranCoJ Gunslinger Sounds\r\n    Param(\"WpnFXFire\", \"WpnFXRifleWinchesterGunslingerFire\", \"WpnFXRifleWinchesterFire\")   // IranCoJ Gunslinger Sounds\r\n    {   // IranCoJ Gunslinger Sounds\r\n        SBAttack(\"data/sounds/irngunslinger/winchester/irngs_winchester_\");   // IranCoJ Gunslinger Sounds\r\n        SBAttackNoAmmo(\"data/sounds/irngunslinger/irngs_wctr_empty\");   // IranCoJ Gunslinger Sounds\r\n    }   // IranCoJ Gunslinger Sounds\r\n"
+            ],
+            [
+              "(Param\\(\"WpnAttackFire\", \"WpnAttackRifleWinchesterNetFire\", \"[^\"]*\"\\)\\r?\\n[ \\t]*\\{\\r?\\n)",
+              "${1}        WpnFXHit(\"WpnFXRifleWinchesterGunslingerFire\");   // IranCoJ Gunslinger Sounds\r\n"
+            ],
+            [
+              "(Param\\(\"WpnAttackFire\", \"WpnAttackRifleWinchesterNoAmmo\", \"[^\"]*\"\\)\\s*\\{[^}]*\\}\\r?\\n)",
+              "${1}   // IranCoJ Gunslinger Sounds\r\n    Param(\"WpnAttackFire\", \"WpnAttackRifleWinchesterGunslingerNoAmmo\", \"WpnAttackRifleWinchesterNoAmmo\")   // IranCoJ Gunslinger Sounds\r\n    {   // IranCoJ Gunslinger Sounds\r\n        WpnFXHit(\"WpnFXRifleWinchesterGunslingerFire\");   // IranCoJ Gunslinger Sounds\r\n    }   // IranCoJ Gunslinger Sounds\r\n"
+            ],
+            [
+              "(Weapon\\(\"\\w+\", \"WeaponRifleWinchesterNet\", \"[^\"]*\"\\)\\s*\\{[^}]*?)\"WpnAttackRifleWinchesterNoAmmo\"",
+              "${1}\"WpnAttackRifleWinchesterGunslingerNoAmmo\""
+            ],
+            [
+              "(Weapon\\(\"\\w+\", \"WeaponRifleWinchesterNet\", \"[^\"]*\"\\)\\s*\\{[^}]*?)\"WpnAttackRifleWinchesterNoAmmo\"",
+              "${1}\"WpnAttackRifleWinchesterGunslingerNoAmmo\""
+            ],
+            [
+              "(Param\\(\"WpnFXFire\", \"WpnFXPistolPeacemakerFire\", \"[^\"]*\"\\)\\r?\\n[ \\t]*\\{\\r?\\n)",
+              "${1}        SBAttackNoAmmo(\"data/sounds/irngunslinger/irngs_ss_empty\");   // IranCoJ Gunslinger Sounds\r\n"
+            ],
+            [
+              "(Param\\(\"WpnFXFire\", \"WpnFXPistolSchofieldFire\", \"[^\"]*\"\\)\\r?\\n[ \\t]*\\{\\r?\\n)",
+              "${1}        SBAttackNoAmmo(\"data/sounds/irngunslinger/irngs_qs_empty\");   // IranCoJ Gunslinger Sounds\r\n"
+            ],
+            [
+              "(Param\\(\"WpnFXFire\", \"WpnFXPistolWalkerFire\", \"[^\"]*\"\\)\\r?\\n[ \\t]*\\{\\r?\\n)",
+              "${1}        SBAttackNoAmmo(\"data/sounds/irngunslinger/irngs_wr_empty\");   // IranCoJ Gunslinger Sounds\r\n"
+            ],
+            [
+              "(Param\\(\"WpnFXFire\", \"WpnFXShotgunRemingtonFireL\", \"[^\"]*\"\\)\\r?\\n[ \\t]*\\{\\r?\\n)",
+              "${1}        SBAttackNoAmmo(\"data/sounds/irngunslinger/irngs_rmngtn_empty\");   // IranCoJ Gunslinger Sounds\r\n"
+            ],
+            [
+              "(Param\\(\"WpnFXFire\", \"WpnFXShotgunRemingtonSawOffFireL\", \"[^\"]*\"\\)\\r?\\n[ \\t]*\\{\\r?\\n)",
+              "${1}        SBAttackNoAmmo(\"data/sounds/irngunslinger/irngs_rmngtn_empty\");   // IranCoJ Gunslinger Sounds\r\n"
+            ],
+            [
+              "(Param\\(\"WpnVisual\", \"WpnVisualPistolPeacemakerNet\", \"[^\"]*\"\\)\\r?\\n[ \\t]*\\{\\r?\\n)",
+              "${1}        SBPullOut(\"data/sounds/irngunslinger/irngs_pistol_pull_out\");   // IranCoJ Gunslinger Sounds\r\n        SBPutAway(\"data/sounds/irngunslinger/irngs_pistol_putaway\");   // IranCoJ Gunslinger Sounds\r\n"
+            ],
+            [
+              "(Param\\(\"WpnVisual\", \"WpnVisualPistolSchofieldNet\", \"[^\"]*\"\\)\\r?\\n[ \\t]*\\{\\r?\\n)",
+              "${1}        SBPullOut(\"data/sounds/irngunslinger/irngs_pistol_pull_out\");   // IranCoJ Gunslinger Sounds\r\n        SBPutAway(\"data/sounds/irngunslinger/irngs_pistol_putaway\");   // IranCoJ Gunslinger Sounds\r\n"
+            ],
+            [
+              "(Param\\(\"WpnVisual\", \"WpnVisualPistolWalkerNet\", \"[^\"]*\"\\)\\r?\\n[ \\t]*\\{\\r?\\n)",
+              "${1}        SBPullOut(\"data/sounds/irngunslinger/irngs_pistol_pull_out\");   // IranCoJ Gunslinger Sounds\r\n        SBPutAway(\"data/sounds/irngunslinger/irngs_pistol_putaway\");   // IranCoJ Gunslinger Sounds\r\n"
+            ],
+            [
+              "SBExplosion\\(\"data/sounds/explosion/dynamite_explosion\"\\)",
+              "SBExplosion(\"data/sounds/irngunslinger/irngs_dynamite_\")"
+            ]
+          ]
+        }
+      ],
+      "optional": true
+    },
+    {
       "id": "IranCoJHDTextures",
       "name": "IranCoJ HD Textures",
       "version": "1.0.2",
@@ -767,7 +848,7 @@
     }
   ],
   "edition": {
-    "version": "1.3.2",
+    "version": "1.3.3",
     "ownUserFolder": true,
     "menuNavigation": true,
     "include": [
@@ -1676,7 +1757,7 @@
           ],
           [
             "\\z",
-            " \u0000Name_WeaponPistolFrontierUpgrade\u0012\u0000S\u0000p\u0000r\u0000i\u0000n\u0000g\u0000f\u0000i\u0000e\u0000l\u0000d\u0000 \u0000M\u0000u\u0000s\u0000k\u0000e\u0000t\u0000#\u0000Name_WeaponPistolFrontierUpgradeNet\u0012\u0000S\u0000p\u0000r\u0000i\u0000n\u0000g\u0000f\u0000i\u0000e\u0000l\u0000d\u0000 \u0000M\u0000u\u0000s\u0000k\u0000e\u0000t\u0000\u001d\u0000N_WeaponPistolFrontierUpgrade\u0012\u0000S\u0000p\u0000r\u0000i\u0000n\u0000g\u0000f\u0000i\u0000e\u0000l\u0000d\u0000 \u0000M\u0000u\u0000s\u0000k\u0000e\u0000t\u0000\u0017\u0000MenuDerringerUpgradeNet\u000f\u0000T\u0000h\u0000r\u0000o\u0000w\u0000i\u0000n\u0000g\u0000 \u0000K\u0000n\u0000i\u0000v\u0000e\u0000s\u0000$\u0000Name_WeaponPistolDerringerUpgradeNet\u000e\u0000T\u0000h\u0000r\u0000o\u0000w\u0000i\u0000n\u0000g\u0000 \u0000K\u0000n\u0000i\u0000f\u0000e\u0000!\u0000Name_WeaponPistolDerringerUpgrade\u000e\u0000T\u0000h\u0000r\u0000o\u0000w\u0000i\u0000n\u0000g\u0000 \u0000K\u0000n\u0000i\u0000f\u0000e\u0000\u001e\u0000N_WeaponPistolDerringerUpgrade\u000e\u0000T\u0000h\u0000r\u0000o\u0000w\u0000i\u0000n\u0000g\u0000 \u0000K\u0000n\u0000i\u0000f\u0000e\u0000\u0014\u0000MenuLemantUpgradeNet\b\u0000T\u0000o\u0000m\u0000a\u0000h\u0000a\u0000w\u0000k\u0000!\u0000Name_WeaponPistolLemantUpgradeNet\b\u0000T\u0000o\u0000m\u0000a\u0000h\u0000a\u0000w\u0000k\u0000\u001e\u0000Name_WeaponPistolLemantUpgrade\b\u0000T\u0000o\u0000m\u0000a\u0000h\u0000a\u0000w\u0000k\u0000\u001b\u0000N_WeaponPistolLemantUpgrade\b\u0000T\u0000o\u0000m\u0000a\u0000h\u0000a\u0000w\u0000k\u0000\u0011\u0000IrnEditionVersion\u0015\u0000I\u0000r\u0000a\u0000n\u0000C\u0000o\u0000J\u0000 \u0000E\u0000d\u0000i\u0000t\u0000i\u0000o\u0000n\u0000 \u00001\u0000.\u00003\u0000.\u00002\u0000"
+            " \u0000Name_WeaponPistolFrontierUpgrade\u0012\u0000S\u0000p\u0000r\u0000i\u0000n\u0000g\u0000f\u0000i\u0000e\u0000l\u0000d\u0000 \u0000M\u0000u\u0000s\u0000k\u0000e\u0000t\u0000#\u0000Name_WeaponPistolFrontierUpgradeNet\u0012\u0000S\u0000p\u0000r\u0000i\u0000n\u0000g\u0000f\u0000i\u0000e\u0000l\u0000d\u0000 \u0000M\u0000u\u0000s\u0000k\u0000e\u0000t\u0000\u001d\u0000N_WeaponPistolFrontierUpgrade\u0012\u0000S\u0000p\u0000r\u0000i\u0000n\u0000g\u0000f\u0000i\u0000e\u0000l\u0000d\u0000 \u0000M\u0000u\u0000s\u0000k\u0000e\u0000t\u0000\u0017\u0000MenuDerringerUpgradeNet\u000f\u0000T\u0000h\u0000r\u0000o\u0000w\u0000i\u0000n\u0000g\u0000 \u0000K\u0000n\u0000i\u0000v\u0000e\u0000s\u0000$\u0000Name_WeaponPistolDerringerUpgradeNet\u000e\u0000T\u0000h\u0000r\u0000o\u0000w\u0000i\u0000n\u0000g\u0000 \u0000K\u0000n\u0000i\u0000f\u0000e\u0000!\u0000Name_WeaponPistolDerringerUpgrade\u000e\u0000T\u0000h\u0000r\u0000o\u0000w\u0000i\u0000n\u0000g\u0000 \u0000K\u0000n\u0000i\u0000f\u0000e\u0000\u001e\u0000N_WeaponPistolDerringerUpgrade\u000e\u0000T\u0000h\u0000r\u0000o\u0000w\u0000i\u0000n\u0000g\u0000 \u0000K\u0000n\u0000i\u0000f\u0000e\u0000\u0014\u0000MenuLemantUpgradeNet\b\u0000T\u0000o\u0000m\u0000a\u0000h\u0000a\u0000w\u0000k\u0000!\u0000Name_WeaponPistolLemantUpgradeNet\b\u0000T\u0000o\u0000m\u0000a\u0000h\u0000a\u0000w\u0000k\u0000\u001e\u0000Name_WeaponPistolLemantUpgrade\b\u0000T\u0000o\u0000m\u0000a\u0000h\u0000a\u0000w\u0000k\u0000\u001b\u0000N_WeaponPistolLemantUpgrade\b\u0000T\u0000o\u0000m\u0000a\u0000h\u0000a\u0000w\u0000k\u0000\u0011\u0000IrnEditionVersion\u0015\u0000I\u0000r\u0000a\u0000n\u0000C\u0000o\u0000J\u0000 \u0000E\u0000d\u0000i\u0000t\u0000i\u0000o\u0000n\u0000 \u00001\u0000.\u00003\u0000.\u00003\u0000"
           ]
         ]
       },
@@ -2926,8 +3007,8 @@
       },
       {
         "path": "CoJ2/Data/Menu/scr/Credits_PC.scr",
-        "size": 5906,
-        "sha256": "c66402f8b8fbc582bf9d38f9e4e2e99955276a1daf4a4c6adaa89add8359d7ef",
+        "size": 6166,
+        "sha256": "d99a077c5653f2ce5603be34481b7e6f0160d53eba8e45b74aef25165da9591b",
         "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/edition/Credits_PC.scr"
       },
       {
@@ -3251,6 +3332,24 @@
     ]
   },
   "news": [
+    {
+      "id": "gunslinger-guns-sounds",
+      "tag": "IRANCOJ GUNS & GUNSLINGER SOUNDS",
+      "title": "Gunslinger's guns, Gunslinger's sounds",
+      "text": "Two new optional mods. IranCoJ Guns brings Call of Juarez: Gunslinger's Colt Walker, Six-Shooter, Schofield, Winchester, shotgun, sawed-off and dynamite, each with its engraved legendary as the Prime (silver) or Superb (gold) finish, and makes the Rancher's Border Gun an 1851 Colt Navy with gold-inlaid engraving. IranCoJ Gunslinger Sounds gives those guns Gunslinger's shots, hammers, reloads and empty clicks, and the dynamite five different blasts. Every other gun keeps its own. Use it instead of Gun Sound Mod. Needs launcher 3.0.0-beta.22.",
+      "date": "2026-11-15",
+      "action": "mods",
+      "actionLabel": "Mods"
+    },
+    {
+      "id": "blood-system",
+      "tag": "IRANCOJ GRAPHICS",
+      "title": "The new blood",
+      "text": "Blood in IranCoJ Graphics now behaves like blood: wounds bleed from where the bullet went in, pulse with the heartbeat and drip a trail as the wounded run; headshots throw a heavier spray and a pool spreads under the dead. It lands where it falls - floors, balconies, roofs - and so do the splinters, stone chips and dirt your bullets kick up. Install or update IranCoJ Graphics in Mods.",
+      "date": "2026-11-15",
+      "action": "mods",
+      "actionLabel": "Mods"
+    },
     {
       "id": "graphics-192",
       "tag": "IRANCOJ GRAPHICS 1.9.2",
