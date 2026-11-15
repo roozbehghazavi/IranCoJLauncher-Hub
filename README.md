@@ -68,7 +68,7 @@ On the Steam Deck, open it in Desktop Mode; you can then add it to Steam as a no
 
 - **IranCoJ Launcher and Edition:** Thomas (Roozbeh)
 - **Server List Mod:** mx98919
-- **Gore Mod, No DOF & Motion Blur:** cr1m3
+- **No DOF & Motion Blur:** cr1m3
 - **Font:** Oswald, by Vernon Adams and contributors (SIL Open Font License)
 
 *Call of Juarez: Bound in Blood* belongs to its owners. This project ships none of the game's files:
