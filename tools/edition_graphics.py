@@ -227,7 +227,9 @@ def taa_block(src):
             '                    QuadScreen("copy.mat", "std", 1)' + N +
             '            SetTextureVar(9, "s_curves") //IranCoJ Edition: slot 9 back to the colour curves (TAA had the depth there)' + N + N +
             '            ')
-for f in ('scene30.ppfx', 'Effects/screen_copy_30.ppfx'):
+# The in-game Post process "Simple" (scene30simple.ppfx) ends in screen_copy_30simple.ppfx: without TAA there the
+# jittered frames went to the screen as they were and the picture shivered.
+for f in ('scene30.ppfx', 'Effects/screen_copy_30.ppfx', 'Effects/screen_copy_30simple.ppfx'):
     rewrites.append(rw('Data/Postprocess/' + f, D0, 'Data/Postprocess/' + f, [
         (r'!include\("screen_copy_30_setup\.ppfx"\)(\s*)SetTexture\(8, "CLR"\)',
          taa_block('CLR') + '!include("screen_copy_30_setup.ppfx")$1SetTexture(8, "IRN_TAA_TMP")'),
