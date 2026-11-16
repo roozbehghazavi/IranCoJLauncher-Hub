@@ -1,4 +1,4 @@
-IranCoJ Graphics 1.9.2 - the Edition's remastered graphics, by Thomas (Roozbeh).
+IranCoJ Graphics 1.9.3 - the Edition's remastered graphics, by Thomas (Roozbeh).
 
 Everything is set in the IranCoJ Launcher: Settings > Graphics & Sound > Remastered or Vanilla, and each feature on
 its own in the Remastered group. The launcher writes irancojfx.ini and edited copies of the game's own pipeline
@@ -101,3 +101,9 @@ against the terrain, so blood fell through the boards to the ground below; iranc
 buildings too (not players or horses; [gore] floors=0 in irancojfx.ini turns it off). Bullet debris - splinters,
 stone chips, clods - now lands and lies a few seconds where it falls, ground and floors alike. The weapon finish you
 pick in the launcher also holds against the 200,000 wallet unlock (it switched you to Prime with its message).
+
+1.9.3: fixes freezes when shooting players. To find who a bullet hit, the blood code asked the engine for the bones
+of every object near the hit; an object that was not a body made each of those questions crash inside the engine,
+and catching thousands of them froze the game (for minutes once). Objects are now checked before the engine is
+asked, a kind of object without a skeleton is never asked again, and a body's bones are remembered, so a hit costs
+almost nothing.
