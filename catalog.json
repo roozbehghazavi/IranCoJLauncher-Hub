@@ -415,13 +415,13 @@
     {
       "id": "IranCoJGraphics",
       "name": "IranCoJ Graphics",
-      "version": "1.9.6",
+      "version": "1.10.0",
       "description": "The Edition's remastered graphics: GGX lighting and metal, ambient occlusion (GTAO), soft shadows, temporal anti-aliasing, sharpening and colour, and every map's detail and draw distances. Liquid blood: wounds that pulse and drip, headshots, pools under bodies. Black-powder gunfire and bullet impacts. Settings > Graphics > Remastered or Vanilla.",
       "package": {
-        "file": "IranCoJGraphics-1.9.6.zip",
-        "size": 5189538,
-        "sha256": "577e9ff19f179a7b579426de827e3d3690913bf650a9636e50fa7ca7e5eeae02",
-        "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/mods/IranCoJGraphics-1.9.6.zip"
+        "file": "IranCoJGraphics-1.10.0.zip",
+        "size": 6338971,
+        "sha256": "10afe64bad0d2e52987c3f45a2134f80ebea06bfcb15a7dfb2e8c8af7af31a33",
+        "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/mods/IranCoJGraphics-1.10.0.zip"
       },
       "exclude": [
         "mods.txt"
@@ -848,7 +848,7 @@
     }
   ],
   "edition": {
-    "version": "1.3.4",
+    "version": "1.3.5",
     "ownUserFolder": true,
     "menuNavigation": true,
     "include": [
@@ -1757,7 +1757,7 @@
           ],
           [
             "\\z",
-            " \u0000Name_WeaponPistolFrontierUpgrade\u0012\u0000S\u0000p\u0000r\u0000i\u0000n\u0000g\u0000f\u0000i\u0000e\u0000l\u0000d\u0000 \u0000M\u0000u\u0000s\u0000k\u0000e\u0000t\u0000#\u0000Name_WeaponPistolFrontierUpgradeNet\u0012\u0000S\u0000p\u0000r\u0000i\u0000n\u0000g\u0000f\u0000i\u0000e\u0000l\u0000d\u0000 \u0000M\u0000u\u0000s\u0000k\u0000e\u0000t\u0000\u001d\u0000N_WeaponPistolFrontierUpgrade\u0012\u0000S\u0000p\u0000r\u0000i\u0000n\u0000g\u0000f\u0000i\u0000e\u0000l\u0000d\u0000 \u0000M\u0000u\u0000s\u0000k\u0000e\u0000t\u0000\u0017\u0000MenuDerringerUpgradeNet\u000f\u0000T\u0000h\u0000r\u0000o\u0000w\u0000i\u0000n\u0000g\u0000 \u0000K\u0000n\u0000i\u0000v\u0000e\u0000s\u0000$\u0000Name_WeaponPistolDerringerUpgradeNet\u000e\u0000T\u0000h\u0000r\u0000o\u0000w\u0000i\u0000n\u0000g\u0000 \u0000K\u0000n\u0000i\u0000f\u0000e\u0000!\u0000Name_WeaponPistolDerringerUpgrade\u000e\u0000T\u0000h\u0000r\u0000o\u0000w\u0000i\u0000n\u0000g\u0000 \u0000K\u0000n\u0000i\u0000f\u0000e\u0000\u001e\u0000N_WeaponPistolDerringerUpgrade\u000e\u0000T\u0000h\u0000r\u0000o\u0000w\u0000i\u0000n\u0000g\u0000 \u0000K\u0000n\u0000i\u0000f\u0000e\u0000\u0014\u0000MenuLemantUpgradeNet\b\u0000T\u0000o\u0000m\u0000a\u0000h\u0000a\u0000w\u0000k\u0000!\u0000Name_WeaponPistolLemantUpgradeNet\b\u0000T\u0000o\u0000m\u0000a\u0000h\u0000a\u0000w\u0000k\u0000\u001e\u0000Name_WeaponPistolLemantUpgrade\b\u0000T\u0000o\u0000m\u0000a\u0000h\u0000a\u0000w\u0000k\u0000\u001b\u0000N_WeaponPistolLemantUpgrade\b\u0000T\u0000o\u0000m\u0000a\u0000h\u0000a\u0000w\u0000k\u0000\u0011\u0000IrnEditionVersion\u0015\u0000I\u0000r\u0000a\u0000n\u0000C\u0000o\u0000J\u0000 \u0000E\u0000d\u0000i\u0000t\u0000i\u0000o\u0000n\u0000 \u00001\u0000.\u00003\u0000.\u00004\u0000"
+            " \u0000Name_WeaponPistolFrontierUpgrade\u0012\u0000S\u0000p\u0000r\u0000i\u0000n\u0000g\u0000f\u0000i\u0000e\u0000l\u0000d\u0000 \u0000M\u0000u\u0000s\u0000k\u0000e\u0000t\u0000#\u0000Name_WeaponPistolFrontierUpgradeNet\u0012\u0000S\u0000p\u0000r\u0000i\u0000n\u0000g\u0000f\u0000i\u0000e\u0000l\u0000d\u0000 \u0000M\u0000u\u0000s\u0000k\u0000e\u0000t\u0000\u001d\u0000N_WeaponPistolFrontierUpgrade\u0012\u0000S\u0000p\u0000r\u0000i\u0000n\u0000g\u0000f\u0000i\u0000e\u0000l\u0000d\u0000 \u0000M\u0000u\u0000s\u0000k\u0000e\u0000t\u0000\u0017\u0000MenuDerringerUpgradeNet\u000f\u0000T\u0000h\u0000r\u0000o\u0000w\u0000i\u0000n\u0000g\u0000 \u0000K\u0000n\u0000i\u0000v\u0000e\u0000s\u0000$\u0000Name_WeaponPistolDerringerUpgradeNet\u000e\u0000T\u0000h\u0000r\u0000o\u0000w\u0000i\u0000n\u0000g\u0000 \u0000K\u0000n\u0000i\u0000f\u0000e\u0000!\u0000Name_WeaponPistolDerringerUpgrade\u000e\u0000T\u0000h\u0000r\u0000o\u0000w\u0000i\u0000n\u0000g\u0000 \u0000K\u0000n\u0000i\u0000f\u0000e\u0000\u001e\u0000N_WeaponPistolDerringerUpgrade\u000e\u0000T\u0000h\u0000r\u0000o\u0000w\u0000i\u0000n\u0000g\u0000 \u0000K\u0000n\u0000i\u0000f\u0000e\u0000\u0014\u0000MenuLemantUpgradeNet\b\u0000T\u0000o\u0000m\u0000a\u0000h\u0000a\u0000w\u0000k\u0000!\u0000Name_WeaponPistolLemantUpgradeNet\b\u0000T\u0000o\u0000m\u0000a\u0000h\u0000a\u0000w\u0000k\u0000\u001e\u0000Name_WeaponPistolLemantUpgrade\b\u0000T\u0000o\u0000m\u0000a\u0000h\u0000a\u0000w\u0000k\u0000\u001b\u0000N_WeaponPistolLemantUpgrade\b\u0000T\u0000o\u0000m\u0000a\u0000h\u0000a\u0000w\u0000k\u0000\u0011\u0000IrnEditionVersion\u0015\u0000I\u0000r\u0000a\u0000n\u0000C\u0000o\u0000J\u0000 \u0000E\u0000d\u0000i\u0000t\u0000i\u0000o\u0000n\u0000 \u00001\u0000.\u00003\u0000.\u00005\u0000"
           ]
         ]
       },
@@ -2269,7 +2269,8 @@
           "entry": "Data/Shaders/postprocess/shadows_blur_ps.hlsl",
           "when": {
             "taa": [
-              "on"
+              "on",
+              "fsr3"
             ],
             "ao": [
               "half",
@@ -2289,7 +2290,8 @@
           "entry": "Data/Shaders/postprocess/shadows_blur_ps.hlsl",
           "when": {
             "taa": [
-              "on"
+              "on",
+              "fsr3"
             ],
             "ao": [
               "vanilla"
@@ -2493,7 +2495,8 @@
           "entry": "Data/Shaders/postprocess/blur_camera_motion.mtt",
           "when": {
             "taa": [
-              "on"
+              "on",
+              "fsr3"
             ]
           },
           "replace": [
@@ -2529,7 +2532,8 @@
           "entry": "Data/Postprocess/scene30_init_core.ppfx",
           "when": {
             "taa": [
-              "on"
+              "on",
+              "fsr3"
             ]
           },
           "replace": [
@@ -2545,7 +2549,8 @@
           "entry": "Data/Postprocess/scene30.ppfx",
           "when": {
             "taa": [
-              "on"
+              "on",
+              "fsr3"
             ]
           },
           "replace": [
@@ -2565,7 +2570,8 @@
           "entry": "Data/Postprocess/Effects/screen_copy_30.ppfx",
           "when": {
             "taa": [
-              "on"
+              "on",
+              "fsr3"
             ]
           },
           "replace": [
@@ -2585,7 +2591,8 @@
           "entry": "Data/Postprocess/Effects/screen_copy_30simple.ppfx",
           "when": {
             "taa": [
-              "on"
+              "on",
+              "fsr3"
             ]
           },
           "replace": [
@@ -2624,6 +2631,130 @@
             [
               "(float4 Pos_Out_CS\\(float4 v_pos\\)\\s*\\{\\s*)return Mul44\\(v_pos, PROJECTION_XFORM\\);",
               "$1return Irn_Jitter(Mul44(v_pos, PROJECTION_XFORM));"
+            ]
+          ]
+        },
+        {
+          "path": "CoJ2/Data/Shaders/Common/common.hlsl",
+          "pak": "CoJ2/Data1.pak",
+          "entry": "Data/Shaders/Common/common.hlsl",
+          "when": {
+            "taa": [
+              "fsr3"
+            ]
+          },
+          "replace": [
+            [
+              "(?m)^(?=[ \\t]*float4 Pos_Out\\(float4 v_pos\\))",
+              "#define IRN_TAA 1\r\n        //IranCoJ Edition: TAA jitter - the scene a sub-pixel off, a new offset each frame\r\n        #if defined(IRN_TAA)\r\n            #define IRN_TAA_JITTER_PX 1   // irancoj_taa_ps.hlsl un-shifts the frame only when this is here\r\n            // FSR 3.1: irancojfx.dll (1.10+) puts this frame's offset into CAMERA_POS_PREV_WS (no game shader uses\r\n            // it): xy, with z = 12345 to say so - FSR is told the same offset. Without it, picked from TIME.\r\n            float4 CAMERA_POS_PREV_WS;\r\n            // this frame's offset in pixels (x right, y up), within half a pixel\r\n            float2 Irn_Jitter_Px()\r\n            {\r\n                if (abs(CAMERA_POS_PREV_WS.z - 12345.0) < 0.5) return CAMERA_POS_PREV_WS.xy;\r\n                float f_i = floor(frac(sin(floor(TIME * 997.0) * 12.9898) * 43758.5453) * 8.0);\r\n                float2 v_j = float2(0.0625, 0.8889);\r\n                v_j = (f_i < 6.5) ? float2(0.875, 0.5556) : v_j;\r\n                v_j = (f_i < 5.5) ? float2(0.375, 0.2222) : v_j;\r\n                v_j = (f_i < 4.5) ? float2(0.625, 0.7778) : v_j;\r\n                v_j = (f_i < 3.5) ? float2(0.125, 0.4444) : v_j;\r\n                v_j = (f_i < 2.5) ? float2(0.75, 0.1111) : v_j;\r\n                v_j = (f_i < 1.5) ? float2(0.25, 0.6667) : v_j;\r\n                v_j = (f_i < 0.5) ? float2(0.5, 0.3333) : v_j;\r\n                return v_j - 0.5;\r\n            }\r\n        #endif\r\n        #if defined(IRN_TAA) && defined(VERTEXSHADER) && !defined(TECH_SHD_ON) && !defined(TECH_RFL_ON)\r\n            float4 Irn_Jitter(float4 v_pos)\r\n            {\r\n                v_pos.xy += Irn_Jitter_Px() * 2.0 * RENDER_TARGET_PARAMS.xy * v_pos.w;\r\n                return v_pos;\r\n            }\r\n        #else\r\n            #define Irn_Jitter(v) (v)\r\n        #endif\r\n\r\n"
+            ],
+            [
+              "return Mul44\\(v_pos, COMBINED_XFORM\\);",
+              "return Irn_Jitter(Mul44(v_pos, COMBINED_XFORM));"
+            ],
+            [
+              "(float4 Pos_Out_WS\\(float4 v_pos\\)\\s*\\{\\s*)return Mul44\\(v_pos, VIEWPROJ_XFORM\\);",
+              "$1return Irn_Jitter(Mul44(v_pos, VIEWPROJ_XFORM));"
+            ],
+            [
+              "(float4 Pos_Out_CS\\(float4 v_pos\\)\\s*\\{\\s*)return Mul44\\(v_pos, PROJECTION_XFORM\\);",
+              "$1return Irn_Jitter(Mul44(v_pos, PROJECTION_XFORM));"
+            ]
+          ]
+        },
+        {
+          "path": "CoJ2/Data/Shaders/postprocess/irancoj_mv.mtt",
+          "pak": "CoJ2/Data1.pak",
+          "entry": "Data/Shaders/postprocess/blur_camera_motion.mtt",
+          "when": {
+            "taa": [
+              "fsr3"
+            ]
+          },
+          "replace": [
+            [
+              "BlendFunc\\(SRC_ALPHA, INV_SRC_ALPHA, ONE, ONE\\);",
+              "//IranCoJ Edition: writes its result (no blending)"
+            ],
+            [
+              "(?s)extern float FPS;.*?Define\\(\"I_SAMPLES\", i_samples\\);",
+              "//IranCoJ Edition: no constants"
+            ],
+            [
+              "(?s)int i_cst_i_current = i_const_int_first;.*?Define\\(s_cst_name \\+ \"000\", s_cst_000\\);",
+              "//IranCoJ Edition: no constants"
+            ],
+            [
+              "e_filter = LINEAR_NO_MIP, e_tile = MIRROR\\);",
+              "e_filter = NO_FILTERING, e_tile = CLAMP);"
+            ],
+            [
+              "#include <blur_camera_motion_ps\\.hlsl>",
+              "#include <irancoj_mv_ps.hlsl>"
+            ]
+          ]
+        },
+        {
+          "path": "CoJ2/Data/Postprocess/scene30_init_core.ppfx",
+          "pak": "CoJ2/Data0.pak",
+          "entry": "Data/Postprocess/scene30_init_core.ppfx",
+          "when": {
+            "taa": [
+              "fsr3"
+            ]
+          },
+          "replace": [
+            [
+              "\\z",
+              "\r\n//IranCoJ Edition: FSR 3.1 motion vectors (render resolution: irancojfx.dll scales it)\r\nBufferScreenFormat(\"IRN_MV\", 1, \"A16B16G16R16F\", \"temp\")\r\n"
+            ]
+          ]
+        },
+        {
+          "path": "CoJ2/Data/Postprocess/scene30.ppfx",
+          "pak": "CoJ2/Data0.pak",
+          "entry": "Data/Postprocess/scene30.ppfx",
+          "when": {
+            "taa": [
+              "fsr3"
+            ]
+          },
+          "replace": [
+            [
+              "(SetRenderTarget\\(\"IRN_TAA_TMP\", \"\"\\)\\s*SetTexture\\(8, \"(?:CLR|PRV)\"\\))",
+              "SetRenderTarget(\"IRN_MV\", \"\") //IranCoJ Edition: FSR 3.1 motion vectors\r\n                SetTexture(8, \"DPT\")\r\n                SetTexture(9, \"DPT\")\r\n                    QuadScreen(\"irancoj_mv.mat\", \"std\", 1)\r\n            $1"
+            ]
+          ]
+        },
+        {
+          "path": "CoJ2/Data/Postprocess/Effects/screen_copy_30.ppfx",
+          "pak": "CoJ2/Data0.pak",
+          "entry": "Data/Postprocess/Effects/screen_copy_30.ppfx",
+          "when": {
+            "taa": [
+              "fsr3"
+            ]
+          },
+          "replace": [
+            [
+              "(SetRenderTarget\\(\"IRN_TAA_TMP\", \"\"\\)\\s*SetTexture\\(8, \"(?:CLR|PRV)\"\\))",
+              "SetRenderTarget(\"IRN_MV\", \"\") //IranCoJ Edition: FSR 3.1 motion vectors\r\n                SetTexture(8, \"DPT\")\r\n                SetTexture(9, \"DPT\")\r\n                    QuadScreen(\"irancoj_mv.mat\", \"std\", 1)\r\n            $1"
+            ]
+          ]
+        },
+        {
+          "path": "CoJ2/Data/Postprocess/Effects/screen_copy_30simple.ppfx",
+          "pak": "CoJ2/Data0.pak",
+          "entry": "Data/Postprocess/Effects/screen_copy_30simple.ppfx",
+          "when": {
+            "taa": [
+              "fsr3"
+            ]
+          },
+          "replace": [
+            [
+              "(SetRenderTarget\\(\"IRN_TAA_TMP\", \"\"\\)\\s*SetTexture\\(8, \"(?:CLR|PRV)\"\\))",
+              "SetRenderTarget(\"IRN_MV\", \"\") //IranCoJ Edition: FSR 3.1 motion vectors\r\n                SetTexture(8, \"DPT\")\r\n                SetTexture(9, \"DPT\")\r\n                    QuadScreen(\"irancoj_mv.mat\", \"std\", 1)\r\n            $1"
             ]
           ]
         },
@@ -3028,7 +3159,7 @@
       {
         "path": "CoJ2/Data/Menu/scr/Credits_PC.scr",
         "size": 6166,
-        "sha256": "13b45c042b6ba62bd5aa1733d9817b5a6081c8f7dc19388d18be59b55fab859e",
+        "sha256": "ce0e5f798f5fe67a0879c8bd20632d2f3c7823a0a3aab9f6542397115dc0fd36",
         "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/edition/Credits_PC.scr"
       },
       {
