@@ -848,7 +848,7 @@
     }
   ],
   "edition": {
-    "version": "1.3.3",
+    "version": "1.3.4",
     "ownUserFolder": true,
     "menuNavigation": true,
     "include": [
@@ -1757,7 +1757,7 @@
           ],
           [
             "\\z",
-            " \u0000Name_WeaponPistolFrontierUpgrade\u0012\u0000S\u0000p\u0000r\u0000i\u0000n\u0000g\u0000f\u0000i\u0000e\u0000l\u0000d\u0000 \u0000M\u0000u\u0000s\u0000k\u0000e\u0000t\u0000#\u0000Name_WeaponPistolFrontierUpgradeNet\u0012\u0000S\u0000p\u0000r\u0000i\u0000n\u0000g\u0000f\u0000i\u0000e\u0000l\u0000d\u0000 \u0000M\u0000u\u0000s\u0000k\u0000e\u0000t\u0000\u001d\u0000N_WeaponPistolFrontierUpgrade\u0012\u0000S\u0000p\u0000r\u0000i\u0000n\u0000g\u0000f\u0000i\u0000e\u0000l\u0000d\u0000 \u0000M\u0000u\u0000s\u0000k\u0000e\u0000t\u0000\u0017\u0000MenuDerringerUpgradeNet\u000f\u0000T\u0000h\u0000r\u0000o\u0000w\u0000i\u0000n\u0000g\u0000 \u0000K\u0000n\u0000i\u0000v\u0000e\u0000s\u0000$\u0000Name_WeaponPistolDerringerUpgradeNet\u000e\u0000T\u0000h\u0000r\u0000o\u0000w\u0000i\u0000n\u0000g\u0000 \u0000K\u0000n\u0000i\u0000f\u0000e\u0000!\u0000Name_WeaponPistolDerringerUpgrade\u000e\u0000T\u0000h\u0000r\u0000o\u0000w\u0000i\u0000n\u0000g\u0000 \u0000K\u0000n\u0000i\u0000f\u0000e\u0000\u001e\u0000N_WeaponPistolDerringerUpgrade\u000e\u0000T\u0000h\u0000r\u0000o\u0000w\u0000i\u0000n\u0000g\u0000 \u0000K\u0000n\u0000i\u0000f\u0000e\u0000\u0014\u0000MenuLemantUpgradeNet\b\u0000T\u0000o\u0000m\u0000a\u0000h\u0000a\u0000w\u0000k\u0000!\u0000Name_WeaponPistolLemantUpgradeNet\b\u0000T\u0000o\u0000m\u0000a\u0000h\u0000a\u0000w\u0000k\u0000\u001e\u0000Name_WeaponPistolLemantUpgrade\b\u0000T\u0000o\u0000m\u0000a\u0000h\u0000a\u0000w\u0000k\u0000\u001b\u0000N_WeaponPistolLemantUpgrade\b\u0000T\u0000o\u0000m\u0000a\u0000h\u0000a\u0000w\u0000k\u0000\u0011\u0000IrnEditionVersion\u0015\u0000I\u0000r\u0000a\u0000n\u0000C\u0000o\u0000J\u0000 \u0000E\u0000d\u0000i\u0000t\u0000i\u0000o\u0000n\u0000 \u00001\u0000.\u00003\u0000.\u00003\u0000"
+            " \u0000Name_WeaponPistolFrontierUpgrade\u0012\u0000S\u0000p\u0000r\u0000i\u0000n\u0000g\u0000f\u0000i\u0000e\u0000l\u0000d\u0000 \u0000M\u0000u\u0000s\u0000k\u0000e\u0000t\u0000#\u0000Name_WeaponPistolFrontierUpgradeNet\u0012\u0000S\u0000p\u0000r\u0000i\u0000n\u0000g\u0000f\u0000i\u0000e\u0000l\u0000d\u0000 \u0000M\u0000u\u0000s\u0000k\u0000e\u0000t\u0000\u001d\u0000N_WeaponPistolFrontierUpgrade\u0012\u0000S\u0000p\u0000r\u0000i\u0000n\u0000g\u0000f\u0000i\u0000e\u0000l\u0000d\u0000 \u0000M\u0000u\u0000s\u0000k\u0000e\u0000t\u0000\u0017\u0000MenuDerringerUpgradeNet\u000f\u0000T\u0000h\u0000r\u0000o\u0000w\u0000i\u0000n\u0000g\u0000 \u0000K\u0000n\u0000i\u0000v\u0000e\u0000s\u0000$\u0000Name_WeaponPistolDerringerUpgradeNet\u000e\u0000T\u0000h\u0000r\u0000o\u0000w\u0000i\u0000n\u0000g\u0000 \u0000K\u0000n\u0000i\u0000f\u0000e\u0000!\u0000Name_WeaponPistolDerringerUpgrade\u000e\u0000T\u0000h\u0000r\u0000o\u0000w\u0000i\u0000n\u0000g\u0000 \u0000K\u0000n\u0000i\u0000f\u0000e\u0000\u001e\u0000N_WeaponPistolDerringerUpgrade\u000e\u0000T\u0000h\u0000r\u0000o\u0000w\u0000i\u0000n\u0000g\u0000 \u0000K\u0000n\u0000i\u0000f\u0000e\u0000\u0014\u0000MenuLemantUpgradeNet\b\u0000T\u0000o\u0000m\u0000a\u0000h\u0000a\u0000w\u0000k\u0000!\u0000Name_WeaponPistolLemantUpgradeNet\b\u0000T\u0000o\u0000m\u0000a\u0000h\u0000a\u0000w\u0000k\u0000\u001e\u0000Name_WeaponPistolLemantUpgrade\b\u0000T\u0000o\u0000m\u0000a\u0000h\u0000a\u0000w\u0000k\u0000\u001b\u0000N_WeaponPistolLemantUpgrade\b\u0000T\u0000o\u0000m\u0000a\u0000h\u0000a\u0000w\u0000k\u0000\u0011\u0000IrnEditionVersion\u0015\u0000I\u0000r\u0000a\u0000n\u0000C\u0000o\u0000J\u0000 \u0000E\u0000d\u0000i\u0000t\u0000i\u0000o\u0000n\u0000 \u00001\u0000.\u00003\u0000.\u00004\u0000"
           ]
         ]
       },
@@ -2580,6 +2580,26 @@
           ]
         },
         {
+          "path": "CoJ2/Data/Postprocess/Effects/screen_copy_30simple.ppfx",
+          "pak": "CoJ2/Data0.pak",
+          "entry": "Data/Postprocess/Effects/screen_copy_30simple.ppfx",
+          "when": {
+            "taa": [
+              "on"
+            ]
+          },
+          "replace": [
+            [
+              "!include\\(\"screen_copy_30_setup\\.ppfx\"\\)(\\s*)SetTexture\\(8, \"CLR\"\\)",
+              "//IranCoJ Edition: temporal anti-aliasing of CLR (irancoj_taa.mat), the history kept for the next frame\r\n            SetRenderTarget(\"IRN_TAA_TMP\", \"\")\r\n                SetTexture(8, \"CLR\")\r\n                SetTexture(9, \"DPT\")\r\n                SetTexture(10, \"IRN_TAA_HIST\")\r\n                    QuadScreen(\"irancoj_taa.mat\", \"std\", 1)\r\n            SetRenderTarget(\"IRN_TAA_HIST\", \"\")\r\n                SetTexture(8, \"IRN_TAA_TMP\")\r\n                    QuadScreen(\"copy.mat\", \"std\", 1)\r\n            SetTextureVar(9, \"s_curves\") //IranCoJ Edition: slot 9 back to the colour curves (TAA had the depth there)\r\n\r\n            !include(\"screen_copy_30_setup.ppfx\")$1SetTexture(8, \"IRN_TAA_TMP\")"
+            ],
+            [
+              "!include\\(\"screen_copy_30_setup\\.ppfx\"\\)(\\s*)SetTexture\\(8, \"PRV\"\\)",
+              "//IranCoJ Edition: temporal anti-aliasing of PRV (irancoj_taa.mat), the history kept for the next frame\r\n            SetRenderTarget(\"IRN_TAA_TMP\", \"\")\r\n                SetTexture(8, \"PRV\")\r\n                SetTexture(9, \"DPT\")\r\n                SetTexture(10, \"IRN_TAA_HIST\")\r\n                    QuadScreen(\"irancoj_taa.mat\", \"std\", 1)\r\n            SetRenderTarget(\"IRN_TAA_HIST\", \"\")\r\n                SetTexture(8, \"IRN_TAA_TMP\")\r\n                    QuadScreen(\"copy.mat\", \"std\", 1)\r\n            SetTextureVar(9, \"s_curves\") //IranCoJ Edition: slot 9 back to the colour curves (TAA had the depth there)\r\n\r\n            !include(\"screen_copy_30_setup.ppfx\")$1SetTexture(8, \"IRN_TAA_TMP\")"
+            ]
+          ]
+        },
+        {
           "path": "CoJ2/Data/Shaders/Common/common.hlsl",
           "pak": "CoJ2/Data1.pak",
           "entry": "Data/Shaders/Common/common.hlsl",
@@ -3008,7 +3028,7 @@
       {
         "path": "CoJ2/Data/Menu/scr/Credits_PC.scr",
         "size": 6166,
-        "sha256": "d99a077c5653f2ce5603be34481b7e6f0160d53eba8e45b74aef25165da9591b",
+        "sha256": "13b45c042b6ba62bd5aa1733d9817b5a6081c8f7dc19388d18be59b55fab859e",
         "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/edition/Credits_PC.scr"
       },
       {
