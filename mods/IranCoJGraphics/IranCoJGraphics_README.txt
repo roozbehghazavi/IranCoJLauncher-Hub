@@ -1,4 +1,4 @@
-IranCoJ Graphics 1.9.4 - the Edition's remastered graphics, by Thomas (Roozbeh).
+IranCoJ Graphics 1.9.5 - the Edition's remastered graphics, by Thomas (Roozbeh).
 
 Everything is set in the IranCoJ Launcher: Settings > Graphics & Sound > Remastered or Vanilla, and each feature on
 its own in the Remastered group. The launcher writes irancojfx.ini and edited copies of the game's own pipeline
@@ -112,3 +112,10 @@ almost nothing.
 asked for its bones (and the game crashed on it later at the map change); such meshes are now skipped, a map where
 the engine's own object search faults gets no new blood until the next map, and what the object was is written to
 irancojfx.log.
+
+1.9.5: the heavy gore is back - wounds that pulse and drip, headshot bursts and pools under bodies. The safety checks
+of 1.9.3 and 1.9.4 turned players away as bodies (one check remembered "no skeleton" for a whole kind of object that
+players share with props, the other asked their meshes for data they don't keep), so all that was left were a few
+drops. And the object behind the freezes and the crash at a map change is found: an effect emitter - often a blood
+effect of our own, just made, still empty - which the blood code asked for bones as if it were a body. Only bodies
+(players, AI, horses, animals) are asked now.
