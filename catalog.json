@@ -415,13 +415,13 @@
     {
       "id": "IranCoJGraphics",
       "name": "IranCoJ Graphics",
-      "version": "1.9.2",
+      "version": "1.9.3",
       "description": "The Edition's remastered graphics: GGX lighting and metal, ambient occlusion (GTAO), soft shadows, temporal anti-aliasing, sharpening and colour, and every map's detail and draw distances. Liquid blood: wounds that pulse and drip, headshots, pools under bodies. Black-powder gunfire and bullet impacts. Settings > Graphics > Remastered or Vanilla.",
       "package": {
-        "file": "IranCoJGraphics-1.9.2.zip",
-        "size": 5186829,
-        "sha256": "f47191213cae4fc9928199e0901034902f7d754e05a871535528bbaee6fc81bd",
-        "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/mods/IranCoJGraphics-1.9.2.zip"
+        "file": "IranCoJGraphics-1.9.3.zip",
+        "size": 5188234,
+        "sha256": "5b6485401503359f4b03c0f8441eb8cea2327df2ecd8e7facd12117415911e33",
+        "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/mods/IranCoJGraphics-1.9.3.zip"
       },
       "exclude": [
         "mods.txt"
@@ -659,13 +659,13 @@
     {
       "id": "NewClasses",
       "name": "New Classes",
-      "version": "2.0.9",
+      "version": "2.0.10",
       "description": "Rancher and Redneck as playable classes, and three classes play as CoJ Gunslinger characters: Silas Greaves (Rancher), John Wesley Hardin (Duelist) and Billy the Kid (Rifleman). With upgrades, new class pictures and the IranCoJ Skin Pack.",
       "package": {
-        "file": "NewClasses-2.0.9.zip",
-        "size": 36456700,
-        "sha256": "1caafd148e23cc43e5497f8d25c2bf7b66db57b29de9a267d92a58fbd82560cf",
-        "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/mods/NewClasses-2.0.9.zip"
+        "file": "NewClasses-2.0.10.zip",
+        "size": 36457595,
+        "sha256": "6702125bc6fc2bd00e4f6f5ff54beae042055506753419a90c6a25f96f1354fc",
+        "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/mods/NewClasses-2.0.10.zip"
       },
       "exclude": [
         "README_INSTALL.txt",
