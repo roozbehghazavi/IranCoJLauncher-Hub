@@ -1,4 +1,4 @@
-IranCoJ Graphics 1.9.3 - the Edition's remastered graphics, by Thomas (Roozbeh).
+IranCoJ Graphics 1.9.4 - the Edition's remastered graphics, by Thomas (Roozbeh).
 
 Everything is set in the IranCoJ Launcher: Settings > Graphics & Sound > Remastered or Vanilla, and each feature on
 its own in the Remastered group. The launcher writes irancojfx.ini and edited copies of the game's own pipeline
@@ -107,3 +107,8 @@ of every object near the hit; an object that was not a body made each of those q
 and catching thousands of them froze the game (for minutes once). Objects are now checked before the engine is
 asked, a kind of object without a skeleton is never asked again, and a body's bones are remembered, so a hit costs
 almost nothing.
+
+1.9.4: the blood code leaves broken objects alone. A body whose mesh had lost its data made the engine fault when
+asked for its bones (and the game crashed on it later at the map change); such meshes are now skipped, a map where
+the engine's own object search faults gets no new blood until the next map, and what the object was is written to
+irancojfx.log.
