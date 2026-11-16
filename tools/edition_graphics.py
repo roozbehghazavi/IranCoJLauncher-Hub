@@ -108,9 +108,9 @@ def shd_unjitter(div):
              '            v_cam_dir_ss = Cam_Dir_Out_PP(v_irn_pos_ss);' + N +
              '        #endif')]
 rewrites.append(rw('Data/Shaders/postprocess/shadows_blur_ps.hlsl', D1, 'Data/Shaders/postprocess/shadows_blur_ps.hlsl',
-                   shd_unjitter('{{ao_div}}.0'), when={'taa': ['on'], 'ao': ['half', 'full']}))
+                   shd_unjitter('{{ao_div}}.0'), when={'taa': ['on', 'fsr3'], 'ao': ['half', 'full']}))
 rewrites.append(rw('Data/Shaders/postprocess/shadows_blur_ps.hlsl', D1, 'Data/Shaders/postprocess/shadows_blur_ps.hlsl',
-                   shd_unjitter('4.0'), when={'taa': ['on'], 'ao': ['vanilla']}))
+                   shd_unjitter('4.0'), when={'taa': ['on', 'fsr3'], 'ao': ['vanilla']}))
 rewrites.append(rw('Data/Scripts/varlist_occlusion.scr', D0, 'Data/Scripts/varlist_occlusion.scr', [
     (r'VarInt\( "i_occlusion_samples", 3 \)', 'VarInt( "i_occlusion_samples", {{ao_rings}} ) //IranCoJ Edition: vanilla 3')
 ], when=AO))
@@ -191,7 +191,8 @@ rewrites.append(rw('Data/Shaders/postprocess/lighting_pp_ps.hlsl', D1, 'Data/Sha
 # Temporal anti-aliasing (the mod's irancoj_taa_ps.hlsl / .mat): the scene is drawn a sub-pixel off each frame and
 # blended into a history reprojected with the camera's last view-projection. The material's template is the player's
 # own blur_camera_motion.mtt (its vertex shader gives the world-space camera direction), with a history sampler.
-TAA = {'taa': ['on']}
+TAA = {'taa': ['on', 'fsr3']}   # FSR 3.1 (fsr3) is our TAA pass with AMD's upscaler over it (irancojfx.dll, Vulkan)
+FSR = {'taa': ['fsr3']}
 rewrites.append(rw('Data/Shaders/postprocess/irancoj_taa.mtt', D1, 'Data/Shaders/postprocess/blur_camera_motion.mtt', [
     (r'BlendFunc\(SRC_ALPHA, INV_SRC_ALPHA, ONE, ONE\);', '//IranCoJ Edition: TAA writes its result (no blending)'),
     # the motion blur's constants: the TAA shader gets only the frame rate (its history lasts the same time at any
@@ -240,12 +241,18 @@ for f in ('scene30.ppfx', 'Effects/screen_copy_30.ppfx', 'Effects/screen_copy_30
 # offset for all shaders of a frame (from the engine's TIME). The offset is one of 8 evenly spread points (Halton 2,3),
 # picked per frame: a random offset bunched up and left gaps, so the history never settled evenly. Irn_Jitter_Px is
 # also there for pixel shaders: the TAA pass reads the frame back where it really belongs (irancoj_taa_ps.hlsl).
-jitter = (
+def jitter_block(owned):
+  # owned (FSR 3.1): the offset comes from irancojfx.dll, which tells FSR the very same one; plain TAA picks it itself
+  return (
     '        //IranCoJ Edition: TAA jitter - the scene a sub-pixel off, a new offset each frame' + N +
     '        #if defined(IRN_TAA)' + N +
     '            #define IRN_TAA_JITTER_PX 1   // irancoj_taa_ps.hlsl un-shifts the frame only when this is here' + N +
+    (('            // FSR 3.1: irancojfx.dll (1.10+) puts this frame\'s offset into CAMERA_POS_PREV_WS (no game shader uses' + N +
+      '            // it): xy, with z = 12345 to say so - FSR is told the same offset. Without it, picked from TIME.' + N +
+      '            float4 CAMERA_POS_PREV_WS;' + N) if owned else '') +
     '            // this frame\'s offset in pixels (x right, y up), within half a pixel' + N +
     '            float2 Irn_Jitter_Px()' + N + '            {' + N +
+    ('                if (abs(CAMERA_POS_PREV_WS.z - 12345.0) < 0.5) return CAMERA_POS_PREV_WS.xy;' + N if owned else '') +
     '                float f_i = floor(frac(sin(floor(TIME * 997.0) * 12.9898) * 43758.5453) * 8.0);' + N +
     '                float2 v_j = float2(0.0625, 0.8889);' + N +
     '                v_j = (f_i < 6.5) ? float2(0.875, 0.5556) : v_j;' + N +
@@ -262,12 +269,34 @@ jitter = (
     '                v_pos.xy += Irn_Jitter_Px() * 2.0 * RENDER_TARGET_PARAMS.xy * v_pos.w;' + N +
     '                return v_pos;' + N + '            }' + N +
     '        #else' + N + '            #define Irn_Jitter(v) (v)' + N + '        #endif' + N + N)
-rewrites.append(rw('Data/Shaders/Common/common.hlsl', D1, 'Data/Shaders/Common/common.hlsl', [
-    (r'(?m)^(?=[ \t]*float4 Pos_Out\(float4 v_pos\))', '#define IRN_TAA 1' + N + jitter),
-    (r'return Mul44\(v_pos, COMBINED_XFORM\);', 'return Irn_Jitter(Mul44(v_pos, COMBINED_XFORM));'),
-    (r'(float4 Pos_Out_WS\(float4 v_pos\)\s*\{\s*)return Mul44\(v_pos, VIEWPROJ_XFORM\);', '$1return Irn_Jitter(Mul44(v_pos, VIEWPROJ_XFORM));'),
-    (r'(float4 Pos_Out_CS\(float4 v_pos\)\s*\{\s*)return Mul44\(v_pos, PROJECTION_XFORM\);', '$1return Irn_Jitter(Mul44(v_pos, PROJECTION_XFORM));')
-], when=TAA))
+for owned, when in ((False, {'taa': ['on']}), (True, FSR)):   # plain TAA keeps its own jitter; FSR's is the DLL's
+    rewrites.append(rw('Data/Shaders/Common/common.hlsl', D1, 'Data/Shaders/Common/common.hlsl', [
+        (r'(?m)^(?=[ \t]*float4 Pos_Out\(float4 v_pos\))', '#define IRN_TAA 1' + N + jitter_block(owned)),
+        (r'return Mul44\(v_pos, COMBINED_XFORM\);', 'return Irn_Jitter(Mul44(v_pos, COMBINED_XFORM));'),
+        (r'(float4 Pos_Out_WS\(float4 v_pos\)\s*\{\s*)return Mul44\(v_pos, VIEWPROJ_XFORM\);', '$1return Irn_Jitter(Mul44(v_pos, VIEWPROJ_XFORM));'),
+        (r'(float4 Pos_Out_CS\(float4 v_pos\)\s*\{\s*)return Mul44\(v_pos, PROJECTION_XFORM\);', '$1return Irn_Jitter(Mul44(v_pos, PROJECTION_XFORM));')
+    ], when=when))
+
+# FSR 3.1 (Phase 5, irancojfx.dll 1.10+, Vulkan): motion vectors for AMD's upscaler - irancoj_mv_ps.hlsl, drawn into
+# IRN_MV (render resolution) right before the TAA pass; the DLL runs FSR after the TAA pass and puts its picture over
+# the TAA result. The template is the player's own blur_camera_motion.mtt (its vertex shader gives the camera ray).
+rewrites.append(rw('Data/Shaders/postprocess/irancoj_mv.mtt', D1, 'Data/Shaders/postprocess/blur_camera_motion.mtt', [
+    (r'BlendFunc\(SRC_ALPHA, INV_SRC_ALPHA, ONE, ONE\);', '//IranCoJ Edition: writes its result (no blending)'),
+    (r'(?s)extern float FPS;.*?Define\("I_SAMPLES", i_samples\);', '//IranCoJ Edition: no constants'),
+    (r'(?s)int i_cst_i_current = i_const_int_first;.*?Define\(s_cst_name \+ "000", s_cst_000\);', '//IranCoJ Edition: no constants'),
+    (r'e_filter = LINEAR_NO_MIP, e_tile = MIRROR\);', 'e_filter = NO_FILTERING, e_tile = CLAMP);'),
+    (r'#include <blur_camera_motion_ps\.hlsl>', '#include <irancoj_mv_ps.hlsl>')
+], when=FSR))
+rewrites.append(rw('Data/Postprocess/scene30_init_core.ppfx', D0, 'Data/Postprocess/scene30_init_core.ppfx', [
+    (r'\z', N + '//IranCoJ Edition: FSR 3.1 motion vectors (render resolution: irancojfx.dll scales it)' + N +
+     'BufferScreenFormat("IRN_MV", 1, "A16B16G16R16F", "temp")' + N)
+], when=FSR))
+mv_pass = ('SetRenderTarget("IRN_MV", "") //IranCoJ Edition: FSR 3.1 motion vectors' + N + '                SetTexture(8, "DPT")' + N +
+           '                SetTexture(9, "DPT")' + N + '                    QuadScreen("irancoj_mv.mat", "std", 1)' + N + '            ')
+for f in ('scene30.ppfx', 'Effects/screen_copy_30.ppfx', 'Effects/screen_copy_30simple.ppfx'):
+    rewrites.append(rw('Data/Postprocess/' + f, D0, 'Data/Postprocess/' + f, [
+        (r'(SetRenderTarget\("IRN_TAA_TMP", ""\)\s*SetTexture\(8, "(?:CLR|PRV)"\))', mv_pass + '$1')
+    ], when=FSR))
 
 # Light shafts (the mod's irancoj_shafts_ps.hlsl / .mat), in place of the game's sun rays: drawn at a quarter of the
 # screen into the glow (glow_30.ppfx), where each pixel walks towards the sun and gathers the open sky it passes, so

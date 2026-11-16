@@ -1,4 +1,4 @@
-IranCoJ Graphics 1.9.6 - the Edition's remastered graphics, by Thomas (Roozbeh).
+IranCoJ Graphics 1.10.0 - the Edition's remastered graphics, by Thomas (Roozbeh).
 
 Everything is set in the IranCoJ Launcher: Settings > Graphics & Sound > Remastered or Vanilla, and each feature on
 its own in the Remastered group. The launcher writes irancojfx.ini and edited copies of the game's own pipeline
@@ -124,3 +124,10 @@ effect of our own, just made, still empty - which the blood code asked for bones
 ragdoll), and 1.9.5 stopped following him right there - most deaths left no pool; now the pool goes where he fell.
 And a hit counts near any of the victim's bones, not only near his head and chest: shots to the legs and feet found
 nobody to bleed.
+
+1.10.0: FSR 3.1. Settings > Remastered > Temporal anti-aliasing has a third choice, FSR 3.1 (Vulkan only): AMD's
+upscaler rebuilds the picture from the lower Render resolution instead of our TAA - sharper and steadier on fine
+detail, for stronger graphics cards. It runs on the Vulkan renderer only (Settings > Display > Renderer: Vulkan); on
+DirectX 9 it is the normal TAA. Characters get their own motion (from their bones) and FSR's reactive mask, so
+moving players stay clean. Known: the 3D class preview on the class selection screen still shakes with FSR 3.1.
+FSR 3.1: AMD FidelityFX SDK 1.1.4, Copyright Advanced Micro Devices, MIT licence; Vulkan headers by Khronos, Apache 2.0.

@@ -1,0 +1,9 @@
+import "irancoj_mv.mtt"
+
+// IranCoJ Edition: motion vectors (irancoj_mv_ps.hlsl). irancoj_mv.mtt is written by the launcher from the
+// player's own blur_camera_motion.mtt.
+
+sub material()
+{
+    use mtt();
+}
