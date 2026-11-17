@@ -1,11 +1,21 @@
-IranCoJ Spectate  v1.1.0
+IranCoJ Spectate  v1.1.2
 ========================
 
 Spectate other players while you are dead, from the multiplayer class-selection
 screen. Third person by default, first person optional.
 
 
-WHAT'S NEW IN 1.1.0
+WHAT'S NEW IN 1.1.2
+-------------------
+* No more debug overlays. Keys like E, C, B and N could switch on the game's
+  leftover developer drawing (object names, bone boxes, coloured lines) while
+  spectating, and it stayed on screen for the rest of the match. Those keys do
+  nothing now, and that drawing is switched off entirely.
+* Buttons answer only when you click ON them. SPECTATE and the Back, <, > and
+  FPP / TPP buttons used to fire on a click anywhere on the screen once the
+  cursor had passed over them.
+
+WHAT WAS NEW IN 1.1.0
 -------------------
 * First person hides the watched player's face on your screen (the same face-
   less skin the game gives your own player), so the camera no longer dips into
