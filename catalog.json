@@ -776,13 +776,13 @@
     {
       "id": "SpectateMod",
       "name": "Spectate Mod",
-      "version": "1.1.1",
+      "version": "1.1.2",
       "description": "Spectate players in multiplayer, from the in-game menu.",
       "package": {
-        "file": "SpectateMod-1.1.1.zip",
-        "size": 220615,
-        "sha256": "5102cb34e6a98be41f8c0d11ef1ac4485108d99c87d4ba738b66a2cbbda66dbf",
-        "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/mods/SpectateMod-1.1.1.zip"
+        "file": "SpectateMod-1.1.2.zip",
+        "size": 220912,
+        "sha256": "21c88ba7c492ae38338f546b30d0224e74cbfc798222af1ed118c33b76b9f809",
+        "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/mods/SpectateMod-1.1.2.zip"
       },
       "exclude": [
         "mods.txt",
