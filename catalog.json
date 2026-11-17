@@ -415,13 +415,13 @@
     {
       "id": "IranCoJGraphics",
       "name": "IranCoJ Graphics",
-      "version": "1.10.1",
+      "version": "1.11.0",
       "description": "The Edition's remastered graphics: GGX lighting and metal, ambient occlusion (GTAO), soft shadows, temporal anti-aliasing, sharpening and colour, and every map's detail and draw distances. Liquid blood: wounds that pulse and drip, headshots, pools under bodies. Black-powder gunfire and bullet impacts. Settings > Graphics > Remastered or Vanilla.",
       "package": {
-        "file": "IranCoJGraphics-1.10.1.zip",
-        "size": 6336769,
-        "sha256": "9b841cab41648137ea1a9a7d097126cfaafc28a5c2023c0cbf5d0173a4dfa6ae",
-        "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/mods/IranCoJGraphics-1.10.1.zip"
+        "file": "IranCoJGraphics-1.11.0.zip",
+        "size": 6342194,
+        "sha256": "7ddd0e6cbf5a899498f4c3180c971373da075199039d0f30c7b1e4a475e9854f",
+        "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/mods/IranCoJGraphics-1.11.0.zip"
       },
       "exclude": [
         "mods.txt"
