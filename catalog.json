@@ -415,13 +415,13 @@
     {
       "id": "IranCoJGraphics",
       "name": "IranCoJ Graphics",
-      "version": "1.10.0",
+      "version": "1.10.1",
       "description": "The Edition's remastered graphics: GGX lighting and metal, ambient occlusion (GTAO), soft shadows, temporal anti-aliasing, sharpening and colour, and every map's detail and draw distances. Liquid blood: wounds that pulse and drip, headshots, pools under bodies. Black-powder gunfire and bullet impacts. Settings > Graphics > Remastered or Vanilla.",
       "package": {
-        "file": "IranCoJGraphics-1.10.0.zip",
-        "size": 6338971,
-        "sha256": "10afe64bad0d2e52987c3f45a2134f80ebea06bfcb15a7dfb2e8c8af7af31a33",
-        "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/mods/IranCoJGraphics-1.10.0.zip"
+        "file": "IranCoJGraphics-1.10.1.zip",
+        "size": 6336769,
+        "sha256": "9b841cab41648137ea1a9a7d097126cfaafc28a5c2023c0cbf5d0173a4dfa6ae",
+        "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/mods/IranCoJGraphics-1.10.1.zip"
       },
       "exclude": [
         "mods.txt"
@@ -635,13 +635,13 @@
     {
       "id": "IranCoJHud",
       "name": "IranCoJ HUD",
-      "version": "1.0.3",
+      "version": "1.0.4",
       "description": "The Edition's in-game HUD: kill feed, chat, team score bar, Shootout / Wanted standing and weapon names.",
       "package": {
-        "file": "IranCoJHud-1.0.3.zip",
-        "size": 180235,
-        "sha256": "4b4277ac704ed136b451ca44a5f903e84b3ec861410db6d00a7c914af61eb25e",
-        "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/mods/IranCoJHud-1.0.3.zip"
+        "file": "IranCoJHud-1.0.4.zip",
+        "size": 177977,
+        "sha256": "fdb53908e8a9e864f3b4c1a6979516bdd1ec14db0f8ba2d87383b1743544425a",
+        "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/mods/IranCoJHud-1.0.4.zip"
       },
       "exclude": [
         "mods.txt"
@@ -659,13 +659,13 @@
     {
       "id": "NewClasses",
       "name": "New Classes",
-      "version": "2.0.11",
+      "version": "2.0.12",
       "description": "Rancher and Redneck as playable classes, and three classes play as CoJ Gunslinger characters: Silas Greaves (Rancher), John Wesley Hardin (Duelist) and Billy the Kid (Rifleman). With upgrades, new class pictures and the IranCoJ Skin Pack.",
       "package": {
-        "file": "NewClasses-2.0.11.zip",
-        "size": 36457752,
-        "sha256": "ab2fdb91421e4bace37d08b4c91acaa1a77749b3ee33c90aa1fb46ecf7b596c8",
-        "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/mods/NewClasses-2.0.11.zip"
+        "file": "NewClasses-2.0.12.zip",
+        "size": 36455494,
+        "sha256": "912a9916e4fa1a729f1f613993b79c06f43e4177b68a279d51667766c1e788ce",
+        "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/mods/NewClasses-2.0.12.zip"
       },
       "exclude": [
         "README_INSTALL.txt",
@@ -708,13 +708,13 @@
     {
       "id": "ServerListMod",
       "name": "Server List Mod",
-      "version": "1.5.2.1+pb3d3804c",
+      "version": "1.5.2.2+pb3d3804c",
       "description": "In-game server list through OpenSpy, plus direct join. Replaces CoJ2_x86.dll and engine_x86.dll; uninstalling puts the originals back.",
       "package": {
-        "file": "ServerListMod-1.5.2.1+pb3d3804c.zip",
-        "size": 7094118,
-        "sha256": "a45ba7b1ed21966ef602bcc648ba9901927ce55105e5ab4b6695fe49dc31fefc",
-        "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/mods/ServerListMod-1.5.2.1%2Bpb3d3804c.zip"
+        "file": "ServerListMod-1.5.2.2+pb3d3804c.zip",
+        "size": 7091465,
+        "sha256": "f8a038718b81ae5132ed6ac8acf1d673679b8b940498d7a43f1b91666ad86d99",
+        "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/mods/ServerListMod-1.5.2.2%2Bpb3d3804c.zip"
       },
       "exclude": [
         "mods.txt"
@@ -776,13 +776,13 @@
     {
       "id": "SpectateMod",
       "name": "Spectate Mod",
-      "version": "1.1.2",
+      "version": "1.1.3",
       "description": "Spectate players in multiplayer, from the in-game menu.",
       "package": {
-        "file": "SpectateMod-1.1.2.zip",
-        "size": 220912,
-        "sha256": "21c88ba7c492ae38338f546b30d0224e74cbfc798222af1ed118c33b76b9f809",
-        "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/mods/SpectateMod-1.1.2.zip"
+        "file": "SpectateMod-1.1.3.zip",
+        "size": 218654,
+        "sha256": "9b214486538ba76411811866d2949f4805dedbd8433d604b2d17211a454807a5",
+        "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/mods/SpectateMod-1.1.3.zip"
       },
       "exclude": [
         "mods.txt",
@@ -801,13 +801,13 @@
     {
       "id": "TppCam",
       "name": "Third-Person Camera",
-      "version": "1.0.5",
+      "version": "1.0.6",
       "description": "Over-the-shoulder third-person view. F5 switches first / third person, the middle mouse button swaps shoulders (keys in Settings). Skirmish and Manhunt are first person only.",
       "package": {
-        "file": "TppCam-1.0.5.zip",
-        "size": 158222,
-        "sha256": "862e18e4cfec659b67ae96a7182ac57b592ac6ddf1b5cbf2727896f7df3829a4",
-        "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/mods/TppCam-1.0.5.zip"
+        "file": "TppCam-1.0.6.zip",
+        "size": 155964,
+        "sha256": "8ebb507831f16c043170fd724e7bc4e5b3e83407d82a5523f5a433051029af24",
+        "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/mods/TppCam-1.0.6.zip"
       },
       "exclude": [
         "mods.txt"
@@ -825,13 +825,13 @@
     {
       "id": "VoiceChatMod",
       "name": "Voice Chat Mod",
-      "version": "0.5.0",
+      "version": "0.5.1",
       "description": "In-game voice chat. Settings in voiceconfig.ini.",
       "package": {
-        "file": "VoiceChatMod-0.5.0.zip",
-        "size": 971683,
-        "sha256": "f03f03595341d76c8be3396158e2833d296077c1316d3db9b915a8faa280e420",
-        "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/mods/VoiceChatMod-0.5.0.zip"
+        "file": "VoiceChatMod-0.5.1.zip",
+        "size": 965800,
+        "sha256": "af0a2353f5ce0cf1379fe8f4ddf9dafe25209958b188fdbdad35cb4b0e6eb403",
+        "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/mods/VoiceChatMod-0.5.1.zip"
       },
       "exclude": [
         "mods.txt"
