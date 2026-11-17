@@ -1,4 +1,4 @@
-IranCoJ Graphics 1.10.0 - the Edition's remastered graphics, by Thomas (Roozbeh).
+IranCoJ Graphics 1.11.0 - the Edition's remastered graphics, by Thomas (Roozbeh).
 
 Everything is set in the IranCoJ Launcher: Settings > Graphics & Sound > Remastered or Vanilla, and each feature on
 its own in the Remastered group. The launcher writes irancojfx.ini and edited copies of the game's own pipeline
@@ -131,3 +131,10 @@ detail, for stronger graphics cards. It runs on the Vulkan renderer only (Settin
 DirectX 9 it is the normal TAA. Characters get their own motion (from their bones) and FSR's reactive mask, so
 moving players stay clean. Known: the 3D class preview on the class selection screen still shakes with FSR 3.1.
 FSR 3.1: AMD FidelityFX SDK 1.1.4, Copyright Advanced Micro Devices, MIT licence; Vulkan headers by Khronos, Apache 2.0.
+
+1.11.0: blood like CoJ Gunslinger, and on every body. A hit is now a burst: big clusters of drops thrown out of
+the wound, arcing down and growing as they fade, a throw of smaller drops, a splash, streaks and a quick spray - and
+everything that lands leaves its mark: puddles, splatters and drops on the ground and walls around a fight. Every
+body that goes down gets its pool, hit or not (one-shot kills, dynamite, knives, falls, your own body). Hits on
+players the network shows a little off from where the bullet met them bleed too. A broken object in the map no
+longer switches the blood off until the next map. Logs only with an irancojfx_log.on file next to the game.

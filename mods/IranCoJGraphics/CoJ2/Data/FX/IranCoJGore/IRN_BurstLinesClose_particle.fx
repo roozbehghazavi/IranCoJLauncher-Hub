@@ -2,38 +2,40 @@ ParticleDef()
 {
 	LifeTime()
 	{
-		keyf(0, 1.4)
+		keyf(0, 1.5)
 	}
 
 	GravityMul()
 	{
-		randf(0, 1.2, 1.6)
+		randf(0, 0.7, 1)
 	}
 
 	Drag()
 	{
-		randf(0, 0.5, 1)
+		randf(0, 3, 4)
 	}
 
 	Color()
 	{
 		keyv4(0, 0.55, 0.55, 0.55, 1)
 		keyv4(0.17, 0.55, 0.55, 0.55, 0.86)
-		keyv4(0.272, 0.55, 0.55, 0.55, 0.5)
-		keyv4(0.84, 0.55, 0.55, 0.55, 0.12)
-		keyv4(1.4, 0.55, 0.55, 0.55, 0)
+		keyv4(0.27, 0.55, 0.55, 0.55, 0.53)
+		keyv4(0.47, 0.55, 0.55, 0.55, 0.25)
+		keyv4(1, 0.55, 0.55, 0.55, 0.12)
+		keyv4(1.2, 0.55, 0.55, 0.55, 0.1)
+		keyv4(1.5, 0.55, 0.55, 0.55, 0)
 	}
 
 	Size()
 	{
-		randf(0, 14, 22)
+		randf(0, 45, 55)
 	}
 
-	Align("always")
+	Align("on_start")
 
 	AspectRatio()
 	{
-		randf(0, 0.25, 0.35)
+		randf(0, 0.1, 0.2)
 	}
 
 	Material("IRN_BloodLine_particleBLEND.mat", "IRN_BloodLine_particleBLEND.mat")

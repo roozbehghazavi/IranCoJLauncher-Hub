@@ -9,17 +9,22 @@ EmiterDef()
 
 	NumParticles()
 	{
-		randf(0, 3, 5)
+		randf(0, 2, 5)
 	}
 
 	StartVelocity()
 	{
-		keyf(0, 300)
+		keyf(0, 255)
 	}
 
 	StartVelocityRand()
 	{
-		keyv(0, 300, 60, 300)
+		keyv(0, 255, 0, 255)
+	}
+
+	Position()
+	{
+		keyv(0, 2, 0, 0)
 	}
 
 	Direction()
@@ -28,4 +33,10 @@ EmiterDef()
 	}
 
 	GenArea("point")
+
+	CollisionAction("spawn_fx")
+	{
+		Trace("IRN_BloodDrip_trace.fx")
+		Probability(0.7)
+	}
 }

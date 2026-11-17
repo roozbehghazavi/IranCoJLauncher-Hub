@@ -28,4 +28,10 @@ EmiterDef()
 	}
 
 	GenArea("point")
+
+	CollisionAction("spawn_fx")
+	{
+		Trace("IRN_BloodDrip_trace.fx")
+		Probability(0.7)
+	}
 }

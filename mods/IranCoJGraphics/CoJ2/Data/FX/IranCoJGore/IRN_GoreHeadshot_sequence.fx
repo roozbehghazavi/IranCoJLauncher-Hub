@@ -2,7 +2,7 @@ SequenceDef()
 {
 	LifeTime()
 	{
-		keyf(0, 1.8)
+		keyf(0, 3)
 	}
 
 	Repeat(1)
@@ -11,21 +11,21 @@ SequenceDef()
 
 	Spawn()
 	{
-		ParticleEmiter("IRN_HeadGush_emiter.fx", "IRN_BloodGush_particle.fx")    // IranCoJ Gore: two more streams
+		ParticleEmiter("IRN_HeadDrops_emiter.fx", "IRN_BurstDrops_particle.fx")    // IranCoJ Gore: a wide throw of drops
 	}
 
 	Delay(0)
 
 	Spawn()
 	{
-		ParticleEmiter("IRN_HeadSpray_emiter.fx", "IRN_BloodSpray_particle.fx")    // IranCoJ Gore: a heavy spray of streaks
+		ParticleEmiter("IRN_HeadCluster_emiter.fx", "IRN_BurstCluster2_particle.fx")    // IranCoJ Gore: another big cluster
 	}
 
 	Delay(0)
 
 	Spawn()
 	{
-		ParticleEmiter("IRN_HeadClusters_emiter.fx", "IRN_BloodCluster_particle.fx")    // IranCoJ Gore: a wide throw of drop clusters
+		ParticleEmiter("IRN_HeadSplash_emiter.fx", "IRN_BurstSplash_particle.fx")    // IranCoJ Gore: two more splashes
 	}
 
 	Delay(0)
@@ -39,7 +39,7 @@ SequenceDef()
 
 	Spawn()
 	{
-		ParticleEmiter("IRN_HeadLines_emiter.fx", "IRN_BloodLine_particle.fx")    // IranCoJ Gore: more streaks
+		ParticleEmiter("IRN_HeadLines_emiter.fx", "IRN_BurstLines_particle.fx")    // IranCoJ Gore: more streaks
 	}
 
 	Delay(0)

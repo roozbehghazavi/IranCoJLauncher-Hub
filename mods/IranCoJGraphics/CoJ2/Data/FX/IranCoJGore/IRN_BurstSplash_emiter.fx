@@ -2,36 +2,41 @@ EmiterDef()
 {
 	LifeTime()
 	{
-		keyf(0, 1)
+		keyf(0, 1.5)
 	}
 
 	GenType("one_time")
 
 	NumParticles()
 	{
-		randf(0, 2, 4)
+		keyf(0, 1)
 	}
 
 	StartVelocity()
 	{
-		keyf(0, 170)
+		keyf(0, 550)
 	}
 
 	StartVelocityRand()
 	{
-		keyv(0, 60, 50, 60)
+		keyv(0, 0, 0, 0)
+	}
+
+	Position()
+	{
+		keyv(0, 0, 15, 0)
 	}
 
 	Direction()
 	{
-		keyv(0, 0, 1, 0)
+		keyv(0, 0, -1, 0)
 	}
 
 	GenArea("point")
 
 	CollisionAction("spawn_fx")
 	{
-		Trace("IRN_BloodDrip_trace.fx")
-		Probability(0.6)
+		Trace("IRN_BloodSplatter_trace.fx")
+		Probability(0.8)
 	}
 }

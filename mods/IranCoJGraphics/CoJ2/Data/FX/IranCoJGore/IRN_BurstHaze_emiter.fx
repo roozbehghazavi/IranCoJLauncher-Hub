@@ -2,19 +2,19 @@ EmiterDef()
 {
 	LifeTime()
 	{
-		keyf(0, 0.6)
+		keyf(0, 0.7)
 	}
 
 	GenType("one_time")
 
 	NumParticles()
 	{
-		keyf(0, 4)
+		keyf(0, 6)
 	}
 
 	StartVelocity()
 	{
-		keyf(0, 1200)
+		keyf(0, 1400)
 	}
 
 	StartVelocityRand()

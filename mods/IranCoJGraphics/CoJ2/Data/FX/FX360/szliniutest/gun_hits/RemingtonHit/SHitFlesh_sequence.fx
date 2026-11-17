@@ -2,7 +2,7 @@ SequenceDef()
 {
 	LifeTime()
 	{
-		keyf(0, 2.2)
+		keyf(0, 2)
 	}
 
 	Repeat(1)
@@ -11,34 +11,36 @@ SequenceDef()
 
 	Spawn()
 	{
-		ParticleEmiter("IRN_BloodGushHeavy_emiter.fx", "IRN_BloodGush_particle.fx")    // IranCoJ Gore: two streams
+		ParticleEmiter("IRN_BurstDropsPellet_emiter.fx", "IRN_BurstDrops_particle.fx")    // IranCoJ Gore: a throw of drops
 	}
 
 	Delay(0)
 
 	Spawn()
 	{
-		ParticleEmiter("IRN_BloodSprayHeavy_emiter.fx", "IRN_BloodSpray_particle.fx")    // IranCoJ Gore: a wider spray of streaks
+		ParticleEmiter("IRN_BurstSplash_emiter.fx", "IRN_BurstSplash_particle.fx")    // IranCoJ Gore: a splash
+		Probability(0.5)
 	}
 
 	Delay(0)
 
 	Spawn()
 	{
-		ParticleEmiter("IRN_BloodClusterHeavy_emiter.fx", "IRN_BloodCluster_particle.fx")    // IranCoJ Gore: drop clusters, a wider throw
+		ParticleEmiter("IRN_BurstLinesPellet_emiter.fx", "IRN_BurstLines_particle.fx")    // IranCoJ Gore: streaks
 	}
 
 	Delay(0)
 
 	Spawn()
 	{
-		ParticleEmiter("IRN_BloodLineHeavy_emiter.fx", "IRN_BloodLine_particle.fx")    // IranCoJ Gore: more streaks
+		ParticleEmiter("IRN_BurstClusterClose_emiter.fx", "IRN_BurstClusterClose_particle.fx")    // IranCoJ Gore: a cluster
+		Probability(0.3)
 	}
 
 	Delay(0)
 
 	Spawn()
 	{
-		ParticleEmiter("IRN_BloodPuffHeavy_emiter.fx", "IRN_BloodPuff_particle.fx")    // IranCoJ Gore: a lighter puff
+		ParticleEmiter("IRN_BurstPuffPellet_emiter.fx", "IRN_BurstPuff_particle.fx")    // IranCoJ Gore: a light puff
 	}
 }

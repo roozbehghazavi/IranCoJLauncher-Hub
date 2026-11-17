@@ -10,7 +10,7 @@ TraceDef()
 		randf(0, 16, 40)
 	}
 
-	MaxNumTraces(160)
+	MaxNumTraces(400)
 
 	Color()
 	{
