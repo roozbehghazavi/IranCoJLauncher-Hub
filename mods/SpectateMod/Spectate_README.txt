@@ -1,11 +1,21 @@
-IranCoJ Spectate  v1.1.2
+IranCoJ Spectate  v1.2.0
 ========================
 
 Spectate other players while you are dead, from the multiplayer class-selection
 screen. Third person by default, first person optional.
 
 
-WHAT'S NEW IN 1.1.2
+WHAT'S NEW IN 1.2.0
+-------------------
+* Skirmish (and CTF): after you die, the spectate page opens by itself - the same
+  page, the same buttons, as if you had opened class selection and pressed
+  SPECTATE. Only after a real death (not when you join or before your first
+  spawn), only when a teammate is alive to watch, once per death: Back takes you
+  to class selection as usual. Every other mode stays as before (press SPECTATE).
+* The class screen no longer flashes before the spectate page, and the page opens
+  at once in every round (it waited 1-2 s in the later rounds of a match).
+
+WHAT WAS NEW IN 1.1.2
 -------------------
 * No more debug overlays. Keys like E, C, B and N could switch on the game's
   leftover developer drawing (object names, bone boxes, coloured lines) while

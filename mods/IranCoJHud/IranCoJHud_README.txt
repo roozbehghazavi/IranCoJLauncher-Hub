@@ -9,3 +9,9 @@ Loaded by dinput8.dll from mods.txt. By Thomas (Roozbeh).
 
 1.0.3: Tab does nothing where the game does not allow it (the final scoreboard, typing): the chat no longer
 moves there.
+
+1.0.4: logs only with an irancojhud_log.on file next to the game.
+
+1.0.5: Tab shows the scoreboard while you spectate again. Between Skirmish rounds and on the match results Tab
+does nothing (the chat no longer jumps to the Tab layout there), and when a round ends while you spectate the chat
+sits at the bottom with the newest three lines, as when you are alive.
