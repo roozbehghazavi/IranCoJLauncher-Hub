@@ -1,11 +1,17 @@
-IranCoJ Spectate  v1.2.0
+IranCoJ Spectate  v1.2.1
 ========================
 
 Spectate other players while you are dead, from the multiplayer class-selection
 screen. Third person by default, first person optional.
 
 
-WHAT'S NEW IN 1.2.0
+WHAT'S NEW IN 1.2.1
+-------------------
+* Typing in chat while spectating works for every key again. Since 1.1.2 some
+  letters (Q, E and a few others) did not reach the chat box while you were
+  spectating.
+
+WHAT WAS NEW IN 1.2.0
 -------------------
 * Skirmish (and CTF): after you die, the spectate page opens by itself - the same
   page, the same buttons, as if you had opened class selection and pressed
@@ -206,11 +212,6 @@ KNOWN LIMITATIONS
 * The menu pack carries the SPECTATE button itself, and it ships separately so
   that updating Spectate never overwrites the class-screen entries belonging
   to other IranCoJ mods. See INSTALL.
-* Chat is not shown while spectating. It lives on the scoreboard panel, which
-  the game only draws while TAB is held, so it is not ours to move.
-* Holding certain keys while spectating draws the engine's leftover debug
-  overlays - boxes around bones, lines, screen blur. Harmless, affects only
-  your own screen, and goes away when you stop holding the key.
 * Coming back from spectate there is a brief moment - about a third of a
   second - before the class screen answers clicks again.
 

@@ -15,3 +15,6 @@ moves there.
 1.0.5: Tab shows the scoreboard while you spectate again. Between Skirmish rounds and on the match results Tab
 does nothing (the chat no longer jumps to the Tab layout there), and when a round ends while you spectate the chat
 sits at the bottom with the newest three lines, as when you are alive.
+
+1.0.6: while you spectate the chat shows again and Tab brings up the scoreboard (1.0.5 lost both once any
+scoreboard had been on screen).
