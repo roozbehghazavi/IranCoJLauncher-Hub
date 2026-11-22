@@ -635,13 +635,13 @@
     {
       "id": "IranCoJHud",
       "name": "IranCoJ HUD",
-      "version": "1.0.4",
+      "version": "1.0.5",
       "description": "The Edition's in-game HUD: kill feed, chat, team score bar, Shootout / Wanted standing and weapon names.",
       "package": {
-        "file": "IranCoJHud-1.0.4.zip",
-        "size": 177977,
-        "sha256": "fdb53908e8a9e864f3b4c1a6979516bdd1ec14db0f8ba2d87383b1743544425a",
-        "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/mods/IranCoJHud-1.0.4.zip"
+        "file": "IranCoJHud-1.0.5.zip",
+        "size": 178632,
+        "sha256": "4e597891856f175323c5ce605145f2525e199a81a7be5e929be11322590943ab",
+        "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/mods/IranCoJHud-1.0.5.zip"
       },
       "exclude": [
         "mods.txt"
@@ -776,13 +776,13 @@
     {
       "id": "SpectateMod",
       "name": "Spectate Mod",
-      "version": "1.1.3",
+      "version": "1.2.0",
       "description": "Spectate players in multiplayer, from the in-game menu.",
       "package": {
-        "file": "SpectateMod-1.1.3.zip",
-        "size": 218654,
-        "sha256": "9b214486538ba76411811866d2949f4805dedbd8433d604b2d17211a454807a5",
-        "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/mods/SpectateMod-1.1.3.zip"
+        "file": "SpectateMod-1.2.0.zip",
+        "size": 220116,
+        "sha256": "e3df892d490216fb4a4bc9d621364b60f4472b0543ddca1cdcfa837c8ef0f76d",
+        "url": "https://github.com/roozbehghazavi/IranCoJLauncher-Hub/releases/download/mods/SpectateMod-1.2.0.zip"
       },
       "exclude": [
         "mods.txt",
